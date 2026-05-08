@@ -66,7 +66,7 @@
         "subheading": "",
         "heading_alignment": "left",
         "desktop_per_view": "5",
-        "mobile_per_view": "4",
+        "mobile_per_view": "4.5",
         "item_gap": 10,
         "image_shape": "circle",
         "label_font_size": 12,
