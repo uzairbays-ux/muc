@@ -1,15 +1,21 @@
 {% liquid
   assign s = section.settings
   assign desktop_per_view = s.desktop_per_view | default: 5
-  assign mobile_per_view = s.mobile_per_view | default: 3
+  assign mobile_per_view = s.mobile_per_view | default: 4.5
   assign gap = s.item_gap | default: 16
   assign shape = s.image_shape | default: 'circle'
+  assign label_font_size = s.label_font_size | default: 16
+  assign show_on_desktop = s.show_on_desktop
+  assign visibility_class = ''
+  unless show_on_desktop
+    assign visibility_class = ' thumbnail-scroll-section--hide-desktop'
+  endunless
   assign uid = section.id | replace: '_', '' | downcase
 %}
 
-<div class="section-background color-{{ s.color_scheme }}"></div>
+<div class="section-background color-{{ s.color_scheme }}{{ visibility_class }}"></div>
 <div
-  class="section section--{{ s.section_width }} color-{{ s.color_scheme }} spacing-style"
+  class="section section--{{ s.section_width }} color-{{ s.color_scheme }} spacing-style{{ visibility_class }}"
   style="{% render 'spacing-style', settings: s %}"
   data-testid="thumbnail-scroll-{{ section.id }}"
 >
@@ -24,7 +30,7 @@
 
   <div
     class="thumbnail-scroll thumbnail-scroll--shape-{{ shape }}"
-    style="--ts-desktop-per-view: {{ desktop_per_view }}; --ts-mobile-per-view: {{ mobile_per_view }}; --ts-gap: {{ gap }}px;"
+    style="--ts-desktop-per-view: {{ desktop_per_view }}; --ts-mobile-per-view: {{ mobile_per_view }}; --ts-gap: {{ gap }}px; --ts-label-size: {{ label_font_size }}px;"
     role="list"
   >
     {%- for block in section.blocks -%}
@@ -121,12 +127,23 @@
   }
 
   .thumbnail-scroll__item {
+    /* On mobile we intentionally allow fractional item counts (e.g. 4.5) so the next thumbnail peeks in. */
     flex: 0 0
       calc(
         (100% - (var(--ts-gap, var(--gap-md)) * (var(--ts-mobile-per-view) - 1))) /
           var(--ts-mobile-per-view)
       );
     scroll-snap-align: start;
+  }
+
+  .thumbnail-scroll-section--hide-desktop {
+    display: none;
+  }
+
+  @media screen and (max-width: 749px) {
+    .thumbnail-scroll-section--hide-desktop {
+      display: block;
+    }
   }
 
   @media screen and (min-width: 750px) {
@@ -196,7 +213,7 @@
 
   .thumbnail-scroll__label {
     font-family: var(--font-subheading--family, inherit);
-    font-size: var(--font-paragraph--size, 1rem);
+    font-size: var(--ts-label-size, 1rem);
     font-weight: 600;
     color: rgb(var(--color-foreground-heading));
     text-align: center;
@@ -261,12 +278,17 @@
       "type": "select",
       "id": "mobile_per_view",
       "label": "Items visible per view (mobile)",
+      "info": "Fractional values (e.g. 4.5) reveal a hint of the next thumbnail to indicate scrolling.",
       "options": [
         { "value": "2", "label": "2" },
+        { "value": "2.5", "label": "2.5" },
         { "value": "3", "label": "3" },
-        { "value": "4", "label": "4" }
+        { "value": "3.5", "label": "3.5" },
+        { "value": "4", "label": "4" },
+        { "value": "4.5", "label": "4.5" },
+        { "value": "5", "label": "5" }
       ],
-      "default": "3"
+      "default": "4.5"
     },
     {
       "type": "range",
@@ -288,6 +310,23 @@
         { "value": "square", "label": "Square" }
       ],
       "default": "circle"
+    },
+    {
+      "type": "range",
+      "id": "label_font_size",
+      "label": "Label font size",
+      "min": 10,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "checkbox",
+      "id": "show_on_desktop",
+      "label": "Show on desktop",
+      "info": "When off, the section is hidden on screens 750px and wider but still visible on mobile.",
+      "default": true
     },
     {
       "type": "select",
