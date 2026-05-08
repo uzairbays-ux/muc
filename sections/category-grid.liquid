@@ -8,6 +8,7 @@
   assign show_arrows = s.show_arrows
   assign image_padding = s.image_padding | default: 8
   assign image_fit = s.image_fit | default: 'contain'
+  assign card_ratio = s.card_ratio | default: 'square'
 %}
 
 <div
@@ -37,7 +38,7 @@
             {%- if b.link != blank -%}
               <a href="{{ b.link }}" class="category-grid__link">
             {%- endif -%}
-              <div class="category-grid__content-wrapper" style="--cg-padding: {{ image_padding }}%; --cg-image-fit: {{ image_fit }}; background: linear-gradient(135deg, {{ card_bg }} 0%, {{ card_bg }} 100%);">
+              <div class="category-grid__image-wrapper" style="--cg-padding: {{ image_padding }}%; --cg-image-fit: {{ image_fit }}; --cg-ratio: {{ card_ratio }}; background-color: {{ card_bg }};">
                 {%- if b.image != blank -%}
                   {{
                     b.image
@@ -54,10 +55,10 @@
                     {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
                   </div>
                 {%- endif -%}
-                {%- if b.label != blank -%}
-                  <span class="category-grid__label">{{ b.label }}</span>
-                {%- endif -%}
               </div>
+              {%- if b.label != blank -%}
+                <span class="category-grid__label">{{ b.label }}</span>
+              {%- endif -%}
             {%- if b.link != blank -%}
               </a>
             {%- endif -%}
@@ -65,12 +66,12 @@
         {%- else -%}
           {%- for i in (1..16) -%}
             <div class="category-grid__card">
-              <div class="category-grid__content-wrapper" style="--cg-padding: 8%; --cg-image-fit: contain; background: linear-gradient(135deg, #f5f0ff 0%, #f5f0ff 100%);">
+              <div class="category-grid__image-wrapper" style="--cg-padding: 8%; --cg-image-fit: contain; --cg-ratio: square; background-color: #f5f0ff;">
                 <div class="category-grid__placeholder">
                   {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
                 </div>
-                <span class="category-grid__label">Category {{ i }}</span>
               </div>
+              <span class="category-grid__label">Category {{ i }}</span>
             </div>
           {%- endfor -%}
         {%- endfor -%}
@@ -173,18 +174,28 @@
     transform: translateY(-2px);
   }
 
-  .category-grid__content-wrapper {
+  .category-grid__image-wrapper {
     width: 100%;
-    aspect-ratio: 1 / 1;
+    aspect-ratio: var(--cg-ratio-value, 1 / 1);
     border-radius: var(--style-border-radius-card, 12px);
     overflow: hidden;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    position: relative;
     padding: var(--cg-padding, 8%);
-    padding-bottom: 0;
+  }
+
+  .category-grid__card[style*="--cg-ratio: adapt"] .category-grid__image-wrapper,
+  .category-grid__image-wrapper[style*="--cg-ratio: adapt"] {
+    aspect-ratio: auto;
+  }
+
+  .category-grid__image-wrapper[style*="--cg-ratio: portrait"] {
+    aspect-ratio: 3 / 4;
+  }
+
+  .category-grid__image-wrapper[style*="--cg-ratio: landscape"] {
+    aspect-ratio: 4 / 3;
   }
 
   .category-grid__image {
@@ -192,7 +203,6 @@
     width: 100%;
     height: 100%;
     object-fit: var(--cg-image-fit, contain);
-    position: relative;
   }
 
   .category-grid__placeholder {
@@ -208,19 +218,14 @@
 
   .category-grid__label {
     display: block;
-    padding: 12px 8px;
+    margin-top: 8px;
     font-size: 13px;
     font-weight: 600;
     line-height: 1.3;
     color: rgb(var(--color-foreground));
     word-wrap: break-word;
     max-width: 100%;
-    position: relative;
-    z-index: 1;
-    width: 100%;
     text-align: center;
-    background: inherit;
-    border-radius: 0 0 var(--style-border-radius-card, 12px) var(--style-border-radius-card, 12px);
   }
 
   @media screen and (max-width: 749px) {
@@ -414,6 +419,18 @@
         { "value": "fill", "label": "Fill" }
       ],
       "default": "contain"
+    },
+    {
+      "type": "select",
+      "id": "card_ratio",
+      "label": "Card image ratio",
+      "options": [
+        { "value": "square", "label": "Square (1:1)" },
+        { "value": "adapt", "label": "Adapt to image" },
+        { "value": "portrait", "label": "Portrait (3:4)" },
+        { "value": "landscape", "label": "Landscape (4:3)" }
+      ],
+      "default": "adapt"
     },
     {
       "type": "header",
