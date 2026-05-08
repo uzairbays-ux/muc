@@ -907,6 +907,7 @@
       "name": "Stacked banners",
       "settings": {
         "gap": 0,
+        "background_color": "#e3cef0",
         "color_scheme": "",
         "padding-block-start": 0,
         "padding-block-end": 0
