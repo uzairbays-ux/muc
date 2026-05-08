@@ -1327,57 +1327,58 @@
         "padding-block-end": 24
       }
     },
-    "promo_grid_TkrmX4": {
-      "type": "promo-grid",
+    "card_grid_yKxxjX": {
+      "type": "card-grid",
       "blocks": {
-        "promo_card_fb4QEK": {
-          "type": "promo_card",
+        "card_Vf9VpR": {
+          "type": "card",
           "settings": {
-            "heading": "Unbox the joy of giving",
-            "subheading": "Discover perfect gifts for every occasion",
+            "image": "shopify://shop_images/promogrid.avif",
             "link": "",
             "open_new_tab": false
           }
         },
-        "promo_card_iQr8Vi": {
-          "type": "promo_card",
+        "card_kacTF6": {
+          "type": "card",
           "settings": {
-            "heading": "Elevate your style",
-            "subheading": "Explore the right tools for your daily routine",
+            "image": "shopify://shop_images/promogrid.avif",
             "link": "",
             "open_new_tab": false
           }
         },
-        "promo_card_bzeP9C": {
-          "type": "promo_card",
+        "card_wbtFbW": {
+          "type": "card",
           "settings": {
-            "heading": "Find your signature scent",
-            "subheading": "Premium fragrances for every mood",
+            "image": "shopify://shop_images/promogrid.avif",
             "link": "",
             "open_new_tab": false
           }
         },
-        "promo_card_bckUnf": {
-          "type": "promo_card",
+        "card_Q777zQ": {
+          "type": "card",
           "settings": {
-            "heading": "Korean Beauty Store",
-            "subheading": "Glow brighter with K-beauty picks",
+            "image": "shopify://shop_images/promogrid.avif",
             "link": "",
             "open_new_tab": false
           }
         }
       },
       "block_order": [
-        "promo_card_fb4QEK",
-        "promo_card_iQr8Vi",
-        "promo_card_bzeP9C",
-        "promo_card_bckUnf"
+        "card_Vf9VpR",
+        "card_kacTF6",
+        "card_wbtFbW",
+        "card_Q777zQ"
       ],
-      "name": "Promo grid",
+      "name": "Card grid",
       "settings": {
-        "section_width": "page-width",
+        "heading": "",
+        "subheading": "",
+        "heading_alignment": "left",
+        "desktop_columns": "4",
+        "mobile_columns": "1",
         "gap": 10,
-        "background_color": "",
+        "section_width": "page-width",
+        "color_scheme": "",
         "padding-block-start": 24,
         "padding-block-end": 24
       }
@@ -1396,6 +1397,6 @@
     "category_grid_pGCQaP",
     "ad_banner_pjN7dA",
     "category_grid_FAWJJj",
-    "promo_grid_TkrmX4"
+    "card_grid_yKxxjX"
   ]
 }
