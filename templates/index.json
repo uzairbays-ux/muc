@@ -926,154 +926,159 @@
             "image": "shopify://shop_images/k-product.avif",
             "label": "",
             "link": "",
-            "card_background": "#eef9ee"
+            "card_background": "#e3cef0"
           }
         },
-        "category_rVBUap": {
+        "category_CW8Kam": {
           "type": "category",
           "settings": {
-            "label": "Eyeshadow Palettes",
+            "image": "shopify://shop_images/k-product.avif",
+            "label": "",
             "link": "",
-            "card_background": "#eef9ee"
+            "card_background": "#e3cef0"
           }
         },
-        "category_TmHmfR": {
+        "category_MFqYb3": {
           "type": "category",
           "settings": {
-            "label": "Lip Balms",
+            "image": "shopify://shop_images/k-product.avif",
+            "label": "",
             "link": "",
-            "card_background": "#eef9ee"
+            "card_background": "#e3cef0"
           }
         },
-        "category_WBkttn": {
+        "category_PwLmhQ": {
           "type": "category",
           "settings": {
-            "label": "Foundations",
+            "image": "shopify://shop_images/k-product.avif",
+            "label": "",
             "link": "",
-            "card_background": "#eef9ee"
+            "card_background": "#e3cef0"
           }
         },
-        "category_mneibi": {
+        "category_q7AGj9": {
           "type": "category",
           "settings": {
-            "label": "Under Eye Creams",
+            "image": "shopify://shop_images/k-product.avif",
+            "label": "",
             "link": "",
-            "card_background": "#eef9ee"
+            "card_background": "#e3cef0"
           }
         },
-        "category_RiwyGy": {
+        "category_nXJhGL": {
           "type": "category",
           "settings": {
-            "label": "Moisturizers",
+            "image": "shopify://shop_images/k-product.avif",
+            "label": "",
             "link": "",
-            "card_background": "#eef9ee"
+            "card_background": "#e3cef0"
           }
         },
-        "category_GttaxY": {
+        "category_8dWN7p": {
           "type": "category",
           "settings": {
-            "label": "Kit & Combos",
+            "image": "shopify://shop_images/k-product.avif",
+            "label": "",
             "link": "",
-            "card_background": "#eef9ee"
+            "card_background": "#e3cef0"
           }
         },
-        "category_JTb9Jk": {
+        "category_RAFj48": {
           "type": "category",
           "settings": {
-            "label": "Cleansers",
+            "image": "shopify://shop_images/k-product.avif",
+            "label": "",
             "link": "",
-            "card_background": "#eef9ee"
+            "card_background": "#e3cef0"
           }
         },
-        "category_nwFwxc": {
+        "category_UWYhX7": {
           "type": "category",
           "settings": {
-            "label": "Lip Glosses",
+            "image": "shopify://shop_images/k-product.avif",
+            "label": "",
             "link": "",
-            "card_background": "#eef9ee"
+            "card_background": "#e3cef0"
           }
         },
-        "category_WBnHhC": {
+        "category_7nx3qD": {
           "type": "category",
           "settings": {
-            "label": "Concealers",
+            "image": "shopify://shop_images/k-product.avif",
+            "label": "",
             "link": "",
-            "card_background": "#eef9ee"
+            "card_background": "#e3cef0"
           }
         },
-        "category_T9tJXn": {
+        "category_BHwfRT": {
           "type": "category",
           "settings": {
-            "label": "Mascaras",
+            "image": "shopify://shop_images/k-product.avif",
+            "label": "",
             "link": "",
-            "card_background": "#eef9ee"
+            "card_background": "#e3cef0"
           }
         },
-        "category_7XkVyM": {
+        "category_XmNYRD": {
           "type": "category",
           "settings": {
-            "label": "Toners",
+            "image": "shopify://shop_images/k-product.avif",
+            "label": "",
             "link": "",
-            "card_background": "#eef9ee"
+            "card_background": "#e3cef0"
           }
         },
-        "category_qxVKUw": {
+        "category_4PMpKA": {
           "type": "category",
           "settings": {
-            "label": "Serums",
+            "image": "shopify://shop_images/k-product.avif",
+            "label": "",
             "link": "",
-            "card_background": "#eef9ee"
+            "card_background": "#e3cef0"
           }
         },
-        "category_6NPTjR": {
+        "category_B3dHeK": {
           "type": "category",
           "settings": {
-            "label": "Sunscreens",
+            "image": "shopify://shop_images/k-product.avif",
+            "label": "",
             "link": "",
-            "card_background": "#eef9ee"
+            "card_background": "#e3cef0"
           }
         },
-        "category_AJHNnK": {
+        "category_fwB3jf": {
           "type": "category",
           "settings": {
-            "label": "Masks",
+            "image": "shopify://shop_images/k-product.avif",
+            "label": "",
             "link": "",
-            "card_background": "#eef9ee"
-          }
-        },
-        "category_iFzx7e": {
-          "type": "category",
-          "settings": {
-            "label": "Haircare",
-            "link": "",
-            "card_background": "#eef9ee"
+            "card_background": "#e3cef0"
           }
         }
       },
       "block_order": [
         "category_JmaNX9",
-        "category_rVBUap",
-        "category_TmHmfR",
-        "category_WBkttn",
-        "category_mneibi",
-        "category_RiwyGy",
-        "category_GttaxY",
-        "category_JTb9Jk",
-        "category_nwFwxc",
-        "category_WBnHhC",
-        "category_T9tJXn",
-        "category_7XkVyM",
-        "category_qxVKUw",
-        "category_6NPTjR",
-        "category_AJHNnK",
-        "category_iFzx7e"
+        "category_CW8Kam",
+        "category_MFqYb3",
+        "category_PwLmhQ",
+        "category_q7AGj9",
+        "category_nXJhGL",
+        "category_8dWN7p",
+        "category_RAFj48",
+        "category_UWYhX7",
+        "category_7nx3qD",
+        "category_BHwfRT",
+        "category_XmNYRD",
+        "category_4PMpKA",
+        "category_B3dHeK",
+        "category_fwB3jf"
       ],
       "name": "Category grid",
       "settings": {
         "heading": "",
         "subheading": "",
         "heading_alignment": "center",
-        "desktop_per_row": "7",
+        "desktop_per_row": "6",
         "mobile_per_row": "3.5",
         "gap": 10,
         "row_gap": 10,
