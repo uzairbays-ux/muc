@@ -6,6 +6,8 @@
   assign row_gap = s.row_gap | default: 12
   assign bg_color = s.background_color | default: 'transparent'
   assign show_arrows = s.show_arrows
+  assign image_padding = s.image_padding | default: 8
+  assign image_fit = s.image_fit | default: 'contain'
 %}
 
 <div
@@ -35,7 +37,7 @@
             {%- if b.link != blank -%}
               <a href="{{ b.link }}" class="category-grid__link">
             {%- endif -%}
-              <div class="category-grid__image-wrapper" style="background-color: {{ card_bg }};">
+              <div class="category-grid__content-wrapper" style="--cg-padding: {{ image_padding }}%; --cg-image-fit: {{ image_fit }}; background: linear-gradient(135deg, {{ card_bg }} 0%, {{ card_bg }} 100%);">
                 {%- if b.image != blank -%}
                   {{
                     b.image
@@ -52,10 +54,10 @@
                     {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
                   </div>
                 {%- endif -%}
+                {%- if b.label != blank -%}
+                  <span class="category-grid__label">{{ b.label }}</span>
+                {%- endif -%}
               </div>
-              {%- if b.label != blank -%}
-                <span class="category-grid__label">{{ b.label }}</span>
-              {%- endif -%}
             {%- if b.link != blank -%}
               </a>
             {%- endif -%}
@@ -63,12 +65,12 @@
         {%- else -%}
           {%- for i in (1..16) -%}
             <div class="category-grid__card">
-              <div class="category-grid__image-wrapper" style="background-color: #f5f0ff;">
+              <div class="category-grid__content-wrapper" style="--cg-padding: 8%; --cg-image-fit: contain; background: linear-gradient(135deg, #f5f0ff 0%, #f5f0ff 100%);">
                 <div class="category-grid__placeholder">
                   {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
                 </div>
+                <span class="category-grid__label">Category {{ i }}</span>
               </div>
-              <span class="category-grid__label">Category {{ i }}</span>
             </div>
           {%- endfor -%}
         {%- endfor -%}
@@ -171,22 +173,26 @@
     transform: translateY(-2px);
   }
 
-  .category-grid__image-wrapper {
+  .category-grid__content-wrapper {
     width: 100%;
     aspect-ratio: 1 / 1;
     border-radius: var(--style-border-radius-card, 12px);
     overflow: hidden;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 8%;
+    position: relative;
+    padding: var(--cg-padding, 8%);
+    padding-bottom: 0;
   }
 
   .category-grid__image {
     display: block;
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: var(--cg-image-fit, contain);
+    position: relative;
   }
 
   .category-grid__placeholder {
@@ -202,13 +208,19 @@
 
   .category-grid__label {
     display: block;
-    margin-top: 8px;
+    padding: 12px 8px;
     font-size: 13px;
     font-weight: 600;
     line-height: 1.3;
     color: rgb(var(--color-foreground));
     word-wrap: break-word;
     max-width: 100%;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    text-align: center;
+    background: inherit;
+    border-radius: 0 0 var(--style-border-radius-card, 12px) var(--style-border-radius-card, 12px);
   }
 
   @media screen and (max-width: 749px) {
@@ -377,6 +389,31 @@
       "id": "show_arrows",
       "label": "Show arrows",
       "default": true
+    },
+    {
+      "type": "header",
+      "content": "Image Settings"
+    },
+    {
+      "type": "range",
+      "id": "image_padding",
+      "label": "Image padding",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "%",
+      "default": 8
+    },
+    {
+      "type": "select",
+      "id": "image_fit",
+      "label": "Image fit",
+      "options": [
+        { "value": "contain", "label": "Contain" },
+        { "value": "cover", "label": "Cover" },
+        { "value": "fill", "label": "Fill" }
+      ],
+      "default": "contain"
     },
     {
       "type": "header",
