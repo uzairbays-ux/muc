@@ -892,6 +892,8 @@
         "banner_Mqy4xa": {
           "type": "banner",
           "settings": {
+            "desktop_image": "shopify://shop_images/k-pop-desktop.avif",
+            "mobile_image": "shopify://shop_images/k-pop-mobile.avif",
             "link": "",
             "open_new_tab": false
           }
