@@ -186,7 +186,7 @@
         "autoplay_interval": 5,
         "show_arrows": true,
         "show_dots": true,
-        "color_scheme": "",
+        "color_scheme": "scheme-1",
         "padding-block-start": 24,
         "padding-block-end": 24
       }
