@@ -1095,6 +1095,7 @@
       "type": "ad-banner",
       "name": "Ad banner",
       "settings": {
+        "desktop_image": "shopify://shop_images/ad-banner.avif",
         "link": "",
         "open_new_tab": false,
         "section_width": "page-width",
