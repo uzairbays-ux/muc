@@ -1,0 +1,379 @@
+{% liquid
+  assign s = section.settings
+  assign speed = s.scroll_speed | default: 30
+  assign logo_height = s.logo_height | default: 40
+  assign gap = s.gap | default: 48
+  assign pause_on_hover = s.pause_on_hover
+  assign direction = s.direction | default: 'left'
+%}
+
+<div class="section-background color-{{ s.color_scheme }}"></div>
+<div
+  class="section section--{{ s.section_width }} color-{{ s.color_scheme }} spacing-style"
+  style="{% render 'spacing-style', settings: s %}"
+  data-testid="brand-ticker-{{ section.id }}"
+>
+  {%- if s.heading != blank -%}
+    <div class="brand-ticker__header" style="text-align: {{ s.heading_alignment }};">
+      <h2 class="brand-ticker__heading h3">{{ s.heading }}</h2>
+      {%- if s.subheading != blank -%}
+        <p class="brand-ticker__subheading">{{ s.subheading }}</p>
+      {%- endif -%}
+    </div>
+  {%- endif -%}
+
+  <brand-ticker
+    class="brand-ticker"
+    data-speed="{{ speed }}"
+    data-direction="{{ direction }}"
+    data-pause-on-hover="{{ pause_on_hover }}"
+    style="--bt-logo-height: {{ logo_height }}px; --bt-gap: {{ gap }}px;"
+  >
+    <div class="brand-ticker__track" ref="track" aria-label="Brand logos">
+      {%- for block in section.blocks -%}
+        {%- assign b = block.settings -%}
+        <div class="brand-ticker__item" {{ block.shopify_attributes }}>
+          {%- if b.link != blank -%}
+            <a href="{{ b.link }}" class="brand-ticker__link" aria-label="{{ b.image.alt | default: b.label | default: 'Brand' | escape }}">
+          {%- endif -%}
+            {%- if b.image != blank -%}
+              {{
+                b.image
+                | image_url: height: logo_height
+                | image_tag:
+                  loading: 'lazy',
+                  class: 'brand-ticker__logo',
+                  alt: b.image.alt | default: b.label | default: ''
+              }}
+            {%- else -%}
+              <span class="brand-ticker__placeholder">{{ b.label | default: 'Brand' }}</span>
+            {%- endif -%}
+          {%- if b.link != blank -%}
+            </a>
+          {%- endif -%}
+        </div>
+      {%- else -%}
+        {%- for i in (1..6) -%}
+          <div class="brand-ticker__item">
+            <span class="brand-ticker__placeholder">Brand {{ i }}</span>
+          </div>
+        {%- endfor -%}
+      {%- endfor -%}
+    </div>
+  </brand-ticker>
+</div>
+
+{% stylesheet %}
+  .brand-ticker__header {
+    margin-bottom: var(--gap-md, 16px);
+  }
+
+  .brand-ticker__heading {
+    margin: 0;
+    font-family: var(--font-heading--family);
+    color: rgb(var(--color-foreground-heading));
+  }
+
+  .brand-ticker__subheading {
+    margin: var(--gap-2xs, 4px) 0 0;
+    color: rgb(var(--color-foreground));
+    opacity: 0.7;
+    font-size: 0.85em;
+  }
+
+  .brand-ticker {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .brand-ticker__track {
+    display: flex;
+    align-items: center;
+    gap: var(--bt-gap, 48px);
+    width: max-content;
+    animation: brand-ticker-scroll var(--bt-duration, 30s) linear infinite;
+  }
+
+  .brand-ticker[data-direction="right"] .brand-ticker__track {
+    animation-direction: reverse;
+  }
+
+  .brand-ticker[data-pause-on-hover="true"]:hover .brand-ticker__track {
+    animation-play-state: paused;
+  }
+
+  @keyframes brand-ticker-scroll {
+    0% { transform: translate3d(0, 0, 0); }
+    100% { transform: translate3d(-50%, 0, 0); }
+  }
+
+  .brand-ticker__item {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .brand-ticker__link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 200ms ease;
+  }
+
+  .brand-ticker__link:hover {
+    opacity: 0.7;
+  }
+
+  .brand-ticker__logo {
+    display: block;
+    height: var(--bt-logo-height, 40px);
+    width: auto;
+    object-fit: contain;
+  }
+
+  .brand-ticker__placeholder {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: rgb(var(--color-foreground));
+    opacity: 0.5;
+    white-space: nowrap;
+    padding: 0 8px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .brand-ticker__track {
+      animation: none;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .brand-ticker__track::-webkit-scrollbar { display: none; }
+  }
+{% endstylesheet %}
+
+<script>
+  (function () {
+    if (customElements.get('brand-ticker')) return;
+
+    class BrandTicker extends HTMLElement {
+      connectedCallback() {
+        this.track = this.querySelector('[ref="track"]');
+        if (!this.track) return;
+
+        const items = Array.from(this.track.children);
+        if (items.length === 0) return;
+
+        // Duplicate items to fill the track for seamless infinite scroll.
+        // We need at least 2x the original set so that when the first set
+        // scrolls out, the duplicate takes its place seamlessly.
+        const fragment = document.createDocumentFragment();
+        items.forEach((item) => {
+          fragment.appendChild(item.cloneNode(true));
+        });
+        this.track.appendChild(fragment);
+
+        // Calculate duration based on speed setting and track width.
+        this.updateDuration();
+
+        // Recalculate on resize.
+        this._resizeObserver = new ResizeObserver(() => this.updateDuration());
+        this._resizeObserver.observe(this.track);
+      }
+
+      disconnectedCallback() {
+        if (this._resizeObserver) this._resizeObserver.disconnect();
+      }
+
+      updateDuration() {
+        // Speed is pixels per second (higher = faster).
+        const speed = parseFloat(this.dataset.speed) || 30;
+        // The track is 2x the original items width. The animation translates -50%.
+        const trackWidth = this.track.scrollWidth / 2;
+        const duration = trackWidth / speed;
+        this.track.style.setProperty('--bt-duration', duration + 's');
+      }
+    }
+
+    customElements.define('brand-ticker', BrandTicker);
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Brand ticker",
+  "tag": "section",
+  "class": "section-brand-ticker",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Certified By 500+ Brands"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Authorized Distributor of COSRX, AXIS-Y, Jumiso"
+    },
+    {
+      "type": "select",
+      "id": "heading_alignment",
+      "label": "Heading alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "header",
+      "content": "Ticker"
+    },
+    {
+      "type": "range",
+      "id": "scroll_speed",
+      "label": "Scroll speed",
+      "info": "Pixels per second. Higher = faster.",
+      "min": 10,
+      "max": 120,
+      "step": 5,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "select",
+      "id": "direction",
+      "label": "Scroll direction",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "checkbox",
+      "id": "pause_on_hover",
+      "label": "Pause on hover",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "logo_height",
+      "label": "Logo height",
+      "min": 20,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "gap",
+      "label": "Gap between logos",
+      "min": 16,
+      "max": 96,
+      "step": 4,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "section_width",
+      "label": "Section width",
+      "options": [
+        { "value": "page-width", "label": "Page" },
+        { "value": "full-width", "label": "Full" }
+      ],
+      "default": "page-width"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "Top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "Bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 24
+    }
+  ],
+  "blocks": [
+    {
+      "type": "brand",
+      "name": "Brand",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Logo image",
+          "info": "Transparent PNG recommended for best results."
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Brand name",
+          "info": "Used as alt text and fallback if no image."
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link",
+          "info": "Leads to brand collection or page."
+        }
+      ]
+    }
+  ],
+  "max_blocks": 24,
+  "presets": [
+    {
+      "name": "Brand ticker",
+      "category": "Collections",
+      "blocks": [
+        { "type": "brand", "settings": { "label": "SHISEIDO" } },
+        { "type": "brand", "settings": { "label": "HUDABEAUTY" } },
+        { "type": "brand", "settings": { "label": "medicube" } },
+        { "type": "brand", "settings": { "label": "COSRX" } },
+        { "type": "brand", "settings": { "label": "Dr. Althea" } },
+        { "type": "brand", "settings": { "label": "Lattafa" } },
+        { "type": "brand", "settings": { "label": "REVOLUTION" } },
+        { "type": "brand", "settings": { "label": "AXIS-Y" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
