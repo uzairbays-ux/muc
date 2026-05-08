@@ -527,6 +527,7 @@
         "card_DnJ9zV": {
           "type": "card",
           "settings": {
+            "image": "shopify://shop_images/banner-1_webp.png",
             "link": "",
             "open_new_tab": false
           }
@@ -534,6 +535,7 @@
         "card_L4QwKh": {
           "type": "card",
           "settings": {
+            "image": "shopify://shop_images/banner-1_webp.png",
             "link": "",
             "open_new_tab": false
           }
@@ -541,6 +543,7 @@
         "card_QQLjCx": {
           "type": "card",
           "settings": {
+            "image": "shopify://shop_images/banner-3_webp.png",
             "link": "",
             "open_new_tab": false
           }
@@ -548,6 +551,7 @@
         "card_p9kYBe": {
           "type": "card",
           "settings": {
+            "image": "shopify://shop_images/banner-4_webp.png",
             "link": "",
             "open_new_tab": false
           }
@@ -558,58 +562,6 @@
         "card_L4QwKh",
         "card_QQLjCx",
         "card_p9kYBe"
-      ],
-      "name": "Card grid",
-      "settings": {
-        "heading": "",
-        "subheading": "",
-        "heading_alignment": "left",
-        "desktop_columns": "4",
-        "mobile_columns": "2",
-        "gap": 16,
-        "section_width": "page-width",
-        "color_scheme": "",
-        "padding-block-start": 24,
-        "padding-block-end": 24
-      }
-    },
-    "card_grid_tLffKU": {
-      "type": "card-grid",
-      "blocks": {
-        "card_NaiUMg": {
-          "type": "card",
-          "settings": {
-            "link": "",
-            "open_new_tab": false
-          }
-        },
-        "card_m4dJ4r": {
-          "type": "card",
-          "settings": {
-            "link": "",
-            "open_new_tab": false
-          }
-        },
-        "card_9H67GY": {
-          "type": "card",
-          "settings": {
-            "link": "",
-            "open_new_tab": false
-          }
-        },
-        "card_nXKGgJ": {
-          "type": "card",
-          "settings": {
-            "link": "",
-            "open_new_tab": false
-          }
-        }
-      },
-      "block_order": [
-        "card_NaiUMg",
-        "card_m4dJ4r",
-        "card_9H67GY",
-        "card_nXKGgJ"
       ],
       "name": "Card grid",
       "settings": {
@@ -867,6 +819,58 @@
         "color_scheme": "scheme-1",
         "padding-block-start": 20,
         "padding-block-end": 20
+      }
+    },
+    "card_grid_tLffKU": {
+      "type": "card-grid",
+      "blocks": {
+        "card_NaiUMg": {
+          "type": "card",
+          "settings": {
+            "link": "",
+            "open_new_tab": false
+          }
+        },
+        "card_m4dJ4r": {
+          "type": "card",
+          "settings": {
+            "link": "",
+            "open_new_tab": false
+          }
+        },
+        "card_9H67GY": {
+          "type": "card",
+          "settings": {
+            "link": "",
+            "open_new_tab": false
+          }
+        },
+        "card_nXKGgJ": {
+          "type": "card",
+          "settings": {
+            "link": "",
+            "open_new_tab": false
+          }
+        }
+      },
+      "block_order": [
+        "card_NaiUMg",
+        "card_m4dJ4r",
+        "card_9H67GY",
+        "card_nXKGgJ"
+      ],
+      "name": "Card grid",
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "heading_alignment": "left",
+        "desktop_columns": "4",
+        "mobile_columns": "2",
+        "gap": 16,
+        "section_width": "page-width",
+        "color_scheme": "",
+        "padding-block-start": 24,
+        "padding-block-end": 24
       }
     }
   },
