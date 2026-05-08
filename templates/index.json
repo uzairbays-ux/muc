@@ -15,7 +15,7 @@
         "thumbnail_Qbx4az": {
           "type": "thumbnail",
           "settings": {
-            "background_color": "#F1ECFB",
+            "background_color": "#f1ecfb",
             "label": "Skincare",
             "link": ""
           }
@@ -23,7 +23,7 @@
         "thumbnail_9mj9UL": {
           "type": "thumbnail",
           "settings": {
-            "background_color": "#F1ECFB",
+            "background_color": "#f1ecfb",
             "label": "Makeup",
             "link": ""
           }
@@ -31,7 +31,7 @@
         "thumbnail_Jq84qh": {
           "type": "thumbnail",
           "settings": {
-            "background_color": "#F1ECFB",
+            "background_color": "#f1ecfb",
             "label": "Haircare",
             "link": ""
           }
@@ -39,7 +39,7 @@
         "thumbnail_TA8KHE": {
           "type": "thumbnail",
           "settings": {
-            "background_color": "#F1ECFB",
+            "background_color": "#f1ecfb",
             "label": "K Beauty",
             "link": ""
           }
@@ -47,7 +47,7 @@
         "thumbnail_h7Dj6p": {
           "type": "thumbnail",
           "settings": {
-            "background_color": "#F1ECFB",
+            "background_color": "#f1ecfb",
             "label": "Beauty Tools",
             "link": ""
           }
@@ -69,6 +69,8 @@
         "mobile_per_view": "4",
         "item_gap": 10,
         "image_shape": "circle",
+        "label_font_size": 12,
+        "show_on_desktop": false,
         "section_width": "page-width",
         "color_scheme": "",
         "padding-block-start": 20,
