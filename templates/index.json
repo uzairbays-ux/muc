@@ -9,6 +9,72 @@
  */
 {
   "sections": {
+    "thumbnail_scroll_PbDt4b": {
+      "type": "thumbnail-scroll",
+      "blocks": {
+        "thumbnail_Qbx4az": {
+          "type": "thumbnail",
+          "settings": {
+            "background_color": "#F1ECFB",
+            "label": "Skincare",
+            "link": ""
+          }
+        },
+        "thumbnail_9mj9UL": {
+          "type": "thumbnail",
+          "settings": {
+            "background_color": "#F1ECFB",
+            "label": "Makeup",
+            "link": ""
+          }
+        },
+        "thumbnail_Jq84qh": {
+          "type": "thumbnail",
+          "settings": {
+            "background_color": "#F1ECFB",
+            "label": "Haircare",
+            "link": ""
+          }
+        },
+        "thumbnail_TA8KHE": {
+          "type": "thumbnail",
+          "settings": {
+            "background_color": "#F1ECFB",
+            "label": "K Beauty",
+            "link": ""
+          }
+        },
+        "thumbnail_h7Dj6p": {
+          "type": "thumbnail",
+          "settings": {
+            "background_color": "#F1ECFB",
+            "label": "Beauty Tools",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "thumbnail_Qbx4az",
+        "thumbnail_9mj9UL",
+        "thumbnail_Jq84qh",
+        "thumbnail_TA8KHE",
+        "thumbnail_h7Dj6p"
+      ],
+      "name": "Thumbnail scroll",
+      "settings": {
+        "heading": "Shop by category",
+        "subheading": "",
+        "heading_alignment": "left",
+        "desktop_per_view": "5",
+        "mobile_per_view": "4",
+        "item_gap": 16,
+        "image_shape": "circle",
+        "section_width": "page-width",
+        "color_scheme": "",
+        "padding-block-start": 40,
+        "padding-block-end": 40
+      }
+    },
     "product_list_fa6P9H": {
       "type": "product-list",
       "blocks": {
@@ -255,6 +321,7 @@
     }
   },
   "order": [
+    "thumbnail_scroll_PbDt4b",
     "product_list_fa6P9H"
   ]
 }
