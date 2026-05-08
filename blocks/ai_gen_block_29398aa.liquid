@@ -107,6 +107,8 @@
 
 <propositions-grid-{{ ai_gen_id }}
   class="ai-propositions-{{ ai_gen_id }}"
+  data-mobile-autoplay="{{ block.settings.mobile_autoplay }}"
+  data-mobile-autoplay-interval="{{ block.settings.mobile_autoplay_interval | default: 4 }}"
   {{ block.shopify_attributes }}
 >
   <div class="ai-propositions-container-{{ ai_gen_id }}">
@@ -151,42 +153,156 @@
     class PropositionsGrid{{ ai_gen_id }} extends HTMLElement {
       constructor() {
         super();
+        this._autoplayTimer = null;
+        this._resumeTimer = null;
+        this._isUserInteracting = false;
+        this._isVisible = false;
+        this._mql = null;
       }
 
       connectedCallback() {
-        this.setupMobileCarousel();
+        this.container = this.querySelector('.ai-propositions-container-{{ ai_gen_id }}');
+        if (!this.container) return;
+
+        this.items = this.querySelectorAll('.ai-proposition-item-{{ ai_gen_id }}');
+        this._mql = window.matchMedia('(max-width: 749px)');
+
+        this.setupMobileDrag();
+        this.setupAutoplay();
+
+        // Re-evaluate on viewport change.
+        this._mql.addEventListener('change', this._onMediaChange);
+        window.addEventListener('resize', this._onResize);
       }
 
-      setupMobileCarousel() {
-        const container = this.querySelector('.ai-propositions-container-{{ ai_gen_id }}');
-        
-        if (window.innerWidth <= 749) {
-          let isDown = false;
-          let startX;
-          let scrollLeft;
+      disconnectedCallback() {
+        this.stopAutoplay();
+        if (this._observer) this._observer.disconnect();
+        if (this._mql) this._mql.removeEventListener('change', this._onMediaChange);
+        window.removeEventListener('resize', this._onResize);
+      }
 
-          container.addEventListener('mousedown', (e) => {
-            isDown = true;
-            startX = e.pageX - container.offsetLeft;
-            scrollLeft = container.scrollLeft;
-          });
+      _onMediaChange = () => {
+        this.stopAutoplay();
+        this.setupAutoplay();
+      };
 
-          container.addEventListener('mouseleave', () => {
-            isDown = false;
-          });
+      _onResize = () => {
+        // Container width can change on rotation; recompute on next interval.
+      };
 
-          container.addEventListener('mouseup', () => {
-            isDown = false;
-          });
+      setupMobileDrag() {
+        const container = this.container;
+        if (!this._mql.matches) return;
 
-          container.addEventListener('mousemove', (e) => {
-            if (!isDown) return;
-            e.preventDefault();
-            const x = e.pageX - container.offsetLeft;
-            const walk = (x - startX) * 2;
-            container.scrollLeft = scrollLeft - walk;
-          });
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        container.addEventListener('mousedown', (e) => {
+          isDown = true;
+          startX = e.pageX - container.offsetLeft;
+          scrollLeft = container.scrollLeft;
+          this.pauseAutoplayForInteraction();
+        });
+
+        container.addEventListener('mouseleave', () => {
+          isDown = false;
+        });
+
+        container.addEventListener('mouseup', () => {
+          isDown = false;
+        });
+
+        container.addEventListener('mousemove', (e) => {
+          if (!isDown) return;
+          e.preventDefault();
+          const x = e.pageX - container.offsetLeft;
+          const walk = (x - startX) * 2;
+          container.scrollLeft = scrollLeft - walk;
+        });
+
+        // Touch / native scroll also pauses autoplay.
+        container.addEventListener('touchstart', this.pauseAutoplayForInteraction, { passive: true });
+        container.addEventListener('scroll', this._onUserScroll, { passive: true });
+      }
+
+      _onUserScroll = () => {
+        // Only treat as "user" scrolling if not currently animating ourselves.
+        if (this._isProgrammaticScroll) return;
+        this.pauseAutoplayForInteraction();
+      };
+
+      setupAutoplay() {
+        const enabled = this.dataset.mobileAutoplay === 'true';
+        if (!enabled) return;
+        if (!this._mql.matches) return;
+        if (!this.items || this.items.length < 2) return;
+
+        const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (reducedMotion) return;
+
+        // Only run when the section is actually visible to save battery.
+        if (!this._observer) {
+          this._observer = new IntersectionObserver((entries) => {
+            for (const entry of entries) {
+              this._isVisible = entry.isIntersecting;
+              if (this._isVisible && !this._isUserInteracting) {
+                this.startAutoplay();
+              } else {
+                this.stopAutoplay();
+              }
+            }
+          }, { threshold: 0.4 });
+          this._observer.observe(this);
+        } else if (this._isVisible) {
+          this.startAutoplay();
         }
+      }
+
+      startAutoplay() {
+        this.stopAutoplay();
+        const intervalSec = parseFloat(this.dataset.mobileAutoplayInterval || '4');
+        const intervalMs = Math.max(1500, intervalSec * 1000);
+        this._autoplayTimer = window.setInterval(() => this.advance(), intervalMs);
+      }
+
+      stopAutoplay() {
+        if (this._autoplayTimer) {
+          clearInterval(this._autoplayTimer);
+          this._autoplayTimer = null;
+        }
+      }
+
+      pauseAutoplayForInteraction = () => {
+        this._isUserInteracting = true;
+        this.stopAutoplay();
+        if (this._resumeTimer) clearTimeout(this._resumeTimer);
+        this._resumeTimer = window.setTimeout(() => {
+          this._isUserInteracting = false;
+          if (this._isVisible) this.setupAutoplay();
+        }, 6000);
+      };
+
+      advance() {
+        const container = this.container;
+        if (!container || !this.items || this.items.length === 0) return;
+
+        const itemWidth = this.items[0].getBoundingClientRect().width;
+        if (itemWidth === 0) return;
+
+        const styles = window.getComputedStyle(container.querySelector('.ai-propositions-inner-{{ ai_gen_id }}') || container);
+        const gap = parseFloat(styles.gap || styles.columnGap || '0') || 0;
+        const step = itemWidth + gap;
+
+        const maxScroll = container.scrollWidth - container.clientWidth;
+        let nextScroll = container.scrollLeft + step;
+        if (nextScroll > maxScroll - 4) nextScroll = 0;
+
+        this._isProgrammaticScroll = true;
+        container.scrollTo({ left: nextScroll, behavior: 'smooth' });
+        // Release the programmatic flag after the smooth scroll settles.
+        window.setTimeout(() => { this._isProgrammaticScroll = false; }, 700);
       }
     }
 
@@ -308,6 +424,27 @@
       "step": 5,
       "unit": "px",
       "default": 30
+    },
+    {
+      "type": "header",
+      "content": "Mobile autoplay"
+    },
+    {
+      "type": "checkbox",
+      "id": "mobile_autoplay",
+      "label": "Auto-scroll on mobile",
+      "info": "Automatically advances to the next proposition on phones. Pauses on touch and respects reduced-motion settings.",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "mobile_autoplay_interval",
+      "label": "Autoplay interval",
+      "min": 2,
+      "max": 10,
+      "step": 1,
+      "unit": "s",
+      "default": 4
     },
     {
       "type": "header",
