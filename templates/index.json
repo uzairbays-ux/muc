@@ -435,6 +435,196 @@
         "padding-block-end": 20
       }
     },
+    "brand_ticker_fdyAia": {
+      "type": "brand-ticker",
+      "blocks": {
+        "brand_LDVxF4": {
+          "type": "brand",
+          "settings": {
+            "label": "SHISEIDO",
+            "link": ""
+          }
+        },
+        "brand_ADeV97": {
+          "type": "brand",
+          "settings": {
+            "label": "HUDABEAUTY",
+            "link": ""
+          }
+        },
+        "brand_i7bnRU": {
+          "type": "brand",
+          "settings": {
+            "label": "medicube",
+            "link": ""
+          }
+        },
+        "brand_TPrGNM": {
+          "type": "brand",
+          "settings": {
+            "label": "COSRX",
+            "link": ""
+          }
+        },
+        "brand_mVPppQ": {
+          "type": "brand",
+          "settings": {
+            "label": "Dr. Althea",
+            "link": ""
+          }
+        },
+        "brand_F77bDH": {
+          "type": "brand",
+          "settings": {
+            "label": "Lattafa",
+            "link": ""
+          }
+        },
+        "brand_fTeW88": {
+          "type": "brand",
+          "settings": {
+            "label": "REVOLUTION",
+            "link": ""
+          }
+        },
+        "brand_Xz79Wt": {
+          "type": "brand",
+          "settings": {
+            "label": "AXIS-Y",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "brand_LDVxF4",
+        "brand_ADeV97",
+        "brand_i7bnRU",
+        "brand_TPrGNM",
+        "brand_mVPppQ",
+        "brand_F77bDH",
+        "brand_fTeW88",
+        "brand_Xz79Wt"
+      ],
+      "name": "Brand ticker",
+      "settings": {
+        "heading": "Certified By 500+ Brands",
+        "subheading": "Authorized Distributor of COSRX, AXIS-Y, Jumiso",
+        "heading_alignment": "center",
+        "scroll_speed": 40,
+        "direction": "left",
+        "pause_on_hover": true,
+        "logo_height": 40,
+        "gap": 48,
+        "section_width": "page-width",
+        "color_scheme": "",
+        "padding-block-start": 24,
+        "padding-block-end": 24
+      }
+    },
+    "card_grid_HA8C7w": {
+      "type": "card-grid",
+      "blocks": {
+        "card_DnJ9zV": {
+          "type": "card",
+          "settings": {
+            "link": "",
+            "open_new_tab": false
+          }
+        },
+        "card_L4QwKh": {
+          "type": "card",
+          "settings": {
+            "link": "",
+            "open_new_tab": false
+          }
+        },
+        "card_QQLjCx": {
+          "type": "card",
+          "settings": {
+            "link": "",
+            "open_new_tab": false
+          }
+        },
+        "card_p9kYBe": {
+          "type": "card",
+          "settings": {
+            "link": "",
+            "open_new_tab": false
+          }
+        }
+      },
+      "block_order": [
+        "card_DnJ9zV",
+        "card_L4QwKh",
+        "card_QQLjCx",
+        "card_p9kYBe"
+      ],
+      "name": "Card grid",
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "heading_alignment": "left",
+        "desktop_columns": "4",
+        "mobile_columns": "2",
+        "gap": 16,
+        "section_width": "page-width",
+        "color_scheme": "",
+        "padding-block-start": 24,
+        "padding-block-end": 24
+      }
+    },
+    "card_grid_tLffKU": {
+      "type": "card-grid",
+      "blocks": {
+        "card_NaiUMg": {
+          "type": "card",
+          "settings": {
+            "link": "",
+            "open_new_tab": false
+          }
+        },
+        "card_m4dJ4r": {
+          "type": "card",
+          "settings": {
+            "link": "",
+            "open_new_tab": false
+          }
+        },
+        "card_9H67GY": {
+          "type": "card",
+          "settings": {
+            "link": "",
+            "open_new_tab": false
+          }
+        },
+        "card_nXKGgJ": {
+          "type": "card",
+          "settings": {
+            "link": "",
+            "open_new_tab": false
+          }
+        }
+      },
+      "block_order": [
+        "card_NaiUMg",
+        "card_m4dJ4r",
+        "card_9H67GY",
+        "card_nXKGgJ"
+      ],
+      "name": "Card grid",
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "heading_alignment": "left",
+        "desktop_columns": "4",
+        "mobile_columns": "2",
+        "gap": 16,
+        "section_width": "page-width",
+        "color_scheme": "",
+        "padding-block-start": 24,
+        "padding-block-end": 24
+      }
+    },
     "product_list_CVJar6": {
       "type": "product-list",
       "blocks": {
@@ -678,144 +868,6 @@
         "padding-block-start": 20,
         "padding-block-end": 20
       }
-    },
-    "brand_ticker_fdyAia": {
-      "type": "brand-ticker",
-      "blocks": {
-        "brand_LDVxF4": {
-          "type": "brand",
-          "settings": {
-            "label": "SHISEIDO",
-            "link": ""
-          }
-        },
-        "brand_ADeV97": {
-          "type": "brand",
-          "settings": {
-            "label": "HUDABEAUTY",
-            "link": ""
-          }
-        },
-        "brand_i7bnRU": {
-          "type": "brand",
-          "settings": {
-            "label": "medicube",
-            "link": ""
-          }
-        },
-        "brand_TPrGNM": {
-          "type": "brand",
-          "settings": {
-            "label": "COSRX",
-            "link": ""
-          }
-        },
-        "brand_mVPppQ": {
-          "type": "brand",
-          "settings": {
-            "label": "Dr. Althea",
-            "link": ""
-          }
-        },
-        "brand_F77bDH": {
-          "type": "brand",
-          "settings": {
-            "label": "Lattafa",
-            "link": ""
-          }
-        },
-        "brand_fTeW88": {
-          "type": "brand",
-          "settings": {
-            "label": "REVOLUTION",
-            "link": ""
-          }
-        },
-        "brand_Xz79Wt": {
-          "type": "brand",
-          "settings": {
-            "label": "AXIS-Y",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "brand_LDVxF4",
-        "brand_ADeV97",
-        "brand_i7bnRU",
-        "brand_TPrGNM",
-        "brand_mVPppQ",
-        "brand_F77bDH",
-        "brand_fTeW88",
-        "brand_Xz79Wt"
-      ],
-      "name": "Brand ticker",
-      "settings": {
-        "heading": "Certified By 500+ Brands",
-        "subheading": "Authorized Distributor of COSRX, AXIS-Y, Jumiso",
-        "heading_alignment": "center",
-        "scroll_speed": 40,
-        "direction": "left",
-        "pause_on_hover": true,
-        "logo_height": 40,
-        "gap": 48,
-        "section_width": "page-width",
-        "color_scheme": "",
-        "padding-block-start": 24,
-        "padding-block-end": 24
-      }
-    },
-    "card_grid_HA8C7w": {
-      "type": "card-grid",
-      "blocks": {
-        "card_DnJ9zV": {
-          "type": "card",
-          "settings": {
-            "link": "",
-            "open_new_tab": false
-          }
-        },
-        "card_L4QwKh": {
-          "type": "card",
-          "settings": {
-            "link": "",
-            "open_new_tab": false
-          }
-        },
-        "card_QQLjCx": {
-          "type": "card",
-          "settings": {
-            "link": "",
-            "open_new_tab": false
-          }
-        },
-        "card_p9kYBe": {
-          "type": "card",
-          "settings": {
-            "link": "",
-            "open_new_tab": false
-          }
-        }
-      },
-      "block_order": [
-        "card_DnJ9zV",
-        "card_L4QwKh",
-        "card_QQLjCx",
-        "card_p9kYBe"
-      ],
-      "name": "Card grid",
-      "settings": {
-        "heading": "",
-        "subheading": "",
-        "heading_alignment": "left",
-        "desktop_columns": "4",
-        "mobile_columns": "2",
-        "gap": 16,
-        "section_width": "page-width",
-        "color_scheme": "",
-        "padding-block-start": 24,
-        "padding-block-end": 24
-      }
     }
   },
   "order": [
@@ -825,6 +877,7 @@
     "product_list_fa6P9H",
     "brand_ticker_fdyAia",
     "card_grid_HA8C7w",
-    "product_list_CVJar6"
+    "product_list_CVJar6",
+    "card_grid_tLffKU"
   ]
 }
