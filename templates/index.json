@@ -15,6 +15,7 @@
         "thumbnail_Qbx4az": {
           "type": "thumbnail",
           "settings": {
+            "image": "shopify://shop_images/thumb.png",
             "background_color": "#f1ecfb",
             "label": "Skincare",
             "link": ""
@@ -23,6 +24,7 @@
         "thumbnail_9mj9UL": {
           "type": "thumbnail",
           "settings": {
+            "image": "shopify://shop_images/thumb.png",
             "background_color": "#f1ecfb",
             "label": "Makeup",
             "link": ""
@@ -31,6 +33,7 @@
         "thumbnail_Jq84qh": {
           "type": "thumbnail",
           "settings": {
+            "image": "shopify://shop_images/thumb.png",
             "background_color": "#f1ecfb",
             "label": "Haircare",
             "link": ""
@@ -39,6 +42,7 @@
         "thumbnail_TA8KHE": {
           "type": "thumbnail",
           "settings": {
+            "image": "shopify://shop_images/thumb.png",
             "background_color": "#f1ecfb",
             "label": "K Beauty",
             "link": ""
@@ -47,6 +51,7 @@
         "thumbnail_h7Dj6p": {
           "type": "thumbnail",
           "settings": {
+            "image": "shopify://shop_images/thumb.png",
             "background_color": "#f1ecfb",
             "label": "Beauty Tools",
             "link": ""
@@ -55,6 +60,7 @@
         "thumbnail_gBqUph": {
           "type": "thumbnail",
           "settings": {
+            "image": "shopify://shop_images/thumb.png",
             "background_color": "#f1ecfb",
             "label": "Beauty Tools",
             "link": ""
@@ -63,6 +69,7 @@
         "thumbnail_qkgXkh": {
           "type": "thumbnail",
           "settings": {
+            "image": "shopify://shop_images/thumb.png",
             "background_color": "#f1ecfb",
             "label": "Beauty Tools",
             "link": ""
