@@ -510,6 +510,10 @@
         "heading": "Certified By 500+ Brands",
         "subheading": "Authorized Distributor of COSRX, AXIS-Y, Jumiso",
         "heading_alignment": "center",
+        "heading_size_desktop": 24,
+        "heading_size_mobile": 18,
+        "subheading_size_desktop": 14,
+        "subheading_size_mobile": 12,
         "scroll_speed": 40,
         "direction": "left",
         "pause_on_hover": true,
@@ -919,7 +923,8 @@
         "category_JmaNX9": {
           "type": "category",
           "settings": {
-            "label": "Lip Tints",
+            "image": "shopify://shop_images/k-product.avif",
+            "label": "",
             "link": "",
             "card_background": "#eef9ee"
           }
