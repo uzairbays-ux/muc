@@ -1,0 +1,472 @@
+{% liquid
+  assign s = section.settings
+  assign desktop_per_row = s.desktop_per_row | default: 8
+  assign mobile_per_row = s.mobile_per_row | default: '3.5'
+  assign gap = s.gap | default: 12
+  assign row_gap = s.row_gap | default: 12
+  assign bg_color = s.background_color | default: 'transparent'
+  assign show_arrows = s.show_arrows
+%}
+
+<div
+  class="section section--full-width spacing-style"
+  style="{% render 'spacing-style', settings: s %} background-color: {{ bg_color }};"
+  data-testid="category-grid-{{ section.id }}"
+>
+  {%- if s.heading != blank -%}
+    <div class="category-grid__header" style="text-align: {{ s.heading_alignment }};">
+      <h2 class="category-grid__heading h3">{{ s.heading }}</h2>
+      {%- if s.subheading != blank -%}
+        <p class="category-grid__subheading">{{ s.subheading }}</p>
+      {%- endif -%}
+    </div>
+  {%- endif -%}
+
+  <category-grid-slider
+    class="category-grid"
+    style="--cg-desktop-per-row: {{ desktop_per_row }}; --cg-mobile-per-row: {{ mobile_per_row }}; --cg-gap: {{ gap }}px; --cg-row-gap: {{ row_gap }}px;"
+  >
+    <div class="category-grid__viewport" ref="viewport">
+      <div class="category-grid__track" ref="track">
+        {%- for block in section.blocks -%}
+          {%- assign b = block.settings -%}
+          {%- assign card_bg = b.card_background | default: '#f5f0ff' -%}
+          <div class="category-grid__card" {{ block.shopify_attributes }}>
+            {%- if b.link != blank -%}
+              <a href="{{ b.link }}" class="category-grid__link">
+            {%- endif -%}
+              <div class="category-grid__image-wrapper" style="background-color: {{ card_bg }};">
+                {%- if b.image != blank -%}
+                  {{
+                    b.image
+                    | image_url: width: 400
+                    | image_tag:
+                      loading: 'lazy',
+                      widths: '200,300,400',
+                      sizes: '(max-width: 749px) 28vw, 12vw',
+                      class: 'category-grid__image',
+                      alt: b.image.alt | default: b.label | default: ''
+                  }}
+                {%- else -%}
+                  <div class="category-grid__placeholder">
+                    {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
+                  </div>
+                {%- endif -%}
+              </div>
+              {%- if b.label != blank -%}
+                <span class="category-grid__label">{{ b.label }}</span>
+              {%- endif -%}
+            {%- if b.link != blank -%}
+              </a>
+            {%- endif -%}
+          </div>
+        {%- else -%}
+          {%- for i in (1..16) -%}
+            <div class="category-grid__card">
+              <div class="category-grid__image-wrapper" style="background-color: #f5f0ff;">
+                <div class="category-grid__placeholder">
+                  {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
+                </div>
+              </div>
+              <span class="category-grid__label">Category {{ i }}</span>
+            </div>
+          {%- endfor -%}
+        {%- endfor -%}
+      </div>
+
+      {%- if show_arrows and section.blocks.size > 1 -%}
+        <button
+          type="button"
+          class="category-grid__arrow category-grid__arrow--prev button-unstyled"
+          aria-label="Scroll left"
+          ref="prev"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        </button>
+        <button
+          type="button"
+          class="category-grid__arrow category-grid__arrow--next button-unstyled"
+          aria-label="Scroll right"
+          ref="next"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </button>
+      {%- endif -%}
+    </div>
+  </category-grid-slider>
+</div>
+
+{% stylesheet %}
+  .category-grid__header {
+    margin-bottom: var(--gap-md, 16px);
+    padding-inline: var(--gap-md, 16px);
+  }
+
+  .category-grid__heading {
+    margin: 0;
+    font-family: var(--font-heading--family);
+    color: rgb(var(--color-foreground-heading));
+  }
+
+  .category-grid__subheading {
+    margin: var(--gap-2xs, 4px) 0 0;
+    color: rgb(var(--color-foreground));
+    opacity: 0.7;
+  }
+
+  .category-grid {
+    display: block;
+    position: relative;
+  }
+
+  .category-grid__viewport {
+    position: relative;
+  }
+
+  .category-grid__track {
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100% - (var(--cg-gap) * (var(--cg-desktop-per-row) - 1))) / var(--cg-desktop-per-row));
+    gap: var(--cg-row-gap) var(--cg-gap);
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding: 0 var(--gap-md, 16px);
+    scroll-padding-inline: var(--gap-md, 16px);
+  }
+
+  .category-grid__track::-webkit-scrollbar {
+    display: none;
+  }
+
+  @media screen and (max-width: 749px) {
+    .category-grid__track {
+      grid-auto-columns: calc((100% - (var(--cg-gap) * (var(--cg-mobile-per-row) - 1))) / var(--cg-mobile-per-row));
+    }
+  }
+
+  .category-grid__card {
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-width: 0;
+  }
+
+  .category-grid__link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    width: 100%;
+    transition: transform 200ms ease;
+  }
+
+  .category-grid__link:hover {
+    transform: translateY(-2px);
+  }
+
+  .category-grid__image-wrapper {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: var(--style-border-radius-card, 12px);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8%;
+  }
+
+  .category-grid__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .category-grid__placeholder {
+    width: 60%;
+    height: 60%;
+    opacity: 0.3;
+  }
+
+  .category-grid__placeholder .placeholder-svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .category-grid__label {
+    display: block;
+    margin-top: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.3;
+    color: rgb(var(--color-foreground));
+    word-wrap: break-word;
+    max-width: 100%;
+  }
+
+  @media screen and (max-width: 749px) {
+    .category-grid__label {
+      font-size: 11px;
+    }
+  }
+
+  /* Arrows --------------------------------------------------------------- */
+  .category-grid__arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #333;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 0.12);
+    backdrop-filter: blur(4px);
+    transition: opacity 200ms ease;
+    cursor: pointer;
+    border: none;
+    padding: 0;
+  }
+
+  .category-grid__arrow:hover {
+    background-color: #fff;
+  }
+
+  .category-grid__arrow--prev { left: 8px; }
+  .category-grid__arrow--next { right: 8px; }
+
+  .category-grid__arrow svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  @media screen and (max-width: 749px) {
+    .category-grid__arrow {
+      width: 30px;
+      height: 30px;
+    }
+    .category-grid__arrow svg { width: 14px; height: 14px; }
+    .category-grid__arrow--prev { left: 4px; }
+    .category-grid__arrow--next { right: 4px; }
+  }
+{% endstylesheet %}
+
+<script>
+  (function () {
+    if (customElements.get('category-grid-slider')) return;
+
+    class CategoryGridSlider extends HTMLElement {
+      connectedCallback() {
+        this.track = this.querySelector('[ref="track"]');
+        this.prevBtn = this.querySelector('[ref="prev"]');
+        this.nextBtn = this.querySelector('[ref="next"]');
+        if (!this.track) return;
+
+        if (this.prevBtn) this.prevBtn.addEventListener('click', () => this.scrollByCards(-1));
+        if (this.nextBtn) this.nextBtn.addEventListener('click', () => this.scrollByCards(1));
+      }
+
+      scrollByCards(direction) {
+        const card = this.track.querySelector('.category-grid__card');
+        if (!card) return;
+        const cardWidth = card.offsetWidth + parseFloat(getComputedStyle(this.track).columnGap || '0');
+        const scrollAmount = direction * cardWidth * 3;
+        this.track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      }
+    }
+
+    customElements.define('category-grid-slider', CategoryGridSlider);
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Category grid",
+  "tag": "section",
+  "class": "section-category-grid",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading"
+    },
+    {
+      "type": "select",
+      "id": "heading_alignment",
+      "label": "Heading alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "header",
+      "content": "Grid"
+    },
+    {
+      "type": "select",
+      "id": "desktop_per_row",
+      "label": "Desktop items per row",
+      "options": [
+        { "value": "6", "label": "6" },
+        { "value": "7", "label": "7" },
+        { "value": "8", "label": "8" },
+        { "value": "9", "label": "9" },
+        { "value": "10", "label": "10" }
+      ],
+      "default": "8"
+    },
+    {
+      "type": "select",
+      "id": "mobile_per_row",
+      "label": "Mobile items per row",
+      "options": [
+        { "value": "2.5", "label": "2.5" },
+        { "value": "3", "label": "3" },
+        { "value": "3.5", "label": "3.5" },
+        { "value": "4", "label": "4" }
+      ],
+      "default": "3.5"
+    },
+    {
+      "type": "range",
+      "id": "gap",
+      "label": "Column gap",
+      "min": 0,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "row_gap",
+      "label": "Row gap",
+      "min": 0,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "checkbox",
+      "id": "show_arrows",
+      "label": "Show arrows",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Appearance"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Section background color",
+      "default": "#f5e6ff"
+    },
+    {
+      "type": "header",
+      "content": "Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "Top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "Bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 24
+    }
+  ],
+  "blocks": [
+    {
+      "type": "category",
+      "name": "Category",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "Category"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        },
+        {
+          "type": "color",
+          "id": "card_background",
+          "label": "Card background",
+          "default": "#eef9ee"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 24,
+  "presets": [
+    {
+      "name": "Category grid",
+      "category": "Collections",
+      "blocks": [
+        { "type": "category", "settings": { "label": "Lip Tints" } },
+        { "type": "category", "settings": { "label": "Eyeshadow Palettes" } },
+        { "type": "category", "settings": { "label": "Lip Balms" } },
+        { "type": "category", "settings": { "label": "Foundations" } },
+        { "type": "category", "settings": { "label": "Under Eye Creams" } },
+        { "type": "category", "settings": { "label": "Moisturizers" } },
+        { "type": "category", "settings": { "label": "Kit & Combos" } },
+        { "type": "category", "settings": { "label": "Cleansers" } },
+        { "type": "category", "settings": { "label": "Lip Glosses" } },
+        { "type": "category", "settings": { "label": "Concealers" } },
+        { "type": "category", "settings": { "label": "Mascaras" } },
+        { "type": "category", "settings": { "label": "Toners" } },
+        { "type": "category", "settings": { "label": "Serums" } },
+        { "type": "category", "settings": { "label": "Sunscreens" } },
+        { "type": "category", "settings": { "label": "Masks" } },
+        { "type": "category", "settings": { "label": "Haircare" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
