@@ -867,6 +867,46 @@
         "padding-block-start": 24,
         "padding-block-end": 24
       }
+    },
+    "stacked_banners_QWcUpX": {
+      "type": "stacked-banners",
+      "blocks": {
+        "banner_nrAdDN": {
+          "type": "banner",
+          "settings": {
+            "desktop_image": "shopify://shop_images/k-banner-desktop.avif",
+            "mobile_image": "shopify://shop_images/k-banner-mobile.avif",
+            "link": "",
+            "open_new_tab": false
+          }
+        },
+        "banner_mMRm8q": {
+          "type": "banner",
+          "settings": {
+            "link": "",
+            "open_new_tab": false
+          }
+        },
+        "banner_Mqy4xa": {
+          "type": "banner",
+          "settings": {
+            "link": "",
+            "open_new_tab": false
+          }
+        }
+      },
+      "block_order": [
+        "banner_nrAdDN",
+        "banner_mMRm8q",
+        "banner_Mqy4xa"
+      ],
+      "name": "Stacked banners",
+      "settings": {
+        "gap": 0,
+        "color_scheme": "",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
     }
   },
   "order": [
@@ -877,6 +917,7 @@
     "brand_ticker_fdyAia",
     "card_grid_HA8C7w",
     "product_list_CVJar6",
-    "card_grid_tLffKU"
+    "card_grid_tLffKU",
+    "stacked_banners_QWcUpX"
   ]
 }
