@@ -128,9 +128,7 @@
           aria-label="{{ 'accessibility.slideshow_previous' | t }}"
           ref="prev"
         >
-          <span class="svg-wrapper icon-arrow flip-x">
-            {{- 'icon-arrow.svg' | inline_asset_content -}}
-          </span>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
         </button>
         <button
           type="button"
@@ -138,9 +136,7 @@
           aria-label="{{ 'accessibility.slideshow_next' | t }}"
           ref="next"
         >
-          <span class="svg-wrapper icon-arrow">
-            {{- 'icon-arrow.svg' | inline_asset_content -}}
-          </span>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
         </button>
       {%- endif -%}
     </div>
@@ -262,19 +258,9 @@
     right: var(--gap-md, 16px);
   }
 
-  .featured-banner__arrow .svg-wrapper {
-    display: inline-flex;
-    width: 18px;
-    height: 18px;
-  }
-
-  .featured-banner__arrow .svg-wrapper svg {
-    width: 100%;
-    height: 100%;
-  }
-
-  .featured-banner__arrow .flip-x {
-    transform: scaleX(-1);
+  .featured-banner__arrow svg {
+    width: 20px;
+    height: 20px;
   }
 
   @media screen and (max-width: 749px) {
