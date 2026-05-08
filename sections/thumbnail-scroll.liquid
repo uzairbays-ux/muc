@@ -1,0 +1,378 @@
+{% liquid
+  assign s = section.settings
+  assign desktop_per_view = s.desktop_per_view | default: 5
+  assign mobile_per_view = s.mobile_per_view | default: 3
+  assign gap = s.item_gap | default: 16
+  assign shape = s.image_shape | default: 'circle'
+  assign uid = section.id | replace: '_', '' | downcase
+%}
+
+<div class="section-background color-{{ s.color_scheme }}"></div>
+<div
+  class="section section--{{ s.section_width }} color-{{ s.color_scheme }} spacing-style"
+  style="{% render 'spacing-style', settings: s %}"
+  data-testid="thumbnail-scroll-{{ section.id }}"
+>
+  {%- if s.heading != blank -%}
+    <div class="thumbnail-scroll__header thumbnail-scroll__header--{{ s.heading_alignment }}">
+      <h2 class="thumbnail-scroll__heading h3">{{ s.heading | escape }}</h2>
+      {%- if s.subheading != blank -%}
+        <p class="thumbnail-scroll__subheading">{{ s.subheading | escape }}</p>
+      {%- endif -%}
+    </div>
+  {%- endif -%}
+
+  <div
+    class="thumbnail-scroll thumbnail-scroll--shape-{{ shape }}"
+    style="--ts-desktop-per-view: {{ desktop_per_view }}; --ts-mobile-per-view: {{ mobile_per_view }}; --ts-gap: {{ gap }}px;"
+    role="list"
+  >
+    {%- for block in section.blocks -%}
+      {%- assign b = block.settings -%}
+      {%- capture inner -%}
+        <div class="thumbnail-scroll__media" aria-hidden="{% if b.label == blank %}false{% else %}true{% endif %}">
+          {%- if b.background_color != blank -%}
+            <span class="thumbnail-scroll__media-bg" style="background-color: {{ b.background_color }};"></span>
+          {%- endif -%}
+          {%- if b.image != blank -%}
+            {{
+              b.image
+              | image_url: width: 600
+              | image_tag:
+                loading: 'lazy',
+                widths: '160,240,320,480,600',
+                sizes: '(max-width: 749px) 33vw, 20vw',
+                class: 'thumbnail-scroll__image',
+                alt: b.image.alt | default: b.label
+            }}
+          {%- else -%}
+            {{ 'product-' | append: forloop.index | placeholder_svg_tag: 'thumbnail-scroll__image thumbnail-scroll__image--placeholder' }}
+          {%- endif -%}
+        </div>
+        {%- if b.label != blank -%}
+          <span class="thumbnail-scroll__label">{{ b.label | escape }}</span>
+        {%- endif -%}
+      {%- endcapture -%}
+
+      <div class="thumbnail-scroll__item" role="listitem" {{ block.shopify_attributes }}>
+        {%- if b.link != blank -%}
+          <a href="{{ b.link }}" class="thumbnail-scroll__link">{{ inner }}</a>
+        {%- else -%}
+          <div class="thumbnail-scroll__link thumbnail-scroll__link--static">{{ inner }}</div>
+        {%- endif -%}
+      </div>
+    {%- else -%}
+      {%- for i in (1..5) -%}
+        <div class="thumbnail-scroll__item" role="listitem">
+          <div class="thumbnail-scroll__link thumbnail-scroll__link--static">
+            <div class="thumbnail-scroll__media">
+              {{ 'product-' | append: i | placeholder_svg_tag: 'thumbnail-scroll__image thumbnail-scroll__image--placeholder' }}
+            </div>
+            <span class="thumbnail-scroll__label">Category {{ i }}</span>
+          </div>
+        </div>
+      {%- endfor -%}
+    {%- endfor -%}
+  </div>
+</div>
+
+{% stylesheet %}
+  .thumbnail-scroll__header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-2xs);
+    margin-block-end: var(--gap-lg);
+  }
+
+  .thumbnail-scroll__header--center {
+    align-items: center;
+    text-align: center;
+  }
+
+  .thumbnail-scroll__header--right {
+    align-items: flex-end;
+    text-align: right;
+  }
+
+  .thumbnail-scroll__heading {
+    margin: 0;
+    color: rgb(var(--color-foreground-heading));
+  }
+
+  .thumbnail-scroll__subheading {
+    margin: 0;
+    color: rgb(var(--color-foreground));
+    opacity: 0.75;
+  }
+
+  .thumbnail-scroll {
+    display: flex;
+    gap: var(--ts-gap, var(--gap-md));
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-block: var(--gap-2xs);
+  }
+
+  .thumbnail-scroll::-webkit-scrollbar {
+    display: none;
+  }
+
+  .thumbnail-scroll__item {
+    flex: 0 0
+      calc(
+        (100% - (var(--ts-gap, var(--gap-md)) * (var(--ts-mobile-per-view) - 1))) /
+          var(--ts-mobile-per-view)
+      );
+    scroll-snap-align: start;
+  }
+
+  @media screen and (min-width: 750px) {
+    .thumbnail-scroll__item {
+      flex-basis: calc(
+        (100% - (var(--ts-gap, var(--gap-md)) * (var(--ts-desktop-per-view) - 1))) /
+          var(--ts-desktop-per-view)
+      );
+    }
+  }
+
+  .thumbnail-scroll__link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--gap-xs);
+    text-decoration: none;
+    color: inherit;
+    transition: opacity var(--animation-speed, 0.2s) ease;
+  }
+
+  .thumbnail-scroll__link:hover {
+    opacity: 0.85;
+  }
+
+  .thumbnail-scroll__link--static {
+    cursor: default;
+  }
+
+  .thumbnail-scroll__media {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    isolation: isolate;
+  }
+
+  .thumbnail-scroll--shape-circle .thumbnail-scroll__media {
+    border-radius: 50%;
+  }
+
+  .thumbnail-scroll--shape-rounded .thumbnail-scroll__media {
+    border-radius: var(--style-border-radius-section, 16px);
+  }
+
+  .thumbnail-scroll--shape-square .thumbnail-scroll__media {
+    border-radius: 0;
+  }
+
+  .thumbnail-scroll__media-bg {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+  }
+
+  .thumbnail-scroll__image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+
+  .thumbnail-scroll__image--placeholder {
+    background: rgb(var(--color-background) / 0.04);
+    object-fit: cover;
+  }
+
+  .thumbnail-scroll__label {
+    font-family: var(--font-subheading--family, inherit);
+    font-size: var(--font-paragraph--size, 1rem);
+    font-weight: 600;
+    color: rgb(var(--color-foreground-heading));
+    text-align: center;
+    line-height: 1.2;
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Thumbnail scroll",
+  "tag": "section",
+  "class": "section-thumbnail-scroll",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Shop by category"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading"
+    },
+    {
+      "type": "select",
+      "id": "heading_alignment",
+      "label": "Heading alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "desktop_per_view",
+      "label": "Items visible per view (desktop)",
+      "options": [
+        { "value": "3", "label": "3" },
+        { "value": "4", "label": "4" },
+        { "value": "5", "label": "5" },
+        { "value": "6", "label": "6" },
+        { "value": "7", "label": "7" },
+        { "value": "8", "label": "8" }
+      ],
+      "default": "5"
+    },
+    {
+      "type": "select",
+      "id": "mobile_per_view",
+      "label": "Items visible per view (mobile)",
+      "options": [
+        { "value": "2", "label": "2" },
+        { "value": "3", "label": "3" },
+        { "value": "4", "label": "4" }
+      ],
+      "default": "3"
+    },
+    {
+      "type": "range",
+      "id": "item_gap",
+      "label": "Gap between items",
+      "min": 0,
+      "max": 64,
+      "step": 2,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "select",
+      "id": "image_shape",
+      "label": "Image shape",
+      "options": [
+        { "value": "circle", "label": "Circle" },
+        { "value": "rounded", "label": "Rounded" },
+        { "value": "square", "label": "Square" }
+      ],
+      "default": "circle"
+    },
+    {
+      "type": "select",
+      "id": "section_width",
+      "label": "Section width",
+      "options": [
+        { "value": "page-width", "label": "Page" },
+        { "value": "full-width", "label": "Full" }
+      ],
+      "default": "page-width"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "Top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "Bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 40
+    }
+  ],
+  "blocks": [
+    {
+      "type": "thumbnail",
+      "name": "Thumbnail",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "color",
+          "id": "background_color",
+          "label": "Image background color",
+          "default": "#F1ECFB"
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "Category"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 16,
+  "presets": [
+    {
+      "name": "Thumbnail scroll",
+      "category": "Collections",
+      "blocks": [
+        { "type": "thumbnail", "settings": { "label": "Skincare" } },
+        { "type": "thumbnail", "settings": { "label": "Makeup" } },
+        { "type": "thumbnail", "settings": { "label": "Haircare" } },
+        { "type": "thumbnail", "settings": { "label": "K Beauty" } },
+        { "type": "thumbnail", "settings": { "label": "Beauty Tools" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
