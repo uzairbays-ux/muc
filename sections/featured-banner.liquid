@@ -51,6 +51,15 @@
             {%- assign mobile_ratio = b.desktop_image.width | append: ' / ' | append: b.desktop_image.height -%}
           {%- endif -%}
 
+          {%- liquid
+            if forloop.first
+              assign img_loading = 'eager'
+              assign img_priority = 'high'
+            else
+              assign img_loading = 'lazy'
+              assign img_priority = 'auto'
+            endif
+          -%}
           {%- capture slide_inner -%}
             {%- if b.desktop_image != blank -%}
               <picture>
@@ -67,8 +76,8 @@
                   b.desktop_image
                   | image_url: width: 2400
                   | image_tag:
-                    loading: forloop.first ? 'eager' : 'lazy',
-                    fetchpriority: forloop.first ? 'high' : 'auto',
+                    loading: img_loading,
+                    fetchpriority: img_priority,
                     widths: '750,1100,1500,1800,2200,2400',
                     sizes: '100vw',
                     class: 'featured-banner__image',

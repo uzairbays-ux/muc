@@ -263,3 +263,14 @@
 .baadmay-modal-container img{
   width: fit-content;
 }
+
+/* Rating adjustments */
+.rating-wrapper .rating-count,
+.rating-wrapper .rating-count-separator {
+  font-size: 12px;
+}
+
+.rating-wrapper,
+.rating {
+  margin-bottom: 5px;
+}
