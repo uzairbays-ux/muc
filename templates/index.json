@@ -883,6 +883,8 @@
         "banner_mMRm8q": {
           "type": "banner",
           "settings": {
+            "desktop_image": "shopify://shop_images/k-banner-gif.gif",
+            "mobile_image": "shopify://shop_images/k-banner-gif.gif",
             "link": "",
             "open_new_tab": false
           }
