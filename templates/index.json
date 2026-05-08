@@ -51,6 +51,22 @@
             "label": "Beauty Tools",
             "link": ""
           }
+        },
+        "thumbnail_gBqUph": {
+          "type": "thumbnail",
+          "settings": {
+            "background_color": "#f1ecfb",
+            "label": "Beauty Tools",
+            "link": ""
+          }
+        },
+        "thumbnail_qkgXkh": {
+          "type": "thumbnail",
+          "settings": {
+            "background_color": "#f1ecfb",
+            "label": "Beauty Tools",
+            "link": ""
+          }
         }
       },
       "block_order": [
@@ -58,7 +74,9 @@
         "thumbnail_9mj9UL",
         "thumbnail_Jq84qh",
         "thumbnail_TA8KHE",
-        "thumbnail_h7Dj6p"
+        "thumbnail_h7Dj6p",
+        "thumbnail_gBqUph",
+        "thumbnail_qkgXkh"
       ],
       "name": "Thumbnail scroll",
       "settings": {
@@ -69,7 +87,7 @@
         "mobile_per_view": "4.5",
         "item_gap": 10,
         "image_shape": "circle",
-        "label_font_size": 12,
+        "label_font_size": 10,
         "show_on_desktop": false,
         "section_width": "page-width",
         "color_scheme": "",
