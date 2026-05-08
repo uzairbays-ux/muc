@@ -62,7 +62,7 @@
       ],
       "name": "Thumbnail scroll",
       "settings": {
-        "heading": "Shop by category",
+        "heading": "",
         "subheading": "",
         "heading_alignment": "left",
         "desktop_per_view": "5",
