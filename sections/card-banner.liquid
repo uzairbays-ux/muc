@@ -136,14 +136,15 @@
     position: relative;
   }
 
-  .card-banner__track {
+    .card-banner__track {
     display: flex;
     gap: var(--cb-gap, 16px);
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
-    padding: 0;
+    padding: 0 var(--gap-md, 16px);
+    scroll-padding-inline: var(--gap-md, 16px);
   }
 
   .card-banner__track::-webkit-scrollbar {
