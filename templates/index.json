@@ -570,7 +570,7 @@
         "heading_alignment": "left",
         "desktop_columns": "4",
         "mobile_columns": "2",
-        "gap": 16,
+        "gap": 10,
         "section_width": "page-width",
         "color_scheme": "",
         "padding-block-start": 24,
