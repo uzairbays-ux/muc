@@ -1326,6 +1326,61 @@
         "padding-block-start": 24,
         "padding-block-end": 24
       }
+    },
+    "promo_grid_TkrmX4": {
+      "type": "promo-grid",
+      "blocks": {
+        "promo_card_fb4QEK": {
+          "type": "promo_card",
+          "settings": {
+            "heading": "Unbox the joy of giving",
+            "subheading": "Discover perfect gifts for every occasion",
+            "link": "",
+            "open_new_tab": false
+          }
+        },
+        "promo_card_iQr8Vi": {
+          "type": "promo_card",
+          "settings": {
+            "heading": "Elevate your style",
+            "subheading": "Explore the right tools for your daily routine",
+            "link": "",
+            "open_new_tab": false
+          }
+        },
+        "promo_card_bzeP9C": {
+          "type": "promo_card",
+          "settings": {
+            "heading": "Find your signature scent",
+            "subheading": "Premium fragrances for every mood",
+            "link": "",
+            "open_new_tab": false
+          }
+        },
+        "promo_card_bckUnf": {
+          "type": "promo_card",
+          "settings": {
+            "heading": "Korean Beauty Store",
+            "subheading": "Glow brighter with K-beauty picks",
+            "link": "",
+            "open_new_tab": false
+          }
+        }
+      },
+      "block_order": [
+        "promo_card_fb4QEK",
+        "promo_card_iQr8Vi",
+        "promo_card_bzeP9C",
+        "promo_card_bckUnf"
+      ],
+      "name": "Promo grid",
+      "settings": {
+        "section_width": "page-width",
+        "gap": 10,
+        "background_color": "",
+        "padding-block-start": 24,
+        "padding-block-end": 24
+      }
     }
   },
   "order": [
@@ -1340,6 +1395,7 @@
     "stacked_banners_QWcUpX",
     "category_grid_pGCQaP",
     "ad_banner_pjN7dA",
-    "category_grid_FAWJJj"
+    "category_grid_FAWJJj",
+    "promo_grid_TkrmX4"
   ]
 }
