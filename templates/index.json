@@ -144,7 +144,7 @@
               "type": "_product-list-text",
               "name": "t:names.collection_title",
               "settings": {
-                "text": "<h4>{{ closest.collection.title }}</h4>",
+                "text": "<h5>{{ closest.collection.title }}</h5>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
