@@ -185,7 +185,7 @@
         "autoplay": true,
         "autoplay_interval": 5,
         "show_arrows": true,
-        "show_dots": true,
+        "show_dots": false,
         "color_scheme": "scheme-1",
         "padding-block-start": 24,
         "padding-block-end": 24
@@ -827,6 +827,7 @@
         "card_NaiUMg": {
           "type": "card",
           "settings": {
+            "image": "shopify://shop_images/banner-1.png",
             "link": "",
             "open_new_tab": false
           }
@@ -834,6 +835,7 @@
         "card_m4dJ4r": {
           "type": "card",
           "settings": {
+            "image": "shopify://shop_images/banner-3_50d9fd4f-c1ee-4aba-8376-96c1b8849d74.png",
             "link": "",
             "open_new_tab": false
           }
@@ -841,13 +843,7 @@
         "card_9H67GY": {
           "type": "card",
           "settings": {
-            "link": "",
-            "open_new_tab": false
-          }
-        },
-        "card_nXKGgJ": {
-          "type": "card",
-          "settings": {
+            "image": "shopify://shop_images/banner-2.png",
             "link": "",
             "open_new_tab": false
           }
@@ -856,16 +852,15 @@
       "block_order": [
         "card_NaiUMg",
         "card_m4dJ4r",
-        "card_9H67GY",
-        "card_nXKGgJ"
+        "card_9H67GY"
       ],
       "name": "Card grid",
       "settings": {
         "heading": "",
         "subheading": "",
         "heading_alignment": "left",
-        "desktop_columns": "4",
-        "mobile_columns": "2",
+        "desktop_columns": "3",
+        "mobile_columns": "1",
         "gap": 16,
         "section_width": "page-width",
         "color_scheme": "",
