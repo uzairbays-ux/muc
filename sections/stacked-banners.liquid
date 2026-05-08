@@ -1,6 +1,7 @@
 {% liquid
   assign s = section.settings
   assign gap = s.gap | default: 0
+  assign bg_color = s.background_color | default: 'transparent'
 %}
 
 <div class="section-background color-{{ s.color_scheme }}"></div>
@@ -9,7 +10,7 @@
   style="{% render 'spacing-style', settings: s %}"
   data-testid="stacked-banners-{{ section.id }}"
 >
-  <div class="stacked-banners" style="--sb-gap: {{ gap }}px;">
+  <div class="stacked-banners" style="--sb-gap: {{ gap }}px; background-color: {{ bg_color }};">
     {%- for block in section.blocks -%}
       {%- assign b = block.settings -%}
       <div class="stacked-banners__item" {{ block.shopify_attributes }}>
@@ -133,6 +134,13 @@
       "step": 2,
       "unit": "px",
       "default": 0
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "info": "Visible in the gap between stacked images and behind the section.",
+      "default": "#ffffff"
     },
     {
       "type": "color_scheme",
