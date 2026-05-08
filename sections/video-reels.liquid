@@ -1,0 +1,509 @@
+{% liquid
+  assign s = section.settings
+  assign bg_color = s.background_color
+%}
+
+<div
+  class="section section--{{ s.section_width }} spacing-style"
+  style="{% render 'spacing-style', settings: s %}{% if bg_color != blank %} background-color: {{ bg_color }};{% endif %}"
+  data-testid="video-reels-{{ section.id }}"
+>
+  {%- if s.heading != blank -%}
+    <div class="video-reels__header" style="text-align: {{ s.heading_alignment }};">
+      <h2 class="video-reels__heading h3">{{ s.heading }}</h2>
+      {%- if s.subheading != blank -%}
+        <p class="video-reels__subheading">{{ s.subheading }}</p>
+      {%- endif -%}
+    </div>
+  {%- endif -%}
+
+  <video-reels-section class="video-reels">
+    <div class="video-reels__track">
+      {%- for block in section.blocks -%}
+        {%- assign b = block.settings -%}
+        <div class="video-reels__card" {{ block.shopify_attributes }}>
+          <div class="video-reels__video-wrapper" data-full-video="{{ b.full_video_url }}">
+            {%- if b.preview_video != blank -%}
+              <video
+                class="video-reels__preview"
+                src="{{ b.preview_video }}"
+                muted
+                loop
+                playsinline
+                preload="metadata"
+              ></video>
+            {%- elsif b.cover_image != blank -%}
+              {{
+                b.cover_image
+                | image_url: width: 600
+                | image_tag:
+                  loading: 'lazy',
+                  widths: '300,400,600',
+                  sizes: '(max-width: 749px) 40vw, 20vw',
+                  class: 'video-reels__cover',
+                  alt: b.cover_image.alt | default: ''
+              }}
+            {%- else -%}
+              <div class="video-reels__placeholder">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              </div>
+            {%- endif -%}
+
+            <button type="button" class="video-reels__play-btn" aria-label="Play video">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+            </button>
+          </div>
+
+          {%- if b.product != blank -%}
+            <a href="{{ b.product.url }}" class="video-reels__product">
+              {%- if b.product.featured_image != blank -%}
+                {{
+                  b.product.featured_image
+                  | image_url: width: 120
+                  | image_tag:
+                    loading: 'lazy',
+                    widths: '60,80,120',
+                    sizes: '40px',
+                    class: 'video-reels__product-image',
+                    alt: b.product.title
+                }}
+              {%- endif -%}
+              <span class="video-reels__product-title">{{ b.product.title | truncate: 30 }}</span>
+            </a>
+          {%- endif -%}
+        </div>
+      {%- else -%}
+        {%- for i in (1..6) -%}
+          <div class="video-reels__card">
+            <div class="video-reels__video-wrapper">
+              <div class="video-reels__placeholder">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              </div>
+              <button type="button" class="video-reels__play-btn" aria-label="Play video">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              </button>
+            </div>
+          </div>
+        {%- endfor -%}
+      {%- endfor -%}
+    </div>
+
+    <!-- Fullscreen popup modal -->
+    <div class="video-reels__modal" ref="modal" aria-hidden="true">
+      <div class="video-reels__modal-backdrop" ref="backdrop"></div>
+      <div class="video-reels__modal-content">
+        <video class="video-reels__modal-video" ref="modalVideo" controls playsinline></video>
+        <button type="button" class="video-reels__modal-close" ref="closeBtn" aria-label="Close video">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </video-reels-section>
+</div>
+
+{% stylesheet %}
+  .video-reels__header {
+    margin-bottom: var(--gap-md, 16px);
+    padding-inline: var(--gap-md, 16px);
+  }
+
+  .video-reels__heading {
+    margin: 0;
+    font-family: var(--font-heading--family);
+    color: rgb(var(--color-foreground-heading));
+  }
+
+  .video-reels__subheading {
+    margin: var(--gap-2xs, 4px) 0 0;
+    color: rgb(var(--color-foreground));
+    opacity: 0.7;
+  }
+
+  .video-reels {
+    display: block;
+    position: relative;
+  }
+
+  .video-reels__track {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding: 0 var(--gap-md, 16px);
+    scroll-padding-inline: var(--gap-md, 16px);
+  }
+
+  .video-reels__track::-webkit-scrollbar {
+    display: none;
+  }
+
+  .video-reels__card {
+    flex: 0 0 180px;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media screen and (max-width: 749px) {
+    .video-reels__card {
+      flex: 0 0 150px;
+    }
+  }
+
+  .video-reels__video-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    border-radius: var(--style-border-radius-card, 12px);
+    overflow: hidden;
+    background-color: #1a1a1a;
+    cursor: pointer;
+  }
+
+  .video-reels__preview,
+  .video-reels__cover {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .video-reels__placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #2a2a2a;
+  }
+
+  .video-reels__placeholder svg {
+    width: 32px;
+    height: 32px;
+    color: rgba(255, 255, 255, 0.4);
+  }
+
+  .video-reels__play-btn {
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 200ms ease;
+  }
+
+  .video-reels__play-btn svg {
+    width: 16px;
+    height: 16px;
+    color: #333;
+    margin-left: 2px;
+  }
+
+  .video-reels__video-wrapper:hover .video-reels__play-btn {
+    opacity: 1;
+  }
+
+  /* Product thumbnail */
+  .video-reels__product {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+    text-decoration: none;
+    color: rgb(var(--color-foreground));
+    padding: 6px 8px;
+    border-radius: 8px;
+    background-color: rgba(var(--color-foreground), 0.03);
+    transition: background-color 200ms ease;
+  }
+
+  .video-reels__product:hover {
+    background-color: rgba(var(--color-foreground), 0.07);
+  }
+
+  .video-reels__product-image {
+    width: 36px;
+    height: 36px;
+    border-radius: 6px;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+
+  .video-reels__product-title {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.3;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* Modal --------------------------------------------------------------- */
+  .video-reels__modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 300ms ease, visibility 300ms ease;
+  }
+
+  .video-reels__modal[aria-hidden="false"] {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .video-reels__modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.85);
+  }
+
+  .video-reels__modal-content {
+    position: relative;
+    max-width: 400px;
+    width: 90vw;
+    max-height: 90vh;
+    aspect-ratio: 9 / 16;
+    border-radius: 16px;
+    overflow: hidden;
+    background-color: #000;
+  }
+
+  .video-reels__modal-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .video-reels__modal-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.6);
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #fff;
+    z-index: 1;
+  }
+
+  .video-reels__modal-close svg {
+    width: 20px;
+    height: 20px;
+  }
+{% endstylesheet %}
+
+<script>
+  (function () {
+    if (customElements.get('video-reels-section')) return;
+
+    class VideoReelsSection extends HTMLElement {
+      connectedCallback() {
+        this.modal = this.querySelector('[ref="modal"]');
+        this.modalVideo = this.querySelector('[ref="modalVideo"]');
+        this.closeBtn = this.querySelector('[ref="closeBtn"]');
+        this.backdrop = this.querySelector('[ref="backdrop"]');
+
+        // Auto-play previews on intersection
+        this.previews = this.querySelectorAll('.video-reels__preview');
+        if (this.previews.length) {
+          this.observer = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  entry.target.play().catch(() => {});
+                } else {
+                  entry.target.pause();
+                }
+              });
+            },
+            { threshold: 0.3 }
+          );
+          this.previews.forEach((v) => this.observer.observe(v));
+        }
+
+        // Click to open modal
+        this.querySelectorAll('.video-reels__video-wrapper').forEach((wrapper) => {
+          wrapper.addEventListener('click', () => this.openModal(wrapper));
+        });
+
+        // Close handlers
+        if (this.closeBtn) this.closeBtn.addEventListener('click', () => this.closeModal());
+        if (this.backdrop) this.backdrop.addEventListener('click', () => this.closeModal());
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && this.modal.getAttribute('aria-hidden') === 'false') {
+            this.closeModal();
+          }
+        });
+      }
+
+      openModal(wrapper) {
+        const fullVideo = wrapper.dataset.fullVideo;
+        if (!fullVideo || !this.modalVideo || !this.modal) return;
+        this.modalVideo.src = fullVideo;
+        this.modalVideo.play().catch(() => {});
+        this.modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+
+      closeModal() {
+        if (!this.modal || !this.modalVideo) return;
+        this.modal.setAttribute('aria-hidden', 'true');
+        this.modalVideo.pause();
+        this.modalVideo.src = '';
+        document.body.style.overflow = '';
+      }
+
+      disconnectedCallback() {
+        if (this.observer) this.observer.disconnect();
+      }
+    }
+
+    customElements.define('video-reels-section', VideoReelsSection);
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Video reels",
+  "tag": "section",
+  "class": "section-video-reels",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Shop from Influencers"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading"
+    },
+    {
+      "type": "select",
+      "id": "heading_alignment",
+      "label": "Heading alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "section_width",
+      "label": "Section width",
+      "options": [
+        { "value": "page-width", "label": "Page" },
+        { "value": "full-width", "label": "Full" }
+      ],
+      "default": "full-width"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Section background color"
+    },
+    {
+      "type": "header",
+      "content": "Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "Top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "Bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 24
+    }
+  ],
+  "blocks": [
+    {
+      "type": "video_card",
+      "name": "Video",
+      "settings": [
+        {
+          "type": "text",
+          "id": "preview_video",
+          "label": "Preview video URL",
+          "info": "Short looping clip (2-3 seconds). Use direct .mp4 URL from Files."
+        },
+        {
+          "type": "image_picker",
+          "id": "cover_image",
+          "label": "Cover image",
+          "info": "Fallback poster if no preview video is set."
+        },
+        {
+          "type": "text",
+          "id": "full_video_url",
+          "label": "Full video URL",
+          "info": "Full video plays on click. Use direct .mp4 URL from Files."
+        },
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Associated product"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 20,
+  "presets": [
+    {
+      "name": "Video reels",
+      "category": "Video",
+      "blocks": [
+        { "type": "video_card" },
+        { "type": "video_card" },
+        { "type": "video_card" },
+        { "type": "video_card" },
+        { "type": "video_card" },
+        { "type": "video_card" }
+      ]
+    }
+  ]
+}
+{% endschema %}
