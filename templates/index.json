@@ -1104,158 +1104,18 @@
     "category_grid_FAWJJj": {
       "type": "category-grid",
       "blocks": {
-        "category_eYcWWx": {
-          "type": "category",
-          "settings": {
-            "image": "shopify://shop_images/k-product.avif",
-            "label": "",
-            "link": "",
-            "card_background": "#e3cef0"
-          }
-        },
-        "category_gHdy3i": {
-          "type": "category",
-          "settings": {
-            "image": "shopify://shop_images/k-product.avif",
-            "label": "",
-            "link": "",
-            "card_background": "#e3cef0"
-          }
-        },
-        "category_W4AwYY": {
-          "type": "category",
-          "settings": {
-            "image": "shopify://shop_images/k-product.avif",
-            "label": "",
-            "link": "",
-            "card_background": "#e3cef0"
-          }
-        },
-        "category_iJKfrP": {
-          "type": "category",
-          "settings": {
-            "image": "shopify://shop_images/k-product.avif",
-            "label": "",
-            "link": "",
-            "card_background": "#e3cef0"
-          }
-        },
-        "category_Ygr3Ec": {
-          "type": "category",
-          "settings": {
-            "image": "shopify://shop_images/k-product.avif",
-            "label": "",
-            "link": "",
-            "card_background": "#e3cef0"
-          }
-        },
-        "category_KqUrRP": {
-          "type": "category",
-          "settings": {
-            "image": "shopify://shop_images/k-product.avif",
-            "label": "",
-            "link": "",
-            "card_background": "#e3cef0"
-          }
-        },
-        "category_Ter9dt": {
-          "type": "category",
-          "settings": {
-            "image": "shopify://shop_images/k-product.avif",
-            "label": "",
-            "link": "",
-            "card_background": "#e3cef0"
-          }
-        },
-        "category_XnxFex": {
-          "type": "category",
-          "settings": {
-            "image": "shopify://shop_images/k-product.avif",
-            "label": "",
-            "link": "",
-            "card_background": "#e3cef0"
-          }
-        },
-        "category_inD8i7": {
-          "type": "category",
-          "settings": {
-            "image": "shopify://shop_images/k-product.avif",
-            "label": "",
-            "link": "",
-            "card_background": "#e3cef0"
-          }
-        },
-        "category_cdfpmp": {
-          "type": "category",
-          "settings": {
-            "image": "shopify://shop_images/k-product.avif",
-            "label": "",
-            "link": "",
-            "card_background": "#e3cef0"
-          }
-        },
-        "category_exk4h7": {
-          "type": "category",
-          "settings": {
-            "image": "shopify://shop_images/k-product.avif",
-            "label": "",
-            "link": "",
-            "card_background": "#e3cef0"
-          }
-        },
-        "category_EAHVaK": {
-          "type": "category",
-          "settings": {
-            "image": "shopify://shop_images/k-product.avif",
-            "label": "",
-            "link": "",
-            "card_background": "#e3cef0"
-          }
-        },
-        "category_WGbTDg": {
-          "type": "category",
-          "settings": {
-            "image": "shopify://shop_images/k-product.avif",
-            "label": "",
-            "link": "",
-            "card_background": "#e3cef0"
-          }
-        },
         "category_LzfMHw": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/k-product.avif",
-            "label": "",
-            "link": "",
-            "card_background": "#e3cef0"
-          }
-        },
-        "category_7UFUQK": {
-          "type": "category",
-          "settings": {
-            "image": "shopify://shop_images/k-product.avif",
-            "label": "",
+            "image": "shopify://shop_images/micellar_pink_800x800_6e40600e-6bba-44bf-885f-c95564e6d76f.jpg",
+            "label": "Sunscreen",
             "link": "",
             "card_background": "#e3cef0"
           }
         }
       },
       "block_order": [
-        "category_eYcWWx",
-        "category_gHdy3i",
-        "category_W4AwYY",
-        "category_iJKfrP",
-        "category_Ygr3Ec",
-        "category_KqUrRP",
-        "category_Ter9dt",
-        "category_XnxFex",
-        "category_inD8i7",
-        "category_cdfpmp",
-        "category_exk4h7",
-        "category_EAHVaK",
-        "category_WGbTDg",
-        "category_LzfMHw",
-        "category_7UFUQK"
+        "category_LzfMHw"
       ],
       "name": "Category grid",
       "settings": {
