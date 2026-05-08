@@ -138,7 +138,7 @@ class HeaderComponent extends Component {
 
     const scrollTop = document.scrollingElement?.scrollTop ?? 0;
     const headerTop = this.getBoundingClientRect().top;
-    const isScrollingUp = scrollTop < this.#lastScrollTop;
+    const scrollDelta = scrollTop - this.#lastScrollTop;
     const isAtTop = headerTop >= 0;
 
     if (this.#timeout) {
@@ -147,6 +147,7 @@ class HeaderComponent extends Component {
     }
 
     if (stickyMode === 'always') {
+      const isScrollingUp = scrollDelta < 0;
       if (isAtTop) {
         this.dataset.scrollDirection = 'none';
       } else if (isScrollingUp) {
@@ -158,6 +159,13 @@ class HeaderComponent extends Component {
       this.#lastScrollTop = scrollTop;
       return;
     }
+
+    // Deadzone: require at least 5px of scroll before switching direction.
+    // Prevents flicker from mobile scroll inertia / bounce micro-reversals.
+    const SCROLL_THRESHOLD = 5;
+    if (Math.abs(scrollDelta) < SCROLL_THRESHOLD && !isAtTop) return;
+
+    const isScrollingUp = scrollDelta < 0;
 
     if (isScrollingUp) {
       if (isAtTop) {
