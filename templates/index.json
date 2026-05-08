@@ -375,11 +375,83 @@
         "padding-block-start": 20,
         "padding-block-end": 20
       }
+    },
+    "card_banner_8zTGy8": {
+      "type": "card-banner",
+      "blocks": {
+        "card_LJWfzX": {
+          "type": "card",
+          "settings": {
+            "heading": "Card heading",
+            "paragraph": "Short description here",
+            "button_label": "Shop Now",
+            "button_link": "",
+            "open_new_tab": false
+          }
+        },
+        "card_xjmWpA": {
+          "type": "card",
+          "settings": {
+            "heading": "Card heading",
+            "paragraph": "Short description here",
+            "button_label": "Shop Now",
+            "button_link": "",
+            "open_new_tab": false
+          }
+        },
+        "card_k3DCXX": {
+          "type": "card",
+          "settings": {
+            "heading": "Card heading",
+            "paragraph": "Short description here",
+            "button_label": "Shop Now",
+            "button_link": "",
+            "open_new_tab": false
+          }
+        },
+        "card_yNMaKy": {
+          "type": "card",
+          "settings": {
+            "heading": "Card heading",
+            "paragraph": "Short description here",
+            "button_label": "Shop Now",
+            "button_link": "",
+            "open_new_tab": false
+          }
+        }
+      },
+      "block_order": [
+        "card_LJWfzX",
+        "card_xjmWpA",
+        "card_k3DCXX",
+        "card_yNMaKy"
+      ],
+      "name": "Card banner",
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "heading_alignment": "left",
+        "desktop_per_view": "2.5",
+        "mobile_per_view": "1.5",
+        "gap": 16,
+        "autoplay": true,
+        "autoplay_interval": 5,
+        "show_arrows": true,
+        "show_dots": true,
+        "heading_size": 18,
+        "paragraph_size": 14,
+        "button_style": "outline",
+        "section_width": "page-width",
+        "color_scheme": "",
+        "padding-block-start": 24,
+        "padding-block-end": 24
+      }
     }
   },
   "order": [
     "thumbnail_scroll_PbDt4b",
     "featured_banner_yeQJGh",
+    "card_banner_8zTGy8",
     "product_list_fa6P9H"
   ]
 }
