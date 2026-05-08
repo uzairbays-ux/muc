@@ -912,6 +912,171 @@
         "padding-block-start": 0,
         "padding-block-end": 0
       }
+    },
+    "category_grid_pGCQaP": {
+      "type": "category-grid",
+      "blocks": {
+        "category_JmaNX9": {
+          "type": "category",
+          "settings": {
+            "label": "Lip Tints",
+            "link": "",
+            "card_background": "#eef9ee"
+          }
+        },
+        "category_rVBUap": {
+          "type": "category",
+          "settings": {
+            "label": "Eyeshadow Palettes",
+            "link": "",
+            "card_background": "#eef9ee"
+          }
+        },
+        "category_TmHmfR": {
+          "type": "category",
+          "settings": {
+            "label": "Lip Balms",
+            "link": "",
+            "card_background": "#eef9ee"
+          }
+        },
+        "category_WBkttn": {
+          "type": "category",
+          "settings": {
+            "label": "Foundations",
+            "link": "",
+            "card_background": "#eef9ee"
+          }
+        },
+        "category_mneibi": {
+          "type": "category",
+          "settings": {
+            "label": "Under Eye Creams",
+            "link": "",
+            "card_background": "#eef9ee"
+          }
+        },
+        "category_RiwyGy": {
+          "type": "category",
+          "settings": {
+            "label": "Moisturizers",
+            "link": "",
+            "card_background": "#eef9ee"
+          }
+        },
+        "category_GttaxY": {
+          "type": "category",
+          "settings": {
+            "label": "Kit & Combos",
+            "link": "",
+            "card_background": "#eef9ee"
+          }
+        },
+        "category_JTb9Jk": {
+          "type": "category",
+          "settings": {
+            "label": "Cleansers",
+            "link": "",
+            "card_background": "#eef9ee"
+          }
+        },
+        "category_nwFwxc": {
+          "type": "category",
+          "settings": {
+            "label": "Lip Glosses",
+            "link": "",
+            "card_background": "#eef9ee"
+          }
+        },
+        "category_WBnHhC": {
+          "type": "category",
+          "settings": {
+            "label": "Concealers",
+            "link": "",
+            "card_background": "#eef9ee"
+          }
+        },
+        "category_T9tJXn": {
+          "type": "category",
+          "settings": {
+            "label": "Mascaras",
+            "link": "",
+            "card_background": "#eef9ee"
+          }
+        },
+        "category_7XkVyM": {
+          "type": "category",
+          "settings": {
+            "label": "Toners",
+            "link": "",
+            "card_background": "#eef9ee"
+          }
+        },
+        "category_qxVKUw": {
+          "type": "category",
+          "settings": {
+            "label": "Serums",
+            "link": "",
+            "card_background": "#eef9ee"
+          }
+        },
+        "category_6NPTjR": {
+          "type": "category",
+          "settings": {
+            "label": "Sunscreens",
+            "link": "",
+            "card_background": "#eef9ee"
+          }
+        },
+        "category_AJHNnK": {
+          "type": "category",
+          "settings": {
+            "label": "Masks",
+            "link": "",
+            "card_background": "#eef9ee"
+          }
+        },
+        "category_iFzx7e": {
+          "type": "category",
+          "settings": {
+            "label": "Haircare",
+            "link": "",
+            "card_background": "#eef9ee"
+          }
+        }
+      },
+      "block_order": [
+        "category_JmaNX9",
+        "category_rVBUap",
+        "category_TmHmfR",
+        "category_WBkttn",
+        "category_mneibi",
+        "category_RiwyGy",
+        "category_GttaxY",
+        "category_JTb9Jk",
+        "category_nwFwxc",
+        "category_WBnHhC",
+        "category_T9tJXn",
+        "category_7XkVyM",
+        "category_qxVKUw",
+        "category_6NPTjR",
+        "category_AJHNnK",
+        "category_iFzx7e"
+      ],
+      "name": "Category grid",
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "heading_alignment": "center",
+        "desktop_per_row": "6",
+        "mobile_per_row": "3.5",
+        "gap": 12,
+        "row_gap": 12,
+        "show_arrows": true,
+        "background_color": "#e3cef0",
+        "padding-block-start": 24,
+        "padding-block-end": 24
+      }
     }
   },
   "order": [
@@ -923,6 +1088,7 @@
     "card_grid_HA8C7w",
     "product_list_CVJar6",
     "card_grid_tLffKU",
-    "stacked_banners_QWcUpX"
+    "stacked_banners_QWcUpX",
+    "category_grid_pGCQaP"
   ]
 }
