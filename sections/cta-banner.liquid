@@ -1,0 +1,223 @@
+{% liquid
+  assign s = section.settings
+  assign heading_size_desktop = s.heading_size_desktop | default: 48
+  assign heading_size_mobile = s.heading_size_mobile | default: 24
+%}
+
+<div
+  class="section section--full-width spacing-style"
+  style="{% render 'spacing-style', settings: s %}"
+  data-testid="cta-banner-{{ section.id }}"
+>
+  <div class="cta-banner" style="--cta-heading-desktop: {{ heading_size_desktop }}px; --cta-heading-mobile: {{ heading_size_mobile }}px;">
+    {%- if s.background_image != blank -%}
+      {{
+        s.background_image
+        | image_url: width: 2400
+        | image_tag:
+          loading: 'lazy',
+          widths: '750,1200,1800,2400',
+          sizes: '100vw',
+          class: 'cta-banner__bg-image',
+          alt: ''
+      }}
+    {%- endif -%}
+
+    <div class="cta-banner__content">
+      {%- if s.heading != blank -%}
+        <h2 class="cta-banner__heading">{{ s.heading }}</h2>
+      {%- endif -%}
+
+      {%- if s.button_label != blank -%}
+        <a
+          href="{{ s.button_link }}"
+          class="cta-banner__button"
+          {% if s.open_new_tab %}target="_blank" rel="noopener"{% endif %}
+        >
+          {{ s.button_label }}
+        </a>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% stylesheet %}
+  .cta-banner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100px;
+    overflow: hidden;
+  }
+
+  .cta-banner__bg-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+
+  .cta-banner__content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    padding: 24px 32px;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .cta-banner__heading {
+    margin: 0;
+    font-family: var(--font-heading--family);
+    font-size: var(--cta-heading-desktop, 48px);
+    font-weight: 900;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    line-height: 1.1;
+    text-align: center;
+  }
+
+  .cta-banner__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 28px;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #333;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    transition: background-color 200ms ease, transform 200ms ease;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .cta-banner__button:hover {
+    background-color: #fff;
+    transform: scale(1.03);
+  }
+
+  @media screen and (max-width: 749px) {
+    .cta-banner__heading {
+      font-size: var(--cta-heading-mobile, 24px);
+    }
+
+    .cta-banner__content {
+      padding: 20px 16px;
+      gap: 16px;
+    }
+
+    .cta-banner__button {
+      padding: 10px 20px;
+      font-size: 13px;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "CTA banner",
+  "tag": "section",
+  "class": "section-cta-banner",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "CERTIFIED BY 250+ BRANDS"
+    },
+    {
+      "type": "range",
+      "id": "heading_size_desktop",
+      "label": "Heading size (desktop)",
+      "min": 24,
+      "max": 72,
+      "step": 2,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "heading_size_mobile",
+      "label": "Heading size (mobile)",
+      "min": 16,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "View More"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "checkbox",
+      "id": "open_new_tab",
+      "label": "Open link in new tab",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Background"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background image / pattern"
+    },
+    {
+      "type": "header",
+      "content": "Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "Top",
+      "min": 0,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "Bottom",
+      "min": 0,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    }
+  ],
+  "presets": [
+    {
+      "name": "CTA banner",
+      "category": "Banners"
+    }
+  ]
+}
+{% endschema %}
