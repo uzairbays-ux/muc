@@ -5,6 +5,7 @@
   assign gap = s.item_gap | default: 16
   assign shape = s.image_shape | default: 'circle'
   assign label_font_size = s.label_font_size | default: 16
+  assign mobile_edge_inset = s.mobile_edge_inset | default: 12
   assign show_on_desktop = s.show_on_desktop
   assign visibility_class = ''
   unless show_on_desktop
@@ -30,7 +31,7 @@
 
   <div
     class="thumbnail-scroll thumbnail-scroll--shape-{{ shape }}"
-    style="--ts-desktop-per-view: {{ desktop_per_view }}; --ts-mobile-per-view: {{ mobile_per_view }}; --ts-gap: {{ gap }}px; --ts-label-size: {{ label_font_size }}px;"
+    style="--ts-desktop-per-view: {{ desktop_per_view }}; --ts-mobile-per-view: {{ mobile_per_view }}; --ts-gap: {{ gap }}px; --ts-label-size: {{ label_font_size }}px; --ts-mobile-edge: {{ mobile_edge_inset }}px;"
     role="list"
   >
     {%- for block in section.blocks -%}
@@ -120,6 +121,15 @@
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
     padding-block: var(--gap-2xs);
+  }
+
+  /* Mobile-only edge gutters so the first thumbnail isn't flush to the screen edge,
+     and the last thumbnail can still scroll fully into view (matching right padding). */
+  @media screen and (max-width: 749px) {
+    .thumbnail-scroll {
+      padding-inline: var(--ts-mobile-edge, 12px);
+      scroll-padding-inline: var(--ts-mobile-edge, 12px);
+    }
   }
 
   .thumbnail-scroll::-webkit-scrollbar {
@@ -299,6 +309,17 @@
       "step": 2,
       "unit": "px",
       "default": 16
+    },
+    {
+      "type": "range",
+      "id": "mobile_edge_inset",
+      "label": "Mobile edge spacing",
+      "info": "Left & right inset on phones so the first/last thumbnail isn't flush to the screen edge. Applied to both sides so nothing gets hidden when scrolling.",
+      "min": 0,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "default": 12
     },
     {
       "type": "select",
