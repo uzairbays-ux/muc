@@ -273,7 +273,7 @@
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    border: 2px solid rgb(var(--color-foreground));
+    border: 2px solid #333;
     padding: 0;
     background-color: transparent;
     cursor: pointer;
@@ -281,11 +281,12 @@
   }
 
   .card-banner__dot:hover {
-    background-color: rgb(var(--color-foreground) / 0.4);
+    background-color: #999;
   }
 
   .card-banner__dot.is-active {
-    background-color: rgb(var(--color-foreground));
+    background-color: #333;
+    border-color: #333;
     transform: scale(1.15);
   }
 {% endstylesheet %}
