@@ -1085,6 +1085,7 @@
         "show_arrows": true,
         "image_padding": 0,
         "image_fit": "contain",
+        "card_ratio": "adapt",
         "background_color": "#e3cef0",
         "padding-block-start": 24,
         "padding-block-end": 24
@@ -1312,13 +1313,14 @@
         "heading": "",
         "subheading": "",
         "heading_alignment": "center",
-        "desktop_per_row": "10",
+        "desktop_per_row": "9",
         "mobile_per_row": "3.5",
         "gap": 10,
         "row_gap": 10,
         "show_arrows": true,
         "image_padding": 0,
         "image_fit": "contain",
+        "card_ratio": "adapt",
         "background_color": "rgba(0,0,0,0)",
         "padding-block-start": 24,
         "padding-block-end": 24
