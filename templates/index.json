@@ -139,10 +139,7 @@
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/sq-banner.png",
-            "heading": "",
-            "paragraph": "",
-            "button_label": "",
-            "button_link": "",
+            "link": "",
             "open_new_tab": false
           }
         },
@@ -150,10 +147,7 @@
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/sq-banner.png",
-            "heading": "",
-            "paragraph": "",
-            "button_label": "",
-            "button_link": "",
+            "link": "",
             "open_new_tab": false
           }
         },
@@ -161,10 +155,7 @@
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/sq-banner.png",
-            "heading": "",
-            "paragraph": "",
-            "button_label": "",
-            "button_link": "",
+            "link": "",
             "open_new_tab": false
           }
         },
@@ -172,10 +163,7 @@
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/sq-banner.png",
-            "heading": "",
-            "paragraph": "",
-            "button_label": "",
-            "button_link": "",
+            "link": "",
             "open_new_tab": false
           }
         }
@@ -191,17 +179,13 @@
         "heading": "",
         "subheading": "",
         "heading_alignment": "left",
-        "desktop_per_view": "2.5",
+        "desktop_per_view": "3.5",
         "mobile_per_view": "1.5",
         "gap": 16,
         "autoplay": true,
         "autoplay_interval": 5,
         "show_arrows": true,
         "show_dots": true,
-        "heading_size": 18,
-        "paragraph_size": 14,
-        "button_style": "outline",
-        "section_width": "page-width",
         "color_scheme": "",
         "padding-block-start": 24,
         "padding-block-end": 24
