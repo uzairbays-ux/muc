@@ -261,9 +261,9 @@
                 "label": "View all",
                 "open_in_new_tab": false,
                 "style_class": "link",
-                "width": "fit-content",
+                "width": "custom",
                 "custom_width": 100,
-                "width_mobile": "fit-content",
+                "width_mobile": "custom",
                 "custom_width_mobile": 100
               },
               "blocks": {}
