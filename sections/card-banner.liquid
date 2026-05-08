@@ -1,0 +1,760 @@
+{% liquid
+  assign s = section.settings
+  assign desktop_per_view = s.desktop_per_view | default: '2.5'
+  assign mobile_per_view = s.mobile_per_view | default: '1.5'
+  assign gap = s.gap | default: 16
+  assign autoplay = s.autoplay
+  assign autoplay_interval = s.autoplay_interval | default: 5
+  assign show_arrows = s.show_arrows
+  assign show_dots = s.show_dots
+  assign heading_size = s.heading_size | default: 18
+  assign paragraph_size = s.paragraph_size | default: 14
+  assign button_style = s.button_style | default: 'outline'
+  assign uid = section.id | replace: '_', '' | downcase
+%}
+
+<div class="section-background color-{{ s.color_scheme }}"></div>
+<div
+  class="section section--{{ s.section_width }} color-{{ s.color_scheme }} spacing-style"
+  style="{% render 'spacing-style', settings: s %}"
+  data-testid="card-banner-{{ section.id }}"
+>
+  {%- if s.heading != blank -%}
+    <div class="card-banner__header" style="text-align: {{ s.heading_alignment }};">
+      <h2 class="card-banner__heading h3">{{ s.heading }}</h2>
+      {%- if s.subheading != blank -%}
+        <p class="card-banner__subheading">{{ s.subheading }}</p>
+      {%- endif -%}
+    </div>
+  {%- endif -%}
+
+  <card-banner-slider
+    class="card-banner"
+    data-autoplay="{{ autoplay }}"
+    data-autoplay-interval="{{ autoplay_interval }}"
+    style="--cb-desktop-per-view: {{ desktop_per_view }}; --cb-mobile-per-view: {{ mobile_per_view }}; --cb-gap: {{ gap }}px; --cb-heading-size: {{ heading_size }}px; --cb-paragraph-size: {{ paragraph_size }}px;"
+  >
+    <div class="card-banner__viewport" ref="viewport">
+      <div class="card-banner__track" ref="track">
+        {%- for block in section.blocks -%}
+          {%- assign b = block.settings -%}
+          <div class="card-banner__card" data-index="{{ forloop.index0 }}" {{ block.shopify_attributes }}>
+            <div class="card-banner__image-wrapper">
+              {%- if b.image != blank -%}
+                {{
+                  b.image
+                  | image_url: width: 800
+                  | image_tag:
+                    loading: 'lazy',
+                    widths: '400,600,800',
+                    sizes: '(max-width: 749px) 70vw, 40vw',
+                    class: 'card-banner__image',
+                    alt: b.image.alt | default: b.heading | default: ''
+                }}
+              {%- else -%}
+                <div class="card-banner__placeholder">
+                  {{ 'collection-1' | placeholder_svg_tag: 'placeholder-svg' }}
+                </div>
+              {%- endif -%}
+            </div>
+            <div class="card-banner__content">
+              {%- if b.heading != blank -%}
+                <h3 class="card-banner__card-heading">{{ b.heading }}</h3>
+              {%- endif -%}
+              {%- if b.paragraph != blank -%}
+                <p class="card-banner__card-paragraph">{{ b.paragraph }}</p>
+              {%- endif -%}
+              {%- if b.button_label != blank -%}
+                <a
+                  href="{{ b.button_link | default: '#' }}"
+                  class="card-banner__cta card-banner__cta--{{ button_style }}"
+                  {% if b.open_new_tab %}target="_blank" rel="noopener"{% endif %}
+                >
+                  {{ b.button_label }}
+                  <span class="card-banner__cta-arrow" aria-hidden="true">&rarr;</span>
+                </a>
+              {%- endif -%}
+            </div>
+          </div>
+        {%- else -%}
+          {%- for i in (1..4) -%}
+            <div class="card-banner__card" data-index="{{ forloop.index0 }}">
+              <div class="card-banner__image-wrapper">
+                <div class="card-banner__placeholder">
+                  {{ 'collection-1' | placeholder_svg_tag: 'placeholder-svg' }}
+                </div>
+              </div>
+              <div class="card-banner__content">
+                <h3 class="card-banner__card-heading">Card heading</h3>
+                <p class="card-banner__card-paragraph">Short description here</p>
+                <a href="#" class="card-banner__cta card-banner__cta--{{ button_style }}">Shop Now <span class="card-banner__cta-arrow" aria-hidden="true">&rarr;</span></a>
+              </div>
+            </div>
+          {%- endfor -%}
+        {%- endfor -%}
+      </div>
+
+      {%- if show_arrows and section.blocks.size > 1 -%}
+        <button
+          type="button"
+          class="card-banner__arrow card-banner__arrow--prev button-unstyled button-unstyled--transparent"
+          aria-label="{{ 'accessibility.slideshow_previous' | t }}"
+          ref="prev"
+        >
+          <span class="svg-wrapper icon-arrow flip-x">
+            {{- 'icon-arrow.svg' | inline_asset_content -}}
+          </span>
+        </button>
+        <button
+          type="button"
+          class="card-banner__arrow card-banner__arrow--next button-unstyled button-unstyled--transparent"
+          aria-label="{{ 'accessibility.slideshow_next' | t }}"
+          ref="next"
+        >
+          <span class="svg-wrapper icon-arrow">
+            {{- 'icon-arrow.svg' | inline_asset_content -}}
+          </span>
+        </button>
+      {%- endif -%}
+    </div>
+
+    {%- if show_dots and section.blocks.size > 1 -%}
+      <div class="card-banner__dots" role="tablist" aria-label="Card navigation" ref="dots">
+        {%- for block in section.blocks -%}
+          <button
+            type="button"
+            class="card-banner__dot{% if forloop.first %} is-active{% endif %}"
+            role="tab"
+            aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"
+            aria-label="Go to card {{ forloop.index }}"
+            data-index="{{ forloop.index0 }}"
+          ></button>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </card-banner-slider>
+</div>
+
+{% stylesheet %}
+  .card-banner__header {
+    margin-bottom: var(--gap-md, 16px);
+  }
+
+  .card-banner__heading {
+    margin: 0;
+    font-family: var(--font-heading--family);
+    color: rgb(var(--color-foreground-heading));
+  }
+
+  .card-banner__subheading {
+    margin: var(--gap-2xs, 4px) 0 0;
+    color: rgb(var(--color-foreground));
+    opacity: 0.7;
+  }
+
+  .card-banner {
+    display: block;
+    position: relative;
+  }
+
+  .card-banner__viewport {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card-banner__track {
+    display: flex;
+    gap: var(--cb-gap, 16px);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-block: var(--gap-2xs, 4px);
+  }
+
+  .card-banner__track::-webkit-scrollbar {
+    display: none;
+  }
+
+  .card-banner__card {
+    flex: 0 0 calc((100% - (var(--cb-gap, 16px) * (var(--cb-desktop-per-view) - 1))) / var(--cb-desktop-per-view));
+    min-width: 0;
+    scroll-snap-align: start;
+  }
+
+  @media screen and (max-width: 749px) {
+    .card-banner__card {
+      flex: 0 0 calc((100% - (var(--cb-gap, 16px) * (var(--cb-mobile-per-view) - 1))) / var(--cb-mobile-per-view));
+    }
+  }
+
+  .card-banner__image-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-radius: var(--style-border-radius-card, 8px);
+  }
+
+  .card-banner__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .card-banner__placeholder {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(var(--color-foreground) / 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .card-banner__placeholder .placeholder-svg {
+    width: 60%;
+    height: 60%;
+    opacity: 0.3;
+  }
+
+  .card-banner__content {
+    padding: var(--gap-sm, 12px) 0;
+  }
+
+  .card-banner__card-heading {
+    margin: 0;
+    font-size: var(--cb-heading-size, 18px);
+    font-weight: 700;
+    font-family: var(--font-heading--family);
+    color: rgb(var(--color-foreground-heading));
+    line-height: 1.3;
+  }
+
+  .card-banner__card-paragraph {
+    margin: var(--gap-2xs, 4px) 0 0;
+    font-size: var(--cb-paragraph-size, 14px);
+    color: rgb(var(--color-foreground));
+    opacity: 0.75;
+    line-height: 1.4;
+  }
+
+  .card-banner__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: var(--gap-sm, 10px);
+    font-size: var(--cb-paragraph-size, 14px);
+    font-weight: 600;
+    text-decoration: none;
+    transition: opacity 200ms ease, background-color 200ms ease, color 200ms ease;
+    cursor: pointer;
+    line-height: 1;
+  }
+
+  .card-banner__cta--outline {
+    padding: 10px 20px;
+    border: 1.5px solid rgb(var(--color-foreground));
+    border-radius: 30px;
+    color: rgb(var(--color-foreground));
+    background: transparent;
+  }
+
+  .card-banner__cta--outline:hover {
+    background: rgb(var(--color-foreground));
+    color: rgb(var(--color-background));
+  }
+
+  .card-banner__cta--filled {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px;
+    color: rgb(var(--color-primary-button-text, 255 255 255));
+    background: rgb(var(--color-primary-button-background, 0 0 0));
+  }
+
+  .card-banner__cta--filled:hover {
+    opacity: 0.85;
+  }
+
+  .card-banner__cta--link {
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: rgb(var(--color-foreground));
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .card-banner__cta--link:hover {
+    opacity: 0.7;
+  }
+
+  .card-banner__cta-arrow {
+    font-size: 1.1em;
+  }
+
+  /* Arrows --------------------------------------------------------------- */
+  .card-banner__arrow {
+    position: absolute;
+    top: calc(50% - 40px);
+    transform: translateY(-50%);
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgb(var(--color-background) / 0.9);
+    color: rgb(var(--color-foreground));
+    box-shadow: 0 2px 8px rgb(0 0 0 / 0.12);
+    backdrop-filter: blur(4px);
+    transition: opacity 200ms ease, background-color 200ms ease;
+    cursor: pointer;
+  }
+
+  .card-banner__arrow:hover {
+    background-color: rgb(var(--color-background));
+  }
+
+  .card-banner__arrow--prev {
+    left: var(--gap-sm, 12px);
+  }
+
+  .card-banner__arrow--next {
+    right: var(--gap-sm, 12px);
+  }
+
+  .card-banner__arrow .svg-wrapper {
+    display: inline-flex;
+    width: 16px;
+    height: 16px;
+  }
+
+  .card-banner__arrow .svg-wrapper svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .card-banner__arrow .flip-x {
+    transform: scaleX(-1);
+  }
+
+  @media screen and (max-width: 749px) {
+    .card-banner__arrow {
+      width: 34px;
+      height: 34px;
+    }
+    .card-banner__arrow--prev { left: 6px; }
+    .card-banner__arrow--next { right: 6px; }
+  }
+
+  /* Dots ----------------------------------------------------------------- */
+  .card-banner__dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: var(--gap-sm, 12px);
+  }
+
+  .card-banner__dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: none;
+    padding: 0;
+    background-color: rgb(var(--color-foreground) / 0.25);
+    cursor: pointer;
+    transition: background-color 200ms ease, transform 200ms ease;
+  }
+
+  .card-banner__dot:hover {
+    background-color: rgb(var(--color-foreground) / 0.5);
+  }
+
+  .card-banner__dot.is-active {
+    background-color: rgb(var(--color-foreground));
+    transform: scale(1.25);
+  }
+{% endstylesheet %}
+
+<script>
+  (function () {
+    if (customElements.get('card-banner-slider')) return;
+
+    class CardBannerSlider extends HTMLElement {
+      constructor() {
+        super();
+        this._autoplayTimer = null;
+        this._resumeTimer = null;
+        this._isInteracting = false;
+        this._isVisible = false;
+      }
+
+      connectedCallback() {
+        this.viewport = this.querySelector('[ref="viewport"]');
+        this.track = this.querySelector('[ref="track"]');
+        this.cards = Array.from(this.querySelectorAll('.card-banner__card'));
+        this.prevBtn = this.querySelector('[ref="prev"]');
+        this.nextBtn = this.querySelector('[ref="next"]');
+        this.dots = Array.from(this.querySelectorAll('.card-banner__dot'));
+        this._reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        if (!this.track || this.cards.length === 0) return;
+
+        this.bindEvents();
+        this.updateDots();
+        this.setupAutoplay();
+      }
+
+      disconnectedCallback() {
+        this.stopAutoplay();
+        if (this._observer) this._observer.disconnect();
+      }
+
+      bindEvents() {
+        if (this.prevBtn) this.prevBtn.addEventListener('click', () => { this.scrollBy(-1); this.pauseForInteraction(); });
+        if (this.nextBtn) this.nextBtn.addEventListener('click', () => { this.scrollBy(1); this.pauseForInteraction(); });
+
+        this.dots.forEach((dot) => {
+          dot.addEventListener('click', () => {
+            const i = parseInt(dot.dataset.index || '0', 10);
+            this.scrollToCard(i);
+            this.pauseForInteraction();
+          });
+        });
+
+        this.track.addEventListener('scroll', () => {
+          this.updateDots();
+        }, { passive: true });
+
+        // Pause autoplay on interaction
+        this.addEventListener('pointerenter', () => this.pauseForInteraction());
+        this.addEventListener('pointerleave', () => this.resumeAfterDelay(1500));
+        this.addEventListener('touchstart', () => this.pauseForInteraction(), { passive: true });
+      }
+
+      getCardWidth() {
+        if (this.cards.length < 2) return this.cards[0].offsetWidth;
+        return this.cards[1].offsetLeft - this.cards[0].offsetLeft;
+      }
+
+      scrollBy(direction) {
+        const cardWidth = this.getCardWidth();
+        this.track.scrollBy({ left: direction * cardWidth, behavior: 'smooth' });
+      }
+
+      scrollToCard(index) {
+        const cardWidth = this.getCardWidth();
+        this.track.scrollTo({ left: index * cardWidth, behavior: 'smooth' });
+      }
+
+      getActiveIndex() {
+        const scrollLeft = this.track.scrollLeft;
+        const cardWidth = this.getCardWidth();
+        return Math.round(scrollLeft / cardWidth);
+      }
+
+      updateDots() {
+        const active = this.getActiveIndex();
+        this.dots.forEach((dot, idx) => {
+          const isActive = idx === active;
+          dot.classList.toggle('is-active', isActive);
+          dot.setAttribute('aria-selected', isActive ? 'true' : 'false');
+        });
+      }
+
+      setupAutoplay() {
+        const enabled = this.dataset.autoplay === 'true';
+        if (!enabled || this.cards.length < 2 || this._reduceMotion) return;
+
+        this._observer = new IntersectionObserver((entries) => {
+          for (const entry of entries) {
+            this._isVisible = entry.isIntersecting;
+            if (this._isVisible && !this._isInteracting) this.startAutoplay();
+            else this.stopAutoplay();
+          }
+        }, { threshold: 0.3 });
+        this._observer.observe(this);
+      }
+
+      startAutoplay() {
+        this.stopAutoplay();
+        const ms = Math.max(2000, parseFloat(this.dataset.autoplayInterval || '5') * 1000);
+        this._autoplayTimer = setInterval(() => {
+          const maxScroll = this.track.scrollWidth - this.track.clientWidth;
+          if (this.track.scrollLeft >= maxScroll - 5) {
+            this.track.scrollTo({ left: 0, behavior: 'smooth' });
+          } else {
+            this.scrollBy(1);
+          }
+        }, ms);
+      }
+
+      stopAutoplay() {
+        if (this._autoplayTimer) { clearInterval(this._autoplayTimer); this._autoplayTimer = null; }
+      }
+
+      pauseForInteraction() {
+        this._isInteracting = true;
+        this.stopAutoplay();
+        if (this._resumeTimer) clearTimeout(this._resumeTimer);
+        this._resumeTimer = setTimeout(() => {
+          this._isInteracting = false;
+          if (this._isVisible) this.startAutoplay();
+        }, 6000);
+      }
+
+      resumeAfterDelay(ms) {
+        if (this._resumeTimer) clearTimeout(this._resumeTimer);
+        this._resumeTimer = setTimeout(() => {
+          this._isInteracting = false;
+          if (this._isVisible) this.startAutoplay();
+        }, ms);
+      }
+    }
+
+    customElements.define('card-banner-slider', CardBannerSlider);
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Card banner",
+  "tag": "section",
+  "class": "section-card-banner",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading"
+    },
+    {
+      "type": "select",
+      "id": "heading_alignment",
+      "label": "Heading alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "header",
+      "content": "Carousel"
+    },
+    {
+      "type": "select",
+      "id": "desktop_per_view",
+      "label": "Desktop cards visible",
+      "options": [
+        { "value": "2", "label": "2" },
+        { "value": "2.5", "label": "2.5" },
+        { "value": "3", "label": "3" },
+        { "value": "3.5", "label": "3.5" },
+        { "value": "4", "label": "4" }
+      ],
+      "default": "2.5"
+    },
+    {
+      "type": "select",
+      "id": "mobile_per_view",
+      "label": "Mobile cards visible",
+      "options": [
+        { "value": "1", "label": "1" },
+        { "value": "1.2", "label": "1.2" },
+        { "value": "1.5", "label": "1.5" },
+        { "value": "2", "label": "2" }
+      ],
+      "default": "1.5"
+    },
+    {
+      "type": "range",
+      "id": "gap",
+      "label": "Gap between cards",
+      "min": 0,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "label": "Auto-advance",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "autoplay_interval",
+      "label": "Autoplay interval",
+      "min": 3,
+      "max": 12,
+      "step": 1,
+      "unit": "s",
+      "default": 5
+    },
+    {
+      "type": "checkbox",
+      "id": "show_arrows",
+      "label": "Show arrows",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_dots",
+      "label": "Show dot indicators",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Card heading size",
+      "min": 12,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "paragraph_size",
+      "label": "Card paragraph size",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "select",
+      "id": "button_style",
+      "label": "Button style",
+      "options": [
+        { "value": "outline", "label": "Outline" },
+        { "value": "filled", "label": "Filled" },
+        { "value": "link", "label": "Link" }
+      ],
+      "default": "outline"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "section_width",
+      "label": "Section width",
+      "options": [
+        { "value": "page-width", "label": "Page" },
+        { "value": "full-width", "label": "Full" }
+      ],
+      "default": "page-width"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "Top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "Bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 24
+    }
+  ],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Card",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "Square recommended. Displayed at 1:1 aspect ratio."
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Card heading"
+        },
+        {
+          "type": "textarea",
+          "id": "paragraph",
+          "label": "Paragraph",
+          "default": "Short description here"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button label",
+          "default": "Shop Now"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button link"
+        },
+        {
+          "type": "checkbox",
+          "id": "open_new_tab",
+          "label": "Open link in new tab",
+          "default": false
+        }
+      ]
+    }
+  ],
+  "max_blocks": 12,
+  "presets": [
+    {
+      "name": "Card banner",
+      "category": "Banners",
+      "blocks": [
+        { "type": "card" },
+        { "type": "card" },
+        { "type": "card" },
+        { "type": "card" }
+      ]
+    }
+  ]
+}
+{% endschema %}
