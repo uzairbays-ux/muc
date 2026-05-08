@@ -99,8 +99,8 @@
         "show_on_desktop": false,
         "section_width": "page-width",
         "color_scheme": "",
-        "padding-block-start": 20,
-        "padding-block-end": 0
+        "padding-block-start": 10,
+        "padding-block-end": 10
       }
     },
     "featured_banner_yeQJGh": {
