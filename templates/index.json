@@ -67,12 +67,12 @@
         "heading_alignment": "left",
         "desktop_per_view": "5",
         "mobile_per_view": "4",
-        "item_gap": 16,
+        "item_gap": 10,
         "image_shape": "circle",
         "section_width": "page-width",
         "color_scheme": "",
         "padding-block-start": 40,
-        "padding-block-end": 40
+        "padding-block-end": 0
       }
     },
     "product_list_fa6P9H": {
@@ -116,7 +116,7 @@
               "type": "_product-list-text",
               "name": "t:names.collection_title",
               "settings": {
-                "text": "<h3>{{ closest.collection.title }}</h3>",
+                "text": "<h4>{{ closest.collection.title }}</h4>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -251,7 +251,7 @@
                 "show_number": true,
                 "rating_color": "primary",
                 "type_preset": "paragraph",
-                "width": "fit-content",
+                "width": "100%",
                 "alignment": "left"
               },
               "blocks": {}
