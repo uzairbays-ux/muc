@@ -1,0 +1,354 @@
+{% comment %}
+  Promotional Slider Section
+  High-performance slider with lazy loading and smooth animations
+{% endcomment %}
+
+{{ 'promo-slider.css' | asset_url | stylesheet_tag }}
+
+<div class="promo-slider-wrapper" data-section-id="{{ section.id }}">
+  <div class="promo-slider">
+    <button class="slider-nav slider-nav--prev" aria-label="Previous slide">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M15 18l-6-6 6-6"/>
+      </svg>
+    </button>
+
+    <div class="slider-track">
+      {% for block in section.blocks %}
+        <div class="slider-slide{% if forloop.first %} active{% endif %}" data-slide-index="{{ forloop.index0 }}" {{ block.shopify_attributes }}>
+          {% if block.settings.slide_link != blank %}
+            <a href="{{ block.settings.slide_link }}" class="slide-link">
+          {% endif %}
+          
+          {% if block.settings.image != blank %}
+            <div class="slide-image">
+              <img
+                src="{{ block.settings.image | img_url: '10x10' }}"
+                data-src="{{ block.settings.image | img_url: '1600x' }}"
+                data-srcset="{{ block.settings.image | img_url: '800x' }} 800w,
+                            {{ block.settings.image | img_url: '1200x' }} 1200w,
+                            {{ block.settings.image | img_url: '1600x' }} 1600w"
+                alt="{{ block.settings.image.alt | escape }}"
+                width="{{ block.settings.image.width }}"
+                height="{{ block.settings.image.height }}"
+                loading="lazy"
+                class="lazy-image desktop-image{% if forloop.first %} loaded{% endif %}"
+              >
+              {% if block.settings.mobile_image != blank %}
+                <img
+                  src="{{ block.settings.mobile_image | img_url: '10x10' }}"
+                  data-src="{{ block.settings.mobile_image | img_url: '800x' }}"
+                  data-srcset="{{ block.settings.mobile_image | img_url: '400x' }} 400w,
+                              {{ block.settings.mobile_image | img_url: '600x' }} 600w,
+                              {{ block.settings.mobile_image | img_url: '800x' }} 800w"
+                  alt="{{ block.settings.mobile_image.alt | escape }}"
+                  width="{{ block.settings.mobile_image.width }}"
+                  height="{{ block.settings.mobile_image.height }}"
+                  loading="lazy"
+                  class="lazy-image mobile-image{% if forloop.first %} loaded{% endif %}"
+                >
+              {% endif %}
+            </div>
+          {% endif %}
+          
+          {% if block.settings.slide_link != blank %}
+            </a>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+
+    <button class="slider-nav slider-nav--next" aria-label="Next slide">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M9 18l6-6-6-6"/>
+      </svg>
+    </button>
+  </div>
+
+  {% if section.settings.show_dots %}
+    <div class="slider-dots">
+      {% for block in section.blocks %}
+        <button class="slider-dot{% if forloop.first %} active{% endif %}" 
+                data-slide="{{ forloop.index0 }}" 
+                aria-label="Go to slide {{ forloop.index }}">
+        </button>
+      {% endfor %}
+    </div>
+  {% endif %}
+</div>
+
+<script>
+  class PromoSlider {
+    constructor(wrapper) {
+      this.wrapper = wrapper;
+      this.track = wrapper.querySelector('.slider-track');
+      this.slides = wrapper.querySelectorAll('.slider-slide');
+      this.dots = wrapper.querySelectorAll('.slider-dot');
+      this.prevBtn = wrapper.querySelector('.slider-nav--prev');
+      this.nextBtn = wrapper.querySelector('.slider-nav--next');
+      this.currentIndex = 0;
+      this.isAnimating = false;
+      this.autoplayInterval = null;
+      this.touchStartX = 0;
+      this.touchEndX = 0;
+      
+      this.init();
+    }
+
+    init() {
+      this.setupEventListeners();
+      this.loadFirstSlideImage();
+      this.lazyLoadImages();
+      if ({{ section.settings.autoplay | json }}) {
+        this.startAutoplay();
+      }
+      this.preloadNextSlide();
+    }
+
+    loadFirstSlideImage() {
+      const firstSlide = this.slides[0];
+      const images = firstSlide.querySelectorAll('.lazy-image');
+      images.forEach(img => {
+        if (img.dataset.src) {
+          img.src = img.dataset.src;
+          if (img.dataset.srcset) {
+            img.srcset = img.dataset.srcset;
+          }
+          img.classList.add('loaded');
+        }
+      });
+    }
+
+    setupEventListeners() {
+      this.prevBtn?.addEventListener('click', () => this.previousSlide());
+      this.nextBtn?.addEventListener('click', () => this.nextSlide());
+      
+      this.dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => this.goToSlide(index));
+      });
+
+      // Touch events for mobile swipe
+      this.track.addEventListener('touchstart', (e) => {
+        this.touchStartX = e.changedTouches[0].screenX;
+      }, { passive: true });
+
+      this.track.addEventListener('touchend', (e) => {
+        this.touchEndX = e.changedTouches[0].screenX;
+        this.handleSwipe();
+      }, { passive: true });
+
+      // Pause autoplay on hover
+      this.wrapper.addEventListener('mouseenter', () => this.pauseAutoplay());
+      this.wrapper.addEventListener('mouseleave', () => {
+        if ({{ section.settings.autoplay | json }}) {
+          this.startAutoplay();
+        }
+      });
+
+      // Keyboard navigation
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') this.previousSlide();
+        if (e.key === 'ArrowRight') this.nextSlide();
+      });
+    }
+
+    handleSwipe() {
+      const swipeThreshold = 50;
+      const diff = this.touchStartX - this.touchEndX;
+      
+      if (Math.abs(diff) > swipeThreshold) {
+        if (diff > 0) {
+          this.nextSlide();
+        } else {
+          this.previousSlide();
+        }
+      }
+    }
+
+    goToSlide(index) {
+      if (this.isAnimating || index === this.currentIndex) return;
+      
+      this.isAnimating = true;
+      
+      // Remove active classes
+      this.slides[this.currentIndex].classList.remove('active');
+      this.dots[this.currentIndex]?.classList.remove('active');
+      
+      // Update index
+      this.currentIndex = index;
+      
+      // Add active classes
+      this.slides[this.currentIndex].classList.add('active');
+      this.dots[this.currentIndex]?.classList.add('active');
+      
+      // Transform the track
+      const translateX = -this.currentIndex * 100;
+      this.track.style.transform = `translateX(${translateX}%)`;
+      
+      // Reset animation flag
+      setTimeout(() => {
+        this.isAnimating = false;
+        this.preloadNextSlide();
+      }, 600);
+      
+      // Restart animations on new slide
+      this.restartAnimations();
+    }
+
+    nextSlide() {
+      const nextIndex = (this.currentIndex + 1) % this.slides.length;
+      this.goToSlide(nextIndex);
+    }
+
+    previousSlide() {
+      const prevIndex = (this.currentIndex - 1 + this.slides.length) % this.slides.length;
+      this.goToSlide(prevIndex);
+    }
+
+    startAutoplay() {
+      this.pauseAutoplay();
+      const delay = {{ section.settings.autoplay_speed | default: 5000 }};
+      this.autoplayInterval = setInterval(() => this.nextSlide(), delay);
+    }
+
+    pauseAutoplay() {
+      if (this.autoplayInterval) {
+        clearInterval(this.autoplayInterval);
+        this.autoplayInterval = null;
+      }
+    }
+
+    lazyLoadImages() {
+      const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const img = entry.target;
+            if (img.dataset.src) {
+              img.src = img.dataset.src;
+              if (img.dataset.srcset) {
+                img.srcset = img.dataset.srcset;
+              }
+              img.classList.add('loaded');
+              observer.unobserve(img);
+            }
+          }
+        });
+      }, {
+        rootMargin: '50px'
+      });
+
+      this.wrapper.querySelectorAll('.lazy-image').forEach(img => {
+        imageObserver.observe(img);
+      });
+    }
+
+    preloadNextSlide() {
+      const nextIndex = (this.currentIndex + 1) % this.slides.length;
+      const nextSlide = this.slides[nextIndex];
+      const img = nextSlide.querySelector('.lazy-image');
+      
+      if (img && img.dataset.src) {
+        img.src = img.dataset.src;
+        if (img.dataset.srcset) {
+          img.srcset = img.dataset.srcset;
+        }
+      }
+    }
+
+    restartAnimations() {
+      const activeSlide = this.slides[this.currentIndex];
+      const animatedElements = activeSlide.querySelectorAll('.animate-in');
+      
+      animatedElements.forEach(el => {
+        el.classList.remove('animate-in');
+        void el.offsetWidth; // Force reflow
+        el.classList.add('animate-in');
+      });
+    }
+  }
+
+  // Initialize all sliders
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.promo-slider-wrapper').forEach(wrapper => {
+      new PromoSlider(wrapper);
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Promo Slider",
+  "tag": "section",
+  "class": "section-promo-slider",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "label": "Auto-rotate slides",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "autoplay_speed",
+      "min": 3000,
+      "max": 9000,
+      "step": 1000,
+      "unit": "ms",
+      "label": "Autoplay speed",
+      "default": 5000
+    },
+    {
+      "type": "checkbox",
+      "id": "show_dots",
+      "label": "Show slide indicators",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#FFF275"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Slide",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Desktop image"
+        },
+        {
+          "type": "image_picker",
+          "id": "mobile_image",
+          "label": "Mobile image (optional)",
+          "info": "If provided, this image will be used on mobile devices"
+        },
+        {
+          "type": "url",
+          "id": "slide_link",
+          "label": "Slide link (optional)"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Promo Slider",
+      "blocks": [
+        {
+          "type": "slide"
+        },
+        {
+          "type": "slide"
+        },
+        {
+          "type": "slide"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

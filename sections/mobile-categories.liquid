@@ -1,0 +1,458 @@
+{% comment %}
+  Mobile Categories Thumbnail Section
+  Compatible with Shopify Horizon Theme
+{% endcomment %}
+
+<div class="cat-thumbnail-section color-{{ section.settings.color_scheme }} gradient">
+  <div class="page-width">
+    {%- if section.settings.title != blank -%}
+      <div class="cat-thumb-header">
+        <h2 class="cat-thumb-heading inline-richtext {{ section.settings.heading_size }}">
+          {{ section.settings.title }}
+        </h2>
+      </div>
+    {%- endif -%}
+
+    <div class="cat-thumb-visibility 
+                {% if section.settings.show_desktop %}cat-show-desktop{% endif %} 
+                {% if section.settings.show_mobile %}cat-show-mobile{% endif %}">
+      <div class="cat-thumb-outer-wrap">
+        <div class="cat-thumb-scroll-container">
+          {%- for block in section.blocks -%}
+            <div class="cat-thumb-single-item" {{ block.shopify_attributes }}>
+              <a href="{{ block.settings.link }}" class="cat-thumb-link-wrap">
+                <div class="cat-thumb-img-circle">
+                  {%- if block.settings.image != blank -%}
+                    <img
+                      srcset="
+                        {%- if block.settings.image.width >= 165 -%}{{ block.settings.image | image_url: width: 165 }} 165w,{%- endif -%}
+                        {%- if block.settings.image.width >= 330 -%}{{ block.settings.image | image_url: width: 330 }} 330w,{%- endif -%}
+                        {%- if block.settings.image.width >= 535 -%}{{ block.settings.image | image_url: width: 535 }} 535w,{%- endif -%}
+                        {{ block.settings.image | image_url }} {{ block.settings.image.width }}w
+                      "
+                      src="{{ block.settings.image | image_url: width: 330 }}"
+                      sizes="(min-width: 990px) {{ 330 | divided_by: 4 }}px, (min-width: 750px) {{ 330 | divided_by: 3 }}px, calc(100vw - 3rem)"
+                      alt="{{ block.settings.image.alt | escape }}"
+                      class="cat-thumb-img-element"
+                      loading="lazy"
+                      width="{{ block.settings.image.width }}"
+                      height="{{ block.settings.image.height }}"
+                    >
+                  {%- else -%}
+                    {{ 'image' | placeholder_svg_tag: 'cat-thumb-placeholder' }}
+                  {%- endif -%}
+                </div>
+                <div class="cat-thumb-text-wrap">
+                  <span class="cat-thumb-text-label">{{ block.settings.title }}</span>
+                </div>
+              </a>
+            </div>
+          {%- endfor -%}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Mobile Categories",
+  "tag": "section",
+  "class": "custom-section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "default": "Shop by Category",
+      "label": "Heading"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "h2",
+          "label": "Small"
+        },
+        {
+          "value": "h1",
+          "label": "Medium"
+        },
+        {
+          "value": "h0",
+          "label": "Large"
+        }
+      ],
+      "default": "h1",
+      "label": "Heading size"
+    },
+    {
+      "type": "range",
+      "id": "margin_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Margin top",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "category_font_size",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Category text size",
+      "default": 14
+    },
+    {
+      "type": "header",
+      "content": "Visibility Settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_mobile",
+      "default": true,
+      "label": "Show on mobile"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_desktop",
+      "default": true,
+      "label": "Show on desktop"
+    },
+    {
+      "type": "header",
+      "content": "Desktop Layout"
+    },
+    {
+      "type": "range",
+      "id": "thumbnails_per_row_desktop",
+      "min": 3,
+      "max": 8,
+      "step": 1,
+      "label": "Thumbnails per row (Desktop)",
+      "default": 6
+    },
+    {
+      "type": "header",
+      "content": "Mobile Layout"
+    },
+    {
+      "type": "range",
+      "id": "thumbnails_visible_mobile",
+      "min": 2,
+      "max": 5,
+      "step": 0.5,
+      "label": "Visible thumbnails (Mobile)",
+      "default": 3.5,
+      "info": "Number of thumbnails visible at once on mobile"
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "options": [
+        {
+          "value": "accent-1",
+          "label": "Accent 1"
+        },
+        {
+          "value": "accent-2",
+          "label": "Accent 2"
+        },
+        {
+          "value": "background-1",
+          "label": "Background 1"
+        },
+        {
+          "value": "background-2",
+          "label": "Background 2"
+        },
+        {
+          "value": "inverse",
+          "label": "Inverse"
+        }
+      ],
+      "default": "background-1",
+      "label": "Color scheme"
+    },
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "category",
+      "name": "Category",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Category image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "default": "Category Name",
+          "label": "Category title"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Category link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Mobile Categories",
+      "blocks": [
+        {
+          "type": "category",
+          "settings": {
+            "title": "Skincare"
+          }
+        },
+        {
+          "type": "category",
+          "settings": {
+            "title": "Makeup"
+          }
+        },
+        {
+          "type": "category",
+          "settings": {
+            "title": "Haircare"
+          }
+        },
+        {
+          "type": "category",
+          "settings": {
+            "title": "K Beauty"
+          }
+        },
+        {
+          "type": "category",
+          "settings": {
+            "title": "Beauty Tools"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+  /* Reset and base section styles */
+  .cat-thumbnail-section {
+    margin-top: {{ section.settings.margin_top | times: 0.75 | round: 0 }}px !important;
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px !important;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+  }
+
+  @media screen and (min-width: 750px) {
+    .cat-thumbnail-section {
+      margin-top: {{ section.settings.margin_top }}px !important;
+      padding-top: {{ section.settings.padding_top }}px !important;
+      padding-bottom: {{ section.settings.padding_bottom }}px !important;
+    }
+  }
+
+  /* Visibility controls */
+  .cat-thumb-visibility {
+    display: block !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .cat-thumb-visibility.cat-show-mobile:not(.cat-show-desktop) {
+    display: block !important;
+  }
+
+  .cat-thumb-visibility:not(.cat-show-mobile).cat-show-desktop {
+    display: none !important;
+  }
+
+  @media screen and (min-width: 750px) {
+    .cat-thumb-visibility.cat-show-desktop:not(.cat-show-mobile) {
+      display: block !important;
+    }
+
+    .cat-thumb-visibility:not(.cat-show-desktop).cat-show-mobile {
+      display: none !important;
+    }
+
+    .cat-thumb-visibility:not(.cat-show-desktop):not(.cat-show-mobile) {
+      display: none !important;
+    }
+  }
+
+  /* Header styling */
+  .cat-thumb-header {
+    margin-bottom: 2rem !important;
+    padding: 0 !important;
+  }
+
+  .cat-thumb-heading {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Outer wrapper - contains overflow */
+  .cat-thumb-outer-wrap {
+    overflow: hidden !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Scroll container - mobile horizontal scroll */
+  .cat-thumb-scroll-container {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    gap: 1.2rem !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+    padding: 0 0 1.5rem 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .cat-thumb-scroll-container::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  /* Desktop - convert to grid */
+  @media screen and (min-width: 750px) {
+    .cat-thumb-scroll-container {
+      flex-wrap: wrap !important;
+      justify-content: flex-start !important;
+      overflow-x: visible !important;
+      overflow-y: visible !important;
+      padding: 0 !important;
+      gap: 2rem !important;
+    }
+  }
+
+  /* Individual category item */
+  .cat-thumb-single-item {
+    flex: 0 0 auto !important;
+    scroll-snap-align: start !important;
+    width: calc((100% - ({{ section.settings.thumbnails_visible_mobile | minus: 1 }} * 1.2rem)) / {{ section.settings.thumbnails_visible_mobile }}) !important;
+    min-width: 80px !important;
+    max-width: 140px !important;
+    box-sizing: border-box !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: block !important;
+  }
+
+  @media screen and (min-width: 750px) {
+    .cat-thumb-single-item {
+      width: calc((100% - ({{ section.settings.thumbnails_per_row_desktop | minus: 1 }} * 2rem)) / {{ section.settings.thumbnails_per_row_desktop }}) !important;
+      min-width: 100px !important;
+      max-width: 200px !important;
+    }
+  }
+
+  /* Link wrapper */
+  .cat-thumb-link-wrap {
+    display: block !important;
+    text-decoration: none !important;
+    color: inherit !important;
+    transition: transform 0.2s ease !important;
+    cursor: pointer !important;
+  }
+
+  .cat-thumb-link-wrap:hover {
+    transform: translateY(-4px) !important;
+  }
+
+  /* Circular image wrapper */
+  .cat-thumb-img-circle {
+    position: relative !important;
+    width: 100% !important;
+    aspect-ratio: 1 / 1 !important;
+    border-radius: 50% !important;
+    overflow: hidden !important;
+    background: linear-gradient(135deg, rgba(200, 150, 255, 0.15) 0%, rgba(150, 200, 255, 0.15) 100%) !important;
+    margin-bottom: 0.8rem !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+    box-sizing: border-box !important;
+    display: block !important;
+  }
+
+  /* Image element */
+  .cat-thumb-img-element {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+    border: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Placeholder SVG */
+  .cat-thumb-placeholder {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+  }
+
+  /* Text wrapper */
+  .cat-thumb-text-wrap {
+    text-align: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Text label */
+  .cat-thumb-text-label {
+    font-size: {{ section.settings.category_font_size }}px !important;
+    font-weight: 600 !important;
+    line-height: 1.3 !important;
+    color: rgb(var(--color-foreground)) !important;
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    text-decoration: none !important;
+  }
+
+{% endstylesheet %}

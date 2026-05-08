@@ -1,0 +1,30 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+
+# Editors / IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Shopify CLI / theme tooling
+.shopifyignore
+.shopify/
+.shopify-cli.yml
+config.yml
+settings_data.json.bak
+
+# Node (in case of local tooling)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.env
+.env.*
+
+# Logs
+*.log

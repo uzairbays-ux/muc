@@ -1,0 +1,413 @@
+{% doc %}
+  @prompt
+    need prepositions grid with icon and text 4 on desktop 1 on phone carousel in phone smooth slider, hmm small icon and single line text no heading needed, it should be horizontal inline and phone  center text, also icon and text inline on phone as well and center text one preposition on time, on phone i see the second preposition as well only 1 at a time no hint
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-propositions-{{ ai_gen_id }} {
+    width: {{ block.settings.desktop_width_percent }}%;
+    max-width: 100%;
+    padding: {{ block.settings.section_padding }}px 0;
+    display: block;
+    padding-top:0;
+    margin-top:-15px;
+  }
+
+  .ai-propositions-container-{{ ai_gen_id }} {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: {{ block.settings.gap }}px {{ block.settings.horizontal_gap }}px;
+    width: 100%;
+  }
+
+  .ai-proposition-item-{{ ai_gen_id }} {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    gap: {{ block.settings.item_gap }}px;
+    padding: {{ block.settings.item_padding }}px;
+    background-color: {{ block.settings.item_background }};
+    border-radius: {{ block.settings.border_radius }}px;
+  }
+
+  .ai-proposition-icon-{{ ai_gen_id }} {
+    width: {{ block.settings.icon_size }}px;
+    height: {{ block.settings.icon_size }}px;
+    flex-shrink: 0;
+  }
+
+  .ai-proposition-icon-{{ ai_gen_id }} img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .ai-proposition-icon-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: {{ block.settings.icon_placeholder_bg }};
+    border-radius: 50%;
+  }
+
+  .ai-proposition-icon-placeholder-{{ ai_gen_id }} svg {
+    width: 60%;
+    height: 60%;
+    opacity: 0.3;
+  }
+
+  .ai-proposition-text-{{ ai_gen_id }} {
+    font-size: {{ block.settings.text_size }}px;
+    font-weight: {{ block.settings.text_weight }};
+    color: {{ block.settings.text_color }};
+    margin: 0;
+    line-height: 1.4;
+    white-space: nowrap;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-propositions-container-{{ ai_gen_id }} {
+      display: block;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+
+    .ai-propositions-container-{{ ai_gen_id }}::-webkit-scrollbar {
+      display: none;
+    }
+
+    .ai-propositions-inner-{{ ai_gen_id }} {
+      display: flex;
+      gap: {{ block.settings.gap }}px;
+      padding: 0 16px;
+    }
+
+    .ai-proposition-item-{{ ai_gen_id }} {
+      min-width: 100%;
+      width: 100%;
+      scroll-snap-align: center;
+      flex-shrink: 0;
+      justify-content: center;
+    }
+
+    .ai-proposition-text-{{ ai_gen_id }} {
+      white-space: normal;
+      text-align: center;
+    }
+  }
+{% endstyle %}
+
+<propositions-grid-{{ ai_gen_id }}
+  class="ai-propositions-{{ ai_gen_id }}"
+  {{ block.shopify_attributes }}
+>
+  <div class="ai-propositions-container-{{ ai_gen_id }}">
+    <div class="ai-propositions-inner-{{ ai_gen_id }}">
+      {% for i in (1..4) %}
+        {% liquid
+          assign icon_key = 'icon_' | append: i
+          assign text_key = 'text_' | append: i
+          
+          assign icon = block.settings[icon_key]
+          assign text = block.settings[text_key]
+        %}
+        
+        <div class="ai-proposition-item-{{ ai_gen_id }}">
+          <div class="ai-proposition-icon-{{ ai_gen_id }}">
+            {% if icon %}
+              <img
+                src="{{ icon | image_url: width: 100 }}"
+                alt="{{ text | escape }}"
+                loading="lazy"
+                width="100"
+                height="100"
+              >
+            {% else %}
+              <div class="ai-proposition-icon-placeholder-{{ ai_gen_id }}">
+                {{ 'image' | placeholder_svg_tag }}
+              </div>
+            {% endif %}
+          </div>
+          
+          {% if text != blank %}
+            <p class="ai-proposition-text-{{ ai_gen_id }}">{{ text }}</p>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</propositions-grid-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class PropositionsGrid{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        this.setupMobileCarousel();
+      }
+
+      setupMobileCarousel() {
+        const container = this.querySelector('.ai-propositions-container-{{ ai_gen_id }}');
+        
+        if (window.innerWidth <= 749) {
+          let isDown = false;
+          let startX;
+          let scrollLeft;
+
+          container.addEventListener('mousedown', (e) => {
+            isDown = true;
+            startX = e.pageX - container.offsetLeft;
+            scrollLeft = container.scrollLeft;
+          });
+
+          container.addEventListener('mouseleave', () => {
+            isDown = false;
+          });
+
+          container.addEventListener('mouseup', () => {
+            isDown = false;
+          });
+
+          container.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - container.offsetLeft;
+            const walk = (x - startX) * 2;
+            container.scrollLeft = scrollLeft - walk;
+          });
+        }
+      }
+    }
+
+    customElements.define('propositions-grid-{{ ai_gen_id }}', PropositionsGrid{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Propositions grid",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "section_padding",
+      "label": "Section padding",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "gap",
+      "label": "Vertical gap",
+      "min": 10,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "horizontal_gap",
+      "label": "Horizontal gap",
+      "min": 10,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "item_padding",
+      "label": "Item padding",
+      "min": 0,
+      "max": 40,
+      "step": 5,
+      "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "item_gap",
+      "label": "Icon to text gap",
+      "min": 5,
+      "max": 30,
+      "step": 5,
+      "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "label": "Item border radius",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "item_background",
+      "label": "Item background",
+      "default": "#f5f5f5"
+    },
+    {
+      "type": "color",
+      "id": "icon_placeholder_bg",
+      "label": "Icon placeholder background",
+      "default": "#e6e6e6"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#000000"
+    },
+    {
+      "type": "header",
+      "content": "Icon"
+    },
+    {
+      "type": "range",
+      "id": "icon_size",
+      "label": "Icon size",
+      "min": 20,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "default": 30
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "text_size",
+      "label": "Text size",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "select",
+      "id": "text_weight",
+      "label": "Text weight",
+      "options": [
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semibold"
+        }
+      ],
+      "default": "400"
+    },
+    {
+      "type": "header",
+      "content": "Proposition 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "icon_1",
+      "label": "Icon"
+    },
+    {
+      "type": "text",
+      "id": "text_1",
+      "label": "Text",
+      "default": "Free Shipping"
+    },
+    {
+      "type": "header",
+      "content": "Proposition 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "icon_2",
+      "label": "Icon"
+    },
+    {
+      "type": "text",
+      "id": "text_2",
+      "label": "Text",
+      "default": "Authentic Products"
+    },
+    {
+      "type": "header",
+      "content": "Proposition 3"
+    },
+    {
+      "type": "image_picker",
+      "id": "icon_3",
+      "label": "Icon"
+    },
+    {
+      "type": "text",
+      "id": "text_3",
+      "label": "Text",
+      "default": "Easy Returns"
+    },
+    {
+      "type": "header",
+      "content": "Proposition 4"
+    },
+    {
+      "type": "image_picker",
+      "id": "icon_4",
+      "label": "Icon"
+    },
+    {
+      "type": "text",
+      "id": "text_4",
+      "label": "Text",
+      "default": "Secure Payment"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Propositions grid"
+    }
+  ]
+}
+{% endschema %}

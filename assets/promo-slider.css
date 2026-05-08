@@ -1,0 +1,341 @@
+/* Promo Slider Styles */
+.promo-slider-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background-color: var(--slider-bg, #FFF275);
+}
+
+.promo-slider {
+  position: relative;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.slider-track {
+  display: flex;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+.slider-slide {
+  min-width: 100%;
+  flex-shrink: 0;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.slider-slide.active {
+  opacity: 1;
+}
+
+.slide-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.slide-image {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide-image {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.slide-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.slide-image img.loaded {
+  opacity: 1;
+}
+
+.slide-image .mobile-image {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .slide-image .desktop-image {
+    display: none;
+  }
+  
+  .slide-image .mobile-image {
+    display: block;
+  }
+  
+  /* If no mobile image provided, show desktop */
+  .slide-image:not(:has(.mobile-image)) .desktop-image {
+    display: block;
+  }
+}
+
+/* Navigation Buttons with Liquid Edge Effect */
+.slider-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  border: none;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 10;
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  position: relative;
+  overflow: visible;
+}
+
+/* Liquid morphism shape */
+.slider-nav--prev {
+  left: 20px;
+  border-radius: 60% 40% 40% 60% / 50% 50% 50% 50%;
+  animation: liquidMorphLeft 8s ease-in-out infinite;
+}
+
+.slider-nav--next {
+  right: 20px;
+  border-radius: 40% 60% 60% 40% / 50% 50% 50% 50%;
+  animation: liquidMorphRight 8s ease-in-out infinite;
+}
+
+@keyframes liquidMorphLeft {
+  0%, 100% {
+    border-radius: 60% 40% 40% 60% / 50% 50% 50% 50%;
+  }
+  25% {
+    border-radius: 40% 60% 50% 50% / 60% 40% 60% 40%;
+  }
+  50% {
+    border-radius: 50% 50% 60% 40% / 40% 60% 40% 60%;
+  }
+  75% {
+    border-radius: 60% 40% 40% 60% / 50% 50% 50% 50%;
+  }
+}
+
+@keyframes liquidMorphRight {
+  0%, 100% {
+    border-radius: 40% 60% 60% 40% / 50% 50% 50% 50%;
+  }
+  25% {
+    border-radius: 60% 40% 50% 50% / 40% 60% 40% 60%;
+  }
+  50% {
+    border-radius: 50% 50% 40% 60% / 60% 40% 60% 40%;
+  }
+  75% {
+    border-radius: 40% 60% 60% 40% / 50% 50% 50% 50%;
+  }
+}
+
+/* Glass reflection effect */
+.slider-nav::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.4) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.slider-nav:hover::before {
+  opacity: 1;
+}
+
+.slider-nav:hover {
+  background: rgba(255, 255, 255, 0.35);
+  box-shadow: 
+    0 12px 40px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  transform: translateY(-50%) scale(1.08);
+}
+
+.slider-nav:active {
+  transform: translateY(-50%) scale(0.95);
+  box-shadow: 
+    0 4px 16px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.slider-nav svg {
+  pointer-events: none;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
+  position: relative;
+  z-index: 1;
+}
+
+/* Slide Indicators */
+.slider-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 20px 0 30px;
+}
+
+.slider-dot {
+  width: 30px;
+  height: 3px;
+  border-radius: 2px;
+  border: none;
+  background: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.slider-dot::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: white;
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.slider-dot:hover::after {
+  width: 100%;
+}
+
+.slider-dot:hover {
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.slider-dot.active {
+  background: white;
+  width: 40px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Performance Optimizations */
+.slider-track,
+.slider-slide,
+.slide-image img {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  perspective: 1000px;
+  -webkit-perspective: 1000px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .slider-nav {
+    width: 46px;
+    height: 46px;
+  }
+}
+
+@media (max-width: 768px) {
+  .slider-nav {
+    width: 42px;
+    height: 42px;
+  }
+  
+  .slider-nav--prev {
+    left: 15px;
+  }
+  
+  .slider-nav--next {
+    right: 15px;
+  }
+  
+  .slider-dots {
+    padding: 15px 0 25px;
+  }
+  
+  .slider-dot {
+    width: 25px;
+  }
+  
+  .slider-dot.active {
+    width: 35px;
+  }
+}
+
+@media (max-width: 480px) {
+  .slider-nav {
+    width: 38px;
+    height: 38px;
+  }
+  
+  .slider-nav--prev {
+    left: 10px;
+  }
+  
+  .slider-nav--next {
+    right: 10px;
+  }
+  
+  .slider-dots {
+    padding: 12px 0 20px;
+    gap: 6px;
+  }
+  
+  .slider-dot {
+    width: 20px;
+    height: 2.5px;
+  }
+  
+  .slider-dot.active {
+    width: 30px;
+  }
+}
+
+/* Prefers Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .slider-track,
+  .slider-slide,
+  .slide-image img,
+  .slider-nav,
+  .slider-dot {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* Focus States for Accessibility */
+.slider-nav:focus-visible,
+.slider-dot:focus-visible {
+  outline: 3px solid rgba(255, 255, 255, 0.8);
+  outline-offset: 3px;
+}

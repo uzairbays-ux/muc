@@ -1,0 +1,185 @@
+{% assign productWidget = closest.product.selected_or_first_available_variant.price | divided_by: 100 %}
+{% if productWidget <= 20000 %}
+
+<style>
+  .baadmay-product-grid-item {
+    margin-bottom: 10px;
+    margin-top: 0px;
+}
+.baadmay-modal{
+display: flex;
+}
+  .card-information {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+   .baadmay-product-grid-item .baadmay-price .baadmay-price-split span{
+    color: #6016eb !important;
+    font-weight: 600;
+}
+  .baadmay-product-grid-item .baadmay-price .baadmay-modal .baadmay-currency {
+    color: #6016eb !important;
+    font-weight: 600;
+}
+  .vbox-backdrop {
+    display: block !important;
+  }
+
+  .baadmay-modal .baadmaysvg {
+    width: 100px;
+    height: auto;
+  }
+
+  .baadmaysvg {
+    visibility: visible;
+  }
+
+  .baadmay-gateway-wrapper.baadmay-product-grid-item {
+    position: relative;
+    z-index: 2;
+  }
+
+  .baadmay-product-grid-item .baadmay-para{
+    display: flex;
+    gap: 4px;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+  }
+
+  .baadmay-product-grid-item .baadmay-para .logo-wrapper {
+    display: flex;
+  }
+
+  .baadmay-product-grid-item .logo-wrapper .baadmay-modal img{
+    width: 16px;
+    height: 16px;
+  }
+
+  .baadmay-product-grid-item .baadmay-para .baadmay-price {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    line-height: 1;
+    gap: 0 0px;
+    padding: 0;
+  }
+
+  .baadmay-product-grid-item .baadmay-para .baadmay-price .price-divide {
+    margin: 0;
+    padding: 0px;
+    padding-left: 2px;
+  }
+  
+  .baadmay-product-grid-item .baadmay-para .baadmay-price p {
+    margin: 0 !important;
+    line-height: 1;
+    color: #000;
+    display: block !important;
+    font-weight: 500;
+    font-size: 12px;
+  }
+  .baadmay-product-grid-item .baadmay-para .baadmay-price .baadmay-currency {
+    margin: 0px 0px 0px 2px !important;
+  }
+  .baadmay-product-grid-item .baadmay-para .baadmay-price .baadmay-price-split {
+    margin: 0px 3px 0px 0px !important;
+    padding-left: 0px;
+  }
+  
+
+
+  @media screen and (max-width: 768px) {
+    .baadmay-product-grid-item .baadmay-para,
+    .product-recommendations-placeholder .baadmay-product-grid-item .baadmay-para,
+    .featured-collection .baadmay-product-grid-item .baadmay-para {
+      flex-flow: row;
+    }
+   
+  }
+
+  @media screen and (max-width: 450px) {
+    .baadmay-product-grid-item .baadmay-para .baadmay-price p {
+        font-size: 11px;
+    }
+  }
+   @media screen and (max-width: 410px) {
+    .baadmay-product-grid-item .baadmay-para .baadmay-price p {
+        font-size: 10.5px;
+    }
+  }
+
+</style>
+
+<div class="baadmay-gateway-wrapper baadmay-product-grid-item {% if class %}{{ class }}{% endif %}">
+  <div class="baadmay-para">
+    <div class="logo-wrapper">
+      <a class="baadmay-modal" data-vbtype="inline" data-overlayclose="false" data-maxwidth="620px" href="#baadmay-content">
+        <img src="{{ 'baadmay-short-logo.webp' | asset_url }}" alt="BaadMay" width="16" height="16"/>
+      </a>
+    </div>
+    <div class="baadmay-price">
+      <p>Pay only</p>
+       <a
+        class="baadmay-modal"
+        data-vbtype="inline"
+        data-overlayclose="false"
+        data-maxwidth="620px"
+        href="#baadmay-content"
+      >
+      <p class="baadmay-currency">
+        {% for currency in shop.enabled_currencies %}
+          {% if currency.iso_code == shop.currency -%}
+            Rs.{% break %}
+          {% endif %}
+        {% endfor %}
+      </p>
+      <p class="baadmay-price-split">
+      <span class="price-divide" total-prod-price="{{ closest.product.selected_or_first_available_variant.price | divided_by: 100 }}">
+  {{ closest.product.selected_or_first_available_variant.price | times: 1.15 | divided_by: 3 | floor | divided_by: 1 | money_without_currency | split: '.' | first }}
+</span>
+      </p>
+    </a>
+      <p>now</p>
+    </div>
+    <div id="baadmay-content" style="display:none;">
+      <a href="#" class="baadmay-popup-close">
+        <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8.99915 1L1 8.99914" stroke="white" stroke-width="2" stroke-linecap="round" />
+          <path d="M8.99915 9L1 1.00085" stroke="white" stroke-width="2" stroke-linecap="round" />
+        </svg>
+      </a>
+      <div class="baadmay-popup-head">
+        <h3>Pay for your purchase, thora abhi, baqi?</h3>
+        <img src="https://baadmay.com/assets/baadmay-logo-white.svg" alt="baadmay logo" width="184" height="42">
+        <div class="baadmay-info-box">
+          <div class="baadmay-info-item">
+            <img src="https://baadmay.com/assets/icon-calendar.svg" alt="Icon Calendar"  width="80" height="80">
+            <p>Pay in 3 Easy Installments</p>
+          </div>
+        </div>
+      </div>
+      <div class="baadmay-popup-content">
+        <h3 class="baadmay-color-dark text-center mt-40 mb-24">Added items to your cart?</h3>
+        <div class="baadmay-info-box compact-box">
+          <div class="baadmay-info-item">
+            <img src="https://baadmay.com/assets/icon-checkout.svg" alt="Icon Checkout"  width="48" height="48">
+            <p>Select BaadMay at Checkout</p>
+          </div>
+          <div class="baadmay-info-item">
+            <img src="https://baadmay.com/assets/icon-account-details.svg" alt="Icon Account Details"  width="48" height="48">
+            <p>Verify your account details</p>
+          </div>
+          <div class="baadmay-info-item">
+            <img src="https://baadmay.com/assets/icon-pay-first-installment.svg" alt="Icon Pay First Installment"  width="48" height="48">
+            <p>Pay only your first installment now</p>
+          </div>
+        </div>
+        <h3 class="baadmay-color-primary text-center mt-32 mt-sm-24 mb-0">Let’s shop and pay BaadMay !</h3>
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
