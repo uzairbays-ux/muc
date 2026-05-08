@@ -7,20 +7,16 @@
   assign autoplay_interval = s.autoplay_interval | default: 5
   assign show_arrows = s.show_arrows
   assign show_dots = s.show_dots
-  assign heading_size = s.heading_size | default: 18
-  assign paragraph_size = s.paragraph_size | default: 14
-  assign button_style = s.button_style | default: 'outline'
-  assign uid = section.id | replace: '_', '' | downcase
 %}
 
 <div class="section-background color-{{ s.color_scheme }}"></div>
 <div
-  class="section section--{{ s.section_width }} color-{{ s.color_scheme }} spacing-style"
+  class="section section--full-width color-{{ s.color_scheme }} spacing-style"
   style="{% render 'spacing-style', settings: s %}"
   data-testid="card-banner-{{ section.id }}"
 >
   {%- if s.heading != blank -%}
-    <div class="card-banner__header" style="text-align: {{ s.heading_alignment }};">
+    <div class="card-banner__header" style="text-align: {{ s.heading_alignment }}; padding-inline: var(--gap-md, 16px);">
       <h2 class="card-banner__heading h3">{{ s.heading }}</h2>
       {%- if s.subheading != blank -%}
         <p class="card-banner__subheading">{{ s.subheading }}</p>
@@ -32,49 +28,37 @@
     class="card-banner"
     data-autoplay="{{ autoplay }}"
     data-autoplay-interval="{{ autoplay_interval }}"
-    style="--cb-desktop-per-view: {{ desktop_per_view }}; --cb-mobile-per-view: {{ mobile_per_view }}; --cb-gap: {{ gap }}px; --cb-heading-size: {{ heading_size }}px; --cb-paragraph-size: {{ paragraph_size }}px;"
+    style="--cb-desktop-per-view: {{ desktop_per_view }}; --cb-mobile-per-view: {{ mobile_per_view }}; --cb-gap: {{ gap }}px;"
   >
     <div class="card-banner__viewport" ref="viewport">
       <div class="card-banner__track" ref="track">
         {%- for block in section.blocks -%}
           {%- assign b = block.settings -%}
           <div class="card-banner__card" data-index="{{ forloop.index0 }}" {{ block.shopify_attributes }}>
-            <div class="card-banner__image-wrapper">
-              {%- if b.image != blank -%}
-                {{
-                  b.image
-                  | image_url: width: 800
-                  | image_tag:
-                    loading: 'lazy',
-                    widths: '400,600,800',
-                    sizes: '(max-width: 749px) 70vw, 40vw',
-                    class: 'card-banner__image',
-                    alt: b.image.alt | default: b.heading | default: ''
-                }}
-              {%- else -%}
-                <div class="card-banner__placeholder">
-                  {{ 'collection-1' | placeholder_svg_tag: 'placeholder-svg' }}
-                </div>
-              {%- endif -%}
-            </div>
-            <div class="card-banner__content">
-              {%- if b.heading != blank -%}
-                <h3 class="card-banner__card-heading">{{ b.heading }}</h3>
-              {%- endif -%}
-              {%- if b.paragraph != blank -%}
-                <p class="card-banner__card-paragraph">{{ b.paragraph }}</p>
-              {%- endif -%}
-              {%- if b.button_label != blank -%}
-                <a
-                  href="{{ b.button_link | default: '#' }}"
-                  class="card-banner__cta card-banner__cta--{{ button_style }}"
-                  {% if b.open_new_tab %}target="_blank" rel="noopener"{% endif %}
-                >
-                  {{ b.button_label }}
-                  <span class="card-banner__cta-arrow" aria-hidden="true">&rarr;</span>
-                </a>
-              {%- endif -%}
-            </div>
+            {%- if b.link != blank -%}
+              <a href="{{ b.link }}" class="card-banner__link" {% if b.open_new_tab %}target="_blank" rel="noopener"{% endif %}>
+            {%- endif -%}
+              <div class="card-banner__image-wrapper">
+                {%- if b.image != blank -%}
+                  {{
+                    b.image
+                    | image_url: width: 900
+                    | image_tag:
+                      loading: 'lazy',
+                      widths: '400,600,750,900',
+                      sizes: '(max-width: 749px) 70vw, 42vw',
+                      class: 'card-banner__image',
+                      alt: b.image.alt | default: ''
+                  }}
+                {%- else -%}
+                  <div class="card-banner__placeholder">
+                    {{ 'collection-1' | placeholder_svg_tag: 'placeholder-svg' }}
+                  </div>
+                {%- endif -%}
+              </div>
+            {%- if b.link != blank -%}
+              </a>
+            {%- endif -%}
           </div>
         {%- else -%}
           {%- for i in (1..4) -%}
@@ -84,11 +68,6 @@
                   {{ 'collection-1' | placeholder_svg_tag: 'placeholder-svg' }}
                 </div>
               </div>
-              <div class="card-banner__content">
-                <h3 class="card-banner__card-heading">Card heading</h3>
-                <p class="card-banner__card-paragraph">Short description here</p>
-                <a href="#" class="card-banner__cta card-banner__cta--{{ button_style }}">Shop Now <span class="card-banner__cta-arrow" aria-hidden="true">&rarr;</span></a>
-              </div>
             </div>
           {%- endfor -%}
         {%- endfor -%}
@@ -97,23 +76,19 @@
       {%- if show_arrows and section.blocks.size > 1 -%}
         <button
           type="button"
-          class="card-banner__arrow card-banner__arrow--prev button-unstyled button-unstyled--transparent"
+          class="card-banner__arrow card-banner__arrow--prev button-unstyled"
           aria-label="{{ 'accessibility.slideshow_previous' | t }}"
           ref="prev"
         >
-          <span class="svg-wrapper icon-arrow flip-x">
-            {{- 'icon-arrow.svg' | inline_asset_content -}}
-          </span>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
         </button>
         <button
           type="button"
-          class="card-banner__arrow card-banner__arrow--next button-unstyled button-unstyled--transparent"
+          class="card-banner__arrow card-banner__arrow--next button-unstyled"
           aria-label="{{ 'accessibility.slideshow_next' | t }}"
           ref="next"
         >
-          <span class="svg-wrapper icon-arrow">
-            {{- 'icon-arrow.svg' | inline_asset_content -}}
-          </span>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
         </button>
       {%- endif -%}
     </div>
@@ -159,7 +134,6 @@
 
   .card-banner__viewport {
     position: relative;
-    overflow: hidden;
   }
 
   .card-banner__track {
@@ -169,7 +143,7 @@
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
-    padding-block: var(--gap-2xs, 4px);
+    padding: 0;
   }
 
   .card-banner__track::-webkit-scrollbar {
@@ -188,6 +162,14 @@
     }
   }
 
+  .card-banner__link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    border-radius: var(--style-border-radius-card, 8px);
+    overflow: hidden;
+  }
+
   .card-banner__image-wrapper {
     position: relative;
     width: 100%;
@@ -196,11 +178,20 @@
     border-radius: var(--style-border-radius-card, 8px);
   }
 
+  .card-banner__link .card-banner__image-wrapper {
+    border-radius: 0;
+  }
+
   .card-banner__image {
     display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 300ms ease;
+  }
+
+  .card-banner__link:hover .card-banner__image {
+    transform: scale(1.03);
   }
 
   .card-banner__placeholder {
@@ -218,86 +209,10 @@
     opacity: 0.3;
   }
 
-  .card-banner__content {
-    padding: var(--gap-sm, 12px) 0;
-  }
-
-  .card-banner__card-heading {
-    margin: 0;
-    font-size: var(--cb-heading-size, 18px);
-    font-weight: 700;
-    font-family: var(--font-heading--family);
-    color: rgb(var(--color-foreground-heading));
-    line-height: 1.3;
-  }
-
-  .card-banner__card-paragraph {
-    margin: var(--gap-2xs, 4px) 0 0;
-    font-size: var(--cb-paragraph-size, 14px);
-    color: rgb(var(--color-foreground));
-    opacity: 0.75;
-    line-height: 1.4;
-  }
-
-  .card-banner__cta {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    margin-top: var(--gap-sm, 10px);
-    font-size: var(--cb-paragraph-size, 14px);
-    font-weight: 600;
-    text-decoration: none;
-    transition: opacity 200ms ease, background-color 200ms ease, color 200ms ease;
-    cursor: pointer;
-    line-height: 1;
-  }
-
-  .card-banner__cta--outline {
-    padding: 10px 20px;
-    border: 1.5px solid rgb(var(--color-foreground));
-    border-radius: 30px;
-    color: rgb(var(--color-foreground));
-    background: transparent;
-  }
-
-  .card-banner__cta--outline:hover {
-    background: rgb(var(--color-foreground));
-    color: rgb(var(--color-background));
-  }
-
-  .card-banner__cta--filled {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 30px;
-    color: rgb(var(--color-primary-button-text, 255 255 255));
-    background: rgb(var(--color-primary-button-background, 0 0 0));
-  }
-
-  .card-banner__cta--filled:hover {
-    opacity: 0.85;
-  }
-
-  .card-banner__cta--link {
-    padding: 0;
-    border: none;
-    background: transparent;
-    color: rgb(var(--color-foreground));
-    text-decoration: underline;
-    text-underline-offset: 3px;
-  }
-
-  .card-banner__cta--link:hover {
-    opacity: 0.7;
-  }
-
-  .card-banner__cta-arrow {
-    font-size: 1.1em;
-  }
-
   /* Arrows --------------------------------------------------------------- */
   .card-banner__arrow {
     position: absolute;
-    top: calc(50% - 40px);
+    top: 50%;
     transform: translateY(-50%);
     z-index: 2;
     display: flex;
@@ -312,6 +227,8 @@
     backdrop-filter: blur(4px);
     transition: opacity 200ms ease, background-color 200ms ease;
     cursor: pointer;
+    border: none;
+    padding: 0;
   }
 
   .card-banner__arrow:hover {
@@ -319,26 +236,16 @@
   }
 
   .card-banner__arrow--prev {
-    left: var(--gap-sm, 12px);
+    left: 12px;
   }
 
   .card-banner__arrow--next {
-    right: var(--gap-sm, 12px);
+    right: 12px;
   }
 
-  .card-banner__arrow .svg-wrapper {
-    display: inline-flex;
-    width: 16px;
-    height: 16px;
-  }
-
-  .card-banner__arrow .svg-wrapper svg {
-    width: 100%;
-    height: 100%;
-  }
-
-  .card-banner__arrow .flip-x {
-    transform: scaleX(-1);
+  .card-banner__arrow svg {
+    width: 20px;
+    height: 20px;
   }
 
   @media screen and (max-width: 749px) {
@@ -348,6 +255,7 @@
     }
     .card-banner__arrow--prev { left: 6px; }
     .card-banner__arrow--next { right: 6px; }
+    .card-banner__arrow svg { width: 16px; height: 16px; }
   }
 
   /* Dots ----------------------------------------------------------------- */
@@ -357,26 +265,27 @@
     align-items: center;
     gap: 8px;
     margin-top: var(--gap-sm, 12px);
+    padding: 8px 0;
   }
 
   .card-banner__dot {
-    width: 8px;
-    height: 8px;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
-    border: none;
+    border: 2px solid rgb(var(--color-foreground));
     padding: 0;
-    background-color: rgb(var(--color-foreground) / 0.25);
+    background-color: transparent;
     cursor: pointer;
     transition: background-color 200ms ease, transform 200ms ease;
   }
 
   .card-banner__dot:hover {
-    background-color: rgb(var(--color-foreground) / 0.5);
+    background-color: rgb(var(--color-foreground) / 0.4);
   }
 
   .card-banner__dot.is-active {
     background-color: rgb(var(--color-foreground));
-    transform: scale(1.25);
+    transform: scale(1.15);
   }
 {% endstylesheet %}
 
@@ -394,7 +303,6 @@
       }
 
       connectedCallback() {
-        this.viewport = this.querySelector('[ref="viewport"]');
         this.track = this.querySelector('[ref="track"]');
         this.cards = Array.from(this.querySelectorAll('.card-banner__card'));
         this.prevBtn = this.querySelector('[ref="prev"]');
@@ -430,7 +338,6 @@
           this.updateDots();
         }, { passive: true });
 
-        // Pause autoplay on interaction
         this.addEventListener('pointerenter', () => this.pauseForInteraction());
         this.addEventListener('pointerleave', () => this.resumeAfterDelay(1500));
         this.addEventListener('touchstart', () => this.pauseForInteraction(), { passive: true });
@@ -622,52 +529,7 @@
     },
     {
       "type": "header",
-      "content": "Typography"
-    },
-    {
-      "type": "range",
-      "id": "heading_size",
-      "label": "Card heading size",
-      "min": 12,
-      "max": 32,
-      "step": 1,
-      "unit": "px",
-      "default": 18
-    },
-    {
-      "type": "range",
-      "id": "paragraph_size",
-      "label": "Card paragraph size",
-      "min": 10,
-      "max": 24,
-      "step": 1,
-      "unit": "px",
-      "default": 14
-    },
-    {
-      "type": "select",
-      "id": "button_style",
-      "label": "Button style",
-      "options": [
-        { "value": "outline", "label": "Outline" },
-        { "value": "filled", "label": "Filled" },
-        { "value": "link", "label": "Link" }
-      ],
-      "default": "outline"
-    },
-    {
-      "type": "header",
       "content": "Layout"
-    },
-    {
-      "type": "select",
-      "id": "section_width",
-      "label": "Section width",
-      "options": [
-        { "value": "page-width", "label": "Page" },
-        { "value": "full-width", "label": "Full" }
-      ],
-      "default": "page-width"
     },
     {
       "type": "color_scheme",
@@ -712,27 +574,10 @@
           "info": "Square recommended. Displayed at 1:1 aspect ratio."
         },
         {
-          "type": "text",
-          "id": "heading",
-          "label": "Heading",
-          "default": "Card heading"
-        },
-        {
-          "type": "textarea",
-          "id": "paragraph",
-          "label": "Paragraph",
-          "default": "Short description here"
-        },
-        {
-          "type": "text",
-          "id": "button_label",
-          "label": "Button label",
-          "default": "Shop Now"
-        },
-        {
           "type": "url",
-          "id": "button_link",
-          "label": "Button link"
+          "id": "link",
+          "label": "Link",
+          "info": "Makes the entire card clickable."
         },
         {
           "type": "checkbox",
