@@ -1374,7 +1374,7 @@
         "heading": "",
         "subheading": "",
         "heading_alignment": "left",
-        "desktop_columns": "4",
+        "desktop_columns": "2",
         "mobile_columns": "1",
         "gap": 10,
         "section_width": "page-width",
