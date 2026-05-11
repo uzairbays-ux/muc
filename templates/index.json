@@ -1126,6 +1126,15 @@
             "link": "",
             "card_background": "#e3cef0"
           }
+        },
+        "category_eN9xLE": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Torriden.webp",
+            "label": "",
+            "link": "",
+            "card_background": "#e3cef0"
+          }
         }
       },
       "block_order": [
@@ -1143,7 +1152,8 @@
         "category_XmNYRD",
         "category_4PMpKA",
         "category_B3dHeK",
-        "category_fwB3jf"
+        "category_fwB3jf",
+        "category_eN9xLE"
       ],
       "name": "Category grid",
       "settings": {
