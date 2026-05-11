@@ -1153,6 +1153,60 @@
             "link": "",
             "card_background": "#e3cef0"
           }
+        },
+        "category_NVW6VA": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Skin1004.webp",
+            "label": "",
+            "link": "",
+            "card_background": "#e3cef0"
+          }
+        },
+        "category_Apxdpi": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/AXIS-Y.webp",
+            "label": "",
+            "link": "",
+            "card_background": "#e3cef0"
+          }
+        },
+        "category_6xFqbj": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Tirtir.webp",
+            "label": "",
+            "link": "",
+            "card_background": "#e3cef0"
+          }
+        },
+        "category_jFPrni": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/K-Secret.webp",
+            "label": "",
+            "link": "",
+            "card_background": "#e3cef0"
+          }
+        },
+        "category_qEL3Wr": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Dr-Althea.webp",
+            "label": "",
+            "link": "",
+            "card_background": "#e3cef0"
+          }
+        },
+        "category_gLKwx8": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Heimish.webp",
+            "label": "",
+            "link": "",
+            "card_background": "#e3cef0"
+          }
         }
       },
       "block_order": [
@@ -1173,7 +1227,13 @@
         "category_fwB3jf",
         "category_eN9xLE",
         "category_meBTUy",
-        "category_HCqkbV"
+        "category_HCqkbV",
+        "category_NVW6VA",
+        "category_Apxdpi",
+        "category_6xFqbj",
+        "category_jFPrni",
+        "category_qEL3Wr",
+        "category_gLKwx8"
       ],
       "name": "Category grid",
       "settings": {
