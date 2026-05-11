@@ -15,7 +15,7 @@
         "thumbnail_Qbx4az": {
           "type": "thumbnail",
           "settings": {
-            "image": "shopify://shop_images/makeup_b40cafe6-b9fb-486e-81c1-8338ef2793e3.jpg",
+            "image": "shopify://shop_images/makeup.webp",
             "background_color": "#f1ecfb",
             "label": "Skincare",
             "link": ""
@@ -24,7 +24,7 @@
         "thumbnail_9mj9UL": {
           "type": "thumbnail",
           "settings": {
-            "image": "shopify://shop_images/thumb.png",
+            "image": "shopify://shop_images/makeup.webp",
             "background_color": "#f1ecfb",
             "label": "Makeup",
             "link": ""
@@ -33,7 +33,7 @@
         "thumbnail_Jq84qh": {
           "type": "thumbnail",
           "settings": {
-            "image": "shopify://shop_images/thumb.png",
+            "image": "shopify://shop_images/Hair-care.webp",
             "background_color": "#f1ecfb",
             "label": "Haircare",
             "link": ""
@@ -51,18 +51,18 @@
         "thumbnail_h7Dj6p": {
           "type": "thumbnail",
           "settings": {
-            "image": "shopify://shop_images/thumb.png",
+            "image": "shopify://shop_images/Skin-Care.webp",
             "background_color": "#f1ecfb",
-            "label": "Beauty Tools",
+            "label": "Skin Care",
             "link": ""
           }
         },
         "thumbnail_gBqUph": {
           "type": "thumbnail",
           "settings": {
-            "image": "shopify://shop_images/thumb.png",
+            "image": "shopify://shop_images/Perfumes.webp",
             "background_color": "#f1ecfb",
-            "label": "Beauty Tools",
+            "label": "Perfumes",
             "link": ""
           }
         },
