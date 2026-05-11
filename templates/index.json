@@ -879,7 +879,7 @@
           "type": "banner",
           "settings": {
             "desktop_image": "shopify://shop_images/k-banner-desktop.avif",
-            "mobile_image": "shopify://shop_images/k-banner-mobile.avif",
+            "mobile_image": "shopify://shop_images/Korean-Brand-Main-Banner.jpg",
             "link": "",
             "open_new_tab": false
           }
