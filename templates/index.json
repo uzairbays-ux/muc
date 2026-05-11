@@ -146,7 +146,7 @@
         "card_7Rimtd": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/sq-banner.png",
+            "image": "shopify://shop_images/The-Ordinary_e47b4727-36b2-4d5e-b32b-497b8812de84.jpg",
             "link": "",
             "open_new_tab": false
           }
@@ -154,7 +154,7 @@
         "card_YUtaR6": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/sq-banner.png",
+            "image": "shopify://shop_images/Revolution_d67381fd-09a7-4523-bec3-525916a4e0e7.jpg",
             "link": "",
             "open_new_tab": false
           }
@@ -162,7 +162,15 @@
         "card_hxUFFx": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/sq-banner.png",
+            "image": "shopify://shop_images/CeraVe_6794b6ba-d53c-49d8-b239-d0ecf0f46647.jpg",
+            "link": "",
+            "open_new_tab": false
+          }
+        },
+        "card_b9F39r": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/Bioaqua.jpg",
             "link": "",
             "open_new_tab": false
           }
@@ -172,7 +180,8 @@
         "card_LJWfzX",
         "card_7Rimtd",
         "card_YUtaR6",
-        "card_hxUFFx"
+        "card_hxUFFx",
+        "card_b9F39r"
       ],
       "name": "Card banner",
       "settings": {
