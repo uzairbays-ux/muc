@@ -884,7 +884,7 @@
         "card_m4dJ4r": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/banner-3_50d9fd4f-c1ee-4aba-8376-96c1b8849d74.png",
+            "image": "shopify://shop_images/Janssen_61d6e9be-4942-43f9-b3f9-45eac8eedf0f.jpg",
             "link": "",
             "open_new_tab": false
           }
@@ -892,7 +892,31 @@
         "card_9H67GY": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/banner-2.png",
+            "image": "shopify://shop_images/Essence_e909ee23-ee3d-4d07-ab73-eb7519e5b730.jpg",
+            "link": "",
+            "open_new_tab": false
+          }
+        },
+        "card_3iUqF9": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/Essence_e909ee23-ee3d-4d07-ab73-eb7519e5b730.jpg",
+            "link": "",
+            "open_new_tab": false
+          }
+        },
+        "card_Fzb4HD": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/Essence_e909ee23-ee3d-4d07-ab73-eb7519e5b730.jpg",
+            "link": "",
+            "open_new_tab": false
+          }
+        },
+        "card_tB7XAh": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/Essence_e909ee23-ee3d-4d07-ab73-eb7519e5b730.jpg",
             "link": "",
             "open_new_tab": false
           }
@@ -901,7 +925,10 @@
       "block_order": [
         "card_NaiUMg",
         "card_m4dJ4r",
-        "card_9H67GY"
+        "card_9H67GY",
+        "card_3iUqF9",
+        "card_Fzb4HD",
+        "card_tB7XAh"
       ],
       "name": "Card grid",
       "settings": {
