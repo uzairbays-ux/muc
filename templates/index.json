@@ -548,7 +548,7 @@
         "card_L4QwKh": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/banner-2_webp.png",
+            "image": "shopify://shop_images/Estelin.jpg",
             "link": "",
             "open_new_tab": false
           }
@@ -556,7 +556,7 @@
         "card_QQLjCx": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/banner-3_webp.png",
+            "image": "shopify://shop_images/Framesi_9e368024-42a5-4675-8a1a-b3cb1e3a22d5.jpg",
             "link": "",
             "open_new_tab": false
           }
@@ -564,7 +564,39 @@
         "card_p9kYBe": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/banner-4_webp.png",
+            "image": "shopify://shop_images/luscious.jpg",
+            "link": "",
+            "open_new_tab": false
+          }
+        },
+        "card_zHjYpW": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/luscious.jpg",
+            "link": "",
+            "open_new_tab": false
+          }
+        },
+        "card_pfpRwk": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/luscious.jpg",
+            "link": "",
+            "open_new_tab": false
+          }
+        },
+        "card_NFeL6V": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/luscious.jpg",
+            "link": "",
+            "open_new_tab": false
+          }
+        },
+        "card_RBgUMP": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/luscious.jpg",
             "link": "",
             "open_new_tab": false
           }
@@ -574,7 +606,11 @@
         "card_DnJ9zV",
         "card_L4QwKh",
         "card_QQLjCx",
-        "card_p9kYBe"
+        "card_p9kYBe",
+        "card_zHjYpW",
+        "card_pfpRwk",
+        "card_NFeL6V",
+        "card_RBgUMP"
       ],
       "name": "Card grid",
       "settings": {
