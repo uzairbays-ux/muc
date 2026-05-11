@@ -139,7 +139,7 @@
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/maybelline_d1c05c0f-a591-4d4b-91ed-d8a1bd725678.jpg",
-            "link": "",
+            "link": "shopify://collections/maybelline",
             "open_new_tab": false
           }
         },
