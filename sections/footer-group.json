@@ -27,7 +27,7 @@
             "vertical_alignment_flex_direction_column": "flex-end",
             "gap": 12,
             "width": "custom",
-            "custom_width": 50,
+            "custom_width": 100,
             "width_mobile": "fill",
             "custom_width_mobile": 100,
             "height": "fit",
@@ -74,7 +74,7 @@
               },
               "blocks": {}
             },
-            "text_3qgi7e": {
+            "text_ArdAkM": {
               "type": "text",
               "settings": {
                 "text": "<h2>Join our email list</h2>",
@@ -99,7 +99,7 @@
               },
               "blocks": {}
             },
-            "text_rJFdmt": {
+            "text_gPDJHW": {
               "type": "text",
               "settings": {
                 "text": "<p>Get exclusive deals and early access to new products.</p>",
@@ -124,11 +124,11 @@
               },
               "blocks": {}
             },
-            "email_signup_rHVeym": {
+            "email_signup_FRM77D": {
               "type": "email-signup",
               "settings": {
                 "width": "custom",
-                "custom_width": 60,
+                "custom_width": 100,
                 "inherit_color_scheme": true,
                 "color_scheme": "",
                 "heading": "",
@@ -152,10 +152,51 @@
           },
           "block_order": [
             "logo_VLVV7g",
-            "text_3qgi7e",
-            "text_rJFdmt",
-            "email_signup_rHVeym"
+            "text_ArdAkM",
+            "text_gPDJHW",
+            "email_signup_FRM77D"
           ]
+        },
+        "group_B8yJWc": {
+          "type": "group",
+          "name": "t:names.group",
+          "settings": {
+            "content_direction": "column",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "center",
+            "align_baseline": false,
+            "horizontal_alignment_flex_direction_column": "flex-start",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 12,
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "custom_height": 100,
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "background_media": "none",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "toggle_overlay": false,
+            "overlay_color": "#00000026",
+            "overlay_style": "solid",
+            "gradient_direction": "to top",
+            "link": "",
+            "open_in_new_tab": false,
+            "placeholder": "",
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
         },
         "group_H6VpwJ": {
           "type": "group",
@@ -195,12 +236,104 @@
             "padding-inline-start": 0,
             "padding-inline-end": 0
           },
-          "blocks": {}
+          "blocks": {
+            "menu_zCdr8j": {
+              "type": "menu",
+              "name": "t:names.menu",
+              "settings": {
+                "menu": "main-menu",
+                "heading": "Shop",
+                "menu_spacing": 12,
+                "show_as_accordion": false,
+                "accordion_icon": "caret",
+                "accordion_dividers": false,
+                "inherit_color_scheme": true,
+                "color_scheme": "",
+                "heading_preset": "h6",
+                "link_preset": "paragraph",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "menu_zCdr8j"
+          ]
+        },
+        "group_UAb9rN": {
+          "type": "group",
+          "settings": {
+            "content_direction": "column",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "center",
+            "align_baseline": false,
+            "horizontal_alignment_flex_direction_column": "flex-start",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 6,
+            "width": "custom",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "custom_height": 100,
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "background_media": "none",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "toggle_overlay": false,
+            "overlay_color": "#00000026",
+            "overlay_style": "solid",
+            "gradient_direction": "to top",
+            "link": "",
+            "open_in_new_tab": false,
+            "placeholder": "",
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "menu_6L667U": {
+              "type": "menu",
+              "name": "t:names.menu",
+              "settings": {
+                "menu": "information",
+                "heading": "Help",
+                "menu_spacing": 12,
+                "show_as_accordion": false,
+                "accordion_icon": "caret",
+                "accordion_dividers": false,
+                "inherit_color_scheme": true,
+                "color_scheme": "",
+                "heading_preset": "h6",
+                "link_preset": "paragraph",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "menu_6L667U"
+          ]
         }
       },
       "block_order": [
         "group_Fif9HD",
-        "group_H6VpwJ"
+        "group_B8yJWc",
+        "group_H6VpwJ",
+        "group_UAb9rN"
       ],
       "name": "t:names.footer",
       "settings": {
