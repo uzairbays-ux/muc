@@ -882,6 +882,14 @@
     "card_grid_tLffKU": {
       "type": "card-grid",
       "blocks": {
+        "card_4rqnJx": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/BLS.webp",
+            "link": "shopify://collections/bls",
+            "open_new_tab": false
+          }
+        },
         "card_NaiUMg": {
           "type": "card",
           "settings": {
@@ -932,6 +940,7 @@
         }
       },
       "block_order": [
+        "card_4rqnJx",
         "card_NaiUMg",
         "card_m4dJ4r",
         "card_9H67GY",
@@ -1605,7 +1614,7 @@
         "subheading": "",
         "heading_alignment": "left",
         "desktop_layout": "carousel",
-        "mobile_layout": "carousel",
+        "mobile_layout": "grid",
         "desktop_per_row": "8",
         "mobile_per_row": "4",
         "gap": 10,
