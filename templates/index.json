@@ -1346,9 +1346,9 @@
         "category_C3qcqR": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/micellar_pink_800x800_6e40600e-6bba-44bf-885f-c95564e6d76f.jpg",
-            "label": "Sunscreen",
-            "link": "",
+            "image": "shopify://shop_images/Lip-Liners-_-Crayons.webp",
+            "label": "Lip Liners",
+            "link": "shopify://collections/lip-liners",
             "card_background": "#e3cef0"
           }
         },
