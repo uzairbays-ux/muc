@@ -57,6 +57,51 @@
         "padding-block-end": 80
       }
     },
+    "stacked_banners_NrWw6N": {
+      "type": "stacked-banners",
+      "blocks": {
+        "banner_gti3hP": {
+          "type": "banner",
+          "settings": {
+            "desktop_image": "shopify://shop_images/k-banner-desktop.avif",
+            "mobile_image": "shopify://shop_images/Korean-Brand-Main-Banner.jpg",
+            "link": "shopify://pages/korean-brand-k-beauty",
+            "open_new_tab": false
+          }
+        },
+        "banner_w3KRTf": {
+          "type": "banner",
+          "settings": {
+            "desktop_image": "shopify://shop_images/k-banner-gif.gif",
+            "mobile_image": "shopify://shop_images/k-banner-gif.gif",
+            "link": "shopify://pages/korean-brand-k-beauty",
+            "open_new_tab": false
+          }
+        },
+        "banner_UCj9Uw": {
+          "type": "banner",
+          "settings": {
+            "desktop_image": "shopify://shop_images/k-pop-desktop.avif",
+            "mobile_image": "shopify://shop_images/k-pop-mobile.avif",
+            "link": "shopify://collections/korean-brands",
+            "open_new_tab": false
+          }
+        }
+      },
+      "block_order": [
+        "banner_gti3hP",
+        "banner_w3KRTf",
+        "banner_UCj9Uw"
+      ],
+      "name": "Stacked banners",
+      "settings": {
+        "gap": 0,
+        "background_color": "#e3cef0",
+        "color_scheme": "",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
+    },
     "category_grid_geXGcR": {
       "type": "category-grid",
       "blocks": {
@@ -308,7 +353,8 @@
         "heading": "",
         "subheading": "",
         "heading_alignment": "center",
-        "desktop_per_row": "7",
+        "layout": "grid",
+        "desktop_per_row": "6",
         "mobile_per_row": "3.5",
         "gap": 10,
         "row_gap": 10,
@@ -316,54 +362,10 @@
         "image_padding": 0,
         "image_fit": "contain",
         "card_ratio": "adapt",
+        "image_border_radius": 12,
         "background_color": "#e3cef0",
         "padding-block-start": 24,
         "padding-block-end": 24
-      }
-    },
-    "stacked_banners_NrWw6N": {
-      "type": "stacked-banners",
-      "blocks": {
-        "banner_gti3hP": {
-          "type": "banner",
-          "settings": {
-            "desktop_image": "shopify://shop_images/k-banner-desktop.avif",
-            "mobile_image": "shopify://shop_images/Korean-Brand-Main-Banner.jpg",
-            "link": "shopify://pages/korean-brand-k-beauty",
-            "open_new_tab": false
-          }
-        },
-        "banner_w3KRTf": {
-          "type": "banner",
-          "settings": {
-            "desktop_image": "shopify://shop_images/k-banner-gif.gif",
-            "mobile_image": "shopify://shop_images/k-banner-gif.gif",
-            "link": "shopify://pages/korean-brand-k-beauty",
-            "open_new_tab": false
-          }
-        },
-        "banner_UCj9Uw": {
-          "type": "banner",
-          "settings": {
-            "desktop_image": "shopify://shop_images/k-pop-desktop.avif",
-            "mobile_image": "shopify://shop_images/k-pop-mobile.avif",
-            "link": "shopify://collections/korean-brands",
-            "open_new_tab": false
-          }
-        }
-      },
-      "block_order": [
-        "banner_gti3hP",
-        "banner_w3KRTf",
-        "banner_UCj9Uw"
-      ],
-      "name": "Stacked banners",
-      "settings": {
-        "gap": 0,
-        "background_color": "#e3cef0",
-        "color_scheme": "",
-        "padding-block-start": 0,
-        "padding-block-end": 0
       }
     }
   },
