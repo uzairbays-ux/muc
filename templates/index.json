@@ -544,7 +544,7 @@
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/B_BW.jpg",
-            "link": "",
+            "link": "shopify://collections/bath-body-works",
             "open_new_tab": false
           }
         },
@@ -552,7 +552,7 @@
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/Estelin.jpg",
-            "link": "",
+            "link": "shopify://collections/estelin",
             "open_new_tab": false
           }
         },
@@ -560,7 +560,7 @@
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/Framesi_9e368024-42a5-4675-8a1a-b3cb1e3a22d5.jpg",
-            "link": "",
+            "link": "shopify://collections/framesi",
             "open_new_tab": false
           }
         },
@@ -568,7 +568,7 @@
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/luscious.jpg",
-            "link": "",
+            "link": "shopify://collections/luscious-cosmetics",
             "open_new_tab": false
           }
         },
@@ -576,7 +576,7 @@
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/Lamel.jpg",
-            "link": "",
+            "link": "shopify://collections/lamel",
             "open_new_tab": false
           }
         },
@@ -584,7 +584,7 @@
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/Loreal_514ef853-d406-44f8-8d9b-e5e9ef4594b3.jpg",
-            "link": "",
+            "link": "shopify://collections/loreal-paris",
             "open_new_tab": false
           }
         },
@@ -592,7 +592,7 @@
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/Max-Factor_16a87abf-8c8d-4453-b393-7b01f602ca88.jpg",
-            "link": "",
+            "link": "shopify://collections/max-factor",
             "open_new_tab": false
           }
         },
@@ -600,7 +600,7 @@
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/Gosh_5862b35b-cdfe-4496-addb-0666b519e45f.jpg",
-            "link": "",
+            "link": "shopify://collections/gosh",
             "open_new_tab": false
           }
         }
