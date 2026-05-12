@@ -574,6 +574,7 @@
         },
         "card_zHjYpW": {
           "type": "card",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Lamel.jpg",
             "link": "shopify://collections/lamel",
@@ -582,6 +583,7 @@
         },
         "card_pfpRwk": {
           "type": "card",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Loreal_514ef853-d406-44f8-8d9b-e5e9ef4594b3.jpg",
             "link": "shopify://collections/loreal-paris",
@@ -590,6 +592,7 @@
         },
         "card_NFeL6V": {
           "type": "card",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Max-Factor_16a87abf-8c8d-4453-b393-7b01f602ca88.jpg",
             "link": "shopify://collections/max-factor",
@@ -598,6 +601,7 @@
         },
         "card_RBgUMP": {
           "type": "card",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Gosh_5862b35b-cdfe-4496-addb-0666b519e45f.jpg",
             "link": "shopify://collections/gosh",
@@ -633,7 +637,110 @@
         "section_width": "page-width",
         "color_scheme": "",
         "padding-block-start": 24,
-        "padding-block-end": 24
+        "padding-block-end": 10
+      }
+    },
+    "card_grid_TBdpWJ": {
+      "type": "card-grid",
+      "blocks": {
+        "card_XghfQP": {
+          "type": "card",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/B_BW.jpg",
+            "link": "shopify://collections/bath-body-works",
+            "open_new_tab": false
+          }
+        },
+        "card_fMqg9Q": {
+          "type": "card",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/Estelin.jpg",
+            "link": "shopify://collections/estelin",
+            "open_new_tab": false
+          }
+        },
+        "card_k9wJqh": {
+          "type": "card",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/Framesi_9e368024-42a5-4675-8a1a-b3cb1e3a22d5.jpg",
+            "link": "shopify://collections/framesi",
+            "open_new_tab": false
+          }
+        },
+        "card_nkVxPj": {
+          "type": "card",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/luscious.jpg",
+            "link": "shopify://collections/luscious-cosmetics",
+            "open_new_tab": false
+          }
+        },
+        "card_J3czmk": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/Lamel.jpg",
+            "link": "shopify://collections/lamel",
+            "open_new_tab": false
+          }
+        },
+        "card_gBiw68": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/Loreal_514ef853-d406-44f8-8d9b-e5e9ef4594b3.jpg",
+            "link": "shopify://collections/loreal-paris",
+            "open_new_tab": false
+          }
+        },
+        "card_dnezUz": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/Max-Factor_16a87abf-8c8d-4453-b393-7b01f602ca88.jpg",
+            "link": "shopify://collections/max-factor",
+            "open_new_tab": false
+          }
+        },
+        "card_ceiizR": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/Gosh_5862b35b-cdfe-4496-addb-0666b519e45f.jpg",
+            "link": "shopify://collections/gosh",
+            "open_new_tab": false
+          }
+        }
+      },
+      "block_order": [
+        "card_XghfQP",
+        "card_fMqg9Q",
+        "card_k9wJqh",
+        "card_nkVxPj",
+        "card_J3czmk",
+        "card_gBiw68",
+        "card_dnezUz",
+        "card_ceiizR"
+      ],
+      "name": "Card grid",
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "heading_alignment": "left",
+        "desktop_layout": "slider",
+        "mobile_layout": "slider",
+        "desktop_columns": "4",
+        "mobile_columns": "2",
+        "desktop_slider_per_view": "4",
+        "mobile_slider_per_view": "2",
+        "auto_rotate": false,
+        "rotate_interval": 4,
+        "gap": 10,
+        "desktop_side_padding": 0,
+        "section_width": "page-width",
+        "color_scheme": "",
+        "padding-block-start": 0,
+        "padding-block-end": 0
       }
     },
     "product_list_CVJar6": {
@@ -1823,6 +1930,7 @@
     "product_list_fa6P9H",
     "brand_ticker_fdyAia",
     "card_grid_HA8C7w",
+    "card_grid_TBdpWJ",
     "product_list_CVJar6",
     "card_grid_tLffKU",
     "stacked_banners_QWcUpX",
