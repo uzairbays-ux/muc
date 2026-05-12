@@ -1275,6 +1275,8 @@
         "open_new_tab": false,
         "section_width": "full-width",
         "mobile_full_width": true,
+        "padding_inline_desktop": 10,
+        "padding_inline_mobile": 0,
         "padding-block-start": 12,
         "padding-block-end": 12
       }
