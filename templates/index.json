@@ -110,8 +110,8 @@
         "slide_4mM8cj": {
           "type": "slide",
           "settings": {
-            "desktop_image": "shopify://shop_images/Main-Banner-1920-x-750.jpg_1.webp",
-            "mobile_image": "shopify://shop_images/Main-Banner-1920-x-750.jpg_1.webp",
+            "desktop_image": "shopify://shop_images/Main-Banner-1920-x-750.webp",
+            "mobile_image": "shopify://shop_images/Main-Banner-1920-x-750.webp",
             "link": "shopify://collections/sale",
             "open_new_tab": false,
             "alt": ""
@@ -626,6 +626,8 @@
         "mobile_columns": "2",
         "desktop_slider_per_view": "4",
         "mobile_slider_per_view": "2",
+        "auto_rotate": false,
+        "rotate_interval": 4,
         "gap": 10,
         "section_width": "page-width",
         "color_scheme": "",
@@ -948,117 +950,13 @@
         "mobile_columns": "1",
         "desktop_slider_per_view": "4",
         "mobile_slider_per_view": "1.2",
+        "auto_rotate": false,
+        "rotate_interval": 4,
         "gap": 8,
         "section_width": "page-width",
         "color_scheme": "",
         "padding-block-start": 24,
         "padding-block-end": 24
-      }
-    },
-    "category_grid_FAWJJj": {
-      "type": "category-grid",
-      "blocks": {
-        "category_Cwy3f6": {
-          "type": "category",
-          "settings": {
-            "image": "shopify://shop_images/Babimild.webp",
-            "label": "",
-            "link": "shopify://collections/lips-lip-balm",
-            "card_background": "rgba(0,0,0,0)"
-          }
-        },
-        "category_pjBD9X": {
-          "type": "category",
-          "settings": {
-            "image": "shopify://shop_images/St_Ives.webp",
-            "label": "",
-            "link": "shopify://collections/lips-lip-balm",
-            "card_background": "rgba(0,0,0,0)"
-          }
-        },
-        "category_Xea9DL": {
-          "type": "category",
-          "settings": {
-            "image": "shopify://shop_images/Colorwow.webp",
-            "label": "",
-            "link": "shopify://collections/lips-lip-balm",
-            "card_background": "rgba(0,0,0,0)"
-          }
-        },
-        "category_W3MDAj": {
-          "type": "category",
-          "settings": {
-            "image": "shopify://shop_images/Femina_d66f1d94-cb43-4d7b-a2da-03ade0e54172.webp",
-            "label": "",
-            "link": "shopify://collections/lips-lip-balm",
-            "card_background": "rgba(0,0,0,0)"
-          }
-        },
-        "category_TkjWqQ": {
-          "type": "category",
-          "settings": {
-            "image": "shopify://shop_images/Oneskin.webp",
-            "label": "",
-            "link": "shopify://collections/lips-lip-balm",
-            "card_background": "rgba(0,0,0,0)"
-          }
-        },
-        "category_EAWHGr": {
-          "type": "category",
-          "settings": {
-            "image": "shopify://shop_images/Schwarzkopf.webp",
-            "label": "",
-            "link": "shopify://collections/lips-lip-balm",
-            "card_background": "rgba(0,0,0,0)"
-          }
-        },
-        "category_DtkmJB": {
-          "type": "category",
-          "settings": {
-            "image": "shopify://shop_images/Bleuface_bbe4bfca-d1ae-455e-bcd7-a0415d341253.webp",
-            "label": "",
-            "link": "shopify://collections/lips-lip-balm",
-            "card_background": "rgba(0,0,0,0)"
-          }
-        },
-        "category_KWk6xF": {
-          "type": "category",
-          "settings": {
-            "image": "shopify://shop_images/Just-For-men.webp",
-            "label": "",
-            "link": "shopify://collections/lips-lip-balm",
-            "card_background": "rgba(0,0,0,0)"
-          }
-        }
-      },
-      "block_order": [
-        "category_Cwy3f6",
-        "category_pjBD9X",
-        "category_Xea9DL",
-        "category_W3MDAj",
-        "category_TkjWqQ",
-        "category_EAWHGr",
-        "category_DtkmJB",
-        "category_KWk6xF"
-      ],
-      "name": "Category grid",
-      "settings": {
-        "heading": "",
-        "subheading": "",
-        "heading_alignment": "left",
-        "layout": "grid",
-        "desktop_per_row": "8",
-        "mobile_per_row": "4",
-        "gap": 10,
-        "row_gap": 10,
-        "show_arrows": true,
-        "image_padding": 0,
-        "image_fit": "contain",
-        "card_ratio": "adapt",
-        "image_border_radius": 10,
-        "background_color": "rgba(0,0,0,0)",
-        "padding-block-start": 24,
-        "padding-block-end": 30
       }
     },
     "stacked_banners_QWcUpX": {
@@ -1357,7 +1255,8 @@
         "heading": "",
         "subheading": "",
         "heading_alignment": "center",
-        "layout": "carousel",
+        "desktop_layout": "carousel",
+        "mobile_layout": "carousel",
         "desktop_per_row": "7",
         "mobile_per_row": "3.5",
         "gap": 10,
@@ -1370,6 +1269,113 @@
         "background_color": "#e3cef0",
         "padding-block-start": 24,
         "padding-block-end": 24
+      }
+    },
+    "category_grid_FAWJJj": {
+      "type": "category-grid",
+      "blocks": {
+        "category_Cwy3f6": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Babimild.webp",
+            "label": "",
+            "link": "shopify://collections/lips-lip-balm",
+            "card_background": "rgba(0,0,0,0)"
+          }
+        },
+        "category_pjBD9X": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/St_Ives.webp",
+            "label": "",
+            "link": "shopify://collections/lips-lip-balm",
+            "card_background": "rgba(0,0,0,0)"
+          }
+        },
+        "category_Xea9DL": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Colorwow.webp",
+            "label": "",
+            "link": "shopify://collections/lips-lip-balm",
+            "card_background": "rgba(0,0,0,0)"
+          }
+        },
+        "category_W3MDAj": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Femina_d66f1d94-cb43-4d7b-a2da-03ade0e54172.webp",
+            "label": "",
+            "link": "shopify://collections/lips-lip-balm",
+            "card_background": "rgba(0,0,0,0)"
+          }
+        },
+        "category_TkjWqQ": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Oneskin.webp",
+            "label": "",
+            "link": "shopify://collections/lips-lip-balm",
+            "card_background": "rgba(0,0,0,0)"
+          }
+        },
+        "category_EAWHGr": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Schwarzkopf.webp",
+            "label": "",
+            "link": "shopify://collections/lips-lip-balm",
+            "card_background": "rgba(0,0,0,0)"
+          }
+        },
+        "category_DtkmJB": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Bleuface_bbe4bfca-d1ae-455e-bcd7-a0415d341253.webp",
+            "label": "",
+            "link": "shopify://collections/lips-lip-balm",
+            "card_background": "rgba(0,0,0,0)"
+          }
+        },
+        "category_KWk6xF": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Just-For-men.webp",
+            "label": "",
+            "link": "shopify://collections/lips-lip-balm",
+            "card_background": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "category_Cwy3f6",
+        "category_pjBD9X",
+        "category_Xea9DL",
+        "category_W3MDAj",
+        "category_TkjWqQ",
+        "category_EAWHGr",
+        "category_DtkmJB",
+        "category_KWk6xF"
+      ],
+      "name": "Category grid",
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "heading_alignment": "left",
+        "desktop_layout": "grid",
+        "mobile_layout": "carousel",
+        "desktop_per_row": "8",
+        "mobile_per_row": "4",
+        "gap": 10,
+        "row_gap": 10,
+        "show_arrows": true,
+        "image_padding": 0,
+        "image_fit": "contain",
+        "card_ratio": "adapt",
+        "image_border_radius": 10,
+        "background_color": "rgba(0,0,0,0)",
+        "padding-block-start": 24,
+        "padding-block-end": 30
       }
     },
     "ad_banner_pjN7dA": {
@@ -1598,7 +1604,8 @@
         "heading": "Shop By Category",
         "subheading": "",
         "heading_alignment": "left",
-        "layout": "grid",
+        "desktop_layout": "carousel",
+        "mobile_layout": "carousel",
         "desktop_per_row": "8",
         "mobile_per_row": "4",
         "gap": 10,
@@ -1666,6 +1673,8 @@
         "mobile_columns": "1",
         "desktop_slider_per_view": "4",
         "mobile_slider_per_view": "2",
+        "auto_rotate": false,
+        "rotate_interval": 4,
         "gap": 10,
         "section_width": "page-width",
         "color_scheme": "",
