@@ -1562,6 +1562,77 @@
         "padding-block-start": 0,
         "padding-block-end": 0
       }
+    },
+    "video_reels_xGEykY": {
+      "type": "video-reels",
+      "blocks": {
+        "video_card_mR9kVM": {
+          "type": "video_card",
+          "settings": {
+            "preview_video": "",
+            "full_video_url": "",
+            "product": ""
+          }
+        },
+        "video_card_DGz9bR": {
+          "type": "video_card",
+          "settings": {
+            "preview_video": "",
+            "full_video_url": "",
+            "product": ""
+          }
+        },
+        "video_card_fpRm3T": {
+          "type": "video_card",
+          "settings": {
+            "preview_video": "",
+            "full_video_url": "",
+            "product": ""
+          }
+        },
+        "video_card_zK4aVh": {
+          "type": "video_card",
+          "settings": {
+            "preview_video": "",
+            "full_video_url": "",
+            "product": ""
+          }
+        },
+        "video_card_Wth4yn": {
+          "type": "video_card",
+          "settings": {
+            "preview_video": "",
+            "full_video_url": "",
+            "product": ""
+          }
+        },
+        "video_card_ThpxhA": {
+          "type": "video_card",
+          "settings": {
+            "preview_video": "",
+            "full_video_url": "",
+            "product": ""
+          }
+        }
+      },
+      "block_order": [
+        "video_card_mR9kVM",
+        "video_card_DGz9bR",
+        "video_card_fpRm3T",
+        "video_card_zK4aVh",
+        "video_card_Wth4yn",
+        "video_card_ThpxhA"
+      ],
+      "name": "Video reels",
+      "settings": {
+        "heading": "Shop from Influencers",
+        "subheading": "",
+        "heading_alignment": "left",
+        "section_width": "full-width",
+        "background_color": "",
+        "padding-block-start": 24,
+        "padding-block-end": 24
+      }
     }
   },
   "order": [
@@ -1578,6 +1649,7 @@
     "ad_banner_pjN7dA",
     "category_grid_FAWJJj",
     "card_grid_yKxxjX",
+    "video_reels_xGEykY",
     "cta_banner_eHhwWU"
   ]
 }
