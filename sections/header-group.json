@@ -16,6 +16,7 @@
       "blocks": {
         "ai_gen_block_4420fcf_xzdLjt": {
           "type": "ai_gen_block_4420fcf",
+          "disabled": true,
           "settings": {
             "desktop_image": "shopify://shop_images/Desktop-Announcement-1-Biodanc3_1.webp",
             "mobile_image": "shopify://shop_images/Mob-Announcement-biodance_1.webp",
@@ -83,7 +84,7 @@
         "overlay_color": "#00000026",
         "overlay_style": "solid",
         "gradient_direction": "to top",
-        "padding-block-start": 0,
+        "padding-block-start": 15,
         "padding-block-end": 0
       }
     },
