@@ -955,7 +955,7 @@
           "settings": {
             "desktop_image": "shopify://shop_images/k-banner-desktop.avif",
             "mobile_image": "shopify://shop_images/Korean-Brand-Main-Banner.jpg",
-            "link": "",
+            "link": "shopify://pages/korean-brand-k-beauty",
             "open_new_tab": false
           }
         },
