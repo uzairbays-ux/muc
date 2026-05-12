@@ -1364,18 +1364,18 @@
         "category_NkX6ik": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/micellar_pink_800x800_6e40600e-6bba-44bf-885f-c95564e6d76f.jpg",
-            "label": "Sunscreen",
-            "link": "",
+            "image": "shopify://shop_images/Face-Wash-_-Cleansers.webp",
+            "label": "Face Wash & Cleansers",
+            "link": "shopify://collections/cleansers-cleansers",
             "card_background": "#e3cef0"
           }
         },
         "category_Gp3XgP": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/micellar_pink_800x800_6e40600e-6bba-44bf-885f-c95564e6d76f.jpg",
-            "label": "Sunscreen",
-            "link": "",
+            "image": "shopify://shop_images/Makeup-Remover.webp",
+            "label": "Makeup Remover",
+            "link": "shopify://collections/face-makeup-remover",
             "card_background": "#e3cef0"
           }
         },
