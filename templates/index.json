@@ -1273,7 +1273,8 @@
         "desktop_image": "shopify://shop_images/Fundamental-design-15-_-off_085202c8-fb91-4afa-ba83-3f944308c96b.png",
         "link": "shopify://collections/fundamentals",
         "open_new_tab": false,
-        "section_width": "page-width",
+        "section_width": "full-width",
+        "mobile_full_width": true,
         "padding-block-start": 12,
         "padding-block-end": 12
       }
