@@ -964,7 +964,7 @@
           "settings": {
             "desktop_image": "shopify://shop_images/k-banner-gif.gif",
             "mobile_image": "shopify://shop_images/k-banner-gif.gif",
-            "link": "",
+            "link": "shopify://pages/korean-brand-k-beauty",
             "open_new_tab": false
           }
         },
@@ -973,7 +973,7 @@
           "settings": {
             "desktop_image": "shopify://shop_images/k-pop-desktop.avif",
             "mobile_image": "shopify://shop_images/k-pop-mobile.avif",
-            "link": "",
+            "link": "shopify://collections/korean-brands",
             "open_new_tab": false
           }
         }
