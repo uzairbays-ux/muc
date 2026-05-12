@@ -961,85 +961,85 @@
         "category_Cwy3f6": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/Lip-Balm-_-Mask.webp",
-            "label": "Lip Balm & Mask",
+            "image": "shopify://shop_images/Babimild.webp",
+            "label": "",
             "link": "shopify://collections/lips-lip-balm",
-            "card_background": "#e3cef0"
+            "card_background": "rgba(0,0,0,0)"
           }
         },
-        "category_tKKGAw": {
+        "category_pjBD9X": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/Body-Wash.webp",
-            "label": "Body Wash",
-            "link": "shopify://collections/body-wash",
-            "card_background": "#e3cef0"
+            "image": "shopify://shop_images/Babimild.webp",
+            "label": "",
+            "link": "shopify://collections/lips-lip-balm",
+            "card_background": "rgba(0,0,0,0)"
           }
         },
-        "category_YLUjE3": {
+        "category_Xea9DL": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/Primer.webp",
-            "label": "Primer",
-            "link": "shopify://collections/face-primer-1",
-            "card_background": "#e3cef0"
+            "image": "shopify://shop_images/Babimild.webp",
+            "label": "",
+            "link": "shopify://collections/lips-lip-balm",
+            "card_background": "rgba(0,0,0,0)"
           }
         },
-        "category_UFqNMX": {
+        "category_W3MDAj": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/Candle.webp",
-            "label": "Candle",
-            "link": "shopify://collections/candle",
-            "card_background": "#e3cef0"
+            "image": "shopify://shop_images/Babimild.webp",
+            "label": "",
+            "link": "shopify://collections/lips-lip-balm",
+            "card_background": "rgba(0,0,0,0)"
           }
         },
-        "category_xbmJ99": {
+        "category_TkjWqQ": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/Concealers.webp",
-            "label": "Concealers",
-            "link": "shopify://collections/concealers",
-            "card_background": "#e3cef0"
+            "image": "shopify://shop_images/Babimild.webp",
+            "label": "",
+            "link": "shopify://collections/lips-lip-balm",
+            "card_background": "rgba(0,0,0,0)"
           }
         },
-        "category_jLiKUY": {
+        "category_EAWHGr": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/Hair-Dye.webp",
-            "label": "Hair Dye",
-            "link": "shopify://collections/styling-treatment-hair-dye",
-            "card_background": "#e3cef0"
+            "image": "shopify://shop_images/Babimild.webp",
+            "label": "",
+            "link": "shopify://collections/lips-lip-balm",
+            "card_background": "rgba(0,0,0,0)"
           }
         },
-        "category_fUMRAW": {
+        "category_DtkmJB": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/Serums-_-Essence.webp",
-            "label": "Serums",
-            "link": "shopify://collections/moisturizers-serums-and-essence",
-            "card_background": "#e3cef0"
+            "image": "shopify://shop_images/Babimild.webp",
+            "label": "",
+            "link": "shopify://collections/lips-lip-balm",
+            "card_background": "rgba(0,0,0,0)"
           }
         },
-        "category_E4Fyp8": {
+        "category_KWk6xF": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/Serums-_-Essence.webp",
-            "label": "Serums",
-            "link": "shopify://collections/moisturizers-serums-and-essence",
-            "card_background": "#e3cef0"
+            "image": "shopify://shop_images/Babimild.webp",
+            "label": "",
+            "link": "shopify://collections/lips-lip-balm",
+            "card_background": "rgba(0,0,0,0)"
           }
         }
       },
       "block_order": [
         "category_Cwy3f6",
-        "category_tKKGAw",
-        "category_YLUjE3",
-        "category_UFqNMX",
-        "category_xbmJ99",
-        "category_jLiKUY",
-        "category_fUMRAW",
-        "category_E4Fyp8"
+        "category_pjBD9X",
+        "category_Xea9DL",
+        "category_W3MDAj",
+        "category_TkjWqQ",
+        "category_EAWHGr",
+        "category_DtkmJB",
+        "category_KWk6xF"
       ],
       "name": "Category grid",
       "settings": {
@@ -1055,10 +1055,10 @@
         "image_padding": 0,
         "image_fit": "contain",
         "card_ratio": "adapt",
-        "image_border_radius": 100,
+        "image_border_radius": 10,
         "background_color": "rgba(0,0,0,0)",
         "padding-block-start": 24,
-        "padding-block-end": 24
+        "padding-block-end": 30
       }
     },
     "stacked_banners_QWcUpX": {
