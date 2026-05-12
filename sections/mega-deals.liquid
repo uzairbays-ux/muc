@@ -1,0 +1,653 @@
+{% liquid
+  assign s = section.settings
+  assign bg_color = s.background_color | default: '#f0e8ff'
+  assign desktop_per_view = s.desktop_per_view | default: 4
+  assign mobile_per_view = s.mobile_per_view | default: '1.5'
+  assign gap = s.gap | default: 12
+%}
+
+<div
+  class="section section--{{ s.section_width }} spacing-style"
+  style="{% render 'spacing-style', settings: s %} background-color: {{ bg_color }};"
+  data-testid="mega-deals-{{ section.id }}"
+>
+  <mega-deals
+    class="mega-deals"
+    data-end-date="{{ s.end_date }}"
+    data-end-time="{{ s.end_time }}"
+    style="--md-desktop-per-view: {{ desktop_per_view }}; --md-mobile-per-view: {{ mobile_per_view }}; --md-gap: {{ gap }}px; --md-badge-bg: {{ s.badge_color | default: '#8b5cf6' }}; --md-badge-text: {{ s.badge_text_color | default: '#ffffff' }};"
+  >
+    <div class="mega-deals__header">
+      {%- if s.heading != blank -%}
+        <h2 class="mega-deals__heading">{{ s.heading }}</h2>
+      {%- endif -%}
+
+      {%- if s.show_timer -%}
+        <div class="mega-deals__timer" ref="timer" aria-live="polite">
+          <svg class="mega-deals__timer-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M6 2v3c0 2.5 1.5 4 3 4.5V10c0 2.5-1.5 4-3 4.5V18h12v-3.5c-1.5-.5-3-2-3-4.5V9.5c1.5-.5 3-2 3-4.5V2H6z"/></svg>
+          <span class="mega-deals__timer-value" ref="timerValue">--:--:--</span>
+        </div>
+      {%- endif -%}
+
+      {%- if s.view_all_link != blank -%}
+        <a href="{{ s.view_all_link }}" class="mega-deals__view-all">
+          {{ s.view_all_label | default: 'VIEW ALL' }}
+        </a>
+      {%- endif -%}
+    </div>
+
+    <div class="mega-deals__viewport">
+      <div class="mega-deals__track" ref="track">
+        {%- for block in section.blocks -%}
+          {%- assign b = block.settings -%}
+          {%- assign product = b.product -%}
+          <div class="mega-deals__card" {{ block.shopify_attributes }}>
+            {%- if product != blank -%}
+              <a href="{{ product.url }}" class="mega-deals__card-link">
+                {%- if b.badge_text != blank -%}
+                  <span class="mega-deals__badge">{{ b.badge_text }}</span>
+                {%- endif -%}
+
+                <div class="mega-deals__image-wrap">
+                  {%- if product.featured_image != blank -%}
+                    {{
+                      product.featured_image
+                      | image_url: width: 600
+                      | image_tag:
+                        loading: 'lazy',
+                        widths: '300,400,600',
+                        sizes: '(max-width: 749px) 65vw, 22vw',
+                        class: 'mega-deals__image',
+                        alt: product.title
+                    }}
+                  {%- else -%}
+                    <div class="mega-deals__placeholder">
+                      {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
+                    </div>
+                  {%- endif -%}
+
+                  {%- if product.available -%}
+                    <button
+                      type="button"
+                      class="mega-deals__add-btn"
+                      aria-label="Quick add {{ product.title }}"
+                      data-product-url="{{ product.url }}"
+                      data-variant-id="{{ product.selected_or_first_available_variant.id }}"
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                    </button>
+                  {%- endif -%}
+                </div>
+
+                <div class="mega-deals__info">
+                  <h3 class="mega-deals__title">{{ product.title | truncate: 60 }}</h3>
+                  <div class="mega-deals__prices">
+                    {%- if product.compare_at_price > product.price -%}
+                      <span class="mega-deals__compare-price">{{ product.compare_at_price | money_without_trailing_zeros }}</span>
+                    {%- endif -%}
+                    <span class="mega-deals__price">{{ product.price | money_without_trailing_zeros }}</span>
+                  </div>
+                </div>
+              </a>
+            {%- else -%}
+              <div class="mega-deals__card-link">
+                {%- if b.badge_text != blank -%}
+                  <span class="mega-deals__badge">{{ b.badge_text }}</span>
+                {%- endif -%}
+                <div class="mega-deals__image-wrap">
+                  <div class="mega-deals__placeholder">
+                    {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
+                  </div>
+                </div>
+                <div class="mega-deals__info">
+                  <h3 class="mega-deals__title">Select a product</h3>
+                  <div class="mega-deals__prices">
+                    <span class="mega-deals__price">—</span>
+                  </div>
+                </div>
+              </div>
+            {%- endif -%}
+          </div>
+        {%- else -%}
+          {%- for i in (1..4) -%}
+            <div class="mega-deals__card">
+              <div class="mega-deals__card-link">
+                <span class="mega-deals__badge">Deal {{ i }}</span>
+                <div class="mega-deals__image-wrap">
+                  <div class="mega-deals__placeholder">
+                    {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
+                  </div>
+                </div>
+                <div class="mega-deals__info">
+                  <h3 class="mega-deals__title">Sample product {{ i }}</h3>
+                  <div class="mega-deals__prices">
+                    <span class="mega-deals__compare-price">$99</span>
+                    <span class="mega-deals__price">$49</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          {%- endfor -%}
+        {%- endfor -%}
+      </div>
+
+      {%- if s.show_arrows -%}
+        <button type="button" class="mega-deals__arrow mega-deals__arrow--prev" aria-label="Previous" ref="prev">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        </button>
+        <button type="button" class="mega-deals__arrow mega-deals__arrow--next" aria-label="Next" ref="next">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </button>
+      {%- endif -%}
+    </div>
+  </mega-deals>
+</div>
+
+{% stylesheet %}
+  .mega-deals {
+    display: block;
+    position: relative;
+  }
+
+  .mega-deals__header {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 12px;
+    padding: 0 var(--gap-md, 16px) 12px;
+  }
+
+  .mega-deals__heading {
+    margin: 0;
+    justify-self: start;
+    font-family: var(--font-heading--family);
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: rgb(var(--color-foreground-heading, 0, 0, 0));
+  }
+
+  .mega-deals__timer {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 6px;
+    background-color: #222;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    justify-self: center;
+  }
+
+  .mega-deals__timer-icon {
+    width: 14px;
+    height: 14px;
+  }
+
+  .mega-deals__view-all {
+    justify-self: end;
+    padding: 8px 16px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 6px;
+    background-color: transparent;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    color: rgb(var(--color-foreground, 0, 0, 0));
+    white-space: nowrap;
+    transition: background-color 200ms ease;
+  }
+
+  .mega-deals__view-all:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+
+  @media screen and (max-width: 749px) {
+    .mega-deals__header {
+      grid-template-columns: 1fr auto;
+      grid-template-areas:
+        "heading view"
+        "timer timer";
+      row-gap: 8px;
+    }
+
+    .mega-deals__heading { grid-area: heading; font-size: 18px; }
+    .mega-deals__view-all { grid-area: view; padding: 6px 12px; font-size: 12px; }
+    .mega-deals__timer { grid-area: timer; justify-self: start; font-size: 13px; }
+  }
+
+  /* Viewport + track */
+  .mega-deals__viewport {
+    position: relative;
+  }
+
+  .mega-deals__track {
+    display: flex;
+    gap: var(--md-gap, 12px);
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding: 0 var(--gap-md, 16px);
+    scroll-padding-inline: var(--gap-md, 16px);
+  }
+
+  .mega-deals__track::-webkit-scrollbar {
+    display: none;
+  }
+
+  .mega-deals__card {
+    flex: 0 0 calc((100% - (var(--md-gap) * (var(--md-desktop-per-view) - 1))) / var(--md-desktop-per-view));
+    scroll-snap-align: start;
+  }
+
+  @media screen and (max-width: 749px) {
+    .mega-deals__card {
+      flex: 0 0 calc((100% - (var(--md-gap) * (var(--md-mobile-per-view) - 1))) / var(--md-mobile-per-view));
+    }
+  }
+
+  .mega-deals__card-link {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+    background-color: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    height: 100%;
+    position: relative;
+    transition: transform 200ms ease;
+  }
+
+  .mega-deals__card-link:hover {
+    transform: translateY(-2px);
+  }
+
+  .mega-deals__badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 2;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 600;
+    background-color: var(--md-badge-bg, #8b5cf6);
+    color: var(--md-badge-text, #fff);
+    text-transform: capitalize;
+  }
+
+  .mega-deals__image-wrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    background-color: #fff;
+  }
+
+  .mega-deals__image {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .mega-deals__placeholder {
+    width: 50%;
+    height: 50%;
+    opacity: 0.3;
+  }
+
+  .mega-deals__add-btn {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #333;
+    z-index: 2;
+    transition: background-color 200ms ease;
+  }
+
+  .mega-deals__add-btn:hover {
+    background-color: #f0f0f0;
+  }
+
+  .mega-deals__add-btn svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .mega-deals__info {
+    padding: 10px 14px 14px;
+  }
+
+  .mega-deals__title {
+    margin: 0 0 6px;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.3;
+    color: rgb(var(--color-foreground, 0, 0, 0));
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .mega-deals__prices {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .mega-deals__compare-price {
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.5);
+    text-decoration: line-through;
+  }
+
+  .mega-deals__price {
+    font-size: 15px;
+    font-weight: 700;
+    color: rgb(var(--color-foreground, 0, 0, 0));
+  }
+
+  /* Arrows */
+  .mega-deals__arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #333;
+    padding: 0;
+  }
+
+  .mega-deals__arrow svg { width: 18px; height: 18px; }
+  .mega-deals__arrow--prev { left: 6px; }
+  .mega-deals__arrow--next { right: 6px; }
+
+  @media screen and (max-width: 749px) {
+    .mega-deals__arrow { width: 30px; height: 30px; }
+    .mega-deals__arrow svg { width: 14px; height: 14px; }
+  }
+{% endstylesheet %}
+
+<script>
+  (function () {
+    if (customElements.get('mega-deals')) return;
+
+    class MegaDeals extends HTMLElement {
+      connectedCallback() {
+        this.track = this.querySelector('[ref="track"]');
+        this.prev = this.querySelector('[ref="prev"]');
+        this.next = this.querySelector('[ref="next"]');
+        this.timerEl = this.querySelector('[ref="timerValue"]');
+
+        if (this.prev) this.prev.addEventListener('click', () => this.scrollCards(-1));
+        if (this.next) this.next.addEventListener('click', () => this.scrollCards(1));
+
+        this.startTimer();
+      }
+
+      scrollCards(direction) {
+        if (!this.track) return;
+        const card = this.track.querySelector('.mega-deals__card');
+        if (!card) return;
+        const cardWidth = card.offsetWidth + parseFloat(getComputedStyle(this.track).columnGap || '0');
+        this.track.scrollBy({ left: direction * cardWidth * 2, behavior: 'smooth' });
+      }
+
+      startTimer() {
+        if (!this.timerEl) return;
+        const dateStr = this.dataset.endDate;
+        const timeStr = this.dataset.endTime || '23:59';
+        if (!dateStr) return;
+
+        const target = new Date(`${dateStr}T${timeStr}:00`).getTime();
+        if (isNaN(target)) return;
+
+        const update = () => {
+          const now = Date.now();
+          const diff = target - now;
+          if (diff <= 0) {
+            this.timerEl.textContent = '00 : 00 : 00';
+            clearInterval(this.timerInterval);
+            return;
+          }
+          const totalSec = Math.floor(diff / 1000);
+          const hours = Math.floor(totalSec / 3600);
+          const mins = Math.floor((totalSec % 3600) / 60);
+          const secs = totalSec % 60;
+          const pad = (n) => String(n).padStart(2, '0');
+          this.timerEl.textContent = `${pad(hours)} : ${pad(mins)} : ${pad(secs)}`;
+        };
+
+        update();
+        this.timerInterval = setInterval(update, 1000);
+      }
+
+      disconnectedCallback() {
+        if (this.timerInterval) clearInterval(this.timerInterval);
+      }
+    }
+
+    customElements.define('mega-deals', MegaDeals);
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Mega deals",
+  "tag": "section",
+  "class": "section-mega-deals",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "Heading & Action"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Mega deals"
+    },
+    {
+      "type": "text",
+      "id": "view_all_label",
+      "label": "View all label",
+      "default": "VIEW ALL"
+    },
+    {
+      "type": "url",
+      "id": "view_all_link",
+      "label": "View all link"
+    },
+    {
+      "type": "header",
+      "content": "Countdown timer"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_timer",
+      "label": "Show countdown timer",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "end_date",
+      "label": "End date",
+      "info": "Format: YYYY-MM-DD (e.g. 2026-12-31)"
+    },
+    {
+      "type": "text",
+      "id": "end_time",
+      "label": "End time",
+      "info": "Format: HH:MM (24-hour, e.g. 23:59)",
+      "default": "23:59"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "section_width",
+      "label": "Section width",
+      "options": [
+        { "value": "page-width", "label": "Page" },
+        { "value": "full-width", "label": "Full" }
+      ],
+      "default": "full-width"
+    },
+    {
+      "type": "select",
+      "id": "desktop_per_view",
+      "label": "Desktop cards per view",
+      "options": [
+        { "value": "3", "label": "3" },
+        { "value": "4", "label": "4" },
+        { "value": "5", "label": "5" },
+        { "value": "6", "label": "6" }
+      ],
+      "default": "4"
+    },
+    {
+      "type": "select",
+      "id": "mobile_per_view",
+      "label": "Mobile cards per view",
+      "options": [
+        { "value": "1.2", "label": "1.2" },
+        { "value": "1.5", "label": "1.5" },
+        { "value": "2", "label": "2" },
+        { "value": "2.2", "label": "2.2" }
+      ],
+      "default": "1.5"
+    },
+    {
+      "type": "range",
+      "id": "gap",
+      "label": "Gap between cards",
+      "min": 0,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "checkbox",
+      "id": "show_arrows",
+      "label": "Show arrows",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Appearance"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Section background color",
+      "default": "#f0e8ff"
+    },
+    {
+      "type": "color",
+      "id": "badge_color",
+      "label": "Badge background",
+      "default": "#8b5cf6"
+    },
+    {
+      "type": "color",
+      "id": "badge_text_color",
+      "label": "Badge text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "Top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "Bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 24
+    }
+  ],
+  "blocks": [
+    {
+      "type": "deal_product",
+      "name": "Deal product",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        },
+        {
+          "type": "text",
+          "id": "badge_text",
+          "label": "Badge text",
+          "info": "Small label shown on top-right of the card (e.g. Fragrance deals).",
+          "default": "Deal"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 16,
+  "presets": [
+    {
+      "name": "Mega deals",
+      "category": "Product",
+      "blocks": [
+        { "type": "deal_product", "settings": { "badge_text": "Fragrance deals" } },
+        { "type": "deal_product", "settings": { "badge_text": "Hair Care deals" } },
+        { "type": "deal_product", "settings": { "badge_text": "Makeup deals" } },
+        { "type": "deal_product", "settings": { "badge_text": "Personal Care deals" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
