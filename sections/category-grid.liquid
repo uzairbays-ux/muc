@@ -1,6 +1,7 @@
 {% liquid
   assign s = section.settings
-  assign layout = s.layout | default: 'carousel'
+  assign desktop_layout = s.desktop_layout | default: 'carousel'
+  assign mobile_layout = s.mobile_layout | default: 'carousel'
   assign desktop_per_row = s.desktop_per_row | default: 8
   assign mobile_per_row = s.mobile_per_row | default: '3.5'
   assign gap = s.gap | default: 12
@@ -33,7 +34,8 @@
 
   <category-grid-slider
     class="category-grid"
-    data-layout="{{ layout }}"
+    data-desktop-layout="{{ desktop_layout }}"
+    data-mobile-layout="{{ mobile_layout }}"
     style="--cg-desktop-per-row: {{ desktop_per_row }}; --cg-mobile-per-row: {{ mobile_per_row }}; --cg-mobile-per-row-int: {{ mobile_per_row_int }}; --cg-gap: {{ gap }}px; --cg-row-gap: {{ row_gap }}px; --cg-image-radius: {{ image_border_radius }}px;"
   >
     <div class="category-grid__viewport" ref="viewport">
@@ -84,7 +86,7 @@
         {%- endfor -%}
       </div>
 
-      {%- if show_arrows and section.blocks.size > 1 and layout == 'carousel' -%}
+      {%- if show_arrows and section.blocks.size > 1 and desktop_layout == 'carousel' -%}
         <button
           type="button"
           class="category-grid__arrow category-grid__arrow--prev button-unstyled"
@@ -154,25 +156,27 @@
     display: none;
   }
 
-  /* Grid layout: wrapping grid with centered last row */
-  .category-grid[data-layout="grid"] .category-grid__track {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    grid-template-rows: none;
-    grid-auto-flow: row;
-    grid-auto-columns: unset;
-    grid-template-columns: none;
-    column-gap: var(--cg-gap, 12px);
-    row-gap: var(--cg-row-gap, 12px);
-    overflow-x: visible;
-    overflow-y: visible;
-    scroll-snap-type: none;
-  }
+  /* Grid layout (desktop): wrapping grid with centered last row */
+  @media screen and (min-width: 750px) {
+    .category-grid[data-desktop-layout="grid"] .category-grid__track {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      grid-template-rows: none;
+      grid-auto-flow: row;
+      grid-auto-columns: unset;
+      grid-template-columns: none;
+      column-gap: var(--cg-gap, 12px);
+      row-gap: var(--cg-row-gap, 12px);
+      overflow-x: visible;
+      overflow-y: visible;
+      scroll-snap-type: none;
+    }
 
-  .category-grid[data-layout="grid"] .category-grid__card {
-    flex: 0 0 calc((100% - (var(--cg-gap, 12px) * (var(--cg-desktop-per-row) - 1))) / var(--cg-desktop-per-row));
-    max-width: calc((100% - (var(--cg-gap, 12px) * (var(--cg-desktop-per-row) - 1))) / var(--cg-desktop-per-row));
+    .category-grid[data-desktop-layout="grid"] .category-grid__card {
+      flex: 0 0 calc((100% - (var(--cg-gap, 12px) * (var(--cg-desktop-per-row) - 1))) / var(--cg-desktop-per-row));
+      max-width: calc((100% - (var(--cg-gap, 12px) * (var(--cg-desktop-per-row) - 1))) / var(--cg-desktop-per-row));
+    }
   }
 
   @media screen and (max-width: 749px) {
@@ -180,12 +184,23 @@
       grid-auto-columns: calc((100% - (var(--cg-gap) * (var(--cg-mobile-per-row) - 1))) / var(--cg-mobile-per-row));
     }
 
-    .category-grid[data-layout="grid"] .category-grid__track {
+    /* Grid layout (mobile): wrapping grid with centered last row */
+    .category-grid[data-mobile-layout="grid"] .category-grid__track {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      grid-template-rows: none;
+      grid-auto-flow: row;
       grid-auto-columns: unset;
       grid-template-columns: none;
+      column-gap: var(--cg-gap, 12px);
+      row-gap: var(--cg-row-gap, 12px);
+      overflow-x: visible;
+      overflow-y: visible;
+      scroll-snap-type: none;
     }
 
-    .category-grid[data-layout="grid"] .category-grid__card {
+    .category-grid[data-mobile-layout="grid"] .category-grid__card {
       flex: 0 0 calc((100% - (var(--cg-gap, 12px) * (var(--cg-mobile-per-row-int, 2) - 1))) / var(--cg-mobile-per-row-int, 2));
       max-width: calc((100% - (var(--cg-gap, 12px) * (var(--cg-mobile-per-row-int, 2) - 1))) / var(--cg-mobile-per-row-int, 2));
     }
@@ -386,14 +401,23 @@
     },
     {
       "type": "select",
-      "id": "layout",
-      "label": "Layout",
+      "id": "desktop_layout",
+      "label": "Desktop layout",
       "options": [
         { "value": "carousel", "label": "Carousel (2 rows, horizontal scroll)" },
         { "value": "grid", "label": "Grid (wraps to multiple rows)" }
       ],
-      "default": "carousel",
-      "info": "Carousel: shows 2 rows scrolling horizontally. Grid: all items in a wrapping grid."
+      "default": "carousel"
+    },
+    {
+      "type": "select",
+      "id": "mobile_layout",
+      "label": "Mobile layout",
+      "options": [
+        { "value": "carousel", "label": "Carousel (2 rows, horizontal scroll)" },
+        { "value": "grid", "label": "Grid (wraps to multiple rows)" }
+      ],
+      "default": "carousel"
     },
     {
       "type": "header",

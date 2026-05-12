@@ -7,6 +7,8 @@
   assign mobile_layout = s.mobile_layout | default: 'grid'
   assign desktop_slider_per_view = s.desktop_slider_per_view | default: desktop_columns
   assign mobile_slider_per_view = s.mobile_slider_per_view | default: '2'
+  assign auto_rotate = s.auto_rotate
+  assign rotate_interval = s.rotate_interval | default: 4
 %}
 
 <div class="section-background color-{{ s.color_scheme }}"></div>
@@ -24,10 +26,12 @@
     </div>
   {%- endif -%}
 
-  <div
+  <card-grid-slider
     class="card-grid__grid"
     data-desktop-layout="{{ desktop_layout }}"
     data-mobile-layout="{{ mobile_layout }}"
+    data-auto-rotate="{{ auto_rotate }}"
+    data-rotate-interval="{{ rotate_interval }}"
     style="--cg-desktop-cols: {{ desktop_columns }}; --cg-mobile-cols: {{ mobile_columns }}; --cg-desktop-per-view: {{ desktop_slider_per_view }}; --cg-mobile-per-view: {{ mobile_slider_per_view }}; --cg-gap: {{ gap }}px;"
   >
     {%- for block in section.blocks -%}
@@ -69,7 +73,7 @@
         </div>
       {%- endfor -%}
     {%- endfor -%}
-  </div>
+  </card-grid-slider>
 </div>
 
 {% stylesheet %}
@@ -106,8 +110,6 @@
       scroll-snap-type: x mandatory;
       -webkit-overflow-scrolling: touch;
       scrollbar-width: none;
-      padding-inline: var(--gap-md, 16px);
-      scroll-padding-inline: var(--gap-md, 16px);
     }
 
     .card-grid__grid[data-desktop-layout="slider"]::-webkit-scrollbar {
@@ -115,7 +117,8 @@
     }
 
     .card-grid__grid[data-desktop-layout="slider"] .card-grid__item {
-      flex: 0 0 calc((100% - (var(--gap-md, 16px) * 2) - (var(--cg-gap) * (var(--cg-desktop-per-view) - 1))) / var(--cg-desktop-per-view));
+      flex: 0 0 calc((100% - (var(--cg-gap, 16px) * (var(--cg-desktop-per-view) - 1))) / var(--cg-desktop-per-view));
+      min-width: 0;
       scroll-snap-align: start;
     }
   }
@@ -135,8 +138,6 @@
       scroll-snap-type: x mandatory;
       -webkit-overflow-scrolling: touch;
       scrollbar-width: none;
-      padding-inline: var(--gap-md, 16px);
-      scroll-padding-inline: var(--gap-md, 16px);
     }
 
     .card-grid__grid[data-mobile-layout="slider"]::-webkit-scrollbar {
@@ -144,7 +145,8 @@
     }
 
     .card-grid__grid[data-mobile-layout="slider"] .card-grid__item {
-      flex: 0 0 calc((100% - (var(--gap-md, 16px) * 2) - (var(--cg-gap) * (var(--cg-mobile-per-view) - 1))) / var(--cg-mobile-per-view));
+      flex: 0 0 calc((100% - (var(--cg-gap, 16px) * (var(--cg-mobile-per-view) - 1))) / var(--cg-mobile-per-view));
+      min-width: 0;
       scroll-snap-align: start;
     }
   }
@@ -196,6 +198,75 @@
     opacity: 0.3;
   }
 {% endstylesheet %}
+
+<script>
+  (function () {
+    if (customElements.get('card-grid-slider')) return;
+
+    class CardGridSlider extends HTMLElement {
+      connectedCallback() {
+        if (this.dataset.autoRotate !== 'true') return;
+
+        const seconds = parseInt(this.dataset.rotateInterval, 10);
+        this.intervalMs = (isNaN(seconds) || seconds < 2 ? 4 : seconds) * 1000;
+        this.isPaused = false;
+
+        this.addEventListener('mouseenter', () => { this.isPaused = true; });
+        this.addEventListener('mouseleave', () => { this.isPaused = false; });
+        this.addEventListener('touchstart', () => {
+          this.isPaused = true;
+          clearTimeout(this._resumeTimer);
+          this._resumeTimer = setTimeout(() => { this.isPaused = false; }, 5000);
+        }, { passive: true });
+
+        if (typeof IntersectionObserver !== 'undefined') {
+          this._io = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => { this._inView = entry.isIntersecting; });
+          }, { threshold: 0.2 });
+          this._io.observe(this);
+        } else {
+          this._inView = true;
+        }
+
+        this._tick = setInterval(() => this.step(), this.intervalMs);
+      }
+
+      disconnectedCallback() {
+        clearInterval(this._tick);
+        clearTimeout(this._resumeTimer);
+        if (this._io) this._io.disconnect();
+      }
+
+      currentLayout() {
+        const isDesktop = window.matchMedia('(min-width: 750px)').matches;
+        return isDesktop ? this.dataset.desktopLayout : this.dataset.mobileLayout;
+      }
+
+      step() {
+        if (this.isPaused) return;
+        if (this._inView === false) return;
+        if (this.currentLayout() !== 'slider') return;
+        if (this.scrollWidth <= this.clientWidth + 1) return;
+
+        const firstItem = this.querySelector('.card-grid__item');
+        if (!firstItem) return;
+
+        const styles = getComputedStyle(this);
+        const gap = parseFloat(styles.columnGap || styles.gap || '0') || 0;
+        const delta = firstItem.offsetWidth + gap;
+
+        const atEnd = this.scrollLeft + this.clientWidth >= this.scrollWidth - 2;
+        if (atEnd) {
+          this.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+          this.scrollBy({ left: delta, behavior: 'smooth' });
+        }
+      }
+    }
+
+    customElements.define('card-grid-slider', CardGridSlider);
+  })();
+</script>
 
 {% schema %}
 {
@@ -312,6 +383,23 @@
         { "value": "2.5", "label": "2.5" }
       ],
       "default": "2"
+    },
+    {
+      "type": "checkbox",
+      "id": "auto_rotate",
+      "label": "Auto-rotate slider",
+      "info": "Automatically scrolls to the next card. Pauses on hover/touch. Only applies in Slider mode.",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "rotate_interval",
+      "label": "Rotation interval",
+      "min": 2,
+      "max": 10,
+      "step": 1,
+      "unit": "s",
+      "default": 4
     },
     {
       "type": "range",
