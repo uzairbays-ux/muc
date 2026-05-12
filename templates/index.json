@@ -1283,9 +1283,9 @@
         "category_grzNxy": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/micellar_pink_800x800_6e40600e-6bba-44bf-885f-c95564e6d76f.jpg",
-            "label": "Sunscreen",
-            "link": "",
+            "image": "shopify://shop_images/Baby-Shampoo.webp",
+            "label": "Baby Shampoo",
+            "link": "shopify://collections/baby-care-baby-shampoo",
             "card_background": "#e3cef0"
           }
         },
