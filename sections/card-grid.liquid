@@ -121,6 +121,11 @@
       min-width: 0;
       scroll-snap-align: start;
     }
+
+    /* Make the last card snap to the right edge so there is no empty space at the end */
+    .card-grid__grid[data-desktop-layout="slider"] .card-grid__item:last-child {
+      scroll-snap-align: end;
+    }
   }
 
   @media screen and (max-width: 749px) {
@@ -148,6 +153,11 @@
       flex: 0 0 calc((100% - (var(--cg-gap, 16px) * (var(--cg-mobile-per-view) - 1))) / var(--cg-mobile-per-view));
       min-width: 0;
       scroll-snap-align: start;
+    }
+
+    /* Make the last card snap to the right edge so there is no empty space at the end */
+    .card-grid__grid[data-mobile-layout="slider"] .card-grid__item:last-child {
+      scroll-snap-align: end;
     }
   }
 
