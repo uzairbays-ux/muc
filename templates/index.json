@@ -1436,18 +1436,18 @@
         "category_jLiKUY": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/micellar_pink_800x800_6e40600e-6bba-44bf-885f-c95564e6d76f.jpg",
-            "label": "Sunscreen",
-            "link": "",
+            "image": "shopify://shop_images/Hair-Dye.webp",
+            "label": "Hair Dye",
+            "link": "shopify://collections/styling-treatment-hair-dye",
             "card_background": "#e3cef0"
           }
         },
         "category_fUMRAW": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/micellar_pink_800x800_6e40600e-6bba-44bf-885f-c95564e6d76f.jpg",
-            "label": "Sunscreen",
-            "link": "",
+            "image": "shopify://shop_images/Serums-_-Essence.webp",
+            "label": "Serums",
+            "link": "shopify://collections/moisturizers-serums-and-essence",
             "card_background": "#e3cef0"
           }
         }
