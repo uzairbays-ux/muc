@@ -1547,6 +1547,21 @@
         "padding-block-start": 24,
         "padding-block-end": 24
       }
+    },
+    "cta_banner_eHhwWU": {
+      "type": "cta-banner",
+      "name": "CTA banner",
+      "settings": {
+        "heading": "CERTIFIED BY 250+ BRANDS",
+        "heading_size_desktop": 48,
+        "heading_size_mobile": 24,
+        "button_label": "View More",
+        "button_link": "",
+        "open_new_tab": false,
+        "background_image": "shopify://shop_images/v1022-21-b.webp",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
     }
   },
   "order": [
@@ -1562,6 +1577,7 @@
     "category_grid_pGCQaP",
     "ad_banner_pjN7dA",
     "category_grid_FAWJJj",
-    "card_grid_yKxxjX"
+    "card_grid_yKxxjX",
+    "cta_banner_eHhwWU"
   ]
 }
