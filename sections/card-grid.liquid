@@ -110,8 +110,10 @@
       scroll-snap-type: x mandatory;
       -webkit-overflow-scrolling: touch;
       scrollbar-width: none;
-      padding-inline: var(--gap-md, 16px);
-      scroll-padding-inline: var(--gap-md, 16px);
+      padding-inline-start: var(--gap-md, 16px);
+      padding-inline-end: 0;
+      scroll-padding-inline-start: var(--gap-md, 16px);
+      scroll-padding-inline-end: 0;
     }
 
     .card-grid__grid[data-desktop-layout="slider"]::-webkit-scrollbar {
@@ -124,7 +126,7 @@
       scroll-snap-align: start;
     }
 
-    /* Make the last card snap to the right edge so there is no empty space at the end */
+    /* Last card snaps flush to the right viewport edge (no trailing gap) */
     .card-grid__grid[data-desktop-layout="slider"] .card-grid__item:last-child {
       scroll-snap-align: end;
     }
@@ -145,8 +147,10 @@
       scroll-snap-type: x mandatory;
       -webkit-overflow-scrolling: touch;
       scrollbar-width: none;
-      padding-inline: var(--gap-md, 16px);
-      scroll-padding-inline: var(--gap-md, 16px);
+      padding-inline-start: var(--gap-md, 16px);
+      padding-inline-end: 0;
+      scroll-padding-inline-start: var(--gap-md, 16px);
+      scroll-padding-inline-end: 0;
     }
 
     .card-grid__grid[data-mobile-layout="slider"]::-webkit-scrollbar {
@@ -159,7 +163,7 @@
       scroll-snap-align: start;
     }
 
-    /* Make the last card snap to the right edge so there is no empty space at the end */
+    /* Last card snaps flush to the right viewport edge (no trailing gap) */
     .card-grid__grid[data-mobile-layout="slider"] .card-grid__item:last-child {
       scroll-snap-align: end;
     }
