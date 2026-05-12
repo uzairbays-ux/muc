@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -30,7 +39,9 @@
           "blocks": {}
         }
       },
-      "block_order": ["heading"],
+      "block_order": [
+        "heading"
+      ],
       "settings": {
         "content_direction": "column",
         "gap": 16,
@@ -52,10 +63,11 @@
         "color_scheme": "scheme-1",
         "padding-block-start": 32,
         "padding-block-end": 64
-      },
-      "blocks": {},
-      "block_order": []
+      }
     }
   },
-  "order": ["main", "live"]
+  "order": [
+    "main",
+    "live"
+  ]
 }
