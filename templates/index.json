@@ -172,7 +172,7 @@
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/Bioaqua.jpg",
-            "link": "",
+            "link": "shopify://collections/bioaqua",
             "open_new_tab": false
           }
         }
