@@ -388,15 +388,22 @@
         "deal_product_HBhPne": {
           "type": "deal_product",
           "settings": {
-            "product": "",
+            "product": "769915193626",
             "badge_text": "Makeup deals"
           }
         },
         "deal_product_VDUy7T": {
           "type": "deal_product",
           "settings": {
-            "product": "",
+            "product": "8809640731433",
             "badge_text": "Personal Care deals"
+          }
+        },
+        "deal_product_fNMmYz": {
+          "type": "deal_product",
+          "settings": {
+            "product": "8809562190738",
+            "badge_text": "Deal"
           }
         }
       },
@@ -404,7 +411,8 @@
         "deal_product_9fX8dx",
         "deal_product_UEpJWB",
         "deal_product_HBhPne",
-        "deal_product_VDUy7T"
+        "deal_product_VDUy7T",
+        "deal_product_fNMmYz"
       ],
       "name": "Mega deals",
       "settings": {
