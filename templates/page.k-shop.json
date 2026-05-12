@@ -57,119 +57,54 @@
         "padding-block-end": 80
       }
     },
-    "hero_b8XV4A": {
-      "type": "hero",
+    "stacked_banners_NrWw6N": {
+      "type": "stacked-banners",
       "blocks": {
-        "spacer_Nmg9kJ": {
-          "type": "spacer",
+        "banner_gti3hP": {
+          "type": "banner",
           "settings": {
-            "size": "pixel",
-            "percent_size": 100,
-            "pixel_size": 24,
-            "custom_mobile_size": false,
-            "size_mobile": "percent",
-            "percent_size_mobile": 100,
-            "pixel_size_mobile": 120
-          },
-          "blocks": {}
+            "desktop_image": "shopify://shop_images/k-banner-desktop.avif",
+            "mobile_image": "shopify://shop_images/Korean-Brand-Main-Banner.jpg",
+            "link": "shopify://pages/korean-brand-k-beauty",
+            "open_new_tab": false
+          }
         },
-        "marquee_jDbC63": {
-          "type": "_marquee",
+        "banner_w3KRTf": {
+          "type": "banner",
           "settings": {
-            "movement_direction": "normal",
-            "inherit_color_scheme": true,
-            "color_scheme": "",
-            "transparent_background": true,
-            "padding-block-start": 24,
-            "padding-block-end": 24,
-            "gap_between_elements": 24
-          },
-          "blocks": {
-            "text_J7F4EL": {
-              "type": "text",
-              "settings": {
-                "text": "<p>Explore our latest products.</p>",
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "h1",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground)",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "text_J7F4EL"
-          ]
+            "desktop_image": "shopify://shop_images/k-banner-gif.gif",
+            "mobile_image": "shopify://shop_images/k-banner-gif.gif",
+            "link": "shopify://pages/korean-brand-k-beauty",
+            "open_new_tab": false
+          }
         },
-        "button_q4gJnc": {
-          "type": "button",
+        "banner_UCj9Uw": {
+          "type": "banner",
           "settings": {
-            "label": "Shop now",
-            "link": "shopify://collections/all",
-            "open_in_new_tab": false,
-            "style_class": "button",
-            "width": "fit-content",
-            "custom_width": 100,
-            "width_mobile": "fit-content",
-            "custom_width_mobile": 100
-          },
-          "blocks": {}
+            "desktop_image": "shopify://shop_images/k-pop-desktop.avif",
+            "mobile_image": "shopify://shop_images/k-pop-mobile.avif",
+            "link": "shopify://collections/korean-brands",
+            "open_new_tab": false
+          }
         }
       },
       "block_order": [
-        "spacer_Nmg9kJ",
-        "marquee_jDbC63",
-        "button_q4gJnc"
+        "banner_gti3hP",
+        "banner_w3KRTf",
+        "banner_UCj9Uw"
       ],
-      "name": "t:names.hero_marquee",
+      "name": "Stacked banners",
       "settings": {
-        "media_type_1": "image",
-        "media_type_2": "image",
-        "stack_media_on_mobile": false,
-        "custom_mobile_media": false,
-        "media_type_1_mobile": "image",
-        "media_type_2_mobile": "image",
-        "link": "",
-        "open_in_new_tab": false,
-        "content_direction": "column",
-        "vertical_on_mobile": true,
-        "horizontal_alignment": "flex-start",
-        "vertical_alignment": "center",
-        "align_baseline": false,
-        "horizontal_alignment_flex_direction_column": "center",
-        "vertical_alignment_flex_direction_column": "space-between",
-        "gap": 32,
-        "section_width": "page-width",
-        "section_height": "large",
-        "section_height_custom": 50,
-        "color_scheme": "scheme-5",
-        "toggle_overlay": true,
-        "overlay_color": "#00000026",
-        "overlay_style": "gradient",
-        "gradient_direction": "to top",
-        "blurred_reflection": false,
-        "reflection_opacity": 75,
+        "gap": 0,
+        "background_color": "#e3cef0",
+        "color_scheme": "",
         "padding-block-start": 0,
-        "padding-block-end": 40
+        "padding-block-end": 0
       }
     }
   },
   "order": [
     "main",
-    "hero_b8XV4A"
+    "stacked_banners_NrWw6N"
   ]
 }
