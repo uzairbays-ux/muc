@@ -9,6 +9,7 @@
   assign mobile_slider_per_view = s.mobile_slider_per_view | default: '2'
   assign auto_rotate = s.auto_rotate
   assign rotate_interval = s.rotate_interval | default: 4
+  assign desktop_side_padding = s.desktop_side_padding | default: 48
 %}
 
 <div class="section-background color-{{ s.color_scheme }}"></div>
@@ -32,7 +33,7 @@
     data-mobile-layout="{{ mobile_layout }}"
     data-auto-rotate="{{ auto_rotate }}"
     data-rotate-interval="{{ rotate_interval }}"
-    style="--cg-desktop-cols: {{ desktop_columns }}; --cg-mobile-cols: {{ mobile_columns }}; --cg-desktop-per-view: {{ desktop_slider_per_view }}; --cg-mobile-per-view: {{ mobile_slider_per_view }}; --cg-gap: {{ gap }}px;"
+    style="--cg-desktop-cols: {{ desktop_columns }}; --cg-mobile-cols: {{ mobile_columns }}; --cg-desktop-per-view: {{ desktop_slider_per_view }}; --cg-mobile-per-view: {{ mobile_slider_per_view }}; --cg-gap: {{ gap }}px; --cg-desktop-side-padding: {{ desktop_side_padding }}px;"
   >
     {%- for block in section.blocks -%}
       {%- assign b = block.settings -%}
@@ -101,6 +102,11 @@
 
   /* Desktop slider mode */
   @media screen and (min-width: 750px) {
+    /* Desktop-only side padding applies to BOTH grid and slider modes */
+    .card-grid__grid {
+      padding-inline: var(--cg-desktop-side-padding, 48px);
+    }
+
     .card-grid__grid[data-desktop-layout="slider"] {
       display: flex;
       grid-template-columns: none;
@@ -110,8 +116,8 @@
       scroll-snap-type: x mandatory;
       -webkit-overflow-scrolling: touch;
       scrollbar-width: none;
-      padding: 0 var(--gap-md, 16px);
-      scroll-padding-inline: var(--gap-md, 16px);
+      padding: 0 var(--cg-desktop-side-padding, 48px);
+      scroll-padding-inline: var(--cg-desktop-side-padding, 48px);
     }
 
     .card-grid__grid[data-desktop-layout="slider"]::-webkit-scrollbar {
@@ -416,6 +422,17 @@
       "step": 2,
       "unit": "px",
       "default": 16
+    },
+    {
+      "type": "range",
+      "id": "desktop_side_padding",
+      "label": "Desktop side padding",
+      "info": "Left/right padding applied on desktop only. Mobile stays edge-to-edge.",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 48
     },
     {
       "type": "header",
