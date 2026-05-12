@@ -1,0 +1,296 @@
+{% liquid
+  assign s = section.settings
+  assign map_url = s.map_embed_url
+%}
+
+<div
+  class="section section--{{ s.section_width }} color-{{ s.color_scheme }} spacing-style"
+  style="{% render 'spacing-style', settings: s %}"
+  data-testid="store-locator-{{ section.id }}"
+>
+  <store-locator class="store-locator">
+    <div class="store-locator__header">
+      {%- if s.heading != blank -%}
+        <h1 class="store-locator__heading">{{ s.heading }}</h1>
+      {%- endif -%}
+      {%- if s.subheading != blank -%}
+        <p class="store-locator__subheading">{{ s.subheading }}</p>
+      {%- endif -%}
+    </div>
+
+    <div class="store-locator__layout">
+      <div class="store-locator__sidebar">
+        <div class="store-locator__search">
+          <input
+            type="search"
+            class="store-locator__search-input"
+            placeholder="{{ s.search_placeholder | default: 'Search by city, area, or postal code' }}"
+            ref="search"
+            aria-label="Search stores"
+          >
+        </div>
+
+        <div class="store-locator__list" ref="list">
+          {%- for block in section.blocks -%}
+            {%- assign b = block.settings -%}
+            <article
+              class="store-locator__store"
+              data-keywords="{{ b.name | downcase }} {{ b.address | downcase }} {{ b.city | downcase }} {{ b.postal_code | downcase }}"
+              {{ block.shopify_attributes }}
+            >
+              <h3 class="store-locator__store-name">{{ b.name | default: 'Store name' }}</h3>
+              {%- if b.address != blank -%}
+                <p class="store-locator__store-line">{{ b.address }}{% if b.city != blank %}, {{ b.city }}{% endif %}{% if b.postal_code != blank %} {{ b.postal_code }}{% endif %}</p>
+              {%- endif -%}
+              {%- if b.hours != blank -%}
+                <p class="store-locator__store-hours">{{ b.hours }}</p>
+              {%- endif -%}
+              <div class="store-locator__store-actions">
+                {%- if b.phone != blank -%}
+                  <a href="tel:{{ b.phone | replace: ' ', '' }}" class="store-locator__store-link">Call</a>
+                {%- endif -%}
+                {%- if b.directions_url != blank -%}
+                  <a href="{{ b.directions_url }}" target="_blank" rel="noopener" class="store-locator__store-link">Directions</a>
+                {%- endif -%}
+              </div>
+            </article>
+          {%- else -%}
+            <p class="store-locator__empty">Add store blocks in the theme editor.</p>
+          {%- endfor -%}
+        </div>
+      </div>
+
+      <div class="store-locator__map">
+        {%- if map_url != blank -%}
+          <iframe
+            src="{{ map_url }}"
+            width="100%"
+            height="100%"
+            style="border:0;"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Store locations map"
+          ></iframe>
+        {%- else -%}
+          <div class="store-locator__map-placeholder">
+            <p>Paste a Google Maps embed URL in the section settings.</p>
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  </store-locator>
+</div>
+
+{% stylesheet %}
+  .store-locator {
+    display: block;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding-inline: var(--gap-md, 16px);
+  }
+
+  .store-locator__header { text-align: center; margin-bottom: 24px; }
+
+  .store-locator__heading {
+    margin: 0 0 8px;
+    font-family: var(--font-heading--family);
+    font-size: 32px;
+    line-height: 1.15;
+    color: rgb(var(--color-foreground-heading, 0 0 0));
+  }
+
+  .store-locator__subheading {
+    margin: 0;
+    font-size: 15px;
+    color: rgb(var(--color-foreground, 0 0 0) / 0.7);
+  }
+
+  .store-locator__layout {
+    display: grid;
+    grid-template-columns: 360px 1fr;
+    gap: 16px;
+    min-height: 520px;
+  }
+
+  .store-locator__sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-height: 0;
+  }
+
+  .store-locator__search-input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid rgb(var(--color-foreground, 0 0 0) / 0.2);
+    border-radius: 6px;
+    font-size: 14px;
+    background-color: rgb(var(--color-background, 255 255 255));
+    color: rgb(var(--color-foreground, 0 0 0));
+  }
+
+  .store-locator__list {
+    flex: 1;
+    overflow-y: auto;
+    border: 1px solid rgb(var(--color-foreground, 0 0 0) / 0.1);
+    border-radius: 8px;
+    padding: 4px;
+  }
+
+  .store-locator__store {
+    padding: 14px;
+    border-radius: 6px;
+    border-bottom: 1px solid rgb(var(--color-foreground, 0 0 0) / 0.08);
+  }
+
+  .store-locator__store:last-child { border-bottom: 0; }
+  .store-locator__store.is-hidden { display: none; }
+
+  .store-locator__store-name {
+    margin: 0 0 4px;
+    font-size: 15px;
+    font-weight: 700;
+    color: rgb(var(--color-foreground-heading, 0 0 0));
+  }
+
+  .store-locator__store-line,
+  .store-locator__store-hours {
+    margin: 2px 0;
+    font-size: 13px;
+    line-height: 1.4;
+    color: rgb(var(--color-foreground, 0 0 0) / 0.75);
+  }
+
+  .store-locator__store-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 8px;
+  }
+
+  .store-locator__store-link {
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: underline;
+    color: rgb(var(--color-foreground, 0 0 0));
+  }
+
+  .store-locator__empty {
+    padding: 24px;
+    text-align: center;
+    color: rgb(var(--color-foreground, 0 0 0) / 0.6);
+  }
+
+  .store-locator__map {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: rgb(var(--color-foreground, 0 0 0) / 0.04);
+    min-height: 520px;
+  }
+
+  .store-locator__map iframe { display: block; width: 100%; height: 100%; }
+
+  .store-locator__map-placeholder {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    text-align: center;
+    color: rgb(var(--color-foreground, 0 0 0) / 0.6);
+  }
+
+  @media screen and (max-width: 749px) {
+    .store-locator__layout {
+      grid-template-columns: 1fr;
+    }
+
+    .store-locator__map { min-height: 320px; order: -1; }
+    .store-locator__heading { font-size: 24px; }
+    .store-locator__list { max-height: 420px; }
+  }
+{% endstylesheet %}
+
+<script>
+  (function () {
+    if (customElements.get('store-locator')) return;
+
+    class StoreLocator extends HTMLElement {
+      connectedCallback() {
+        this.input = this.querySelector('[ref="search"]');
+        this.list = this.querySelector('[ref="list"]');
+        if (!this.input || !this.list) return;
+        this.stores = this.list.querySelectorAll('.store-locator__store');
+        this.input.addEventListener('input', () => this.filter());
+      }
+
+      filter() {
+        const query = this.input.value.toLowerCase().trim();
+        this.stores.forEach((store) => {
+          const keywords = (store.dataset.keywords || '').toLowerCase();
+          if (!query || keywords.includes(query)) {
+            store.classList.remove('is-hidden');
+          } else {
+            store.classList.add('is-hidden');
+          }
+        });
+      }
+    }
+
+    customElements.define('store-locator', StoreLocator);
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Store locator",
+  "tag": "section",
+  "class": "section-store-locator",
+  "disabled_on": { "groups": ["header", "footer"] },
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Find a store" },
+    { "type": "text", "id": "subheading", "label": "Subheading", "default": "Locate the closest store near you." },
+    { "type": "text", "id": "search_placeholder", "label": "Search placeholder", "default": "Search by city, area, or postal code" },
+    { "type": "header", "content": "Map" },
+    { "type": "url", "id": "map_embed_url", "label": "Google Maps embed URL", "info": "From Google Maps: Share → Embed a map → copy the src URL." },
+    { "type": "header", "content": "Layout" },
+    {
+      "type": "select",
+      "id": "section_width",
+      "label": "Section width",
+      "options": [
+        { "value": "page-width", "label": "Page" },
+        { "value": "full-width", "label": "Full" }
+      ],
+      "default": "page-width"
+    },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-1" },
+    { "type": "header", "content": "Padding" },
+    { "type": "range", "id": "padding-block-start", "label": "Top", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 32 },
+    { "type": "range", "id": "padding-block-end", "label": "Bottom", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 64 }
+  ],
+  "blocks": [
+    {
+      "type": "store",
+      "name": "Store",
+      "settings": [
+        { "type": "text", "id": "name", "label": "Store name", "default": "Main Branch" },
+        { "type": "text", "id": "address", "label": "Street address" },
+        { "type": "text", "id": "city", "label": "City" },
+        { "type": "text", "id": "postal_code", "label": "Postal code" },
+        { "type": "text", "id": "phone", "label": "Phone" },
+        { "type": "textarea", "id": "hours", "label": "Opening hours", "default": "Mon–Sat: 10am – 10pm\nSun: 12pm – 9pm" },
+        { "type": "url", "id": "directions_url", "label": "Directions URL", "info": "Optional. Link to Google Maps directions for this store." }
+      ]
+    }
+  ],
+  "max_blocks": 50,
+  "presets": [
+    {
+      "name": "Store locator",
+      "category": "Utility",
+      "blocks": [ { "type": "store" }, { "type": "store" }, { "type": "store" } ]
+    }
+  ]
+}
+{% endschema %}

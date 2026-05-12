@@ -1,0 +1,63 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "blocks": {
+        "heading": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<h1>{{ closest.page.title }}</h1>",
+            "width": "100%",
+            "max_width": "normal",
+            "alignment": "center",
+            "type_preset": "h2",
+            "font": "var(--font-primary--family)",
+            "font_size": "",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": ["heading"],
+      "settings": {
+        "content_direction": "column",
+        "gap": 16,
+        "color_scheme": "",
+        "padding-block-start": 32,
+        "padding-block-end": 0
+      }
+    },
+    "tracker": {
+      "type": "order-tracker",
+      "settings": {
+        "heading": "Track your order",
+        "subheading": "Enter your order number and email address to see the latest status.",
+        "order_label": "Order number",
+        "email_label": "Email address",
+        "button_label": "Track order",
+        "tracker_url": "https://track.aftership.com/",
+        "order_param": "order_number",
+        "email_param": "email",
+        "method": "redirect",
+        "help_text": "<p>Can't find your order number? Check your order confirmation email.</p>",
+        "section_width": "page-width",
+        "color_scheme": "scheme-1",
+        "padding-block-start": 32,
+        "padding-block-end": 64
+      }
+    }
+  },
+  "order": ["main", "tracker"]
+}

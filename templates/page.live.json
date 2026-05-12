@@ -1,0 +1,61 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "blocks": {
+        "heading": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<h1>{{ closest.page.title }}</h1>",
+            "width": "100%",
+            "max_width": "normal",
+            "alignment": "center",
+            "type_preset": "h2",
+            "font": "var(--font-primary--family)",
+            "font_size": "",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": ["heading"],
+      "settings": {
+        "content_direction": "column",
+        "gap": 16,
+        "color_scheme": "",
+        "padding-block-start": 32,
+        "padding-block-end": 0
+      }
+    },
+    "live": {
+      "type": "live-stream",
+      "settings": {
+        "heading": "Live shopping",
+        "subheading": "Join us live and shop the looks as we reveal them.",
+        "status": "upcoming",
+        "embed_url": "",
+        "description": "<p>Tune in during the scheduled time to catch our exclusive live shopping event. Featured products will appear below and update in real time.</p>",
+        "products_heading": "Featured in this stream",
+        "section_width": "page-width",
+        "color_scheme": "scheme-1",
+        "padding-block-start": 32,
+        "padding-block-end": 64
+      },
+      "blocks": {},
+      "block_order": []
+    }
+  },
+  "order": ["main", "live"]
+}

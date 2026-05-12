@@ -1,0 +1,96 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "blocks": {
+        "heading": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<h1>{{ closest.page.title }}</h1>",
+            "width": "100%",
+            "max_width": "normal",
+            "alignment": "center",
+            "type_preset": "h2",
+            "font": "var(--font-primary--family)",
+            "font_size": "",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": ["heading"],
+      "settings": {
+        "content_direction": "column",
+        "gap": 16,
+        "color_scheme": "",
+        "padding-block-start": 32,
+        "padding-block-end": 0
+      }
+    },
+    "locator": {
+      "type": "store-locator",
+      "settings": {
+        "heading": "Find a store",
+        "subheading": "Locate the closest Baadmay store near you.",
+        "search_placeholder": "Search by city, area, or postal code",
+        "map_embed_url": "",
+        "section_width": "page-width",
+        "color_scheme": "scheme-1",
+        "padding-block-start": 32,
+        "padding-block-end": 64
+      },
+      "blocks": {
+        "store_1": {
+          "type": "store",
+          "settings": {
+            "name": "Baadmay Flagship",
+            "address": "123 Example Street",
+            "city": "Karachi",
+            "postal_code": "74000",
+            "phone": "+92 300 0000000",
+            "hours": "Mon–Sat: 10am – 10pm\nSun: 12pm – 9pm",
+            "directions_url": ""
+          }
+        },
+        "store_2": {
+          "type": "store",
+          "settings": {
+            "name": "Baadmay Lahore",
+            "address": "456 Sample Road",
+            "city": "Lahore",
+            "postal_code": "54000",
+            "phone": "+92 300 0000001",
+            "hours": "Mon–Sun: 11am – 11pm",
+            "directions_url": ""
+          }
+        },
+        "store_3": {
+          "type": "store",
+          "settings": {
+            "name": "Baadmay Islamabad",
+            "address": "789 Demo Avenue",
+            "city": "Islamabad",
+            "postal_code": "44000",
+            "phone": "+92 300 0000002",
+            "hours": "Mon–Sat: 10am – 10pm\nSun: Closed",
+            "directions_url": ""
+          }
+        }
+      },
+      "block_order": ["store_1", "store_2", "store_3"]
+    }
+  },
+  "order": ["main", "locator"]
+}

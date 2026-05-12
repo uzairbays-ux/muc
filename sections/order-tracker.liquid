@@ -1,0 +1,200 @@
+{% liquid
+  assign s = section.settings
+  assign tracker_url = s.tracker_url | default: 'https://track.aftership.com/'
+  assign method = s.method | default: 'redirect'
+%}
+
+<div
+  class="section section--{{ s.section_width }} color-{{ s.color_scheme }} spacing-style"
+  style="{% render 'spacing-style', settings: s %}"
+  data-testid="order-tracker-{{ section.id }}"
+>
+  <div class="order-tracker">
+    {%- if s.heading != blank -%}
+      <h1 class="order-tracker__heading">{{ s.heading }}</h1>
+    {%- endif -%}
+    {%- if s.subheading != blank -%}
+      <p class="order-tracker__subheading">{{ s.subheading }}</p>
+    {%- endif -%}
+
+    <form
+      class="order-tracker__form"
+      data-method="{{ method }}"
+      data-tracker-url="{{ tracker_url }}"
+      data-order-param="{{ s.order_param | default: 'order_number' }}"
+      data-email-param="{{ s.email_param | default: 'email' }}"
+    >
+      <div class="order-tracker__field">
+        <label for="ot-order-{{ section.id }}">{{ s.order_label | default: 'Order number' }}</label>
+        <input type="text" id="ot-order-{{ section.id }}" name="order" autocomplete="off" required>
+      </div>
+      <div class="order-tracker__field">
+        <label for="ot-email-{{ section.id }}">{{ s.email_label | default: 'Email address' }}</label>
+        <input type="email" id="ot-email-{{ section.id }}" name="email" autocomplete="email" required>
+      </div>
+      <button type="submit" class="order-tracker__submit">{{ s.button_label | default: 'Track order' }}</button>
+    </form>
+
+    {%- if s.help_text != blank -%}
+      <div class="order-tracker__help rte">{{ s.help_text }}</div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% stylesheet %}
+  .order-tracker {
+    max-width: 520px;
+    margin: 0 auto;
+    padding-inline: var(--gap-md, 16px);
+  }
+
+  .order-tracker__heading {
+    margin: 0 0 12px;
+    font-family: var(--font-heading--family);
+    font-size: 32px;
+    line-height: 1.15;
+    text-align: center;
+    color: rgb(var(--color-foreground-heading, 0 0 0));
+  }
+
+  .order-tracker__subheading {
+    margin: 0 0 28px;
+    text-align: center;
+    font-size: 15px;
+    color: rgb(var(--color-foreground, 0 0 0) / 0.7);
+  }
+
+  .order-tracker__form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .order-tracker__field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .order-tracker__field label {
+    font-size: 13px;
+    font-weight: 600;
+    color: rgb(var(--color-foreground, 0 0 0));
+  }
+
+  .order-tracker__field input {
+    padding: 12px 14px;
+    border: 1px solid rgb(var(--color-foreground, 0 0 0) / 0.2);
+    border-radius: 6px;
+    font-size: 14px;
+    background-color: rgb(var(--color-background, 255 255 255));
+    color: rgb(var(--color-foreground, 0 0 0));
+  }
+
+  .order-tracker__field input:focus {
+    outline: 2px solid rgb(var(--color-foreground, 0 0 0) / 0.4);
+    outline-offset: 1px;
+  }
+
+  .order-tracker__submit {
+    margin-top: 8px;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 6px;
+    background-color: rgb(var(--color-foreground, 0 0 0));
+    color: rgb(var(--color-background, 255 255 255));
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 200ms ease;
+  }
+
+  .order-tracker__submit:hover { opacity: 0.9; }
+
+  .order-tracker__help {
+    margin-top: 20px;
+    padding: 14px 16px;
+    background-color: rgb(var(--color-foreground, 0 0 0) / 0.04);
+    border-radius: 8px;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .order-tracker__help a { text-decoration: underline; }
+
+  @media screen and (max-width: 749px) {
+    .order-tracker__heading { font-size: 24px; }
+  }
+{% endstylesheet %}
+
+<script>
+  (function () {
+    document.querySelectorAll('.order-tracker__form').forEach((form) => {
+      if (form.dataset.bound) return;
+      form.dataset.bound = 'true';
+      form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const orderInput = form.querySelector('input[name="order"]');
+        const emailInput = form.querySelector('input[name="email"]');
+        if (!orderInput.value.trim() || !emailInput.value.trim()) return;
+
+        const base = form.dataset.trackerUrl || '';
+        const orderParam = form.dataset.orderParam || 'order_number';
+        const emailParam = form.dataset.emailParam || 'email';
+        const url = new URL(base, window.location.origin);
+        url.searchParams.set(orderParam, orderInput.value.trim());
+        url.searchParams.set(emailParam, emailInput.value.trim());
+        window.open(url.toString(), form.dataset.method === 'redirect' ? '_self' : '_blank');
+      });
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Order tracker",
+  "tag": "section",
+  "class": "section-order-tracker",
+  "disabled_on": { "groups": ["header", "footer"] },
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Track your order" },
+    { "type": "text", "id": "subheading", "label": "Subheading", "default": "Enter your order number and email to see the latest status." },
+    { "type": "text", "id": "order_label", "label": "Order field label", "default": "Order number" },
+    { "type": "text", "id": "email_label", "label": "Email field label", "default": "Email address" },
+    { "type": "text", "id": "button_label", "label": "Button label", "default": "Track order" },
+    { "type": "header", "content": "Tracker integration" },
+    { "type": "text", "id": "tracker_url", "label": "Tracker URL", "info": "Order + email are appended as query params. Works with AfterShip, Parcels, etc.", "default": "https://track.aftership.com/" },
+    { "type": "text", "id": "order_param", "label": "Order query param name", "default": "order_number" },
+    { "type": "text", "id": "email_param", "label": "Email query param name", "default": "email" },
+    {
+      "type": "select",
+      "id": "method",
+      "label": "Open tracker in",
+      "options": [
+        { "value": "redirect", "label": "Same tab" },
+        { "value": "new", "label": "New tab" }
+      ],
+      "default": "redirect"
+    },
+    { "type": "richtext", "id": "help_text", "label": "Help text", "default": "<p>Can't find your order number? Check your order confirmation email.</p>" },
+    { "type": "header", "content": "Layout" },
+    {
+      "type": "select",
+      "id": "section_width",
+      "label": "Section width",
+      "options": [
+        { "value": "page-width", "label": "Page" },
+        { "value": "full-width", "label": "Full" }
+      ],
+      "default": "page-width"
+    },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-1" },
+    { "type": "header", "content": "Padding" },
+    { "type": "range", "id": "padding-block-start", "label": "Top", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 48 },
+    { "type": "range", "id": "padding-block-end", "label": "Bottom", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 64 }
+  ],
+  "presets": [
+    { "name": "Order tracker", "category": "Utility" }
+  ]
+}
+{% endschema %}
