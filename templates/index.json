@@ -955,6 +955,102 @@
         "padding-block-end": 24
       }
     },
+    "category_grid_FAWJJj": {
+      "type": "category-grid",
+      "blocks": {
+        "category_Cwy3f6": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Lip-Balm-_-Mask.webp",
+            "label": "Lip Balm & Mask",
+            "link": "shopify://collections/lips-lip-balm",
+            "card_background": "#e3cef0"
+          }
+        },
+        "category_tKKGAw": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Body-Wash.webp",
+            "label": "Body Wash",
+            "link": "shopify://collections/body-wash",
+            "card_background": "#e3cef0"
+          }
+        },
+        "category_YLUjE3": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Primer.webp",
+            "label": "Primer",
+            "link": "shopify://collections/face-primer-1",
+            "card_background": "#e3cef0"
+          }
+        },
+        "category_UFqNMX": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Candle.webp",
+            "label": "Candle",
+            "link": "shopify://collections/candle",
+            "card_background": "#e3cef0"
+          }
+        },
+        "category_xbmJ99": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Concealers.webp",
+            "label": "Concealers",
+            "link": "shopify://collections/concealers",
+            "card_background": "#e3cef0"
+          }
+        },
+        "category_jLiKUY": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Hair-Dye.webp",
+            "label": "Hair Dye",
+            "link": "shopify://collections/styling-treatment-hair-dye",
+            "card_background": "#e3cef0"
+          }
+        },
+        "category_fUMRAW": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Serums-_-Essence.webp",
+            "label": "Serums",
+            "link": "shopify://collections/moisturizers-serums-and-essence",
+            "card_background": "#e3cef0"
+          }
+        }
+      },
+      "block_order": [
+        "category_Cwy3f6",
+        "category_tKKGAw",
+        "category_YLUjE3",
+        "category_UFqNMX",
+        "category_xbmJ99",
+        "category_jLiKUY",
+        "category_fUMRAW"
+      ],
+      "name": "Category grid",
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "heading_alignment": "left",
+        "layout": "grid",
+        "desktop_per_row": "8",
+        "mobile_per_row": "4",
+        "gap": 10,
+        "row_gap": 10,
+        "show_arrows": true,
+        "image_padding": 0,
+        "image_fit": "contain",
+        "card_ratio": "adapt",
+        "image_border_radius": 100,
+        "background_color": "rgba(0,0,0,0)",
+        "padding-block-start": 24,
+        "padding-block-end": 24
+      }
+    },
     "stacked_banners_QWcUpX": {
       "type": "stacked-banners",
       "blocks": {
@@ -1281,10 +1377,10 @@
         "padding-block-end": 12
       }
     },
-    "category_grid_FAWJJj": {
+    "category_grid_Nr4rxN": {
       "type": "category-grid",
       "blocks": {
-        "category_LzfMHw": {
+        "category_nxUzzz": {
           "type": "category",
           "settings": {
             "image": "shopify://shop_images/Baby-Cream-_-Lotion.webp",
@@ -1293,7 +1389,7 @@
             "card_background": "#e3cef0"
           }
         },
-        "category_grzNxy": {
+        "category_XkWdpc": {
           "type": "category",
           "settings": {
             "image": "shopify://shop_images/Baby-Shampoo.webp",
@@ -1302,7 +1398,7 @@
             "card_background": "#e3cef0"
           }
         },
-        "category_DxR67r": {
+        "category_A9tX3h": {
           "type": "category",
           "settings": {
             "image": "shopify://shop_images/Liquid-Lipsticks.webp",
@@ -1311,7 +1407,7 @@
             "card_background": "#e3cef0"
           }
         },
-        "category_gYbMRa": {
+        "category_4nTzpR": {
           "type": "category",
           "settings": {
             "image": "shopify://shop_images/Sunscreen.webp",
@@ -1320,7 +1416,7 @@
             "card_background": "#e3cef0"
           }
         },
-        "category_MwWwwr": {
+        "category_tKxkw9": {
           "type": "category",
           "settings": {
             "image": "shopify://shop_images/Shampoo-_-Conditioner.webp",
@@ -1329,7 +1425,7 @@
             "card_background": "#e3cef0"
           }
         },
-        "category_wTw4fh": {
+        "category_aAVYQG": {
           "type": "category",
           "settings": {
             "image": "shopify://shop_images/Foundation.webp",
@@ -1338,7 +1434,7 @@
             "card_background": "#e3cef0"
           }
         },
-        "category_FHnxWQ": {
+        "category_8ALitb": {
           "type": "category",
           "settings": {
             "image": "shopify://shop_images/Mascara.webp",
@@ -1347,7 +1443,7 @@
             "card_background": "#e3cef0"
           }
         },
-        "category_dbCQ8D": {
+        "category_gqTNjr": {
           "type": "category",
           "settings": {
             "image": "shopify://shop_images/Hair-Treatment-_-Mask.webp",
@@ -1356,7 +1452,7 @@
             "card_background": "#e3cef0"
           }
         },
-        "category_C3qcqR": {
+        "category_gDnaG4": {
           "type": "category",
           "settings": {
             "image": "shopify://shop_images/Lip-Liners-_-Crayons.webp",
@@ -1365,7 +1461,7 @@
             "card_background": "#e3cef0"
           }
         },
-        "category_8WqE8d": {
+        "category_U8zBfJ": {
           "type": "category",
           "settings": {
             "image": "shopify://shop_images/Masks-_-Peels.webp",
@@ -1374,7 +1470,7 @@
             "card_background": "#e3cef0"
           }
         },
-        "category_NkX6ik": {
+        "category_xEBN8g": {
           "type": "category",
           "settings": {
             "image": "shopify://shop_images/Face-Wash-_-Cleansers.webp",
@@ -1383,7 +1479,7 @@
             "card_background": "#e3cef0"
           }
         },
-        "category_Gp3XgP": {
+        "category_E8bcmV": {
           "type": "category",
           "settings": {
             "image": "shopify://shop_images/Makeup-Remover.webp",
@@ -1392,7 +1488,7 @@
             "card_background": "#e3cef0"
           }
         },
-        "category_G4ptXC": {
+        "category_4GihzM": {
           "type": "category",
           "settings": {
             "image": "shopify://shop_images/Nail-Polish.webp",
@@ -1401,7 +1497,7 @@
             "card_background": "#e3cef0"
           }
         },
-        "category_Cwy3f6": {
+        "category_JzUCyG": {
           "type": "category",
           "settings": {
             "image": "shopify://shop_images/Lip-Balm-_-Mask.webp",
@@ -1410,7 +1506,7 @@
             "card_background": "#e3cef0"
           }
         },
-        "category_tKKGAw": {
+        "category_M7H3Hw": {
           "type": "category",
           "settings": {
             "image": "shopify://shop_images/Body-Wash.webp",
@@ -1419,7 +1515,7 @@
             "card_background": "#e3cef0"
           }
         },
-        "category_YLUjE3": {
+        "category_BqQDFY": {
           "type": "category",
           "settings": {
             "image": "shopify://shop_images/Primer.webp",
@@ -1428,7 +1524,7 @@
             "card_background": "#e3cef0"
           }
         },
-        "category_UFqNMX": {
+        "category_YgfrwG": {
           "type": "category",
           "settings": {
             "image": "shopify://shop_images/Candle.webp",
@@ -1437,7 +1533,7 @@
             "card_background": "#e3cef0"
           }
         },
-        "category_xbmJ99": {
+        "category_tUQeUh": {
           "type": "category",
           "settings": {
             "image": "shopify://shop_images/Concealers.webp",
@@ -1446,7 +1542,7 @@
             "card_background": "#e3cef0"
           }
         },
-        "category_jLiKUY": {
+        "category_BGrV8P": {
           "type": "category",
           "settings": {
             "image": "shopify://shop_images/Hair-Dye.webp",
@@ -1455,7 +1551,7 @@
             "card_background": "#e3cef0"
           }
         },
-        "category_fUMRAW": {
+        "category_7h3dED": {
           "type": "category",
           "settings": {
             "image": "shopify://shop_images/Serums-_-Essence.webp",
@@ -1466,26 +1562,26 @@
         }
       },
       "block_order": [
-        "category_LzfMHw",
-        "category_grzNxy",
-        "category_DxR67r",
-        "category_gYbMRa",
-        "category_MwWwwr",
-        "category_wTw4fh",
-        "category_FHnxWQ",
-        "category_dbCQ8D",
-        "category_C3qcqR",
-        "category_8WqE8d",
-        "category_NkX6ik",
-        "category_Gp3XgP",
-        "category_G4ptXC",
-        "category_Cwy3f6",
-        "category_tKKGAw",
-        "category_YLUjE3",
-        "category_UFqNMX",
-        "category_xbmJ99",
-        "category_jLiKUY",
-        "category_fUMRAW"
+        "category_nxUzzz",
+        "category_XkWdpc",
+        "category_A9tX3h",
+        "category_4nTzpR",
+        "category_tKxkw9",
+        "category_aAVYQG",
+        "category_8ALitb",
+        "category_gqTNjr",
+        "category_gDnaG4",
+        "category_U8zBfJ",
+        "category_xEBN8g",
+        "category_E8bcmV",
+        "category_4GihzM",
+        "category_JzUCyG",
+        "category_M7H3Hw",
+        "category_BqQDFY",
+        "category_YgfrwG",
+        "category_tUQeUh",
+        "category_BGrV8P",
+        "category_7h3dED"
       ],
       "name": "Category grid",
       "settings": {
@@ -1664,10 +1760,11 @@
     "card_grid_HA8C7w",
     "product_list_CVJar6",
     "card_grid_tLffKU",
+    "category_grid_FAWJJj",
     "stacked_banners_QWcUpX",
     "category_grid_pGCQaP",
     "ad_banner_pjN7dA",
-    "category_grid_FAWJJj",
+    "category_grid_Nr4rxN",
     "card_grid_yKxxjX",
     "video_reels_xGEykY",
     "cta_banner_eHhwWU"
