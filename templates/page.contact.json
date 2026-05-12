@@ -6,7 +6,8 @@
  * or related systems. Please exercise caution as any changes
  * made to this file may be overwritten.
  * ------------------------------------------------------------
- */{
+ */
+{
   "sections": {
     "main": {
       "type": "main-page",
@@ -40,8 +41,9 @@
         "content": {
           "type": "text",
           "name": "t:names.content",
+          "disabled": true,
           "settings": {
-            "text": "{{ closest.page.content }}",
+            "text": "<p>{{ closest.page.content }}</p>",
             "width": "100%",
             "max_width": "narrow",
             "alignment": "center",
