@@ -733,7 +733,7 @@
         "mobile_columns": "2",
         "desktop_slider_per_view": "4",
         "mobile_slider_per_view": "2",
-        "auto_rotate": false,
+        "auto_rotate": true,
         "rotate_interval": 4,
         "gap": 10,
         "desktop_side_padding": 0,
