@@ -1552,7 +1552,7 @@
       "type": "cta-banner",
       "name": "CTA banner",
       "settings": {
-        "heading": "CERTIFIED BY 250+ BRANDS",
+        "heading": "CERTIFIED BY 150+ BRANDS",
         "heading_size_desktop": 48,
         "heading_size_mobile": 24,
         "button_label": "View More",
