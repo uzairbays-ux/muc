@@ -970,7 +970,7 @@
         "category_pjBD9X": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/Babimild.webp",
+            "image": "shopify://shop_images/St_Ives.webp",
             "label": "",
             "link": "shopify://collections/lips-lip-balm",
             "card_background": "rgba(0,0,0,0)"
@@ -979,7 +979,7 @@
         "category_Xea9DL": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/Babimild.webp",
+            "image": "shopify://shop_images/Colorwow.webp",
             "label": "",
             "link": "shopify://collections/lips-lip-balm",
             "card_background": "rgba(0,0,0,0)"
@@ -988,7 +988,7 @@
         "category_W3MDAj": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/Babimild.webp",
+            "image": "shopify://shop_images/Femina_d66f1d94-cb43-4d7b-a2da-03ade0e54172.webp",
             "label": "",
             "link": "shopify://collections/lips-lip-balm",
             "card_background": "rgba(0,0,0,0)"
@@ -997,7 +997,7 @@
         "category_TkjWqQ": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/Babimild.webp",
+            "image": "shopify://shop_images/Oneskin.webp",
             "label": "",
             "link": "shopify://collections/lips-lip-balm",
             "card_background": "rgba(0,0,0,0)"
@@ -1006,7 +1006,7 @@
         "category_EAWHGr": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/Babimild.webp",
+            "image": "shopify://shop_images/Schwarzkopf.webp",
             "label": "",
             "link": "shopify://collections/lips-lip-balm",
             "card_background": "rgba(0,0,0,0)"
@@ -1015,7 +1015,7 @@
         "category_DtkmJB": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/Babimild.webp",
+            "image": "shopify://shop_images/Bleuface_bbe4bfca-d1ae-455e-bcd7-a0415d341253.webp",
             "label": "",
             "link": "shopify://collections/lips-lip-balm",
             "card_background": "rgba(0,0,0,0)"
@@ -1024,7 +1024,7 @@
         "category_KWk6xF": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/Babimild.webp",
+            "image": "shopify://shop_images/Just-For-men.webp",
             "label": "",
             "link": "shopify://collections/lips-lip-balm",
             "card_background": "rgba(0,0,0,0)"
@@ -1770,9 +1770,9 @@
     "card_grid_HA8C7w",
     "product_list_CVJar6",
     "card_grid_tLffKU",
-    "category_grid_FAWJJj",
     "stacked_banners_QWcUpX",
     "category_grid_pGCQaP",
+    "category_grid_FAWJJj",
     "ad_banner_pjN7dA",
     "category_grid_Nr4rxN",
     "card_grid_yKxxjX",
