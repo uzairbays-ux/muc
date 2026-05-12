@@ -1304,7 +1304,7 @@
           "settings": {
             "image": "shopify://shop_images/Babimild.webp",
             "label": "",
-            "link": "shopify://collections/lips-lip-balm",
+            "link": "shopify://collections/babi-mild",
             "card_background": "rgba(0,0,0,0)"
           }
         },
@@ -1313,7 +1313,7 @@
           "settings": {
             "image": "shopify://shop_images/St_Ives.webp",
             "label": "",
-            "link": "shopify://collections/lips-lip-balm",
+            "link": "shopify://collections/st-ives",
             "card_background": "rgba(0,0,0,0)"
           }
         },
@@ -1322,7 +1322,7 @@
           "settings": {
             "image": "shopify://shop_images/Colorwow.webp",
             "label": "",
-            "link": "shopify://collections/lips-lip-balm",
+            "link": "shopify://collections/color-wow",
             "card_background": "rgba(0,0,0,0)"
           }
         },
@@ -1331,7 +1331,7 @@
           "settings": {
             "image": "shopify://shop_images/Femina_d66f1d94-cb43-4d7b-a2da-03ade0e54172.webp",
             "label": "",
-            "link": "shopify://collections/lips-lip-balm",
+            "link": "shopify://collections/femina",
             "card_background": "rgba(0,0,0,0)"
           }
         },
@@ -1340,7 +1340,7 @@
           "settings": {
             "image": "shopify://shop_images/onskin.jpg",
             "label": "",
-            "link": "shopify://collections/lips-lip-balm",
+            "link": "shopify://collections/oneskin",
             "card_background": "rgba(0,0,0,0)"
           }
         },
@@ -1349,7 +1349,7 @@
           "settings": {
             "image": "shopify://shop_images/Schwarzkopf.webp",
             "label": "",
-            "link": "shopify://collections/lips-lip-balm",
+            "link": "shopify://collections/schwarzkopf",
             "card_background": "rgba(0,0,0,0)"
           }
         },
@@ -1358,7 +1358,7 @@
           "settings": {
             "image": "shopify://shop_images/Bleuface_bbe4bfca-d1ae-455e-bcd7-a0415d341253.webp",
             "label": "",
-            "link": "shopify://collections/lips-lip-balm",
+            "link": "shopify://collections/bleuface",
             "card_background": "rgba(0,0,0,0)"
           }
         },
@@ -1367,7 +1367,7 @@
           "settings": {
             "image": "shopify://shop_images/Just-For-men.webp",
             "label": "",
-            "link": "shopify://collections/lips-lip-balm",
+            "link": "shopify://collections/just-for-men",
             "card_background": "rgba(0,0,0,0)"
           }
         }
