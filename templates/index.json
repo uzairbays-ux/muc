@@ -1020,6 +1020,15 @@
             "link": "shopify://collections/moisturizers-serums-and-essence",
             "card_background": "#e3cef0"
           }
+        },
+        "category_E4Fyp8": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Serums-_-Essence.webp",
+            "label": "Serums",
+            "link": "shopify://collections/moisturizers-serums-and-essence",
+            "card_background": "#e3cef0"
+          }
         }
       },
       "block_order": [
@@ -1029,7 +1038,8 @@
         "category_UFqNMX",
         "category_xbmJ99",
         "category_jLiKUY",
-        "category_fUMRAW"
+        "category_fUMRAW",
+        "category_E4Fyp8"
       ],
       "name": "Category grid",
       "settings": {
