@@ -5,6 +5,8 @@
   if mobile_full
     assign extra_class = ' section--mobile-full-width'
   endif
+  assign pad_desktop = s.padding_inline_desktop | default: 0
+  assign pad_mobile = s.padding_inline_mobile | default: 0
 %}
 
 <div
@@ -12,6 +14,10 @@
   style="{% render 'spacing-style', settings: s %}"
   data-testid="ad-banner-{{ section.id }}"
 >
+  <div
+    class="ad-banner"
+    style="--ab-pad-x-desktop: {{ pad_desktop }}px; --ab-pad-x-mobile: {{ pad_mobile }}px;"
+  >
   {%- if s.link != blank -%}
     <a href="{{ s.link }}" class="ad-banner__link" {% if s.open_new_tab %}target="_blank" rel="noopener"{% endif %}>
   {%- endif -%}
@@ -47,9 +53,23 @@
   {%- if s.link != blank -%}
     </a>
   {%- endif -%}
+  </div>
 </div>
 
 {% stylesheet %}
+  .ad-banner {
+    display: block;
+    width: 100%;
+    padding-inline: var(--ab-pad-x-mobile, 0);
+    box-sizing: border-box;
+  }
+
+  @media screen and (min-width: 750px) {
+    .ad-banner {
+      padding-inline: var(--ab-pad-x-desktop, 0);
+    }
+  }
+
   .ad-banner__link {
     display: block;
     text-decoration: none;
@@ -149,6 +169,26 @@
     {
       "type": "header",
       "content": "Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_inline_desktop",
+      "label": "Left/right padding (desktop)",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_inline_mobile",
+      "label": "Left/right padding (mobile)",
+      "min": 0,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "default": 0
     },
     {
       "type": "range",
