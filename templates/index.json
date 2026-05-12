@@ -148,7 +148,7 @@
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/The-Ordinary_e47b4727-36b2-4d5e-b32b-497b8812de84.jpg",
-            "link": "",
+            "link": "shopify://collections/to",
             "open_new_tab": false
           }
         },
@@ -156,7 +156,7 @@
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/Revolution_d67381fd-09a7-4523-bec3-525916a4e0e7.jpg",
-            "link": "",
+            "link": "shopify://collections/revolution",
             "open_new_tab": false
           }
         },
@@ -164,7 +164,7 @@
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/CeraVe_6794b6ba-d53c-49d8-b239-d0ecf0f46647.jpg",
-            "link": "",
+            "link": "shopify://collections/cerave",
             "open_new_tab": false
           }
         },
