@@ -68,6 +68,7 @@
         },
         "thumbnail_qkgXkh": {
           "type": "thumbnail",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/thumb.png",
             "background_color": "#f1ecfb",
