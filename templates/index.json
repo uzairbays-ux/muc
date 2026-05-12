@@ -1355,9 +1355,9 @@
         "category_8WqE8d": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/micellar_pink_800x800_6e40600e-6bba-44bf-885f-c95564e6d76f.jpg",
-            "label": "Sunscreen",
-            "link": "",
+            "image": "shopify://shop_images/Masks-_-Peels.webp",
+            "label": "Masks & Peels",
+            "link": "shopify://collections/masks-masks-and-peels",
             "card_background": "#e3cef0"
           }
         },
