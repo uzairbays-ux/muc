@@ -109,7 +109,7 @@
         "slide_4mM8cj": {
           "type": "slide",
           "settings": {
-            "desktop_image": "shopify://shop_images/slideshow-component.png",
+            "desktop_image": "shopify://shop_images/Main-Banner-1920-x-750.jpg_1.webp",
             "mobile_image": "shopify://shop_images/slideshow-component.png",
             "link": "shopify://collections/sale",
             "open_new_tab": false,
@@ -456,6 +456,7 @@
         },
         "brand_ADeV97": {
           "type": "brand",
+          "disabled": true,
           "settings": {
             "label": "HUDABEAUTY",
             "link": ""
@@ -484,6 +485,7 @@
         },
         "brand_F77bDH": {
           "type": "brand",
+          "disabled": true,
           "settings": {
             "label": "Lattafa",
             "link": ""
@@ -516,7 +518,7 @@
       ],
       "name": "Brand ticker",
       "settings": {
-        "heading": "Home to 100+ Brands",
+        "heading": "Home to 150+ Brands",
         "subheading": "Authorized Distributor of COSRX, AXIS-Y, Jumiso",
         "heading_alignment": "center",
         "heading_size_desktop": 24,
