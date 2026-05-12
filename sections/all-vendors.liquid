@@ -1,0 +1,307 @@
+{% liquid
+  assign s = section.settings
+  assign columns_desktop = s.columns_desktop | default: 6
+  assign columns_mobile = s.columns_mobile | default: 3
+  assign menu = linklists[s.menu]
+  assign show_names = s.show_names
+  assign show_index = s.show_index
+%}
+
+<div
+  class="section section--{{ s.section_width }} color-{{ s.color_scheme }} spacing-style all-vendors"
+  style="{% render 'spacing-style', settings: s %}"
+  data-testid="all-vendors-{{ section.id }}"
+>
+  {%- if s.heading != blank -%}
+    <div class="all-vendors__header" style="text-align: {{ s.heading_alignment }};">
+      <h2 class="all-vendors__heading h3">{{ s.heading }}</h2>
+      {%- if s.subheading != blank -%}
+        <p class="all-vendors__subheading">{{ s.subheading }}</p>
+      {%- endif -%}
+    </div>
+  {%- endif -%}
+
+  {%- if menu and menu.links.size > 0 -%}
+    {%- assign sorted = menu.links | sort: 'title' -%}
+
+    {%- if show_index -%}
+      {%- assign letters = 'A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z' | split: ',' -%}
+      {%- assign used_letters = '' -%}
+      {%- for link in sorted -%}
+        {%- assign first = link.title | slice: 0 | upcase -%}
+        {%- assign marker = first | append: ',' -%}
+        {%- unless used_letters contains marker -%}
+          {%- assign used_letters = used_letters | append: marker -%}
+        {%- endunless -%}
+      {%- endfor -%}
+      <nav class="all-vendors__index" aria-label="A-Z brand index">
+        {%- for letter in letters -%}
+          {%- assign marker = letter | append: ',' -%}
+          {%- if used_letters contains marker -%}
+            <a href="#vendor-letter-{{ letter | downcase }}" class="all-vendors__index-link">{{ letter }}</a>
+          {%- else -%}
+            <span class="all-vendors__index-link all-vendors__index-link--disabled" aria-disabled="true">{{ letter }}</span>
+          {%- endif -%}
+        {%- endfor -%}
+      </nav>
+    {%- endif -%}
+
+    <div class="all-vendors__grid" style="--av-cols-desktop: {{ columns_desktop }}; --av-cols-mobile: {{ columns_mobile }};">
+      {%- assign current_letter = '' -%}
+      {%- for link in sorted -%}
+        {%- assign first = link.title | slice: 0 | upcase -%}
+        {%- if show_index and first != current_letter -%}
+          {%- assign current_letter = first -%}
+          <h3 class="all-vendors__letter-heading" id="vendor-letter-{{ first | downcase }}">{{ first }}</h3>
+        {%- endif -%}
+        <a href="{{ link.url }}" class="all-vendors__card" title="{{ link.title | escape }}">
+          <div class="all-vendors__logo-wrap">
+            {%- if link.object.image != blank -%}
+              {{ link.object.image | image_url: width: 400 | image_tag:
+                loading: 'lazy',
+                width: 200,
+                height: 200,
+                class: 'all-vendors__logo',
+                alt: link.title
+              }}
+            {%- else -%}
+              <span class="all-vendors__logo-fallback">{{ link.title | slice: 0 | upcase }}</span>
+            {%- endif -%}
+          </div>
+          {%- if show_names -%}
+            <span class="all-vendors__name">{{ link.title }}</span>
+          {%- endif -%}
+        </a>
+      {%- endfor -%}
+    </div>
+  {%- else -%}
+    <div class="all-vendors__empty">
+      <p><strong>No brands menu selected.</strong></p>
+      <p>Step 1: In Shopify admin go to <em>Content → Menus</em> and create a menu (e.g. "Brands") with links to each brand's collection. The collection image is used as the logo; the link title is the brand name.</p>
+      <p>Step 2: Open this section in the theme editor and pick that menu in the <em>Brands menu</em> setting.</p>
+    </div>
+  {%- endif -%}
+</div>
+
+{% stylesheet %}
+  .all-vendors__header { margin-bottom: var(--gap-lg, 24px); }
+  .all-vendors__heading { margin: 0; font-family: var(--font-heading--family); color: rgb(var(--color-foreground-heading)); }
+  .all-vendors__subheading { margin: var(--gap-2xs, 4px) 0 0; color: rgb(var(--color-foreground)); opacity: 0.7; }
+
+  .all-vendors__index {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-bottom: var(--gap-md, 16px);
+    padding: var(--gap-sm, 12px);
+    border-radius: var(--style-border-radius-card, 8px);
+    background: rgba(var(--color-foreground), 0.04);
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+  .all-vendors__index-link {
+    min-width: 28px;
+    padding: 4px 8px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    color: rgb(var(--color-foreground-heading));
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background 0.15s;
+  }
+  .all-vendors__index-link:hover { background: rgba(var(--color-foreground), 0.1); }
+  .all-vendors__index-link--disabled { opacity: 0.3; pointer-events: none; }
+
+  .all-vendors__letter-heading {
+    grid-column: 1 / -1;
+    margin: var(--gap-lg, 24px) 0 var(--gap-2xs, 4px);
+    font-size: 20px;
+    color: rgb(var(--color-foreground-heading));
+    border-bottom: 1px solid rgba(var(--color-foreground), 0.1);
+    padding-bottom: 6px;
+    scroll-margin-top: 96px;
+  }
+  .all-vendors__letter-heading:first-child { margin-top: 0; }
+
+  .all-vendors__grid {
+    display: grid;
+    grid-template-columns: repeat(var(--av-cols-desktop, 6), 1fr);
+    gap: var(--gap-md, 16px);
+  }
+  @media screen and (max-width: 749px) {
+    .all-vendors__grid {
+      grid-template-columns: repeat(var(--av-cols-mobile, 3), 1fr);
+      gap: var(--gap-sm, 12px);
+    }
+  }
+
+  .all-vendors__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--gap-2xs, 4px);
+    padding: var(--gap-sm, 12px);
+    border: 1px solid rgba(var(--color-foreground), 0.1);
+    border-radius: var(--style-border-radius-card, 8px);
+    background: rgb(var(--color-background));
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+  .all-vendors__card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(var(--color-foreground), 0.3);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+  }
+  .all-vendors__logo-wrap {
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .all-vendors__logo { max-width: 85%; max-height: 85%; width: auto; height: auto; object-fit: contain; }
+  .all-vendors__logo-fallback {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background: rgba(var(--color-foreground), 0.06);
+    border-radius: var(--style-border-radius-card, 8px);
+    font-size: clamp(1.5rem, 4vw, 2.25rem);
+    font-weight: 700;
+    color: rgb(var(--color-foreground-heading));
+  }
+  .all-vendors__name {
+    font-size: 12px;
+    text-align: center;
+    color: rgb(var(--color-foreground));
+    line-height: 1.2;
+    word-break: break-word;
+  }
+
+  .all-vendors__empty {
+    padding: var(--gap-lg, 24px);
+    background: rgba(var(--color-foreground), 0.04);
+    border-radius: var(--style-border-radius-card, 8px);
+    color: rgb(var(--color-foreground));
+  }
+  .all-vendors__empty p { margin: 0 0 8px; }
+  .all-vendors__empty p:last-child { margin-bottom: 0; }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "All vendors",
+  "tag": "section",
+  "class": "section-wrapper",
+  "settings": [
+    { "type": "header", "content": "Content" },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "All Brands"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Shop your favourite brands, A to Z"
+    },
+    {
+      "type": "select",
+      "id": "heading_alignment",
+      "label": "Heading alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "left"
+    },
+    { "type": "header", "content": "Source" },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Brands menu",
+      "info": "Create a menu in Shopify admin (Content → Menus) with a link per brand. Each link should point to that brand's collection — the collection image is used as the logo."
+    },
+    { "type": "header", "content": "Display" },
+    {
+      "type": "checkbox",
+      "id": "show_index",
+      "label": "Show A-Z jump index and letter headings",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_names",
+      "label": "Show brand name below logo",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "label": "Columns (desktop)",
+      "min": 3,
+      "max": 10,
+      "step": 1,
+      "default": 6
+    },
+    {
+      "type": "range",
+      "id": "columns_mobile",
+      "label": "Columns (mobile)",
+      "min": 2,
+      "max": 5,
+      "step": 1,
+      "default": 3
+    },
+    { "type": "header", "content": "Section style" },
+    {
+      "type": "select",
+      "id": "section_width",
+      "label": "Section width",
+      "options": [
+        { "value": "page-width", "label": "Page width" },
+        { "value": "full-width", "label": "Full width" }
+      ],
+      "default": "page-width"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "Top padding",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 80
+    }
+  ],
+  "presets": [
+    { "name": "All vendors" }
+  ]
+}
+{% endschema %}
