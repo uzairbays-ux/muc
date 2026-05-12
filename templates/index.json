@@ -1514,7 +1514,7 @@
         "card_ratio": "adapt",
         "image_border_radius": 10,
         "background_color": "rgba(0,0,0,0)",
-        "padding-block-start": 24,
+        "padding-block-start": 15,
         "padding-block-end": 30
       }
     },
