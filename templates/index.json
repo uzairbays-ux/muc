@@ -1292,54 +1292,54 @@
         "category_DxR67r": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/micellar_pink_800x800_6e40600e-6bba-44bf-885f-c95564e6d76f.jpg",
-            "label": "Sunscreen",
-            "link": "",
+            "image": "shopify://shop_images/Liquid-Lipsticks.webp",
+            "label": "Liquid Lipsticks",
+            "link": "shopify://collections/lips-liquid-lipsticks",
             "card_background": "#e3cef0"
           }
         },
         "category_gYbMRa": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/micellar_pink_800x800_6e40600e-6bba-44bf-885f-c95564e6d76f.jpg",
+            "image": "shopify://shop_images/Sunscreen.webp",
             "label": "Sunscreen",
-            "link": "",
+            "link": "shopify://collections/sunscreen",
             "card_background": "#e3cef0"
           }
         },
         "category_MwWwwr": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/micellar_pink_800x800_6e40600e-6bba-44bf-885f-c95564e6d76f.jpg",
-            "label": "Sunscreen",
-            "link": "",
+            "image": "shopify://shop_images/Shampoo-_-Conditioner.webp",
+            "label": "Shampoo & Conditioner",
+            "link": "shopify://collections/shampoo-conditioner",
             "card_background": "#e3cef0"
           }
         },
         "category_wTw4fh": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/micellar_pink_800x800_6e40600e-6bba-44bf-885f-c95564e6d76f.jpg",
-            "label": "Sunscreen",
-            "link": "",
+            "image": "shopify://shop_images/Foundation.webp",
+            "label": "Foundation",
+            "link": "shopify://collections/foundation",
             "card_background": "#e3cef0"
           }
         },
         "category_FHnxWQ": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/micellar_pink_800x800_6e40600e-6bba-44bf-885f-c95564e6d76f.jpg",
-            "label": "Sunscreen",
-            "link": "",
+            "image": "shopify://shop_images/Mascara.webp",
+            "label": "Mascara",
+            "link": "shopify://collections/mascara",
             "card_background": "#e3cef0"
           }
         },
         "category_dbCQ8D": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/micellar_pink_800x800_6e40600e-6bba-44bf-885f-c95564e6d76f.jpg",
-            "label": "Sunscreen",
-            "link": "",
+            "image": "shopify://shop_images/Hair-Treatment-_-Mask.webp",
+            "label": "Hair Treatment",
+            "link": "shopify://collections/hair-treatment",
             "card_background": "#e3cef0"
           }
         },
