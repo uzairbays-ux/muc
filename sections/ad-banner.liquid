@@ -1,9 +1,14 @@
 {% liquid
   assign s = section.settings
+  assign mobile_full = s.mobile_full_width
+  assign extra_class = ''
+  if mobile_full
+    assign extra_class = ' section--mobile-full-width'
+  endif
 %}
 
 <div
-  class="section section--{{ s.section_width }} spacing-style"
+  class="section section--{{ s.section_width }}{{ extra_class }} spacing-style"
   style="{% render 'spacing-style', settings: s %}"
   data-testid="ad-banner-{{ section.id }}"
 >
@@ -127,11 +132,19 @@
       "type": "select",
       "id": "section_width",
       "label": "Section width",
+      "info": "Set to Full to match other banners (stacked banners, card banner, CTA banner).",
       "options": [
         { "value": "page-width", "label": "Page" },
         { "value": "full-width", "label": "Full" }
       ],
-      "default": "page-width"
+      "default": "full-width"
+    },
+    {
+      "type": "checkbox",
+      "id": "mobile_full_width",
+      "label": "Full width on mobile",
+      "info": "Extends the banner edge-to-edge on phones.",
+      "default": true
     },
     {
       "type": "header",
