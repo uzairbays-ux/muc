@@ -1274,9 +1274,9 @@
         "category_LzfMHw": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/Babimild.jpg",
-            "label": "Sunscreen",
-            "link": "",
+            "image": "shopify://shop_images/Baby-Cream-_-Lotion.webp",
+            "label": "Baby Cream & Lotion",
+            "link": "shopify://collections/baby-care-baby-cream-lotion",
             "card_background": "#e3cef0"
           }
         },
