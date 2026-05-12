@@ -1000,7 +1000,7 @@
           "settings": {
             "image": "shopify://shop_images/AXIS-Y.webp",
             "label": "",
-            "link": "",
+            "link": "shopify://collections/axis-y",
             "card_background": "#e3cef0"
           }
         },
