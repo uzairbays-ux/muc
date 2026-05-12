@@ -15,7 +15,7 @@
         "heading": "All Brands",
         "subheading": "Shop your favourite brands, A to Z",
         "heading_alignment": "left",
-        "menu": "menu-new",
+        "menu": "brand-menu",
         "show_index": true,
         "show_names": true,
         "columns_desktop": 6,
