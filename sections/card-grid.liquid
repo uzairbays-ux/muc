@@ -10,6 +10,7 @@
   assign auto_rotate = s.auto_rotate
   assign rotate_interval = s.rotate_interval | default: 4
   assign desktop_side_padding = s.desktop_side_padding | default: 48
+  assign mobile_side_padding = s.mobile_side_padding | default: 0
 %}
 
 <div class="section-background color-{{ s.color_scheme }}"></div>
@@ -33,7 +34,7 @@
     data-mobile-layout="{{ mobile_layout }}"
     data-auto-rotate="{{ auto_rotate }}"
     data-rotate-interval="{{ rotate_interval }}"
-    style="--cg-desktop-cols: {{ desktop_columns }}; --cg-mobile-cols: {{ mobile_columns }}; --cg-desktop-per-view: {{ desktop_slider_per_view }}; --cg-mobile-per-view: {{ mobile_slider_per_view }}; --cg-gap: {{ gap }}px; --cg-desktop-side-padding: {{ desktop_side_padding }}px;"
+    style="--cg-desktop-cols: {{ desktop_columns }}; --cg-mobile-cols: {{ mobile_columns }}; --cg-desktop-per-view: {{ desktop_slider_per_view }}; --cg-mobile-per-view: {{ mobile_slider_per_view }}; --cg-gap: {{ gap }}px; --cg-desktop-side-padding: {{ desktop_side_padding }}px; --cg-mobile-side-padding: {{ mobile_side_padding }}px;"
   >
     {%- for block in section.blocks -%}
       {%- assign b = block.settings -%}
@@ -146,8 +147,8 @@
       scroll-snap-type: x mandatory;
       -webkit-overflow-scrolling: touch;
       scrollbar-width: none;
-      padding: 0;
-      scroll-padding-inline: 0;
+      padding: 0 var(--cg-mobile-side-padding, 0px);
+      scroll-padding-inline: var(--cg-mobile-side-padding, 0px);
     }
 
     .card-grid__grid[data-mobile-layout="slider"]::-webkit-scrollbar {
@@ -427,12 +428,23 @@
       "type": "range",
       "id": "desktop_side_padding",
       "label": "Desktop side padding",
-      "info": "Left/right padding applied on desktop only. Mobile stays edge-to-edge.",
+      "info": "Left/right padding applied on desktop only.",
       "min": 0,
       "max": 120,
       "step": 4,
       "unit": "px",
       "default": 48
+    },
+    {
+      "type": "range",
+      "id": "mobile_side_padding",
+      "label": "Mobile side padding",
+      "info": "Left/right padding applied on mobile only. Set to 0 for edge-to-edge (per-view=N fits exactly N cards). Higher values shrink cards and add breathing room.",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 0
     },
     {
       "type": "header",
