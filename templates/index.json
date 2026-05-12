@@ -1018,7 +1018,7 @@
           "settings": {
             "image": "shopify://shop_images/Aromatica.webp",
             "label": "",
-            "link": "",
+            "link": "shopify://collections/aromatica",
             "card_background": "#e3cef0"
           }
         },
@@ -1153,7 +1153,7 @@
           "settings": {
             "image": "shopify://shop_images/Heimish.webp",
             "label": "",
-            "link": "",
+            "link": "shopify://collections/heimish",
             "card_background": "#e3cef0"
           }
         },
@@ -1608,6 +1608,7 @@
         "video_card_Wth4yn",
         "video_card_ThpxhA"
       ],
+      "disabled": true,
       "name": "Video reels",
       "settings": {
         "heading": "Shop from Influencers",
