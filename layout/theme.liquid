@@ -37,6 +37,26 @@
 
     {{ content_for_header }}
 
+    {% # Meta Pixel Code %}
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window,document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '866540456876542');
+      fbq('track', 'PageView');
+    </script>
+    <noscript>
+      <img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=866540456876542&ev=PageView&noscript=1"
+        alt="">
+    </noscript>
+    {% # End Meta Pixel Code %}
+
         {% # BaadMay CSS/JS Start %}
             <link rel="stylesheet" href="{{ 'baadmay-styles.css' | asset_url }}">
             <script src="{{ 'baadmay-scripts.js' | asset_url }}" async></script>
