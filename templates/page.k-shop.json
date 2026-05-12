@@ -362,8 +362,66 @@
         "image_padding": 0,
         "image_fit": "contain",
         "card_ratio": "adapt",
-        "image_border_radius": 12,
+        "image_border_radius": 20,
         "background_color": "#e3cef0",
+        "padding-block-start": 24,
+        "padding-block-end": 24
+      }
+    },
+    "mega_deals_caERWc": {
+      "type": "mega-deals",
+      "blocks": {
+        "deal_product_9fX8dx": {
+          "type": "deal_product",
+          "settings": {
+            "product": "8809640733550",
+            "badge_text": "Fragrance deals"
+          }
+        },
+        "deal_product_UEpJWB": {
+          "type": "deal_product",
+          "settings": {
+            "product": "8809416470245",
+            "badge_text": "Hair Care deals"
+          }
+        },
+        "deal_product_HBhPne": {
+          "type": "deal_product",
+          "settings": {
+            "product": "",
+            "badge_text": "Makeup deals"
+          }
+        },
+        "deal_product_VDUy7T": {
+          "type": "deal_product",
+          "settings": {
+            "product": "",
+            "badge_text": "Personal Care deals"
+          }
+        }
+      },
+      "block_order": [
+        "deal_product_9fX8dx",
+        "deal_product_UEpJWB",
+        "deal_product_HBhPne",
+        "deal_product_VDUy7T"
+      ],
+      "name": "Mega deals",
+      "settings": {
+        "heading": "Mega deals",
+        "view_all_label": "VIEW ALL",
+        "view_all_link": "",
+        "show_timer": true,
+        "end_date": "",
+        "end_time": "23:59",
+        "section_width": "full-width",
+        "desktop_per_view": "4",
+        "mobile_per_view": "1.5",
+        "gap": 12,
+        "show_arrows": true,
+        "background_color": "#f0e8ff",
+        "badge_color": "#8b5cf6",
+        "badge_text_color": "#ffffff",
         "padding-block-start": 24,
         "padding-block-end": 24
       }
@@ -372,6 +430,7 @@
   "order": [
     "main",
     "stacked_banners_NrWw6N",
-    "category_grid_geXGcR"
+    "category_grid_geXGcR",
+    "mega_deals_caERWc"
   ]
 }
