@@ -1400,18 +1400,18 @@
         "category_tKKGAw": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/micellar_pink_800x800_6e40600e-6bba-44bf-885f-c95564e6d76f.jpg",
-            "label": "Sunscreen",
-            "link": "",
+            "image": "shopify://shop_images/Body-Wash.webp",
+            "label": "Body Wash",
+            "link": "shopify://collections/body-wash",
             "card_background": "#e3cef0"
           }
         },
         "category_YLUjE3": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/micellar_pink_800x800_6e40600e-6bba-44bf-885f-c95564e6d76f.jpg",
-            "label": "Sunscreen",
-            "link": "",
+            "image": "shopify://shop_images/Primer.webp",
+            "label": "Primer",
+            "link": "shopify://collections/face-primer-1",
             "card_background": "#e3cef0"
           }
         },
@@ -1548,21 +1548,6 @@
         "padding-block-end": 24
       }
     },
-    "cta_banner_eHhwWU": {
-      "type": "cta-banner",
-      "name": "CTA banner",
-      "settings": {
-        "heading": "CERTIFIED BY 150+ BRANDS",
-        "heading_size_desktop": 48,
-        "heading_size_mobile": 24,
-        "button_label": "View More",
-        "button_link": "",
-        "open_new_tab": false,
-        "background_image": "shopify://shop_images/v1022-21-b.webp",
-        "padding-block-start": 0,
-        "padding-block-end": 0
-      }
-    },
     "video_reels_xGEykY": {
       "type": "video-reels",
       "blocks": {
@@ -1632,6 +1617,21 @@
         "background_color": "",
         "padding-block-start": 24,
         "padding-block-end": 24
+      }
+    },
+    "cta_banner_eHhwWU": {
+      "type": "cta-banner",
+      "name": "CTA banner",
+      "settings": {
+        "heading": "CERTIFIED BY 150+ BRANDS",
+        "heading_size_desktop": 48,
+        "heading_size_mobile": 24,
+        "button_label": "View More",
+        "button_link": "",
+        "open_new_tab": false,
+        "background_image": "shopify://shop_images/v1022-21-b.webp",
+        "padding-block-start": 0,
+        "padding-block-end": 0
       }
     }
   },
