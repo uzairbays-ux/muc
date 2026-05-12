@@ -1281,6 +1281,21 @@
         "padding-block-end": 24
       }
     },
+    "ad_banner_pjN7dA": {
+      "type": "ad-banner",
+      "name": "Ad banner",
+      "settings": {
+        "desktop_image": "shopify://shop_images/Fundamental-design-15-_-off_085202c8-fb91-4afa-ba83-3f944308c96b.png",
+        "link": "shopify://collections/fundamentals",
+        "open_new_tab": false,
+        "section_width": "full-width",
+        "mobile_full_width": true,
+        "padding_inline_desktop": 10,
+        "padding_inline_mobile": 10,
+        "padding-block-start": 12,
+        "padding-block-end": 12
+      }
+    },
     "category_grid_FAWJJj": {
       "type": "category-grid",
       "blocks": {
@@ -1323,7 +1338,7 @@
         "category_TkjWqQ": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/Oneskin.webp",
+            "image": "shopify://shop_images/onskin.jpg",
             "label": "",
             "link": "shopify://collections/lips-lip-balm",
             "card_background": "rgba(0,0,0,0)"
@@ -1386,21 +1401,6 @@
         "background_color": "rgba(0,0,0,0)",
         "padding-block-start": 24,
         "padding-block-end": 30
-      }
-    },
-    "ad_banner_pjN7dA": {
-      "type": "ad-banner",
-      "name": "Ad banner",
-      "settings": {
-        "desktop_image": "shopify://shop_images/Fundamental-design-15-_-off_085202c8-fb91-4afa-ba83-3f944308c96b.png",
-        "link": "shopify://collections/fundamentals",
-        "open_new_tab": false,
-        "section_width": "full-width",
-        "mobile_full_width": true,
-        "padding_inline_desktop": 10,
-        "padding_inline_mobile": 0,
-        "padding-block-start": 12,
-        "padding-block-end": 12
       }
     },
     "category_grid_Nr4rxN": {
