@@ -420,7 +420,7 @@
         "view_all_label": "VIEW ALL",
         "view_all_link": "",
         "show_timer": true,
-        "end_date": "",
+        "end_date": "2026-05-12",
         "end_time": "23:59",
         "section_width": "full-width",
         "desktop_per_view": "4",
