@@ -57,6 +57,270 @@
         "padding-block-end": 80
       }
     },
+    "category_grid_geXGcR": {
+      "type": "category-grid",
+      "blocks": {
+        "category_4XecRU": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/AXIS-Y.webp",
+            "label": "",
+            "link": "shopify://collections/axis-y",
+            "card_background": "#e3cef0"
+          }
+        },
+        "category_DRzcTf": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Arencia.webp",
+            "label": "",
+            "link": "shopify://collections/arencia",
+            "card_background": "#e3cef0"
+          }
+        },
+        "category_NJGWgR": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Aromatica.webp",
+            "label": "",
+            "link": "",
+            "card_background": "#e3cef0"
+          }
+        },
+        "category_AHdngA": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Mary-_-May.webp",
+            "label": "",
+            "link": "shopify://collections/mary-may",
+            "card_background": "#e3cef0"
+          }
+        },
+        "category_b8iWJB": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Beauty-Of-Joseon.webp",
+            "label": "",
+            "link": "shopify://collections/beauty-of-joseon",
+            "card_background": "#e3cef0"
+          }
+        },
+        "category_aXDbBU": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Anua.webp",
+            "label": "",
+            "link": "shopify://collections/anua",
+            "card_background": "#e3cef0"
+          }
+        },
+        "category_yyjzxe": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Purito-Seoul.webp",
+            "label": "",
+            "link": "shopify://collections/purito",
+            "card_background": "#e3cef0"
+          }
+        },
+        "category_zNgh9a": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/i_m-from.webp",
+            "label": "",
+            "link": "shopify://collections/im-from",
+            "card_background": "#e3cef0"
+          }
+        },
+        "category_KQtW7i": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Celimax.webp",
+            "label": "",
+            "link": "shopify://collections/celimax",
+            "card_background": "#e3cef0"
+          }
+        },
+        "category_DUJEVp": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Manyo.webp",
+            "label": "",
+            "link": "shopify://collections/manyo",
+            "card_background": "#e3cef0"
+          }
+        },
+        "category_UCeVa7": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Cosrx.webp",
+            "label": "",
+            "link": "shopify://collections/cosrx",
+            "card_background": "#e3cef0"
+          }
+        },
+        "category_ggJhqk": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/VT.webp",
+            "label": "",
+            "link": "shopify://collections/vt",
+            "card_background": "#e3cef0"
+          }
+        },
+        "category_cByi3F": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Jumiso.webp",
+            "label": "",
+            "link": "shopify://collections/jumiso",
+            "card_background": "#e3cef0"
+          }
+        },
+        "category_KhRFEj": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Mixsoon.webp",
+            "label": "",
+            "link": "shopify://collections/mixsoon",
+            "card_background": "#e3cef0"
+          }
+        },
+        "category_kp3M3d": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Torriden.webp",
+            "label": "",
+            "link": "shopify://collections/torriden",
+            "card_background": "#e3cef0"
+          }
+        },
+        "category_cHijHK": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Biodance.webp",
+            "label": "",
+            "link": "shopify://collections/biodance",
+            "card_background": "#e3cef0"
+          }
+        },
+        "category_R3CAVH": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Secret-Key.webp",
+            "label": "",
+            "link": "shopify://collections/secret-key",
+            "card_background": "#e3cef0"
+          }
+        },
+        "category_9dfVAB": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Heimish.webp",
+            "label": "",
+            "link": "",
+            "card_background": "#e3cef0"
+          }
+        },
+        "category_DAGLLD": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Skin1004.webp",
+            "label": "",
+            "link": "shopify://collections/skin1004",
+            "card_background": "#e3cef0"
+          }
+        },
+        "category_pkr4Py": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/medicube.webp",
+            "label": "",
+            "link": "shopify://collections/medicube",
+            "card_background": "#e3cef0"
+          }
+        },
+        "category_jqVBUk": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Tirtir.webp",
+            "label": "",
+            "link": "",
+            "card_background": "#e3cef0"
+          }
+        },
+        "category_RxedKN": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/K-Secret.webp",
+            "label": "",
+            "link": "",
+            "card_background": "#e3cef0"
+          }
+        },
+        "category_DgyGLA": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Dr-Althea.webp",
+            "label": "",
+            "link": "",
+            "card_background": "#e3cef0"
+          }
+        },
+        "category_bg9PnT": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Laneige.webp",
+            "label": "",
+            "link": "",
+            "card_background": "#e3cef0"
+          }
+        }
+      },
+      "block_order": [
+        "category_4XecRU",
+        "category_DRzcTf",
+        "category_NJGWgR",
+        "category_AHdngA",
+        "category_b8iWJB",
+        "category_aXDbBU",
+        "category_yyjzxe",
+        "category_zNgh9a",
+        "category_KQtW7i",
+        "category_DUJEVp",
+        "category_UCeVa7",
+        "category_ggJhqk",
+        "category_cByi3F",
+        "category_KhRFEj",
+        "category_kp3M3d",
+        "category_cHijHK",
+        "category_R3CAVH",
+        "category_9dfVAB",
+        "category_DAGLLD",
+        "category_pkr4Py",
+        "category_jqVBUk",
+        "category_RxedKN",
+        "category_DgyGLA",
+        "category_bg9PnT"
+      ],
+      "name": "Category grid",
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "heading_alignment": "center",
+        "desktop_per_row": "7",
+        "mobile_per_row": "3.5",
+        "gap": 10,
+        "row_gap": 10,
+        "show_arrows": true,
+        "image_padding": 0,
+        "image_fit": "contain",
+        "card_ratio": "adapt",
+        "background_color": "#e3cef0",
+        "padding-block-start": 24,
+        "padding-block-end": 24
+      }
+    },
     "stacked_banners_NrWw6N": {
       "type": "stacked-banners",
       "blocks": {
@@ -105,6 +369,7 @@
   },
   "order": [
     "main",
-    "stacked_banners_NrWw6N"
+    "stacked_banners_NrWw6N",
+    "category_grid_geXGcR"
   ]
 }
