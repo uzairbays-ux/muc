@@ -3,6 +3,10 @@
   assign desktop_columns = s.desktop_columns | default: 4
   assign mobile_columns = s.mobile_columns | default: 2
   assign gap = s.gap | default: 16
+  assign desktop_layout = s.desktop_layout | default: 'grid'
+  assign mobile_layout = s.mobile_layout | default: 'grid'
+  assign desktop_slider_per_view = s.desktop_slider_per_view | default: desktop_columns
+  assign mobile_slider_per_view = s.mobile_slider_per_view | default: '2'
 %}
 
 <div class="section-background color-{{ s.color_scheme }}"></div>
@@ -22,7 +26,9 @@
 
   <div
     class="card-grid__grid"
-    style="--cg-desktop-cols: {{ desktop_columns }}; --cg-mobile-cols: {{ mobile_columns }}; --cg-gap: {{ gap }}px;"
+    data-desktop-layout="{{ desktop_layout }}"
+    data-mobile-layout="{{ mobile_layout }}"
+    style="--cg-desktop-cols: {{ desktop_columns }}; --cg-mobile-cols: {{ mobile_columns }}; --cg-desktop-per-view: {{ desktop_slider_per_view }}; --cg-mobile-per-view: {{ mobile_slider_per_view }}; --cg-gap: {{ gap }}px;"
   >
     {%- for block in section.blocks -%}
       {%- assign b = block.settings -%}
@@ -89,9 +95,54 @@
     gap: var(--cg-gap, 16px);
   }
 
+  /* Desktop slider mode */
+  @media screen and (min-width: 750px) {
+    .card-grid__grid[data-desktop-layout="slider"] {
+      display: flex;
+      grid-template-columns: none;
+      gap: var(--cg-gap, 16px);
+      overflow-x: auto;
+      overflow-y: hidden;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      scroll-padding-inline: 0;
+    }
+
+    .card-grid__grid[data-desktop-layout="slider"]::-webkit-scrollbar {
+      display: none;
+    }
+
+    .card-grid__grid[data-desktop-layout="slider"] .card-grid__item {
+      flex: 0 0 calc((100% - (var(--cg-gap) * (var(--cg-desktop-per-view) - 1))) / var(--cg-desktop-per-view));
+      scroll-snap-align: start;
+    }
+  }
+
   @media screen and (max-width: 749px) {
     .card-grid__grid {
       grid-template-columns: repeat(var(--cg-mobile-cols, 2), 1fr);
+    }
+
+    /* Mobile slider mode */
+    .card-grid__grid[data-mobile-layout="slider"] {
+      display: flex;
+      grid-template-columns: none;
+      gap: var(--cg-gap, 16px);
+      overflow-x: auto;
+      overflow-y: hidden;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+
+    .card-grid__grid[data-mobile-layout="slider"]::-webkit-scrollbar {
+      display: none;
+    }
+
+    .card-grid__grid[data-mobile-layout="slider"] .card-grid__item {
+      flex: 0 0 calc((100% - (var(--cg-gap) * (var(--cg-mobile-per-view) - 1))) / var(--cg-mobile-per-view));
+      scroll-snap-align: start;
     }
   }
 
@@ -178,6 +229,30 @@
     },
     {
       "type": "header",
+      "content": "Layout mode"
+    },
+    {
+      "type": "select",
+      "id": "desktop_layout",
+      "label": "Desktop layout",
+      "options": [
+        { "value": "grid", "label": "Grid" },
+        { "value": "slider", "label": "Slider" }
+      ],
+      "default": "grid"
+    },
+    {
+      "type": "select",
+      "id": "mobile_layout",
+      "label": "Mobile layout",
+      "options": [
+        { "value": "grid", "label": "Grid" },
+        { "value": "slider", "label": "Slider" }
+      ],
+      "default": "grid"
+    },
+    {
+      "type": "header",
       "content": "Grid"
     },
     {
@@ -200,6 +275,38 @@
       "options": [
         { "value": "1", "label": "1 (stacked)" },
         { "value": "2", "label": "2" }
+      ],
+      "default": "2"
+    },
+    {
+      "type": "header",
+      "content": "Slider (when enabled)"
+    },
+    {
+      "type": "select",
+      "id": "desktop_slider_per_view",
+      "label": "Desktop cards per view",
+      "info": "Used when Desktop layout is Slider.",
+      "options": [
+        { "value": "2", "label": "2" },
+        { "value": "3", "label": "3" },
+        { "value": "4", "label": "4" },
+        { "value": "5", "label": "5" },
+        { "value": "6", "label": "6" }
+      ],
+      "default": "4"
+    },
+    {
+      "type": "select",
+      "id": "mobile_slider_per_view",
+      "label": "Mobile cards per view",
+      "info": "Used when Mobile layout is Slider. Fractional values show a peek of the next card.",
+      "options": [
+        { "value": "1.2", "label": "1.2" },
+        { "value": "1.5", "label": "1.5" },
+        { "value": "2", "label": "2" },
+        { "value": "2.2", "label": "2.2" },
+        { "value": "2.5", "label": "2.5" }
       ],
       "default": "2"
     },
