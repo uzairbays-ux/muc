@@ -1418,18 +1418,18 @@
         "category_UFqNMX": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/micellar_pink_800x800_6e40600e-6bba-44bf-885f-c95564e6d76f.jpg",
-            "label": "Sunscreen",
-            "link": "",
+            "image": "shopify://shop_images/Candle.webp",
+            "label": "Candle",
+            "link": "shopify://collections/candle",
             "card_background": "#e3cef0"
           }
         },
         "category_xbmJ99": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/micellar_pink_800x800_6e40600e-6bba-44bf-885f-c95564e6d76f.jpg",
-            "label": "Sunscreen",
-            "link": "",
+            "image": "shopify://shop_images/Concealers.webp",
+            "label": "Concealers",
+            "link": "shopify://collections/concealers",
             "card_background": "#e3cef0"
           }
         },
