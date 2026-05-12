@@ -27,7 +27,7 @@
             "image": "shopify://shop_images/makeup.webp",
             "background_color": "#f1ecfb",
             "label": "Makeup",
-            "link": ""
+            "link": "shopify://collections/makeup"
           }
         },
         "thumbnail_Jq84qh": {
@@ -36,7 +36,7 @@
             "image": "shopify://shop_images/Hair-care.webp",
             "background_color": "#f1ecfb",
             "label": "Haircare",
-            "link": ""
+            "link": "shopify://collections/hair-care"
           }
         },
         "thumbnail_TA8KHE": {
@@ -45,7 +45,7 @@
             "image": "shopify://shop_images/Lingerie_jpg.webp",
             "background_color": "#f1ecfb",
             "label": "Lingerie",
-            "link": ""
+            "link": "shopify://collections/lingerie"
           }
         },
         "thumbnail_h7Dj6p": {
@@ -54,7 +54,7 @@
             "image": "shopify://shop_images/Baby-Care_jpg.webp",
             "background_color": "#f1ecfb",
             "label": "Baby Care",
-            "link": ""
+            "link": "shopify://collections/mother-baby-essential"
           }
         },
         "thumbnail_gBqUph": {
@@ -63,7 +63,7 @@
             "image": "shopify://shop_images/Perfumes.webp",
             "background_color": "#f1ecfb",
             "label": "Perfumes",
-            "link": ""
+            "link": "shopify://collections/perfumes"
           }
         },
         "thumbnail_qkgXkh": {
