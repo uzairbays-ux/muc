@@ -932,6 +932,7 @@
         },
         "card_tB7XAh": {
           "type": "card",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Rimmel_98cb731d-285c-4da4-aa35-4f4bbc66bb0e.jpg",
             "link": "shopify://collections/rimmel-london",
@@ -1613,13 +1614,13 @@
         "heading": "Shop By Category",
         "subheading": "",
         "heading_alignment": "left",
-        "desktop_layout": "carousel",
+        "desktop_layout": "grid",
         "mobile_layout": "grid",
         "desktop_per_row": "8",
         "mobile_per_row": "4",
         "gap": 10,
         "row_gap": 10,
-        "show_arrows": true,
+        "show_arrows": false,
         "image_padding": 0,
         "image_fit": "contain",
         "card_ratio": "adapt",
