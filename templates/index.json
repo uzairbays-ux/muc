@@ -15,7 +15,7 @@
         "thumbnail_Qbx4az": {
           "type": "thumbnail",
           "settings": {
-            "image": "shopify://shop_images/makeup.webp",
+            "image": "shopify://shop_images/Skin-Care.webp",
             "background_color": "#f1ecfb",
             "label": "Skincare",
             "link": ""
@@ -42,18 +42,18 @@
         "thumbnail_TA8KHE": {
           "type": "thumbnail",
           "settings": {
-            "image": "shopify://shop_images/thumb.png",
+            "image": "shopify://shop_images/Lingerie_jpg.webp",
             "background_color": "#f1ecfb",
-            "label": "K Beauty",
+            "label": "Lingerie",
             "link": ""
           }
         },
         "thumbnail_h7Dj6p": {
           "type": "thumbnail",
           "settings": {
-            "image": "shopify://shop_images/Skin-Care.webp",
+            "image": "shopify://shop_images/Baby-Care_jpg.webp",
             "background_color": "#f1ecfb",
-            "label": "Skin Care",
+            "label": "Baby Care",
             "link": ""
           }
         },
