@@ -576,10 +576,10 @@
           "type": "shopify://apps/judge-me-reviews/blocks/all_reviews_page/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
           "settings": {
             "max_width": 1200,
-            "review_source": "all",
+            "review_source": "product",
             "show_all_reviews_in_same_tab": false,
             "show_first": "product",
-            "empty_state": "empty_widget"
+            "empty_state": "hide_widget"
           }
         }
       },
