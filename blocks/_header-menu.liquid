@@ -10,6 +10,63 @@
   assign block_settings = block.settings
 %}
 
+{%- liquid
+  # ---- Highlighted menu items (e.g. Sale) ----
+  assign highlight_raw = block_settings.highlight_handles | default: ''
+  assign highlight_animation = block_settings.highlight_animation | default: 'pulse'
+  assign highlight_bg = block_settings.highlight_bg_color | default: '#eb1d23'
+  assign highlight_fg = block_settings.highlight_text_color | default: '#ffffff'
+  assign highlight_radius = block_settings.highlight_radius | default: 4
+  assign has_highlight = false
+  assign highlight_handles_list = ''
+  if highlight_raw != blank and highlight_animation != 'none'
+    assign has_highlight = true
+    assign highlight_handles_list = highlight_raw | replace: ' ', '' | downcase | split: ','
+  endif
+-%}
+
+{%- if has_highlight -%}
+  <style>
+    {%- for handle in highlight_handles_list -%}
+      {%- if handle == blank -%}{%- continue -%}{%- endif -%}
+      .menu-list__link[data-link-handle="{{ handle }}"],
+      #MenuItem-{{ handle }},
+      #HeaderDrawer-{{ handle }} {
+        --menu-highlight-bg: {{ highlight_bg }};
+        --menu-highlight-fg: {{ highlight_fg }};
+        color: var(--menu-highlight-fg) !important;
+        background-color: var(--menu-highlight-bg) !important;
+        border-radius: {{ highlight_radius }}px;
+        padding-inline: 10px;
+        padding-block: 4px;
+        animation: menu-highlight-{{ highlight_animation }} 1.8s ease-in-out infinite;
+        position: relative;
+        z-index: 1;
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+      }
+      #HeaderDrawer-{{ handle }} {
+        display: inline-flex !important;
+        width: fit-content;
+      }
+      .menu-list__link[data-link-handle="{{ handle }}"] .menu-list__link-title,
+      #MenuItem-{{ handle }},
+      #HeaderDrawer-{{ handle }} .menu-drawer__menu-item-text {
+        color: var(--menu-highlight-fg) !important;
+      }
+    {%- endfor -%}
+
+    @media (prefers-reduced-motion: reduce) {
+      .menu-list__link[data-link-handle],
+      [id^="MenuItem-"],
+      [id^="HeaderDrawer-"] {
+        animation: none !important;
+      }
+    }
+  </style>
+{%- endif -%}
+
 {% case variant %}
   {% when 'mobile' %}
     <div
@@ -90,6 +147,7 @@
           <a
             href="{{ link.url }}"
             data-skip-node-update="true"
+            data-link-handle="{{ link.handle }}"
             class="menu-list__link{% if link.active %} menu-list__link--active{% endif %}"
             {%- if link.links != blank -%}
               aria-controls="submenu-{{ forloop.index }}"
@@ -680,6 +738,49 @@
     /* preserves the inherited grid layout when this submenu wrapper is used */
     display: contents;
   }
+
+  /* -------- Highlighted menu items (Sale / Deals / etc.) -------- */
+  @keyframes menu-highlight-pulse {
+    0%, 100% {
+      transform: scale(1);
+      box-shadow: 0 0 0 0 color-mix(in srgb, var(--menu-highlight-bg, #eb1d23) 60%, transparent);
+    }
+    50% {
+      transform: scale(1.06);
+      box-shadow: 0 0 0 8px color-mix(in srgb, var(--menu-highlight-bg, #eb1d23) 0%, transparent);
+    }
+  }
+
+  @keyframes menu-highlight-glow {
+    0%, 100% {
+      box-shadow: 0 0 0 0 color-mix(in srgb, var(--menu-highlight-bg, #eb1d23) 70%, transparent),
+                  0 0 10px color-mix(in srgb, var(--menu-highlight-bg, #eb1d23) 60%, transparent);
+    }
+    50% {
+      box-shadow: 0 0 0 4px color-mix(in srgb, var(--menu-highlight-bg, #eb1d23) 20%, transparent),
+                  0 0 22px color-mix(in srgb, var(--menu-highlight-bg, #eb1d23) 80%, transparent);
+    }
+  }
+
+  @keyframes menu-highlight-bounce {
+    0%, 100% { transform: translateY(0); }
+    25%      { transform: translateY(-3px); }
+    50%      { transform: translateY(0); }
+    75%      { transform: translateY(-1px); }
+  }
+
+  @keyframes menu-highlight-shake {
+    0%, 100%       { transform: translateX(0) rotate(0); }
+    20%            { transform: translateX(-2px) rotate(-2deg); }
+    40%            { transform: translateX(2px)  rotate(2deg); }
+    60%            { transform: translateX(-1px) rotate(-1deg); }
+    80%            { transform: translateX(1px)  rotate(1deg); }
+  }
+
+  @keyframes menu-highlight-blink {
+    0%, 40%, 100% { opacity: 1; }
+    20%           { opacity: 0.55; }
+  }
 {% endstylesheet %}
 
 {% schema %}
@@ -698,6 +799,53 @@
       "id": "color_scheme",
       "label": "t:settings.color_scheme",
       "default": "primary"
+    },
+    {
+      "type": "header",
+      "content": "Highlighted menu items"
+    },
+    {
+      "type": "text",
+      "id": "highlight_handles",
+      "label": "Menu link handles to highlight",
+      "info": "Comma-separated, case-insensitive. Use the link handle (e.g. sale, deals, new-arrivals). Find handles in Navigation \u2192 your menu \u2192 Edit link.",
+      "default": "sale"
+    },
+    {
+      "type": "select",
+      "id": "highlight_animation",
+      "label": "Animation",
+      "options": [
+        { "value": "none",   "label": "None (just color)" },
+        { "value": "pulse",  "label": "Pulse" },
+        { "value": "glow",   "label": "Glow" },
+        { "value": "bounce", "label": "Bounce" },
+        { "value": "shake",  "label": "Shake" },
+        { "value": "blink",  "label": "Blink" }
+      ],
+      "default": "pulse"
+    },
+    {
+      "type": "color",
+      "id": "highlight_bg_color",
+      "label": "Highlight background",
+      "default": "#eb1d23"
+    },
+    {
+      "type": "color",
+      "id": "highlight_text_color",
+      "label": "Highlight text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "highlight_radius",
+      "label": "Corner radius",
+      "min": 0,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "default": 4
     },
     {
       "type": "header",
