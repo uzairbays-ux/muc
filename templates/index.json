@@ -1472,7 +1472,7 @@
           "settings": {
             "image": "shopify://shop_images/Tirtir.webp",
             "label": "",
-            "link": "",
+            "link": "shopify://collections/tirtir",
             "card_background": "#e3cef0"
           }
         },
