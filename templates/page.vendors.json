@@ -16,6 +16,7 @@
         "subheading": "Shop your favourite brands, A to Z",
         "heading_alignment": "left",
         "menu": "brand-menu",
+        "force_text_logos": true,
         "show_index": true,
         "show_names": true,
         "columns_desktop": 6,
