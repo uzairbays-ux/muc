@@ -160,10 +160,14 @@ class HeaderComponent extends Component {
       return;
     }
 
-    // Deadzone: require at least 5px of scroll before switching direction.
-    // Prevents flicker from mobile scroll inertia / bounce micro-reversals.
-    const SCROLL_THRESHOLD = 5;
-    if (Math.abs(scrollDelta) < SCROLL_THRESHOLD && !isAtTop) return;
+    // Direction-asymmetric deadzone (hysteresis) to prevent flicker on mobile.
+    // iOS scroll bounce/inertia produces micro-reversals up to ~15 px; a single
+    // 5 px threshold isn't enough. Bias toward visibility: show on small upward
+    // deltas, but require a substantial downward scroll before hiding.
+    const SHOW_THRESHOLD = 5;
+    const HIDE_THRESHOLD = 24;
+    const requiredDelta = scrollDelta < 0 ? SHOW_THRESHOLD : HIDE_THRESHOLD;
+    if (Math.abs(scrollDelta) < requiredDelta && !isAtTop) return;
 
     const isScrollingUp = scrollDelta < 0;
 
