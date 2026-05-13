@@ -249,6 +249,14 @@
                 "padding-inline-end": 0
               },
               "blocks": {}
+            },
+            "custom_liquid_yL6BdP": {
+              "type": "custom-liquid",
+              "name": "t:names.custom_liquid",
+              "settings": {
+                "custom_liquid": "{% render 'baadmay-product-grid-item',product:  %}"
+              },
+              "blocks": {}
             }
           },
           "block_order": [
@@ -256,7 +264,8 @@
             "text_eYAazA",
             "product_title_4nY4eT",
             "review_QhafGF",
-            "price_EzJzMm"
+            "price_EzJzMm",
+            "custom_liquid_yL6BdP"
           ]
         }
       },
