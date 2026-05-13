@@ -1745,7 +1745,7 @@
         "category_nxUzzz": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/Baby-Cream-_-Lotion.webp",
+            "image": "shopify://shop_images/Baby_Cream_Lotion.webp",
             "label": "Baby Cream & Lotion",
             "link": "shopify://collections/baby-care-baby-cream-lotion",
             "card_background": "#e3cef0"
@@ -1754,7 +1754,7 @@
         "category_XkWdpc": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/Baby-Shampoo.webp",
+            "image": "shopify://shop_images/Baby_Shampoo.webp",
             "label": "Baby Shampoo",
             "link": "shopify://collections/baby-care-baby-shampoo",
             "card_background": "#e3cef0"
@@ -1763,7 +1763,7 @@
         "category_A9tX3h": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/Liquid-Lipsticks.webp",
+            "image": "shopify://shop_images/Liquid_Lipsticks.webp",
             "label": "Liquid Lipsticks",
             "link": "shopify://collections/lips-liquid-lipsticks",
             "card_background": "#e3cef0"
@@ -1790,7 +1790,7 @@
         "category_aAVYQG": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/Foundation.webp",
+            "image": "shopify://shop_images/Foundation_a458dbba-ecf5-467c-b76b-1a4e398d6de5.webp",
             "label": "Foundation",
             "link": "shopify://collections/foundation",
             "card_background": "#e3cef0"
@@ -1808,7 +1808,7 @@
         "category_gqTNjr": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/Hair-Treatment-_-Mask.webp",
+            "image": "shopify://shop_images/Hair_Treatment_Mask.webp",
             "label": "Hair Treatment",
             "link": "shopify://collections/hair-treatment",
             "card_background": "#e3cef0"
@@ -1817,7 +1817,7 @@
         "category_gDnaG4": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/Lip-Liners-_-Crayons.webp",
+            "image": "shopify://shop_images/Lip_Liners_Crayons.webp",
             "label": "Lip Liners",
             "link": "shopify://collections/lip-liners",
             "card_background": "#e3cef0"
@@ -1835,7 +1835,7 @@
         "category_xEBN8g": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/Face-Wash-_-Cleansers.webp",
+            "image": "shopify://shop_images/Face_Wash_Cleansers.webp",
             "label": "Face Wash & Cleansers",
             "link": "shopify://collections/cleansers-cleansers",
             "card_background": "#e3cef0"
@@ -1862,7 +1862,7 @@
         "category_JzUCyG": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/Lip-Balm-_-Mask.webp",
+            "image": "shopify://shop_images/Lip_Balm_Mask.webp",
             "label": "Lip Balm & Mask",
             "link": "shopify://collections/lips-lip-balm",
             "card_background": "#e3cef0"
@@ -1871,7 +1871,7 @@
         "category_M7H3Hw": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/Body-Wash.webp",
+            "image": "shopify://shop_images/Body_Wash.webp",
             "label": "Body Wash",
             "link": "shopify://collections/body-wash",
             "card_background": "#e3cef0"
@@ -1889,7 +1889,7 @@
         "category_YgfrwG": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/Candle.webp",
+            "image": "shopify://shop_images/candle_7242d1b2-5ac0-48ad-a4c5-2fb0bdc3a06f.webp",
             "label": "Candle",
             "link": "shopify://collections/candle",
             "card_background": "#e3cef0"
@@ -1898,7 +1898,7 @@
         "category_tUQeUh": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/Concealers.webp",
+            "image": "shopify://shop_images/Concealers_a312af3d-f485-49e4-b71a-fd7f0d2e883a.webp",
             "label": "Concealers",
             "link": "shopify://collections/concealers",
             "card_background": "#e3cef0"
@@ -1907,7 +1907,7 @@
         "category_BGrV8P": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/Hair-Dye.webp",
+            "image": "shopify://shop_images/Hair_Dye.webp",
             "label": "Hair Dye",
             "link": "shopify://collections/styling-treatment-hair-dye",
             "card_background": "#e3cef0"
