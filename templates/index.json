@@ -1259,6 +1259,7 @@
       "blocks": {
         "category_Apxdpi": {
           "type": "category",
+          "name": "Medicube",
           "settings": {
             "image": "shopify://shop_images/medicube.webp",
             "label": "",
@@ -1268,6 +1269,7 @@
         },
         "category_qEL3Wr": {
           "type": "category",
+          "name": "Dr Althea",
           "settings": {
             "image": "shopify://shop_images/Dr-Althea.webp",
             "label": "",
@@ -1277,6 +1279,7 @@
         },
         "category_q7AGj9": {
           "type": "category",
+          "name": "Beauty of Joseon",
           "settings": {
             "image": "shopify://shop_images/Beauty-Of-Joseon.webp",
             "label": "",
