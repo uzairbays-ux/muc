@@ -39,7 +39,9 @@
           "blocks": {}
         }
       },
-      "block_order": ["heading"],
+      "block_order": [
+        "heading"
+      ],
       "settings": {
         "content_direction": "column",
         "gap": 16,
@@ -56,7 +58,7 @@
         "order_label": "Order number",
         "email_label": "Email address",
         "button_label": "Track order",
-        "tracker_url": "https://track.aftership.com/",
+        "tracker_url": "https://makeupcity.ginkgoretail.net/ordertracking/030426190053537294",
         "order_param": "order_number",
         "email_param": "email",
         "method": "redirect",
@@ -68,5 +70,8 @@
       }
     }
   },
-  "order": ["main", "tracker"]
+  "order": [
+    "main",
+    "tracker"
+  ]
 }
