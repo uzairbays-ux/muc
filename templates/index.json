@@ -1426,7 +1426,7 @@
         "mobile_full_width": true,
         "padding_inline_desktop": 10,
         "padding_inline_mobile": 10,
-        "padding-block-start": 12,
+        "padding-block-start": 15,
         "padding-block-end": 12
       }
     },
