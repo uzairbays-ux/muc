@@ -279,8 +279,8 @@
               "settings": {
                 "label": "View all",
                 "open_in_new_tab": false,
-                "style_class": "link",
-                "width": "custom",
+                "style_class": "button",
+                "width": "fit-content",
                 "custom_width": 100,
                 "width_mobile": "custom",
                 "custom_width_mobile": 100
