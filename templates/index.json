@@ -1772,7 +1772,7 @@
         "category_4nTzpR": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/Sunscreen.webp",
+            "image": "shopify://shop_images/Sunscreen_736e79af-1ac6-4dab-bfea-d5c766922c4c.webp",
             "label": "Sunscreen",
             "link": "shopify://collections/sunscreen",
             "card_background": "#e3cef0"
@@ -1781,7 +1781,7 @@
         "category_tKxkw9": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/Shampoo-_-Conditioner.webp",
+            "image": "shopify://shop_images/Shampoo_Conditioner.webp",
             "label": "Shampoo & Conditioner",
             "link": "shopify://collections/shampoo-conditioner",
             "card_background": "#e3cef0"
@@ -1799,7 +1799,7 @@
         "category_8ALitb": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/Mascara.webp",
+            "image": "shopify://shop_images/Mascara_cc05de4d-5165-43e0-a874-9736f117eca3.webp",
             "label": "Mascara",
             "link": "shopify://collections/mascara",
             "card_background": "#e3cef0"
@@ -1826,7 +1826,7 @@
         "category_U8zBfJ": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/Masks-_-Peels.webp",
+            "image": "shopify://shop_images/Masks_Peels.webp",
             "label": "Masks & Peels",
             "link": "shopify://collections/masks-masks-and-peels",
             "card_background": "#e3cef0"
@@ -1844,7 +1844,7 @@
         "category_E8bcmV": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/Makeup-Remover.webp",
+            "image": "shopify://shop_images/Makeup_Remover.webp",
             "label": "Makeup Remover",
             "link": "shopify://collections/face-makeup-remover",
             "card_background": "#e3cef0"
@@ -1853,7 +1853,7 @@
         "category_4GihzM": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/Nail-Polish.webp",
+            "image": "shopify://shop_images/Nail_Polish.webp",
             "label": "Nail Polish",
             "link": "shopify://collections/nails-nail-polish",
             "card_background": "#e3cef0"
@@ -1880,7 +1880,7 @@
         "category_BqQDFY": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/Primer.webp",
+            "image": "shopify://shop_images/Primer_879aa203-3bf4-48ad-92c5-56ba5bbbeb59.webp",
             "label": "Primer",
             "link": "shopify://collections/face-primer-1",
             "card_background": "#e3cef0"
@@ -1916,7 +1916,7 @@
         "category_7h3dED": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/Serums-_-Essence.webp",
+            "image": "shopify://shop_images/Serums_Essence.webp",
             "label": "Serums",
             "link": "shopify://collections/moisturizers-serums-and-essence",
             "card_background": "#e3cef0"
