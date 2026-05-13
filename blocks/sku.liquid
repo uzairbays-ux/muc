@@ -52,7 +52,7 @@
   "
   {{ block.shopify_attributes }}
 >
-  {% render 'sku', product_resource: product_resource %}
+  {% render 'sku', product_resource: product_resource, block_settings: block_settings %}
 </product-sku-component>
 
 {% schema %}
@@ -63,6 +63,19 @@
     {
       "type": "paragraph",
       "content": "t:content.resource_reference_product_sku"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_label",
+      "label": "Show label before SKU",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Label text",
+      "default": "SKU:",
+      "visible_if": "{{ block.settings.show_label }}"
     },
     {
       "type": "header",

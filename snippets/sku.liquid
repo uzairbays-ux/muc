@@ -3,13 +3,23 @@
   It is used in the sku block.
 
   @param {product} product_resource - The product to render
+  @param {object} block_settings - Optional block settings (show_label, label)
 {%- enddoc -%}
 
 {%- liquid
   assign sku = product_resource.selected_or_first_available_variant.sku
+  assign show_label = false
+  if block_settings.show_label
+    assign show_label = true
+  endif
+  assign label_text = block_settings.label | default: 'SKU:'
 -%}
 
 <div ref="skuContainer">
+  {%- if show_label -%}
+    <span class="sku__label">{{ label_text }}</span>
+    {{- ' ' -}}
+  {%- endif -%}
   <span
     class="sku"
     ref="sku"
