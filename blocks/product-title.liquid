@@ -19,7 +19,7 @@
   assign mt = block.settings
   assign has_mobile_overrides = false
   if mt.type_preset == 'custom'
-    if mt.mobile_font_size != blank or mt.mobile_font != blank or mt.mobile_line_height != blank or mt.mobile_letter_spacing != blank or mt.mobile_case != blank
+    if mt.mobile_font_size != blank or mt.mobile_font != blank or mt.mobile_line_height != blank or mt.mobile_letter_spacing != blank or mt.mobile_case != blank or mt.mobile_weight != blank
       assign has_mobile_overrides = true
     endif
   endif
@@ -51,7 +51,8 @@
       .text-block--{{ block.id }},
       .text-block--{{ block.id }} > * {
         {%- if mt.mobile_font_size != blank %} font-size: {{ mt.mobile_font_size }} !important;{% endif -%}
-        {%- if mt.mobile_font != blank %} font-family: {{ mt.mobile_font }} !important; font-weight: {{ mt.mobile_font | replace: 'family', 'weight' }} !important;{% endif -%}
+        {%- if mt.mobile_font != blank %} font-family: {{ mt.mobile_font }} !important;{% endif -%}
+        {%- if mt.mobile_weight != blank %} font-weight: {{ mt.mobile_weight }} !important;{% elsif mt.mobile_font != blank %} font-weight: {{ mt.mobile_font | replace: 'family', 'weight' }} !important;{% endif -%}
         {%- if mobile_lh != '' %} line-height: {{ mobile_lh }} !important;{% endif -%}
         {%- if mobile_ls != '' %} letter-spacing: {{ mobile_ls }} !important;{% endif -%}
         {%- if mt.mobile_case != blank %} text-transform: {{ mt.mobile_case }} !important;{% endif -%}
@@ -188,6 +189,23 @@
         }
       ],
       "default": "var(--font-body--family)",
+      "visible_if": "{{ block.settings.type_preset == 'custom' }}"
+    },
+    {
+      "type": "select",
+      "id": "weight",
+      "label": "Font weight",
+      "options": [
+        { "value": "", "label": "Use font default" },
+        { "value": "300", "label": "Light (300)" },
+        { "value": "400", "label": "Regular (400)" },
+        { "value": "500", "label": "Medium (500)" },
+        { "value": "600", "label": "Semibold (600)" },
+        { "value": "700", "label": "Bold (700)" },
+        { "value": "800", "label": "Extra bold (800)" },
+        { "value": "900", "label": "Black (900)" }
+      ],
+      "default": "",
       "visible_if": "{{ block.settings.type_preset == 'custom' }}"
     },
     {
@@ -447,6 +465,23 @@
         { "value": "", "label": "Use desktop" },
         { "value": "none", "label": "Default" },
         { "value": "uppercase", "label": "Uppercase" }
+      ],
+      "default": "",
+      "visible_if": "{{ block.settings.type_preset == 'custom' }}"
+    },
+    {
+      "type": "select",
+      "id": "mobile_weight",
+      "label": "Mobile font weight",
+      "options": [
+        { "value": "", "label": "Use desktop" },
+        { "value": "300", "label": "Light (300)" },
+        { "value": "400", "label": "Regular (400)" },
+        { "value": "500", "label": "Medium (500)" },
+        { "value": "600", "label": "Semibold (600)" },
+        { "value": "700", "label": "Bold (700)" },
+        { "value": "800", "label": "Extra bold (800)" },
+        { "value": "900", "label": "Black (900)" }
       ],
       "default": "",
       "visible_if": "{{ block.settings.type_preset == 'custom' }}"
