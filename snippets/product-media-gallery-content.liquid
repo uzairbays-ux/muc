@@ -350,10 +350,33 @@
         media-gallery--extend
       {% endif %}
     "
-    style="{% render 'spacing-style', settings: block_settings %} --thumbnail-width: {{ block_settings.thumbnail_width }}px; --media-radius: {{ block_settings.media_radius }}px;{% if block_settings.icons_style contains 'large' %} --slideshow-icon-padding: 0px;{% endif %}--image-gap: {{ block_settings.image_gap }}px;{% unless block_settings.aspect_ratio == 'adapt' %} --gallery-aspect-ratio: {{ block_settings.aspect_ratio }};{% endunless %}"
+    style="{% render 'spacing-style', settings: block_settings %} --thumbnail-width: {{ block_settings.thumbnail_width }}px; --media-radius: {{ block_settings.media_radius }}px;{% if block_settings.icons_style contains 'large' %} --slideshow-icon-padding: 0px;{% endif %}--image-gap: {{ block_settings.image_gap }}px;{% unless block_settings.aspect_ratio == 'adapt' %} --gallery-aspect-ratio: {{ block_settings.aspect_ratio }};{% endunless %} position: relative;"
     data-presentation="{{ media_presentation }}"
     {{ block_shopify_attributes }}
   >
+    {%- if selected_product.available == false or selected_product.compare_at_price > selected_product.price -%}
+      <div
+        class="product-badges product-badges--{{ settings.badge_position }}"
+        style="
+          --badge-border-radius: {{ settings.badge_corner_radius }}px;
+          --badge-font-family: var(--font-{{ settings.badge_font_family }}--family); --badge-font-weight: var(--font-{{ settings.badge_font_family }}--weight); --badge-text-transform: {{ settings.badge_text_transform }};
+        "
+      >
+        <div
+          class="
+            product-badges__badge product-badges__badge--rectangle
+            {% if selected_product.available == false %} color-{{ settings.badge_sold_out_color_scheme }}{% elsif selected_product.compare_at_price > selected_product.price %} color-{{ settings.badge_sale_color_scheme }}{% endif %}
+          "
+        >
+          {%- if selected_product.available == false -%}
+            {{ 'content.product_badge_sold_out' | t }}
+          {%- elsif selected_product.compare_at_price > selected_product.price -%}
+            {{ 'content.product_badge_sale' | t }}
+          {%- endif -%}
+        </div>
+      </div>
+      {% render 'product-badges-styles' %}
+    {%- endif -%}
     {% capture slides %}
       {% for media in sorted_media %}
         {% capture children %}
