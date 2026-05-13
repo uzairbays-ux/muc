@@ -751,6 +751,7 @@
             "text_zHM4jV": {
               "type": "text",
               "name": "t:names.text",
+              "disabled": true,
               "settings": {
                 "text": "<p>{{ closest.product.vendor }}</p>",
                 "width": "fit-content",
