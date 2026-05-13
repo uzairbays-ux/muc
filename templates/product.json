@@ -296,6 +296,27 @@
               "type": "shopify://apps/judge-me-reviews/blocks/review_snippet_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
               "settings": {}
             },
+            "sku_fiiUqj": {
+              "type": "sku",
+              "name": "t:names.product_sku",
+              "disabled": true,
+              "settings": {
+                "type_preset": "",
+                "width": "100%",
+                "alignment": "left",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "color": "var(--color-foreground)",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
             "accordion_6PhDXA": {
               "type": "accordion",
               "name": "t:names.accordion",
@@ -515,6 +536,7 @@
             "variant_picker_R3rGDr",
             "buy_buttons_eYQEYi",
             "judge_me_reviews_review_snippet_widget_b9Apqb",
+            "sku_fiiUqj",
             "accordion_6PhDXA",
             "text_aEtTtq"
           ]
@@ -736,6 +758,7 @@
                 "alignment": "left",
                 "type_preset": "rte",
                 "font": "var(--font-body--family)",
+                "weight": "",
                 "font_size": "1rem",
                 "line_height": "normal",
                 "letter_spacing": "normal",
@@ -747,6 +770,7 @@
                 "mobile_line_height": "",
                 "mobile_letter_spacing": "",
                 "mobile_case": "",
+                "mobile_weight": "",
                 "background": false,
                 "background_color": "#00000026",
                 "corner_radius": 0,
