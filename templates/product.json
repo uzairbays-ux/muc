@@ -160,6 +160,24 @@
                   },
                   "blocks": {}
                 },
+                "sale_badge_Ltg39z": {
+                  "type": "sale-badge",
+                  "name": "Sale badge",
+                  "settings": {
+                    "background_color": "#eb1d23",
+                    "text_color": "#ffffff",
+                    "corner_radius": 4,
+                    "font_size": 13,
+                    "padding_block": 6,
+                    "padding_inline": 10,
+                    "suffix": "% OFF",
+                    "padding-block-start": 0,
+                    "padding-block-end": 8,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                },
                 "review_kH9VPT": {
                   "type": "review",
                   "name": "t:names.product_review_stars",
@@ -207,6 +225,7 @@
               "block_order": [
                 "text_xrnftG",
                 "text_LabgbW",
+                "sale_badge_Ltg39z",
                 "review_kH9VPT",
                 "price_tVjtKg",
                 "custom_liquid_7MEE6g"
