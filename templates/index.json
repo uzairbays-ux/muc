@@ -554,11 +554,11 @@
     "card_grid_HA8C7w": {
       "type": "card-grid",
       "blocks": {
-        "card_DnJ9zV": {
+        "card_CaecqX": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/B_BW_4862ae32-fb7d-4c31-ba3e-a3f7205ecc6d.jpg",
-            "link": "shopify://collections/bath-body-works",
+            "image": "shopify://shop_images/500_x_500_Banners_copy.webp",
+            "link": "shopify://collections/kryolan",
             "open_new_tab": false
           }
         },
@@ -624,7 +624,7 @@
         }
       },
       "block_order": [
-        "card_DnJ9zV",
+        "card_CaecqX",
         "card_L4QwKh",
         "card_QQLjCx",
         "card_p9kYBe",
@@ -726,11 +726,11 @@
             "open_new_tab": false
           }
         },
-        "card_Dj8pRB": {
+        "card_c49pAk": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/500_x_500_Banners_copy.webp",
-            "link": "shopify://collections/kryolan",
+            "image": "shopify://shop_images/B_BW_4862ae32-fb7d-4c31-ba3e-a3f7205ecc6d.jpg",
+            "link": "shopify://collections/bath-body-works",
             "open_new_tab": false
           }
         }
@@ -744,7 +744,7 @@
         "card_gBiw68",
         "card_dnezUz",
         "card_ceiizR",
-        "card_Dj8pRB"
+        "card_c49pAk"
       ],
       "name": "Card grid",
       "settings": {
