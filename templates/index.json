@@ -1932,7 +1932,7 @@
         "heading_size_desktop": 48,
         "heading_size_mobile": 24,
         "button_label": "View More",
-        "button_link": "",
+        "button_link": "shopify://pages/brands",
         "open_new_tab": false,
         "background_image": "shopify://shop_images/v1022-21-b.webp",
         "padding-block-start": 0,
