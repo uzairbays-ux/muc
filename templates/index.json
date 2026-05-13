@@ -1494,6 +1494,78 @@
             "link": "shopify://collections/just-for-men",
             "card_background": "rgba(0,0,0,0)"
           }
+        },
+        "category_dnq7km": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/B_BW_4862ae32-fb7d-4c31-ba3e-a3f7205ecc6d.jpg",
+            "label": "",
+            "link": "shopify://collections/just-for-men",
+            "card_background": "rgba(0,0,0,0)"
+          }
+        },
+        "category_7drWFc": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Estelin_ef825ae6-354a-4cdb-aaa9-9a2414d43c2c.jpg",
+            "label": "",
+            "link": "shopify://collections/just-for-men",
+            "card_background": "rgba(0,0,0,0)"
+          }
+        },
+        "category_Tr6x9A": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Framesi_72e28818-8c74-4000-9324-c4ebf23ba451.jpg",
+            "label": "",
+            "link": "shopify://collections/just-for-men",
+            "card_background": "rgba(0,0,0,0)"
+          }
+        },
+        "category_6nx9Fn": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Gosh_8df3d47e-0520-4f82-af90-1316b334f135.jpg",
+            "label": "",
+            "link": "shopify://collections/just-for-men",
+            "card_background": "rgba(0,0,0,0)"
+          }
+        },
+        "category_BLQzDj": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Lamel_469b6135-078f-4aef-a30e-b9741ede7c2c.jpg",
+            "label": "",
+            "link": "shopify://collections/just-for-men",
+            "card_background": "rgba(0,0,0,0)"
+          }
+        },
+        "category_tWpgwd": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Loreal_56554c2a-a47d-40da-9ea9-9fdfb3e3e6ed.jpg",
+            "label": "",
+            "link": "shopify://collections/just-for-men",
+            "card_background": "rgba(0,0,0,0)"
+          }
+        },
+        "category_mNHHRH": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/luscious_4cddba05-674c-46a6-98a7-ff9a755eb233.jpg",
+            "label": "",
+            "link": "shopify://collections/just-for-men",
+            "card_background": "rgba(0,0,0,0)"
+          }
+        },
+        "category_N38AJ7": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Max-Factor_bdc98934-8feb-461b-90a0-931e5105e3b7.jpg",
+            "label": "",
+            "link": "shopify://collections/just-for-men",
+            "card_background": "rgba(0,0,0,0)"
+          }
         }
       },
       "block_order": [
@@ -1504,7 +1576,15 @@
         "category_TkjWqQ",
         "category_EAWHGr",
         "category_DtkmJB",
-        "category_KWk6xF"
+        "category_KWk6xF",
+        "category_dnq7km",
+        "category_7drWFc",
+        "category_Tr6x9A",
+        "category_6nx9Fn",
+        "category_BLQzDj",
+        "category_tWpgwd",
+        "category_mNHHRH",
+        "category_N38AJ7"
       ],
       "name": "Category grid",
       "settings": {
