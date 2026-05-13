@@ -1,0 +1,30 @@
+{%- doc -%}
+  This snippet renders a product barcode (variant.barcode).
+  It is used in the barcode block.
+
+  @param {product} product_resource - The product to render
+  @param {object} block_settings - Optional block settings (show_label, label)
+{%- enddoc -%}
+
+{%- liquid
+  assign barcode = product_resource.selected_or_first_available_variant.barcode
+  assign show_label = false
+  if block_settings.show_label
+    assign show_label = true
+  endif
+  assign label_text = block_settings.label | default: 'Barcode:'
+-%}
+
+<div ref="barcodeContainer">
+  {%- if show_label -%}
+    <span class="barcode__label">{{ label_text }}</span>
+    {{- ' ' -}}
+  {%- endif -%}
+  <span
+    class="barcode"
+    ref="barcode"
+    data-testid="product-barcode"
+  >
+    {{- barcode -}}
+  </span>
+</div>
