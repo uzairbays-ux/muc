@@ -292,6 +292,10 @@
               },
               "block_order": []
             },
+            "judge_me_reviews_review_snippet_widget_b9Apqb": {
+              "type": "shopify://apps/judge-me-reviews/blocks/review_snippet_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+              "settings": {}
+            },
             "accordion_6PhDXA": {
               "type": "accordion",
               "name": "t:names.accordion",
@@ -510,6 +514,7 @@
             "divider_VJhene",
             "variant_picker_R3rGDr",
             "buy_buttons_eYQEYi",
+            "judge_me_reviews_review_snippet_widget_b9Apqb",
             "accordion_6PhDXA",
             "text_aEtTtq"
           ]
@@ -592,19 +597,18 @@
     "177847968827a634d1": {
       "type": "_blocks",
       "blocks": {
-        "judge_me_reviews_all_reviews_page_mJwGda": {
-          "type": "shopify://apps/judge-me-reviews/blocks/all_reviews_page/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+        "judge_me_reviews_review_widget_eihn4m": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
           "settings": {
+            "review_data": "real_data",
             "max_width": 1200,
-            "review_source": "product",
-            "show_all_reviews_in_same_tab": false,
-            "show_first": "product",
-            "empty_state": "hide_widget"
+            "show_shop_reviews": false,
+            "empty_state": "empty_widget"
           }
         }
       },
       "block_order": [
-        "judge_me_reviews_all_reviews_page_mJwGda"
+        "judge_me_reviews_review_widget_eihn4m"
       ],
       "settings": {
         "content_direction": "column",
@@ -738,6 +742,11 @@
                 "case": "none",
                 "wrap": "pretty",
                 "color": "var(--color-foreground)",
+                "mobile_font": "",
+                "mobile_font_size": "",
+                "mobile_line_height": "",
+                "mobile_letter_spacing": "",
+                "mobile_case": "",
                 "background": false,
                 "background_color": "#00000026",
                 "corner_radius": 0,
