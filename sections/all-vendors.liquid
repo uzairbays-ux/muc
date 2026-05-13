@@ -5,6 +5,7 @@
   assign menu = linklists[s.menu]
   assign show_names = s.show_names
   assign show_index = s.show_index
+  assign force_text_logos = s.force_text_logos
 %}
 
 <div
@@ -54,9 +55,11 @@
           {%- assign current_letter = first -%}
           <h3 class="all-vendors__letter-heading" id="vendor-letter-{{ first | downcase }}">{{ first }}</h3>
         {%- endif -%}
-        <a href="{{ link.url }}" class="all-vendors__card" title="{{ link.title | escape }}">
+        <a href="{{ link.url }}" class="all-vendors__card{% if force_text_logos %} all-vendors__card--text{% endif %}" title="{{ link.title | escape }}">
           <div class="all-vendors__logo-wrap">
-            {%- if link.object.image != blank -%}
+            {%- if force_text_logos -%}
+              <span class="all-vendors__wordmark">{{ link.title }}</span>
+            {%- elsif link.object.image != blank -%}
               {{ link.object.image | image_url: width: 400 | image_tag:
                 loading: 'lazy',
                 width: 200,
@@ -68,7 +71,7 @@
               <span class="all-vendors__logo-fallback">{{ link.title | slice: 0 | upcase }}</span>
             {%- endif -%}
           </div>
-          {%- if show_names -%}
+          {%- if show_names and force_text_logos == false -%}
             <span class="all-vendors__name">{{ link.title }}</span>
           {%- endif -%}
         </a>
@@ -176,6 +179,34 @@
     font-weight: 700;
     color: rgb(var(--color-foreground-heading));
   }
+
+  /* Text-logo placeholder (wordmark) used when brand image is unavailable */
+  .all-vendors__card--text .all-vendors__logo-wrap {
+    background: rgba(var(--color-foreground), 0.04);
+    border-radius: var(--style-border-radius-card, 8px);
+    padding: 8px;
+  }
+  .all-vendors__wordmark {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    overflow: hidden;
+    text-align: center;
+    font-family: var(--font-heading--family);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    line-height: 1.1;
+    color: rgb(var(--color-foreground-heading));
+    font-size: clamp(0.85rem, 1.6vw, 1.15rem);
+    word-break: break-word;
+  }
+  @media screen and (max-width: 749px) {
+    .all-vendors__wordmark {
+      font-size: clamp(0.75rem, 3.2vw, 0.95rem);
+    }
+  }
   .all-vendors__name {
     font-size: 12px;
     text-align: center;
@@ -232,6 +263,13 @@
       "info": "Create a menu in Shopify admin (Content → Menus) with a link per brand. Each link should point to that brand's collection — the collection image is used as the logo."
     },
     { "type": "header", "content": "Display" },
+    {
+      "type": "checkbox",
+      "id": "force_text_logos",
+      "label": "Use brand name as logo (text placeholder)",
+      "info": "Turn on while brand logos aren't ready yet. Each card shows the brand name as a wordmark. Turn off later when collection images are uploaded.",
+      "default": false
+    },
     {
       "type": "checkbox",
       "id": "show_index",
