@@ -1367,16 +1367,6 @@
             "card_background": "#e3cef0"
           }
         },
-        "category_8dWN7p": {
-          "type": "category",
-          "name": "Purito",
-          "settings": {
-            "image": "shopify://shop_images/Purito-Seoul.webp",
-            "label": "",
-            "link": "shopify://collections/purito",
-            "card_background": "#e3cef0"
-          }
-        },
         "category_RAFj48": {
           "type": "category",
           "name": "I'm From",
@@ -1384,36 +1374,6 @@
             "image": "shopify://shop_images/i_m-from.webp",
             "label": "",
             "link": "shopify://collections/im-from",
-            "card_background": "#e3cef0"
-          }
-        },
-        "category_7nx3qD": {
-          "type": "category",
-          "name": "Manyo",
-          "settings": {
-            "image": "shopify://shop_images/Manyo.webp",
-            "label": "",
-            "link": "shopify://collections/manyo",
-            "card_background": "#e3cef0"
-          }
-        },
-        "category_XmNYRD": {
-          "type": "category",
-          "name": "VT",
-          "settings": {
-            "image": "shopify://shop_images/VT.webp",
-            "label": "",
-            "link": "shopify://collections/vt",
-            "card_background": "#e3cef0"
-          }
-        },
-        "category_4PMpKA": {
-          "type": "category",
-          "name": "Jumiso",
-          "settings": {
-            "image": "shopify://shop_images/Jumiso.webp",
-            "label": "",
-            "link": "shopify://collections/jumiso",
             "card_background": "#e3cef0"
           }
         },
@@ -1427,6 +1387,36 @@
             "card_background": "#e3cef0"
           }
         },
+        "category_eN9xLE": {
+          "type": "category",
+          "name": "Biodance",
+          "settings": {
+            "image": "shopify://shop_images/Biodance.webp",
+            "label": "",
+            "link": "shopify://collections/biodance",
+            "card_background": "#e3cef0"
+          }
+        },
+        "category_4PMpKA": {
+          "type": "category",
+          "name": "Jumiso",
+          "settings": {
+            "image": "shopify://shop_images/Jumiso.webp",
+            "label": "",
+            "link": "shopify://collections/jumiso",
+            "card_background": "#e3cef0"
+          }
+        },
+        "category_XmNYRD": {
+          "type": "category",
+          "name": "VT",
+          "settings": {
+            "image": "shopify://shop_images/VT.webp",
+            "label": "",
+            "link": "shopify://collections/vt",
+            "card_background": "#e3cef0"
+          }
+        },
         "category_fwB3jf": {
           "type": "category",
           "name": "Torriden",
@@ -1437,13 +1427,23 @@
             "card_background": "#e3cef0"
           }
         },
-        "category_eN9xLE": {
+        "category_7nx3qD": {
           "type": "category",
-          "name": "Biodance",
+          "name": "Manyo",
           "settings": {
-            "image": "shopify://shop_images/Biodance.webp",
+            "image": "shopify://shop_images/Manyo.webp",
             "label": "",
-            "link": "shopify://collections/biodance",
+            "link": "shopify://collections/manyo",
+            "card_background": "#e3cef0"
+          }
+        },
+        "category_8dWN7p": {
+          "type": "category",
+          "name": "Purito",
+          "settings": {
+            "image": "shopify://shop_images/Purito-Seoul.webp",
+            "label": "",
+            "link": "shopify://collections/purito",
             "card_background": "#e3cef0"
           }
         },
@@ -1510,14 +1510,14 @@
         "category_jFPrni",
         "category_CW8Kam",
         "category_PwLmhQ",
-        "category_8dWN7p",
         "category_RAFj48",
-        "category_7nx3qD",
-        "category_XmNYRD",
-        "category_4PMpKA",
         "category_B3dHeK",
-        "category_fwB3jf",
         "category_eN9xLE",
+        "category_4PMpKA",
+        "category_XmNYRD",
+        "category_fwB3jf",
+        "category_7nx3qD",
+        "category_8dWN7p",
         "category_6xFqbj",
         "category_gLKwx8",
         "category_MFqYb3",
