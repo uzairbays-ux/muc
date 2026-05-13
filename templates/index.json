@@ -368,6 +368,11 @@
                 "case": "none",
                 "wrap": "balance",
                 "color": "var(--color-foreground-heading)",
+                "mobile_font": "",
+                "mobile_font_size": "",
+                "mobile_line_height": "",
+                "mobile_letter_spacing": "",
+                "mobile_case": "",
                 "background": false,
                 "background_color": "#00000026",
                 "corner_radius": 0,
@@ -912,6 +917,11 @@
                 "case": "none",
                 "wrap": "balance",
                 "color": "var(--color-foreground-heading)",
+                "mobile_font": "",
+                "mobile_font_size": "",
+                "mobile_line_height": "",
+                "mobile_letter_spacing": "",
+                "mobile_case": "",
                 "background": false,
                 "background_color": "#00000026",
                 "corner_radius": 0,
@@ -1335,7 +1345,7 @@
           "settings": {
             "image": "shopify://shop_images/K-Secret.webp",
             "label": "",
-            "link": "",
+            "link": "shopify://collections/k-secret",
             "card_background": "#e3cef0"
           }
         },
@@ -1344,7 +1354,7 @@
           "settings": {
             "image": "shopify://shop_images/Dr-Althea.webp",
             "label": "",
-            "link": "",
+            "link": "shopify://collections/dr-althea",
             "card_background": "#e3cef0"
           }
         },
@@ -1353,7 +1363,7 @@
           "settings": {
             "image": "shopify://shop_images/Laneige.webp",
             "label": "",
-            "link": "",
+            "link": "shopify://collections/laneige",
             "card_background": "#e3cef0"
           }
         }
