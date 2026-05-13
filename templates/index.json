@@ -1469,6 +1469,7 @@
         },
         "category_6xFqbj": {
           "type": "category",
+          "name": "Tirtir",
           "settings": {
             "image": "shopify://shop_images/Tirtir.webp",
             "label": "",
@@ -1478,6 +1479,7 @@
         },
         "category_jFPrni": {
           "type": "category",
+          "name": "K-Secret",
           "settings": {
             "image": "shopify://shop_images/K-Secret.webp",
             "label": "",
@@ -1487,6 +1489,7 @@
         },
         "category_gLKwx8": {
           "type": "category",
+          "name": "Laneige",
           "settings": {
             "image": "shopify://shop_images/Laneige.webp",
             "label": "",
