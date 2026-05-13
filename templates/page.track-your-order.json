@@ -12,6 +12,14 @@
     "main": {
       "type": "main-page",
       "blocks": {
+        "custom_liquid_VqHJC9": {
+          "type": "custom-liquid",
+          "name": "t:names.custom_liquid",
+          "settings": {
+            "custom_liquid": ""
+          },
+          "blocks": {}
+        },
         "heading": {
           "type": "text",
           "disabled": true,
@@ -40,6 +48,7 @@
         }
       },
       "block_order": [
+        "custom_liquid_VqHJC9",
         "heading"
       ],
       "settings": {
@@ -52,12 +61,17 @@
     },
     "tracker": {
       "type": "order-tracker",
+      "disabled": true,
       "settings": {
         "heading": "Track your order",
         "subheading": "Enter your order number and email address to see the latest status.",
         "order_label": "Order number",
         "email_label": "Email address",
         "button_label": "Track order",
+        "use_iframe": true,
+        "iframe_base_url": "https://makeupcity.ginkgoretail.net/ordertracking/",
+        "iframe_height": 900,
+        "require_email": false,
         "tracker_url": "https://makeupcity.ginkgoretail.net/ordertracking/030426190053537294",
         "order_param": "order_number",
         "email_param": "email",
