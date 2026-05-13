@@ -1,0 +1,214 @@
+{%- doc -%}
+  Sale badge block for the product page.
+  Shows a "X% OFF" pill when the product (or its selected variant) is on sale.
+  Renders nothing when the product is not on sale.
+{%- enddoc -%}
+
+{%- liquid
+  assign block_settings = block.settings
+  assign product = closest.product
+
+  assign sale_compare = product.selected_or_first_available_variant.compare_at_price
+  assign sale_price = product.selected_or_first_available_variant.price
+
+  if sale_compare == nil or sale_compare <= sale_price
+    assign sale_compare = product.compare_at_price
+    assign sale_price = product.price
+  endif
+
+  assign on_sale = false
+  if sale_compare > sale_price
+    assign on_sale = true
+    assign percent_off = sale_compare | minus: sale_price | times: 100 | divided_by: sale_compare
+  endif
+-%}
+
+{%- if product == blank -%}
+  <div
+    class="sale-badge spacing-style"
+    style="{% render 'spacing-style', settings: block_settings %}"
+    {{ block.shopify_attributes }}
+  >
+    <span
+      class="sale-badge__pill"
+      style="
+        --sale-bg: {{ block_settings.background_color | default: '#eb1d23' }};
+        --sale-fg: {{ block_settings.text_color | default: '#ffffff' }};
+        --sale-radius: {{ block_settings.corner_radius | default: 4 }}px;
+        --sale-padding-block: {{ block_settings.padding_block | default: 6 }}px;
+        --sale-padding-inline: {{ block_settings.padding_inline | default: 10 }}px;
+        --sale-font-size: {{ block_settings.font_size | default: 13 }}px;
+      "
+    >
+      30{{ block_settings.suffix | default: '% OFF' }}
+    </span>
+  </div>
+{%- elsif on_sale -%}
+  <div
+    class="sale-badge spacing-style"
+    style="{% render 'spacing-style', settings: block_settings %}"
+    {{ block.shopify_attributes }}
+  >
+    <span
+      class="sale-badge__pill"
+      style="
+        --sale-bg: {{ block_settings.background_color | default: '#eb1d23' }};
+        --sale-fg: {{ block_settings.text_color | default: '#ffffff' }};
+        --sale-radius: {{ block_settings.corner_radius | default: 4 }}px;
+        --sale-padding-block: {{ block_settings.padding_block | default: 6 }}px;
+        --sale-padding-inline: {{ block_settings.padding_inline | default: 10 }}px;
+        --sale-font-size: {{ block_settings.font_size | default: 13 }}px;
+      "
+    >
+      {{ percent_off }}{{ block_settings.suffix | default: '% OFF' }}
+    </span>
+  </div>
+{%- endif -%}
+
+{% stylesheet %}
+  .sale-badge {
+    display: flex;
+  }
+
+  .sale-badge__pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--sale-bg, #eb1d23);
+    color: var(--sale-fg, #ffffff);
+    border-radius: var(--sale-radius, 4px);
+    padding-block: var(--sale-padding-block, 6px);
+    padding-inline: var(--sale-padding-inline, 10px);
+    font-size: var(--sale-font-size, 13px);
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Sale badge",
+  "tag": null,
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "Shows a percent-off badge automatically when the product is on sale (compare-at price is set). Hidden when there is no sale."
+    },
+    {
+      "type": "header",
+      "content": "Style"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#eb1d23"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "corner_radius",
+      "label": "Corner radius",
+      "min": 0,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "font_size",
+      "label": "Font size",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 13
+    },
+    {
+      "type": "range",
+      "id": "padding_block",
+      "label": "Vertical padding",
+      "min": 0,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 6
+    },
+    {
+      "type": "range",
+      "id": "padding_inline",
+      "label": "Horizontal padding",
+      "min": 0,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "text",
+      "id": "suffix",
+      "label": "Suffix",
+      "info": "Text after the percentage. Default: '% OFF'.",
+      "default": "% OFF"
+    },
+    {
+      "type": "header",
+      "content": "Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "Top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "Bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "padding-inline-start",
+      "label": "Left",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-inline-end",
+      "label": "Right",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    }
+  ],
+  "presets": [
+    {
+      "name": "Sale badge",
+      "category": "t:categories.product"
+    }
+  ]
+}
+{% endschema %}

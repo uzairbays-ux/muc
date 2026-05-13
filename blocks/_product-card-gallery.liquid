@@ -12,6 +12,9 @@
       "
     >
       {%- if product.available == false or product.compare_at_price > product.price -%}
+        {%- if product.compare_at_price > product.price -%}
+          {%- assign sale_percent = product.compare_at_price | minus: product.price | times: 100 | divided_by: product.compare_at_price -%}
+        {%- endif -%}
         <div
           class="
             product-badges__badge product-badges__badge--rectangle
@@ -21,7 +24,7 @@
           {%- if product.available == false -%}
             {{ 'content.product_badge_sold_out' | t }}
           {%- elsif product.compare_at_price > product.price -%}
-            {{ 'content.product_badge_sale' | t }}
+            {{ sale_percent }}% OFF
           {%- endif -%}
         </div>
       {%- endif -%}

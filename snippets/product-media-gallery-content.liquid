@@ -355,6 +355,15 @@
     {{ block_shopify_attributes }}
   >
     {%- if selected_product.available == false or selected_product.compare_at_price > selected_product.price -%}
+      {%- if selected_product.compare_at_price > selected_product.price -%}
+        {%- assign sale_compare = selected_product.selected_or_first_available_variant.compare_at_price -%}
+        {%- assign sale_price = selected_product.selected_or_first_available_variant.price -%}
+        {%- if sale_compare == nil or sale_compare <= sale_price -%}
+          {%- assign sale_compare = selected_product.compare_at_price -%}
+          {%- assign sale_price = selected_product.price -%}
+        {%- endif -%}
+        {%- assign sale_percent = sale_compare | minus: sale_price | times: 100 | divided_by: sale_compare -%}
+      {%- endif -%}
       <div
         class="product-badges product-badges--{{ settings.badge_position }}"
         style="
@@ -371,7 +380,7 @@
           {%- if selected_product.available == false -%}
             {{ 'content.product_badge_sold_out' | t }}
           {%- elsif selected_product.compare_at_price > selected_product.price -%}
-            {{ 'content.product_badge_sale' | t }}
+            {{ sale_percent }}% OFF
           {%- endif -%}
         </div>
       </div>
