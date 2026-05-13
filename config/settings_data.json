@@ -87,6 +87,54 @@
         "type": "shopify://apps/judge-me-reviews/blocks/judgeme_core/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
         "disabled": false,
         "settings": {}
+      },
+      "6399541321894134091": {
+        "type": "shopify://apps/mergn/blocks/index/52d5f725-db4d-4931-bef3-895243f3807b",
+        "disabled": false,
+        "settings": {
+          "enable_notify_in_stock": false,
+          "nis_button_radius": 4,
+          "nis_button_margin_top": 5,
+          "nis_button_text": "Notify when Available",
+          "nis_button_text_size": 16,
+          "nis_button_text_color": "#ffffff",
+          "nis_button_bg_color": "#2aa758",
+          "nis_button_hover_bg_color": "#249a4e",
+          "nis_modal_radius": 16,
+          "nis_modal_bg_color": "#ffffff",
+          "nis_emoji_text": "🤩",
+          "nis_emoji_size": 96,
+          "nis_emoji_color": "#000000",
+          "nis_description_text": "Notify me when this product is back in Stock!",
+          "nis_description_text_size": 16,
+          "nis_description_text_color": "#000000",
+          "nis_label_color": "#2aa758",
+          "enable_discount_banner": false,
+          "db_position": "top",
+          "db_auto_dismiss_seconds": 8,
+          "db_bg_color": "#0F172A",
+          "db_text_color": "#ffffff",
+          "db_accent_color_1": "#5FBFA9",
+          "db_title_text_size": 15,
+          "db_body_text_size": 14,
+          "db_button_text": "Got it",
+          "db_button_text_color": "#ffffff",
+          "db_button_bg_color": "#E8794A",
+          "db_button_radius": 6,
+          "db_use_stub": false
+        }
+      },
+      "12120936241911852800": {
+        "type": "shopify://apps/judge-me-reviews/blocks/reviews_tab/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+        "disabled": false,
+        "settings": {
+          "position": "right"
+        }
+      },
+      "16138933890102356706": {
+        "type": "shopify://apps/omega-tiktok-pixels/blocks/app-embed-block/0500769c-ab04-46c4-8ebe-26a3fb9f10cb",
+        "disabled": false,
+        "settings": {}
       }
     },
     "color_schemes": {
