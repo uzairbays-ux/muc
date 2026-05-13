@@ -1289,6 +1289,7 @@
         },
         "category_NVW6VA": {
           "type": "category",
+          "name": "Skin1004",
           "settings": {
             "image": "shopify://shop_images/Skin1004.webp",
             "label": "",
@@ -1298,6 +1299,7 @@
         },
         "category_nXJhGL": {
           "type": "category",
+          "name": "Anua",
           "settings": {
             "image": "shopify://shop_images/Anua.webp",
             "label": "",
@@ -1307,6 +1309,7 @@
         },
         "category_JmaNX9": {
           "type": "category",
+          "name": "AXIS-Y",
           "settings": {
             "image": "shopify://shop_images/AXIS-Y.webp",
             "label": "",
@@ -1316,6 +1319,7 @@
         },
         "category_BHwfRT": {
           "type": "category",
+          "name": "Cosrx",
           "settings": {
             "image": "shopify://shop_images/Cosrx.webp",
             "label": "",
@@ -1325,6 +1329,7 @@
         },
         "category_UWYhX7": {
           "type": "category",
+          "name": "Celimax",
           "settings": {
             "image": "shopify://shop_images/Celimax.webp",
             "label": "",
@@ -1334,6 +1339,7 @@
         },
         "category_meBTUy": {
           "type": "category",
+          "name": "Secret Key",
           "settings": {
             "image": "shopify://shop_images/Secret-Key.webp",
             "label": "",
@@ -1343,6 +1349,7 @@
         },
         "category_CW8Kam": {
           "type": "category",
+          "name": "Arencia",
           "settings": {
             "image": "shopify://shop_images/Arencia.webp",
             "label": "",
@@ -1352,6 +1359,7 @@
         },
         "category_MFqYb3": {
           "type": "category",
+          "name": "Aromatica",
           "settings": {
             "image": "shopify://shop_images/Aromatica.webp",
             "label": "",
@@ -1361,6 +1369,7 @@
         },
         "category_PwLmhQ": {
           "type": "category",
+          "name": "Mary & May",
           "settings": {
             "image": "shopify://shop_images/Mary-_-May.webp",
             "label": "",
@@ -1370,6 +1379,7 @@
         },
         "category_8dWN7p": {
           "type": "category",
+          "name": "Purito",
           "settings": {
             "image": "shopify://shop_images/Purito-Seoul.webp",
             "label": "",
@@ -1379,6 +1389,7 @@
         },
         "category_RAFj48": {
           "type": "category",
+          "name": "I'm From",
           "settings": {
             "image": "shopify://shop_images/i_m-from.webp",
             "label": "",
@@ -1388,6 +1399,7 @@
         },
         "category_7nx3qD": {
           "type": "category",
+          "name": "Manyo",
           "settings": {
             "image": "shopify://shop_images/Manyo.webp",
             "label": "",
@@ -1397,6 +1409,7 @@
         },
         "category_XmNYRD": {
           "type": "category",
+          "name": "VT",
           "settings": {
             "image": "shopify://shop_images/VT.webp",
             "label": "",
@@ -1406,6 +1419,7 @@
         },
         "category_4PMpKA": {
           "type": "category",
+          "name": "Jumiso",
           "settings": {
             "image": "shopify://shop_images/Jumiso.webp",
             "label": "",
@@ -1415,6 +1429,7 @@
         },
         "category_B3dHeK": {
           "type": "category",
+          "name": "Mixsoon",
           "settings": {
             "image": "shopify://shop_images/Mixsoon.webp",
             "label": "",
@@ -1424,6 +1439,7 @@
         },
         "category_fwB3jf": {
           "type": "category",
+          "name": "Torriden",
           "settings": {
             "image": "shopify://shop_images/Torriden.webp",
             "label": "",
@@ -1433,6 +1449,7 @@
         },
         "category_eN9xLE": {
           "type": "category",
+          "name": "Biodance",
           "settings": {
             "image": "shopify://shop_images/Biodance.webp",
             "label": "",
@@ -1442,6 +1459,7 @@
         },
         "category_HCqkbV": {
           "type": "category",
+          "name": "Heimish",
           "settings": {
             "image": "shopify://shop_images/Heimish.webp",
             "label": "",
