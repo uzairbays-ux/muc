@@ -1320,6 +1320,24 @@
             "card_background": "#e3cef0"
           }
         },
+        "category_UWYhX7": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Celimax.webp",
+            "label": "",
+            "link": "shopify://collections/celimax",
+            "card_background": "#e3cef0"
+          }
+        },
+        "category_meBTUy": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Secret-Key.webp",
+            "label": "",
+            "link": "shopify://collections/secret-key",
+            "card_background": "#e3cef0"
+          }
+        },
         "category_CW8Kam": {
           "type": "category",
           "settings": {
@@ -1362,15 +1380,6 @@
             "image": "shopify://shop_images/i_m-from.webp",
             "label": "",
             "link": "shopify://collections/im-from",
-            "card_background": "#e3cef0"
-          }
-        },
-        "category_UWYhX7": {
-          "type": "category",
-          "settings": {
-            "image": "shopify://shop_images/Celimax.webp",
-            "label": "",
-            "link": "shopify://collections/celimax",
             "card_background": "#e3cef0"
           }
         },
@@ -1428,15 +1437,6 @@
             "card_background": "#e3cef0"
           }
         },
-        "category_meBTUy": {
-          "type": "category",
-          "settings": {
-            "image": "shopify://shop_images/Secret-Key.webp",
-            "label": "",
-            "link": "shopify://collections/secret-key",
-            "card_background": "#e3cef0"
-          }
-        },
         "category_HCqkbV": {
           "type": "category",
           "settings": {
@@ -1482,19 +1482,19 @@
         "category_nXJhGL",
         "category_JmaNX9",
         "category_BHwfRT",
+        "category_UWYhX7",
+        "category_meBTUy",
         "category_CW8Kam",
         "category_MFqYb3",
         "category_PwLmhQ",
         "category_8dWN7p",
         "category_RAFj48",
-        "category_UWYhX7",
         "category_7nx3qD",
         "category_XmNYRD",
         "category_4PMpKA",
         "category_B3dHeK",
         "category_fwB3jf",
         "category_eN9xLE",
-        "category_meBTUy",
         "category_HCqkbV",
         "category_6xFqbj",
         "category_jFPrni",
