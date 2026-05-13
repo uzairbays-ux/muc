@@ -15,6 +15,51 @@
   </a>
 {% endif %}
 
+{%- liquid
+  assign mt = block.settings
+  assign has_mobile_overrides = false
+  if mt.type_preset == 'custom'
+    if mt.mobile_font_size != blank or mt.mobile_font != blank or mt.mobile_line_height != blank or mt.mobile_letter_spacing != blank or mt.mobile_case != blank
+      assign has_mobile_overrides = true
+    endif
+  endif
+
+  assign mobile_lh = ''
+  case mt.mobile_line_height
+    when 'tight'
+      assign mobile_lh = '1.2'
+    when 'normal'
+      assign mobile_lh = '1.4'
+    when 'loose'
+      assign mobile_lh = '1.6'
+  endcase
+
+  assign mobile_ls = ''
+  case mt.mobile_letter_spacing
+    when 'tight'
+      assign mobile_ls = '-0.03em'
+    when 'normal'
+      assign mobile_ls = '0em'
+    when 'loose'
+      assign mobile_ls = '0.03em'
+  endcase
+-%}
+
+{%- if has_mobile_overrides -%}
+  <style>
+    @media (max-width: 749px) {
+      .text-block--{{ block.id }},
+      .text-block--{{ block.id }} > * {
+        {%- if mt.mobile_font_size != blank %} font-size: {{ mt.mobile_font_size }} !important;{% endif -%}
+        {%- if mt.mobile_font != blank %} font-family: {{ mt.mobile_font }} !important; font-weight: {{ mt.mobile_font | replace: 'family', 'weight' }} !important;{% endif -%}
+        {%- if mobile_lh != '' %} line-height: {{ mobile_lh }} !important;{% endif -%}
+        {%- if mobile_ls != '' %} letter-spacing: {{ mobile_ls }} !important;{% endif -%}
+        {%- if mt.mobile_case != blank %} text-transform: {{ mt.mobile_case }} !important;{% endif -%}
+      }
+    }
+  </style>
+{%- endif -%}
+
 {% schema %}
 {
   "name": "t:names.product_title",
@@ -321,6 +366,90 @@
       ],
       "default": "var(--color-foreground)",
       "visible_if": "{{ block.settings.type_preset != 'rte' }}"
+    },
+    {
+      "type": "header",
+      "content": "Mobile typography",
+      "visible_if": "{{ block.settings.type_preset == 'custom' }}"
+    },
+    {
+      "type": "paragraph",
+      "content": "Overrides applied on screens under 749px. Leave any field on \"Use desktop\" to keep the desktop value.",
+      "visible_if": "{{ block.settings.type_preset == 'custom' }}"
+    },
+    {
+      "type": "select",
+      "id": "mobile_font",
+      "label": "Mobile font",
+      "options": [
+        { "value": "", "label": "Use desktop" },
+        { "value": "var(--font-body--family)", "label": "Body" },
+        { "value": "var(--font-subheading--family)", "label": "Subheading" },
+        { "value": "var(--font-heading--family)", "label": "Heading" },
+        { "value": "var(--font-accent--family)", "label": "Accent" }
+      ],
+      "default": "",
+      "visible_if": "{{ block.settings.type_preset == 'custom' }}"
+    },
+    {
+      "type": "select",
+      "id": "mobile_font_size",
+      "label": "Mobile font size",
+      "options": [
+        { "value": "", "label": "Use desktop" },
+        { "value": "0.625rem", "label": "10px" },
+        { "value": "0.75rem", "label": "12px" },
+        { "value": "0.875rem", "label": "14px" },
+        { "value": "1rem", "label": "16px" },
+        { "value": "1.125rem", "label": "18px" },
+        { "value": "1.25rem", "label": "20px" },
+        { "value": "1.5rem", "label": "24px" },
+        { "value": "1.75rem", "label": "28px" },
+        { "value": "2rem", "label": "32px" },
+        { "value": "2.5rem", "label": "40px" },
+        { "value": "3rem", "label": "48px" },
+        { "value": "3.5rem", "label": "56px" }
+      ],
+      "default": "",
+      "visible_if": "{{ block.settings.type_preset == 'custom' }}"
+    },
+    {
+      "type": "select",
+      "id": "mobile_line_height",
+      "label": "Mobile line height",
+      "options": [
+        { "value": "", "label": "Use desktop" },
+        { "value": "tight", "label": "Tight" },
+        { "value": "normal", "label": "Normal" },
+        { "value": "loose", "label": "Loose" }
+      ],
+      "default": "",
+      "visible_if": "{{ block.settings.type_preset == 'custom' }}"
+    },
+    {
+      "type": "select",
+      "id": "mobile_letter_spacing",
+      "label": "Mobile letter spacing",
+      "options": [
+        { "value": "", "label": "Use desktop" },
+        { "value": "tight", "label": "Tight" },
+        { "value": "normal", "label": "Normal" },
+        { "value": "loose", "label": "Loose" }
+      ],
+      "default": "",
+      "visible_if": "{{ block.settings.type_preset == 'custom' }}"
+    },
+    {
+      "type": "select",
+      "id": "mobile_case",
+      "label": "Mobile case",
+      "options": [
+        { "value": "", "label": "Use desktop" },
+        { "value": "none", "label": "Default" },
+        { "value": "uppercase", "label": "Uppercase" }
+      ],
+      "default": "",
+      "visible_if": "{{ block.settings.type_preset == 'custom' }}"
     },
     {
       "type": "header",
