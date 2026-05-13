@@ -124,17 +124,17 @@
           "db_use_stub": false
         }
       },
-      "12120936241911852800": {
-        "type": "shopify://apps/judge-me-reviews/blocks/reviews_tab/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-        "disabled": false,
-        "settings": {
-          "position": "right"
-        }
-      },
       "16138933890102356706": {
         "type": "shopify://apps/omega-tiktok-pixels/blocks/app-embed-block/0500769c-ab04-46c4-8ebe-26a3fb9f10cb",
         "disabled": false,
         "settings": {}
+      },
+      "12120936241911852800": {
+        "type": "shopify://apps/judge-me-reviews/blocks/reviews_tab/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+        "disabled": true,
+        "settings": {
+          "position": "right"
+        }
       }
     },
     "color_schemes": {
