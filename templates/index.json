@@ -466,6 +466,7 @@
       "blocks": {
         "brand_LDVxF4": {
           "type": "brand",
+          "disabled": true,
           "settings": {
             "label": "SHISEIDO",
             "link": ""
