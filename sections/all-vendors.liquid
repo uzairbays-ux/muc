@@ -10,7 +10,7 @@
 
 <div
   class="section section--{{ s.section_width }} color-{{ s.color_scheme }} spacing-style all-vendors"
-  style="{% render 'spacing-style', settings: s %}"
+  style="{% render 'spacing-style', settings: s %}; --av-border-alpha: {{ s.card_border_strength | default: 25 | divided_by: 100.0 }}; --av-border-radius: {{ s.card_border_radius | default: 8 }}px;"
   data-testid="all-vendors-{{ section.id }}"
 >
   {%- if s.heading != blank -%}
@@ -146,8 +146,8 @@
     align-items: center;
     gap: var(--gap-2xs, 4px);
     padding: var(--gap-sm, 12px);
-    border: 1px solid rgba(var(--color-foreground), 0.1);
-    border-radius: var(--style-border-radius-card, 8px);
+    border: 1px solid rgba(var(--color-foreground), var(--av-border-alpha, 0.25));
+    border-radius: var(--av-border-radius, var(--style-border-radius-card, 8px));
     background: rgb(var(--color-background));
     text-decoration: none;
     color: inherit;
@@ -155,7 +155,7 @@
   }
   .all-vendors__card:hover {
     transform: translateY(-2px);
-    border-color: rgba(var(--color-foreground), 0.3);
+    border-color: rgba(var(--color-foreground), calc(var(--av-border-alpha, 0.25) + 0.2));
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
   }
   .all-vendors__logo-wrap {
@@ -269,6 +269,27 @@
       "label": "Use brand name as logo (text placeholder)",
       "info": "Turn on while brand logos aren't ready yet. Each card shows the brand name as a wordmark. Turn off later when collection images are uploaded.",
       "default": false
+    },
+    {
+      "type": "range",
+      "id": "card_border_strength",
+      "label": "Card border strength",
+      "info": "0 = no border, 100 = strong. Default is a clear, visible outline.",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 25
+    },
+    {
+      "type": "range",
+      "id": "card_border_radius",
+      "label": "Card corner radius",
+      "min": 0,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "default": 8
     },
     {
       "type": "checkbox",
