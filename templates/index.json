@@ -1427,21 +1427,6 @@
         "padding-block-end": 24
       }
     },
-    "ad_banner_pjN7dA": {
-      "type": "ad-banner",
-      "name": "Ad banner",
-      "settings": {
-        "desktop_image": "shopify://shop_images/Fundamental-design-15-_-off_085202c8-fb91-4afa-ba83-3f944308c96b.png",
-        "link": "shopify://collections/fundamentals",
-        "open_new_tab": false,
-        "section_width": "full-width",
-        "mobile_full_width": true,
-        "padding_inline_desktop": 10,
-        "padding_inline_mobile": 10,
-        "padding-block-start": 15,
-        "padding-block-end": 12
-      }
-    },
     "category_grid_FAWJJj": {
       "type": "category-grid",
       "blocks": {
@@ -1951,6 +1936,21 @@
         "padding-block-end": 0
       }
     },
+    "ad_banner_pjN7dA": {
+      "type": "ad-banner",
+      "name": "Ad banner",
+      "settings": {
+        "desktop_image": "shopify://shop_images/Fundamental-design-15-_-off_085202c8-fb91-4afa-ba83-3f944308c96b.png",
+        "link": "shopify://collections/fundamentals",
+        "open_new_tab": false,
+        "section_width": "full-width",
+        "mobile_full_width": true,
+        "padding_inline_desktop": 10,
+        "padding_inline_mobile": 10,
+        "padding-block-start": 15,
+        "padding-block-end": 12
+      }
+    },
     "card_grid_GWUm6j": {
       "type": "card-grid",
       "blocks": {
@@ -2057,12 +2057,12 @@
     "product_list_CVJar6",
     "card_grid_tLffKU",
     "stacked_banners_QWcUpX",
+    "card_grid_GWUm6j",
     "category_grid_pGCQaP",
-    "ad_banner_pjN7dA",
     "category_grid_FAWJJj",
     "category_grid_Nr4rxN",
     "video_reels_xGEykY",
     "cta_banner_eHhwWU",
-    "card_grid_GWUm6j"
+    "ad_banner_pjN7dA"
   ]
 }
