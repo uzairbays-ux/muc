@@ -514,6 +514,7 @@
         "ai_gen_block_29398aa_gLUNBw": {
           "type": "ai_gen_block_29398aa",
           "name": "Propositions grid",
+          "disabled": true,
           "settings": {
             "desktop_width_percent": 100,
             "section_padding": 20,
