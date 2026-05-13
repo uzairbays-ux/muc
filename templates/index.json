@@ -136,6 +136,14 @@
     "card_banner_8zTGy8": {
       "type": "card-banner",
       "blocks": {
+        "card_x4i8pi": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/ST_5c97b287-c8ff-4b82-a131-fd55bc13b8bd.jpg",
+            "link": "shopify://collections/st-london",
+            "open_new_tab": false
+          }
+        },
         "card_LJWfzX": {
           "type": "card",
           "settings": {
@@ -175,23 +183,15 @@
             "link": "shopify://collections/bioaqua",
             "open_new_tab": false
           }
-        },
-        "card_x4i8pi": {
-          "type": "card",
-          "settings": {
-            "image": "shopify://shop_images/ST_5c97b287-c8ff-4b82-a131-fd55bc13b8bd.jpg",
-            "link": "shopify://collections/st-london",
-            "open_new_tab": false
-          }
         }
       },
       "block_order": [
+        "card_x4i8pi",
         "card_LJWfzX",
         "card_7Rimtd",
         "card_YUtaR6",
         "card_hxUFFx",
-        "card_b9F39r",
-        "card_x4i8pi"
+        "card_b9F39r"
       ],
       "name": "Card banner",
       "settings": {
