@@ -1337,13 +1337,13 @@
             "card_background": "#e3cef0"
           }
         },
-        "category_meBTUy": {
+        "category_jFPrni": {
           "type": "category",
-          "name": "Secret Key",
+          "name": "K-Secret",
           "settings": {
-            "image": "shopify://shop_images/Secret-Key.webp",
+            "image": "shopify://shop_images/K-Secret.webp",
             "label": "",
-            "link": "shopify://collections/secret-key",
+            "link": "shopify://collections/k-secret",
             "card_background": "#e3cef0"
           }
         },
@@ -1354,16 +1354,6 @@
             "image": "shopify://shop_images/Arencia.webp",
             "label": "",
             "link": "shopify://collections/arencia",
-            "card_background": "#e3cef0"
-          }
-        },
-        "category_MFqYb3": {
-          "type": "category",
-          "name": "Aromatica",
-          "settings": {
-            "image": "shopify://shop_images/Aromatica.webp",
-            "label": "",
-            "link": "shopify://collections/aromatica",
             "card_background": "#e3cef0"
           }
         },
@@ -1457,16 +1447,6 @@
             "card_background": "#e3cef0"
           }
         },
-        "category_HCqkbV": {
-          "type": "category",
-          "name": "Heimish",
-          "settings": {
-            "image": "shopify://shop_images/Heimish.webp",
-            "label": "",
-            "link": "shopify://collections/heimish",
-            "card_background": "#e3cef0"
-          }
-        },
         "category_6xFqbj": {
           "type": "category",
           "name": "Tirtir",
@@ -1477,16 +1457,6 @@
             "card_background": "#e3cef0"
           }
         },
-        "category_jFPrni": {
-          "type": "category",
-          "name": "K-Secret",
-          "settings": {
-            "image": "shopify://shop_images/K-Secret.webp",
-            "label": "",
-            "link": "shopify://collections/k-secret",
-            "card_background": "#e3cef0"
-          }
-        },
         "category_gLKwx8": {
           "type": "category",
           "name": "Laneige",
@@ -1494,6 +1464,36 @@
             "image": "shopify://shop_images/Laneige.webp",
             "label": "",
             "link": "shopify://collections/laneige",
+            "card_background": "#e3cef0"
+          }
+        },
+        "category_MFqYb3": {
+          "type": "category",
+          "name": "Aromatica",
+          "settings": {
+            "image": "shopify://shop_images/Aromatica.webp",
+            "label": "",
+            "link": "shopify://collections/aromatica",
+            "card_background": "#e3cef0"
+          }
+        },
+        "category_HCqkbV": {
+          "type": "category",
+          "name": "Heimish",
+          "settings": {
+            "image": "shopify://shop_images/Heimish.webp",
+            "label": "",
+            "link": "shopify://collections/heimish",
+            "card_background": "#e3cef0"
+          }
+        },
+        "category_meBTUy": {
+          "type": "category",
+          "name": "Secret Key",
+          "settings": {
+            "image": "shopify://shop_images/Secret-Key.webp",
+            "label": "",
+            "link": "shopify://collections/secret-key",
             "card_background": "#e3cef0"
           }
         }
@@ -1507,9 +1507,8 @@
         "category_JmaNX9",
         "category_BHwfRT",
         "category_UWYhX7",
-        "category_meBTUy",
+        "category_jFPrni",
         "category_CW8Kam",
-        "category_MFqYb3",
         "category_PwLmhQ",
         "category_8dWN7p",
         "category_RAFj48",
@@ -1519,10 +1518,11 @@
         "category_B3dHeK",
         "category_fwB3jf",
         "category_eN9xLE",
-        "category_HCqkbV",
         "category_6xFqbj",
-        "category_jFPrni",
-        "category_gLKwx8"
+        "category_gLKwx8",
+        "category_MFqYb3",
+        "category_HCqkbV",
+        "category_meBTUy"
       ],
       "name": "Category grid",
       "settings": {
