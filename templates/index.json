@@ -1114,6 +1114,100 @@
         "padding-block-end": 24
       }
     },
+    "card_grid_GWUm6j": {
+      "type": "card-grid",
+      "blocks": {
+        "card_37czVX": {
+          "type": "card",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/BLS.webp",
+            "link": "shopify://collections/bls",
+            "open_new_tab": false
+          }
+        },
+        "card_VN8C4L": {
+          "type": "card",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/Bourjois_b6062386-147a-46b5-b9b1-cb6b0ca950c3.jpg",
+            "link": "shopify://collections/bourjois",
+            "open_new_tab": false
+          }
+        },
+        "card_7bXfx8": {
+          "type": "card",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/Janssen_61d6e9be-4942-43f9-b3f9-45eac8eedf0f.jpg",
+            "link": "shopify://collections/janssen",
+            "open_new_tab": false
+          }
+        },
+        "card_wKbPRz": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/Essence_9aa3e462-7544-4c6f-9428-6c62c896b368.jpg",
+            "link": "shopify://collections/essence",
+            "open_new_tab": false
+          }
+        },
+        "card_Dj4Jhk": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/Garnier_c6a13146-99a8-40b8-815a-aa37525a1dcf.jpg",
+            "link": "shopify://collections/garnier",
+            "open_new_tab": false
+          }
+        },
+        "card_VaLrJE": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/Trouble-Maker_dbd412bd-d182-4dab-9ab1-dc81c314edb4.jpg",
+            "link": "shopify://collections/trouble-maker",
+            "open_new_tab": false
+          }
+        },
+        "card_hVQxRA": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/Rimmel_3d659dc6-dbca-4e5e-9208-a7607878db9f.jpg",
+            "link": "shopify://collections/rimmel-london",
+            "open_new_tab": false
+          }
+        }
+      },
+      "block_order": [
+        "card_37czVX",
+        "card_VN8C4L",
+        "card_7bXfx8",
+        "card_wKbPRz",
+        "card_Dj4Jhk",
+        "card_VaLrJE",
+        "card_hVQxRA"
+      ],
+      "name": "Card grid",
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "heading_alignment": "left",
+        "desktop_layout": "slider",
+        "mobile_layout": "slider",
+        "desktop_columns": "3",
+        "mobile_columns": "2",
+        "desktop_slider_per_view": "3",
+        "mobile_slider_per_view": "1.2",
+        "auto_rotate": true,
+        "rotate_interval": 4,
+        "gap": 8,
+        "desktop_side_padding": 12,
+        "mobile_side_padding": 12,
+        "section_width": "full-width",
+        "color_scheme": "",
+        "padding-block-start": 0,
+        "padding-block-end": 24
+      }
+    },
     "stacked_banners_QWcUpX": {
       "type": "stacked-banners",
       "blocks": {
@@ -1446,100 +1540,6 @@
         "card_ratio": "adapt",
         "image_border_radius": 19,
         "background_color": "#e3cef0",
-        "padding-block-start": 24,
-        "padding-block-end": 24
-      }
-    },
-    "card_grid_GWUm6j": {
-      "type": "card-grid",
-      "blocks": {
-        "card_37czVX": {
-          "type": "card",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/BLS.webp",
-            "link": "shopify://collections/bls",
-            "open_new_tab": false
-          }
-        },
-        "card_VN8C4L": {
-          "type": "card",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/Bourjois_b6062386-147a-46b5-b9b1-cb6b0ca950c3.jpg",
-            "link": "shopify://collections/bourjois",
-            "open_new_tab": false
-          }
-        },
-        "card_7bXfx8": {
-          "type": "card",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/Janssen_61d6e9be-4942-43f9-b3f9-45eac8eedf0f.jpg",
-            "link": "shopify://collections/janssen",
-            "open_new_tab": false
-          }
-        },
-        "card_wKbPRz": {
-          "type": "card",
-          "settings": {
-            "image": "shopify://shop_images/Essence_9aa3e462-7544-4c6f-9428-6c62c896b368.jpg",
-            "link": "shopify://collections/essence",
-            "open_new_tab": false
-          }
-        },
-        "card_Dj4Jhk": {
-          "type": "card",
-          "settings": {
-            "image": "shopify://shop_images/Garnier_c6a13146-99a8-40b8-815a-aa37525a1dcf.jpg",
-            "link": "shopify://collections/garnier",
-            "open_new_tab": false
-          }
-        },
-        "card_VaLrJE": {
-          "type": "card",
-          "settings": {
-            "image": "shopify://shop_images/Trouble-Maker_dbd412bd-d182-4dab-9ab1-dc81c314edb4.jpg",
-            "link": "shopify://collections/trouble-maker",
-            "open_new_tab": false
-          }
-        },
-        "card_hVQxRA": {
-          "type": "card",
-          "settings": {
-            "image": "shopify://shop_images/Rimmel_3d659dc6-dbca-4e5e-9208-a7607878db9f.jpg",
-            "link": "shopify://collections/rimmel-london",
-            "open_new_tab": false
-          }
-        }
-      },
-      "block_order": [
-        "card_37czVX",
-        "card_VN8C4L",
-        "card_7bXfx8",
-        "card_wKbPRz",
-        "card_Dj4Jhk",
-        "card_VaLrJE",
-        "card_hVQxRA"
-      ],
-      "name": "Card grid",
-      "settings": {
-        "heading": "",
-        "subheading": "",
-        "heading_alignment": "left",
-        "desktop_layout": "slider",
-        "mobile_layout": "slider",
-        "desktop_columns": "3",
-        "mobile_columns": "2",
-        "desktop_slider_per_view": "3",
-        "mobile_slider_per_view": "1.2",
-        "auto_rotate": true,
-        "rotate_interval": 4,
-        "gap": 8,
-        "desktop_side_padding": 12,
-        "mobile_side_padding": 12,
-        "section_width": "full-width",
-        "color_scheme": "",
         "padding-block-start": 24,
         "padding-block-end": 24
       }
@@ -2079,9 +2079,9 @@
     "card_grid_TBdpWJ",
     "product_list_CVJar6",
     "card_grid_tLffKU",
+    "card_grid_GWUm6j",
     "stacked_banners_QWcUpX",
     "category_grid_pGCQaP",
-    "card_grid_GWUm6j",
     "category_grid_FAWJJj",
     "category_grid_Nr4rxN",
     "video_reels_xGEykY",
