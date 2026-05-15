@@ -155,6 +155,14 @@
         "card_7Rimtd": {
           "type": "card",
           "settings": {
+            "image": "shopify://shop_images/elf.webp",
+            "link": "shopify://collections/elf",
+            "open_new_tab": false
+          }
+        },
+        "card_nbr3cj": {
+          "type": "card",
+          "settings": {
             "image": "shopify://shop_images/The-Ordinary_3593ca5a-7f2c-4435-8b80-31e6d0fde8ea.jpg",
             "link": "shopify://collections/to",
             "open_new_tab": false
@@ -189,6 +197,7 @@
         "card_x4i8pi",
         "card_LJWfzX",
         "card_7Rimtd",
+        "card_nbr3cj",
         "card_YUtaR6",
         "card_hxUFFx",
         "card_b9F39r"
