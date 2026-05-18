@@ -67,6 +67,14 @@ export default class VariantPicker extends Component {
     if (!selectedOption) return;
 
     this.updateSelectedOption(event.target);
+
+    // Immediately update the displayed swatch value text without waiting for server
+    if (event.target instanceof HTMLInputElement) {
+      const fieldset = event.target.closest('fieldset');
+      const swatchValueSpan = fieldset?.querySelector('.variant-option__swatch-value');
+      if (swatchValueSpan) swatchValueSpan.textContent = event.target.value;
+    }
+
     this.dispatchEvent(new VariantSelectedEvent({
       id: selectedOption.dataset.optionValueId ?? '',
     }));

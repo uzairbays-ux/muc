@@ -39,8 +39,13 @@
         {%- liquid
           assign swatch_count = product_option.values | map: 'swatch' | compact | size
           assign variant_style = block_settings.variant_style
+          assign option_name_lower = product_option.name | downcase
+          assign is_color_option = false
+          if option_name_lower == 'color' or option_name_lower == 'colour'
+            assign is_color_option = true
+          endif
 
-          if swatch_count > 0 and block_settings.show_swatches
+          if (swatch_count > 0 or is_color_option) and block_settings.show_swatches
             if block_settings.variant_style == 'dropdown'
               assign variant_style = 'swatch_dropdown'
             else
@@ -88,6 +93,7 @@
               {% endif %}
               <label
                 class="variant-option__button-label{% if variant_style == 'swatch' %} variant-option__button-label--has-swatch{% endif %}"
+                {% if variant_style == 'swatch' %}data-tooltip="{{ product_option_value | escape }}"{% endif %}
               >
                 <input
                   type="radio"
@@ -104,6 +110,7 @@
                   data-option-value-id="{{ product_option_value.id }}"
                   data-option-available="{{ product_option_value.available }}"
                   data-connected-product-url="{{ product_option_value.product_url }}"
+                  {% if variant_style == 'swatch' and featured_media %}data-option-media-id="{{ featured_media.id }}"{% endif %}
                   {% if product_option_value.variant.id %}
                     data-variant-id="{{ product_option_value.variant.id }}"
                   {% endif %}
@@ -128,7 +135,8 @@
                   {% render 'swatch',
                     swatch: product_option_value.swatch,
                     variant_image: featured_media,
-                    mode: 'unscaled'
+                    mode: 'unscaled',
+                    label: product_option_value.name
                   %}
                 {% else %}
                   {% if product_option_value.available == true %}
@@ -293,6 +301,35 @@
     top: 50%;
     left: var(--padding-md);
     transform: translateY(-50%);
+  }
+
+  /* Swatch tooltip */
+  .variant-option__button-label--has-swatch[data-tooltip] {
+    position: relative;
+  }
+
+  .variant-option__button-label--has-swatch[data-tooltip]::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: calc(100% + 6px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    font-size: 11px;
+    line-height: 1.2;
+    padding: 4px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+    z-index: 10;
+  }
+
+  .variant-option__button-label--has-swatch[data-tooltip]:hover::after,
+  .variant-option__button-label--has-swatch[data-tooltip]:focus-within::after {
+    opacity: 1;
   }
 
   /* Variant picker alignment modifiers */

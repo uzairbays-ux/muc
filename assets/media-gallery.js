@@ -19,6 +19,7 @@ export class MediaGallery extends Component {
     const target = this.closest('.shopify-section, dialog');
 
     target?.addEventListener(ThemeEvents.variantUpdate, this.#handleVariantUpdate, { signal });
+    target?.addEventListener(ThemeEvents.variantSelected, this.#handleVariantSelected, { signal });
     this.refs.zoomDialogComponent?.addEventListener(ThemeEvents.zoomMediaSelected, this.#handleZoomMediaSelected, {
       signal,
     });
@@ -31,6 +32,19 @@ export class MediaGallery extends Component {
 
     this.#controller.abort();
   }
+
+  /**
+   * Handles variant:selected by immediately sliding to the variant's featured image.
+   * Fires before the server fetch completes, giving instant visual feedback.
+   */
+  #handleVariantSelected = () => {
+    const section = this.closest('.shopify-section');
+    const checkedInput = section?.querySelector('variant-picker fieldset input:checked');
+    const mediaId = checkedInput?.dataset.optionMediaId;
+    if (mediaId && this.refs.slideshow) {
+      this.refs.slideshow.select({ id: String(mediaId) }, undefined, { animate: true });
+    }
+  };
 
   /**
    * Handles a variant update event by replacing the current media gallery with a new one.
