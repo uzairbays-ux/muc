@@ -387,7 +387,7 @@
                   "name": "t:names.accordion_row",
                   "settings": {
                     "heading": "About Product",
-                    "open_by_default": false,
+                    "open_by_default": true,
                     "icon": "none",
                     "width": 20
                   },
@@ -426,7 +426,7 @@
                   "type": "_accordion-row",
                   "settings": {
                     "heading": "Return policy",
-                    "open_by_default": true,
+                    "open_by_default": false,
                     "icon": "none",
                     "width": 20
                   },
