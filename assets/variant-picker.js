@@ -77,6 +77,7 @@ export default class VariantPicker extends Component {
 
     this.dispatchEvent(new VariantSelectedEvent({
       id: selectedOption.dataset.optionValueId ?? '',
+      mediaId: selectedOption instanceof HTMLInputElement ? (selectedOption.dataset.optionMediaId ?? '') : '',
     }));
 
     const isOnProductPage =
