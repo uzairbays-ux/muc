@@ -45,7 +45,12 @@
             assign is_color_option = true
           endif
 
-          if (swatch_count > 0 or is_color_option) and block_settings.show_swatches
+          assign show_as_swatch = false
+          if swatch_count > 0 or is_color_option
+            assign show_as_swatch = true
+          endif
+
+          if show_as_swatch and block_settings.show_swatches
             if block_settings.variant_style == 'dropdown'
               assign variant_style = 'swatch_dropdown'
             else
