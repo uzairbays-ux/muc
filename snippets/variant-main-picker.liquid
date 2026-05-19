@@ -96,6 +96,14 @@
               {% if product_option_value.size > longest_value and option_id_attribute %}
                 {% assign longest_value = product_option_value.size %}
               {% endif %}
+              {%- liquid
+                if variant_style == 'swatch'
+                  assign featured_media = product_option_value.variant.featured_media
+                  if featured_media == blank and product_option_value.product_url
+                    assign featured_media = product_option_value.variant.product.featured_media
+                  endif
+                endif
+              -%}
               <label
                 class="variant-option__button-label{% if variant_style == 'swatch' %} variant-option__button-label--has-swatch{% endif %}"
                 {% if variant_style == 'swatch' %}data-tooltip="{{ product_option_value | escape }}"{% endif %}
@@ -127,16 +135,6 @@
                   {% endif %}
                 >
                 {% if variant_style == 'swatch' %}
-                  {% liquid
-                    assign featured_media = product_option_value.variant.featured_media
-
-                    # If the variant has no featured media, and we have a combined listing product, then fall back to
-                    # using the featured media of the child product that is linked to this option value.
-                    if featured_media == blank and product_option_value.product_url
-                      assign featured_media = product_option_value.variant.product.featured_media
-                    endif
-                  %}
-
                   {% render 'swatch',
                     swatch: product_option_value.swatch,
                     variant_image: featured_media,
@@ -306,6 +304,31 @@
     top: 50%;
     left: var(--padding-md);
     transform: translateY(-50%);
+  }
+
+  /* Unavailable swatch — strikethrough line + reduced opacity */
+  .variant-option__button-label--has-swatch {
+    position: relative;
+    overflow: visible;
+  }
+
+  .variant-option__strikethrough {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    border-radius: inherit;
+    overflow: hidden;
+  }
+
+  .variant-option__strikethrough line {
+    stroke: color-mix(in srgb, var(--color-strikethrough-mix, #000) 40%, transparent);
+    stroke-width: 1.5px;
+  }
+
+  .variant-option__button-label--has-swatch:has([data-option-available='false']) {
+    opacity: 0.5;
   }
 
   /* Swatch tooltip */
