@@ -16,10 +16,9 @@
       "blocks": {
         "ai_gen_block_4420fcf_xzdLjt": {
           "type": "ai_gen_block_4420fcf",
-          "disabled": true,
           "settings": {
-            "desktop_image": "shopify://shop_images/Desktop-Announcement-1-Biodanc3_1.webp",
-            "mobile_image": "shopify://shop_images/Mob-Announcement-biodance_1.webp",
+            "desktop_image": "shopify://shop_images/Eid_Notification_Bannersheader.webp",
+            "mobile_image": "shopify://shop_images/Eid_Notification_Bannersheader.webp",
             "link_url": "shopify://collections",
             "open_in_new_tab": false,
             "hover_opacity": 85
@@ -139,6 +138,11 @@
           "settings": {
             "menu": "menu-new",
             "color_scheme": "",
+            "highlight_handles": "sale",
+            "highlight_animation": "pulse",
+            "highlight_bg_color": "#eb1d23",
+            "highlight_text_color": "#ffffff",
+            "highlight_radius": 4,
             "type_font_primary_size": "1rem",
             "menu_font_style": "inverse",
             "type_font_primary_link": "body",
