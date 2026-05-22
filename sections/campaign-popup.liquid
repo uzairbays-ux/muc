@@ -1,0 +1,251 @@
+{%- doc -%}
+  Campaign Popup
+  Shows a full-image popup after a configurable delay.
+  Remembers dismissal per campaign via localStorage — only shows once per day (interval configurable).
+  Add this section to any page template. Link it to a product or any URL.
+{%- enddoc -%}
+
+{%- liquid
+  assign popup_id = 'campaign-popup-' | append: section.id
+  assign storage_key = 'muc_popup_' | append: section.id
+-%}
+
+{%- if section.settings.enabled and section.settings.image != blank -%}
+  <div
+    id="{{ popup_id }}"
+    class="campaign-popup"
+    role="dialog"
+    aria-modal="true"
+    aria-label="{{ section.settings.image.alt | default: 'Campaign' | escape }}"
+    data-storage-key="{{ storage_key }}"
+    data-delay="{{ section.settings.delay_seconds | times: 1000 }}"
+    data-interval-hours="{{ section.settings.interval_hours }}"
+    hidden
+  >
+    <div class="campaign-popup__backdrop" data-close></div>
+    <div class="campaign-popup__panel">
+      <button
+        class="campaign-popup__close"
+        type="button"
+        aria-label="Close"
+        data-close
+      >
+        {{- 'icon-close.svg' | inline_asset_content -}}
+      </button>
+
+      {%- if section.settings.link != blank -%}
+        <a
+          class="campaign-popup__image-link"
+          href="{{ section.settings.link }}"
+          {% if section.settings.open_new_tab %}target="_blank" rel="noopener"{% endif %}
+          tabindex="-1"
+        >
+      {%- endif -%}
+
+        {{
+          section.settings.image
+          | image_url: width: 900
+          | image_tag:
+            loading: 'eager',
+            class: 'campaign-popup__image',
+            widths: '400, 600, 900',
+            sizes: '(max-width: 480px) 90vw, 480px'
+        }}
+
+      {%- if section.settings.link != blank -%}
+        </a>
+      {%- endif -%}
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const popup = document.getElementById('{{ popup_id }}');
+      if (!popup) return;
+
+      const key = popup.dataset.storageKey;
+      const delay = parseInt(popup.dataset.delay, 10) || 3000;
+      const intervalHours = parseInt(popup.dataset.intervalHours, 10) || 24;
+      const intervalMs = intervalHours * 60 * 60 * 1000;
+
+      function shouldShow() {
+        try {
+          const last = localStorage.getItem(key);
+          if (!last) return true;
+          return Date.now() - parseInt(last, 10) > intervalMs;
+        } catch (_) {
+          return true;
+        }
+      }
+
+      function dismiss() {
+        popup.classList.remove('campaign-popup--visible');
+        popup.addEventListener('transitionend', () => popup.hidden = true, { once: true });
+        try { localStorage.setItem(key, String(Date.now())); } catch (_) {}
+      }
+
+      function show() {
+        popup.hidden = false;
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => popup.classList.add('campaign-popup--visible'));
+        });
+      }
+
+      // Close on backdrop or close button click
+      popup.addEventListener('click', (e) => {
+        if (e.target.closest('[data-close]')) dismiss();
+      });
+
+      // Close on Escape
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && popup.classList.contains('campaign-popup--visible')) dismiss();
+      });
+
+      if (shouldShow()) {
+        setTimeout(show, delay);
+      }
+    })();
+  </script>
+{%- endif -%}
+
+{% stylesheet %}
+  .campaign-popup {
+    position: fixed;
+    inset: 0;
+    z-index: calc(var(--layer-modal, 400) + 10);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+  }
+
+  .campaign-popup__backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    cursor: pointer;
+  }
+
+  .campaign-popup__panel {
+    position: relative;
+    max-width: 480px;
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 24px 64px rgba(0, 0, 0, 0.35);
+    transform: translateY(24px) scale(0.97);
+    opacity: 0;
+    transition: transform 0.35s cubic-bezier(0.34, 1.4, 0.64, 1), opacity 0.3s ease;
+  }
+
+  .campaign-popup--visible .campaign-popup__backdrop {
+    opacity: 1;
+  }
+
+  .campaign-popup--visible .campaign-popup__panel {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+
+  .campaign-popup__image {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .campaign-popup__image-link {
+    display: block;
+    line-height: 0;
+  }
+
+  .campaign-popup__close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.45);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+    z-index: 1;
+    transition: background 0.2s;
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.7);
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Campaign popup",
+  "tag": null,
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enabled",
+      "label": "Enable popup",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Popup image"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Link (product, collection, page…)"
+    },
+    {
+      "type": "checkbox",
+      "id": "open_new_tab",
+      "label": "Open link in new tab",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Timing"
+    },
+    {
+      "type": "range",
+      "id": "delay_seconds",
+      "label": "Delay before showing",
+      "min": 1,
+      "max": 30,
+      "step": 1,
+      "unit": "s",
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "interval_hours",
+      "label": "Show again after",
+      "info": "Hours before the popup appears again for the same visitor.",
+      "min": 1,
+      "max": 168,
+      "step": 1,
+      "unit": "h",
+      "default": 24
+    }
+  ],
+  "presets": [
+    {
+      "name": "Campaign popup"
+    }
+  ]
+}
+{% endschema %}
