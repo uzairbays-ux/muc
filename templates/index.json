@@ -155,7 +155,7 @@
         "card_7Rimtd": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/elf.webp",
+            "image": "shopify://shop_images/ELF_1.webp",
             "link": "shopify://collections/elf",
             "open_new_tab": false
           }
@@ -387,6 +387,8 @@
                 "background": false,
                 "background_color": "#00000026",
                 "corner_radius": 0,
+                "custom_class_desktop": "",
+                "custom_class_mobile": "",
                 "padding-block-start": 4,
                 "padding-block-end": 4,
                 "padding-inline-start": 0,
@@ -945,6 +947,8 @@
                 "background": false,
                 "background_color": "#00000026",
                 "corner_radius": 0,
+                "custom_class_desktop": "",
+                "custom_class_mobile": "",
                 "padding-block-start": 4,
                 "padding-block-end": 4,
                 "padding-inline-start": 0,
@@ -1031,11 +1035,11 @@
     "card_grid_tLffKU": {
       "type": "card-grid",
       "blocks": {
-        "card_4rqnJx": {
+        "card_m4dJ4r": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/BLS_1.webp",
-            "link": "shopify://collections/bls",
+            "image": "shopify://shop_images/Janssen_c0232ac8-3ecf-4a7a-9c03-e99958e6ed39.jpg",
+            "link": "shopify://collections/janssen",
             "open_new_tab": false
           }
         },
@@ -1047,11 +1051,11 @@
             "open_new_tab": false
           }
         },
-        "card_m4dJ4r": {
+        "card_4rqnJx": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/Janssen_c0232ac8-3ecf-4a7a-9c03-e99958e6ed39.jpg",
-            "link": "shopify://collections/janssen",
+            "image": "shopify://shop_images/BLS_1.webp",
+            "link": "shopify://collections/bls",
             "open_new_tab": false
           }
         },
@@ -1093,9 +1097,9 @@
         }
       },
       "block_order": [
-        "card_4rqnJx",
-        "card_NaiUMg",
         "card_m4dJ4r",
+        "card_NaiUMg",
+        "card_4rqnJx",
         "card_9H67GY",
         "card_3iUqF9",
         "card_Fzb4HD",
