@@ -9,6 +9,15 @@
  */
 {
   "sections": {
+    "campaign_popup_homepage": {
+      "type": "campaign-popup",
+      "name": "Campaign popup",
+      "settings": {
+        "enabled": false,
+        "delay_seconds": 3,
+        "interval_hours": 24
+      }
+    },
     "thumbnail_scroll_PbDt4b": {
       "type": "thumbnail-scroll",
       "blocks": {
@@ -2092,6 +2101,7 @@
     }
   },
   "order": [
+    "campaign_popup_homepage",
     "thumbnail_scroll_PbDt4b",
     "featured_banner_yeQJGh",
     "card_banner_8zTGy8",
