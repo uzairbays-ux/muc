@@ -39,7 +39,8 @@
     flex-shrink: 0;
   }
 
-  .ai-proposition-icon-{{ ai_gen_id }} img {
+  .ai-proposition-icon-{{ ai_gen_id }} img,
+  .ai-proposition-icon-{{ ai_gen_id }} svg {
     width: 100%;
     height: 100%;
     object-fit: contain;
@@ -123,22 +124,23 @@
         %}
         
         <div class="ai-proposition-item-{{ ai_gen_id }}">
-          <div class="ai-proposition-icon-{{ ai_gen_id }}">
-            {% if icon %}
-              <img
-                src="{{ icon | image_url: width: 100 }}"
-                alt="{{ text | escape }}"
-                loading="lazy"
-                width="100"
-                height="100"
-              >
-            {% else %}
-              <div class="ai-proposition-icon-placeholder-{{ ai_gen_id }}">
-                {{ 'image' | placeholder_svg_tag }}
-              </div>
-            {% endif %}
-          </div>
-          
+          {%- unless icon == blank or icon == 'none' -%}
+            <div class="ai-proposition-icon-{{ ai_gen_id }}">
+              {%- liquid
+                case icon
+                  when 'free_shipping'
+                    echo 'icon-free-shipping.svg' | inline_asset_content
+                  when 'authentic'
+                    echo 'icon-authentic.svg' | inline_asset_content
+                  when 'easy_returns'
+                    echo 'icon-easy-returns.svg' | inline_asset_content
+                  when 'secure_payment'
+                    echo 'icon-secure-payment.svg' | inline_asset_content
+                endcase
+              -%}
+            </div>
+          {%- endunless -%}
+
           {% if text != blank %}
             <p class="ai-proposition-text-{{ ai_gen_id }}">{{ text }}</p>
           {% endif %}
@@ -485,9 +487,17 @@
       "content": "Proposition 1"
     },
     {
-      "type": "image_picker",
+      "type": "select",
       "id": "icon_1",
-      "label": "Icon"
+      "label": "Icon",
+      "options": [
+        { "value": "none", "label": "None" },
+        { "value": "free_shipping", "label": "Free Shipping" },
+        { "value": "authentic", "label": "Authentic Products" },
+        { "value": "easy_returns", "label": "Easy Returns" },
+        { "value": "secure_payment", "label": "Secure Payment" }
+      ],
+      "default": "free_shipping"
     },
     {
       "type": "text",
@@ -500,9 +510,17 @@
       "content": "Proposition 2"
     },
     {
-      "type": "image_picker",
+      "type": "select",
       "id": "icon_2",
-      "label": "Icon"
+      "label": "Icon",
+      "options": [
+        { "value": "none", "label": "None" },
+        { "value": "free_shipping", "label": "Free Shipping" },
+        { "value": "authentic", "label": "Authentic Products" },
+        { "value": "easy_returns", "label": "Easy Returns" },
+        { "value": "secure_payment", "label": "Secure Payment" }
+      ],
+      "default": "authentic"
     },
     {
       "type": "text",
@@ -515,9 +533,17 @@
       "content": "Proposition 3"
     },
     {
-      "type": "image_picker",
+      "type": "select",
       "id": "icon_3",
-      "label": "Icon"
+      "label": "Icon",
+      "options": [
+        { "value": "none", "label": "None" },
+        { "value": "free_shipping", "label": "Free Shipping" },
+        { "value": "authentic", "label": "Authentic Products" },
+        { "value": "easy_returns", "label": "Easy Returns" },
+        { "value": "secure_payment", "label": "Secure Payment" }
+      ],
+      "default": "easy_returns"
     },
     {
       "type": "text",
@@ -530,9 +556,17 @@
       "content": "Proposition 4"
     },
     {
-      "type": "image_picker",
+      "type": "select",
       "id": "icon_4",
-      "label": "Icon"
+      "label": "Icon",
+      "options": [
+        { "value": "none", "label": "None" },
+        { "value": "free_shipping", "label": "Free Shipping" },
+        { "value": "authentic", "label": "Authentic Products" },
+        { "value": "easy_returns", "label": "Easy Returns" },
+        { "value": "secure_payment", "label": "Secure Payment" }
+      ],
+      "default": "secure_payment"
     },
     {
       "type": "text",

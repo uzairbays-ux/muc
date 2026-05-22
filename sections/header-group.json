@@ -43,13 +43,13 @@
             "mobile_autoplay_interval": 4,
             "text_size": 14,
             "text_weight": "400",
-            "icon_1": "shopify://shop_images/m_74a86d37-33e6-420d-8e73-d6d59ca04e6a.png",
+            "icon_1": "free_shipping",
             "text_1": "Free Shipping",
-            "icon_2": "shopify://shop_images/m_74a86d37-33e6-420d-8e73-d6d59ca04e6a.png",
+            "icon_2": "authentic",
             "text_2": "Authentic Products",
-            "icon_3": "shopify://shop_images/m_74a86d37-33e6-420d-8e73-d6d59ca04e6a.png",
+            "icon_3": "easy_returns",
             "text_3": "Easy Returns",
-            "icon_4": "shopify://shop_images/m_74a86d37-33e6-420d-8e73-d6d59ca04e6a.png",
+            "icon_4": "secure_payment",
             "text_4": "Secure Payment"
           },
           "blocks": {}
