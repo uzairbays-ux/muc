@@ -24,8 +24,31 @@
   elsif swatch.color
     assign swatch_value = 'rgb(' | append: swatch.color.rgb | append: ')'
   elsif label != blank
-    assign swatch_value = label | downcase | replace: ' ', ''
-    assign extra_classes = extra_classes | append: ' swatch--named-color'
+    # Look up color in custom definitions (Settings → Swatches → Color map)
+    assign label_lower = label | downcase | strip
+    assign mapped_color = null
+    if settings.swatch_color_definitions != blank
+      assign color_lines = settings.swatch_color_definitions | newline_to_br | split: '<br />'
+      for color_line in color_lines
+        assign trimmed_line = color_line | strip
+        if trimmed_line != blank and mapped_color == null
+          assign line_parts = trimmed_line | split: ':'
+          if line_parts.size >= 2
+            assign def_name = line_parts[0] | downcase | strip
+            if def_name == label_lower
+              assign mapped_color = line_parts[1] | strip
+            endif
+          endif
+        endif
+      endfor
+    endif
+
+    if mapped_color != null
+      assign swatch_value = mapped_color
+    else
+      assign swatch_value = label | downcase | replace: ' ', ''
+      assign extra_classes = extra_classes | append: ' swatch--named-color'
+    endif
   endif
 
   case mode
