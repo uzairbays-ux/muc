@@ -93,6 +93,7 @@
         "announcement_BxgCk9": {
           "type": "_announcement",
           "settings": {
+            "icon": "none",
             "text": "Summer Sale 2026",
             "link": "shopify://collections/sale",
             "font": "var(--font-subheading--family)",
