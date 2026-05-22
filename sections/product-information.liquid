@@ -446,6 +446,23 @@
     vertical-align: middle;
     margin-inline-start: 0.4rem;
   }
+
+  /* Product page price hierarchy */
+  product-price .price-item--sale.price {
+    font-size: 1.25em;
+    font-weight: 700;
+    color: var(--color-foreground);
+  }
+
+  product-price .price-item--regular.compare-at-price {
+    font-size: 0.85em;
+    font-weight: 400;
+    opacity: 1;
+    color: rgb(var(--color-foreground-rgb) / 0.45);
+    text-decoration-line: line-through;
+    text-decoration-thickness: 1.5px;
+    text-decoration-color: rgb(var(--color-foreground-rgb) / 0.35);
+  }
 {% endstylesheet %}
 
 {% schema %}
