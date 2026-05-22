@@ -55,6 +55,20 @@
   {% render 'sku', product_resource: product_resource, block_settings: block_settings %}
 </product-sku-component>
 
+{% stylesheet %}
+  /* When SKU and barcode sit next to each other, lay them out in a row */
+  product-sku-component:has(+ product-barcode-component),
+  product-barcode-component:has(+ product-sku-component) {
+    display: inline !important;
+  }
+
+  product-sku-component + product-barcode-component,
+  product-barcode-component + product-sku-component {
+    display: inline !important;
+    margin-inline-start: 1.25rem;
+  }
+{% endstylesheet %}
+
 {% schema %}
 {
   "name": "t:names.product_sku",
