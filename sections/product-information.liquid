@@ -416,6 +416,17 @@
       white-space: nowrap;
     }
   }
+  /* SKU + Barcode inline row — force both to inline regardless of block inline-style */
+  product-sku-component,
+  product-barcode-component {
+    display: inline !important;
+  }
+
+  /* Wrap the pair so they stay on one line with a separator gap */
+  product-sku-component + product-barcode-component,
+  product-barcode-component + product-sku-component {
+    margin-inline-start: 1.5rem;
+  }
 {% endstylesheet %}
 
 {% schema %}
