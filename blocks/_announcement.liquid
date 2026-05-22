@@ -26,7 +26,17 @@
     {{ block.shopify_attributes }}
     aria-hidden="{% if block_index == 0 %}false{% else %}true{% endif %}"
   >
-    <p class="announcement-bar__text">
+    <p class="announcement-bar__text announcement-bar__text--with-icon">
+      {%- liquid
+        case block_settings.icon
+          when 'authentic'
+            echo 'icon-authentic.svg' | inline_asset_content
+          when 'free_shipping'
+            echo 'icon-free-shipping.svg' | inline_asset_content
+          when 'easy_returns'
+            echo 'icon-easy-returns.svg' | inline_asset_content
+        endcase
+      -%}
       {{ block.settings.text }}
     </p>
 
@@ -119,6 +129,30 @@
   "name": "t:names.announcement",
   "tag": null,
   "settings": [
+    {
+      "type": "select",
+      "id": "icon",
+      "label": "Icon",
+      "options": [
+        {
+          "value": "none",
+          "label": "None"
+        },
+        {
+          "value": "authentic",
+          "label": "Authentic Products"
+        },
+        {
+          "value": "free_shipping",
+          "label": "Free Shipping"
+        },
+        {
+          "value": "easy_returns",
+          "label": "Easy Returns"
+        }
+      ],
+      "default": "none"
+    },
     {
       "type": "inline_richtext",
       "id": "text",
