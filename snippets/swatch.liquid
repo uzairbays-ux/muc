@@ -24,8 +24,34 @@
   elsif swatch.color
     assign swatch_value = 'rgb(' | append: swatch.color.rgb | append: ')'
   elsif label != blank
-    assign swatch_value = label | downcase | replace: ' ', ''
-    assign extra_classes = extra_classes | append: ' swatch--named-color'
+    # Look up color in custom color definitions textarea (Settings → Swatches → Color map)
+    assign label_lower = label | downcase | strip
+    assign mapped_color = null
+    if settings.swatch_color_definitions != blank
+      assign color_lines = settings.swatch_color_definitions | newline_to_br | split: '<br />'
+      for color_line in color_lines
+        assign trimmed_line = color_line | strip
+        if trimmed_line != blank and mapped_color == null
+          assign colon_pos = trimmed_line | split: ':'
+          if colon_pos.size >= 2
+            assign def_name = colon_pos[0] | downcase | strip
+            if def_name == label_lower
+              assign def_value = colon_pos[1] | strip
+              # Re-attach any colons in the value (e.g. for future non-hex formats)
+              assign mapped_color = def_value
+            endif
+          endif
+        endif
+      endfor
+    endif
+
+    if mapped_color != null
+      assign swatch_value = mapped_color
+    else
+      # Final fallback: try label itself as a CSS color name
+      assign swatch_value = label | downcase | replace: ' ', ''
+      assign extra_classes = extra_classes | append: ' swatch--named-color'
+    endif
   endif
 
   case mode

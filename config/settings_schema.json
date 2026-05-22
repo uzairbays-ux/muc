@@ -2233,6 +2233,16 @@
         "label": "t:settings.border_opacity",
         "default": 10,
         "visible_if": "{{ settings.variant_swatch_border_style != 'none' }}"
+      },
+      {
+        "type": "header",
+        "content": "Color definitions"
+      },
+      {
+        "type": "textarea",
+        "id": "swatch_color_definitions",
+        "label": "Color map",
+        "info": "One color per line. Format: Color Name: #hexcode — e.g.  Ivory: #FFFFF0  or  Light Pink: #FFB6C1. Names are case-insensitive and matched against the product option value."
       }
     ]
   },
