@@ -11,6 +11,18 @@
   "type": "footer",
   "name": "Footer",
   "sections": {
+    "campaign_popup_WwBhLG": {
+      "type": "campaign-popup",
+      "name": "Campaign popup",
+      "settings": {
+        "enabled": true,
+        "image": "shopify://shop_images/popup-sunscreen_beauty_of_joseon.webp",
+        "link": "shopify://products/8809782555508",
+        "open_new_tab": false,
+        "delay_seconds": 3,
+        "interval_hours": 24
+      }
+    },
     "footer_m9NzUG": {
       "type": "footer",
       "blocks": {
@@ -401,6 +413,7 @@
     }
   },
   "order": [
+    "campaign_popup_WwBhLG",
     "footer_m9NzUG",
     "footer_utilities_jLGE8U"
   ]
