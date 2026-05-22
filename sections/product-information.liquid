@@ -179,10 +179,17 @@
 {% stylesheet %}
   .sticky-add-to-cart__bar {
     position: fixed;
-    bottom: 20px;
+    /* Anchor to bottom: 0 so Chrome URL-bar show/hide doesn't reposition the element.
+       The 20px visual gap is applied via translateY in the stuck state instead. */
+    bottom: 0;
     left: 50%;
     opacity: 0;
-    transform: translateX(-50%) translateY(calc(100% + 40px));
+    /* translateZ(0) keeps this on its own GPU compositor layer at all times,
+       avoiding paint storms. Never use will-change here — it causes memory
+       pressure on low-end Android when multiple layers compete. */
+    transform: translateZ(0) translateX(-50%) translateY(calc(100% + 40px));
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
     z-index: calc(var(--layer-sticky) - 1); /* Below sticky header */
     display: block;
     width: 600px;
@@ -212,24 +219,32 @@
     border: 1px solid rgba(255, 255, 255, 0.18);
     box-shadow: 0 8px 24px rgba(255, 16, 16, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.15);
     color: #000;
-    /* GPU-composite only transform + opacity — no layout thrash */
-    will-change: transform, opacity;
   }
 
   @media (prefers-reduced-motion: no-preference) {
+    /* Hide direction: 0.15s delay acts as a CSS debounce.
+       If IntersectionObserver rapid-fires show→hide at the scroll boundary,
+       a re-show within 150 ms cancels the hide before it's visible. */
     .sticky-add-to-cart__bar {
-      transition: transform 0.3s var(--ease-out-quad), opacity 0.25s ease;
+      transition: transform 0.3s 0.15s var(--ease-out-quad), opacity 0.25s 0.15s ease;
+    }
+
+    /* Show direction: no delay — bar appears immediately */
+    .sticky-add-to-cart__bar[data-stuck='true'] {
+      transition: transform 0.35s 0s var(--ease-out-quad), opacity 0.25s 0s ease;
     }
   }
 
   .sticky-add-to-cart__bar[data-stuck='true'] {
-    transform: translateX(-50%) translateY(0%);
+    /* translateY(-20px) floats the bar 20px above the viewport bottom edge.
+       Because bottom: 0, this value never recalculates during URL-bar resize. */
+    transform: translateZ(0) translateX(-50%) translateY(-20px);
     opacity: 1;
   }
 
   sticky-add-to-cart:not([data-variant-available='true']) .sticky-add-to-cart__bar {
     opacity: 0;
-    transform: translateX(-50%) translateY(calc(100% + 40px));
+    transform: translateZ(0) translateX(-50%) translateY(calc(100% + 40px));
     display: none;
   }
 
@@ -291,8 +306,9 @@
   /* Mobile adjustments */
   @media screen and (max-width: 749px) {
     .sticky-add-to-cart__bar {
-      /* Float with space on all sides */
-      bottom: 16px;
+      /* Float with space on all sides.
+         bottom: 0 + translateY(-16px) in stuck state avoids URL-bar resize jumps. */
+      bottom: 0;
       left: 16px;
       right: 16px;
       width: auto;
@@ -311,10 +327,11 @@
       gap: 2px 12px;
 
       /* Override desktop translateX(-50%) — not needed with left/right positioning */
-      transform: translateY(calc(100% + 60px));
+      transform: translateZ(0) translateY(calc(100% + 60px));
 
       &[data-stuck='true'] {
-        transform: translateY(0);
+        /* -16px = the visual bottom gap from screen edge */
+        transform: translateZ(0) translateY(-16px);
       }
 
       &::before {
