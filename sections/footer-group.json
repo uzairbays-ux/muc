@@ -13,12 +13,11 @@
   "sections": {
     "campaign_popup_WwBhLG": {
       "type": "campaign-popup",
-      "disabled": true,
       "name": "Campaign popup",
       "settings": {
         "enabled": true,
-        "image": "shopify://shop_images/popup-sunscreen_beauty_of_joseon.webp",
-        "link": "shopify://products/8809782555508",
+        "image": "shopify://shop_images/Popup-s.webp",
+        "link": "shopify://products/8809968130277",
         "open_new_tab": false,
         "delay_seconds": 3,
         "interval_hours": 24
