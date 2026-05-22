@@ -41,7 +41,7 @@
             "icon_size": 20,
             "mobile_autoplay": true,
             "mobile_autoplay_interval": 4,
-            "text_size": 12,
+            "text_size": 14,
             "text_weight": "400",
             "icon_1": "free_shipping",
             "text_1": "Free Shipping*",
