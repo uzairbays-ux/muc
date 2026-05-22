@@ -416,16 +416,35 @@
       white-space: nowrap;
     }
   }
-  /* SKU + Barcode inline row — force both to inline regardless of block inline-style */
+  /* SKU + Barcode inline row */
   product-sku-component,
   product-barcode-component {
-    display: inline !important;
+    display: inline-block !important;
+    width: auto !important;
+    vertical-align: middle;
   }
 
-  /* Wrap the pair so they stay on one line with a separator gap */
   product-sku-component + product-barcode-component,
   product-barcode-component + product-sku-component {
     margin-inline-start: 1.5rem;
+  }
+
+  /* Sale badge pill — loaded here so it renders even when the standalone
+     sale-badge block is not on the page */
+  .sale-badge__pill--inline {
+    display: inline-flex;
+    align-items: center;
+    background: #eb1d23;
+    color: #fff;
+    border-radius: 4px;
+    padding: 4px 8px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+    vertical-align: middle;
+    margin-inline-start: 0.4rem;
   }
 {% endstylesheet %}
 
