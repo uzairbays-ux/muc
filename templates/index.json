@@ -744,6 +744,14 @@
             "link": "shopify://collections/bath-body-works",
             "open_new_tab": false
           }
+        },
+        "card_AHQBXy": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/La_roche_posay.webp",
+            "link": "shopify://collections/la-roche-posay",
+            "open_new_tab": false
+          }
         }
       },
       "block_order": [
@@ -755,7 +763,8 @@
         "card_gBiw68",
         "card_dnezUz",
         "card_ceiizR",
-        "card_c49pAk"
+        "card_c49pAk",
+        "card_AHQBXy"
       ],
       "name": "Card grid",
       "settings": {
