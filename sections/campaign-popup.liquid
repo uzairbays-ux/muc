@@ -80,7 +80,12 @@
 
       function dismiss() {
         popup.classList.remove('campaign-popup--visible');
-        popup.addEventListener('transitionend', () => popup.hidden = true, { once: true });
+        // Always hide — timeout fallback covers cases where transitionend never fires
+        const fallback = setTimeout(() => { popup.hidden = true; }, 400);
+        popup.addEventListener('transitionend', () => {
+          clearTimeout(fallback);
+          popup.hidden = true;
+        }, { once: true });
         try { localStorage.setItem(key, String(Date.now())); } catch (_) {}
       }
 
@@ -117,6 +122,12 @@
     align-items: center;
     justify-content: center;
     padding: 16px;
+    /* Prevent invisible layer blocking touches when not active */
+    pointer-events: none;
+  }
+
+  .campaign-popup--visible {
+    pointer-events: auto;
   }
 
   .campaign-popup__backdrop {

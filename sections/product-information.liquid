@@ -207,26 +207,18 @@
         'price  button';
       grid-template-columns: 1fr auto;
     }
-    /* Glass morphism */
-    background: rgba(255, 16, 16, 0.35);
-    backdrop-filter: blur(24px) saturate(200%) brightness(1.1);
-    -webkit-backdrop-filter: blur(24px) saturate(200%) brightness(1.1);
-    border: 1px solid #ff1010;
-    box-shadow: 0 8px 32px rgba(255, 16, 16, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    /* Solid background — no backdrop-filter to avoid scroll jank */
+    background: rgba(255, 16, 16, 0.92);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 24px rgba(255, 16, 16, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.15);
     color: #000;
-
-    @starting-style {
-      opacity: 0;
-      transform: translateX(-50%) translateY(calc(100% + 40px));
-    }
+    /* GPU-composite only transform + opacity — no layout thrash */
+    will-change: transform, opacity;
   }
 
   @media (prefers-reduced-motion: no-preference) {
     .sticky-add-to-cart__bar {
-      transition-property: transform, opacity, display;
-      transition-duration: 0.3s;
-      transition-timing-function: var(--ease-out-quad);
-      transition-behavior: allow-discrete;
+      transition: transform 0.3s var(--ease-out-quad), opacity 0.25s ease;
     }
   }
 
