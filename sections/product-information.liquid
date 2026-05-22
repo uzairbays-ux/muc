@@ -287,35 +287,38 @@
   /* Mobile adjustments */
   @media screen and (max-width: 749px) {
     .sticky-add-to-cart__bar {
+      /* Float with space on all sides */
       bottom: 16px;
       left: 16px;
       right: 16px;
       width: auto;
       max-width: none;
-      /* Override desktop transform which uses translateX(-50%) + left:50% */
-      transform: translateY(calc(100% + 60px));
       border-radius: 16px;
       padding: 12px 16px;
+
+      /* Grid: [name + price] on left, [button] on right */
       display: grid;
       grid-template-areas:
-        'info button'
-        'price button';
+        'info   button'
+        'price  button';
       grid-template-columns: 1fr auto;
       grid-template-rows: auto auto;
       align-items: center;
-      gap: 2px var(--gap-md);
+      gap: 2px 12px;
+
+      /* Override desktop translateX(-50%) — not needed with left/right positioning */
+      transform: translateY(calc(100% + 60px));
+
+      &[data-stuck='true'] {
+        transform: translateY(0);
+      }
 
       &::before {
         --border: 1px;
       }
     }
 
-    /* Correct stuck/hidden transforms for mobile (no translateX needed) */
-    &[data-stuck='true'] {
-      transform: translateY(0);
-    }
-
-    /* Hide image on mobile */
+    /* Hide image */
     .sticky-add-to-cart__image {
       display: none;
     }
@@ -324,13 +327,14 @@
       grid-area: info;
       padding-left: 0;
       align-self: end;
+      min-width: 0;
     }
 
     .sticky-add-to-cart__info[data-has-image='false'] {
       padding-left: 0;
     }
 
-    /* Hide variant line — name + price is enough */
+    /* Hide variant line */
     .sticky-add-to-cart__variant {
       display: none;
     }
@@ -348,7 +352,7 @@
       align-self: start;
     }
 
-    /* Button on the right spanning both rows */
+    /* Button spans both rows on the right */
     .sticky-add-to-cart__button {
       grid-area: button;
       height: var(--height-buy-buttons);
@@ -357,7 +361,7 @@
       align-self: center;
     }
 
-    /* Show Add to Cart text on mobile */
+    /* Show Add to Cart label text on mobile */
     .sticky-add-to-cart__bar .add-to-cart-text__content {
       display: inline;
     }
