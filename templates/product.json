@@ -228,6 +228,7 @@
             "sku_CbFtQN": {
               "type": "sku",
               "name": "t:names.product_sku",
+              "disabled": true,
               "settings": {
                 "show_label": true,
                 "label": "SKU:",
@@ -607,9 +608,13 @@
             "mobile_autoplay_interval": 4,
             "text_size": 14,
             "text_weight": "400",
+            "icon_1": "free_shipping",
             "text_1": "Free Shipping",
+            "icon_2": "authentic",
             "text_2": "Authentic Products",
+            "icon_3": "easy_returns",
             "text_3": "Easy Returns",
+            "icon_4": "secure_payment",
             "text_4": "Secure Payment"
           },
           "blocks": {}
@@ -818,6 +823,7 @@
               "type": "price",
               "settings": {
                 "show_sale_price_first": true,
+                "show_sale_badge": true,
                 "show_installments": false,
                 "show_tax_info": false,
                 "type_preset": "h6",
