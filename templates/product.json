@@ -173,6 +173,18 @@
                   },
                   "blocks": {}
                 },
+                "divider_xjEFFj": {
+                  "type": "_divider",
+                  "name": "t:names.divider",
+                  "settings": {
+                    "thickness": 1,
+                    "corner_radius": "square",
+                    "width_percent": 100,
+                    "padding-block-start": 0,
+                    "padding-block-end": 10
+                  },
+                  "blocks": {}
+                },
                 "price_tVjtKg": {
                   "type": "price",
                   "settings": {
@@ -209,6 +221,7 @@
                 "text_xrnftG",
                 "text_LabgbW",
                 "review_kH9VPT",
+                "divider_xjEFFj",
                 "price_tVjtKg",
                 "custom_liquid_7MEE6g"
               ]
