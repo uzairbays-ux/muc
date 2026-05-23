@@ -9,15 +9,6 @@
  */
 {
   "sections": {
-    "campaign_popup_homepage": {
-      "type": "campaign-popup",
-      "name": "Campaign popup",
-      "settings": {
-        "enabled": false,
-        "delay_seconds": 3,
-        "interval_hours": 24
-      }
-    },
     "thumbnail_scroll_PbDt4b": {
       "type": "thumbnail-scroll",
       "blocks": {
@@ -423,6 +414,7 @@
               "name": "t:names.product_price",
               "settings": {
                 "show_sale_price_first": true,
+                "show_sale_badge": true,
                 "show_installments": false,
                 "show_tax_info": false,
                 "type_preset": "h6",
@@ -992,6 +984,7 @@
               "name": "t:names.product_price",
               "settings": {
                 "show_sale_price_first": true,
+                "show_sale_badge": true,
                 "show_installments": false,
                 "show_tax_info": false,
                 "type_preset": "h6",
@@ -1142,7 +1135,7 @@
         "section_width": "full-width",
         "color_scheme": "",
         "padding-block-start": 24,
-        "padding-block-end": 12
+        "padding-block-end": 24
       }
     },
     "card_grid_GWUm6j": {
@@ -1770,6 +1763,144 @@
         "padding-block-end": 30
       }
     },
+    "category_grid_EMcECB": {
+      "type": "category-grid",
+      "blocks": {
+        "category_n7NyHC": {
+          "type": "category",
+          "name": "Biodance",
+          "settings": {
+            "image": "shopify://shop_images/Biodance.webp",
+            "label": "",
+            "link": "shopify://collections/biodance",
+            "card_background": "#e3cef0"
+          }
+        },
+        "category_bEVwXc": {
+          "type": "category",
+          "name": "Jumiso",
+          "settings": {
+            "image": "shopify://shop_images/Jumiso.webp",
+            "label": "",
+            "link": "shopify://collections/jumiso",
+            "card_background": "#e3cef0"
+          }
+        },
+        "category_wrPwQz": {
+          "type": "category",
+          "name": "VT",
+          "settings": {
+            "image": "shopify://shop_images/VT.webp",
+            "label": "",
+            "link": "shopify://collections/vt",
+            "card_background": "#e3cef0"
+          }
+        },
+        "category_fgbGYy": {
+          "type": "category",
+          "name": "Torriden",
+          "settings": {
+            "image": "shopify://shop_images/Torriden.webp",
+            "label": "",
+            "link": "shopify://collections/torriden",
+            "card_background": "#e3cef0"
+          }
+        },
+        "category_m4FjGa": {
+          "type": "category",
+          "name": "Manyo",
+          "settings": {
+            "image": "shopify://shop_images/Manyo.webp",
+            "label": "",
+            "link": "shopify://collections/manyo",
+            "card_background": "#e3cef0"
+          }
+        },
+        "category_yynriR": {
+          "type": "category",
+          "name": "Purito",
+          "settings": {
+            "image": "shopify://shop_images/Purito-Seoul.webp",
+            "label": "",
+            "link": "shopify://collections/purito",
+            "card_background": "#e3cef0"
+          }
+        },
+        "category_Kky8cK": {
+          "type": "category",
+          "name": "Tirtir",
+          "settings": {
+            "image": "shopify://shop_images/Tirtir.webp",
+            "label": "",
+            "link": "shopify://collections/tirtir",
+            "card_background": "#e3cef0"
+          }
+        },
+        "category_BpHehb": {
+          "type": "category",
+          "name": "Laneige",
+          "settings": {
+            "image": "shopify://shop_images/Laneige.webp",
+            "label": "",
+            "link": "shopify://collections/laneige",
+            "card_background": "#e3cef0"
+          }
+        },
+        "category_fMkPJe": {
+          "type": "category",
+          "name": "Aromatica",
+          "settings": {
+            "image": "shopify://shop_images/Aromatica.webp",
+            "label": "",
+            "link": "shopify://collections/aromatica",
+            "card_background": "#e3cef0"
+          }
+        },
+        "category_yaLU7d": {
+          "type": "category",
+          "name": "Heimish",
+          "settings": {
+            "image": "shopify://shop_images/Heimish.webp",
+            "label": "",
+            "link": "shopify://collections/heimish",
+            "card_background": "#e3cef0"
+          }
+        }
+      },
+      "block_order": [
+        "category_n7NyHC",
+        "category_bEVwXc",
+        "category_wrPwQz",
+        "category_fgbGYy",
+        "category_m4FjGa",
+        "category_yynriR",
+        "category_Kky8cK",
+        "category_BpHehb",
+        "category_fMkPJe",
+        "category_yaLU7d"
+      ],
+      "disabled": true,
+      "name": "che",
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "heading_alignment": "center",
+        "desktop_layout": "grid",
+        "mobile_layout": "carousel",
+        "desktop_per_row": "7",
+        "mobile_per_row": "2.5",
+        "gap": 10,
+        "row_gap": 10,
+        "show_arrows": true,
+        "image_padding": 0,
+        "image_fit": "contain",
+        "card_ratio": "adapt",
+        "image_border_radius": 19,
+        "background_color": "#e3cef0",
+        "padding-block-start": 24,
+        "padding-block-end": 24
+      }
+    },
     "category_grid_Nr4rxN": {
       "type": "category-grid",
       "blocks": {
@@ -2101,7 +2232,6 @@
     }
   },
   "order": [
-    "campaign_popup_homepage",
     "thumbnail_scroll_PbDt4b",
     "featured_banner_yeQJGh",
     "card_banner_8zTGy8",
@@ -2115,6 +2245,7 @@
     "stacked_banners_QWcUpX",
     "category_grid_pGCQaP",
     "category_grid_FAWJJj",
+    "category_grid_EMcECB",
     "category_grid_Nr4rxN",
     "video_reels_xGEykY",
     "ad_banner_pjN7dA",
