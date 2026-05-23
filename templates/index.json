@@ -1768,7 +1768,7 @@
       "blocks": {
         "category_n7NyHC": {
           "type": "category",
-          "name": "Biodance",
+          "name": "Bioaqua",
           "settings": {
             "image": "shopify://shop_images/Bioaqua.webp",
             "label": "",
@@ -1778,7 +1778,7 @@
         },
         "category_bEVwXc": {
           "type": "category",
-          "name": "Jumiso",
+          "name": "Sadoer",
           "settings": {
             "image": "shopify://shop_images/Sadoer.webp",
             "label": "",
@@ -1788,7 +1788,7 @@
         },
         "category_wrPwQz": {
           "type": "category",
-          "name": "VT",
+          "name": "BOB",
           "settings": {
             "image": "shopify://shop_images/BOB.webp",
             "label": "",
@@ -1798,7 +1798,7 @@
         },
         "category_fgbGYy": {
           "type": "category",
-          "name": "Torriden",
+          "name": "Luxe",
           "settings": {
             "image": "shopify://shop_images/Luxe_Basics.webp",
             "label": "",
@@ -1808,9 +1808,9 @@
         },
         "category_m4FjGa": {
           "type": "category",
-          "name": "Manyo",
+          "name": "Chirs",
           "settings": {
-            "image": "shopify://shop_images/Manyo.webp",
+            "image": "shopify://shop_images/Chirs_s.webp",
             "label": "",
             "link": "shopify://collections/manyo",
             "card_background": "#e3cef0"
@@ -1818,9 +1818,9 @@
         },
         "category_yynriR": {
           "type": "category",
-          "name": "Purito",
+          "name": "Fayankou",
           "settings": {
-            "image": "shopify://shop_images/Purito-Seoul.webp",
+            "image": "shopify://shop_images/Fayankou.webp",
             "label": "",
             "link": "shopify://collections/purito",
             "card_background": "#e3cef0"
@@ -1828,9 +1828,9 @@
         },
         "category_Kky8cK": {
           "type": "category",
-          "name": "Tirtir",
+          "name": "Dr Rahel",
           "settings": {
-            "image": "shopify://shop_images/Tirtir.webp",
+            "image": "shopify://shop_images/DR_Rahsel.webp",
             "label": "",
             "link": "shopify://collections/tirtir",
             "card_background": "#e3cef0"
@@ -1838,9 +1838,9 @@
         },
         "category_BpHehb": {
           "type": "category",
-          "name": "Laneige",
+          "name": "Guanjin",
           "settings": {
-            "image": "shopify://shop_images/Laneige.webp",
+            "image": "shopify://shop_images/Guanjing_Beauty.webp",
             "label": "",
             "link": "shopify://collections/laneige",
             "card_background": "#e3cef0"
@@ -1848,9 +1848,9 @@
         },
         "category_fMkPJe": {
           "type": "category",
-          "name": "Aromatica",
+          "name": "Esteline",
           "settings": {
-            "image": "shopify://shop_images/Aromatica.webp",
+            "image": "shopify://shop_images/Esteline.webp",
             "label": "",
             "link": "shopify://collections/aromatica",
             "card_background": "#e3cef0"
@@ -1858,9 +1858,9 @@
         },
         "category_yaLU7d": {
           "type": "category",
-          "name": "Heimish",
+          "name": "IKT",
           "settings": {
-            "image": "shopify://shop_images/Heimish.webp",
+            "image": "shopify://shop_images/IKT.webp",
             "label": "",
             "link": "shopify://collections/heimish",
             "card_background": "#e3cef0"
