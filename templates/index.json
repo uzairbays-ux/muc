@@ -1770,7 +1770,7 @@
           "type": "category",
           "name": "Biodance",
           "settings": {
-            "image": "shopify://shop_images/Biodance.webp",
+            "image": "shopify://shop_images/Bioaqua.webp",
             "label": "",
             "link": "shopify://collections/biodance",
             "card_background": "#e3cef0"
@@ -1780,7 +1780,7 @@
           "type": "category",
           "name": "Jumiso",
           "settings": {
-            "image": "shopify://shop_images/Jumiso.webp",
+            "image": "shopify://shop_images/Sadoer.webp",
             "label": "",
             "link": "shopify://collections/jumiso",
             "card_background": "#e3cef0"
@@ -1790,7 +1790,7 @@
           "type": "category",
           "name": "VT",
           "settings": {
-            "image": "shopify://shop_images/VT.webp",
+            "image": "shopify://shop_images/BOB.webp",
             "label": "",
             "link": "shopify://collections/vt",
             "card_background": "#e3cef0"
@@ -1800,7 +1800,7 @@
           "type": "category",
           "name": "Torriden",
           "settings": {
-            "image": "shopify://shop_images/Torriden.webp",
+            "image": "shopify://shop_images/Luxe_Basics.webp",
             "label": "",
             "link": "shopify://collections/torriden",
             "card_background": "#e3cef0"
