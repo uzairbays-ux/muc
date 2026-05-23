@@ -1772,7 +1772,7 @@
           "settings": {
             "image": "shopify://shop_images/Bioaqua.webp",
             "label": "",
-            "link": "shopify://collections/biodance",
+            "link": "shopify://collections/bioaqua",
             "card_background": "#e3cef0"
           }
         },
@@ -1782,7 +1782,7 @@
           "settings": {
             "image": "shopify://shop_images/Sadoer.webp",
             "label": "",
-            "link": "shopify://collections/jumiso",
+            "link": "shopify://collections/sadoer",
             "card_background": "#e3cef0"
           }
         },
@@ -1792,7 +1792,7 @@
           "settings": {
             "image": "shopify://shop_images/BOB.webp",
             "label": "",
-            "link": "shopify://collections/vt",
+            "link": "shopify://collections/bob",
             "card_background": "#e3cef0"
           }
         },
@@ -1802,7 +1802,7 @@
           "settings": {
             "image": "shopify://shop_images/Luxe_Basics.webp",
             "label": "",
-            "link": "shopify://collections/torriden",
+            "link": "shopify://collections/luxe-basics",
             "card_background": "#e3cef0"
           }
         },
@@ -1812,7 +1812,7 @@
           "settings": {
             "image": "shopify://shop_images/Chirs_s.webp",
             "label": "",
-            "link": "shopify://collections/manyo",
+            "link": "shopify://collections/chirss",
             "card_background": "#e3cef0"
           }
         },
@@ -1822,7 +1822,7 @@
           "settings": {
             "image": "shopify://shop_images/Fayankou.webp",
             "label": "",
-            "link": "shopify://collections/purito",
+            "link": "shopify://products/6942349716027",
             "card_background": "#e3cef0"
           }
         },
@@ -1832,7 +1832,7 @@
           "settings": {
             "image": "shopify://shop_images/DR_Rahsel.webp",
             "label": "",
-            "link": "shopify://collections/tirtir",
+            "link": "shopify://collections/dr-rashel",
             "card_background": "#e3cef0"
           }
         },
@@ -1842,7 +1842,7 @@
           "settings": {
             "image": "shopify://shop_images/Guanjing_Beauty.webp",
             "label": "",
-            "link": "shopify://collections/laneige",
+            "link": "shopify://collections/guanjing",
             "card_background": "#e3cef0"
           }
         },
@@ -1852,7 +1852,7 @@
           "settings": {
             "image": "shopify://shop_images/Esteline.webp",
             "label": "",
-            "link": "shopify://collections/aromatica",
+            "link": "shopify://collections/estelin",
             "card_background": "#e3cef0"
           }
         },
@@ -1862,7 +1862,7 @@
           "settings": {
             "image": "shopify://shop_images/IKT.webp",
             "label": "",
-            "link": "shopify://collections/heimish",
+            "link": "shopify://products/6148268752355",
             "card_background": "#e3cef0"
           }
         }
@@ -1879,7 +1879,6 @@
         "category_fMkPJe",
         "category_yaLU7d"
       ],
-      "disabled": true,
       "name": "che",
       "settings": {
         "heading": "",
