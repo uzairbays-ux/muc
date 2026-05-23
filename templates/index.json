@@ -1763,6 +1763,31 @@
         "padding-block-end": 30
       }
     },
+    "stacked_banners_9RPr7J": {
+      "type": "stacked-banners",
+      "blocks": {
+        "banner_Kt9k6X": {
+          "type": "banner",
+          "settings": {
+            "desktop_image": "shopify://shop_images/chinese-desktop.webp",
+            "mobile_image": "shopify://shop_images/Chinesse_Banner.webp",
+            "link": "shopify://pages/korean-brand-k-beauty",
+            "open_new_tab": false
+          }
+        }
+      },
+      "block_order": [
+        "banner_Kt9k6X"
+      ],
+      "name": "Stacked banners",
+      "settings": {
+        "gap": 0,
+        "background_color": "rgba(0,0,0,0)",
+        "color_scheme": "",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
+    },
     "category_grid_EMcECB": {
       "type": "category-grid",
       "blocks": {
@@ -2244,6 +2269,7 @@
     "stacked_banners_QWcUpX",
     "category_grid_pGCQaP",
     "category_grid_FAWJJj",
+    "stacked_banners_9RPr7J",
     "category_grid_EMcECB",
     "category_grid_Nr4rxN",
     "video_reels_xGEykY",
