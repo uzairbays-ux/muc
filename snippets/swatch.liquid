@@ -36,8 +36,13 @@
   endif
 
   if mapped_color != null
-    # Custom color definition wins — use the hex/color value directly
+    # Custom color definition wins.
+    # Value may be: "#hex", "url(...) #hex" (image + color fallback), or just "url(...)"
+    # CSS handles image+fallback natively: background: url(...) #hex
     assign swatch_value = mapped_color
+    if mapped_color contains 'url('
+      assign extra_classes = extra_classes | append: ' swatch--variant-image'
+    endif
 
   elsif swatch.image
     # Explicit swatch image from Shopify metafield
