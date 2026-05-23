@@ -1896,7 +1896,7 @@
         "image_fit": "contain",
         "card_ratio": "adapt",
         "image_border_radius": 19,
-        "background_color": "#e3cef0",
+        "background_color": "#ffcccc",
         "padding-block-start": 24,
         "padding-block-end": 24
       }
