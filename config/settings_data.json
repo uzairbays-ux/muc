@@ -78,7 +78,7 @@
     "variant_swatch_width": 36,
     "variant_swatch_height": 36,
     "variant_swatch_radius": 32,
-    "swatch_color_definitions": "Ivory: #FFFFF0\nBeige: #F5F0DC\nLight Pink: #FFB6C1\nNude: #E8C9A0\nFS 38: #C4A882\nBE 2: #D4B896\nRed: #FF0000\nBlack: #000000\nWhite: #FFFFFF",
+    "swatch_color_definitions": "Ivory: url(//www.makeupcityshop.com/cdn/shop/files/ivory.png)\nBE 1: url(//www.makeupcityshop.com/cdn/shop/files/be-1.png)\nBE 2: url(//www.makeupcityshop.com/cdn/shop/files/be-2.png)\nBE 3: url(//www.makeupcityshop.com/cdn/shop/files/be-3.png)\nBisque: url(//www.makeupcityshop.com/cdn/shop/files/bisque.png)\nNatural: url(//www.makeupcityshop.com/cdn/shop/files/natural.png)\nFS 38: url(//www.makeupcityshop.com/cdn/shop/files/fs-38.png)\nFS 45: url(//www.makeupcityshop.com/cdn/shop/files/fs-45.png)\nFair Olive: url(//www.makeupcityshop.com/cdn/shop/files/fair-olive.png)\n1W: url(//www.makeupcityshop.com/cdn/shop/files/1w.png)\n3W: url(//www.makeupcityshop.com/cdn/shop/files/3w.png)\nO2: url(//www.makeupcityshop.com/cdn/shop/files/o2.png)\nBeige: #F5F0DC\nLight Pink: #FFB6C1\nNude: #E8C9A0\nRed: #FF0000\nBlack: #000000\nWhite: #FFFFFF",
     "variant_button_border_width": 1,
     "variant_button_radius": 14,
     "variant_button_width": "equal-width-buttons",
