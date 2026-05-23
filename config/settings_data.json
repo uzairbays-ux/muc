@@ -78,6 +78,7 @@
     "variant_swatch_width": 36,
     "variant_swatch_height": 36,
     "variant_swatch_radius": 32,
+    "swatch_color_definitions": "Ivory: #FFFFF0\nBeige: #F5F0DC\nLight Pink: #FFB6C1\nNude: #E8C9A0\nFS 38: #C4A882\nBE 2: #D4B896\nRed: #FF0000\nBlack: #000000\nWhite: #FFFFFF",
     "variant_button_border_width": 1,
     "variant_button_radius": 14,
     "variant_button_width": "equal-width-buttons",

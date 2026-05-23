@@ -27,6 +27,7 @@
         },
         "ai_gen_block_29398aa_jHajjF": {
           "type": "ai_gen_block_29398aa",
+          "disabled": true,
           "settings": {
             "desktop_width_percent": 100,
             "section_padding": 0,
@@ -43,8 +44,8 @@
             "mobile_autoplay_interval": 4,
             "text_size": 14,
             "text_weight": "400",
-            "icon_1": "free_shipping",
-            "text_1": "Free Shipping*",
+            "icon_1": "none",
+            "text_1": "",
             "icon_2": "authentic",
             "text_2": "Authentic Products",
             "icon_3": "easy_returns",
@@ -177,7 +178,7 @@
         "localization_row": "top",
         "section_width": "page-width",
         "section_height": "standard",
-        "enable_sticky_header": "scroll-up",
+        "enable_sticky_header": "never",
         "divider_width": 0,
         "divider_size": "page-width",
         "border_width": 0,

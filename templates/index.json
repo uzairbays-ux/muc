@@ -9,15 +9,6 @@
  */
 {
   "sections": {
-    "campaign_popup_homepage": {
-      "type": "campaign-popup",
-      "name": "Campaign popup",
-      "settings": {
-        "enabled": false,
-        "delay_seconds": 3,
-        "interval_hours": 24
-      }
-    },
     "thumbnail_scroll_PbDt4b": {
       "type": "thumbnail-scroll",
       "blocks": {
@@ -423,6 +414,7 @@
               "name": "t:names.product_price",
               "settings": {
                 "show_sale_price_first": true,
+                "show_sale_badge": true,
                 "show_installments": false,
                 "show_tax_info": false,
                 "type_preset": "h6",
@@ -992,6 +984,7 @@
               "name": "t:names.product_price",
               "settings": {
                 "show_sale_price_first": true,
+                "show_sale_badge": true,
                 "show_installments": false,
                 "show_tax_info": false,
                 "type_preset": "h6",
@@ -1142,7 +1135,7 @@
         "section_width": "full-width",
         "color_scheme": "",
         "padding-block-start": 24,
-        "padding-block-end": 12
+        "padding-block-end": 24
       }
     },
     "card_grid_GWUm6j": {
@@ -1770,6 +1763,168 @@
         "padding-block-end": 30
       }
     },
+    "stacked_banners_9RPr7J": {
+      "type": "stacked-banners",
+      "blocks": {
+        "banner_Kt9k6X": {
+          "type": "banner",
+          "settings": {
+            "desktop_image": "shopify://shop_images/chinese-desktop.webp",
+            "mobile_image": "shopify://shop_images/Chinesse_Banner.webp",
+            "link": "shopify://collections/chinese-brands",
+            "open_new_tab": false
+          }
+        }
+      },
+      "block_order": [
+        "banner_Kt9k6X"
+      ],
+      "name": "Stacked banners",
+      "settings": {
+        "gap": 0,
+        "background_color": "rgba(0,0,0,0)",
+        "color_scheme": "",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
+    },
+    "category_grid_EMcECB": {
+      "type": "category-grid",
+      "blocks": {
+        "category_n7NyHC": {
+          "type": "category",
+          "name": "Bioaqua",
+          "settings": {
+            "image": "shopify://shop_images/Bioaqua.webp",
+            "label": "",
+            "link": "shopify://collections/bioaqua",
+            "card_background": "#e3cef0"
+          }
+        },
+        "category_bEVwXc": {
+          "type": "category",
+          "name": "Sadoer",
+          "settings": {
+            "image": "shopify://shop_images/Sadoer.webp",
+            "label": "",
+            "link": "shopify://collections/sadoer",
+            "card_background": "#e3cef0"
+          }
+        },
+        "category_wrPwQz": {
+          "type": "category",
+          "name": "BOB",
+          "settings": {
+            "image": "shopify://shop_images/BOB.webp",
+            "label": "",
+            "link": "shopify://collections/bob",
+            "card_background": "#e3cef0"
+          }
+        },
+        "category_fgbGYy": {
+          "type": "category",
+          "name": "Luxe",
+          "settings": {
+            "image": "shopify://shop_images/Luxe_Basics.webp",
+            "label": "",
+            "link": "shopify://collections/luxe-basics",
+            "card_background": "#e3cef0"
+          }
+        },
+        "category_m4FjGa": {
+          "type": "category",
+          "name": "Chirs",
+          "settings": {
+            "image": "shopify://shop_images/Chirs_s.webp",
+            "label": "",
+            "link": "shopify://collections/chirss",
+            "card_background": "#e3cef0"
+          }
+        },
+        "category_yynriR": {
+          "type": "category",
+          "name": "Fayankou",
+          "settings": {
+            "image": "shopify://shop_images/Fayankou.webp",
+            "label": "",
+            "link": "shopify://products/6942349716027",
+            "card_background": "#e3cef0"
+          }
+        },
+        "category_Kky8cK": {
+          "type": "category",
+          "name": "Dr Rahel",
+          "settings": {
+            "image": "shopify://shop_images/DR_Rahsel.webp",
+            "label": "",
+            "link": "shopify://collections/dr-rashel",
+            "card_background": "#e3cef0"
+          }
+        },
+        "category_BpHehb": {
+          "type": "category",
+          "name": "Guanjin",
+          "settings": {
+            "image": "shopify://shop_images/Guanjing_Beauty.webp",
+            "label": "",
+            "link": "shopify://collections/guanjing",
+            "card_background": "#e3cef0"
+          }
+        },
+        "category_fMkPJe": {
+          "type": "category",
+          "name": "Esteline",
+          "settings": {
+            "image": "shopify://shop_images/Esteline.webp",
+            "label": "",
+            "link": "shopify://collections/estelin",
+            "card_background": "#e3cef0"
+          }
+        },
+        "category_yaLU7d": {
+          "type": "category",
+          "name": "IKT",
+          "settings": {
+            "image": "shopify://shop_images/IKT.webp",
+            "label": "",
+            "link": "shopify://products/6148268752355",
+            "card_background": "#e3cef0"
+          }
+        }
+      },
+      "block_order": [
+        "category_n7NyHC",
+        "category_bEVwXc",
+        "category_wrPwQz",
+        "category_fgbGYy",
+        "category_m4FjGa",
+        "category_yynriR",
+        "category_Kky8cK",
+        "category_BpHehb",
+        "category_fMkPJe",
+        "category_yaLU7d"
+      ],
+      "name": "che",
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "heading_alignment": "center",
+        "desktop_layout": "grid",
+        "mobile_layout": "carousel",
+        "desktop_per_row": "7",
+        "mobile_per_row": "2.5",
+        "gap": 10,
+        "row_gap": 10,
+        "show_arrows": true,
+        "image_padding": 0,
+        "image_fit": "contain",
+        "card_ratio": "adapt",
+        "image_border_radius": 19,
+        "background_color": "#ffcccc",
+        "padding-block-start": 24,
+        "padding-block-end": 24
+      }
+    },
     "category_grid_Nr4rxN": {
       "type": "category-grid",
       "blocks": {
@@ -2101,7 +2256,6 @@
     }
   },
   "order": [
-    "campaign_popup_homepage",
     "thumbnail_scroll_PbDt4b",
     "featured_banner_yeQJGh",
     "card_banner_8zTGy8",
@@ -2115,6 +2269,8 @@
     "stacked_banners_QWcUpX",
     "category_grid_pGCQaP",
     "category_grid_FAWJJj",
+    "stacked_banners_9RPr7J",
+    "category_grid_EMcECB",
     "category_grid_Nr4rxN",
     "video_reels_xGEykY",
     "ad_banner_pjN7dA",
