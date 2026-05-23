@@ -38,10 +38,6 @@
   if mapped_color != null
     # Custom color definition wins — use the hex/color value directly
     assign swatch_value = mapped_color
-    # If the value is an image URL, apply cover sizing (same as variant images)
-    if mapped_color contains 'url('
-      assign extra_classes = extra_classes | append: ' swatch--variant-image'
-    endif
 
   elsif swatch.image
     # Explicit swatch image from Shopify metafield
