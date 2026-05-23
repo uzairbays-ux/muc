@@ -2242,7 +2242,7 @@
         "type": "textarea",
         "id": "swatch_color_definitions",
         "label": "Color map",
-        "info": "One color per line. Format: Color Name: #hexcode — e.g.  Ivory: #FFFFF0  or  Light Pink: #FFB6C1. Names are case-insensitive and matched against the product option value."
+        "info": "One color per line. Two formats supported: (1) Hex only — Ivory: #FFFFF0 (2) Image + hex fallback — Ivory: url(//cdn.../ivory.png) #FFFFF0 — browser shows image, falls back to hex if image missing. Names are case-insensitive."
       }
     ]
   },
