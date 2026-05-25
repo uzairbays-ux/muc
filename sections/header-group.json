@@ -19,7 +19,7 @@
           "settings": {
             "desktop_image": "shopify://shop_images/Eid_Notification_Bannersheader.webp",
             "mobile_image": "shopify://shop_images/Eid_Notification_Bannersheader.webp",
-            "link_url": "shopify://collections",
+            "link_url": "",
             "open_in_new_tab": false,
             "hover_opacity": 85
           },
