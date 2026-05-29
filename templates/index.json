@@ -570,7 +570,7 @@
         "card_CaecqX": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/500_x_500_Banners_copy.webp",
+            "image": "shopify://shop_images/non-sale-Kryolan.webp",
             "link": "shopify://collections/kryolan",
             "open_new_tab": false
           }
@@ -586,7 +586,7 @@
         "card_QQLjCx": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/Framesi_72e28818-8c74-4000-9324-c4ebf23ba451.jpg",
+            "image": "shopify://shop_images/non-sale-Framesi.webp",
             "link": "shopify://collections/framesi",
             "open_new_tab": false
           }
@@ -594,7 +594,7 @@
         "card_p9kYBe": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/luscious_4cddba05-674c-46a6-98a7-ff9a755eb233.jpg",
+            "image": "shopify://shop_images/non-sale-luscious.webp",
             "link": "shopify://collections/luscious-cosmetics",
             "open_new_tab": false
           }
@@ -710,7 +710,7 @@
         "card_J3czmk": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/Lamel_469b6135-078f-4aef-a30e-b9741ede7c2c.jpg",
+            "image": "shopify://shop_images/non-sale-Lamel.webp",
             "link": "shopify://collections/lamel",
             "open_new_tab": false
           }
@@ -718,7 +718,7 @@
         "card_gBiw68": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/500-x-500-Loreal-Banners_jpg.jpg",
+            "image": "shopify://shop_images/non-sale-Loreal.webp",
             "link": "shopify://collections/loreal-paris",
             "open_new_tab": false
           }
@@ -734,7 +734,7 @@
         "card_ceiizR": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/Gosh_8df3d47e-0520-4f82-af90-1316b334f135.jpg",
+            "image": "shopify://shop_images/non-sale-Gosh.webp",
             "link": "shopify://collections/gosh",
             "open_new_tab": false
           }
@@ -742,7 +742,7 @@
         "card_c49pAk": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/B_BW_4862ae32-fb7d-4c31-ba3e-a3f7205ecc6d.jpg",
+            "image": "shopify://shop_images/non-sale-B_BW.webp",
             "link": "shopify://collections/bath-body-works",
             "open_new_tab": false
           }
