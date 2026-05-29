@@ -1,6 +1,18 @@
 {% liquid
   assign s = section.settings
-  assign map_url = s.map_embed_url
+
+  # Collect unique ordered city list from blocks
+  assign city_pipe = ''
+  for block in section.blocks
+    assign bc = block.settings.city | strip
+    assign bc_lower = bc | downcase
+    assign pipe_check = '|' | append: bc_lower | append: '|'
+    unless city_pipe contains pipe_check
+      assign city_pipe = city_pipe | append: '|' | append: bc_lower | append: '|'
+      assign city_labels = city_labels | default: '' | append: bc | append: '~'
+    endunless
+  endfor
+  assign city_label_list = city_labels | split: '~'
 %}
 
 <div
@@ -9,205 +21,414 @@
   data-testid="store-locator-{{ section.id }}"
 >
   <store-locator class="store-locator">
+
+    {%- comment -%} ── Header ── {%- endcomment -%}
     <div class="store-locator__header">
       {%- if s.heading != blank -%}
-        <h1 class="store-locator__heading">{{ s.heading }}</h1>
+        <h2 class="store-locator__heading">{{ s.heading }}</h2>
       {%- endif -%}
       {%- if s.subheading != blank -%}
         <p class="store-locator__subheading">{{ s.subheading }}</p>
       {%- endif -%}
     </div>
 
-    <div class="store-locator__layout">
-      <div class="store-locator__sidebar">
-        <div class="store-locator__search">
-          <input
-            type="search"
-            class="store-locator__search-input"
-            placeholder="{{ s.search_placeholder | default: 'Search by city, area, or postal code' }}"
-            ref="search"
-            aria-label="Search stores"
-          >
-        </div>
-
-        <div class="store-locator__list" ref="list">
-          {%- for block in section.blocks -%}
-            {%- assign b = block.settings -%}
-            <article
-              class="store-locator__store"
-              data-keywords="{{ b.name | downcase }} {{ b.address | downcase }} {{ b.city | downcase }} {{ b.postal_code | downcase }}"
-              {{ block.shopify_attributes }}
+    {%- comment -%} ── Controls: city tabs + search ── {%- endcomment -%}
+    <div class="store-locator__controls">
+      <div class="store-locator__tabs" ref="tabs" role="tablist" aria-label="Filter by city">
+        <button class="store-locator__tab is-active" data-city="" ref="tabAll" role="tab" aria-selected="true">
+          All
+          <span class="store-locator__tab-count" ref="countAll">{{ section.blocks.size }}</span>
+        </button>
+        {%- for city in city_label_list -%}
+          {%- if city != blank -%}
+            {%- assign city_lower = city | downcase -%}
+            {%- assign city_count = 0 -%}
+            {%- for block in section.blocks -%}
+              {%- if block.settings.city == city -%}
+                {%- assign city_count = city_count | plus: 1 -%}
+              {%- endif -%}
+            {%- endfor -%}
+            <button
+              class="store-locator__tab"
+              data-city="{{ city_lower }}"
+              role="tab"
+              aria-selected="false"
             >
-              <h3 class="store-locator__store-name">{{ b.name | default: 'Store name' }}</h3>
-              {%- if b.address != blank -%}
-                <p class="store-locator__store-line">{{ b.address }}{% if b.city != blank %}, {{ b.city }}{% endif %}{% if b.postal_code != blank %} {{ b.postal_code }}{% endif %}</p>
-              {%- endif -%}
-              {%- if b.hours != blank -%}
-                <p class="store-locator__store-hours">{{ b.hours }}</p>
-              {%- endif -%}
-              <div class="store-locator__store-actions">
-                {%- if b.phone != blank -%}
-                  <a href="tel:{{ b.phone | replace: ' ', '' }}" class="store-locator__store-link">Call</a>
-                {%- endif -%}
-                {%- if b.directions_url != blank -%}
-                  <a href="{{ b.directions_url }}" target="_blank" rel="noopener" class="store-locator__store-link">Directions</a>
-                {%- endif -%}
-              </div>
-            </article>
-          {%- else -%}
-            <p class="store-locator__empty">Add store blocks in the theme editor.</p>
-          {%- endfor -%}
-        </div>
+              {{ city }}
+              <span class="store-locator__tab-count">{{ city_count }}</span>
+            </button>
+          {%- endif -%}
+        {%- endfor -%}
       </div>
 
-      <div class="store-locator__map">
-        {%- if map_url != blank -%}
-          <iframe
-            src="{{ map_url }}"
-            width="100%"
-            height="100%"
-            style="border:0;"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            title="Store locations map"
-          ></iframe>
-        {%- else -%}
-          <div class="store-locator__map-placeholder">
-            <p>Paste a Google Maps embed URL in the section settings.</p>
-          </div>
-        {%- endif -%}
+      <div class="store-locator__search-wrap">
+        <svg class="store-locator__search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input
+          type="search"
+          class="store-locator__search-input"
+          placeholder="{{ s.search_placeholder | default: 'Search by city, store or area…' }}"
+          ref="search"
+          aria-label="Search stores"
+        >
       </div>
     </div>
+
+    {%- comment -%} ── Store grid ── {%- endcomment -%}
+    <div class="store-locator__grid" ref="list">
+      {%- for block in section.blocks -%}
+        {%- assign b = block.settings -%}
+        <article
+          class="store-locator__card"
+          data-keywords="{{ b.name | downcase }} {{ b.address | downcase }} {{ b.city | downcase }} {{ b.postal_code | downcase }}"
+          data-city="{{ b.city | downcase | strip }}"
+          {{ block.shopify_attributes }}
+        >
+          {%- if b.city != blank -%}
+            <span class="store-locator__card-city">{{ b.city }}</span>
+          {%- endif -%}
+
+          <h3 class="store-locator__card-name">{{ b.name | default: 'Store' }}</h3>
+
+          {%- if b.address != blank -%}
+            <p class="store-locator__card-address">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              {{ b.address }}{% if b.postal_code != blank %}, {{ b.postal_code }}{% endif %}
+            </p>
+          {%- endif -%}
+
+          {%- if b.hours != blank -%}
+            <p class="store-locator__card-hours">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              {{ b.hours | newline_to_br }}
+            </p>
+          {%- endif -%}
+
+          <div class="store-locator__card-actions">
+            {%- if b.phone != blank -%}
+              <a
+                href="tel:{{ b.phone | remove: ' ' | remove: '-' }}"
+                class="store-locator__card-btn store-locator__card-btn--call"
+              >
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11.5 19.79 19.79 0 01.13 2.9 2 2 0 012.11 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.09a16 16 0 006 6l.46-.46a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                {{ b.phone }}
+              </a>
+            {%- endif -%}
+            {%- if b.directions_url != blank -%}
+              <a
+                href="{{ b.directions_url }}"
+                target="_blank"
+                rel="noopener"
+                class="store-locator__card-btn store-locator__card-btn--dir"
+              >
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+                Directions
+              </a>
+            {%- endif -%}
+          </div>
+        </article>
+      {%- else -%}
+        <p class="store-locator__empty">Add store blocks in the theme editor.</p>
+      {%- endfor -%}
+    </div>
+
+    <p class="store-locator__no-results" ref="noResults" hidden>
+      No stores found. Try a different search term.
+    </p>
+
+    {%- comment -%} ── Optional Google Map ── {%- endcomment -%}
+    {%- if s.map_embed_url != blank -%}
+      <div class="store-locator__map">
+        <iframe
+          src="{{ s.map_embed_url }}"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Store locations map"
+          allowfullscreen
+        ></iframe>
+      </div>
+    {%- endif -%}
+
   </store-locator>
 </div>
 
 {% stylesheet %}
+  /* ── Wrapper ── */
   .store-locator {
     display: block;
     max-width: 1280px;
     margin: 0 auto;
-    padding-inline: var(--gap-md, 16px);
+    padding-inline: var(--gap-md, 20px);
   }
 
-  .store-locator__header { text-align: center; margin-bottom: 24px; }
+  /* ── Header ── */
+  .store-locator__header {
+    text-align: center;
+    margin-bottom: 32px;
+  }
 
   .store-locator__heading {
     margin: 0 0 8px;
-    font-family: var(--font-heading--family);
-    font-size: 32px;
-    line-height: 1.15;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.2;
     color: rgb(var(--color-foreground-heading, 0 0 0));
   }
 
   .store-locator__subheading {
     margin: 0;
     font-size: 15px;
-    color: rgb(var(--color-foreground, 0 0 0) / 0.7);
+    color: rgb(var(--color-foreground, 0 0 0) / 0.65);
   }
 
-  .store-locator__layout {
-    display: grid;
-    grid-template-columns: 360px 1fr;
-    gap: 16px;
-    min-height: 520px;
-  }
-
-  .store-locator__sidebar {
+  /* ── Controls: tabs + search ── */
+  .store-locator__controls {
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    min-height: 0;
+    gap: 16px;
+    margin-bottom: 28px;
+  }
+
+  .store-locator__tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .store-locator__tab {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 16px;
+    border-radius: 999px;
+    border: 1.5px solid rgb(var(--color-foreground, 0 0 0) / 0.18);
+    background: transparent;
+    font-size: 13px;
+    font-weight: 500;
+    color: rgb(var(--color-foreground, 0 0 0) / 0.75);
+    cursor: pointer;
+    transition: all 0.18s ease;
+    white-space: nowrap;
+  }
+
+  .store-locator__tab:hover {
+    border-color: rgb(var(--color-foreground, 0 0 0) / 0.45);
+    color: rgb(var(--color-foreground, 0 0 0));
+  }
+
+  .store-locator__tab.is-active {
+    background: rgb(255 16 16);
+    border-color: rgb(255 16 16);
+    color: #fff;
+    font-weight: 600;
+  }
+
+  .store-locator__tab-count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 18px;
+    height: 18px;
+    padding: 0 4px;
+    border-radius: 999px;
+    background: rgb(var(--color-foreground, 0 0 0) / 0.1);
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  .store-locator__tab.is-active .store-locator__tab-count {
+    background: rgba(255 255 255 / 0.25);
+    color: #fff;
+  }
+
+  /* ── Search ── */
+  .store-locator__search-wrap {
+    position: relative;
+    max-width: 400px;
+  }
+
+  .store-locator__search-icon {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgb(var(--color-foreground, 0 0 0) / 0.4);
+    pointer-events: none;
   }
 
   .store-locator__search-input {
     width: 100%;
-    padding: 12px 14px;
-    border: 1px solid rgb(var(--color-foreground, 0 0 0) / 0.2);
-    border-radius: 6px;
-    font-size: 14px;
-    background-color: rgb(var(--color-background, 255 255 255));
-    color: rgb(var(--color-foreground, 0 0 0));
-  }
-
-  .store-locator__list {
-    flex: 1;
-    overflow-y: auto;
-    border: 1px solid rgb(var(--color-foreground, 0 0 0) / 0.1);
+    padding: 11px 14px 11px 40px;
+    border: 1.5px solid rgb(var(--color-foreground, 0 0 0) / 0.18);
     border-radius: 8px;
-    padding: 4px;
+    font-size: 14px;
+    background: rgb(var(--color-background, 255 255 255));
+    color: rgb(var(--color-foreground, 0 0 0));
+    transition: border-color 0.18s;
   }
 
-  .store-locator__store {
-    padding: 14px;
-    border-radius: 6px;
-    border-bottom: 1px solid rgb(var(--color-foreground, 0 0 0) / 0.08);
+  .store-locator__search-input:focus {
+    outline: none;
+    border-color: rgb(255 16 16);
   }
 
-  .store-locator__store:last-child { border-bottom: 0; }
-  .store-locator__store.is-hidden { display: none; }
+  /* ── Grid (Bootstrap-style 3-col responsive) ── */
+  .store-locator__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
 
-  .store-locator__store-name {
-    margin: 0 0 4px;
+  /* ── Card ── */
+  .store-locator__card {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1.5px solid rgb(var(--color-foreground, 0 0 0) / 0.1);
+    background: rgb(var(--color-background, 255 255 255));
+    transition: box-shadow 0.2s ease, border-color 0.2s ease;
+  }
+
+  .store-locator__card:hover {
+    box-shadow: 0 4px 20px rgb(0 0 0 / 0.08);
+    border-color: rgb(var(--color-foreground, 0 0 0) / 0.2);
+  }
+
+  .store-locator__card.is-hidden {
+    display: none;
+  }
+
+  .store-locator__card-city {
+    display: inline-block;
+    margin-bottom: 6px;
+    padding: 2px 10px;
+    border-radius: 999px;
+    background: rgb(255 16 16 / 0.1);
+    color: rgb(200 0 0);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .store-locator__card-name {
+    margin: 0 0 10px;
     font-size: 15px;
     font-weight: 700;
     color: rgb(var(--color-foreground-heading, 0 0 0));
+    line-height: 1.3;
   }
 
-  .store-locator__store-line,
-  .store-locator__store-hours {
-    margin: 2px 0;
-    font-size: 13px;
-    line-height: 1.4;
-    color: rgb(var(--color-foreground, 0 0 0) / 0.75);
-  }
-
-  .store-locator__store-actions {
+  .store-locator__card-address,
+  .store-locator__card-hours {
     display: flex;
-    gap: 12px;
-    margin-top: 8px;
+    align-items: flex-start;
+    gap: 6px;
+    margin: 0 0 6px;
+    font-size: 13px;
+    line-height: 1.5;
+    color: rgb(var(--color-foreground, 0 0 0) / 0.7);
   }
 
-  .store-locator__store-link {
+  .store-locator__card-address svg,
+  .store-locator__card-hours svg {
+    flex-shrink: 0;
+    margin-top: 2px;
+    opacity: 0.55;
+  }
+
+  /* Push actions to bottom */
+  .store-locator__card-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: auto;
+    padding-top: 14px;
+  }
+
+  .store-locator__card-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 7px 14px;
+    border-radius: 6px;
     font-size: 12px;
     font-weight: 600;
-    text-decoration: underline;
+    text-decoration: none;
+    transition: background 0.15s, color 0.15s;
+  }
+
+  .store-locator__card-btn--call {
+    background: rgb(255 16 16);
+    color: #fff;
+  }
+
+  .store-locator__card-btn--call:hover {
+    background: rgb(200 0 0);
+    color: #fff;
+  }
+
+  .store-locator__card-btn--dir {
+    background: rgb(var(--color-foreground, 0 0 0) / 0.07);
     color: rgb(var(--color-foreground, 0 0 0));
   }
 
+  .store-locator__card-btn--dir:hover {
+    background: rgb(var(--color-foreground, 0 0 0) / 0.14);
+  }
+
+  /* ── No results ── */
+  .store-locator__no-results,
   .store-locator__empty {
-    padding: 24px;
+    grid-column: 1 / -1;
+    padding: 48px 24px;
     text-align: center;
-    color: rgb(var(--color-foreground, 0 0 0) / 0.6);
+    font-size: 15px;
+    color: rgb(var(--color-foreground, 0 0 0) / 0.5);
   }
 
+  /* ── Map ── */
   .store-locator__map {
-    position: relative;
-    border-radius: 12px;
+    margin-top: 40px;
+    border-radius: 14px;
     overflow: hidden;
-    background-color: rgb(var(--color-foreground, 0 0 0) / 0.04);
-    min-height: 520px;
+    height: 420px;
+    border: 1.5px solid rgb(var(--color-foreground, 0 0 0) / 0.1);
   }
 
-  .store-locator__map iframe { display: block; width: 100%; height: 100%; }
-
-  .store-locator__map-placeholder {
+  .store-locator__map iframe {
+    display: block;
+    width: 100%;
     height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 24px;
-    text-align: center;
-    color: rgb(var(--color-foreground, 0 0 0) / 0.6);
+    border: 0;
   }
 
+  /* ── Tablet: 2 columns ── */
+  @media screen and (max-width: 1023px) {
+    .store-locator__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  /* ── Mobile: 1 column ── */
   @media screen and (max-width: 749px) {
-    .store-locator__layout {
+    .store-locator__grid {
       grid-template-columns: 1fr;
+      gap: 14px;
     }
 
-    .store-locator__map { min-height: 320px; order: -1; }
-    .store-locator__heading { font-size: 24px; }
-    .store-locator__list { max-height: 420px; }
+    .store-locator__heading {
+      font-size: 1.5rem;
+    }
+
+    .store-locator__search-wrap {
+      max-width: 100%;
+    }
+
+    .store-locator__map {
+      height: 280px;
+    }
   }
 {% endstylesheet %}
 
@@ -217,23 +438,55 @@
 
     class StoreLocator extends HTMLElement {
       connectedCallback() {
-        this.input = this.querySelector('[ref="search"]');
-        this.list = this.querySelector('[ref="list"]');
-        if (!this.input || !this.list) return;
-        this.stores = this.list.querySelectorAll('.store-locator__store');
-        this.input.addEventListener('input', () => this.filter());
+        this._search = this.querySelector('[ref="search"]');
+        this._list   = this.querySelector('[ref="list"]');
+        this._tabs   = this.querySelectorAll('.store-locator__tab');
+        this._noRes  = this.querySelector('[ref="noResults"]');
+        if (!this._list) return;
+
+        this._cards      = Array.from(this._list.querySelectorAll('.store-locator__card'));
+        this._activeCity = '';
+
+        // Tab clicks
+        this._tabs.forEach((tab) => {
+          tab.addEventListener('click', () => {
+            this._tabs.forEach((t) => {
+              t.classList.remove('is-active');
+              t.setAttribute('aria-selected', 'false');
+            });
+            tab.classList.add('is-active');
+            tab.setAttribute('aria-selected', 'true');
+            this._activeCity = tab.dataset.city || '';
+            this._filter();
+          });
+        });
+
+        // Search input
+        if (this._search) {
+          this._search.addEventListener('input', () => this._filter());
+        }
       }
 
-      filter() {
-        const query = this.input.value.toLowerCase().trim();
-        this.stores.forEach((store) => {
-          const keywords = (store.dataset.keywords || '').toLowerCase();
-          if (!query || keywords.includes(query)) {
-            store.classList.remove('is-hidden');
+      _filter() {
+        const query = (this._search?.value || '').toLowerCase().trim();
+        let visible = 0;
+
+        this._cards.forEach((card) => {
+          const cityMatch = !this._activeCity || card.dataset.city === this._activeCity;
+          const keywords  = (card.dataset.keywords || '').toLowerCase();
+          const textMatch = !query || keywords.includes(query);
+
+          if (cityMatch && textMatch) {
+            card.classList.remove('is-hidden');
+            visible++;
           } else {
-            store.classList.add('is-hidden');
+            card.classList.add('is-hidden');
           }
         });
+
+        if (this._noRes) {
+          this._noRes.hidden = visible > 0;
+        }
       }
     }
 
@@ -248,16 +501,14 @@
   "class": "section-store-locator",
   "disabled_on": { "groups": ["header", "footer"] },
   "settings": [
-    { "type": "text", "id": "heading", "label": "Heading", "default": "Find a store" },
-    { "type": "text", "id": "subheading", "label": "Subheading", "default": "Locate the closest store near you." },
-    { "type": "text", "id": "search_placeholder", "label": "Search placeholder", "default": "Search by city, area, or postal code" },
+    { "type": "text",  "id": "heading",    "label": "Heading",    "default": "Find a Store Near You" },
+    { "type": "text",  "id": "subheading", "label": "Subheading", "default": "Visit any of our locations across Pakistan." },
+    { "type": "text",  "id": "search_placeholder", "label": "Search placeholder", "default": "Search by city, store or area…" },
     { "type": "header", "content": "Map" },
-    { "type": "url", "id": "map_embed_url", "label": "Google Maps embed URL", "info": "From Google Maps: Share → Embed a map → copy the src URL." },
+    { "type": "url", "id": "map_embed_url", "label": "Google Maps embed URL", "info": "From Google Maps: Share → Embed a map → copy the src URL only." },
     { "type": "header", "content": "Layout" },
     {
-      "type": "select",
-      "id": "section_width",
-      "label": "Section width",
+      "type": "select", "id": "section_width", "label": "Section width",
       "options": [
         { "value": "page-width", "label": "Page" },
         { "value": "full-width", "label": "Full" }
@@ -266,31 +517,27 @@
     },
     { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-1" },
     { "type": "header", "content": "Padding" },
-    { "type": "range", "id": "padding-block-start", "label": "Top", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 32 },
-    { "type": "range", "id": "padding-block-end", "label": "Bottom", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 64 }
+    { "type": "range", "id": "padding-block-start", "label": "Top",    "min": 0, "max": 120, "step": 4, "unit": "px", "default": 40 },
+    { "type": "range", "id": "padding-block-end",   "label": "Bottom", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 64 }
   ],
   "blocks": [
     {
       "type": "store",
       "name": "Store",
       "settings": [
-        { "type": "text", "id": "name", "label": "Store name", "default": "Main Branch" },
-        { "type": "text", "id": "address", "label": "Street address" },
-        { "type": "text", "id": "city", "label": "City" },
-        { "type": "text", "id": "postal_code", "label": "Postal code" },
-        { "type": "text", "id": "phone", "label": "Phone" },
-        { "type": "textarea", "id": "hours", "label": "Opening hours", "default": "Mon–Sat: 10am – 10pm\nSun: 12pm – 9pm" },
-        { "type": "url", "id": "directions_url", "label": "Directions URL", "info": "Optional. Link to Google Maps directions for this store." }
+        { "type": "text",     "id": "name",           "label": "Store / Mall name" },
+        { "type": "textarea", "id": "address",        "label": "Full address" },
+        { "type": "text",     "id": "city",           "label": "City" },
+        { "type": "text",     "id": "postal_code",    "label": "Postal code" },
+        { "type": "text",     "id": "phone",          "label": "Phone" },
+        { "type": "textarea", "id": "hours",          "label": "Opening hours" },
+        { "type": "url",      "id": "directions_url", "label": "Google Maps directions URL" }
       ]
     }
   ],
-  "max_blocks": 50,
+  "max_blocks": 60,
   "presets": [
-    {
-      "name": "Store locator",
-      "category": "Utility",
-      "blocks": [ { "type": "store" }, { "type": "store" }, { "type": "store" } ]
-    }
+    { "name": "Store locator", "category": "Utility" }
   ]
 }
 {% endschema %}
