@@ -16,10 +16,11 @@
       "blocks": {
         "ai_gen_block_4420fcf_xzdLjt": {
           "type": "ai_gen_block_4420fcf",
+          "disabled": true,
           "settings": {
             "desktop_image": "shopify://shop_images/Eid_Notification_Bannersheader.webp",
             "mobile_image": "shopify://shop_images/Eid_Notification_Bannersheader.webp",
-            "link_url": "shopify://collections",
+            "link_url": "",
             "open_in_new_tab": false,
             "hover_opacity": 85
           },
@@ -27,7 +28,6 @@
         },
         "ai_gen_block_29398aa_jHajjF": {
           "type": "ai_gen_block_29398aa",
-          "disabled": true,
           "settings": {
             "desktop_width_percent": 100,
             "section_padding": 0,
@@ -84,7 +84,7 @@
         "overlay_color": "#00000026",
         "overlay_style": "solid",
         "gradient_direction": "to top",
-        "padding-block-start": 0,
+        "padding-block-start": 15,
         "padding-block-end": 0
       }
     },
@@ -139,7 +139,7 @@
           "settings": {
             "menu": "menu-new",
             "color_scheme": "",
-            "highlight_handles": "sale",
+            "highlight_handles": "Sale",
             "highlight_animation": "pulse",
             "highlight_bg_color": "#eb1d23",
             "highlight_text_color": "#ffffff",

@@ -121,6 +121,7 @@
       "block_order": [
         "slide_4mM8cj"
       ],
+      "disabled": true,
       "name": "Featured banner",
       "settings": {
         "autoplay": true,
@@ -139,7 +140,7 @@
         "card_x4i8pi": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/ST_5c97b287-c8ff-4b82-a131-fd55bc13b8bd.jpg",
+            "image": "shopify://shop_images/hero_banner_Mobile-min.jpg",
             "link": "shopify://collections/st-london",
             "open_new_tab": false
           }
@@ -147,7 +148,7 @@
         "card_LJWfzX": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/maybelline_9b8005e9-b358-4aaa-b506-e007ecdb621b.jpg",
+            "image": "shopify://shop_images/non-sale-maybelline.webp",
             "link": "shopify://collections/maybelline",
             "open_new_tab": false
           }
@@ -163,7 +164,7 @@
         "card_nbr3cj": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/The-Ordinary_3593ca5a-7f2c-4435-8b80-31e6d0fde8ea.jpg",
+            "image": "shopify://shop_images/non-sale-The-Ordinary.webp",
             "link": "shopify://collections/to",
             "open_new_tab": false
           }
@@ -171,7 +172,7 @@
         "card_YUtaR6": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/Revolution_057bbf68-5799-44f3-a5d4-d252ef923d14.jpg",
+            "image": "shopify://shop_images/non-sale-Revolution.webp",
             "link": "shopify://collections/revolution",
             "open_new_tab": false
           }
@@ -179,7 +180,7 @@
         "card_hxUFFx": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/cerave_8a407c29-c32e-4d60-b37a-2392b58b599c.webp",
+            "image": "shopify://shop_images/non-sale-CeraVe.webp",
             "link": "shopify://collections/cerave",
             "open_new_tab": false
           }
@@ -187,7 +188,7 @@
         "card_b9F39r": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/750_x_750_Banners_copy.webp",
+            "image": "shopify://shop_images/non-sale-Bioaqua.webp",
             "link": "shopify://collections/bioaqua",
             "open_new_tab": false
           }
@@ -569,7 +570,7 @@
         "card_CaecqX": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/500_x_500_Banners_copy.webp",
+            "image": "shopify://shop_images/non-sale-Kryolan.webp",
             "link": "shopify://collections/kryolan",
             "open_new_tab": false
           }
@@ -585,7 +586,7 @@
         "card_QQLjCx": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/Framesi_72e28818-8c74-4000-9324-c4ebf23ba451.jpg",
+            "image": "shopify://shop_images/non-sale-Framesi.webp",
             "link": "shopify://collections/framesi",
             "open_new_tab": false
           }
@@ -593,7 +594,7 @@
         "card_p9kYBe": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/luscious_4cddba05-674c-46a6-98a7-ff9a755eb233.jpg",
+            "image": "shopify://shop_images/non-sale-luscious.webp",
             "link": "shopify://collections/luscious-cosmetics",
             "open_new_tab": false
           }
@@ -709,7 +710,7 @@
         "card_J3czmk": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/Lamel_469b6135-078f-4aef-a30e-b9741ede7c2c.jpg",
+            "image": "shopify://shop_images/non-sale-Lamel.webp",
             "link": "shopify://collections/lamel",
             "open_new_tab": false
           }
@@ -717,7 +718,7 @@
         "card_gBiw68": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/Loreal_56554c2a-a47d-40da-9ea9-9fdfb3e3e6ed.jpg",
+            "image": "shopify://shop_images/non-sale-Loreal.webp",
             "link": "shopify://collections/loreal-paris",
             "open_new_tab": false
           }
@@ -725,7 +726,7 @@
         "card_dnezUz": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/500_x_500_copy.webp",
+            "image": "shopify://shop_images/Oneskin_41857d5d-4e2e-4e1e-82a2-8828ccab90cd.jpg",
             "link": "shopify://collections/oneskin",
             "open_new_tab": false
           }
@@ -733,7 +734,7 @@
         "card_ceiizR": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/Gosh_8df3d47e-0520-4f82-af90-1316b334f135.jpg",
+            "image": "shopify://shop_images/non-sale-Gosh.webp",
             "link": "shopify://collections/gosh",
             "open_new_tab": false
           }
@@ -741,7 +742,7 @@
         "card_c49pAk": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/B_BW_4862ae32-fb7d-4c31-ba3e-a3f7205ecc6d.jpg",
+            "image": "shopify://shop_images/non-sale-B_BW.webp",
             "link": "shopify://collections/bath-body-works",
             "open_new_tab": false
           }
@@ -1049,7 +1050,7 @@
         "card_m4dJ4r": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/Janssen_c0232ac8-3ecf-4a7a-9c03-e99958e6ed39.jpg",
+            "image": "shopify://shop_images/non-sale-Janssen.webp",
             "link": "shopify://collections/janssen",
             "open_new_tab": false
           }
@@ -1057,7 +1058,7 @@
         "card_4rqnJx": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/BLS_1.webp",
+            "image": "shopify://shop_images/non-sale-BLS.webp",
             "link": "shopify://collections/bls",
             "open_new_tab": false
           }
@@ -1065,7 +1066,7 @@
         "card_NaiUMg": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/Bourjois_37e29fbd-c31c-484f-9e60-aac3b90c015b.jpg",
+            "image": "shopify://shop_images/non-sale-Bourjois.webp",
             "link": "shopify://collections/bourjois",
             "open_new_tab": false
           }
@@ -1171,7 +1172,7 @@
         "card_wKbPRz": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/Essence_9aa3e462-7544-4c6f-9428-6c62c896b368.jpg",
+            "image": "shopify://shop_images/non-sale-Essence.webp",
             "link": "shopify://collections/essence",
             "open_new_tab": false
           }
@@ -1179,7 +1180,7 @@
         "card_Dj4Jhk": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/Garnier_c6a13146-99a8-40b8-815a-aa37525a1dcf.jpg",
+            "image": "shopify://shop_images/non-sale-Garnier.webp",
             "link": "shopify://collections/garnier",
             "open_new_tab": false
           }
@@ -1187,7 +1188,7 @@
         "card_VaLrJE": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/Trouble-Maker_dbd412bd-d182-4dab-9ab1-dc81c314edb4.jpg",
+            "image": "shopify://shop_images/non-sale-Trouble-Maker.webp",
             "link": "shopify://collections/trouble-maker",
             "open_new_tab": false
           }
@@ -1195,7 +1196,7 @@
         "card_hVQxRA": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/Rimmel_3d659dc6-dbca-4e5e-9208-a7607878db9f.jpg",
+            "image": "shopify://shop_images/non-sale-Rimmel.webp",
             "link": "shopify://collections/rimmel-london",
             "open_new_tab": false
           }
@@ -1592,7 +1593,7 @@
         "category_Xea9DL": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/color_wow.webp",
+            "image": "shopify://shop_images/non-sale-Colorwow.webp",
             "label": "",
             "link": "shopify://collections/color-wow",
             "card_background": "rgba(0,0,0,0)"
@@ -1601,7 +1602,7 @@
         "category_W3MDAj": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/femina_068e5251-76fb-44de-9083-79a28a7b47bb.webp",
+            "image": "shopify://shop_images/non-sale-Femina.webp",
             "label": "",
             "link": "shopify://collections/femina",
             "card_background": "rgba(0,0,0,0)"
@@ -1610,7 +1611,7 @@
         "category_TkjWqQ": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/maxfactor_1c457ab7-d3ae-44e1-a885-f8d2d9241384.webp",
+            "image": "shopify://shop_images/maxfactor_da69f660-6050-4648-a528-3ee1812e67ca.jpg",
             "label": "",
             "link": "shopify://collections/max-factor",
             "card_background": "rgba(0,0,0,0)"
@@ -1619,7 +1620,7 @@
         "category_EAWHGr": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/schwarzkopf_6e6e2b5c-c66f-45ed-a74b-311b7f8389ee.webp",
+            "image": "shopify://shop_images/non-sale-Schwarzkopf.webp",
             "label": "",
             "link": "shopify://collections/schwarzkopf",
             "card_background": "rgba(0,0,0,0)"
@@ -1637,7 +1638,7 @@
         "category_KWk6xF": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/just_for_men.webp",
+            "image": "shopify://shop_images/non-sale-Just-For-men.webp",
             "label": "",
             "link": "shopify://collections/just-for-men",
             "card_background": "rgba(0,0,0,0)"
