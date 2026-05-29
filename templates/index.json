@@ -1058,7 +1058,7 @@
         "card_4rqnJx": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/BLS_1.webp",
+            "image": "shopify://shop_images/non-sale-BLS.webp",
             "link": "shopify://collections/bls",
             "open_new_tab": false
           }
@@ -1066,7 +1066,7 @@
         "card_NaiUMg": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/Bourjois_37e29fbd-c31c-484f-9e60-aac3b90c015b.jpg",
+            "image": "shopify://shop_images/non-sale-Bourjois.webp",
             "link": "shopify://collections/bourjois",
             "open_new_tab": false
           }
