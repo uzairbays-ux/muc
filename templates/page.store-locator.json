@@ -39,7 +39,9 @@
           "blocks": {}
         }
       },
-      "block_order": ["heading"],
+      "block_order": [
+        "heading"
+      ],
       "settings": {
         "content_direction": "column",
         "gap": 16,
@@ -50,16 +52,6 @@
     },
     "locator": {
       "type": "store-locator",
-      "settings": {
-        "heading": "Find a store",
-        "subheading": "Locate the closest Baadmay store near you.",
-        "search_placeholder": "Search by city, area, or postal code",
-        "map_embed_url": "",
-        "section_width": "page-width",
-        "color_scheme": "scheme-1",
-        "padding-block-start": 32,
-        "padding-block-end": 64
-      },
       "blocks": {
         "store_1": {
           "type": "store",
@@ -98,8 +90,25 @@
           }
         }
       },
-      "block_order": ["store_1", "store_2", "store_3"]
+      "block_order": [
+        "store_1",
+        "store_2",
+        "store_3"
+      ],
+      "settings": {
+        "heading": "Find a store",
+        "subheading": "",
+        "search_placeholder": "Search by city, area, or postal code",
+        "map_embed_url": "",
+        "section_width": "page-width",
+        "color_scheme": "scheme-1",
+        "padding-block-start": 32,
+        "padding-block-end": 64
+      }
     }
   },
-  "order": ["main", "locator"]
+  "order": [
+    "main",
+    "locator"
+  ]
 }
