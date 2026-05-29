@@ -9,106 +9,348 @@
  */
 {
   "sections": {
-    "main": {
-      "type": "main-page",
-      "blocks": {
-        "heading": {
-          "type": "text",
-          "disabled": true,
-          "settings": {
-            "text": "<h1>{{ closest.page.title }}</h1>",
-            "width": "100%",
-            "max_width": "normal",
-            "alignment": "center",
-            "type_preset": "h2",
-            "font": "var(--font-primary--family)",
-            "font_size": "",
-            "line_height": "normal",
-            "letter_spacing": "normal",
-            "case": "none",
-            "wrap": "pretty",
-            "color": "",
-            "background": false,
-            "background_color": "#00000026",
-            "corner_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "heading"
-      ],
-      "settings": {
-        "content_direction": "column",
-        "gap": 16,
-        "color_scheme": "",
-        "padding-block-start": 32,
-        "padding-block-end": 0
-      }
-    },
     "locator": {
       "type": "store-locator",
       "blocks": {
-        "store_1": {
+        "khi_1": {
           "type": "store",
           "settings": {
-            "name": "Baadmay Flagship",
-            "address": "123 Example Street",
+            "name": "Tariq Center",
+            "address": "756-C, Central Commercial Area, Behind Tariq Center, Tariq Road",
             "city": "Karachi",
-            "postal_code": "74000",
-            "phone": "+92 300 0000000",
-            "hours": "Mon–Sat: 10am – 10pm\nSun: 12pm – 9pm",
+            "postal_code": "",
+            "phone": "021-34302233",
+            "hours": "",
             "directions_url": ""
           }
         },
-        "store_2": {
+        "khi_2": {
           "type": "store",
           "settings": {
-            "name": "Baadmay Lahore",
-            "address": "456 Sample Road",
+            "name": "Dolmen Mall, Tariq Road",
+            "address": "Shop # TF-1, 3rd Floor, Block No.3, Dolmen Mall, Tariq Road",
+            "city": "Karachi",
+            "postal_code": "",
+            "phone": "021-34321536",
+            "hours": "",
+            "directions_url": ""
+          }
+        },
+        "khi_3": {
+          "type": "store",
+          "settings": {
+            "name": "LuckyOne Mall",
+            "address": "LG 15 & 16, LuckyOne Mall, Rashid Minhas Road",
+            "city": "Karachi",
+            "postal_code": "",
+            "phone": "021-37181002",
+            "hours": "",
+            "directions_url": ""
+          }
+        },
+        "khi_4": {
+          "type": "store",
+          "settings": {
+            "name": "Ocean Mall",
+            "address": "Shop # G-12, Ground Floor, Ocean Mall, Clifton",
+            "city": "Karachi",
+            "postal_code": "",
+            "phone": "021-35141029",
+            "hours": "",
+            "directions_url": ""
+          }
+        },
+        "khi_5": {
+          "type": "store",
+          "settings": {
+            "name": "Dolmen Mall, Clifton",
+            "address": "Shop # G-6 & 7, Next to Carrefour, Dolmen Mall, Clifton",
+            "city": "Karachi",
+            "postal_code": "",
+            "phone": "021-35294001",
+            "hours": "",
+            "directions_url": ""
+          }
+        },
+        "khi_6": {
+          "type": "store",
+          "settings": {
+            "name": "Square One Mall",
+            "address": "Ground Floor, Near Askari IV, National Stadium Road, Gulshan-e-Iqbal",
+            "city": "Karachi",
+            "postal_code": "",
+            "phone": "021-33401740",
+            "hours": "",
+            "directions_url": ""
+          }
+        },
+        "lhr_1": {
+          "type": "store",
+          "settings": {
+            "name": "Packages Mall",
+            "address": "Shop # 1063, Packages Mall, Main Walton Road",
             "city": "Lahore",
-            "postal_code": "54000",
-            "phone": "+92 300 0000001",
-            "hours": "Mon–Sun: 11am – 11pm",
+            "postal_code": "",
+            "phone": "042-38910961",
+            "hours": "",
             "directions_url": ""
           }
         },
-        "store_3": {
+        "lhr_2": {
           "type": "store",
           "settings": {
-            "name": "Baadmay Islamabad",
-            "address": "789 Demo Avenue",
+            "name": "Fortress Square Mall",
+            "address": "Shop No 58 & 61, Fortress Square Mall",
+            "city": "Lahore",
+            "postal_code": "",
+            "phone": "042-37341330",
+            "hours": "",
+            "directions_url": ""
+          }
+        },
+        "lhr_3": {
+          "type": "store",
+          "settings": {
+            "name": "Hyper Star, Fortress Stadium",
+            "address": "Ground Floor, Opposite Counter No. 23, Fortress Stadium",
+            "city": "Lahore",
+            "postal_code": "",
+            "phone": "042-36623271",
+            "hours": "",
+            "directions_url": ""
+          }
+        },
+        "lhr_4": {
+          "type": "store",
+          "settings": {
+            "name": "City Tower, Gulberg II",
+            "address": "Shop # 28, Ground Floor, City Tower, Main Boulevard, Gulberg II",
+            "city": "Lahore",
+            "postal_code": "",
+            "phone": "042-35788805",
+            "hours": "",
+            "directions_url": ""
+          }
+        },
+        "lhr_5": {
+          "type": "store",
+          "settings": {
+            "name": "Emporium Mall",
+            "address": "Shop # 45 G, Ground Floor, Emporium Mall, Johar Town",
+            "city": "Lahore",
+            "postal_code": "",
+            "phone": "042-32592227",
+            "hours": "",
+            "directions_url": ""
+          }
+        },
+        "lhr_6": {
+          "type": "store",
+          "settings": {
+            "name": "Bahria Town",
+            "address": "Beauty n Style 174, Commercial Zone Sector C, Block-B, Bahria Town",
+            "city": "Lahore",
+            "postal_code": "",
+            "phone": "042-37861113",
+            "hours": "",
+            "directions_url": ""
+          }
+        },
+        "isb_1": {
+          "type": "store",
+          "settings": {
+            "name": "Centaurus Mall",
+            "address": "Shop # 211, 2nd Floor, Centaurus Mall, 1 Jinnah Avenue, Sec F-8",
             "city": "Islamabad",
-            "postal_code": "44000",
-            "phone": "+92 300 0000002",
-            "hours": "Mon–Sat: 10am – 10pm\nSun: Closed",
+            "postal_code": "",
+            "phone": "051-2701288",
+            "hours": "",
+            "directions_url": ""
+          }
+        },
+        "mul_1": {
+          "type": "store",
+          "settings": {
+            "name": "Saddar Bazaar",
+            "address": "Shop # 39 & 40, Ghani Bukhari Road, Saddar Bazaar, Cantt",
+            "city": "Multan",
+            "postal_code": "",
+            "phone": "061-4515563",
+            "hours": "",
+            "directions_url": ""
+          }
+        },
+        "mul_2": {
+          "type": "store",
+          "settings": {
+            "name": "Sharif Complex",
+            "address": "20/A Sharif Complex, Shop # 1, Tahseel Chowk, Near Shell Petrol Pump, Gulgasht",
+            "city": "Multan",
+            "postal_code": "",
+            "phone": "061-6211129",
+            "hours": "",
+            "directions_url": ""
+          }
+        },
+        "skt_1": {
+          "type": "store",
+          "settings": {
+            "name": "V-Mall",
+            "address": "Shop # 8, 15 Div. V-Mall, Sialkot Cantonment",
+            "city": "Sialkot",
+            "postal_code": "",
+            "phone": "052-4272894",
+            "hours": "",
+            "directions_url": ""
+          }
+        },
+        "skt_2": {
+          "type": "store",
+          "settings": {
+            "name": "Mall of Sialkot",
+            "address": "Shop # 9, Ground Floor, Mall of Sialkot, Aziz Shaheed Road, Cantt",
+            "city": "Sialkot",
+            "postal_code": "",
+            "phone": "052-4291166",
+            "hours": "",
+            "directions_url": ""
+          }
+        },
+        "fsd_1": {
+          "type": "store",
+          "settings": {
+            "name": "Kohinoor City",
+            "address": "Mezzanine Floor, Centre Point Plaza, Kohinoor City",
+            "city": "Faisalabad",
+            "postal_code": "",
+            "phone": "041-8554008",
+            "hours": "",
+            "directions_url": ""
+          }
+        },
+        "fsd_2": {
+          "type": "store",
+          "settings": {
+            "name": "Lyallpur Galleria",
+            "address": "Shop # 9, First Floor, Lyallpur Galleria, East Canal Road",
+            "city": "Faisalabad",
+            "postal_code": "",
+            "phone": "041-6078501",
+            "hours": "",
+            "directions_url": ""
+          }
+        },
+        "hyd_1": {
+          "type": "store",
+          "settings": {
+            "name": "Rabi Centre",
+            "address": "Ground Floor, Rabi Centre Saddar, Cantt",
+            "city": "Hyderabad",
+            "postal_code": "",
+            "phone": "022-2784665",
+            "hours": "",
+            "directions_url": ""
+          }
+        },
+        "rwp_1": {
+          "type": "store",
+          "settings": {
+            "name": "Rose Arcade",
+            "address": "1st Floor, Rose Arcade, Rehmanabad Chowk",
+            "city": "Rawalpindi",
+            "postal_code": "",
+            "phone": "051-4573263",
+            "hours": "",
+            "directions_url": ""
+          }
+        },
+        "bwp_1": {
+          "type": "store",
+          "settings": {
+            "name": "Jhandir Plaza",
+            "address": "Shop # 1, 9-C, Model Town, Block A, Jhandir Plaza",
+            "city": "Bahawalpur",
+            "postal_code": "",
+            "phone": "062-2885133",
+            "hours": "",
+            "directions_url": ""
+          }
+        },
+        "skr_1": {
+          "type": "store",
+          "settings": {
+            "name": "Aqsa Tower",
+            "address": "Shop # 4, Ground Floor, Aqsa Tower, Mission Road",
+            "city": "Sukkur",
+            "postal_code": "",
+            "phone": "071-5627901",
+            "hours": "",
+            "directions_url": ""
+          }
+        },
+        "grw_1": {
+          "type": "store",
+          "settings": {
+            "name": "Malik Tower",
+            "address": "405-C, Ground Floor, Malik Tower, Main Market, Satellite Town",
+            "city": "Gujranwala",
+            "postal_code": "",
+            "phone": "055-3401588",
+            "hours": "",
+            "directions_url": ""
+          }
+        },
+        "gjt_1": {
+          "type": "store",
+          "settings": {
+            "name": "Kacheri Road",
+            "address": "Kacheri Road, Opp: Eden Rode",
+            "city": "Gujrat",
+            "postal_code": "",
+            "phone": "053-3515388",
+            "hours": "",
+            "directions_url": ""
+          }
+        },
+        "jhg_1": {
+          "type": "store",
+          "settings": {
+            "name": "GTS Mall",
+            "address": "GTS Mall, Session Chowk Saddar",
+            "city": "Jhang",
+            "postal_code": "",
+            "phone": "0308-0622961",
+            "hours": "",
             "directions_url": ""
           }
         }
       },
       "block_order": [
-        "store_1",
-        "store_2",
-        "store_3"
+        "khi_1", "khi_2", "khi_3", "khi_4", "khi_5", "khi_6",
+        "lhr_1", "lhr_2", "lhr_3", "lhr_4", "lhr_5", "lhr_6",
+        "isb_1",
+        "mul_1", "mul_2",
+        "skt_1", "skt_2",
+        "fsd_1", "fsd_2",
+        "hyd_1",
+        "rwp_1",
+        "bwp_1",
+        "skr_1",
+        "grw_1",
+        "gjt_1",
+        "jhg_1"
       ],
       "settings": {
-        "heading": "Find a store",
-        "subheading": "",
-        "search_placeholder": "Search by city, area, or postal code",
+        "heading": "Find a Store Near You",
+        "subheading": "Visit any of our locations across Pakistan.",
+        "search_placeholder": "Search by city, store or area…",
         "map_embed_url": "",
         "section_width": "page-width",
         "color_scheme": "scheme-1",
-        "padding-block-start": 32,
+        "padding-block-start": 40,
         "padding-block-end": 64
       }
     }
   },
-  "order": [
-    "main",
-    "locator"
-  ]
+  "order": ["locator"]
 }
