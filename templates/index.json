@@ -121,6 +121,7 @@
       "block_order": [
         "slide_4mM8cj"
       ],
+      "disabled": true,
       "name": "Featured banner",
       "settings": {
         "autoplay": true,
