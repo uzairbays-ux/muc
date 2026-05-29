@@ -139,7 +139,7 @@
           "settings": {
             "menu": "menu-new",
             "color_scheme": "",
-            "highlight_handles": "sale",
+            "highlight_handles": "",
             "highlight_animation": "pulse",
             "highlight_bg_color": "#eb1d23",
             "highlight_text_color": "#ffffff",
