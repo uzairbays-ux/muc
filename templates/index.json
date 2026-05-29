@@ -148,7 +148,7 @@
         "card_LJWfzX": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/maybelline.jpg_2.jpg",
+            "image": "shopify://shop_images/non-sale-maybelline.webp",
             "link": "shopify://collections/maybelline",
             "open_new_tab": false
           }
@@ -164,7 +164,7 @@
         "card_nbr3cj": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/The-Ordinary_3593ca5a-7f2c-4435-8b80-31e6d0fde8ea.jpg",
+            "image": "shopify://shop_images/non-sale-The-Ordinary.webp",
             "link": "shopify://collections/to",
             "open_new_tab": false
           }
@@ -172,7 +172,7 @@
         "card_YUtaR6": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/Revolution_057bbf68-5799-44f3-a5d4-d252ef923d14.jpg",
+            "image": "shopify://shop_images/non-sale-Revolution.webp",
             "link": "shopify://collections/revolution",
             "open_new_tab": false
           }
@@ -180,7 +180,7 @@
         "card_hxUFFx": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/cerave_8a407c29-c32e-4d60-b37a-2392b58b599c.webp",
+            "image": "shopify://shop_images/non-sale-CeraVe.webp",
             "link": "shopify://collections/cerave",
             "open_new_tab": false
           }
@@ -188,7 +188,7 @@
         "card_b9F39r": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/750_x_750_Banners_copy.webp",
+            "image": "shopify://shop_images/non-sale-Bioaqua.webp",
             "link": "shopify://collections/bioaqua",
             "open_new_tab": false
           }
