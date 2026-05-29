@@ -1050,7 +1050,7 @@
         "card_m4dJ4r": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/Janssen_c0232ac8-3ecf-4a7a-9c03-e99958e6ed39.jpg",
+            "image": "shopify://shop_images/non-sale-Janssen.webp",
             "link": "shopify://collections/janssen",
             "open_new_tab": false
           }
@@ -1172,7 +1172,7 @@
         "card_wKbPRz": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/Essence_9aa3e462-7544-4c6f-9428-6c62c896b368.jpg",
+            "image": "shopify://shop_images/non-sale-Essence.webp",
             "link": "shopify://collections/essence",
             "open_new_tab": false
           }
@@ -1180,7 +1180,7 @@
         "card_Dj4Jhk": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/600-x-375-Garnier_jpg.jpg",
+            "image": "shopify://shop_images/non-sale-Garnier.webp",
             "link": "shopify://collections/garnier",
             "open_new_tab": false
           }
@@ -1188,7 +1188,7 @@
         "card_VaLrJE": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/Trouble-Maker_dbd412bd-d182-4dab-9ab1-dc81c314edb4.jpg",
+            "image": "shopify://shop_images/non-sale-Trouble-Maker.webp",
             "link": "shopify://collections/trouble-maker",
             "open_new_tab": false
           }
@@ -1196,7 +1196,7 @@
         "card_hVQxRA": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/Rimmel_3d659dc6-dbca-4e5e-9208-a7607878db9f.jpg",
+            "image": "shopify://shop_images/non-sale-Rimmel.webp",
             "link": "shopify://collections/rimmel-london",
             "open_new_tab": false
           }
