@@ -62,7 +62,7 @@
       "name": "Ad banner",
       "settings": {
         "desktop_image": "shopify://shop_images/custom_resized_780dc220-a6ca-45e0-85ea-b5358ae2981f.jpg",
-        "link": "",
+        "link": "shopify://collections/maybelline",
         "open_new_tab": false,
         "section_width": "page-width",
         "mobile_full_width": true,
@@ -79,7 +79,7 @@
           "type": "slide",
           "settings": {
             "desktop_image": "shopify://shop_images/Main-Banner_d547ff04-e004-468f-b59c-d14fa8becf1a.png",
-            "link": "",
+            "link": "shopify://collections/maybelline",
             "open_new_tab": false,
             "alt": ""
           }
@@ -166,7 +166,7 @@
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/Face_afe1cbf4-97a5-4e07-b895-eae0d7f831a7.jpg",
-            "link": "",
+            "link": "shopify://collections/face",
             "open_new_tab": false
           }
         },
@@ -174,7 +174,7 @@
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/Eyes_da64b737-29b5-41a4-97c0-3679c17d8fd4.jpg",
-            "link": "",
+            "link": "shopify://collections/eyes-1",
             "open_new_tab": false
           }
         },
@@ -182,7 +182,7 @@
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/Lips_53fe7387-1d0d-4234-8674-0161d916f64d.jpg",
-            "link": "",
+            "link": "shopify://collections/lips",
             "open_new_tab": false
           }
         }
@@ -256,7 +256,7 @@
               "name": "t:names.image",
               "settings": {
                 "image": "shopify://shop_images/New-launch_1920x_91d5c9e5-50b9-490f-8e98-c9184d2e3a17.webp",
-                "link": "",
+                "link": "shopify://collections/maybelline",
                 "image_ratio": "adapt",
                 "width": "fill",
                 "custom_width": 100,
@@ -536,7 +536,7 @@
               "name": "t:names.image",
               "settings": {
                 "image": "shopify://shop_images/Bestseller-Banner_2faec086-68b1-4041-b13f-81e9ef51de71.png",
-                "link": "",
+                "link": "shopify://collections/maybelline",
                 "image_ratio": "adapt",
                 "width": "fill",
                 "custom_width": 100,
@@ -781,7 +781,7 @@
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/image1.jpg",
-            "link": "",
+            "link": "shopify://products/30166967",
             "open_new_tab": false
           }
         },
@@ -789,7 +789,7 @@
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/1B.jpg",
-            "link": "",
+            "link": "shopify://collections/fit-me",
             "open_new_tab": false
           }
         },
@@ -797,7 +797,7 @@
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/image2.jpg",
-            "link": "",
+            "link": "shopify://collections/vinyl-ink",
             "open_new_tab": false
           }
         }
@@ -871,7 +871,7 @@
               "name": "t:names.image",
               "settings": {
                 "image": "shopify://shop_images/Face_b16015bc-9fed-43d1-abdb-7cd8170cec46.png",
-                "link": "",
+                "link": "shopify://collections/face",
                 "image_ratio": "adapt",
                 "width": "fill",
                 "custom_width": 100,
@@ -1090,7 +1090,7 @@
       },
       "name": "Face collection",
       "settings": {
-        "collection": "sale-maybelline",
+        "collection": "face",
         "layout_type": "carousel",
         "carousel_on_mobile": false,
         "max_products": 16,
@@ -1151,7 +1151,7 @@
               "name": "t:names.image",
               "settings": {
                 "image": "shopify://shop_images/Eyes_14817ec8-68f0-4eec-a6c9-3d95707621b1.png",
-                "link": "",
+                "link": "shopify://collections/eyes-1",
                 "image_ratio": "adapt",
                 "width": "fill",
                 "custom_width": 100,
@@ -1370,7 +1370,7 @@
       },
       "name": "Eyes collection",
       "settings": {
-        "collection": "sale-maybelline",
+        "collection": "eyes-1",
         "layout_type": "carousel",
         "carousel_on_mobile": false,
         "max_products": 16,
