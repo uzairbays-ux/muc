@@ -90,10 +90,10 @@
       ],
       "name": "Featured banner",
       "settings": {
-        "autoplay": true,
+        "autoplay": false,
         "autoplay_interval": 5,
-        "show_arrows": true,
-        "show_dots": true,
+        "show_arrows": false,
+        "show_dots": false,
         "section_width": "page-width",
         "color_scheme": "",
         "padding-block-start": 12,
