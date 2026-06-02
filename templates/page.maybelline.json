@@ -67,7 +67,7 @@
         "section_width": "page-width",
         "mobile_full_width": true,
         "padding_inline_desktop": 0,
-        "padding_inline_mobile": 0,
+        "padding_inline_mobile": 12,
         "padding-block-start": 12,
         "padding-block-end": 12
       }
@@ -166,7 +166,7 @@
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/Face_afe1cbf4-97a5-4e07-b895-eae0d7f831a7.jpg",
-            "link": "shopify://collections/face",
+            "link": "shopify://collections/face-1",
             "open_new_tab": false
           }
         },
@@ -871,7 +871,7 @@
               "name": "t:names.image",
               "settings": {
                 "image": "shopify://shop_images/Face_b16015bc-9fed-43d1-abdb-7cd8170cec46.png",
-                "link": "shopify://collections/face",
+                "link": "shopify://collections/face-1",
                 "image_ratio": "adapt",
                 "width": "fill",
                 "custom_width": 100,
@@ -1090,7 +1090,7 @@
       },
       "name": "Face collection",
       "settings": {
-        "collection": "face",
+        "collection": "face-1",
         "layout_type": "carousel",
         "carousel_on_mobile": false,
         "max_products": 16,
