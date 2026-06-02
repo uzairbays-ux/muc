@@ -95,6 +95,7 @@
         "show_arrows": false,
         "show_dots": false,
         "section_width": "page-width",
+        "border_radius": 10,
         "color_scheme": "",
         "padding-block-start": 12,
         "padding-block-end": 0
