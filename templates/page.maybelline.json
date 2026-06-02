@@ -159,61 +159,6 @@
         "padding-block-end": 12
       }
     },
-    "card_grid_6gTBC9": {
-      "type": "card-grid",
-      "blocks": {
-        "card_QrBd6h": {
-          "type": "card",
-          "settings": {
-            "image": "shopify://shop_images/Face_afe1cbf4-97a5-4e07-b895-eae0d7f831a7.jpg",
-            "link": "",
-            "open_new_tab": false
-          }
-        },
-        "card_JRbV9G": {
-          "type": "card",
-          "settings": {
-            "image": "shopify://shop_images/Eyes_da64b737-29b5-41a4-97c0-3679c17d8fd4.jpg",
-            "link": "",
-            "open_new_tab": false
-          }
-        },
-        "card_D7Dji7": {
-          "type": "card",
-          "settings": {
-            "image": "shopify://shop_images/Lips_53fe7387-1d0d-4234-8674-0161d916f64d.jpg",
-            "link": "",
-            "open_new_tab": false
-          }
-        }
-      },
-      "block_order": [
-        "card_QrBd6h",
-        "card_JRbV9G",
-        "card_D7Dji7"
-      ],
-      "name": "Card grid",
-      "settings": {
-        "heading": "",
-        "subheading": "",
-        "heading_alignment": "left",
-        "desktop_layout": "grid",
-        "mobile_layout": "grid",
-        "desktop_columns": "3",
-        "mobile_columns": "1",
-        "desktop_slider_per_view": "3",
-        "mobile_slider_per_view": "1.5",
-        "auto_rotate": false,
-        "rotate_interval": 4,
-        "gap": 16,
-        "desktop_side_padding": 48,
-        "mobile_side_padding": 0,
-        "section_width": "full-width",
-        "color_scheme": "",
-        "padding-block-start": 12,
-        "padding-block-end": 12
-      }
-    },
     "card_grid_H3KVHW": {
       "type": "card-grid",
       "blocks": {
@@ -825,6 +770,61 @@
         "horizontal_alignment": "flex-start",
         "gap": 28,
         "color_scheme": "scheme-1",
+        "padding-block-start": 12,
+        "padding-block-end": 12
+      }
+    },
+    "card_grid_6gTBC9": {
+      "type": "card-grid",
+      "blocks": {
+        "card_QrBd6h": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/image1.jpg",
+            "link": "",
+            "open_new_tab": false
+          }
+        },
+        "card_JRbV9G": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/1B.jpg",
+            "link": "",
+            "open_new_tab": false
+          }
+        },
+        "card_D7Dji7": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/image2.jpg",
+            "link": "",
+            "open_new_tab": false
+          }
+        }
+      },
+      "block_order": [
+        "card_QrBd6h",
+        "card_JRbV9G",
+        "card_D7Dji7"
+      ],
+      "name": "Card grid",
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "heading_alignment": "left",
+        "desktop_layout": "grid",
+        "mobile_layout": "grid",
+        "desktop_columns": "3",
+        "mobile_columns": "1",
+        "desktop_slider_per_view": "3",
+        "mobile_slider_per_view": "1.5",
+        "auto_rotate": false,
+        "rotate_interval": 4,
+        "gap": 16,
+        "desktop_side_padding": 48,
+        "mobile_side_padding": 0,
+        "section_width": "full-width",
+        "color_scheme": "",
         "padding-block-start": 12,
         "padding-block-end": 12
       }
