@@ -156,7 +156,7 @@
         "overlay_style": "solid",
         "gradient_direction": "to top",
         "padding-block-start": 12,
-        "padding-block-end": 32
+        "padding-block-end": 12
       }
     },
     "card_grid_6gTBC9": {
@@ -165,6 +165,7 @@
         "card_QrBd6h": {
           "type": "card",
           "settings": {
+            "image": "shopify://shop_images/Face_afe1cbf4-97a5-4e07-b895-eae0d7f831a7.jpg",
             "link": "",
             "open_new_tab": false
           }
@@ -172,6 +173,7 @@
         "card_JRbV9G": {
           "type": "card",
           "settings": {
+            "image": "shopify://shop_images/Eyes_da64b737-29b5-41a4-97c0-3679c17d8fd4.jpg",
             "link": "",
             "open_new_tab": false
           }
@@ -179,6 +181,7 @@
         "card_D7Dji7": {
           "type": "card",
           "settings": {
+            "image": "shopify://shop_images/Lips_53fe7387-1d0d-4234-8674-0161d916f64d.jpg",
             "link": "",
             "open_new_tab": false
           }
@@ -205,7 +208,7 @@
         "gap": 16,
         "desktop_side_padding": 48,
         "mobile_side_padding": 0,
-        "section_width": "page-width",
+        "section_width": "full-width",
         "color_scheme": "",
         "padding-block-start": 12,
         "padding-block-end": 24
