@@ -71,10 +71,39 @@
         "padding-block-start": 12,
         "padding-block-end": 12
       }
+    },
+    "featured_banner_KEagkW": {
+      "type": "featured-banner",
+      "blocks": {
+        "slide_tD9MwC": {
+          "type": "slide",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Main-Banner_d547ff04-e004-468f-b59c-d14fa8becf1a.png",
+            "link": "",
+            "open_new_tab": false,
+            "alt": ""
+          }
+        }
+      },
+      "block_order": [
+        "slide_tD9MwC"
+      ],
+      "name": "Featured banner",
+      "settings": {
+        "autoplay": true,
+        "autoplay_interval": 5,
+        "show_arrows": true,
+        "show_dots": true,
+        "section_width": "page-width",
+        "color_scheme": "",
+        "padding-block-start": 12,
+        "padding-block-end": 0
+      }
     }
   },
   "order": [
     "main",
-    "ad_banner_eqwXzQ"
+    "ad_banner_eqwXzQ",
+    "featured_banner_KEagkW"
   ]
 }
