@@ -1800,7 +1800,7 @@
             "image": "shopify://shop_images/bioaqua_46e93338-ae25-457f-a8a3-c9e0f1c1e126.webp",
             "label": "",
             "link": "shopify://collections/bioaqua",
-            "card_background": "#e3cef0"
+            "card_background": "rgba(0,0,0,0)"
           }
         },
         "category_bEVwXc": {
@@ -1810,7 +1810,7 @@
             "image": "shopify://shop_images/sadour.webp",
             "label": "",
             "link": "shopify://collections/sadoer",
-            "card_background": "#e3cef0"
+            "card_background": "rgba(0,0,0,0)"
           }
         },
         "category_wrPwQz": {
@@ -1820,7 +1820,7 @@
             "image": "shopify://shop_images/bob_6927661a-be87-4c0c-ab7c-4f3aba1866c5.webp",
             "label": "",
             "link": "shopify://collections/bob",
-            "card_background": "#e3cef0"
+            "card_background": "rgba(0,0,0,0)"
           }
         },
         "category_fgbGYy": {
@@ -1830,7 +1830,7 @@
             "image": "shopify://shop_images/luxe.webp",
             "label": "",
             "link": "shopify://collections/luxe-basics",
-            "card_background": "#e3cef0"
+            "card_background": "rgba(0,0,0,0)"
           }
         },
         "category_m4FjGa": {
@@ -1840,7 +1840,7 @@
             "image": "shopify://shop_images/chirs.webp",
             "label": "",
             "link": "shopify://collections/chirss",
-            "card_background": "#e3cef0"
+            "card_background": "rgba(0,0,0,0)"
           }
         },
         "category_yynriR": {
@@ -1850,7 +1850,7 @@
             "image": "shopify://shop_images/fayankou_efd5dab9-aac5-4b46-847a-6cfefeba17fd.webp",
             "label": "",
             "link": "shopify://products/6942349716027",
-            "card_background": "#e3cef0"
+            "card_background": "rgba(0,0,0,0)"
           }
         },
         "category_Kky8cK": {
@@ -1860,7 +1860,7 @@
             "image": "shopify://shop_images/raheel.webp",
             "label": "",
             "link": "shopify://collections/dr-rashel",
-            "card_background": "#e3cef0"
+            "card_background": "rgba(0,0,0,0)"
           }
         },
         "category_BpHehb": {
@@ -1870,7 +1870,7 @@
             "image": "shopify://shop_images/guanjing.webp",
             "label": "",
             "link": "shopify://collections/guanjing",
-            "card_background": "#e3cef0"
+            "card_background": "rgba(0,0,0,0)"
           }
         },
         "category_fMkPJe": {
@@ -1880,7 +1880,7 @@
             "image": "shopify://shop_images/estelin.webp",
             "label": "",
             "link": "shopify://collections/estelin",
-            "card_background": "#e3cef0"
+            "card_background": "rgba(0,0,0,0)"
           }
         },
         "category_yaLU7d": {
@@ -1890,7 +1890,7 @@
             "image": "shopify://shop_images/ikt_bf3b0dfd-b65d-4fcc-b842-4b76cb0caa1d.webp",
             "label": "",
             "link": "shopify://products/6148268752355",
-            "card_background": "#e3cef0"
+            "card_background": "rgba(0,0,0,0)"
           }
         }
       },
