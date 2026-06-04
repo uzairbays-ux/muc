@@ -34,7 +34,7 @@
     data-autoplay="{{ autoplay }}"
     data-autoplay-interval="{{ autoplay_interval }}"
     data-loop="true"
-    style="--banner-ratio-desktop: {{ initial_desktop_ratio }}; --banner-ratio-mobile: {{ initial_mobile_ratio }};"
+    style="--banner-ratio-desktop: {{ initial_desktop_ratio }}; --banner-ratio-mobile: {{ initial_mobile_ratio }}; --border-radius: {{ s.border_radius }}px;"
   >
     <div class="featured-banner__viewport" ref="viewport">
       <div class="featured-banner__track" ref="track">
@@ -169,6 +169,7 @@
     overflow: hidden;
     aspect-ratio: var(--banner-ratio-desktop, 1024 / 400);
     width: 100%;
+    border-radius: var(--border-radius, 0);
   }
 
   @media screen and (max-width: 749px) {
@@ -534,6 +535,16 @@
         { "value": "full-width", "label": "Full" }
       ],
       "default": "full-width"
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 0
     },
     {
       "type": "color_scheme",
