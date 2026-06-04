@@ -12,18 +12,11 @@
     "tracker": {
       "type": "order-tracker",
       "settings": {
-        "heading": "Track your order",
-        "subheading": "Enter your order number and email address to see the latest status.",
-        "order_label": "Order number",
-        "order_placeholder": "e.g. 030426190053537294",
-        "button_label": "Track order",
-        "help_text": "<p>Can't find your order number? Check your order confirmation email.</p>",
         "iframe_base_url": "https://makeupcity.ginkgoretail.net/ordertracking/",
-        "iframe_height": 900,
-        "section_width": "page-width",
+        "section_width": "full-width",
         "color_scheme": "scheme-1",
-        "padding-block-start": 40,
-        "padding-block-end": 64
+        "padding-block-start": 0,
+        "padding-block-end": 0
       }
     }
   },
