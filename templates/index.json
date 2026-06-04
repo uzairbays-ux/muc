@@ -129,6 +129,7 @@
         "show_arrows": true,
         "show_dots": true,
         "section_width": "full-width",
+        "border_radius": 0,
         "color_scheme": "",
         "padding-block-start": 0,
         "padding-block-end": 0
@@ -1136,7 +1137,7 @@
         "section_width": "full-width",
         "color_scheme": "",
         "padding-block-start": 24,
-        "padding-block-end": 24
+        "padding-block-end": 12
       }
     },
     "card_grid_GWUm6j": {
@@ -1796,100 +1797,100 @@
           "type": "category",
           "name": "Bioaqua",
           "settings": {
-            "image": "shopify://shop_images/Bioaqua.webp",
+            "image": "shopify://shop_images/bioaqua_46e93338-ae25-457f-a8a3-c9e0f1c1e126.webp",
             "label": "",
             "link": "shopify://collections/bioaqua",
-            "card_background": "#e3cef0"
+            "card_background": "rgba(0,0,0,0)"
           }
         },
         "category_bEVwXc": {
           "type": "category",
           "name": "Sadoer",
           "settings": {
-            "image": "shopify://shop_images/Sadoer.webp",
+            "image": "shopify://shop_images/sadour.webp",
             "label": "",
             "link": "shopify://collections/sadoer",
-            "card_background": "#e3cef0"
+            "card_background": "rgba(0,0,0,0)"
           }
         },
         "category_wrPwQz": {
           "type": "category",
           "name": "BOB",
           "settings": {
-            "image": "shopify://shop_images/BOB.webp",
+            "image": "shopify://shop_images/bob_6927661a-be87-4c0c-ab7c-4f3aba1866c5.webp",
             "label": "",
             "link": "shopify://collections/bob",
-            "card_background": "#e3cef0"
+            "card_background": "rgba(0,0,0,0)"
           }
         },
         "category_fgbGYy": {
           "type": "category",
           "name": "Luxe",
           "settings": {
-            "image": "shopify://shop_images/Luxe_Basics.webp",
+            "image": "shopify://shop_images/luxe.webp",
             "label": "",
             "link": "shopify://collections/luxe-basics",
-            "card_background": "#e3cef0"
+            "card_background": "rgba(0,0,0,0)"
           }
         },
         "category_m4FjGa": {
           "type": "category",
           "name": "Chirs",
           "settings": {
-            "image": "shopify://shop_images/Chirs_s.webp",
+            "image": "shopify://shop_images/chirs.webp",
             "label": "",
             "link": "shopify://collections/chirss",
-            "card_background": "#e3cef0"
+            "card_background": "rgba(0,0,0,0)"
           }
         },
         "category_yynriR": {
           "type": "category",
           "name": "Fayankou",
           "settings": {
-            "image": "shopify://shop_images/Fayankou.webp",
+            "image": "shopify://shop_images/fayankou_efd5dab9-aac5-4b46-847a-6cfefeba17fd.webp",
             "label": "",
             "link": "shopify://products/6942349716027",
-            "card_background": "#e3cef0"
+            "card_background": "rgba(0,0,0,0)"
           }
         },
         "category_Kky8cK": {
           "type": "category",
           "name": "Dr Rahel",
           "settings": {
-            "image": "shopify://shop_images/DR_Rahsel.webp",
+            "image": "shopify://shop_images/raheel.webp",
             "label": "",
             "link": "shopify://collections/dr-rashel",
-            "card_background": "#e3cef0"
+            "card_background": "rgba(0,0,0,0)"
           }
         },
         "category_BpHehb": {
           "type": "category",
           "name": "Guanjin",
           "settings": {
-            "image": "shopify://shop_images/Guanjing_Beauty.webp",
+            "image": "shopify://shop_images/guanjing.webp",
             "label": "",
             "link": "shopify://collections/guanjing",
-            "card_background": "#e3cef0"
+            "card_background": "rgba(0,0,0,0)"
           }
         },
         "category_fMkPJe": {
           "type": "category",
           "name": "Esteline",
           "settings": {
-            "image": "shopify://shop_images/Esteline.webp",
+            "image": "shopify://shop_images/estelin.webp",
             "label": "",
             "link": "shopify://collections/estelin",
-            "card_background": "#e3cef0"
+            "card_background": "rgba(0,0,0,0)"
           }
         },
         "category_yaLU7d": {
           "type": "category",
           "name": "IKT",
           "settings": {
-            "image": "shopify://shop_images/IKT.webp",
+            "image": "shopify://shop_images/ikt_bf3b0dfd-b65d-4fcc-b842-4b76cb0caa1d.webp",
             "label": "",
             "link": "shopify://products/6148268752355",
-            "card_background": "#e3cef0"
+            "card_background": "rgba(0,0,0,0)"
           }
         }
       },
@@ -1921,7 +1922,7 @@
         "image_fit": "contain",
         "card_ratio": "adapt",
         "image_border_radius": 19,
-        "background_color": "#ffcccc",
+        "background_color": "#fdd6d6",
         "padding-block-start": 24,
         "padding-block-end": 24
       }
