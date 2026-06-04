@@ -1,236 +1,284 @@
-{% liquid
+{%- liquid
   assign s = section.settings
-  assign tracker_url = s.tracker_url | default: 'https://track.aftership.com/'
-  assign method = s.method | default: 'redirect'
-  assign use_iframe = s.use_iframe
-  assign iframe_base = s.iframe_base_url | default: 'https://makeupcity.ginkgoretail.net/ordertracking/'
-  assign iframe_height = s.iframe_height | default: 800
-  assign require_email = s.require_email
-%}
+  assign base_url = s.iframe_base_url | default: 'https://makeupcity.ginkgoretail.net/ordertracking/'
+-%}
 
 <div
-  class="section section--{{ s.section_width }} color-{{ s.color_scheme }} spacing-style{% if use_iframe %} order-tracker--iframe-mode{% endif %}"
+  class="section section--{{ s.section_width }} color-{{ s.color_scheme }} spacing-style"
   style="{% render 'spacing-style', settings: s %}"
-  data-testid="order-tracker-{{ section.id }}"
 >
-  <div class="order-tracker{% if use_iframe %} order-tracker--wide{% endif %}">
-    {%- if s.heading != blank -%}
-      <h1 class="order-tracker__heading">{{ s.heading }}</h1>
-    {%- endif -%}
-    {%- if s.subheading != blank -%}
-      <p class="order-tracker__subheading">{{ s.subheading }}</p>
-    {%- endif -%}
+  <order-tracker class="order-tracker">
 
-    <form
-      class="order-tracker__form"
-      data-method="{{ method }}"
-      data-tracker-url="{{ tracker_url }}"
-      data-order-param="{{ s.order_param | default: 'order_number' }}"
-      data-email-param="{{ s.email_param | default: 'email' }}"
-      data-use-iframe="{{ use_iframe }}"
-      data-iframe-base="{{ iframe_base }}"
-      data-require-email="{{ require_email }}"
-    >
-      <div class="order-tracker__field">
-        <label for="ot-order-{{ section.id }}">{{ s.order_label | default: 'Order number' }}</label>
-        <input type="text" id="ot-order-{{ section.id }}" name="order" autocomplete="off" required>
-      </div>
-      <div class="order-tracker__field{% if use_iframe and require_email == false %} order-tracker__field--hidden{% endif %}">
-        <label for="ot-email-{{ section.id }}">{{ s.email_label | default: 'Email address' }}</label>
-        <input type="email" id="ot-email-{{ section.id }}" name="email" autocomplete="email"{% if use_iframe and require_email == false %}{% else %} required{% endif %}>
-      </div>
-      <button type="submit" class="order-tracker__submit">{{ s.button_label | default: 'Track order' }}</button>
-    </form>
+    {%- comment -%} ── Form ── {%- endcomment -%}
+    <div class="order-tracker__form-wrap" ref="formWrap">
+      {%- if s.heading != blank -%}
+        <h1 class="order-tracker__heading">{{ s.heading }}</h1>
+      {%- endif -%}
+      {%- if s.subheading != blank -%}
+        <p class="order-tracker__subheading">{{ s.subheading }}</p>
+      {%- endif -%}
 
-    {%- if use_iframe -%}
-      <div
-        class="order-tracker__iframe-wrap"
-        data-iframe-wrap
-        style="--ot-iframe-height: {{ iframe_height }}px;"
-        hidden
-      >
+      <form class="order-tracker__form" ref="form" novalidate>
+        <div class="order-tracker__field">
+          <label class="order-tracker__label" for="ot-order">{{ s.order_label | default: 'Order number' }}</label>
+          <input
+            id="ot-order"
+            class="order-tracker__input"
+            type="text"
+            ref="orderInput"
+            placeholder="{{ s.order_placeholder | default: 'e.g. 030426190053537294' }}"
+            autocomplete="off"
+            required
+          >
+          <p class="order-tracker__error" ref="orderError" hidden>Please enter your order number.</p>
+        </div>
+
+        <button type="submit" class="order-tracker__btn button">
+          {{ s.button_label | default: 'Track order' }}
+        </button>
+
+        {%- if s.help_text != blank -%}
+          <p class="order-tracker__help">{{ s.help_text }}</p>
+        {%- endif -%}
+      </form>
+    </div>
+
+    {%- comment -%} ── Results iframe ── {%- endcomment -%}
+    <div class="order-tracker__result" ref="result" hidden>
+      <div class="order-tracker__result-header">
+        <p class="order-tracker__result-label" ref="resultLabel">Tracking results</p>
+        <button class="order-tracker__back" ref="back" type="button">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+          Track another order
+        </button>
+      </div>
+      <div class="order-tracker__iframe-wrap">
         <iframe
+          ref="iframe"
           class="order-tracker__iframe"
-          data-tracker-iframe
           src="about:blank"
-          title="Tracking Iframe"
+          title="Order tracking"
           loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-          allow="clipboard-write"
+          style="height: {{ s.iframe_height | default: 900 }}px"
         ></iframe>
       </div>
-    {%- endif -%}
+    </div>
 
-    {%- if s.help_text != blank -%}
-      <div class="order-tracker__help rte">{{ s.help_text }}</div>
-    {%- endif -%}
-  </div>
+  </order-tracker>
 </div>
 
 {% stylesheet %}
   .order-tracker {
-    max-width: 520px;
-    margin: 0 auto;
-    padding-inline: var(--gap-md, 16px);
-  }
-
-  .order-tracker--wide {
-    max-width: 1100px;
-  }
-
-  .order-tracker__field--hidden {
-    display: none;
-  }
-
-  .order-tracker__iframe-wrap {
-    margin-top: 28px;
-    width: 100%;
-    border-radius: 10px;
-    overflow: hidden;
-    background-color: rgb(var(--color-foreground, 0 0 0) / 0.03);
-    border: 1px solid rgb(var(--color-foreground, 0 0 0) / 0.08);
-  }
-
-  .order-tracker__iframe {
-    width: 100%;
-    height: var(--ot-iframe-height, 800px);
-    border: 0;
     display: block;
+    max-width: 560px;
+    margin: 0 auto;
+    padding-inline: var(--gap-md, 20px);
   }
 
-  @media screen and (max-width: 749px) {
-    .order-tracker__iframe {
-      height: min(var(--ot-iframe-height, 800px), 75vh);
-    }
+  /* ── Form ── */
+  .order-tracker__form-wrap {
+    text-align: center;
   }
 
   .order-tracker__heading {
     margin: 0 0 12px;
-    font-family: var(--font-heading--family);
-    font-size: 32px;
-    line-height: 1.15;
-    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.2;
     color: rgb(var(--color-foreground-heading, 0 0 0));
   }
 
   .order-tracker__subheading {
-    margin: 0 0 28px;
-    text-align: center;
+    margin: 0 0 32px;
     font-size: 15px;
-    color: rgb(var(--color-foreground, 0 0 0) / 0.7);
+    color: rgb(var(--color-foreground, 0 0 0) / 0.65);
+    line-height: 1.5;
   }
 
   .order-tracker__form {
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 20px;
+    text-align: left;
   }
 
   .order-tracker__field {
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 8px;
   }
 
-  .order-tracker__field label {
-    font-size: 13px;
+  .order-tracker__label {
+    font-size: 14px;
     font-weight: 600;
     color: rgb(var(--color-foreground, 0 0 0));
   }
 
-  .order-tracker__field input {
-    padding: 12px 14px;
-    border: 1px solid rgb(var(--color-foreground, 0 0 0) / 0.2);
-    border-radius: 6px;
-    font-size: 14px;
-    background-color: rgb(var(--color-background, 255 255 255));
+  .order-tracker__input {
+    width: 100%;
+    padding: 13px 16px;
+    border: 1.5px solid rgb(var(--color-foreground, 0 0 0) / 0.2);
+    border-radius: 8px;
+    font-size: 15px;
+    background: rgb(var(--color-background, 255 255 255));
     color: rgb(var(--color-foreground, 0 0 0));
+    transition: border-color 0.18s;
   }
 
-  .order-tracker__field input:focus {
-    outline: 2px solid rgb(var(--color-foreground, 0 0 0) / 0.4);
-    outline-offset: 1px;
+  .order-tracker__input:focus {
+    outline: none;
+    border-color: rgb(255 16 16);
   }
 
-  .order-tracker__submit {
-    margin-top: 8px;
-    padding: 14px 20px;
-    border: none;
-    border-radius: 6px;
-    background-color: rgb(var(--color-foreground, 0 0 0));
-    color: rgb(var(--color-background, 255 255 255));
-    font-size: 14px;
+  .order-tracker__input.is-invalid {
+    border-color: #e53e3e;
+  }
+
+  .order-tracker__error {
+    margin: 0;
+    font-size: 12px;
+    color: #e53e3e;
+  }
+
+  .order-tracker__btn {
+    width: 100%;
+    padding: 14px;
+    font-size: 15px;
     font-weight: 600;
     cursor: pointer;
-    transition: opacity 200ms ease;
   }
-
-  .order-tracker__submit:hover { opacity: 0.9; }
 
   .order-tracker__help {
-    margin-top: 20px;
-    padding: 14px 16px;
-    background-color: rgb(var(--color-foreground, 0 0 0) / 0.04);
-    border-radius: 8px;
+    margin: 0;
+    text-align: center;
     font-size: 13px;
-    line-height: 1.5;
+    color: rgb(var(--color-foreground, 0 0 0) / 0.55);
   }
 
-  .order-tracker__help a { text-decoration: underline; }
+  .order-tracker__help a {
+    color: inherit;
+    text-decoration: underline;
+  }
+
+  /* ── Results ── */
+  .order-tracker__result {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .order-tracker__result-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgb(var(--color-foreground, 0 0 0) / 0.1);
+  }
+
+  .order-tracker__result-label {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 600;
+    color: rgb(var(--color-foreground, 0 0 0));
+  }
+
+  .order-tracker__back {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: none;
+    border: none;
+    font-size: 13px;
+    font-weight: 500;
+    color: rgb(255 16 16);
+    cursor: pointer;
+    padding: 0;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .order-tracker__back:hover {
+    color: rgb(180 0 0);
+  }
+
+  .order-tracker__iframe-wrap {
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1.5px solid rgb(var(--color-foreground, 0 0 0) / 0.1);
+    background: #fff;
+  }
+
+  .order-tracker__iframe {
+    display: block;
+    width: 100%;
+    border: 0;
+  }
 
   @media screen and (max-width: 749px) {
-    .order-tracker__heading { font-size: 24px; }
+    .order-tracker__heading { font-size: 1.6rem; }
+    .order-tracker__iframe { height: 600px !important; }
   }
 {% endstylesheet %}
 
 <script>
   (function () {
-    document.querySelectorAll('.order-tracker__form').forEach((form) => {
-      if (form.dataset.bound) return;
-      form.dataset.bound = 'true';
-      form.addEventListener('submit', (event) => {
-        event.preventDefault();
-        const orderInput = form.querySelector('input[name="order"]');
-        const emailInput = form.querySelector('input[name="email"]');
-        const orderValue = (orderInput && orderInput.value || '').trim();
-        if (!orderValue) {
-          if (orderInput) orderInput.focus();
+    if (customElements.get('order-tracker')) return;
+
+    class OrderTracker extends HTMLElement {
+      connectedCallback() {
+        this._baseUrl     = {{ base_url | json }};
+        this._form        = this.querySelector('[ref="form"]');
+        this._formWrap    = this.querySelector('[ref="formWrap"]');
+        this._result      = this.querySelector('[ref="result"]');
+        this._iframe      = this.querySelector('[ref="iframe"]');
+        this._back        = this.querySelector('[ref="back"]');
+        this._orderInput  = this.querySelector('[ref="orderInput"]');
+        this._orderError  = this.querySelector('[ref="orderError"]');
+        this._resultLabel = this.querySelector('[ref="resultLabel"]');
+
+        this._form?.addEventListener('submit', (e) => {
+          e.preventDefault();
+          this._track();
+        });
+
+        this._back?.addEventListener('click', () => this._reset());
+      }
+
+      _track() {
+        const order = this._orderInput?.value.trim();
+
+        if (!order) {
+          this._orderInput?.classList.add('is-invalid');
+          if (this._orderError) this._orderError.hidden = false;
+          this._orderInput?.focus();
           return;
         }
 
-        const useIframe = form.dataset.useIframe === 'true';
-        const requireEmail = form.dataset.requireEmail === 'true';
-        const emailValue = (emailInput && emailInput.value || '').trim();
+        this._orderInput?.classList.remove('is-invalid');
+        if (this._orderError) this._orderError.hidden = true;
 
-        if ((!useIframe || requireEmail) && !emailValue) {
-          if (emailInput) emailInput.focus();
-          return;
-        }
+        // Append order number to base URL
+        const url = this._baseUrl.replace(/\/$/, '') + '/' + encodeURIComponent(order);
 
-        if (useIframe) {
-          const base = (form.dataset.iframeBase || '').replace(/\/+$/, '');
-          const src = base + '/' + encodeURIComponent(orderValue);
-          const wrap = form.parentElement.querySelector('[data-iframe-wrap]');
-          const iframe = form.parentElement.querySelector('[data-tracker-iframe]');
-          if (wrap && iframe) {
-            iframe.src = src;
-            wrap.hidden = false;
-            requestAnimationFrame(() => {
-              wrap.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            });
-          }
-          return;
-        }
+        if (this._iframe) this._iframe.src = url;
+        if (this._resultLabel) this._resultLabel.textContent = 'Order #' + order;
 
-        const base = form.dataset.trackerUrl || '';
-        const orderParam = form.dataset.orderParam || 'order_number';
-        const emailParam = form.dataset.emailParam || 'email';
-        const url = new URL(base, window.location.origin);
-        url.searchParams.set(orderParam, orderValue);
-        if (emailValue) url.searchParams.set(emailParam, emailValue);
-        window.open(url.toString(), form.dataset.method === 'redirect' ? '_self' : '_blank');
-      });
-    });
+        this._formWrap.hidden = true;
+        this._result.hidden   = false;
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      _reset() {
+        if (this._iframe) this._iframe.src = 'about:blank';
+        this._result.hidden   = true;
+        this._formWrap.hidden = false;
+        if (this._orderInput) this._orderInput.value = '';
+        this._orderInput?.focus();
+      }
+    }
+
+    customElements.define('order-tracker', OrderTracker);
   })();
 </script>
 
@@ -241,61 +289,18 @@
   "class": "section-order-tracker",
   "disabled_on": { "groups": ["header", "footer"] },
   "settings": [
-    { "type": "text", "id": "heading", "label": "Heading", "default": "Track your order" },
-    { "type": "text", "id": "subheading", "label": "Subheading", "default": "Enter your order number and email to see the latest status." },
-    { "type": "text", "id": "order_label", "label": "Order field label", "default": "Order number" },
-    { "type": "text", "id": "email_label", "label": "Email field label", "default": "Email address" },
-    { "type": "text", "id": "button_label", "label": "Button label", "default": "Track order" },
-    { "type": "header", "content": "Tracker integration" },
+    { "type": "text",     "id": "heading",           "label": "Heading",              "default": "Track your order" },
+    { "type": "text",     "id": "subheading",         "label": "Subheading",           "default": "Enter your order number to see the latest status." },
+    { "type": "text",     "id": "order_label",        "label": "Order number label",   "default": "Order number" },
+    { "type": "text",     "id": "order_placeholder",  "label": "Order number placeholder", "default": "e.g. 030426190053537294" },
+    { "type": "text",     "id": "button_label",       "label": "Button label",         "default": "Track order" },
+    { "type": "richtext", "id": "help_text",          "label": "Help text",            "default": "<p>Can't find your order number? Check your order confirmation email.</p>" },
+    { "type": "header",   "content": "Tracking service" },
+    { "type": "text",     "id": "iframe_base_url",    "label": "Tracking base URL",    "default": "https://makeupcity.ginkgoretail.net/ordertracking/", "info": "Order number is appended to this URL automatically." },
+    { "type": "range",    "id": "iframe_height",      "label": "Iframe height (desktop)", "min": 400, "max": 1400, "step": 50, "unit": "px", "default": 900 },
+    { "type": "header",   "content": "Layout" },
     {
-      "type": "checkbox",
-      "id": "use_iframe",
-      "label": "Show tracker in an iframe on this page",
-      "info": "When enabled, submitting the form loads the tracker inline instead of opening AfterShip in another tab.",
-      "default": true
-    },
-    {
-      "type": "text",
-      "id": "iframe_base_url",
-      "label": "Iframe base URL",
-      "info": "Order number is appended to the end of this URL, e.g. https://makeupcity.ginkgoretail.net/ordertracking/ORDERID",
-      "default": "https://makeupcity.ginkgoretail.net/ordertracking/"
-    },
-    {
-      "type": "range",
-      "id": "iframe_height",
-      "label": "Iframe height (desktop)",
-      "min": 400,
-      "max": 1600,
-      "step": 20,
-      "unit": "px",
-      "default": 900
-    },
-    {
-      "type": "checkbox",
-      "id": "require_email",
-      "label": "Require email field in iframe mode",
-      "default": false
-    },
-    { "type": "text", "id": "tracker_url", "label": "External tracker URL (fallback)", "info": "Used only when iframe mode is off. Order + email are appended as query params.", "default": "https://track.aftership.com/" },
-    { "type": "text", "id": "order_param", "label": "Order query param name", "default": "order_number" },
-    { "type": "text", "id": "email_param", "label": "Email query param name", "default": "email" },
-    {
-      "type": "select",
-      "id": "method",
-      "label": "Open tracker in",
-      "options": [
-        { "value": "redirect", "label": "Same tab" },
-        { "value": "new", "label": "New tab" }
-      ],
-      "default": "redirect"
-    },
-    { "type": "richtext", "id": "help_text", "label": "Help text", "default": "<p>Can't find your order number? Check your order confirmation email.</p>" },
-    { "type": "header", "content": "Layout" },
-    {
-      "type": "select",
-      "id": "section_width",
-      "label": "Section width",
+      "type": "select", "id": "section_width", "label": "Section width",
       "options": [
         { "value": "page-width", "label": "Page" },
         { "value": "full-width", "label": "Full" }
@@ -303,12 +308,12 @@
       "default": "page-width"
     },
     { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-1" },
-    { "type": "header", "content": "Padding" },
-    { "type": "range", "id": "padding-block-start", "label": "Top", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 48 },
-    { "type": "range", "id": "padding-block-end", "label": "Bottom", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 64 }
+    { "type": "header",   "content": "Padding" },
+    { "type": "range", "id": "padding-block-start", "label": "Top",    "min": 0, "max": 120, "step": 4, "unit": "px", "default": 40 },
+    { "type": "range", "id": "padding-block-end",   "label": "Bottom", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 64 }
   ],
   "presets": [
-    { "name": "Order tracker", "category": "Utility" }
+    { "name": "Order tracker" }
   ]
 }
 {% endschema %}

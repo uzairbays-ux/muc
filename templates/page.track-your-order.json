@@ -9,83 +9,23 @@
  */
 {
   "sections": {
-    "main": {
-      "type": "main-page",
-      "blocks": {
-        "custom_liquid_VqHJC9": {
-          "type": "custom-liquid",
-          "name": "t:names.custom_liquid",
-          "settings": {
-            "custom_liquid": ""
-          },
-          "blocks": {}
-        },
-        "heading": {
-          "type": "text",
-          "disabled": true,
-          "settings": {
-            "text": "<h1>{{ closest.page.title }}</h1>",
-            "width": "100%",
-            "max_width": "normal",
-            "alignment": "center",
-            "type_preset": "h2",
-            "font": "var(--font-primary--family)",
-            "font_size": "",
-            "line_height": "normal",
-            "letter_spacing": "normal",
-            "case": "none",
-            "wrap": "pretty",
-            "color": "",
-            "background": false,
-            "background_color": "#00000026",
-            "corner_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "custom_liquid_VqHJC9",
-        "heading"
-      ],
-      "settings": {
-        "content_direction": "column",
-        "gap": 16,
-        "color_scheme": "",
-        "padding-block-start": 32,
-        "padding-block-end": 0
-      }
-    },
     "tracker": {
       "type": "order-tracker",
-      "disabled": true,
       "settings": {
         "heading": "Track your order",
         "subheading": "Enter your order number and email address to see the latest status.",
         "order_label": "Order number",
-        "email_label": "Email address",
+        "order_placeholder": "e.g. 030426190053537294",
         "button_label": "Track order",
-        "use_iframe": true,
+        "help_text": "<p>Can't find your order number? Check your order confirmation email.</p>",
         "iframe_base_url": "https://makeupcity.ginkgoretail.net/ordertracking/",
         "iframe_height": 900,
-        "require_email": false,
-        "tracker_url": "https://makeupcity.ginkgoretail.net/ordertracking/030426190053537294",
-        "order_param": "order_number",
-        "email_param": "email",
-        "method": "redirect",
-        "help_text": "<p>Can't find your order number? Check your order confirmation email.</p>",
         "section_width": "page-width",
         "color_scheme": "scheme-1",
-        "padding-block-start": 32,
+        "padding-block-start": 40,
         "padding-block-end": 64
       }
     }
   },
-  "order": [
-    "main",
-    "tracker"
-  ]
+  "order": ["tracker"]
 }
