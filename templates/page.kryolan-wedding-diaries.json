@@ -98,12 +98,30 @@
             "link": "shopify://collections/natashas-top-pick",
             "open_new_tab": false
           }
+        },
+        "card_9A446Q": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/kwd-3-natasha-min.jpg",
+            "link": "shopify://collections/natashas-top-pick",
+            "open_new_tab": false
+          }
+        },
+        "card_E8VX3T": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/kwd-3-natasha-min.jpg",
+            "link": "shopify://collections/natashas-top-pick",
+            "open_new_tab": false
+          }
         }
       },
       "block_order": [
         "card_QrBd6h",
         "card_JRbV9G",
-        "card_D7Dji7"
+        "card_D7Dji7",
+        "card_9A446Q",
+        "card_E8VX3T"
       ],
       "name": "Card grid",
       "settings": {
