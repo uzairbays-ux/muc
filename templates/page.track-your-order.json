@@ -12,11 +12,20 @@
     "main": {
       "type": "main-page",
       "blocks": {
-        "custom_liquid_VqHJC9": {
-          "type": "custom-liquid",
-          "name": "t:names.custom_liquid",
+        "page_PVbfCd": {
+          "type": "page",
+          "name": "t:names.page",
+          "disabled": true,
           "settings": {
-            "custom_liquid": ""
+            "page": "track-your-order",
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "background": false,
+            "background_color": "#00000026",
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
           },
           "blocks": {}
         },
@@ -48,7 +57,7 @@
         }
       },
       "block_order": [
-        "custom_liquid_VqHJC9",
+        "page_PVbfCd",
         "heading"
       ],
       "settings": {
@@ -61,7 +70,6 @@
     },
     "tracker": {
       "type": "order-tracker",
-      "disabled": true,
       "settings": {
         "heading": "Track your order",
         "subheading": "Enter your order number and email address to see the latest status.",
