@@ -98,7 +98,7 @@
         "border_radius": 10,
         "color_scheme": "",
         "padding-block-start": 12,
-        "padding-block-end": 0
+        "padding-block-end": 6
       }
     },
     "section_JbUHMz": {
@@ -786,61 +786,6 @@
         "padding-block-end": 12
       }
     },
-    "card_grid_6gTBC9": {
-      "type": "card-grid",
-      "blocks": {
-        "card_QrBd6h": {
-          "type": "card",
-          "settings": {
-            "image": "shopify://shop_images/image1.jpg",
-            "link": "shopify://products/30166967",
-            "open_new_tab": false
-          }
-        },
-        "card_JRbV9G": {
-          "type": "card",
-          "settings": {
-            "image": "shopify://shop_images/1B.jpg",
-            "link": "shopify://collections/fit-me",
-            "open_new_tab": false
-          }
-        },
-        "card_D7Dji7": {
-          "type": "card",
-          "settings": {
-            "image": "shopify://shop_images/image2.jpg",
-            "link": "shopify://collections/vinyl-ink",
-            "open_new_tab": false
-          }
-        }
-      },
-      "block_order": [
-        "card_QrBd6h",
-        "card_JRbV9G",
-        "card_D7Dji7"
-      ],
-      "name": "Card grid",
-      "settings": {
-        "heading": "",
-        "subheading": "",
-        "heading_alignment": "left",
-        "desktop_layout": "grid",
-        "mobile_layout": "slider",
-        "desktop_columns": "3",
-        "mobile_columns": "1",
-        "desktop_slider_per_view": "3",
-        "mobile_slider_per_view": "1.5",
-        "auto_rotate": true,
-        "rotate_interval": 4,
-        "gap": 16,
-        "desktop_side_padding": 48,
-        "mobile_side_padding": 0,
-        "section_width": "full-width",
-        "color_scheme": "",
-        "padding-block-start": 12,
-        "padding-block-end": 12
-      }
-    },
     "product_list_HeLpJw": {
       "type": "product-list",
       "blocks": {
@@ -881,6 +826,7 @@
             "image_b8mADK": {
               "type": "image",
               "name": "t:names.image",
+              "disabled": true,
               "settings": {
                 "image": "shopify://shop_images/Face_b16015bc-9fed-43d1-abdb-7cd8170cec46.png",
                 "link": "shopify://collections/face-1",
@@ -904,12 +850,11 @@
             "product_list_text_dHEKeR": {
               "type": "_product-list-text",
               "name": "t:names.collection_title",
-              "disabled": true,
               "settings": {
-                "text": "<h5>{{ closest.collection.title }}</h5>",
-                "width": "fit-content",
+                "text": "<h1><strong>SEASONAL MUST-HAVE</strong></h1>",
+                "width": "100%",
                 "max_width": "normal",
-                "alignment": "left",
+                "alignment": "center",
                 "type_preset": "custom",
                 "font": "var(--font-heading--family)",
                 "font_size": "",
@@ -918,9 +863,9 @@
                 "case": "none",
                 "wrap": "pretty",
                 "color": "var(--color-foreground-heading)",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
+                "background": true,
+                "background_color": "#ffffff",
+                "corner_radius": 10,
                 "padding-block-start": 0,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
@@ -953,6 +898,7 @@
         "static-product-card": {
           "type": "_product-card",
           "name": "t:names.product_card",
+          "disabled": true,
           "static": true,
           "settings": {
             "product_card_gap": 4,
@@ -1115,8 +1061,63 @@
         "icons_shape": "none",
         "section_width": "page-width",
         "horizontal_alignment": "flex-start",
-        "gap": 28,
+        "gap": 0,
         "color_scheme": "scheme-1",
+        "padding-block-start": 12,
+        "padding-block-end": 12
+      }
+    },
+    "card_grid_6gTBC9": {
+      "type": "card-grid",
+      "blocks": {
+        "card_QrBd6h": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/image1.jpg",
+            "link": "shopify://products/30166967",
+            "open_new_tab": false
+          }
+        },
+        "card_JRbV9G": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/1B.jpg",
+            "link": "shopify://collections/fit-me",
+            "open_new_tab": false
+          }
+        },
+        "card_D7Dji7": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/image2.jpg",
+            "link": "shopify://collections/vinyl-ink",
+            "open_new_tab": false
+          }
+        }
+      },
+      "block_order": [
+        "card_QrBd6h",
+        "card_JRbV9G",
+        "card_D7Dji7"
+      ],
+      "name": "Card grid",
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "heading_alignment": "left",
+        "desktop_layout": "grid",
+        "mobile_layout": "slider",
+        "desktop_columns": "3",
+        "mobile_columns": "1",
+        "desktop_slider_per_view": "3",
+        "mobile_slider_per_view": "1.5",
+        "auto_rotate": true,
+        "rotate_interval": 4,
+        "gap": 16,
+        "desktop_side_padding": 40,
+        "mobile_side_padding": 0,
+        "section_width": "full-width",
+        "color_scheme": "",
         "padding-block-start": 12,
         "padding-block-end": 12
       }
@@ -1705,8 +1706,8 @@
     "card_grid_H3KVHW",
     "product_list_QwYUXP",
     "product_list_CALkkH",
-    "card_grid_6gTBC9",
     "product_list_HeLpJw",
+    "card_grid_6gTBC9",
     "product_list_FFdi6t",
     "product_list_KXRd8W",
     "cta_banner_FQVkyx"
