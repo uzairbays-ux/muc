@@ -9,16 +9,41 @@
  */
 {
   "sections": {
-    "tracker": {
-      "type": "order-tracker",
+    "main": {
+      "type": "main-page",
+      "blocks": {
+        "css": {
+          "type": "custom-liquid",
+          "settings": {
+            "custom_liquid": "<style>#myIframe { display: block; width: 100%; height: calc(100vh - var(--header-group-height, 80px)); min-height: 500px; border: none; }</style>"
+          },
+          "blocks": {}
+        },
+        "page_content": {
+          "type": "page",
+          "settings": {
+            "page": "",
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "background": false,
+            "background_color": "#00000026",
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": ["css", "page_content"],
       "settings": {
-        "iframe_base_url": "https://makeupcity.ginkgoretail.net/ordertracking/",
-        "section_width": "full-width",
-        "color_scheme": "scheme-1",
+        "content_direction": "column",
+        "gap": 0,
+        "color_scheme": "",
         "padding-block-start": 0,
         "padding-block-end": 0
       }
     }
   },
-  "order": ["tracker"]
+  "order": ["main"]
 }
