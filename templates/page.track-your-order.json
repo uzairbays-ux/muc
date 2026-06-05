@@ -22,7 +22,7 @@
         "page_content": {
           "type": "page",
           "settings": {
-            "page": "",
+            "page": "track-your-order",
             "inherit_color_scheme": true,
             "color_scheme": "",
             "background": false,
@@ -35,7 +35,10 @@
           "blocks": {}
         }
       },
-      "block_order": ["css", "page_content"],
+      "block_order": [
+        "css",
+        "page_content"
+      ],
       "settings": {
         "content_direction": "column",
         "gap": 0,
@@ -45,5 +48,7 @@
       }
     }
   },
-  "order": ["main"]
+  "order": [
+    "main"
+  ]
 }
