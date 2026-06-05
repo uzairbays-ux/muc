@@ -502,7 +502,7 @@
         "horizontal_alignment": "flex-start",
         "gap": 28,
         "color_scheme": "scheme-1",
-        "padding-block-start": 12,
+        "padding-block-start": 6,
         "padding-block-end": 12
       }
     },
@@ -1070,34 +1070,34 @@
     "card_grid_6gTBC9": {
       "type": "card-grid",
       "blocks": {
-        "card_QrBd6h": {
-          "type": "card",
-          "settings": {
-            "image": "shopify://shop_images/image1.jpg",
-            "link": "shopify://products/30166967",
-            "open_new_tab": false
-          }
-        },
         "card_JRbV9G": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/1B.jpg",
+            "image": "shopify://shop_images/sensual-lips-614x900.jpg",
             "link": "shopify://collections/fit-me",
+            "open_new_tab": false
+          }
+        },
+        "card_QrBd6h": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/614x900_Eyematic_d3fab30f-e370-4c72-9a38-c1b1f07f03d2.jpg",
+            "link": "shopify://products/30166967",
             "open_new_tab": false
           }
         },
         "card_D7Dji7": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/image2.jpg",
+            "image": "shopify://shop_images/614x900_Silk_effect.jpg",
             "link": "shopify://collections/vinyl-ink",
             "open_new_tab": false
           }
         }
       },
       "block_order": [
-        "card_QrBd6h",
         "card_JRbV9G",
+        "card_QrBd6h",
         "card_D7Dji7"
       ],
       "name": "Card grid",
