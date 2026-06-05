@@ -1,5 +1,5 @@
 <iframe
-  src="{{ section.settings.iframe_url }}"
+  src="{{ section.settings.iframe_base_url }}"
   style="display:block; width:100%; height:100vh; border:0;"
   title="Track your order"
   allowfullscreen
@@ -13,7 +13,7 @@
   "settings": [
     {
       "type": "text",
-      "id": "iframe_url",
+      "id": "iframe_base_url",
       "label": "Tracking URL",
       "default": "https://makeupcity.ginkgoretail.net/ordertracking/"
     }
