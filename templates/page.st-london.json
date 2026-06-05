@@ -169,7 +169,7 @@
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/face-muc-09-18.jpg",
-            "link": "shopify://collections/face-1",
+            "link": "shopify://collections/st-face",
             "open_new_tab": false
           }
         },
@@ -177,7 +177,7 @@
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/eyes-muc-09-18.jpg",
-            "link": "shopify://collections/eyes-1",
+            "link": "shopify://collections/st-eyes",
             "open_new_tab": false
           }
         },
@@ -185,7 +185,7 @@
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/lips-muc-09-18.jpg",
-            "link": "shopify://collections/lips",
+            "link": "shopify://collections/st-lips",
             "open_new_tab": false
           }
         },
@@ -193,7 +193,7 @@
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/nails-muc-09-18.jpg",
-            "link": "shopify://collections/lips",
+            "link": "shopify://collections/st-nails",
             "open_new_tab": false
           }
         }
@@ -268,7 +268,7 @@
               "name": "t:names.image",
               "settings": {
                 "image": "shopify://shop_images/best-sellers-banner.jpg",
-                "link": "shopify://collections/maybelline",
+                "link": "shopify://collections/st-london",
                 "image_ratio": "adapt",
                 "width": "fill",
                 "custom_width": 100,
@@ -548,7 +548,7 @@
               "name": "t:names.image",
               "settings": {
                 "image": "shopify://shop_images/1920x500_Banner_1.jpg",
-                "link": "shopify://collections/maybelline",
+                "link": "shopify://collections/st-london-lipstick",
                 "image_ratio": "adapt",
                 "width": "fill",
                 "custom_width": 100,
