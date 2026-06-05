@@ -61,8 +61,8 @@
       "type": "ad-banner",
       "name": "Ad banner",
       "settings": {
-        "desktop_image": "shopify://shop_images/custom_resized_780dc220-a6ca-45e0-85ea-b5358ae2981f.jpg",
-        "link": "shopify://collections/maybelline",
+        "desktop_image": "shopify://shop_images/official-store-1920x320.jpg",
+        "link": "shopify://collections/st-london",
         "open_new_tab": false,
         "section_width": "page-width",
         "mobile_full_width": true,
@@ -110,6 +110,7 @@
           "settings": {
             "source": "uploaded",
             "video": "shopify://files/videos/03fdb65e26474cf8803856ca6fdf9ab1_OsX7xADB.mp4",
+            "video_url": "",
             "video_autoplay": true,
             "video_loop": true,
             "alt": "",
