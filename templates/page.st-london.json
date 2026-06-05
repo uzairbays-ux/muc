@@ -1914,7 +1914,7 @@
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/sensual-lips-614x900.jpg",
-            "link": "shopify://collections/fit-me",
+            "link": "shopify://products/st-london-sensual-lips",
             "open_new_tab": false
           }
         },
@@ -1922,7 +1922,7 @@
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/614x900_Eyematic_d3fab30f-e370-4c72-9a38-c1b1f07f03d2.jpg",
-            "link": "shopify://products/30166967",
+            "link": "shopify://products/st-london-eyematic-creamy-eye-shadow",
             "open_new_tab": false
           }
         },
@@ -1930,7 +1930,7 @@
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/614x900_Silk_effect.jpg",
-            "link": "shopify://collections/vinyl-ink",
+            "link": "shopify://products/st-london-silk-effect-foundation",
             "open_new_tab": false
           }
         }
