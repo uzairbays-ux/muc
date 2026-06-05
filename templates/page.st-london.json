@@ -1682,6 +1682,35 @@
         "padding-block-end": 24
       }
     },
+    "featured_banner_JnFqap": {
+      "type": "featured-banner",
+      "blocks": {
+        "slide_LQ6A4x": {
+          "type": "slide",
+          "settings": {
+            "desktop_image": "shopify://shop_images/IMG-20240916-WA0024.jpg",
+            "link": "shopify://collections/st-london",
+            "open_new_tab": false,
+            "alt": ""
+          }
+        }
+      },
+      "block_order": [
+        "slide_LQ6A4x"
+      ],
+      "name": "Featured banner",
+      "settings": {
+        "autoplay": false,
+        "autoplay_interval": 5,
+        "show_arrows": false,
+        "show_dots": false,
+        "section_width": "page-width",
+        "border_radius": 10,
+        "color_scheme": "",
+        "padding-block-start": 12,
+        "padding-block-end": 12
+      }
+    },
     "cta_banner_FQVkyx": {
       "type": "cta-banner",
       "name": "CTA banner",
@@ -1710,6 +1739,7 @@
     "card_grid_6gTBC9",
     "product_list_FFdi6t",
     "product_list_KXRd8W",
+    "featured_banner_JnFqap",
     "cta_banner_FQVkyx"
   ]
 }
