@@ -1,137 +1,21 @@
-{%- liquid
-  assign s = section.settings
-  assign base_url = s.iframe_base_url | default: 'https://makeupcity.ginkgoretail.net/ordertracking/'
--%}
-
-<div
-  class="section section--{{ s.section_width }} color-{{ s.color_scheme }} spacing-style"
-  style="{% render 'spacing-style', settings: s %}"
->
-  <order-tracker class="order-tracker">
-
-    {%- comment -%} ── Search bar (always visible) ── {%- endcomment -%}
-    <div class="order-tracker__bar">
-      <form class="order-tracker__form" ref="form" novalidate>
-        <div class="order-tracker__input-wrap">
-          <svg class="order-tracker__input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-          <input
-            id="ot-order"
-            class="order-tracker__input"
-            type="text"
-            ref="orderInput"
-            placeholder="{{ s.order_placeholder | default: 'Enter your order number…' }}"
-            autocomplete="off"
-            required
-          >
-          <p class="order-tracker__error" ref="orderError" hidden>Please enter an order number.</p>
-        </div>
-        <button type="submit" class="order-tracker__btn button">
-          {{ s.button_label | default: 'Track order' }}
-        </button>
-      </form>
-    </div>
-
-    {%- comment -%} ── Iframe (shown after submit) ── {%- endcomment -%}
-    <div class="order-tracker__iframe-wrap" ref="iframeWrap" hidden>
-      <iframe
-        ref="iframe"
-        class="order-tracker__iframe"
-        src="about:blank"
-        title="Order tracking"
-        loading="lazy"
-        allowfullscreen
-      ></iframe>
-    </div>
-
-    {%- comment -%} ── Empty state ── {%- endcomment -%}
-    <div class="order-tracker__empty" ref="empty">
-      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.25"><path d="M21 10V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l2-1.14"/><polyline points="16.5 9.4 7.55 4.24"/><line x1="3.29" y1="7" x2="12" y2="12"/><line x1="12" y1="22" x2="12" y2="12"/><circle cx="18.5" cy="15.5" r="2.5"/><path d="M20.27 17.27L22 19"/></svg>
-      <p>{{ s.empty_text | default: 'Enter your order number above to track your shipment.' }}</p>
-    </div>
-
-  </order-tracker>
+<div class="order-tracker-wrap">
+  <iframe
+    class="order-tracker-iframe"
+    src="{{ section.settings.iframe_url }}"
+    title="Track your order"
+    allowfullscreen
+  ></iframe>
 </div>
 
 {% stylesheet %}
-  .order-tracker {
-    display: block;
+  .order-tracker-wrap {
     width: 100%;
-  }
-
-  /* ── Search bar ── */
-  .order-tracker__bar {
-    max-width: 680px;
-    margin: 0 auto 32px;
-    padding-inline: var(--gap-md, 20px);
-  }
-
-  .order-tracker__form {
-    display: flex;
-    gap: 12px;
-    align-items: flex-start;
-  }
-
-  .order-tracker__input-wrap {
-    position: relative;
-    flex: 1;
-  }
-
-  .order-tracker__input-icon {
-    position: absolute;
-    left: 14px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: rgb(var(--color-foreground, 0 0 0) / 0.35);
-    pointer-events: none;
-  }
-
-  .order-tracker__input {
-    width: 100%;
-    padding: 14px 16px 14px 44px;
-    border: 1.5px solid rgb(var(--color-foreground, 0 0 0) / 0.2);
-    border-radius: 8px;
-    font-size: 15px;
-    background: rgb(var(--color-background, 255 255 255));
-    color: rgb(var(--color-foreground, 0 0 0));
-    transition: border-color 0.18s;
-  }
-
-  .order-tracker__input:focus {
-    outline: none;
-    border-color: rgb(255 16 16);
-  }
-
-  .order-tracker__input.is-invalid {
-    border-color: #e53e3e;
-  }
-
-  .order-tracker__error {
-    position: absolute;
-    bottom: -20px;
-    left: 0;
-    margin: 0;
-    font-size: 12px;
-    color: #e53e3e;
-  }
-
-  .order-tracker__btn {
-    white-space: nowrap;
-    padding: 14px 24px;
-    font-size: 15px;
-    font-weight: 600;
-    cursor: pointer;
-    flex-shrink: 0;
-  }
-
-  /* ── Iframe ── */
-  .order-tracker__iframe-wrap {
-    width: 100%;
-    height: calc(100dvh - var(--header-group-height, 80px) - 100px);
+    height: calc(100dvh - var(--header-group-height, 80px));
     min-height: 500px;
     position: relative;
   }
 
-  .order-tracker__iframe {
+  .order-tracker-iframe {
     position: absolute;
     inset: 0;
     width: 100%;
@@ -139,119 +23,21 @@
     border: 0;
     display: block;
   }
-
-  /* ── Empty state ── */
-  .order-tracker__empty {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 16px;
-    padding: 60px 24px;
-    text-align: center;
-    color: rgb(var(--color-foreground, 0 0 0) / 0.45);
-    font-size: 15px;
-  }
-
-  .order-tracker__empty p { margin: 0; }
-
-  /* ── Mobile ── */
-  @media screen and (max-width: 749px) {
-    .order-tracker__form {
-      flex-direction: column;
-    }
-
-    .order-tracker__btn {
-      width: 100%;
-    }
-
-    .order-tracker__iframe-wrap {
-      height: calc(100dvh - var(--header-group-height, 60px) - 80px);
-      min-height: 460px;
-    }
-  }
 {% endstylesheet %}
-
-<script>
-  (function () {
-    if (customElements.get('order-tracker')) return;
-
-    class OrderTracker extends HTMLElement {
-      connectedCallback() {
-        this._baseUrl    = {{ base_url | json }};
-        this._form       = this.querySelector('[ref="form"]');
-        this._iframe     = this.querySelector('[ref="iframe"]');
-        this._iframeWrap = this.querySelector('[ref="iframeWrap"]');
-        this._empty      = this.querySelector('[ref="empty"]');
-        this._orderInput = this.querySelector('[ref="orderInput"]');
-        this._orderError = this.querySelector('[ref="orderError"]');
-
-        this._form?.addEventListener('submit', (e) => {
-          e.preventDefault();
-          this._track();
-        });
-      }
-
-      _track() {
-        const order = this._orderInput?.value.trim();
-
-        if (!order) {
-          this._orderInput?.classList.add('is-invalid');
-          if (this._orderError) this._orderError.hidden = false;
-          this._orderInput?.focus();
-          return;
-        }
-
-        this._orderInput?.classList.remove('is-invalid');
-        if (this._orderError) this._orderError.hidden = true;
-
-        const url = this._baseUrl.replace(/\/$/, '') + '/' + encodeURIComponent(order);
-
-        if (this._iframe) this._iframe.src = url;
-
-        if (this._empty)      this._empty.hidden      = true;
-        if (this._iframeWrap) this._iframeWrap.hidden = false;
-
-        // Scroll iframe into view smoothly
-        this._iframeWrap?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    }
-
-    customElements.define('order-tracker', OrderTracker);
-  })();
-</script>
 
 {% schema %}
 {
   "name": "Order tracker",
   "tag": "section",
-  "class": "section-order-tracker",
   "disabled_on": { "groups": ["header", "footer"] },
   "settings": [
-    { "type": "header", "content": "Tracking service" },
     {
       "type": "text",
-      "id": "iframe_base_url",
-      "label": "Tracking base URL",
+      "id": "iframe_url",
+      "label": "Tracking URL",
       "default": "https://makeupcity.ginkgoretail.net/ordertracking/",
-      "info": "Order number is appended automatically."
-    },
-    { "type": "text", "id": "order_placeholder", "label": "Input placeholder", "default": "Enter your order number…" },
-    { "type": "text", "id": "button_label",      "label": "Button label",      "default": "Track order" },
-    { "type": "text", "id": "empty_text",        "label": "Empty state text",  "default": "Enter your order number above to track your shipment." },
-    { "type": "header", "content": "Layout" },
-    {
-      "type": "select", "id": "section_width", "label": "Section width",
-      "options": [
-        { "value": "page-width", "label": "Page" },
-        { "value": "full-width", "label": "Full" }
-      ],
-      "default": "full-width"
-    },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-1" },
-    { "type": "header", "content": "Padding" },
-    { "type": "range", "id": "padding-block-start", "label": "Top",    "min": 0, "max": 120, "step": 4, "unit": "px", "default": 32 },
-    { "type": "range", "id": "padding-block-end",   "label": "Bottom", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 32 }
+      "info": "Full URL to load in the iframe."
+    }
   ],
   "presets": [{ "name": "Order tracker" }]
 }
