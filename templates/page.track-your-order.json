@@ -12,33 +12,15 @@
     "main": {
       "type": "main-page",
       "blocks": {
-        "css": {
+        "content": {
           "type": "custom-liquid",
           "settings": {
-            "custom_liquid": "<style>h1 { display: none !important; } .shopify-section, .shopify-section > div, .page-width, .content-for-layout { max-width: 100% !important; padding: 0 !important; margin: 0 !important; } #myIframe { display: block; width: 100%; height: calc(100vh - var(--header-group-height, 80px)); min-height: 600px; border: none; }</style>"
-          },
-          "blocks": {}
-        },
-        "page_content": {
-          "type": "page",
-          "settings": {
-            "page": "track-your-order",
-            "inherit_color_scheme": true,
-            "color_scheme": "",
-            "background": false,
-            "background_color": "#00000026",
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
+            "custom_liquid": "<style>#myIframe{display:block;width:100%;height:calc(100vh - var(--header-group-height,80px));min-height:600px;border:none;}</style>{{ page.content }}"
           },
           "blocks": {}
         }
       },
-      "block_order": [
-        "css",
-        "page_content"
-      ],
+      "block_order": ["content"],
       "settings": {
         "content_direction": "column",
         "gap": 0,
@@ -48,7 +30,5 @@
       }
     }
   },
-  "order": [
-    "main"
-  ]
+  "order": ["main"]
 }
