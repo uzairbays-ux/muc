@@ -1,29 +1,120 @@
-<div class="order-tracker-wrap">
-  <iframe
-    class="order-tracker-iframe"
-    src="{{ section.settings.iframe_url }}"
-    title="Track your order"
-    allowfullscreen
-  ></iframe>
+<div class="section section--{{ section.settings.section_width }} color-{{ section.settings.color_scheme }} spacing-style"
+  style="{% render 'spacing-style', settings: section.settings %}"
+>
+  <div class="ot">
+    <h1 class="ot__heading">{{ section.settings.heading }}</h1>
+    <p class="ot__sub">{{ section.settings.subheading }}</p>
+
+    <form
+      class="ot__form"
+      action="{{ section.settings.base_url }}"
+      method="get"
+      target="_self"
+      id="ot-form"
+    >
+      <div class="ot__field">
+        <label class="ot__label" for="ot-input">{{ section.settings.order_label }}</label>
+        <input
+          id="ot-input"
+          name="__placeholder__"
+          class="ot__input"
+          type="text"
+          placeholder="{{ section.settings.order_placeholder }}"
+          autocomplete="off"
+          required
+        >
+      </div>
+      <button class="ot__btn button" type="submit">{{ section.settings.btn_label }}</button>
+    </form>
+
+    {%- if section.settings.help != blank -%}
+      <p class="ot__help">{{ section.settings.help }}</p>
+    {%- endif -%}
+  </div>
 </div>
 
 {% stylesheet %}
-  .order-tracker-wrap {
-    width: 100%;
-    height: calc(100dvh - var(--header-group-height, 80px));
-    min-height: 500px;
-    position: relative;
+  .ot {
+    max-width: 520px;
+    margin: 0 auto;
+    padding-inline: var(--gap-md, 20px);
+    text-align: center;
   }
 
-  .order-tracker-iframe {
-    position: absolute;
-    inset: 0;
+  .ot__heading {
+    margin: 0 0 10px;
+    font-size: 2rem;
+    font-weight: 700;
+    color: rgb(var(--color-foreground-heading, 0 0 0));
+  }
+
+  .ot__sub {
+    margin: 0 0 32px;
+    font-size: 15px;
+    color: rgb(var(--color-foreground, 0 0 0) / 0.6);
+  }
+
+  .ot__form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    text-align: left;
+  }
+
+  .ot__field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .ot__label {
+    font-size: 14px;
+    font-weight: 600;
+    color: rgb(var(--color-foreground, 0 0 0));
+  }
+
+  .ot__input {
     width: 100%;
-    height: 100%;
-    border: 0;
-    display: block;
+    padding: 13px 16px;
+    border: 1.5px solid rgb(var(--color-foreground, 0 0 0) / 0.2);
+    border-radius: 8px;
+    font-size: 15px;
+    background: rgb(var(--color-background, 255 255 255));
+    color: rgb(var(--color-foreground, 0 0 0));
+    transition: border-color 0.18s;
+  }
+
+  .ot__input:focus {
+    outline: none;
+    border-color: rgb(255 16 16);
+  }
+
+  .ot__btn {
+    width: 100%;
+    padding: 14px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .ot__help {
+    margin: 20px 0 0;
+    font-size: 13px;
+    color: rgb(var(--color-foreground, 0 0 0) / 0.5);
+    text-align: center;
   }
 {% endstylesheet %}
+
+<script>
+  document.getElementById('ot-form')?.addEventListener('submit', function (e) {
+    e.preventDefault();
+    const input = this.querySelector('#ot-input');
+    const order = input?.value.trim();
+    if (!order) { input?.focus(); return; }
+    const base = {{ section.settings.base_url | json }}.replace(/\/$/, '');
+    window.location.href = base + '/' + encodeURIComponent(order);
+  });
+</script>
 
 {% schema %}
 {
@@ -31,13 +122,27 @@
   "tag": "section",
   "disabled_on": { "groups": ["header", "footer"] },
   "settings": [
+    { "type": "text",     "id": "heading",          "label": "Heading",          "default": "Track your order" },
+    { "type": "text",     "id": "subheading",        "label": "Subheading",       "default": "Enter your order number and email address to see the latest status." },
+    { "type": "text",     "id": "order_label",       "label": "Field label",      "default": "Order number" },
+    { "type": "text",     "id": "order_placeholder", "label": "Placeholder",      "default": "e.g. MC1000321879" },
+    { "type": "text",     "id": "btn_label",         "label": "Button label",     "default": "Track order" },
+    { "type": "text",     "id": "help",              "label": "Help text",        "default": "Can't find your order number? Check your order confirmation email." },
+    { "type": "header",   "content": "Tracking service" },
+    { "type": "text",     "id": "base_url",          "label": "Base tracking URL","default": "https://makeupcity.ginkgoretail.net/ordertracking/", "info": "Order number is appended to this URL on submit." },
+    { "type": "header",   "content": "Layout" },
     {
-      "type": "text",
-      "id": "iframe_url",
-      "label": "Tracking URL",
-      "default": "https://makeupcity.ginkgoretail.net/ordertracking/",
-      "info": "Full URL to load in the iframe."
-    }
+      "type": "select", "id": "section_width", "label": "Width",
+      "options": [
+        { "value": "page-width", "label": "Page" },
+        { "value": "full-width", "label": "Full" }
+      ],
+      "default": "page-width"
+    },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-1" },
+    { "type": "header", "content": "Padding" },
+    { "type": "range", "id": "padding-block-start", "label": "Top",    "min": 0, "max": 120, "step": 4, "unit": "px", "default": 48 },
+    { "type": "range", "id": "padding-block-end",   "label": "Bottom", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 64 }
   ],
   "presets": [{ "name": "Order tracker" }]
 }
