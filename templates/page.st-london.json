@@ -827,8 +827,8 @@
               "type": "image",
               "name": "t:names.image",
               "settings": {
-                "image": "shopify://shop_images/Eyes_14817ec8-68f0-4eec-a6c9-3d95707621b1.png",
-                "link": "shopify://collections/eyes-1",
+                "image": "shopify://shop_images/1920x500_Mascara_739d468e-ce33-4c93-8894-5c863a17b576.jpg",
+                "link": "shopify://collections/st-mascara",
                 "image_ratio": "adapt",
                 "width": "fill",
                 "custom_width": 100,
@@ -1047,7 +1047,7 @@
       },
       "name": "Eyes collection",
       "settings": {
-        "collection": "eyes-1",
+        "collection": "st-mascara",
         "layout_type": "carousel",
         "carousel_on_mobile": false,
         "max_products": 16,
