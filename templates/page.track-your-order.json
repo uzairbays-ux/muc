@@ -15,7 +15,7 @@
         "css": {
           "type": "custom-liquid",
           "settings": {
-            "custom_liquid": "<style>#myIframe { display: block; width: 100%; height: calc(100vh - var(--header-group-height, 80px)); min-height: 500px; border: none; }</style>"
+            "custom_liquid": "<style>#myIframe { display: block; width: 100vw; height: calc(100vh - var(--header-group-height, 80px)); min-height: 500px; border: none; position: relative; left: 50%; transform: translateX(-50%); } .shopify-section:has(#myIframe) { overflow: hidden; padding: 0 !important; } h1:has(+ * #myIframe), h1.page-title { display: none; }</style>"
           },
           "blocks": {}
         },
