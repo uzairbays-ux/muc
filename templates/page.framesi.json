@@ -601,7 +601,7 @@
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/8_1.webp",
-            "link": "",
+            "link": "shopify://collections/curl-volume",
             "open_new_tab": false
           }
         },
@@ -609,7 +609,7 @@
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/11_1.webp",
-            "link": "",
+            "link": "shopify://collections/finish",
             "open_new_tab": false
           }
         },
