@@ -770,7 +770,7 @@
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/1920x500_Shop_by_skin_benefit_3.jpg",
-            "link": "",
+            "link": "shopify://collections/dry-dehydrated",
             "open_new_tab": false
           }
         },
@@ -778,7 +778,7 @@
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/1920x500_Shop_by_skin_benefit_4.jpg",
-            "link": "",
+            "link": "shopify://products/5060390411768",
             "open_new_tab": false
           }
         }
