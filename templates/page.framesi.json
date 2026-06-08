@@ -594,6 +594,70 @@
         "padding-block-end": 12
       }
     },
+    "card_grid_UP933V": {
+      "type": "card-grid",
+      "blocks": {
+        "card_YFKVAW": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/1_e84786b9-a5bc-4ce6-8678-e3163fc4cfe5.png",
+            "link": "",
+            "open_new_tab": false
+          }
+        },
+        "card_ir4ifY": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/1A.png",
+            "link": "",
+            "open_new_tab": false
+          }
+        },
+        "card_3FAReC": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/1B.png",
+            "link": "",
+            "open_new_tab": false
+          }
+        },
+        "card_Cey4n6": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/1C.png",
+            "link": "",
+            "open_new_tab": false
+          }
+        }
+      },
+      "block_order": [
+        "card_YFKVAW",
+        "card_ir4ifY",
+        "card_3FAReC",
+        "card_Cey4n6"
+      ],
+      "name": "Card grid",
+      "settings": {
+        "heading": "FOR ME",
+        "subheading": "Finishing And Styling",
+        "heading_alignment": "center",
+        "desktop_layout": "grid",
+        "mobile_layout": "grid",
+        "desktop_columns": "2",
+        "mobile_columns": "1",
+        "desktop_slider_per_view": "2",
+        "mobile_slider_per_view": "1.5",
+        "auto_rotate": false,
+        "rotate_interval": 4,
+        "gap": 16,
+        "desktop_side_padding": 40,
+        "mobile_side_padding": 0,
+        "section_width": "full-width",
+        "color_scheme": "",
+        "padding-block-start": 24,
+        "padding-block-end": 12
+      }
+    },
     "cta_banner_FQVkyx": {
       "type": "cta-banner",
       "name": "CTA banner",
@@ -623,6 +687,7 @@
     "card_grid_Kt9xUx",
     "ad_banner_eiKMye",
     "section_ytUri6",
+    "card_grid_UP933V",
     "cta_banner_FQVkyx"
   ]
 }
