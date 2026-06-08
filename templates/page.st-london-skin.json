@@ -754,7 +754,7 @@
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/1920x500_Shop_by_skin_benefit_1.jpg",
-            "link": "",
+            "link": "shopify://products/5060390411782",
             "open_new_tab": false
           }
         },
@@ -762,7 +762,7 @@
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/1920x500_Shop_by_skin_benefit_2.jpg",
-            "link": "",
+            "link": "shopify://products/5060390411775",
             "open_new_tab": false
           }
         },
