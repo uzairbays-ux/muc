@@ -285,7 +285,7 @@
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/6_96a95a96-4c41-44d2-aa34-3f546d7eb697.jpg",
-            "link": "",
+            "link": "shopify://collections/new-morphosis-restructure",
             "open_new_tab": false
           }
         },
@@ -655,7 +655,7 @@
         "section_width": "full-width",
         "color_scheme": "",
         "padding-block-start": 24,
-        "padding-block-end": 12
+        "padding-block-end": 24
       }
     },
     "cta_banner_FQVkyx": {
