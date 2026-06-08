@@ -1050,7 +1050,7 @@
         "card_m4dJ4r": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/non-sale-Janssen.webp",
+            "image": "shopify://shop_images/janssen_600_x_375.jpg",
             "link": "shopify://collections/janssen",
             "open_new_tab": false
           }
@@ -1180,7 +1180,7 @@
         "card_Dj4Jhk": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/non-sale-Garnier.webp",
+            "image": "shopify://shop_images/garnier_0aa70ade-9686-4a33-a7ac-94ff86f1d421.jpg",
             "link": "shopify://collections/garnier",
             "open_new_tab": false
           }
@@ -1188,7 +1188,7 @@
         "card_VaLrJE": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/non-sale-Trouble-Maker.webp",
+            "image": "shopify://shop_images/600_x_375_Banners_copy.jpg",
             "link": "shopify://collections/trouble-maker",
             "open_new_tab": false
           }
@@ -1239,8 +1239,8 @@
         "banner_nrAdDN": {
           "type": "banner",
           "settings": {
-            "desktop_image": "shopify://shop_images/k-banner-desktop.avif",
-            "mobile_image": "shopify://shop_images/Korean-Brand-Main-Banner_a3c25c59-d7a2-402f-aa98-60514e38c009.jpg",
+            "desktop_image": "shopify://shop_images/Korean_Brand_desktop_Banner_copy.jpg",
+            "mobile_image": "shopify://shop_images/Korean_Brand_Main_Banner_copy.jpg",
             "link": "shopify://pages/korean-brand-k-beauty",
             "open_new_tab": false
           }
@@ -1770,8 +1770,8 @@
         "banner_Kt9k6X": {
           "type": "banner",
           "settings": {
-            "desktop_image": "shopify://shop_images/chinese-desktop.webp",
-            "mobile_image": "shopify://shop_images/Chinesse_Banner.webp",
+            "desktop_image": "shopify://shop_images/Chinesse_banner_desktop_copy.jpg",
+            "mobile_image": "shopify://shop_images/Chinesse_Banner_copy.jpg",
             "link": "shopify://collections/chinese-brands",
             "open_new_tab": false
           }
