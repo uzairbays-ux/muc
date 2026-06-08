@@ -134,7 +134,7 @@
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/Line_Banner_4.jpg",
-            "link": "shopify://collections/lips",
+            "link": "shopify://collections/morphosis-repair",
             "open_new_tab": false
           }
         },
@@ -142,7 +142,7 @@
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/Line_Banner_5.jpg",
-            "link": "shopify://collections/lips",
+            "link": "shopify://collections/new-morphosis-restructure",
             "open_new_tab": false
           }
         },
@@ -150,7 +150,7 @@
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/Line_Banner_6.jpg",
-            "link": "shopify://collections/lips",
+            "link": "shopify://collections/morphosis-scalp-control",
             "open_new_tab": false
           }
         },
@@ -158,7 +158,7 @@
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/Line_Banner_7.jpg",
-            "link": "shopify://collections/lips",
+            "link": "shopify://collections/morphosis-sublimis-oil",
             "open_new_tab": false
           }
         },
@@ -166,7 +166,7 @@
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/Line_Banner_8.jpg",
-            "link": "shopify://collections/lips",
+            "link": "shopify://collections/morphosis-ultimate-care",
             "open_new_tab": false
           }
         }
