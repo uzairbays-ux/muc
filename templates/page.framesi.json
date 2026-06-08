@@ -312,13 +312,49 @@
             "link": "",
             "open_new_tab": false
           }
+        },
+        "card_JAjE3J": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/1_eec55a8b-cc52-4385-b732-bc63973fe226.jpg",
+            "link": "",
+            "open_new_tab": false
+          }
+        },
+        "card_zqFrNm": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/2_86044936-3567-4d3a-8794-ed0620f58813.jpg",
+            "link": "",
+            "open_new_tab": false
+          }
+        },
+        "card_7LHxGt": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/8_8a4f53ff-009e-40bc-b204-b12f640554ad.jpg",
+            "link": "",
+            "open_new_tab": false
+          }
+        },
+        "card_N6DTAL": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/7_661b8452-c3ad-4010-a8c4-cdbf08731b86.jpg",
+            "link": "",
+            "open_new_tab": false
+          }
         }
       },
       "block_order": [
         "card_iagYRc",
         "card_gbtr8E",
         "card_iUFRDU",
-        "card_WU46Ki"
+        "card_WU46Ki",
+        "card_JAjE3J",
+        "card_zqFrNm",
+        "card_7LHxGt",
+        "card_N6DTAL"
       ],
       "name": "Card grid",
       "settings": {
