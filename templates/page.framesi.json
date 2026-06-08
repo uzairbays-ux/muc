@@ -317,7 +317,7 @@
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/1_eec55a8b-cc52-4385-b732-bc63973fe226.jpg",
-            "link": "",
+            "link": "shopify://collections/new-morphosis-scalp",
             "open_new_tab": false
           }
         },
@@ -325,7 +325,7 @@
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/2_86044936-3567-4d3a-8794-ed0620f58813.jpg",
-            "link": "",
+            "link": "shopify://collections/new-morphosis-densifying",
             "open_new_tab": false
           }
         },
@@ -333,7 +333,7 @@
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/8_8a4f53ff-009e-40bc-b204-b12f640554ad.jpg",
-            "link": "",
+            "link": "shopify://collections/new-morphosis-repair",
             "open_new_tab": false
           }
         },
@@ -341,7 +341,7 @@
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/7_661b8452-c3ad-4010-a8c4-cdbf08731b86.jpg",
-            "link": "",
+            "link": "shopify://collections/new-morphosis-ultimate-care",
             "open_new_tab": false
           }
         }
