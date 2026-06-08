@@ -1593,7 +1593,7 @@
         "category_Xea9DL": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/non-sale-Colorwow.webp",
+            "image": "shopify://shop_images/color_wow_500_x_500.jpg",
             "label": "",
             "link": "shopify://collections/color-wow",
             "card_background": "rgba(0,0,0,0)"
@@ -1602,7 +1602,7 @@
         "category_W3MDAj": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/non-sale-Femina.webp",
+            "image": "shopify://shop_images/femina_500x500_b02b10db-658e-4453-ba5b-80a0e7afa5cc.jpg",
             "label": "",
             "link": "shopify://collections/femina",
             "card_background": "rgba(0,0,0,0)"
@@ -1620,7 +1620,7 @@
         "category_EAWHGr": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/non-sale-Schwarzkopf.webp",
+            "image": "shopify://shop_images/schwarzkopf_500_x_500.jpg",
             "label": "",
             "link": "shopify://collections/schwarzkopf",
             "card_background": "rgba(0,0,0,0)"
@@ -1638,7 +1638,7 @@
         "category_KWk6xF": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/non-sale-Just-For-men.webp",
+            "image": "shopify://shop_images/200_x_200_Banners_copy.jpg",
             "label": "",
             "link": "shopify://collections/just-for-men",
             "card_background": "rgba(0,0,0,0)"
