@@ -278,6 +278,70 @@
         "padding-block-end": 12
       }
     },
+    "card_grid_PYBjcN": {
+      "type": "card-grid",
+      "blocks": {
+        "card_iagYRc": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/6_96a95a96-4c41-44d2-aa34-3f546d7eb697.jpg",
+            "link": "",
+            "open_new_tab": false
+          }
+        },
+        "card_gbtr8E": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/10_fd3e0a13-d861-47a7-98ea-cb40550f9a2b.jpg",
+            "link": "",
+            "open_new_tab": false
+          }
+        },
+        "card_iUFRDU": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/3_27a84a49-143f-4fe4-9b8c-ffda7209b058.jpg",
+            "link": "",
+            "open_new_tab": false
+          }
+        },
+        "card_WU46Ki": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/9_9feb5126-7941-49b5-a3ba-f706e9c45019.jpg",
+            "link": "",
+            "open_new_tab": false
+          }
+        }
+      },
+      "block_order": [
+        "card_iagYRc",
+        "card_gbtr8E",
+        "card_iUFRDU",
+        "card_WU46Ki"
+      ],
+      "name": "Card grid",
+      "settings": {
+        "heading": "MORPHOSIS",
+        "subheading": "Hair And Scalp Treatment Line",
+        "heading_alignment": "center",
+        "desktop_layout": "grid",
+        "mobile_layout": "grid",
+        "desktop_columns": "2",
+        "mobile_columns": "1",
+        "desktop_slider_per_view": "2",
+        "mobile_slider_per_view": "1.5",
+        "auto_rotate": false,
+        "rotate_interval": 4,
+        "gap": 16,
+        "desktop_side_padding": 40,
+        "mobile_side_padding": 0,
+        "section_width": "full-width",
+        "color_scheme": "",
+        "padding-block-start": 24,
+        "padding-block-end": 24
+      }
+    },
     "cta_banner_FQVkyx": {
       "type": "cta-banner",
       "name": "CTA banner",
@@ -301,6 +365,7 @@
     "card_grid_H3KVHW",
     "ad_banner_cnkdKH",
     "section_JbUHMz",
+    "card_grid_PYBjcN",
     "cta_banner_FQVkyx"
   ]
 }
