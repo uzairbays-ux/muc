@@ -518,6 +518,22 @@
         "padding-block-end": 12
       }
     },
+    "ad_banner_eiKMye": {
+      "type": "ad-banner",
+      "name": "Ad banner",
+      "settings": {
+        "desktop_image": "shopify://shop_images/1950_x_500-A.png",
+        "mobile_image": "shopify://shop_images/900x640_A.webp",
+        "link": "shopify://collections/color",
+        "open_new_tab": false,
+        "section_width": "page-width",
+        "mobile_full_width": true,
+        "padding_inline_desktop": 0,
+        "padding_inline_mobile": 12,
+        "padding-block-start": 12,
+        "padding-block-end": 12
+      }
+    },
     "cta_banner_FQVkyx": {
       "type": "cta-banner",
       "name": "CTA banner",
@@ -545,6 +561,7 @@
     "ad_banner_GP3b6n",
     "section_h8jbJW",
     "card_grid_Kt9xUx",
+    "ad_banner_eiKMye",
     "cta_banner_FQVkyx"
   ]
 }
