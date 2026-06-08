@@ -118,7 +118,7 @@
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/Line_Banner_2.jpg",
-            "link": "shopify://collections/eyes-1",
+            "link": "shopify://collections/new-morphosis-densifying",
             "open_new_tab": false
           }
         },
@@ -126,7 +126,7 @@
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/Line_Banner_3.jpg",
-            "link": "shopify://collections/lips",
+            "link": "shopify://collections/new-morphosis-reinforcing",
             "open_new_tab": false
           }
         },
