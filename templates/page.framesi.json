@@ -375,7 +375,23 @@
         "section_width": "full-width",
         "color_scheme": "",
         "padding-block-start": 24,
-        "padding-block-end": 24
+        "padding-block-end": 12
+      }
+    },
+    "ad_banner_GP3b6n": {
+      "type": "ad-banner",
+      "name": "Ad banner",
+      "settings": {
+        "desktop_image": "shopify://shop_images/Framesi_Main_Banner_-_desktop.jpg",
+        "mobile_image": "shopify://shop_images/Framesi_Main_Banner_-_mobile.jpg",
+        "link": "shopify://collections/framesi",
+        "open_new_tab": false,
+        "section_width": "page-width",
+        "mobile_full_width": true,
+        "padding_inline_desktop": 0,
+        "padding_inline_mobile": 12,
+        "padding-block-start": 12,
+        "padding-block-end": 12
       }
     },
     "cta_banner_FQVkyx": {
@@ -402,6 +418,7 @@
     "ad_banner_cnkdKH",
     "section_JbUHMz",
     "card_grid_PYBjcN",
+    "ad_banner_GP3b6n",
     "cta_banner_FQVkyx"
   ]
 }
