@@ -79,8 +79,9 @@
         "slide_tD9MwC": {
           "type": "slide",
           "settings": {
-            "desktop_image": "shopify://shop_images/Main-Banner_d547ff04-e004-468f-b59c-d14fa8becf1a.png",
-            "link": "shopify://collections/maybelline",
+            "desktop_image": "shopify://shop_images/with_out_heading_-_Main_Banner_desktop.jpg",
+            "mobile_image": "shopify://shop_images/with_out_heading_-_Main_Banner_mobile.jpg",
+            "link": "shopify://collections/morphosis",
             "open_new_tab": false,
             "alt": ""
           }
