@@ -62,7 +62,7 @@
       "name": "Ad banner",
       "settings": {
         "desktop_image": "shopify://shop_images/1920x320_ST_London_Skin_Care.jpg",
-        "link": "shopify://collections/maybelline",
+        "link": "shopify://collections/st-london-skin",
         "open_new_tab": false,
         "section_width": "page-width",
         "mobile_full_width": true,
@@ -79,7 +79,7 @@
           "type": "slide",
           "settings": {
             "desktop_image": "shopify://shop_images/st-skin-banner.gif",
-            "link": "shopify://collections/maybelline",
+            "link": "shopify://collections/st-london-skin-care",
             "open_new_tab": false,
             "alt": ""
           }
@@ -479,7 +479,7 @@
               "name": "t:names.image",
               "settings": {
                 "image": "shopify://shop_images/best-sellers-banner.jpg",
-                "link": "shopify://collections/maybelline",
+                "link": "shopify://collections/sale-st-london",
                 "image_ratio": "adapt",
                 "width": "fill",
                 "custom_width": 100,
@@ -722,7 +722,7 @@
       "name": "Ad banner",
       "settings": {
         "desktop_image": "shopify://shop_images/1920x960_Night_cream_Banner.jpg",
-        "link": "shopify://collections/maybelline",
+        "link": "shopify://products/5060390411799",
         "open_new_tab": false,
         "section_width": "page-width",
         "mobile_full_width": true,
@@ -737,7 +737,7 @@
       "name": "Ad banner",
       "settings": {
         "desktop_image": "shopify://shop_images/1920x960_Day_Cream_Banner.jpg",
-        "link": "shopify://collections/maybelline",
+        "link": "shopify://products/5060390411805",
         "open_new_tab": false,
         "section_width": "page-width",
         "mobile_full_width": true,
