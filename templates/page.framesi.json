@@ -382,9 +382,9 @@
       "type": "ad-banner",
       "name": "Ad banner",
       "settings": {
-        "desktop_image": "shopify://shop_images/Framesi_Main_Banner_-_desktop.jpg",
-        "mobile_image": "shopify://shop_images/Framesi_Main_Banner_-_mobile.jpg",
-        "link": "shopify://collections/framesi",
+        "desktop_image": "shopify://shop_images/Framesi-1920x600.jpg",
+        "mobile_image": "shopify://shop_images/Framesi-900x640.jpg",
+        "link": "shopify://collections/color",
         "open_new_tab": false,
         "section_width": "page-width",
         "mobile_full_width": true,
