@@ -222,7 +222,7 @@
               "type": "_product-list-text",
               "name": "t:names.collection_title",
               "settings": {
-                "text": "<h2>VALUE SETS</h2>",
+                "text": "<h4>VALUE SETS</h4>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "center",
@@ -804,7 +804,7 @@
         "rotate_interval": 4,
         "gap": 0,
         "desktop_side_padding": 40,
-        "mobile_side_padding": 0,
+        "mobile_side_padding": 10,
         "section_width": "full-width",
         "color_scheme": "",
         "padding-block-start": 12,
