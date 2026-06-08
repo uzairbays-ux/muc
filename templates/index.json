@@ -110,8 +110,8 @@
         "slide_4mM8cj": {
           "type": "slide",
           "settings": {
-            "desktop_image": "shopify://shop_images/Main-Banner-1920-x-750.webp",
-            "mobile_image": "shopify://shop_images/Main-Banner-1920-x-750.webp",
+            "desktop_image": "shopify://shop_images/sale-banner.webp",
+            "mobile_image": "shopify://shop_images/sale-banner.webp",
             "link": "shopify://collections/sale",
             "open_new_tab": false,
             "alt": ""
@@ -121,7 +121,6 @@
       "block_order": [
         "slide_4mM8cj"
       ],
-      "disabled": true,
       "name": "Featured banner",
       "settings": {
         "autoplay": true,
