@@ -478,7 +478,7 @@
               "type": "image",
               "name": "t:names.image",
               "settings": {
-                "image": "shopify://shop_images/Bestseller-Banner_2faec086-68b1-4041-b13f-81e9ef51de71.png",
+                "image": "shopify://shop_images/best-sellers-banner.jpg",
                 "link": "shopify://collections/maybelline",
                 "image_ratio": "adapt",
                 "width": "fill",
@@ -698,7 +698,7 @@
       },
       "name": "Bestseller collection",
       "settings": {
-        "collection": "sale-maybelline",
+        "collection": "st-london",
         "layout_type": "carousel",
         "carousel_on_mobile": false,
         "max_products": 16,
