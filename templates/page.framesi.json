@@ -109,7 +109,7 @@
         "card_eDncEE": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/Face_afe1cbf4-97a5-4e07-b895-eae0d7f831a7.jpg",
+            "image": "shopify://shop_images/Line_Banner_1.jpg",
             "link": "shopify://collections/face-1",
             "open_new_tab": false
           }
@@ -117,7 +117,7 @@
         "card_PLnnAa": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/Eyes_da64b737-29b5-41a4-97c0-3679c17d8fd4.jpg",
+            "image": "shopify://shop_images/Line_Banner_2.jpg",
             "link": "shopify://collections/eyes-1",
             "open_new_tab": false
           }
@@ -125,7 +125,47 @@
         "card_hFYzeP": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/Lips_53fe7387-1d0d-4234-8674-0161d916f64d.jpg",
+            "image": "shopify://shop_images/Line_Banner_3.jpg",
+            "link": "shopify://collections/lips",
+            "open_new_tab": false
+          }
+        },
+        "card_MHbFCU": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/Line_Banner_4.jpg",
+            "link": "shopify://collections/lips",
+            "open_new_tab": false
+          }
+        },
+        "card_bgCJch": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/Line_Banner_5.jpg",
+            "link": "shopify://collections/lips",
+            "open_new_tab": false
+          }
+        },
+        "card_N9D3Pn": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/Line_Banner_6.jpg",
+            "link": "shopify://collections/lips",
+            "open_new_tab": false
+          }
+        },
+        "card_CTrA7g": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/Line_Banner_7.jpg",
+            "link": "shopify://collections/lips",
+            "open_new_tab": false
+          }
+        },
+        "card_fHeeap": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/Line_Banner_8.jpg",
             "link": "shopify://collections/lips",
             "open_new_tab": false
           }
@@ -134,7 +174,12 @@
       "block_order": [
         "card_eDncEE",
         "card_PLnnAa",
-        "card_hFYzeP"
+        "card_hFYzeP",
+        "card_MHbFCU",
+        "card_bgCJch",
+        "card_N9D3Pn",
+        "card_CTrA7g",
+        "card_fHeeap"
       ],
       "name": "Card grid",
       "settings": {
@@ -143,14 +188,14 @@
         "heading_alignment": "left",
         "desktop_layout": "slider",
         "mobile_layout": "slider",
-        "desktop_columns": "3",
+        "desktop_columns": "4",
         "mobile_columns": "1",
-        "desktop_slider_per_view": "3",
+        "desktop_slider_per_view": "4",
         "mobile_slider_per_view": "1.5",
-        "auto_rotate": false,
+        "auto_rotate": true,
         "rotate_interval": 4,
         "gap": 16,
-        "desktop_side_padding": 48,
+        "desktop_side_padding": 40,
         "mobile_side_padding": 0,
         "section_width": "full-width",
         "color_scheme": "",
