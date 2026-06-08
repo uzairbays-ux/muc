@@ -378,106 +378,6 @@
         "padding-block-end": 12
       }
     },
-    "card_grid_Kt9xUx": {
-      "type": "card-grid",
-      "blocks": {
-        "card_BwYQmz": {
-          "type": "card",
-          "settings": {
-            "image": "shopify://shop_images/6_96a95a96-4c41-44d2-aa34-3f546d7eb697.jpg",
-            "link": "",
-            "open_new_tab": false
-          }
-        },
-        "card_yhag8N": {
-          "type": "card",
-          "settings": {
-            "image": "shopify://shop_images/10_fd3e0a13-d861-47a7-98ea-cb40550f9a2b.jpg",
-            "link": "",
-            "open_new_tab": false
-          }
-        },
-        "card_qzWkN6": {
-          "type": "card",
-          "settings": {
-            "image": "shopify://shop_images/3_27a84a49-143f-4fe4-9b8c-ffda7209b058.jpg",
-            "link": "",
-            "open_new_tab": false
-          }
-        },
-        "card_yg9ETx": {
-          "type": "card",
-          "settings": {
-            "image": "shopify://shop_images/9_9feb5126-7941-49b5-a3ba-f706e9c45019.jpg",
-            "link": "",
-            "open_new_tab": false
-          }
-        },
-        "card_HMpJ4q": {
-          "type": "card",
-          "settings": {
-            "image": "shopify://shop_images/1_eec55a8b-cc52-4385-b732-bc63973fe226.jpg",
-            "link": "",
-            "open_new_tab": false
-          }
-        },
-        "card_W9X7AM": {
-          "type": "card",
-          "settings": {
-            "image": "shopify://shop_images/2_86044936-3567-4d3a-8794-ed0620f58813.jpg",
-            "link": "",
-            "open_new_tab": false
-          }
-        },
-        "card_Kitifa": {
-          "type": "card",
-          "settings": {
-            "image": "shopify://shop_images/8_8a4f53ff-009e-40bc-b204-b12f640554ad.jpg",
-            "link": "",
-            "open_new_tab": false
-          }
-        },
-        "card_YUrcQx": {
-          "type": "card",
-          "settings": {
-            "image": "shopify://shop_images/7_661b8452-c3ad-4010-a8c4-cdbf08731b86.jpg",
-            "link": "",
-            "open_new_tab": false
-          }
-        }
-      },
-      "block_order": [
-        "card_BwYQmz",
-        "card_yhag8N",
-        "card_qzWkN6",
-        "card_yg9ETx",
-        "card_HMpJ4q",
-        "card_W9X7AM",
-        "card_Kitifa",
-        "card_YUrcQx"
-      ],
-      "name": "Card grid",
-      "settings": {
-        "heading": "MORPHOSIS",
-        "subheading": "Hair And Scalp Treatment Line",
-        "heading_alignment": "center",
-        "desktop_layout": "grid",
-        "mobile_layout": "grid",
-        "desktop_columns": "2",
-        "mobile_columns": "1",
-        "desktop_slider_per_view": "2",
-        "mobile_slider_per_view": "1.5",
-        "auto_rotate": false,
-        "rotate_interval": 4,
-        "gap": 16,
-        "desktop_side_padding": 40,
-        "mobile_side_padding": 0,
-        "section_width": "full-width",
-        "color_scheme": "",
-        "padding-block-start": 24,
-        "padding-block-end": 12
-      }
-    },
     "ad_banner_GP3b6n": {
       "type": "ad-banner",
       "name": "Ad banner",
@@ -551,6 +451,70 @@
         "overlay_style": "solid",
         "gradient_direction": "to top",
         "padding-block-start": 12,
+        "padding-block-end": 12
+      }
+    },
+    "card_grid_Kt9xUx": {
+      "type": "card-grid",
+      "blocks": {
+        "card_BwYQmz": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/1_e84786b9-a5bc-4ce6-8678-e3163fc4cfe5.png",
+            "link": "",
+            "open_new_tab": false
+          }
+        },
+        "card_yhag8N": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/1A.png",
+            "link": "",
+            "open_new_tab": false
+          }
+        },
+        "card_qzWkN6": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/1B.png",
+            "link": "",
+            "open_new_tab": false
+          }
+        },
+        "card_yg9ETx": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/1C.png",
+            "link": "",
+            "open_new_tab": false
+          }
+        }
+      },
+      "block_order": [
+        "card_BwYQmz",
+        "card_yhag8N",
+        "card_qzWkN6",
+        "card_yg9ETx"
+      ],
+      "name": "Card grid",
+      "settings": {
+        "heading": "FRAMCOLOR",
+        "subheading": "Finishing And Styling",
+        "heading_alignment": "center",
+        "desktop_layout": "grid",
+        "mobile_layout": "grid",
+        "desktop_columns": "2",
+        "mobile_columns": "1",
+        "desktop_slider_per_view": "2",
+        "mobile_slider_per_view": "1.5",
+        "auto_rotate": false,
+        "rotate_interval": 4,
+        "gap": 16,
+        "desktop_side_padding": 40,
+        "mobile_side_padding": 0,
+        "section_width": "full-width",
+        "color_scheme": "",
+        "padding-block-start": 24,
         "padding-block-end": 12
       }
     },
