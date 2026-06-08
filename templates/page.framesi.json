@@ -203,6 +203,21 @@
         "padding-block-end": 12
       }
     },
+    "ad_banner_cnkdKH": {
+      "type": "ad-banner",
+      "name": "Ad banner",
+      "settings": {
+        "desktop_image": "shopify://shop_images/icons.jpg",
+        "link": "shopify://collections/framesi",
+        "open_new_tab": false,
+        "section_width": "page-width",
+        "mobile_full_width": true,
+        "padding_inline_desktop": 0,
+        "padding_inline_mobile": 12,
+        "padding-block-start": 12,
+        "padding-block-end": 12
+      }
+    },
     "section_JbUHMz": {
       "type": "section",
       "blocks": {
@@ -1739,6 +1754,7 @@
     "ad_banner_eqwXzQ",
     "featured_banner_KEagkW",
     "card_grid_H3KVHW",
+    "ad_banner_cnkdKH",
     "section_JbUHMz",
     "product_list_QwYUXP",
     "product_list_CALkkH",
