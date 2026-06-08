@@ -570,7 +570,7 @@
         "card_CaecqX": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/non-sale-Kryolan.webp",
+            "image": "shopify://shop_images/kryolan_500_x_500.jpg",
             "link": "shopify://collections/kryolan",
             "open_new_tab": false
           }
@@ -586,7 +586,7 @@
         "card_QQLjCx": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/non-sale-Framesi.webp",
+            "image": "shopify://shop_images/500_x_500_Banners_copy.jpg",
             "link": "shopify://collections/framesi",
             "open_new_tab": false
           }
@@ -594,7 +594,7 @@
         "card_p9kYBe": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/non-sale-luscious.webp",
+            "image": "shopify://shop_images/luscious_500_x500_1a6bc9f8-bf8f-4257-9b3a-3b6933b35430.jpg",
             "link": "shopify://collections/luscious-cosmetics",
             "open_new_tab": false
           }
@@ -710,7 +710,7 @@
         "card_J3czmk": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/non-sale-Lamel.webp",
+            "image": "shopify://shop_images/lamel_500_x_500.jpg",
             "link": "shopify://collections/lamel",
             "open_new_tab": false
           }
@@ -718,7 +718,7 @@
         "card_gBiw68": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/non-sale-Loreal.webp",
+            "image": "shopify://shop_images/loreal_500_x_500.jpg",
             "link": "shopify://collections/loreal-paris",
             "open_new_tab": false
           }
@@ -734,7 +734,7 @@
         "card_ceiizR": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/non-sale-Gosh.webp",
+            "image": "shopify://shop_images/gosh_500_x_500.jpg",
             "link": "shopify://collections/gosh",
             "open_new_tab": false
           }
@@ -742,7 +742,7 @@
         "card_c49pAk": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/non-sale-B_BW.webp",
+            "image": "shopify://shop_images/Bath_body_5ec817f1-91eb-4096-9e5b-df6444c8f6f7.jpg",
             "link": "shopify://collections/bath-body-works",
             "open_new_tab": false
           }
@@ -750,7 +750,7 @@
         "card_AHQBXy": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/La_roche_posay.webp",
+            "image": "shopify://shop_images/la_rache_posay.jpg",
             "link": "shopify://collections/la-roche-posay",
             "open_new_tab": false
           }
