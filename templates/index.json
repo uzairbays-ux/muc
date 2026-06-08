@@ -140,7 +140,7 @@
         "card_x4i8pi": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/hero_banner_Mobile-min.jpg",
+            "image": "shopify://shop_images/ST_750_x_750.jpg",
             "link": "shopify://collections/st-london",
             "open_new_tab": false
           }
@@ -188,7 +188,7 @@
         "card_b9F39r": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/non-sale-Bioaqua.webp",
+            "image": "shopify://shop_images/bioaqua_750_x_750.jpg",
             "link": "shopify://collections/bioaqua",
             "open_new_tab": false
           }
