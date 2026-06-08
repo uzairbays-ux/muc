@@ -469,7 +469,7 @@
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/1A.png",
-            "link": "",
+            "link": "shopify://collections/framcolor-2001",
             "open_new_tab": false
           }
         },
@@ -477,7 +477,7 @@
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/1B.png",
-            "link": "",
+            "link": "shopify://collections/framcolor-glamour",
             "open_new_tab": false
           }
         },
@@ -485,7 +485,7 @@
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/1C.png",
-            "link": "",
+            "link": "shopify://collections/framcolor-extra-charge",
             "open_new_tab": false
           }
         }
