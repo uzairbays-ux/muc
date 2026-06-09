@@ -554,7 +554,7 @@
               "name": "t:names.image",
               "settings": {
                 "image": "shopify://shop_images/sav-Lotion-Banner-06-18-min.jpg",
-                "link": "shopify://collections/face-1",
+                "link": "shopify://collections/savannah-lotion",
                 "image_ratio": "adapt",
                 "width": "fill",
                 "custom_width": 100,
