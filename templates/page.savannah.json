@@ -463,7 +463,7 @@
         "card_QrBd6h": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/image1.jpg",
+            "image": "shopify://shop_images/sav-fw-Rose-min.jpg",
             "link": "shopify://products/30166967",
             "open_new_tab": false
           }
@@ -471,7 +471,7 @@
         "card_JRbV9G": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/1B.jpg",
+            "image": "shopify://shop_images/sav-fw-aloe-vera-min.jpg",
             "link": "shopify://collections/fit-me",
             "open_new_tab": false
           }
@@ -479,7 +479,7 @@
         "card_D7Dji7": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/image2.jpg",
+            "image": "shopify://shop_images/sav-fw-Moringa-min.jpg",
             "link": "shopify://collections/vinyl-ink",
             "open_new_tab": false
           }
