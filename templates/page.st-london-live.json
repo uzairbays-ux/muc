@@ -168,9 +168,8 @@
             "image_4LNNBY": {
               "type": "image",
               "name": "t:names.image",
-              "disabled": true,
               "settings": {
-                "image": "shopify://shop_images/New-launch_1920x_91d5c9e5-50b9-490f-8e98-c9184d2e3a17.webp",
+                "image": "shopify://shop_images/1920x600x4.gif",
                 "link": "shopify://collections/maybelline",
                 "image_ratio": "adapt",
                 "width": "fill",
@@ -182,32 +181,6 @@
                 "border_width": 1,
                 "border_opacity": 100,
                 "border_radius": 10,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "product_list_text_47JXNw": {
-              "type": "_product-list-text",
-              "name": "t:names.collection_title",
-              "settings": {
-                "text": "<h4>VALUE SETS</h4>",
-                "width": "100%",
-                "max_width": "normal",
-                "alignment": "center",
-                "type_preset": "custom",
-                "font": "var(--font-heading--family)",
-                "font_size": "",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground-heading)",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
                 "padding-block-start": 0,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
@@ -233,7 +206,6 @@
           },
           "block_order": [
             "image_4LNNBY",
-            "product_list_text_47JXNw",
             "product_list_button_cB4TnH"
           ]
         },
