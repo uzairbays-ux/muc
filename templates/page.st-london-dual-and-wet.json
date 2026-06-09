@@ -72,21 +72,6 @@
         "padding-block-end": 12
       }
     },
-    "ad_banner_E6UPCt": {
-      "type": "ad-banner",
-      "name": "Ad banner",
-      "settings": {
-        "desktop_image": "shopify://shop_images/1920x350.jpg",
-        "link": "shopify://collections/st-london",
-        "open_new_tab": false,
-        "section_width": "page-width",
-        "mobile_full_width": true,
-        "padding_inline_desktop": 0,
-        "padding_inline_mobile": 12,
-        "padding-block-start": 12,
-        "padding-block-end": 12
-      }
-    },
     "section_JbUHMz": {
       "type": "section",
       "blocks": {
@@ -389,6 +374,51 @@
         "color_scheme": "",
         "padding-block-start": 40,
         "padding-block-end": 40
+      }
+    },
+    "ad_banner_E6UPCt": {
+      "type": "ad-banner",
+      "name": "Ad banner",
+      "settings": {
+        "desktop_image": "shopify://shop_images/Benefits-1920x600.gif",
+        "link": "shopify://collections/st-london",
+        "open_new_tab": false,
+        "section_width": "page-width",
+        "mobile_full_width": true,
+        "padding_inline_desktop": 0,
+        "padding_inline_mobile": 12,
+        "padding-block-start": 12,
+        "padding-block-end": 12
+      }
+    },
+    "ad_banner_UKiYnK": {
+      "type": "ad-banner",
+      "name": "Ad banner",
+      "settings": {
+        "desktop_image": "shopify://shop_images/How-to-Apply-1920x600.gif",
+        "link": "shopify://collections/st-london",
+        "open_new_tab": false,
+        "section_width": "page-width",
+        "mobile_full_width": true,
+        "padding_inline_desktop": 0,
+        "padding_inline_mobile": 12,
+        "padding-block-start": 12,
+        "padding-block-end": 12
+      }
+    },
+    "ad_banner_TgLnQD": {
+      "type": "ad-banner",
+      "name": "Ad banner",
+      "settings": {
+        "desktop_image": "shopify://shop_images/How-to-Apply-1920x600.gif",
+        "link": "shopify://collections/st-london",
+        "open_new_tab": false,
+        "section_width": "page-width",
+        "mobile_full_width": true,
+        "padding_inline_desktop": 0,
+        "padding_inline_mobile": 12,
+        "padding-block-start": 12,
+        "padding-block-end": 12
       }
     },
     "product_list_Lw3nCx": {
@@ -1618,6 +1648,8 @@
     "section_JbUHMz",
     "featured_product_information_Df9wax",
     "ad_banner_E6UPCt",
+    "ad_banner_UKiYnK",
+    "ad_banner_TgLnQD",
     "product_list_Lw3nCx",
     "product_list_FFdi6t",
     "product_list_KXRd8W",
