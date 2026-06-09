@@ -1,0 +1,693 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "blocks": {
+        "heading": {
+          "type": "text",
+          "name": "Title",
+          "settings": {
+            "text": "<h1>{{ closest.page.title }}</h1>",
+            "width": "100%",
+            "max_width": "normal",
+            "alignment": "center",
+            "type_preset": "h2",
+            "font": "var(--font-primary--family)",
+            "font_size": "",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "page-content": {
+          "type": "page-content",
+          "settings": {},
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading",
+        "page-content"
+      ],
+      "disabled": true,
+      "settings": {
+        "content_direction": "column",
+        "gap": 32,
+        "color_scheme": "",
+        "padding-block-start": 40,
+        "padding-block-end": 80
+      }
+    },
+    "ad_banner_eqwXzQ": {
+      "type": "ad-banner",
+      "name": "Ad banner",
+      "settings": {
+        "desktop_image": "shopify://shop_images/Framesi_Main_Banner_-_desktop.jpg",
+        "mobile_image": "shopify://shop_images/Framesi_Main_Banner_-_mobile.jpg",
+        "link": "shopify://collections/framesi",
+        "open_new_tab": false,
+        "section_width": "page-width",
+        "mobile_full_width": true,
+        "padding_inline_desktop": 0,
+        "padding_inline_mobile": 12,
+        "padding-block-start": 12,
+        "padding-block-end": 12
+      }
+    },
+    "featured_banner_KEagkW": {
+      "type": "featured-banner",
+      "blocks": {
+        "slide_tD9MwC": {
+          "type": "slide",
+          "settings": {
+            "desktop_image": "shopify://shop_images/with_out_heading_-_Main_Banner_desktop.jpg",
+            "mobile_image": "shopify://shop_images/with_out_heading_-_Main_Banner_mobile.jpg",
+            "link": "shopify://collections/morphosis",
+            "open_new_tab": false,
+            "alt": ""
+          }
+        }
+      },
+      "block_order": [
+        "slide_tD9MwC"
+      ],
+      "name": "Featured banner",
+      "settings": {
+        "autoplay": false,
+        "autoplay_interval": 5,
+        "show_arrows": false,
+        "show_dots": false,
+        "section_width": "page-width",
+        "border_radius": 10,
+        "color_scheme": "",
+        "padding-block-start": 12,
+        "padding-block-end": 0
+      }
+    },
+    "card_grid_H3KVHW": {
+      "type": "card-grid",
+      "blocks": {
+        "card_eDncEE": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/Line_Banner_1.jpg",
+            "link": "shopify://products/1001370750242",
+            "open_new_tab": false
+          }
+        },
+        "card_PLnnAa": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/Line_Banner_2.jpg",
+            "link": "shopify://collections/new-morphosis-densifying",
+            "open_new_tab": false
+          }
+        },
+        "card_hFYzeP": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/Line_Banner_3.jpg",
+            "link": "shopify://collections/new-morphosis-reinforcing",
+            "open_new_tab": false
+          }
+        },
+        "card_MHbFCU": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/Line_Banner_4.jpg",
+            "link": "shopify://collections/morphosis-repair",
+            "open_new_tab": false
+          }
+        },
+        "card_bgCJch": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/Line_Banner_5.jpg",
+            "link": "shopify://collections/new-morphosis-restructure",
+            "open_new_tab": false
+          }
+        },
+        "card_N9D3Pn": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/Line_Banner_6.jpg",
+            "link": "shopify://collections/morphosis-scalp-control",
+            "open_new_tab": false
+          }
+        },
+        "card_CTrA7g": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/Line_Banner_7.jpg",
+            "link": "shopify://collections/morphosis-sublimis-oil",
+            "open_new_tab": false
+          }
+        },
+        "card_fHeeap": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/Line_Banner_8.jpg",
+            "link": "shopify://collections/morphosis-ultimate-care",
+            "open_new_tab": false
+          }
+        }
+      },
+      "block_order": [
+        "card_eDncEE",
+        "card_PLnnAa",
+        "card_hFYzeP",
+        "card_MHbFCU",
+        "card_bgCJch",
+        "card_N9D3Pn",
+        "card_CTrA7g",
+        "card_fHeeap"
+      ],
+      "name": "Card grid",
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "heading_alignment": "left",
+        "desktop_layout": "slider",
+        "mobile_layout": "slider",
+        "desktop_columns": "4",
+        "mobile_columns": "1",
+        "desktop_slider_per_view": "4",
+        "mobile_slider_per_view": "1.5",
+        "auto_rotate": true,
+        "rotate_interval": 4,
+        "gap": 16,
+        "desktop_side_padding": 40,
+        "mobile_side_padding": 0,
+        "section_width": "full-width",
+        "color_scheme": "",
+        "padding-block-start": 12,
+        "padding-block-end": 12
+      }
+    },
+    "ad_banner_cnkdKH": {
+      "type": "ad-banner",
+      "name": "Ad banner",
+      "settings": {
+        "desktop_image": "shopify://shop_images/icons.jpg",
+        "link": "shopify://collections/framesi",
+        "open_new_tab": false,
+        "section_width": "page-width",
+        "mobile_full_width": true,
+        "padding_inline_desktop": 0,
+        "padding_inline_mobile": 12,
+        "padding-block-start": 12,
+        "padding-block-end": 12
+      }
+    },
+    "section_JbUHMz": {
+      "type": "section",
+      "blocks": {
+        "video_RWHmzz": {
+          "type": "video",
+          "name": "t:names.video",
+          "settings": {
+            "source": "uploaded",
+            "video": "shopify://files/videos/MORPHOSIS_LINE_VIDEO_ENG.mov",
+            "video_url": "",
+            "video_autoplay": true,
+            "video_loop": true,
+            "alt": "",
+            "custom_width": 100,
+            "custom_width_mobile": 100,
+            "aspect_ratio": "16/9",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 10,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "video_RWHmzz"
+      ],
+      "name": "t:names.video_section",
+      "settings": {
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 16,
+        "section_width": "page-width",
+        "section_height": "",
+        "section_height_custom": 50,
+        "color_scheme": "",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "padding-block-start": 12,
+        "padding-block-end": 12
+      }
+    },
+    "card_grid_PYBjcN": {
+      "type": "card-grid",
+      "blocks": {
+        "card_iagYRc": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/6_96a95a96-4c41-44d2-aa34-3f546d7eb697.jpg",
+            "link": "shopify://collections/new-morphosis-restructure",
+            "open_new_tab": false
+          }
+        },
+        "card_gbtr8E": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/10_fd3e0a13-d861-47a7-98ea-cb40550f9a2b.jpg",
+            "link": "shopify://collections/new-morphosis-color-protect",
+            "open_new_tab": false
+          }
+        },
+        "card_iUFRDU": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/3_27a84a49-143f-4fe4-9b8c-ffda7209b058.jpg",
+            "link": "shopify://collections/new-morphosis-reinforcing",
+            "open_new_tab": false
+          }
+        },
+        "card_WU46Ki": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/9_9feb5126-7941-49b5-a3ba-f706e9c45019.jpg",
+            "link": "shopify://collections/new-morphosis-sublimis-oil",
+            "open_new_tab": false
+          }
+        },
+        "card_JAjE3J": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/1_eec55a8b-cc52-4385-b732-bc63973fe226.jpg",
+            "link": "shopify://collections/new-morphosis-scalp",
+            "open_new_tab": false
+          }
+        },
+        "card_zqFrNm": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/2_86044936-3567-4d3a-8794-ed0620f58813.jpg",
+            "link": "shopify://collections/new-morphosis-densifying",
+            "open_new_tab": false
+          }
+        },
+        "card_7LHxGt": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/8_8a4f53ff-009e-40bc-b204-b12f640554ad.jpg",
+            "link": "shopify://collections/new-morphosis-repair",
+            "open_new_tab": false
+          }
+        },
+        "card_N6DTAL": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/7_661b8452-c3ad-4010-a8c4-cdbf08731b86.jpg",
+            "link": "shopify://collections/new-morphosis-ultimate-care",
+            "open_new_tab": false
+          }
+        }
+      },
+      "block_order": [
+        "card_iagYRc",
+        "card_gbtr8E",
+        "card_iUFRDU",
+        "card_WU46Ki",
+        "card_JAjE3J",
+        "card_zqFrNm",
+        "card_7LHxGt",
+        "card_N6DTAL"
+      ],
+      "name": "Card grid",
+      "settings": {
+        "heading": "MORPHOSIS",
+        "subheading": "Hair And Scalp Treatment Line",
+        "heading_alignment": "center",
+        "desktop_layout": "grid",
+        "mobile_layout": "grid",
+        "desktop_columns": "2",
+        "mobile_columns": "1",
+        "desktop_slider_per_view": "2",
+        "mobile_slider_per_view": "1.5",
+        "auto_rotate": false,
+        "rotate_interval": 4,
+        "gap": 16,
+        "desktop_side_padding": 40,
+        "mobile_side_padding": 0,
+        "section_width": "full-width",
+        "color_scheme": "",
+        "padding-block-start": 24,
+        "padding-block-end": 12
+      }
+    },
+    "ad_banner_GP3b6n": {
+      "type": "ad-banner",
+      "name": "Ad banner",
+      "settings": {
+        "desktop_image": "shopify://shop_images/Framesi-1920x600.jpg",
+        "mobile_image": "shopify://shop_images/Framesi-900x640.jpg",
+        "link": "shopify://collections/color",
+        "open_new_tab": false,
+        "section_width": "page-width",
+        "mobile_full_width": true,
+        "padding_inline_desktop": 0,
+        "padding_inline_mobile": 12,
+        "padding-block-start": 12,
+        "padding-block-end": 12
+      }
+    },
+    "section_h8jbJW": {
+      "type": "section",
+      "blocks": {
+        "video_QkfNxT": {
+          "type": "video",
+          "name": "t:names.video",
+          "settings": {
+            "source": "uploaded",
+            "video": "shopify://files/videos/90670e00836c4f50ab52f5765b77581a.mp4",
+            "video_url": "",
+            "video_autoplay": true,
+            "video_loop": true,
+            "alt": "",
+            "custom_width": 100,
+            "custom_width_mobile": 100,
+            "aspect_ratio": "16/9",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 10,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "video_QkfNxT"
+      ],
+      "name": "t:names.video_section",
+      "settings": {
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 16,
+        "section_width": "page-width",
+        "section_height": "",
+        "section_height_custom": 50,
+        "color_scheme": "",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "padding-block-start": 12,
+        "padding-block-end": 12
+      }
+    },
+    "card_grid_Kt9xUx": {
+      "type": "card-grid",
+      "blocks": {
+        "card_BwYQmz": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/1_e84786b9-a5bc-4ce6-8678-e3163fc4cfe5.png",
+            "link": "shopify://collections/framcolor-eclectic-care",
+            "open_new_tab": false
+          }
+        },
+        "card_yhag8N": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/1A.png",
+            "link": "shopify://collections/framcolor-2001",
+            "open_new_tab": false
+          }
+        },
+        "card_qzWkN6": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/1B.png",
+            "link": "shopify://collections/framcolor-glamour",
+            "open_new_tab": false
+          }
+        },
+        "card_yg9ETx": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/1C.png",
+            "link": "shopify://collections/framcolor-extra-charge",
+            "open_new_tab": false
+          }
+        }
+      },
+      "block_order": [
+        "card_BwYQmz",
+        "card_yhag8N",
+        "card_qzWkN6",
+        "card_yg9ETx"
+      ],
+      "name": "Card grid",
+      "settings": {
+        "heading": "FRAMCOLOR",
+        "subheading": "Finishing And Styling",
+        "heading_alignment": "center",
+        "desktop_layout": "grid",
+        "mobile_layout": "grid",
+        "desktop_columns": "2",
+        "mobile_columns": "1",
+        "desktop_slider_per_view": "2",
+        "mobile_slider_per_view": "1.5",
+        "auto_rotate": false,
+        "rotate_interval": 4,
+        "gap": 16,
+        "desktop_side_padding": 40,
+        "mobile_side_padding": 0,
+        "section_width": "full-width",
+        "color_scheme": "",
+        "padding-block-start": 24,
+        "padding-block-end": 12
+      }
+    },
+    "ad_banner_eiKMye": {
+      "type": "ad-banner",
+      "name": "Ad banner",
+      "settings": {
+        "desktop_image": "shopify://shop_images/1950_x_500-A.png",
+        "mobile_image": "shopify://shop_images/900x640_A.webp",
+        "link": "shopify://collections/for-me-1",
+        "open_new_tab": false,
+        "section_width": "page-width",
+        "mobile_full_width": true,
+        "padding_inline_desktop": 0,
+        "padding_inline_mobile": 12,
+        "padding-block-start": 12,
+        "padding-block-end": 12
+      }
+    },
+    "section_ytUri6": {
+      "type": "section",
+      "blocks": {
+        "video_f7qAiz": {
+          "type": "video",
+          "name": "t:names.video",
+          "settings": {
+            "source": "uploaded",
+            "video": "shopify://files/videos/FOR_ME_REC_2.mp4",
+            "video_url": "",
+            "video_autoplay": true,
+            "video_loop": true,
+            "alt": "",
+            "custom_width": 100,
+            "custom_width_mobile": 100,
+            "aspect_ratio": "16/9",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 10,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "video_f7qAiz"
+      ],
+      "name": "t:names.video_section",
+      "settings": {
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 16,
+        "section_width": "page-width",
+        "section_height": "",
+        "section_height_custom": 50,
+        "color_scheme": "",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "padding-block-start": 12,
+        "padding-block-end": 12
+      }
+    },
+    "card_grid_UP933V": {
+      "type": "card-grid",
+      "blocks": {
+        "card_YFKVAW": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/8_1.webp",
+            "link": "shopify://collections/curl-volume",
+            "open_new_tab": false
+          }
+        },
+        "card_ir4ifY": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/11_1.webp",
+            "link": "shopify://collections/finish",
+            "open_new_tab": false
+          }
+        },
+        "card_3FAReC": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/10_1.webp",
+            "link": "shopify://collections/shape",
+            "open_new_tab": false
+          }
+        },
+        "card_Cey4n6": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/9_1.webp",
+            "link": "shopify://collections/smooth-disciplined",
+            "open_new_tab": false
+          }
+        }
+      },
+      "block_order": [
+        "card_YFKVAW",
+        "card_ir4ifY",
+        "card_3FAReC",
+        "card_Cey4n6"
+      ],
+      "name": "Card grid",
+      "settings": {
+        "heading": "FOR ME",
+        "subheading": "Finishing And Styling",
+        "heading_alignment": "center",
+        "desktop_layout": "grid",
+        "mobile_layout": "grid",
+        "desktop_columns": "2",
+        "mobile_columns": "1",
+        "desktop_slider_per_view": "2",
+        "mobile_slider_per_view": "1.5",
+        "auto_rotate": false,
+        "rotate_interval": 4,
+        "gap": 16,
+        "desktop_side_padding": 40,
+        "mobile_side_padding": 0,
+        "section_width": "full-width",
+        "color_scheme": "",
+        "padding-block-start": 24,
+        "padding-block-end": 24
+      }
+    },
+    "cta_banner_FQVkyx": {
+      "type": "cta-banner",
+      "name": "CTA banner",
+      "settings": {
+        "heading": "CERTIFIED BY 150+ BRANDS",
+        "heading_size_desktop": 48,
+        "heading_size_mobile": 24,
+        "button_label": "View More",
+        "button_link": "shopify://pages/brands",
+        "open_new_tab": false,
+        "background_image": "shopify://shop_images/v1022-21-b.webp",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
+    }
+  },
+  "order": [
+    "main",
+    "ad_banner_eqwXzQ",
+    "featured_banner_KEagkW",
+    "card_grid_H3KVHW",
+    "ad_banner_cnkdKH",
+    "section_JbUHMz",
+    "card_grid_PYBjcN",
+    "ad_banner_GP3b6n",
+    "section_h8jbJW",
+    "card_grid_Kt9xUx",
+    "ad_banner_eiKMye",
+    "section_ytUri6",
+    "card_grid_UP933V",
+    "cta_banner_FQVkyx"
+  ]
+}

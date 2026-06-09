@@ -16,8 +16,8 @@
       "name": "Campaign popup",
       "settings": {
         "enabled": true,
-        "image": "shopify://shop_images/new-popup.webp",
-        "link": "shopify://products/8809634610034",
+        "image": "shopify://shop_images/12569.webp",
+        "link": "shopify://products/12569",
         "open_new_tab": false,
         "delay_seconds": 3,
         "interval_hours": 24
