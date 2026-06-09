@@ -61,7 +61,7 @@
       "type": "ad-banner",
       "name": "Ad banner",
       "settings": {
-        "desktop_image": "shopify://shop_images/1920x320_ST_London_Skin_Care.jpg",
+        "desktop_image": "shopify://shop_images/1920x600x3.gif",
         "link": "shopify://collections/st-london-skin",
         "open_new_tab": false,
         "section_width": "page-width",
@@ -70,35 +70,6 @@
         "padding_inline_mobile": 12,
         "padding-block-start": 12,
         "padding-block-end": 12
-      }
-    },
-    "featured_banner_KEagkW": {
-      "type": "featured-banner",
-      "blocks": {
-        "slide_tD9MwC": {
-          "type": "slide",
-          "settings": {
-            "desktop_image": "shopify://shop_images/st-skin-banner.gif",
-            "link": "shopify://collections/st-london-skin-care",
-            "open_new_tab": false,
-            "alt": ""
-          }
-        }
-      },
-      "block_order": [
-        "slide_tD9MwC"
-      ],
-      "name": "Featured banner",
-      "settings": {
-        "autoplay": false,
-        "autoplay_interval": 5,
-        "show_arrows": false,
-        "show_dots": false,
-        "section_width": "page-width",
-        "border_radius": 10,
-        "color_scheme": "",
-        "padding-block-start": 12,
-        "padding-block-end": 0
       }
     },
     "card_grid_H3KVHW": {
@@ -830,7 +801,6 @@
   "order": [
     "main",
     "ad_banner_eqwXzQ",
-    "featured_banner_KEagkW",
     "card_grid_H3KVHW",
     "product_list_QwYUXP",
     "product_list_CALkkH",
