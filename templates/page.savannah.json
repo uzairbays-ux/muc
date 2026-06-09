@@ -62,7 +62,7 @@
       "name": "Ad banner",
       "settings": {
         "desktop_image": "shopify://shop_images/savannah-banner-07-16.jpg",
-        "link": "shopify://collections/maybelline",
+        "link": "shopify://collections/savannah",
         "open_new_tab": false,
         "section_width": "page-width",
         "mobile_full_width": true,
