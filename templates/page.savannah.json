@@ -204,7 +204,7 @@
               "name": "t:names.image",
               "settings": {
                 "image": "shopify://shop_images/sav-Best-Seller-desktop-min.jpg",
-                "link": "shopify://collections/maybelline",
+                "link": "shopify://collections/savannah",
                 "image_ratio": "adapt",
                 "width": "fill",
                 "custom_width": 100,
@@ -504,7 +504,7 @@
         "auto_rotate": true,
         "rotate_interval": 4,
         "gap": 16,
-        "desktop_side_padding": 48,
+        "desktop_side_padding": 40,
         "mobile_side_padding": 0,
         "section_width": "full-width",
         "color_scheme": "",
