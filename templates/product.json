@@ -139,7 +139,7 @@
                   "type": "text",
                   "name": "Product Vendor",
                   "settings": {
-                    "text": "<p><a href=\"/collections/vendors?q={{ closest.product.vendor | url_encode }}\" style=\"color:inherit;text-decoration:underline;\">{{ closest.product.vendor }}</a></p>",
+                    "text": "<p><a href=\"/collections/vendors?q={{ closest.product.vendor }}\" style=\"color:inherit;text-decoration:underline;\">{{ closest.product.vendor }}</a></p>",
                     "width": "fit-content",
                     "max_width": "none",
                     "alignment": "left",
@@ -806,7 +806,7 @@
               "name": "t:names.text",
               "disabled": true,
               "settings": {
-                "text": "<p><a href=\"/collections/vendors?q={{ closest.product.vendor | url_encode }}\" style=\"color:inherit;text-decoration:underline;\">{{ closest.product.vendor }}</a></p>",
+                "text": "<p><a href=\"/collections/vendors?q={{ closest.product.vendor }}\" style=\"color:inherit;text-decoration:underline;\">{{ closest.product.vendor }}</a></p>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
