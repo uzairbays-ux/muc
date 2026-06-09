@@ -414,39 +414,10 @@
         "padding-block-end": 12
       }
     },
-    "featured_banner_KEagkW": {
-      "type": "featured-banner",
-      "blocks": {
-        "slide_tD9MwC": {
-          "type": "slide",
-          "settings": {
-            "desktop_image": "shopify://shop_images/IMG-20240916-WA0024.jpg",
-            "link": "shopify://collections/st-london",
-            "open_new_tab": false,
-            "alt": ""
-          }
-        }
-      },
-      "block_order": [
-        "slide_tD9MwC"
-      ],
-      "name": "Featured banner",
-      "settings": {
-        "autoplay": false,
-        "autoplay_interval": 5,
-        "show_arrows": false,
-        "show_dots": false,
-        "section_width": "page-width",
-        "border_radius": 10,
-        "color_scheme": "",
-        "padding-block-start": 12,
-        "padding-block-end": 6
-      }
-    },
-    "card_grid_H3KVHW": {
+    "card_grid_n9XRCe": {
       "type": "card-grid",
       "blocks": {
-        "card_eDncEE": {
+        "card_thwknp": {
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/face-muc-09-18.jpg",
@@ -454,7 +425,7 @@
             "open_new_tab": false
           }
         },
-        "card_PLnnAa": {
+        "card_WyAigk": {
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/eyes-muc-09-18.jpg",
@@ -462,7 +433,7 @@
             "open_new_tab": false
           }
         },
-        "card_hFYzeP": {
+        "card_YhEkPe": {
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/lips-muc-09-18.jpg",
@@ -470,7 +441,7 @@
             "open_new_tab": false
           }
         },
-        "card_q9GMqd": {
+        "card_iTVTC6": {
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/nails-muc-09-18.jpg",
@@ -480,10 +451,10 @@
         }
       },
       "block_order": [
-        "card_eDncEE",
-        "card_PLnnAa",
-        "card_hFYzeP",
-        "card_q9GMqd"
+        "card_thwknp",
+        "card_WyAigk",
+        "card_YhEkPe",
+        "card_iTVTC6"
       ],
       "name": "Card grid",
       "settings": {
@@ -493,7 +464,7 @@
         "desktop_layout": "grid",
         "mobile_layout": "grid",
         "desktop_columns": "4",
-        "mobile_columns": "1",
+        "mobile_columns": "2",
         "desktop_slider_per_view": "3",
         "mobile_slider_per_view": "1.5",
         "auto_rotate": false,
@@ -2293,8 +2264,7 @@
     "ad_banner_eqwXzQ",
     "section_JbUHMz",
     "product_list_KTHEgj",
-    "featured_banner_KEagkW",
-    "card_grid_H3KVHW",
+    "card_grid_n9XRCe",
     "product_list_QwYUXP",
     "product_list_CALkkH",
     "product_list_Lw3nCx",
