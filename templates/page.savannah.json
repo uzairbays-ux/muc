@@ -447,7 +447,7 @@
       "name": "Ad banner",
       "settings": {
         "desktop_image": "shopify://shop_images/sav-Facewash-Banner-06-18-min.jpg",
-        "link": "shopify://collections/maybelline",
+        "link": "shopify://collections/savannah-face-wash",
         "open_new_tab": false,
         "section_width": "page-width",
         "mobile_full_width": true,
@@ -464,7 +464,7 @@
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/sav-fw-Rose-min.jpg",
-            "link": "shopify://products/30166967",
+            "link": "shopify://products/6291003659911",
             "open_new_tab": false
           }
         },
