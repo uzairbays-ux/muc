@@ -128,10 +128,10 @@
               <button
                 type="button"
                 class="store-locator__card-btn store-locator__card-btn--map"
-                aria-expanded="false"
+                aria-expanded="true"
               >
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                <span>View Map</span>
+                <span>Close Map</span>
               </button>
             {%- endif -%}
           </div>
@@ -140,10 +140,10 @@
             <div
               class="store-locator__card-map"
               data-map-src="{{ b.map_embed_url }}"
-              hidden
             >
               <iframe
                 class="store-locator__card-map-frame"
+                src="{{ b.map_embed_url }}"
                 loading="lazy"
                 title="{{ b.name | escape }} map"
                 allowfullscreen
@@ -327,6 +327,7 @@
 
   .store-locator__card-city {
     display: inline-block;
+    align-self: flex-start;
     margin-bottom: 6px;
     padding: 2px 10px;
     border-radius: 999px;
@@ -534,13 +535,6 @@
             mapBtn.setAttribute('aria-expanded', String(!isOpen));
             const label = mapBtn.querySelector('span');
             if (label) label.textContent = isOpen ? 'View Map' : 'Close Map';
-            // Lazy-load: only set iframe src on first open
-            if (!isOpen) {
-              const frame = panel.querySelector('iframe');
-              if (frame && !frame.src) {
-                frame.src = panel.dataset.mapSrc;
-              }
-            }
           });
         });
       }
