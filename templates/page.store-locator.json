@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "locator": {
@@ -122,6 +131,7 @@
         },
         "lhr_4": {
           "type": "store",
+          "disabled": true,
           "settings": {
             "name": "City Tower, Gulberg II",
             "address": "Shop # 28, Ground Floor, City Tower, Main Boulevard, Gulberg II",
@@ -317,6 +327,7 @@
         },
         "gjt_1": {
           "type": "store",
+          "disabled": true,
           "settings": {
             "name": "Kacheri Road",
             "address": "Kacheri Road, Opp: Eden Rode",
@@ -343,12 +354,25 @@
         }
       },
       "block_order": [
-        "khi_1", "khi_2", "khi_3", "khi_4", "khi_5", "khi_6",
-        "lhr_1", "lhr_2", "lhr_3", "lhr_4", "lhr_5", "lhr_6",
+        "khi_1",
+        "khi_2",
+        "khi_3",
+        "khi_4",
+        "khi_5",
+        "khi_6",
+        "lhr_1",
+        "lhr_2",
+        "lhr_3",
+        "lhr_4",
+        "lhr_5",
+        "lhr_6",
         "isb_1",
-        "mul_1", "mul_2",
-        "skt_1", "skt_2",
-        "fsd_1", "fsd_2",
+        "mul_1",
+        "mul_2",
+        "skt_1",
+        "skt_2",
+        "fsd_1",
+        "fsd_2",
         "hyd_1",
         "rwp_1",
         "bwp_1",
@@ -369,5 +393,7 @@
       }
     }
   },
-  "order": ["locator"]
+  "order": [
+    "locator"
+  ]
 }
