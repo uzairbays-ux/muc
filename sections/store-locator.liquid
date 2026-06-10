@@ -124,7 +124,33 @@
                 Directions
               </a>
             {%- endif -%}
+            {%- if b.map_embed_url != blank -%}
+              <button
+                type="button"
+                class="store-locator__card-btn store-locator__card-btn--map"
+                aria-expanded="false"
+              >
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <span>View Map</span>
+              </button>
+            {%- endif -%}
           </div>
+
+          {%- if b.map_embed_url != blank -%}
+            <div
+              class="store-locator__card-map"
+              data-map-src="{{ b.map_embed_url }}"
+              hidden
+            >
+              <iframe
+                class="store-locator__card-map-frame"
+                loading="lazy"
+                title="{{ b.name | escape }} map"
+                allowfullscreen
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          {%- endif -%}
         </article>
       {%- else -%}
         <p class="store-locator__empty">Add store blocks in the theme editor.</p>
@@ -388,7 +414,37 @@
     color: rgb(var(--color-foreground, 0 0 0) / 0.5);
   }
 
-  /* ── Map ── */
+  /* ── Map button ── */
+  .store-locator__card-btn--map {
+    background: rgb(var(--color-foreground, 0 0 0) / 0.07);
+    color: rgb(var(--color-foreground, 0 0 0));
+    border: none;
+    cursor: pointer;
+  }
+
+  .store-locator__card-btn--map:hover,
+  .store-locator__card-btn--map[aria-expanded="true"] {
+    background: rgb(255 16 16 / 0.12);
+    color: rgb(200 0 0);
+  }
+
+  /* ── Per-card map panel ── */
+  .store-locator__card-map {
+    margin-top: 14px;
+    border-radius: 8px;
+    overflow: hidden;
+    height: 220px;
+    border: 1.5px solid rgb(var(--color-foreground, 0 0 0) / 0.1);
+  }
+
+  .store-locator__card-map-frame {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+  /* ── Section-level Map ── */
   .store-locator__map {
     margin-top: 40px;
     border-radius: 14px;
@@ -465,6 +521,28 @@
         if (this._search) {
           this._search.addEventListener('input', () => this._filter());
         }
+
+        // Map toggles — lazy-load iframe on first open
+        this._cards.forEach((card) => {
+          const mapBtn = card.querySelector('.store-locator__card-btn--map');
+          if (!mapBtn) return;
+          mapBtn.addEventListener('click', () => {
+            const panel = card.querySelector('.store-locator__card-map');
+            if (!panel) return;
+            const isOpen = !panel.hidden;
+            panel.hidden = isOpen;
+            mapBtn.setAttribute('aria-expanded', String(!isOpen));
+            const label = mapBtn.querySelector('span');
+            if (label) label.textContent = isOpen ? 'View Map' : 'Close Map';
+            // Lazy-load: only set iframe src on first open
+            if (!isOpen) {
+              const frame = panel.querySelector('iframe');
+              if (frame && !frame.src) {
+                frame.src = panel.dataset.mapSrc;
+              }
+            }
+          });
+        });
       }
 
       _filter() {
@@ -531,7 +609,8 @@
         { "type": "text",     "id": "postal_code",    "label": "Postal code" },
         { "type": "text",     "id": "phone",          "label": "Phone" },
         { "type": "textarea", "id": "hours",          "label": "Opening hours" },
-        { "type": "url",      "id": "directions_url", "label": "Google Maps directions URL" }
+        { "type": "url",      "id": "directions_url", "label": "Google Maps directions URL" },
+        { "type": "text",     "id": "map_embed_url",  "label": "Google Maps embed URL", "info": "Paste the src URL from Google Maps → Share → Embed a map." }
       ]
     }
   ],

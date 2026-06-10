@@ -1,12 +1,3 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
     "locator": {
@@ -21,7 +12,8 @@
             "postal_code": "",
             "phone": "021-34302233",
             "hours": "",
-            "directions_url": ""
+            "directions_url": "",
+            "map_embed_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3619.6289162562675!2d67.06049081447783!3d24.876520550741386!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33fefc178f38f%3A0x1194fc6589fcf302!2sMakeup%20City%20Dolmen%20Mall%20Tariq%20Road!5e0!3m2!1sen!2s!4v1662379073102!5m2!1sen!2s"
           }
         },
         "khi_2": {
@@ -33,7 +25,8 @@
             "postal_code": "",
             "phone": "021-34321536",
             "hours": "",
-            "directions_url": ""
+            "directions_url": "",
+            "map_embed_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14478.51170882996!2d67.05392472202102!3d24.87655431455703!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33f72188a44f1%3A0x5b84e7837ce702ce!2sMakeup%20City%20-%20Cosmetics%20Store%20Pakistan!5e0!3m2!1sen!2s!4v1662379334936!5m2!1sen!2s"
           }
         },
         "khi_3": {
@@ -45,7 +38,8 @@
             "postal_code": "",
             "phone": "021-37181002",
             "hours": "",
-            "directions_url": ""
+            "directions_url": "",
+            "map_embed_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3617.991559675814!2d67.0850751144791!3d24.932357448513507!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33f3591b096dd%3A0x60f66b1ffa8e34f9!2sMakeup%20City%20-%20LuckyOne%20Mall!5e0!3m2!1sen!2s!4v1662379441791!5m2!1sen!2s"
           }
         },
         "khi_4": {
@@ -57,7 +51,8 @@
             "postal_code": "",
             "phone": "021-35141029",
             "hours": "",
-            "directions_url": ""
+            "directions_url": "",
+            "map_embed_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3621.172586266433!2d67.0335302144768!3d24.8237708528418!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33db741684d5b%3A0xef304705395ee089!2sMakeup%20City%20Ocean%20Mall!5e0!3m2!1sen!2s!4v1662379599755!5m2!1sen!2s"
           }
         },
         "khi_5": {
@@ -69,7 +64,8 @@
             "postal_code": "",
             "phone": "021-35294001",
             "hours": "",
-            "directions_url": ""
+            "directions_url": "",
+            "map_embed_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3621.8171359888524!2d67.02867951447634!3d24.801714453718823!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33d30d192a78d%3A0xb388ff6ae9f65059!2sMakeup%20City%20-%20Dolmen%20Mall%20Clifton!5e0!3m2!1sen!2s!4v1662379681309!5m2!1sen!2s"
           }
         },
         "khi_6": {
@@ -81,7 +77,8 @@
             "postal_code": "",
             "phone": "021-33401740",
             "hours": "",
-            "directions_url": ""
+            "directions_url": "",
+            "map_embed_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3618.909311573456!2d67.1113361761101!3d24.901074843629765!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33923c4c859f5%3A0x4ca89b0a2f59cf8d!2sSquare%20One%20Mall!5e0!3m2!1sen!2s!4v1698046852287!5m2!1sen!2s"
           }
         },
         "lhr_1": {
@@ -93,7 +90,8 @@
             "postal_code": "",
             "phone": "042-38910961",
             "hours": "",
-            "directions_url": ""
+            "directions_url": "",
+            "map_embed_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3402.893341496787!2d74.35404751462963!3d31.472120056673067!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39190680fb42f241%3A0x93bac39cb25cfcdb!2sMakeup%20City%20Packages%20Mall!5e0!3m2!1sen!2s!4v1662439691015!5m2!1sen!2s"
           }
         },
         "lhr_2": {
@@ -105,7 +103,8 @@
             "postal_code": "",
             "phone": "042-37341330",
             "hours": "",
-            "directions_url": ""
+            "directions_url": "",
+            "map_embed_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3400.6949322510363!2d74.3608461146312!3d31.532537753697206!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3919051cc9b6b989%3A0x9432a9a96ea127d7!2sMakeup%20City%20Fortress%20Square%20Mall!5e0!3m2!1sen!2s!4v1662439737686!5m2!1sen!2s"
           }
         },
         "lhr_3": {
@@ -117,7 +116,8 @@
             "postal_code": "",
             "phone": "042-36623271",
             "hours": "",
-            "directions_url": ""
+            "directions_url": "",
+            "map_embed_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3400.6174612368104!2d74.36150571463133!3d31.534664953592323!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391905b9f48fcc55%3A0x551ca076aca94191!2sMakeup%20City%20Hyper%20Star%20Lahore!5e0!3m2!1sen!2s!4v1662439852891!5m2!1sen!2s"
           }
         },
         "lhr_4": {
@@ -129,7 +129,8 @@
             "postal_code": "",
             "phone": "042-35788805",
             "hours": "",
-            "directions_url": ""
+            "directions_url": "",
+            "map_embed_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3401.047615210417!2d74.34611731463103!3d31.522852154174554!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391904f9c6eb57bb%3A0x939b82a19e9a81df!2sCity%20Tower!5e0!3m2!1sen!2s!4v1662440051150!5m2!1sen!2s"
           }
         },
         "lhr_5": {
@@ -141,7 +142,8 @@
             "postal_code": "",
             "phone": "042-32592227",
             "hours": "",
-            "directions_url": ""
+            "directions_url": "",
+            "map_embed_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9625.59684332633!2d74.26913528290225!3d31.46471850600249!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3919034c857d33e3%3A0xd3249f61ece3e8ac!2sMakeup%20City%20Emporium%20Mall!5e0!3m2!1sen!2s!4v1662440121534!5m2!1sen!2s"
           }
         },
         "lhr_6": {
@@ -153,7 +155,8 @@
             "postal_code": "",
             "phone": "042-37861113",
             "hours": "",
-            "directions_url": ""
+            "directions_url": "",
+            "map_embed_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3406.417081794885!2d74.18482221462715!3d31.375061261443186!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3918ff8e3fb92bcb%3A0x2a7c495b24208e97!2sBeauty%20'n%20Style%20Pakistan%20-%20Bahria%20Town%20Branch!5e0!3m2!1sen!2s!4v1662440174462!5m2!1sen!2s"
           }
         },
         "isb_1": {
@@ -165,7 +168,8 @@
             "postal_code": "",
             "phone": "051-2701288",
             "hours": "",
-            "directions_url": ""
+            "directions_url": "",
+            "map_embed_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3319.049939943583!2d73.04786871468967!3d33.707656643258616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38dfbfb0f4f77379%3A0xf8c50b8651f56d02!2sThe%20Centaurus%20Mall%20Islamabad!5e0!3m2!1sen!2s!4v1662441127398!5m2!1sen!2s"
           }
         },
         "mul_1": {
@@ -177,7 +181,8 @@
             "postal_code": "",
             "phone": "061-4515563",
             "hours": "",
-            "directions_url": ""
+            "directions_url": "",
+            "map_embed_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4098.943182111351!2d71.48096236864046!3d30.2431606433894!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x393b356f44644255%3A0x3ff8a57a5dbd2a23!2sMakeUp%20City%20Mall%20Of%20Multan!5e0!3m2!1sen!2s!4v1662441486704!5m2!1sen!2s"
           }
         },
         "mul_2": {
@@ -189,7 +194,8 @@
             "postal_code": "",
             "phone": "061-6211129",
             "hours": "",
-            "directions_url": ""
+            "directions_url": "",
+            "map_embed_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d861.9398978971037!2d71.47126223173831!3d30.215408300000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x393b33f1f1f4c261%3A0x91e24451eb7a19eb!2sMakeUpCity%20Gulgasht%20-%20Sharif%20Complex!5e0!3m2!1sen!2s!4v1662441408902!5m2!1sen!2s"
           }
         },
         "skt_1": {
@@ -201,7 +207,8 @@
             "postal_code": "",
             "phone": "052-4272894",
             "hours": "",
-            "directions_url": ""
+            "directions_url": "",
+            "map_embed_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3364.427323457865!2d74.5728911146571!3d32.51473220462069!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391eeb9536b2cc5f%3A0x30804efb7e34bc80!2sMakeup%20City%20V-Mall%20Sialkot!5e0!3m2!1sen!2s!4v1662442444477!5m2!1sen!2s"
           }
         },
         "skt_2": {
@@ -213,7 +220,8 @@
             "postal_code": "",
             "phone": "052-4291166",
             "hours": "",
-            "directions_url": ""
+            "directions_url": "",
+            "map_embed_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1682.1609757003257!2d74.55631945799313!3d32.517547256974986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391eebd21cb12dd5%3A0x5dd254f9582fc77b!2sMakeup%20City%20Mall%20of%20Sialkot!5e0!3m2!1sen!2s!4v1662442494993!5m2!1sen!2s"
           }
         },
         "fsd_1": {
@@ -225,7 +233,8 @@
             "postal_code": "",
             "phone": "041-8554008",
             "hours": "",
-            "directions_url": ""
+            "directions_url": "",
+            "map_embed_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d506.1718540279503!2d73.1163707557649!3d31.41123908342266!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39226902636425ef%3A0x145c44aba0fb1b59!2sZR%20makeup%20city%20Faisalabad.com!5e0!3m2!1sen!2s!4v1662442950152!5m2!1sen!2s"
           }
         },
         "fsd_2": {
@@ -237,7 +246,8 @@
             "postal_code": "",
             "phone": "041-6078501",
             "hours": "",
-            "directions_url": ""
+            "directions_url": "",
+            "map_embed_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d851.0308284809851!2d73.13134332918504!3d31.43827194307152!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3922699d8cd7e9cb%3A0x8d6ff3a6fec7865f!2sMakeup%20City%20Lyallupur!5e0!3m2!1sen!2s!4v1662443016288!5m2!1sen!2s"
           }
         },
         "hyd_1": {
@@ -249,7 +259,8 @@
             "postal_code": "",
             "phone": "022-2784665",
             "hours": "",
-            "directions_url": ""
+            "directions_url": "",
+            "map_embed_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3604.268474537017!2d68.3557546144884!3d25.39582232984662!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x394c7105e54d61c3%3A0x8f15e66fc5d52c1e!2sMakeup%20City%20Hyderabad!5e0!3m2!1sen!2s!4v1662443147369!5m2!1sen!2s"
           }
         },
         "rwp_1": {
@@ -261,7 +272,8 @@
             "postal_code": "",
             "phone": "051-4573263",
             "hours": "",
-            "directions_url": ""
+            "directions_url": "",
+            "map_embed_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3321.7336899525217!2d73.07374231468766!3d33.63814644688662!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38df95a5de379cf1%3A0xafa0fabfa01c3df7!2sMakeup%20City%20Rawalpindi!5e0!3m2!1sen!2s!4v1662443269233!5m2!1sen!2s"
           }
         },
         "bwp_1": {
@@ -273,7 +285,8 @@
             "postal_code": "",
             "phone": "062-2885133",
             "hours": "",
-            "directions_url": ""
+            "directions_url": "",
+            "map_embed_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13906.644485192208!2d71.65000720781248!3d29.380210099999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x393b97694a81d7df%3A0x2727708bddcfc691!2sMakeup%20City%20Bahawlpur!5e0!3m2!1sen!2s!4v1662443509953!5m2!1sen!2s"
           }
         },
         "skr_1": {
@@ -285,7 +298,8 @@
             "postal_code": "",
             "phone": "071-5627901",
             "hours": "",
-            "directions_url": ""
+            "directions_url": "",
+            "map_embed_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.5253242199005!2d68.88285821453815!3d27.70106223237622!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3935d5c1bb4f0407%3A0xfa1ec10406df1bcb!2sMakeup%20City%20Sukkur!5e0!3m2!1sen!2s!4v1662443585233!5m2!1sen!2s"
           }
         },
         "grw_1": {
@@ -297,7 +311,8 @@
             "postal_code": "",
             "phone": "055-3401588",
             "hours": "",
-            "directions_url": ""
+            "directions_url": "",
+            "map_embed_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3377.5669342638043!2d74.19666681464774!3d32.161983522397364!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391f2b7e8093e489%3A0xcf3dcbc4316cc49d!2sMakeup%20City%20Gujranwala!5e0!3m2!1sen!2s!4v1662443661698!5m2!1sen!2s"
           }
         },
         "gjt_1": {
@@ -309,7 +324,8 @@
             "postal_code": "",
             "phone": "053-3515388",
             "hours": "",
-            "directions_url": ""
+            "directions_url": "",
+            "map_embed_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3362.049301965816!2d74.07781721465885!3d32.57820920140398!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391f1b48185c52f5%3A0x8c8121469add83ec!2sMake-up%20City!5e0!3m2!1sen!2s!4v1662443918096!5m2!1sen!2s"
           }
         },
         "jhg_1": {
@@ -321,7 +337,8 @@
             "postal_code": "",
             "phone": "0308-0622961",
             "hours": "",
-            "directions_url": ""
+            "directions_url": "",
+            "map_embed_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3410.1001355979915!2d72.31689721462457!3d31.273325266429175!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x392399c5c92b8ddb%3A0x4f404e0996b896bf!2sUnze%20London!5e0!3m2!1sen!2s!4v1662444173001!5m2!1sen!2s"
           }
         }
       },
