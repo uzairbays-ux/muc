@@ -190,9 +190,9 @@
         "auto_rotate": false,
         "rotate_interval": 4,
         "gap": 16,
-        "desktop_side_padding": 40,
-        "mobile_side_padding": 0,
-        "section_width": "full-width",
+        "desktop_side_padding": 0,
+        "mobile_side_padding": 16,
+        "section_width": "page-width",
         "color_scheme": "",
         "padding-block-start": 12,
         "padding-block-end": 12
