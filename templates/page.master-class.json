@@ -68,26 +68,26 @@
     "card_grid_H3KVHW": {
       "type": "card-grid",
       "blocks": {
-        "card_eDncEE": {
-          "type": "card",
-          "settings": {
-            "image": "shopify://shop_images/1_7645f338-8f0e-4454-94d7-026d617a0e39.webp",
-            "link": "shopify://collections/face-1",
-            "open_new_tab": false
-          }
-        },
         "card_PLnnAa": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/2_a5e807a2-7c46-4daa-aa6e-0c108749ed9e.webp",
+            "image": "shopify://shop_images/2_89af27d7-4bb4-44d7-b883-2a6be5519c35.png",
             "link": "shopify://collections/eyes-1",
+            "open_new_tab": false
+          }
+        },
+        "card_eDncEE": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/1_2b60605d-feeb-435b-9b99-86018b87f47f.png",
+            "link": "shopify://collections/face-1",
             "open_new_tab": false
           }
         }
       },
       "block_order": [
-        "card_eDncEE",
-        "card_PLnnAa"
+        "card_PLnnAa",
+        "card_eDncEE"
       ],
       "name": "Card grid",
       "settings": {
@@ -103,7 +103,7 @@
         "auto_rotate": false,
         "rotate_interval": 4,
         "gap": 16,
-        "desktop_side_padding": 48,
+        "desktop_side_padding": 40,
         "mobile_side_padding": 0,
         "section_width": "full-width",
         "color_scheme": "",
