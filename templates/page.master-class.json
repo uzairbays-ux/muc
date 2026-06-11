@@ -86,7 +86,7 @@
         "slide_tD9MwC": {
           "type": "slide",
           "settings": {
-            "desktop_image": "shopify://shop_images/Main-Banner_d547ff04-e004-468f-b59c-d14fa8becf1a.png",
+            "desktop_image": "shopify://shop_images/3_78da55de-6e13-465c-af37-c05b6ca116bb.webp",
             "link": "shopify://collections/maybelline",
             "open_new_tab": false,
             "alt": ""
@@ -118,6 +118,7 @@
           "settings": {
             "source": "uploaded",
             "video": "shopify://files/videos/03fdb65e26474cf8803856ca6fdf9ab1_OsX7xADB.mp4",
+            "video_url": "",
             "video_autoplay": true,
             "video_loop": true,
             "alt": "",
