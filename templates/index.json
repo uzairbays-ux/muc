@@ -148,6 +148,14 @@
         "card_LJWfzX": {
           "type": "card",
           "settings": {
+            "image": "shopify://shop_images/post_copy.jpg",
+            "link": "shopify://pages/framesi-masterclass",
+            "open_new_tab": false
+          }
+        },
+        "card_G4PiLa": {
+          "type": "card",
+          "settings": {
             "image": "shopify://shop_images/maybilline_750_x_750.jpg",
             "link": "shopify://collections/maybelline",
             "open_new_tab": false
@@ -197,6 +205,7 @@
       "block_order": [
         "card_x4i8pi",
         "card_LJWfzX",
+        "card_G4PiLa",
         "card_7Rimtd",
         "card_nbr3cj",
         "card_YUtaR6",
