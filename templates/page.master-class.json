@@ -116,8 +116,8 @@
         "rotate_interval": 4,
         "gap": 16,
         "desktop_side_padding": 40,
-        "mobile_side_padding": 10,
-        "section_width": "full-width",
+        "mobile_side_padding": 14,
+        "section_width": "page-width",
         "color_scheme": "scheme-6",
         "padding-block-start": 12,
         "padding-block-end": 12
@@ -289,9 +289,9 @@
         "auto_rotate": false,
         "rotate_interval": 4,
         "gap": 16,
-        "desktop_side_padding": 40,
-        "mobile_side_padding": 0,
-        "section_width": "full-width",
+        "desktop_side_padding": 12,
+        "mobile_side_padding": 14,
+        "section_width": "page-width",
         "color_scheme": "",
         "padding-block-start": 12,
         "padding-block-end": 12
