@@ -1,0 +1,351 @@
+{% liquid
+  assign s = section.settings
+%}
+
+<div
+  class="countdown-event-cards section--{{ s.section_width }} spacing-style"
+  style="{% render 'spacing-style', settings: s %}"
+>
+  <div class="countdown-event-cards__grid">
+    {%- for block in section.blocks -%}
+      {%- assign b = block.settings -%}
+      {%- assign block_id = 'countdown-' | append: block.id -%}
+      <div
+        class="countdown-event-cards__card"
+        style="{% if b.bg_image != blank %}background-image: url('{{ b.bg_image | image_url: width: 1200 }}');{% endif %}"
+        {{ block.shopify_attributes }}
+      >
+        {%- comment -%} Left: Countdown timer {%- endcomment -%}
+        <div class="countdown-event-cards__timer" id="{{ block_id }}" data-target="{{ b.target_date }}">
+          <div class="countdown-event-cards__timer-label">{{ b.timer_label | default: 'Event Starts In' }}</div>
+          <div class="countdown-event-cards__timer-units">
+            <div class="countdown-event-cards__unit">
+              <span class="countdown-event-cards__num" data-days>00</span>
+              <span class="countdown-event-cards__unit-label">Days</span>
+            </div>
+            <span class="countdown-event-cards__sep">:</span>
+            <div class="countdown-event-cards__unit">
+              <span class="countdown-event-cards__num" data-hours>00</span>
+              <span class="countdown-event-cards__unit-label">Hrs</span>
+            </div>
+            <span class="countdown-event-cards__sep">:</span>
+            <div class="countdown-event-cards__unit">
+              <span class="countdown-event-cards__num" data-mins>00</span>
+              <span class="countdown-event-cards__unit-label">Min</span>
+            </div>
+            <span class="countdown-event-cards__sep">:</span>
+            <div class="countdown-event-cards__unit">
+              <span class="countdown-event-cards__num" data-secs>00</span>
+              <span class="countdown-event-cards__unit-label">Sec</span>
+            </div>
+          </div>
+        </div>
+
+        {%- comment -%} Right: Event details {%- endcomment -%}
+        <div class="countdown-event-cards__info">
+          {%- if b.city != blank -%}
+            <div class="countdown-event-cards__city">{{ b.city }}</div>
+          {%- endif -%}
+          {%- if b.event_date_display != blank -%}
+            <div class="countdown-event-cards__date">{{ b.event_date_display }}</div>
+          {%- endif -%}
+          {%- if b.venue != blank -%}
+            <div class="countdown-event-cards__venue">{{ b.venue }}</div>
+          {%- endif -%}
+          {%- if b.cta_url != blank and b.cta_label != blank -%}
+            <a href="{{ b.cta_url }}" class="countdown-event-cards__cta"{% if b.open_new_tab %} target="_blank" rel="noopener"{% endif %}>
+              {{ b.cta_label }}
+            </a>
+          {%- endif -%}
+        </div>
+      </div>
+    {%- endfor -%}
+  </div>
+</div>
+
+{% stylesheet %}
+  .countdown-event-cards {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-inline: var(--gap-md, 20px);
+  }
+
+  .countdown-event-cards__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  /* ── Card ── */
+  .countdown-event-cards__card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    min-height: 130px;
+    padding: 24px 28px;
+    border-radius: 12px;
+    border: 1.5px solid #b8962e;
+    background-color: #060606;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* Dark overlay so text is legible over the bg image */
+  .countdown-event-cards__card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to right,
+      rgba(6,6,6,0.82) 0%,
+      rgba(6,6,6,0.55) 50%,
+      rgba(6,6,6,0.72) 100%
+    );
+    border-radius: inherit;
+    pointer-events: none;
+  }
+
+  .countdown-event-cards__timer,
+  .countdown-event-cards__info {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ── Countdown timer ── */
+  .countdown-event-cards__timer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    flex: 0 0 auto;
+  }
+
+  .countdown-event-cards__timer-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #b8962e;
+  }
+
+  .countdown-event-cards__timer-units {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .countdown-event-cards__unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+  }
+
+  .countdown-event-cards__num {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1;
+    color: #d4a843;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.02em;
+    text-shadow: 0 0 20px rgba(212,168,67,0.4);
+  }
+
+  .countdown-event-cards__unit-label {
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(212,168,67,0.65);
+  }
+
+  .countdown-event-cards__sep {
+    font-size: 22px;
+    font-weight: 700;
+    color: #b8962e;
+    line-height: 1;
+    margin-bottom: 14px;
+    opacity: 0.7;
+  }
+
+  /* ── Event info ── */
+  .countdown-event-cards__info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+    gap: 2px;
+  }
+
+  .countdown-event-cards__city {
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #fff;
+    line-height: 1.1;
+  }
+
+  .countdown-event-cards__date {
+    font-size: 13px;
+    font-weight: 600;
+    color: #d4a843;
+    letter-spacing: 0.04em;
+    margin-top: 2px;
+  }
+
+  .countdown-event-cards__venue {
+    font-size: 12px;
+    color: rgba(255,255,255,0.65);
+    letter-spacing: 0.02em;
+    margin-top: 1px;
+  }
+
+  .countdown-event-cards__cta {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 7px 18px;
+    border-radius: 4px;
+    border: 1.5px solid #b8962e;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #d4a843;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .countdown-event-cards__cta:hover {
+    background: #b8962e;
+    color: #060606;
+  }
+
+  /* ── Mobile ── */
+  @media (max-width: 749px) {
+    .countdown-event-cards__grid {
+      grid-template-columns: 1fr;
+    }
+
+    .countdown-event-cards__card {
+      padding: 20px 18px;
+      min-height: 110px;
+      gap: 12px;
+    }
+
+    .countdown-event-cards__num {
+      font-size: 22px;
+    }
+
+    .countdown-event-cards__city {
+      font-size: 20px;
+    }
+  }
+{% endstylesheet %}
+
+<script>
+  (function () {
+    function pad(n) { return String(n).padStart(2, '0'); }
+
+    function tick(el) {
+      var target = new Date(el.dataset.target).getTime();
+      var now    = Date.now();
+      var diff   = target - now;
+
+      if (diff <= 0) {
+        el.querySelector('[data-days]').textContent  = '00';
+        el.querySelector('[data-hours]').textContent = '00';
+        el.querySelector('[data-mins]').textContent  = '00';
+        el.querySelector('[data-secs]').textContent  = '00';
+        return;
+      }
+
+      var days  = Math.floor(diff / 86400000);
+      var hours = Math.floor((diff % 86400000) / 3600000);
+      var mins  = Math.floor((diff % 3600000)  / 60000);
+      var secs  = Math.floor((diff % 60000)    / 1000);
+
+      el.querySelector('[data-days]').textContent  = pad(days);
+      el.querySelector('[data-hours]').textContent = pad(hours);
+      el.querySelector('[data-mins]').textContent  = pad(mins);
+      el.querySelector('[data-secs]').textContent  = pad(secs);
+    }
+
+    document.querySelectorAll('[data-target]').forEach(function (el) {
+      tick(el);
+      setInterval(function () { tick(el); }, 1000);
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Countdown Event Cards",
+  "tag": "section",
+  "class": "section-countdown-event-cards",
+  "disabled_on": { "groups": ["header", "footer"] },
+  "settings": [
+    {
+      "type": "select", "id": "section_width", "label": "Section width",
+      "options": [
+        { "value": "page-width", "label": "Page" },
+        { "value": "full-width", "label": "Full" }
+      ],
+      "default": "page-width"
+    },
+    { "type": "header", "content": "Padding" },
+    { "type": "range", "id": "padding-block-start", "label": "Top",    "min": 0, "max": 120, "step": 4, "unit": "px", "default": 12 },
+    { "type": "range", "id": "padding-block-end",   "label": "Bottom", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 12 }
+  ],
+  "blocks": [
+    {
+      "type": "event",
+      "name": "Event Card",
+      "settings": [
+        { "type": "text",    "id": "city",               "label": "City name",               "default": "Karachi" },
+        { "type": "text",    "id": "event_date_display", "label": "Date (display text)",     "default": "9th July 2026", "info": "Shown under the city name." },
+        { "type": "text",    "id": "target_date",        "label": "Countdown target date",   "default": "2026-07-09T00:00:00", "info": "ISO format: YYYY-MM-DDTHH:MM:SS" },
+        { "type": "text",    "id": "venue",              "label": "Venue",                   "default": "Mariott Hotel" },
+        { "type": "text",    "id": "timer_label",        "label": "Timer label",             "default": "Event Starts In" },
+        { "type": "image_picker", "id": "bg_image",     "label": "Background image" },
+        { "type": "header",  "content": "CTA Button" },
+        { "type": "text",    "id": "cta_label",          "label": "Button label" },
+        { "type": "url",     "id": "cta_url",            "label": "Button URL" },
+        { "type": "checkbox","id": "open_new_tab",       "label": "Open in new tab",         "default": false }
+      ]
+    }
+  ],
+  "max_blocks": 6,
+  "presets": [
+    {
+      "name": "Countdown Event Cards",
+      "blocks": [
+        {
+          "type": "event",
+          "settings": {
+            "city": "Karachi",
+            "event_date_display": "9th July 2026",
+            "target_date": "2026-07-09T00:00:00",
+            "venue": "Mariott Hotel",
+            "timer_label": "Event Starts In"
+          }
+        },
+        {
+          "type": "event",
+          "settings": {
+            "city": "Lahore",
+            "event_date_display": "7th July 2026",
+            "target_date": "2026-07-07T00:00:00",
+            "venue": "Faletti's Hotel",
+            "timer_label": "Event Starts In"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

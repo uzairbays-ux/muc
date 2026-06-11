@@ -65,52 +65,6 @@
         "padding-block-end": 80
       }
     },
-    "card_grid_H3KVHW": {
-      "type": "card-grid",
-      "blocks": {
-        "card_PLnnAa": {
-          "type": "card",
-          "settings": {
-            "image": "shopify://shop_images/2_89af27d7-4bb4-44d7-b883-2a6be5519c35.png",
-            "link": "tel:03004718539",
-            "open_new_tab": false
-          }
-        },
-        "card_eDncEE": {
-          "type": "card",
-          "settings": {
-            "image": "shopify://shop_images/1_2b60605d-feeb-435b-9b99-86018b87f47f.png",
-            "link": "tel:03179996813",
-            "open_new_tab": false
-          }
-        }
-      },
-      "block_order": [
-        "card_PLnnAa",
-        "card_eDncEE"
-      ],
-      "name": "timer-grid",
-      "settings": {
-        "heading": "",
-        "subheading": "",
-        "heading_alignment": "left",
-        "desktop_layout": "grid",
-        "mobile_layout": "grid",
-        "desktop_columns": "2",
-        "mobile_columns": "1",
-        "desktop_slider_per_view": "3",
-        "mobile_slider_per_view": "1.5",
-        "auto_rotate": false,
-        "rotate_interval": 4,
-        "gap": 16,
-        "desktop_side_padding": 40,
-        "mobile_side_padding": 0,
-        "section_width": "full-width",
-        "color_scheme": "",
-        "padding-block-start": 12,
-        "padding-block-end": 12
-      }
-    },
     "featured_banner_KEagkW": {
       "type": "featured-banner",
       "blocks": {
@@ -310,11 +264,54 @@
         "padding-block-start": 0,
         "padding-block-end": 0
       }
+    },
+    "countdown_events_masterclass": {
+      "type": "countdown-event-cards",
+      "name": "Countdown Event Cards",
+      "blocks": {
+        "event_karachi": {
+          "type": "event",
+          "settings": {
+            "city": "Karachi",
+            "event_date_display": "9th July 2026",
+            "target_date": "2026-07-09T00:00:00",
+            "venue": "Mariott Hotel",
+            "timer_label": "Event Starts In",
+            "bg_image": "shopify://shop_images/2_89af27d7-4bb4-44d7-b883-2a6be5519c35.png",
+            "cta_label": "",
+            "cta_url": "",
+            "open_new_tab": false
+          }
+        },
+        "event_lahore": {
+          "type": "event",
+          "settings": {
+            "city": "Lahore",
+            "event_date_display": "7th July 2026",
+            "target_date": "2026-07-07T00:00:00",
+            "venue": "Faletti's Hotel",
+            "timer_label": "Event Starts In",
+            "bg_image": "shopify://shop_images/1_2b60605d-feeb-435b-9b99-86018b87f47f.png",
+            "cta_label": "",
+            "cta_url": "",
+            "open_new_tab": false
+          }
+        }
+      },
+      "block_order": [
+        "event_karachi",
+        "event_lahore"
+      ],
+      "settings": {
+        "section_width": "page-width",
+        "padding-block-start": 12,
+        "padding-block-end": 12
+      }
     }
   },
   "order": [
     "main",
-    "card_grid_H3KVHW",
+    "countdown_events_masterclass",
     "featured_banner_KEagkW",
     "card_grid_VJL6zA",
     "featured_banner_xfV6Lp",
