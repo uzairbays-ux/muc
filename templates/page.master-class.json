@@ -299,6 +299,17 @@
         "padding-block-start": 12,
         "padding-block-end": 12
       }
+    },
+    "custom_liquid_TXQaQa": {
+      "type": "custom-liquid",
+      "name": "t:names.custom_liquid",
+      "settings": {
+        "custom_liquid": "<style>\n#MainContent {\n    background-color: #060606;\n}\n</style>",
+        "color_scheme": "",
+        "section_width": "page-width",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
     }
   },
   "order": [
@@ -309,6 +320,7 @@
     "featured_banner_xfV6Lp",
     "ad_banner_yxjMmR",
     "card_grid_rdGq3J",
-    "ad_banner_jx6TNQ"
+    "ad_banner_jx6TNQ",
+    "custom_liquid_TXQaQa"
   ]
 }
