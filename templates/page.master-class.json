@@ -111,28 +111,48 @@
         "padding-block-end": 12
       }
     },
-    "custom_liquid_YBTiE3": {
-      "type": "custom-liquid",
-      "name": "t:names.custom_liquid",
+    "card_grid_VJL6zA": {
+      "type": "card-grid",
+      "blocks": {
+        "card_TTi9Mn": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/4_7f678b6d-4362-4b2f-8939-5089fa3dc434.png",
+            "link": "shopify://collections/eyes-1",
+            "open_new_tab": false
+          }
+        },
+        "card_WkTUkF": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/5_04b601bc-12d4-49b4-82d3-f27cf04ca215.png",
+            "link": "shopify://collections/face-1",
+            "open_new_tab": false
+          }
+        }
+      },
+      "block_order": [
+        "card_TTi9Mn",
+        "card_WkTUkF"
+      ],
+      "name": "Card grid",
       "settings": {
-        "custom_liquid": "",
+        "heading": "",
+        "subheading": "",
+        "heading_alignment": "left",
+        "desktop_layout": "grid",
+        "mobile_layout": "grid",
+        "desktop_columns": "2",
+        "mobile_columns": "1",
+        "desktop_slider_per_view": "3",
+        "mobile_slider_per_view": "1.5",
+        "auto_rotate": false,
+        "rotate_interval": 4,
+        "gap": 16,
+        "desktop_side_padding": 40,
+        "mobile_side_padding": 0,
+        "section_width": "full-width",
         "color_scheme": "",
-        "section_width": "page-width",
-        "padding-block-start": 0,
-        "padding-block-end": 0
-      }
-    },
-    "ad_banner_eqwXzQ": {
-      "type": "ad-banner",
-      "name": "Ad banner",
-      "settings": {
-        "desktop_image": "shopify://shop_images/custom_resized_780dc220-a6ca-45e0-85ea-b5358ae2981f.jpg",
-        "link": "shopify://collections/maybelline",
-        "open_new_tab": false,
-        "section_width": "page-width",
-        "mobile_full_width": true,
-        "padding_inline_desktop": 0,
-        "padding_inline_mobile": 12,
         "padding-block-start": 12,
         "padding-block-end": 12
       }
@@ -152,6 +172,35 @@
       },
       "block_order": [
         "slide_tD9MwC"
+      ],
+      "name": "Featured banner",
+      "settings": {
+        "autoplay": false,
+        "autoplay_interval": 5,
+        "show_arrows": false,
+        "show_dots": false,
+        "section_width": "page-width",
+        "border_radius": 10,
+        "color_scheme": "",
+        "padding-block-start": 12,
+        "padding-block-end": 0
+      }
+    },
+    "featured_banner_xfV6Lp": {
+      "type": "featured-banner",
+      "blocks": {
+        "slide_FXAiC7": {
+          "type": "slide",
+          "settings": {
+            "desktop_image": "shopify://shop_images/3_78da55de-6e13-465c-af37-c05b6ca116bb.webp",
+            "link": "shopify://collections/maybelline",
+            "open_new_tab": false,
+            "alt": ""
+          }
+        }
+      },
+      "block_order": [
+        "slide_FXAiC7"
       ],
       "name": "Featured banner",
       "settings": {
@@ -1640,9 +1689,9 @@
   "order": [
     "main",
     "card_grid_H3KVHW",
-    "custom_liquid_YBTiE3",
-    "ad_banner_eqwXzQ",
+    "card_grid_VJL6zA",
     "featured_banner_KEagkW",
+    "featured_banner_xfV6Lp",
     "product_list_QwYUXP",
     "product_list_CALkkH",
     "card_grid_6gTBC9",
