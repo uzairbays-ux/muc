@@ -111,6 +111,35 @@
         "padding-block-end": 12
       }
     },
+    "featured_banner_KEagkW": {
+      "type": "featured-banner",
+      "blocks": {
+        "slide_tD9MwC": {
+          "type": "slide",
+          "settings": {
+            "desktop_image": "shopify://shop_images/3_78da55de-6e13-465c-af37-c05b6ca116bb.webp",
+            "link": "shopify://collections/maybelline",
+            "open_new_tab": false,
+            "alt": ""
+          }
+        }
+      },
+      "block_order": [
+        "slide_tD9MwC"
+      ],
+      "name": "Featured banner",
+      "settings": {
+        "autoplay": false,
+        "autoplay_interval": 5,
+        "show_arrows": false,
+        "show_dots": false,
+        "section_width": "page-width",
+        "border_radius": 10,
+        "color_scheme": "",
+        "padding-block-start": 12,
+        "padding-block-end": 0
+      }
+    },
     "card_grid_VJL6zA": {
       "type": "card-grid",
       "blocks": {
@@ -157,42 +186,13 @@
         "padding-block-end": 12
       }
     },
-    "featured_banner_KEagkW": {
-      "type": "featured-banner",
-      "blocks": {
-        "slide_tD9MwC": {
-          "type": "slide",
-          "settings": {
-            "desktop_image": "shopify://shop_images/3_78da55de-6e13-465c-af37-c05b6ca116bb.webp",
-            "link": "shopify://collections/maybelline",
-            "open_new_tab": false,
-            "alt": ""
-          }
-        }
-      },
-      "block_order": [
-        "slide_tD9MwC"
-      ],
-      "name": "Featured banner",
-      "settings": {
-        "autoplay": false,
-        "autoplay_interval": 5,
-        "show_arrows": false,
-        "show_dots": false,
-        "section_width": "page-width",
-        "border_radius": 10,
-        "color_scheme": "",
-        "padding-block-start": 12,
-        "padding-block-end": 0
-      }
-    },
     "featured_banner_xfV6Lp": {
       "type": "featured-banner",
       "blocks": {
         "slide_FXAiC7": {
           "type": "slide",
           "settings": {
-            "desktop_image": "shopify://shop_images/3_78da55de-6e13-465c-af37-c05b6ca116bb.webp",
+            "desktop_image": "shopify://shop_images/6_8b52dca1-2122-45f2-9bd6-8b537dc5f874.png",
             "link": "shopify://collections/maybelline",
             "open_new_tab": false,
             "alt": ""
@@ -1689,8 +1689,8 @@
   "order": [
     "main",
     "card_grid_H3KVHW",
-    "card_grid_VJL6zA",
     "featured_banner_KEagkW",
+    "card_grid_VJL6zA",
     "featured_banner_xfV6Lp",
     "product_list_QwYUXP",
     "product_list_CALkkH",
