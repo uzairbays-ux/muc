@@ -1,12 +1,17 @@
 {% liquid
   assign s = section.settings
+  assign desktop_cols = s.desktop_columns | default: '2'
+  assign mobile_cols  = s.mobile_columns  | default: '1'
 %}
 
 <div
   class="countdown-event-cards section--{{ s.section_width }} spacing-style"
   style="{% render 'spacing-style', settings: s %}"
 >
-  <div class="countdown-event-cards__grid">
+  <div
+    class="countdown-event-cards__grid"
+    style="--cec-desktop-cols:{{ desktop_cols }};--cec-mobile-cols:{{ mobile_cols }};--cec-gap:{{ s.gap | default: 16 }}px;"
+  >
     {%- for block in section.blocks -%}
       {%- assign b = block.settings -%}
       {%- assign block_id = 'countdown-' | append: block.id -%}
@@ -15,7 +20,25 @@
         style="{% if b.bg_image != blank %}background-image: url('{{ b.bg_image | image_url: width: 1200 }}');{% endif %}"
         {{ block.shopify_attributes }}
       >
-        {%- comment -%} Left: Countdown timer {%- endcomment -%}
+        {%- comment -%} Left: Event details {%- endcomment -%}
+        <div class="countdown-event-cards__info">
+          {%- if b.city != blank -%}
+            <div class="countdown-event-cards__city">{{ b.city }}</div>
+          {%- endif -%}
+          {%- if b.event_date_display != blank -%}
+            <div class="countdown-event-cards__date">{{ b.event_date_display }}</div>
+          {%- endif -%}
+          {%- if b.venue != blank -%}
+            <div class="countdown-event-cards__venue">{{ b.venue }}</div>
+          {%- endif -%}
+          {%- if b.cta_url != blank and b.cta_label != blank -%}
+            <a href="{{ b.cta_url }}" class="countdown-event-cards__cta"{% if b.open_new_tab %} target="_blank" rel="noopener"{% endif %}>
+              {{ b.cta_label }}
+            </a>
+          {%- endif -%}
+        </div>
+
+        {%- comment -%} Right: Countdown timer {%- endcomment -%}
         <div class="countdown-event-cards__timer" id="{{ block_id }}" data-target="{{ b.target_date }}">
           <div class="countdown-event-cards__timer-label">{{ b.timer_label | default: 'Event Starts In' }}</div>
           <div class="countdown-event-cards__timer-units">
@@ -40,24 +63,6 @@
             </div>
           </div>
         </div>
-
-        {%- comment -%} Right: Event details {%- endcomment -%}
-        <div class="countdown-event-cards__info">
-          {%- if b.city != blank -%}
-            <div class="countdown-event-cards__city">{{ b.city }}</div>
-          {%- endif -%}
-          {%- if b.event_date_display != blank -%}
-            <div class="countdown-event-cards__date">{{ b.event_date_display }}</div>
-          {%- endif -%}
-          {%- if b.venue != blank -%}
-            <div class="countdown-event-cards__venue">{{ b.venue }}</div>
-          {%- endif -%}
-          {%- if b.cta_url != blank and b.cta_label != blank -%}
-            <a href="{{ b.cta_url }}" class="countdown-event-cards__cta"{% if b.open_new_tab %} target="_blank" rel="noopener"{% endif %}>
-              {{ b.cta_label }}
-            </a>
-          {%- endif -%}
-        </div>
       </div>
     {%- endfor -%}
   </div>
@@ -70,10 +75,15 @@
     padding-inline: var(--gap-md, 20px);
   }
 
+  .countdown-event-cards.section--full-width {
+    max-width: 100%;
+    padding-inline: 0;
+  }
+
   .countdown-event-cards__grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
+    grid-template-columns: repeat(var(--cec-desktop-cols, 2), 1fr);
+    gap: var(--cec-gap, 16px);
   }
 
   /* ── Card ── */
@@ -94,16 +104,15 @@
     position: relative;
   }
 
-  /* Dark overlay so text is legible over the bg image */
   .countdown-event-cards__card::before {
     content: '';
     position: absolute;
     inset: 0;
     background: linear-gradient(
       to right,
-      rgba(6,6,6,0.82) 0%,
-      rgba(6,6,6,0.55) 50%,
-      rgba(6,6,6,0.72) 100%
+      rgba(6,6,6,0.75) 0%,
+      rgba(6,6,6,0.45) 50%,
+      rgba(6,6,6,0.82) 100%
     );
     border-radius: inherit;
     pointer-events: none;
@@ -115,7 +124,60 @@
     z-index: 1;
   }
 
-  /* ── Countdown timer ── */
+  /* ── Left: Event info ── */
+  .countdown-event-cards__info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    gap: 2px;
+  }
+
+  .countdown-event-cards__city {
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #fff;
+    line-height: 1.1;
+  }
+
+  .countdown-event-cards__date {
+    font-size: 13px;
+    font-weight: 600;
+    color: #d4a843;
+    letter-spacing: 0.04em;
+    margin-top: 2px;
+  }
+
+  .countdown-event-cards__venue {
+    font-size: 12px;
+    color: rgba(255,255,255,0.65);
+    letter-spacing: 0.02em;
+    margin-top: 1px;
+  }
+
+  .countdown-event-cards__cta {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 7px 18px;
+    border-radius: 4px;
+    border: 1.5px solid #b8962e;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #d4a843;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .countdown-event-cards__cta:hover {
+    background: #b8962e;
+    color: #060606;
+  }
+
+  /* ── Right: Countdown timer ── */
   .countdown-event-cards__timer {
     display: flex;
     flex-direction: column;
@@ -172,63 +234,17 @@
     opacity: 0.7;
   }
 
-  /* ── Event info ── */
-  .countdown-event-cards__info {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    text-align: right;
-    gap: 2px;
-  }
-
-  .countdown-event-cards__city {
-    font-size: 26px;
-    font-weight: 800;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: #fff;
-    line-height: 1.1;
-  }
-
-  .countdown-event-cards__date {
-    font-size: 13px;
-    font-weight: 600;
-    color: #d4a843;
-    letter-spacing: 0.04em;
-    margin-top: 2px;
-  }
-
-  .countdown-event-cards__venue {
-    font-size: 12px;
-    color: rgba(255,255,255,0.65);
-    letter-spacing: 0.02em;
-    margin-top: 1px;
-  }
-
-  .countdown-event-cards__cta {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 7px 18px;
-    border-radius: 4px;
-    border: 1.5px solid #b8962e;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: #d4a843;
-    text-decoration: none;
-    transition: background 0.2s, color 0.2s;
-  }
-
-  .countdown-event-cards__cta:hover {
-    background: #b8962e;
-    color: #060606;
+  /* ── Tablet ── */
+  @media screen and (max-width: 1023px) {
+    .countdown-event-cards__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
   /* ── Mobile ── */
-  @media (max-width: 749px) {
+  @media screen and (max-width: 749px) {
     .countdown-event-cards__grid {
-      grid-template-columns: 1fr;
+      grid-template-columns: repeat(var(--cec-mobile-cols, 1), 1fr);
     }
 
     .countdown-event-cards__card {
@@ -289,6 +305,9 @@
   "class": "section-countdown-event-cards",
   "disabled_on": { "groups": ["header", "footer"] },
   "settings": [
+    { "type": "text",   "id": "heading",    "label": "Heading" },
+    { "type": "text",   "id": "subheading", "label": "Subheading" },
+    { "type": "header", "content": "Layout" },
     {
       "type": "select", "id": "section_width", "label": "Section width",
       "options": [
@@ -296,6 +315,28 @@
         { "value": "full-width", "label": "Full" }
       ],
       "default": "page-width"
+    },
+    {
+      "type": "select", "id": "desktop_columns", "label": "Desktop columns",
+      "options": [
+        { "value": "1", "label": "1" },
+        { "value": "2", "label": "2" },
+        { "value": "3", "label": "3" },
+        { "value": "4", "label": "4" }
+      ],
+      "default": "2"
+    },
+    {
+      "type": "select", "id": "mobile_columns", "label": "Mobile columns",
+      "options": [
+        { "value": "1", "label": "1" },
+        { "value": "2", "label": "2" }
+      ],
+      "default": "1"
+    },
+    {
+      "type": "range", "id": "gap", "label": "Gap between cards",
+      "min": 0, "max": 60, "step": 4, "unit": "px", "default": 16
     },
     { "type": "header", "content": "Padding" },
     { "type": "range", "id": "padding-block-start", "label": "Top",    "min": 0, "max": 120, "step": 4, "unit": "px", "default": 12 },
@@ -306,16 +347,16 @@
       "type": "event",
       "name": "Event Card",
       "settings": [
-        { "type": "text",    "id": "city",               "label": "City name",               "default": "Karachi" },
-        { "type": "text",    "id": "event_date_display", "label": "Date (display text)",     "default": "9th July 2026", "info": "Shown under the city name." },
-        { "type": "text",    "id": "target_date",        "label": "Countdown target date",   "default": "2026-07-09T00:00:00", "info": "ISO format: YYYY-MM-DDTHH:MM:SS" },
-        { "type": "text",    "id": "venue",              "label": "Venue",                   "default": "Mariott Hotel" },
-        { "type": "text",    "id": "timer_label",        "label": "Timer label",             "default": "Event Starts In" },
-        { "type": "image_picker", "id": "bg_image",     "label": "Background image" },
-        { "type": "header",  "content": "CTA Button" },
-        { "type": "text",    "id": "cta_label",          "label": "Button label" },
-        { "type": "url",     "id": "cta_url",            "label": "Button URL" },
-        { "type": "checkbox","id": "open_new_tab",       "label": "Open in new tab",         "default": false }
+        { "type": "text",         "id": "city",               "label": "City name",             "default": "Karachi" },
+        { "type": "text",         "id": "event_date_display", "label": "Date (display text)",   "default": "9th July 2026", "info": "Shown under the city name." },
+        { "type": "text",         "id": "target_date",        "label": "Countdown target date", "default": "2026-07-09T00:00:00", "info": "ISO format: YYYY-MM-DDTHH:MM:SS" },
+        { "type": "text",         "id": "venue",              "label": "Venue",                 "default": "Mariott Hotel" },
+        { "type": "text",         "id": "timer_label",        "label": "Timer label",           "default": "Event Starts In" },
+        { "type": "image_picker", "id": "bg_image",           "label": "Background image" },
+        { "type": "header",       "content": "CTA Button" },
+        { "type": "text",         "id": "cta_label",          "label": "Button label" },
+        { "type": "url",          "id": "cta_url",            "label": "Button URL" },
+        { "type": "checkbox",     "id": "open_new_tab",       "label": "Open in new tab", "default": false }
       ]
     }
   ],

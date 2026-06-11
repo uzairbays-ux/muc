@@ -105,7 +105,12 @@
       "settings": {
         "section_width": "page-width",
         "padding-block-start": 12,
-        "padding-block-end": 12
+        "padding-block-end": 12,
+        "heading": "",
+        "subheading": "",
+        "desktop_columns": "2",
+        "mobile_columns": "1",
+        "gap": 16
       }
     },
     "featured_banner_KEagkW": {
