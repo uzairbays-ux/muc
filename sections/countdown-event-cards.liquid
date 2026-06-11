@@ -8,11 +8,11 @@
 
 <div
   class="countdown-event-cards section--{{ s.section_width }} color-{{ s.color_scheme }} spacing-style"
-  style="{% render 'spacing-style', settings: s %}"
+  style="{% render 'spacing-style', settings: s %}--cec-dsp:{{ dsp }}px;--cec-msp:{{ msp }}px;"
 >
   <div
     class="countdown-event-cards__grid"
-    style="--cec-desktop-cols:{{ desktop_cols }};--cec-mobile-cols:{{ mobile_cols }};--cec-gap:{{ s.gap | default: 16 }}px;--cec-dsp:{{ dsp }}px;--cec-msp:{{ msp }}px;"
+    style="--cec-desktop-cols:{{ desktop_cols }};--cec-mobile-cols:{{ mobile_cols }};--cec-gap:{{ s.gap | default: 16 }}px;"
   >
     {%- for block in section.blocks -%}
       {%- assign b = block.settings -%}

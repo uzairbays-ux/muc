@@ -103,14 +103,24 @@
       ],
       "name": "Countdown Event Cards",
       "settings": {
-        "section_width": "page-width",
-        "padding-block-start": 12,
-        "padding-block-end": 12,
         "heading": "",
         "subheading": "",
+        "heading_alignment": "left",
+        "desktop_layout": "grid",
+        "mobile_layout": "grid",
         "desktop_columns": "2",
         "mobile_columns": "1",
-        "gap": 16
+        "desktop_slider_per_view": "2",
+        "mobile_slider_per_view": "1.5",
+        "auto_rotate": false,
+        "rotate_interval": 4,
+        "gap": 16,
+        "desktop_side_padding": 40,
+        "mobile_side_padding": 14,
+        "section_width": "page-width",
+        "color_scheme": "scheme-6",
+        "padding-block-start": 12,
+        "padding-block-end": 12
       }
     },
     "featured_banner_KEagkW": {
@@ -279,9 +289,9 @@
         "auto_rotate": false,
         "rotate_interval": 4,
         "gap": 16,
-        "desktop_side_padding": 40,
-        "mobile_side_padding": 0,
-        "section_width": "full-width",
+        "desktop_side_padding": 12,
+        "mobile_side_padding": 14,
+        "section_width": "page-width",
         "color_scheme": "",
         "padding-block-start": 12,
         "padding-block-end": 12
