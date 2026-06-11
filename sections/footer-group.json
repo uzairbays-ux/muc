@@ -16,7 +16,7 @@
       "name": "Campaign popup",
       "settings": {
         "enabled": true,
-        "image": "shopify://shop_images/12569.webp",
+        "image": "shopify://shop_images/airbrush.webp",
         "link": "shopify://products/onestep-hot-air-brush",
         "open_new_tab": false,
         "delay_seconds": 3,
