@@ -12,6 +12,13 @@
     "main": {
       "type": "main-page",
       "blocks": {
+        "page_bg": {
+          "type": "custom-liquid",
+          "settings": {
+            "custom_liquid": "<style>body{background-color:#060606!important}</style>"
+          },
+          "blocks": {}
+        },
         "heading": {
           "type": "text",
           "name": "Title",
@@ -45,6 +52,7 @@
         }
       },
       "block_order": [
+        "page_bg",
         "heading",
         "page-content"
       ],
