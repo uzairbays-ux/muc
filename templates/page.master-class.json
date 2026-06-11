@@ -68,20 +68,6 @@
     "countdown_events_masterclass": {
       "type": "countdown-event-cards",
       "blocks": {
-        "event_karachi": {
-          "type": "event",
-          "settings": {
-            "city": "",
-            "event_date_display": "",
-            "target_date": "2026-07-09T00:00:00",
-            "venue": "",
-            "timer_label": "Event Starts In",
-            "bg_image": "shopify://shop_images/2_89af27d7-4bb4-44d7-b883-2a6be5519c35.png",
-            "cta_label": "",
-            "cta_url": "",
-            "open_new_tab": false
-          }
-        },
         "event_lahore": {
           "type": "event",
           "settings": {
@@ -95,11 +81,25 @@
             "cta_url": "",
             "open_new_tab": false
           }
+        },
+        "event_karachi": {
+          "type": "event",
+          "settings": {
+            "city": "",
+            "event_date_display": "",
+            "target_date": "2026-07-09T00:00:00",
+            "venue": "",
+            "timer_label": "Event Starts In",
+            "bg_image": "shopify://shop_images/2_89af27d7-4bb4-44d7-b883-2a6be5519c35.png",
+            "cta_label": "",
+            "cta_url": "",
+            "open_new_tab": false
+          }
         }
       },
       "block_order": [
-        "event_karachi",
-        "event_lahore"
+        "event_lahore",
+        "event_karachi"
       ],
       "name": "Countdown Event Cards",
       "settings": {
@@ -204,7 +204,7 @@
         "slide_FXAiC7": {
           "type": "slide",
           "settings": {
-            "desktop_image": "shopify://shop_images/6_8b52dca1-2122-45f2-9bd6-8b537dc5f874.png",
+            "desktop_image": "shopify://shop_images/6_57e553e0-d589-44f8-b8e7-a4b66fd6ea25.webp",
             "link": "tel:03004718539",
             "open_new_tab": false,
             "alt": ""
