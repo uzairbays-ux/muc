@@ -72,7 +72,7 @@
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/2_89af27d7-4bb4-44d7-b883-2a6be5519c35.png",
-            "link": "shopify://collections/eyes-1",
+            "link": "tel:03004718539",
             "open_new_tab": false
           }
         },
@@ -80,7 +80,7 @@
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/1_2b60605d-feeb-435b-9b99-86018b87f47f.png",
-            "link": "shopify://collections/face-1",
+            "link": "tel:03179996813",
             "open_new_tab": false
           }
         }
@@ -193,7 +193,7 @@
           "type": "slide",
           "settings": {
             "desktop_image": "shopify://shop_images/6_8b52dca1-2122-45f2-9bd6-8b537dc5f874.png",
-            "link": "shopify://collections/maybelline",
+            "link": "tel:03004718539",
             "open_new_tab": false,
             "alt": ""
           }
@@ -237,7 +237,7 @@
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/8_ed131534-7b1b-4975-bed2-dbc21264ea55.png",
-            "link": "shopify://collections/face-1",
+            "link": "tel:03179996813",
             "open_new_tab": false
           }
         },
@@ -245,7 +245,7 @@
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/9_44691665-2739-4ab7-b22b-90b45631e59b.png",
-            "link": "shopify://collections/eyes-1",
+            "link": "tel:03004718539",
             "open_new_tab": false
           }
         },
@@ -253,7 +253,7 @@
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/10_64a728dd-3f9b-4b6c-9bc7-549cf151f321.png",
-            "link": "shopify://collections/face-1",
+            "link": "tel:03004718539",
             "open_new_tab": false
           }
         }
