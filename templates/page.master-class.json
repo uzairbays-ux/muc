@@ -159,7 +159,7 @@
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/4_7f678b6d-4362-4b2f-8939-5089fa3dc434.png",
-            "link": "tel:03004718539",
+            "link": "",
             "open_new_tab": false
           }
         },
@@ -167,7 +167,7 @@
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/5_04b601bc-12d4-49b4-82d3-f27cf04ca215.png",
-            "link": "shopify://collections/face-1",
+            "link": "",
             "open_new_tab": false
           }
         }
