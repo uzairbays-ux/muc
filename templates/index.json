@@ -1209,6 +1209,22 @@
             "link": "shopify://collections/rimmel-london",
             "open_new_tab": false
           }
+        },
+        "card_9PabLY": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/fara_600_x_375_Banners_copy.jpg",
+            "link": "shopify://collections/fara",
+            "open_new_tab": false
+          }
+        },
+        "card_rhG3VD": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/elvawn_600_x_375_Banners_copy.jpg",
+            "link": "shopify://collections/elvawn",
+            "open_new_tab": false
+          }
         }
       },
       "block_order": [
@@ -1218,7 +1234,9 @@
         "card_wKbPRz",
         "card_Dj4Jhk",
         "card_VaLrJE",
-        "card_hVQxRA"
+        "card_hVQxRA",
+        "card_9PabLY",
+        "card_rhG3VD"
       ],
       "name": "Card grid",
       "settings": {
