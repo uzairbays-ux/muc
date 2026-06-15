@@ -4,6 +4,10 @@
   /* ─── CSS injected once ─────────────────────────────────────── */
   const CSS = `
     @media (max-width: 749px) {
+      .product-grid { padding: 6px; }
+    }
+
+    @media (max-width: 749px) {
 
       /* ── Lock the drawer scroll so only content-area scrolls ── */
       .mmt-transformed .menu-drawer {
@@ -229,13 +233,16 @@
 
     topItems.forEach(function (item, i) {
       /* ── Resolve title & href for this top-level item ── */
-      const directA  = item.querySelector(':scope > a');
+      const directA   = item.querySelector(':scope > a');
       const summaryEl = item.querySelector(':scope > details > summary, :scope > accordion-custom-component > details > summary');
-      const titleEl  = directA || summaryEl;
-      const title    = titleEl
+      const titleEl   = directA || summaryEl;
+      const title     = titleEl
         ? (titleEl.querySelector('.menu-drawer__menu-item-text') || titleEl).textContent.trim()
         : item.textContent.slice(0, 30).trim();
-      const href     = directA ? directA.href : '#';
+      /* href: prefer direct <a>, then data-url on summary (accordion items), else '#' */
+      const href = directA
+        ? directA.href
+        : (summaryEl && summaryEl.dataset.url ? summaryEl.dataset.url : '#');
 
       /* ── Tab button ── */
       var tab = document.createElement('button');
@@ -255,7 +262,7 @@
 
       /* "Shop all X" link */
       var shopAll = document.createElement('a');
-      shopAll.href = href !== '#' ? href : '#';
+      shopAll.href = href;
       shopAll.className = 'mmt-shop-all';
       shopAll.textContent = 'shop all ' + title.toLowerCase();
       panel.appendChild(shopAll);
