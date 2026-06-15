@@ -403,23 +403,13 @@
     drawer.classList.add('mmt-transformed');
   }
 
-  /* ─── Watch for drawers & their open state ─────────────────── */
+  /* ─── Init: transform immediately so original list never flashes ── */
   function init() {
     injectCSS();
 
     function tryTransform(drawer) {
-      /* Only run on mobile viewports */
       if (window.innerWidth > 749) return;
-      var details = drawer.querySelector('[ref="details"], details.menu-drawer-container');
-      if (!details) return;
-
-      var mo = new MutationObserver(function () {
-        if (details.hasAttribute('open')) transformDrawer(drawer);
-      });
-      mo.observe(details, { attributes: true, attributeFilter: ['open'] });
-
-      /* Already open */
-      if (details.hasAttribute('open')) transformDrawer(drawer);
+      transformDrawer(drawer);
     }
 
     document.querySelectorAll('header-drawer').forEach(tryTransform);
