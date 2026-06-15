@@ -234,7 +234,7 @@
     topItems.forEach(function (item, i) {
       /* ── Resolve title & href for this top-level item ── */
       const directA   = item.querySelector(':scope > a');
-      const summaryEl = item.querySelector(':scope > details > summary, :scope > accordion-custom-component > details > summary');
+      const summaryEl = item.querySelector(':scope > details > summary, :scope > accordion-custom > details > summary');
       const titleEl   = directA || summaryEl;
       const title     = titleEl
         ? (titleEl.querySelector('.menu-drawer__menu-item-text') || titleEl).textContent.trim()
@@ -268,7 +268,7 @@
       panel.appendChild(shopAll);
 
       /* Child items — only direct children of the top-level item */
-      var directChildList = item.querySelector(':scope > ul, :scope > details > ul, :scope > accordion-custom-component > details > ul');
+      var directChildList = item.querySelector(':scope > ul, :scope > details > ul, :scope > accordion-custom > details > ul');
       var childLis = directChildList ? Array.from(directChildList.querySelectorAll(':scope > li')) : [];
       if (childLis.length) {
         var ul = document.createElement('ul');
@@ -276,11 +276,11 @@
         ul.setAttribute('role', 'list');
 
         childLis.forEach(function (child) {
-          var childA = child.querySelector(':scope > a, :scope > details > summary a, :scope > accordion-custom-component > details > summary a');
+          var childA = child.querySelector(':scope > a, :scope > details > summary a, :scope > accordion-custom > details > summary a');
           if (!childA) return;
 
           /* Collect grandchildren */
-          var grandList = child.querySelector(':scope > ul, :scope > details > ul, :scope > accordion-custom-component > details > ul');
+          var grandList = child.querySelector(':scope > ul, :scope > details > ul, :scope > accordion-custom > details > ul');
           var grandLis  = grandList ? Array.from(grandList.querySelectorAll(':scope > li')) : [];
 
           var li = document.createElement('li');
