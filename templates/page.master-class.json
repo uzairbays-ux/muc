@@ -68,20 +68,6 @@
     "countdown_events_masterclass": {
       "type": "countdown-event-cards",
       "blocks": {
-        "event_karachi": {
-          "type": "event",
-          "settings": {
-            "city": "",
-            "event_date_display": "",
-            "target_date": "2026-07-09T00:00:00",
-            "venue": "",
-            "timer_label": "Event Starts In",
-            "bg_image": "shopify://shop_images/2_89af27d7-4bb4-44d7-b883-2a6be5519c35.png",
-            "cta_label": "",
-            "cta_url": "",
-            "open_new_tab": false
-          }
-        },
         "event_lahore": {
           "type": "event",
           "settings": {
@@ -95,11 +81,25 @@
             "cta_url": "",
             "open_new_tab": false
           }
+        },
+        "event_karachi": {
+          "type": "event",
+          "settings": {
+            "city": "",
+            "event_date_display": "",
+            "target_date": "2026-07-09T00:00:00",
+            "venue": "",
+            "timer_label": "Event Starts In",
+            "bg_image": "shopify://shop_images/2_89af27d7-4bb4-44d7-b883-2a6be5519c35.png",
+            "cta_label": "",
+            "cta_url": "",
+            "open_new_tab": false
+          }
         }
       },
       "block_order": [
-        "event_karachi",
-        "event_lahore"
+        "event_lahore",
+        "event_karachi"
       ],
       "name": "Countdown Event Cards",
       "settings": {
@@ -129,7 +129,7 @@
         "slide_tD9MwC": {
           "type": "slide",
           "settings": {
-            "desktop_image": "shopify://shop_images/3_78da55de-6e13-465c-af37-c05b6ca116bb.webp",
+            "desktop_image": "shopify://shop_images/3_8e118009-0e4e-47af-ad7a-cb766d0b6b61.webp",
             "link": "tel:03004718539",
             "open_new_tab": false,
             "alt": ""
@@ -159,7 +159,7 @@
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/4_7f678b6d-4362-4b2f-8939-5089fa3dc434.png",
-            "link": "tel:03004718539",
+            "link": "",
             "open_new_tab": false
           }
         },
@@ -167,7 +167,7 @@
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/5_04b601bc-12d4-49b4-82d3-f27cf04ca215.png",
-            "link": "shopify://collections/face-1",
+            "link": "",
             "open_new_tab": false
           }
         }
@@ -190,9 +190,9 @@
         "auto_rotate": false,
         "rotate_interval": 4,
         "gap": 16,
-        "desktop_side_padding": 40,
-        "mobile_side_padding": 0,
-        "section_width": "full-width",
+        "desktop_side_padding": 0,
+        "mobile_side_padding": 16,
+        "section_width": "page-width",
         "color_scheme": "",
         "padding-block-start": 12,
         "padding-block-end": 12
@@ -204,7 +204,7 @@
         "slide_FXAiC7": {
           "type": "slide",
           "settings": {
-            "desktop_image": "shopify://shop_images/6_8b52dca1-2122-45f2-9bd6-8b537dc5f874.png",
+            "desktop_image": "shopify://shop_images/6_57e553e0-d589-44f8-b8e7-a4b66fd6ea25.webp",
             "link": "tel:03004718539",
             "open_new_tab": false,
             "alt": ""
@@ -312,6 +312,59 @@
         "padding-block-end": 12
       }
     },
+    "1781172678b8159e86": {
+      "type": "_blocks",
+      "blocks": {
+        "instafeed_app_block_XR9BFV": {
+          "type": "shopify://apps/instafeed/blocks/app-block/c447db20-095d-4a10-9725-b5977662c9d5",
+          "settings": {
+            "title": "",
+            "title_color": "",
+            "title_size_v2": 0,
+            "alignment": "center",
+            "instafeed_margin_top": 0,
+            "instafeed_margin_bottom": 0,
+            "instafeed_margin_sides": 0,
+            "show_instagram_link": false,
+            "link_alignment": "left",
+            "link_color": "#000000",
+            "background_color": "",
+            "feed_id": "",
+            "html_area": ""
+          }
+        }
+      },
+      "block_order": [
+        "instafeed_app_block_XR9BFV"
+      ],
+      "settings": {
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 12,
+        "section_width": "page-width",
+        "section_height": "",
+        "section_height_custom": 50,
+        "color_scheme": "",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "padding-block-start": 0,
+        "padding-block-end": 12
+      }
+    },
     "custom_liquid_TXQaQa": {
       "type": "custom-liquid",
       "name": "t:names.custom_liquid",
@@ -333,6 +386,7 @@
     "ad_banner_yxjMmR",
     "card_grid_rdGq3J",
     "ad_banner_jx6TNQ",
+    "1781172678b8159e86",
     "custom_liquid_TXQaQa"
   ]
 }
