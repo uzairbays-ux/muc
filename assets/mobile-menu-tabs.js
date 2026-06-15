@@ -3,68 +3,82 @@
 
   /* ─── CSS injected once ─────────────────────────────────────── */
   const CSS = `
-    /* Only activate on mobile */
     @media (max-width: 749px) {
 
-      /* Hide the original vertical list after transform */
+      /* ── Lock the drawer scroll so only content-area scrolls ── */
+      .mmt-transformed .menu-drawer {
+        display: flex !important;
+        flex-direction: column !important;
+        overflow: hidden !important;
+      }
+
+      .mmt-transformed .menu-drawer__navigation {
+        display: flex !important;
+        flex-direction: column !important;
+        flex: 1 1 auto !important;
+        min-height: 0 !important;
+        overflow: hidden !important;
+      }
+
+      /* Hide original vertical list */
       .mmt-transformed .menu-drawer__menu.has-submenu {
         display: none !important;
       }
 
-      /* ── Tab bar ── */
+      /* ── Tab bar — flex, no scroll itself ── */
       .mmt-tab-bar {
         display: flex;
         align-items: center;
-        gap: 0;
+        flex-shrink: 0;
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
         scrollbar-width: none;
         border-bottom: 1.5px solid rgba(0,0,0,0.1);
-        padding: 0;
-        background: inherit;
-        position: sticky;
-        top: 0;
-        z-index: 10;
+        padding: 8px 12px;
+        gap: 8px;
         background: var(--color-background, #fff);
       }
       .mmt-tab-bar::-webkit-scrollbar { display: none; }
 
+      /* ── Tab pill ── */
       .mmt-tab {
         flex: 0 0 auto;
-        padding: 14px 16px;
+        padding: 7px 14px;
         border: none;
-        background: none;
+        border-radius: 999px;
+        background: transparent;
         font-size: 11px;
         font-weight: 700;
-        letter-spacing: 0.1em;
+        letter-spacing: 0.08em;
         text-transform: uppercase;
         color: rgba(0,0,0,0.45);
         cursor: pointer;
         white-space: nowrap;
-        border-bottom: 2.5px solid transparent;
-        margin-bottom: -1.5px;
-        transition: color 0.15s, border-color 0.15s;
+        transition: background 0.18s, color 0.18s;
       }
 
+      /* Active tab: filled dark pill */
       .mmt-tab.is-active {
-        color: rgb(0,0,0);
-        border-bottom-color: currentColor;
+        background: rgb(0,0,0);
+        color: #fff;
       }
 
-      /* ── Content area ── */
+      /* ── Content area — the ONLY scrolling container ── */
       .mmt-content-area {
-        overflow-y: auto;
         flex: 1 1 auto;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        min-height: 0;
       }
 
-      /* ── Panel ── */
+      /* ── Panel fade-in ── */
       .mmt-panel {
         padding: 0;
-        animation: mmt-fade-in 0.18s ease;
+        animation: mmt-fade-in 0.15s ease;
       }
 
       @keyframes mmt-fade-in {
-        from { opacity: 0; transform: translateY(4px); }
+        from { opacity: 0; transform: translateY(3px); }
         to   { opacity: 1; transform: translateY(0); }
       }
 
@@ -79,7 +93,6 @@
         letter-spacing: 0.02em;
         border-bottom: 1px solid rgba(0,0,0,0.08);
       }
-
       .mmt-shop-all:hover { color: rgba(0,0,0,0.9); }
 
       /* ── Child list ── */
@@ -102,22 +115,18 @@
         color: inherit;
         transition: background 0.12s;
       }
-
       .mmt-child-link:hover,
-      .mmt-child-link:active {
-        background: rgba(0,0,0,0.04);
-      }
+      .mmt-child-link:active { background: rgba(0,0,0,0.04); }
 
       /* ── Thumbnail ── */
       .mmt-child-img {
         width: 48px;
         height: 48px;
-        border-radius: 4px;
+        border-radius: 6px;
         object-fit: cover;
         flex-shrink: 0;
         background: rgba(0,0,0,0.06);
       }
-
       .mmt-child-img--placeholder {
         display: inline-block;
         background: rgba(0,0,0,0.06);
@@ -132,21 +141,18 @@
         color: rgb(0,0,0);
         text-transform: lowercase;
       }
-
-      .mmt-child-text::first-letter {
-        text-transform: uppercase;
-      }
+      .mmt-child-text::first-letter { text-transform: uppercase; }
 
       /* ── Plus indicator ── */
       .mmt-child-plus {
         flex-shrink: 0;
         font-size: 16px;
         font-weight: 300;
-        color: rgba(0,0,0,0.4);
+        color: rgba(0,0,0,0.35);
         line-height: 1;
       }
 
-      /* ── Direct link (no children) ── */
+      /* ── Direct link (top-level with no children) ── */
       .mmt-direct-link {
         display: block;
         padding: 18px 20px;
@@ -154,14 +160,6 @@
         font-weight: 600;
         color: inherit;
         text-decoration: none;
-      }
-
-      /* make the nav flex so tab-bar stays sticky */
-      .mmt-transformed .menu-drawer__navigation {
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-        overflow: hidden;
       }
     }
   `;
