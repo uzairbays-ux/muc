@@ -403,18 +403,29 @@
     drawer.classList.add('mmt-transformed');
   }
 
-  /* ─── Init: transform immediately so original list never flashes ── */
+  /* ─── Init ──────────────────────────────────────────────────── */
   function init() {
     injectCSS();
 
     function tryTransform(drawer) {
       if (window.innerWidth > 749) return;
       transformDrawer(drawer);
+
+      /* The header section hydrates after idle — the menu list arrives late.
+         Watch the drawer subtree and retry once the <ul> appears. */
+      if (!drawer._mmtDone) {
+        var obs = new MutationObserver(function () {
+          if (window.innerWidth > 749) return;
+          transformDrawer(drawer);
+          if (drawer._mmtDone) obs.disconnect();
+        });
+        obs.observe(drawer, { childList: true, subtree: true });
+      }
     }
 
     document.querySelectorAll('header-drawer').forEach(tryTransform);
 
-    /* Catch drawers added later (theme editor / section rendering) */
+    /* Catch drawers added later (theme editor full section swap) */
     new MutationObserver(function (mutations) {
       mutations.forEach(function (m) {
         m.addedNodes.forEach(function (node) {
