@@ -106,17 +106,17 @@
         border-bottom: 1px solid rgba(0,0,0,0.08);
       }
 
-      .mmt-child-link {
+      /* ── Child row (replaces old .mmt-child-link) ── */
+      .mmt-child-row {
         display: flex;
         align-items: center;
         gap: 14px;
         padding: 10px 20px;
-        text-decoration: none;
-        color: inherit;
+        cursor: pointer;
         transition: background 0.12s;
       }
-      .mmt-child-link:hover,
-      .mmt-child-link:active { background: rgba(0,0,0,0.04); }
+      .mmt-child-row:hover,
+      .mmt-child-row:active { background: rgba(0,0,0,0.04); }
 
       /* ── Thumbnail ── */
       .mmt-child-img {
@@ -142,15 +142,48 @@
         text-transform: lowercase;
       }
       .mmt-child-text::first-letter { text-transform: uppercase; }
-
-      /* ── Plus indicator ── */
-      .mmt-child-plus {
-        flex-shrink: 0;
-        font-size: 16px;
-        font-weight: 300;
-        color: rgba(0,0,0,0.35);
-        line-height: 1;
+      .mmt-child-text--link {
+        text-decoration: none;
+        color: inherit;
       }
+
+      /* ── Chevron (+ / −) ── */
+      .mmt-child-chevron {
+        flex-shrink: 0;
+        font-size: 18px;
+        font-weight: 300;
+        color: rgba(0,0,0,0.4);
+        line-height: 1;
+        transition: transform 0.2s;
+        user-select: none;
+      }
+
+      /* ── Grandchildren accordion list ── */
+      .mmt-grand-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        background: rgba(0,0,0,0.03);
+      }
+
+      .mmt-grand-item {
+        border-top: 1px solid rgba(0,0,0,0.06);
+      }
+
+      .mmt-grand-link {
+        display: block;
+        padding: 10px 20px 10px 82px;
+        font-size: 12px;
+        font-weight: 500;
+        letter-spacing: 0.02em;
+        text-transform: lowercase;
+        color: rgba(0,0,0,0.7);
+        text-decoration: none;
+        transition: background 0.12s;
+      }
+      .mmt-grand-link::first-letter { text-transform: uppercase; }
+      .mmt-grand-link:hover,
+      .mmt-grand-link:active { background: rgba(0,0,0,0.06); }
 
       /* ── Direct link (top-level with no children) ── */
       .mmt-direct-link {
@@ -227,23 +260,35 @@
       shopAll.textContent = 'shop all ' + title.toLowerCase();
       panel.appendChild(shopAll);
 
-      /* Child items */
-      var childLis = item.querySelectorAll('ul li, details ul li');
+      /* Child items — only direct children of the top-level item */
+      var directChildList = item.querySelector(':scope > ul, :scope > details > ul, :scope > accordion-custom-component > details > ul');
+      var childLis = directChildList ? Array.from(directChildList.querySelectorAll(':scope > li')) : [];
       if (childLis.length) {
         var ul = document.createElement('ul');
         ul.className = 'mmt-child-list';
         ul.setAttribute('role', 'list');
 
         childLis.forEach(function (child) {
-          var childA = child.querySelector('a');
+          var childA = child.querySelector(':scope > a, :scope > details > summary a, :scope > accordion-custom-component > details > summary a');
           if (!childA) return;
+
+          /* Collect grandchildren */
+          var grandList = child.querySelector(':scope > ul, :scope > details > ul, :scope > accordion-custom-component > details > ul');
+          var grandLis  = grandList ? Array.from(grandList.querySelectorAll(':scope > li')) : [];
 
           var li = document.createElement('li');
           li.className = 'mmt-child-item';
 
-          var a = document.createElement('a');
-          a.href = childA.href;
-          a.className = 'mmt-child-link';
+          /* Row: thumbnail + label + toggle icon */
+          var row = document.createElement('div');
+          row.className = 'mmt-child-row';
+
+          if (grandLis.length) {
+            /* Make the whole row a button-style toggle */
+            row.setAttribute('role', 'button');
+            row.setAttribute('tabindex', '0');
+            row.setAttribute('aria-expanded', 'false');
+          }
 
           /* Thumbnail */
           var img = child.querySelector('img');
@@ -260,26 +305,67 @@
             thumb = document.createElement('span');
           }
           thumb.className = 'mmt-child-img' + (img ? '' : ' mmt-child-img--placeholder');
-          a.appendChild(thumb);
+          row.appendChild(thumb);
 
-          /* Label */
+          /* Label — link if no grandchildren, span if accordion */
           var textNode = childA.querySelector('.menu-drawer__menu-item-text');
-          var label = document.createElement('span');
-          label.className = 'mmt-child-text';
-          label.textContent = (textNode ? textNode.textContent : childA.textContent).trim();
-          a.appendChild(label);
+          var labelText = (textNode ? textNode.textContent : childA.textContent).trim();
 
-          /* Plus if has grandchildren */
-          var hasGrand = child.querySelector('details, ul ul');
-          if (hasGrand) {
-            var plus = document.createElement('span');
-            plus.className = 'mmt-child-plus';
-            plus.setAttribute('aria-hidden', 'true');
-            plus.textContent = '+';
-            a.appendChild(plus);
+          if (grandLis.length) {
+            var label = document.createElement('span');
+            label.className = 'mmt-child-text';
+            label.textContent = labelText;
+            row.appendChild(label);
+
+            var chevron = document.createElement('span');
+            chevron.className = 'mmt-child-chevron';
+            chevron.setAttribute('aria-hidden', 'true');
+            chevron.textContent = '+';
+            row.appendChild(chevron);
+          } else {
+            var rowLink = document.createElement('a');
+            rowLink.href = childA.href;
+            rowLink.className = 'mmt-child-text mmt-child-text--link';
+            rowLink.textContent = labelText;
+            row.appendChild(rowLink);
           }
 
-          li.appendChild(a);
+          li.appendChild(row);
+
+          /* Grandchildren accordion panel */
+          if (grandLis.length) {
+            var grandUl = document.createElement('ul');
+            grandUl.className = 'mmt-grand-list';
+            grandUl.hidden = true;
+
+            grandLis.forEach(function (grand) {
+              var grandA = grand.querySelector('a');
+              if (!grandA) return;
+              var gLi = document.createElement('li');
+              gLi.className = 'mmt-grand-item';
+              var gLink = document.createElement('a');
+              gLink.href = grandA.href;
+              gLink.className = 'mmt-grand-link';
+              var gTextNode = grandA.querySelector('.menu-drawer__menu-item-text');
+              gLink.textContent = (gTextNode ? gTextNode.textContent : grandA.textContent).trim();
+              gLi.appendChild(gLink);
+              grandUl.appendChild(gLi);
+            });
+
+            li.appendChild(grandUl);
+
+            /* Toggle accordion on row click */
+            row.addEventListener('click', function () {
+              var isOpen = grandUl.hidden === false;
+              grandUl.hidden = isOpen;
+              chevron.textContent = isOpen ? '+' : '−';
+              row.setAttribute('aria-expanded', String(!isOpen));
+            });
+            row.addEventListener('keydown', function (e) {
+              if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); row.click(); }
+            });
+          }
+
           ul.appendChild(li);
         });
         panel.appendChild(ul);
