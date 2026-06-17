@@ -16,8 +16,8 @@
       "name": "Campaign popup",
       "settings": {
         "enabled": true,
-        "image": "shopify://shop_images/airbrush.webp",
-        "link": "shopify://products/onestep-hot-air-brush",
+        "image": "shopify://shop_images/popop_banner.jpg",
+        "link": "shopify://pages/framesi-masterclass",
         "open_new_tab": false,
         "delay_seconds": 3,
         "interval_hours": 24

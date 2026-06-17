@@ -116,10 +116,21 @@
             "open_new_tab": false,
             "alt": ""
           }
+        },
+        "slide_WR6nXe": {
+          "type": "slide",
+          "settings": {
+            "desktop_image": "shopify://shop_images/sale-banner.webp",
+            "mobile_image": "shopify://shop_images/sale-banner.webp",
+            "link": "shopify://collections/sale",
+            "open_new_tab": false,
+            "alt": ""
+          }
         }
       },
       "block_order": [
-        "slide_4mM8cj"
+        "slide_4mM8cj",
+        "slide_WR6nXe"
       ],
       "name": "Featured banner",
       "settings": {
