@@ -120,9 +120,9 @@
         "slide_WR6nXe": {
           "type": "slide",
           "settings": {
-            "desktop_image": "shopify://shop_images/sale-banner.webp",
-            "mobile_image": "shopify://shop_images/sale-banner.webp",
-            "link": "shopify://collections/sale",
+            "desktop_image": "shopify://shop_images/home_page_banner_1920_x_750_copy.jpg",
+            "mobile_image": "shopify://shop_images/home_page_banner_1920_x_750_copy_c0af3bd5-090f-4130-8bfc-6be537e1a255.jpg",
+            "link": "shopify://pages/framesi-masterclass",
             "open_new_tab": false,
             "alt": ""
           }
