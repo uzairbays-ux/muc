@@ -189,6 +189,53 @@
       .mmt-grand-link:hover,
       .mmt-grand-link:active { background: rgba(0,0,0,0.06); }
 
+      /* ── Product grid (panels with no child nav links) ── */
+      .mmt-product-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        padding: 16px;
+      }
+
+      .mmt-product-card {
+        display: flex;
+        flex-direction: column;
+        text-decoration: none;
+        color: inherit;
+        gap: 6px;
+      }
+
+      .mmt-product-card img {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        border-radius: 8px;
+        background: rgba(0,0,0,0.05);
+      }
+
+      .mmt-product-info {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+      }
+
+      .mmt-product-title {
+        font-size: 11px;
+        font-weight: 500;
+        color: rgb(0,0,0);
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        line-height: 1.3;
+      }
+
+      .mmt-product-price {
+        font-size: 11px;
+        color: rgba(0,0,0,0.55);
+        font-weight: 600;
+      }
+
       /* ── Direct link (top-level with no children) ── */
       .mmt-direct-link {
         display: block;
@@ -389,6 +436,49 @@
           ul.appendChild(li);
         });
         panel.appendChild(ul);
+      } else if (href && href !== '#' && href.indexOf('/collections/') !== -1) {
+        /* No child nav links — fetch best-selling products from the collection */
+        var handle = href.replace(/.*\/collections\//, '').replace(/[?#].*/, '');
+        var grid = document.createElement('div');
+        grid.className = 'mmt-product-grid';
+        panel.appendChild(grid);
+
+        fetch('/collections/' + handle + '/products.json?limit=4&sort_by=best-selling')
+          .then(function (r) { return r.json(); })
+          .then(function (data) {
+            var products = (data.products || []).slice(0, 4);
+            if (!products.length) { grid.remove(); return; }
+            products.forEach(function (product) {
+              var card = document.createElement('a');
+              card.href = '/products/' + product.handle;
+              card.className = 'mmt-product-card';
+
+              var imgEl = document.createElement('img');
+              var imgSrc = product.images[0] ? product.images[0].src : '';
+              imgEl.src = imgSrc.replace(/(\.(jpg|jpeg|png|gif|webp))(\?.*)?$/i, '_300x300$1$3');
+              imgEl.alt = product.title;
+              imgEl.loading = 'lazy';
+              card.appendChild(imgEl);
+
+              var info = document.createElement('div');
+              info.className = 'mmt-product-info';
+
+              var titleEl = document.createElement('span');
+              titleEl.className = 'mmt-product-title';
+              titleEl.textContent = product.title;
+              info.appendChild(titleEl);
+
+              var priceEl = document.createElement('span');
+              priceEl.className = 'mmt-product-price';
+              var raw = parseFloat(product.variants[0].price);
+              priceEl.textContent = 'Rs. ' + Math.round(raw).toLocaleString();
+              info.appendChild(priceEl);
+
+              card.appendChild(info);
+              grid.appendChild(card);
+            });
+          })
+          .catch(function () {});
       }
 
       contentArea.appendChild(panel);
