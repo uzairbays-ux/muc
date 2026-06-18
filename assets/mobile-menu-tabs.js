@@ -211,7 +211,8 @@
 
   /* ─── Transform a single drawer ────────────────────────────── */
   function transformDrawer(drawer) {
-    if (drawer._mmtDone) return;
+    /* Guard: tab bar already in place means we're done */
+    if (drawer.querySelector('.mmt-tab-bar')) return;
 
     const nav     = drawer.querySelector('.menu-drawer__navigation');
     const topList = drawer.querySelector('.menu-drawer__menu.has-submenu');
@@ -220,7 +221,9 @@
     const topItems = Array.from(topList.querySelectorAll(':scope > li'));
     if (!topItems.length) return;
 
-    drawer._mmtDone = true;
+    /* Clear any leftover state from a previous (morph-undone) transform */
+    drawer.classList.remove('mmt-transformed');
+    nav.querySelectorAll('.mmt-tab-bar, .mmt-content-area').forEach(function (el) { el.remove(); });
 
     /* Build tab bar */
     const tabBar = document.createElement('div');
@@ -411,15 +414,16 @@
       if (window.innerWidth > 749) return;
       transformDrawer(drawer);
 
-      /* The header section hydrates after idle — the menu list arrives late.
-         Watch the drawer subtree and retry once the <ul> appears. */
-      if (!drawer._mmtDone) {
-        var obs = new MutationObserver(function () {
+      /* Keep a permanent observer on this drawer.
+         Catches two cases:
+         1. Menu content not yet in DOM at DOMContentLoaded (hydration arrives later)
+         2. Shopify's morph/hydration undoes our transform — re-run it. */
+      if (!drawer._mmtObserved) {
+        drawer._mmtObserved = true;
+        new MutationObserver(function () {
           if (window.innerWidth > 749) return;
           transformDrawer(drawer);
-          if (drawer._mmtDone) obs.disconnect();
-        });
-        obs.observe(drawer, { childList: true, subtree: true });
+        }).observe(drawer, { childList: true, subtree: true });
       }
     }
 
