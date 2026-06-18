@@ -132,8 +132,7 @@
         background: rgba(0,0,0,0.06);
       }
       .mmt-child-img--placeholder {
-        display: inline-block;
-        background: rgba(0,0,0,0.06);
+        display: none;
       }
 
       /* ── Child label ── */
