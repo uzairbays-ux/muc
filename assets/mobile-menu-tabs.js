@@ -270,8 +270,13 @@
       shopAll.textContent = 'shop all ' + title.toLowerCase();
       panel.appendChild(shopAll);
 
-      /* Child items — only direct children of the top-level item */
-      var directChildList = item.querySelector(':scope > ul, :scope > details > ul, :scope > accordion-custom > details > ul');
+      /* Child items — handles 2-level (flat/accordion) and 3-level (push-panel) structures */
+      var directChildList = item.querySelector(
+        ':scope > ul, ' +
+        ':scope > details > ul, ' +
+        ':scope > accordion-custom > details > ul, ' +
+        ':scope > details .menu-drawer__menu--childlist'
+      );
       var childLis = directChildList ? Array.from(directChildList.querySelectorAll(':scope > li')) : [];
       if (childLis.length) {
         var ul = document.createElement('ul');
@@ -283,7 +288,12 @@
           if (!childA) return;
 
           /* Collect grandchildren */
-          var grandList = child.querySelector(':scope > ul, :scope > details > ul, :scope > accordion-custom > details > ul');
+          var grandList = child.querySelector(
+            ':scope > ul, ' +
+            ':scope > details > ul, ' +
+            ':scope > accordion-custom > details > ul, ' +
+            ':scope > details .menu-drawer__menu--childlist'
+          );
           var grandLis  = grandList ? Array.from(grandList.querySelectorAll(':scope > li')) : [];
 
           var li = document.createElement('li');
