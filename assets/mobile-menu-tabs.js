@@ -442,7 +442,7 @@
         grid.className = 'mmt-product-grid';
         panel.appendChild(grid);
 
-        fetch('/collections/473827148012/products.json?limit=8&sort_by=best-selling')
+        fetch('/products.json?collection_id=473827148012&limit=8&sort_by=best-selling')
           .then(function (r) { return r.json(); })
           .then(function (data) {
             var products = (data.products || []).slice(0, 8);
