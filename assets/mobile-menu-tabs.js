@@ -436,17 +436,16 @@
           ul.appendChild(li);
         });
         panel.appendChild(ul);
-      } else if (href && href !== '#' && href.indexOf('/collections/') !== -1) {
-        /* No child nav links — fetch best-selling products from the collection */
-        var handle = href.replace(/.*\/collections\//, '').replace(/[?#].*/, '');
+      } else {
+        /* No child nav links — fetch 8 products from the featured collection */
         var grid = document.createElement('div');
         grid.className = 'mmt-product-grid';
         panel.appendChild(grid);
 
-        fetch('/collections/' + handle + '/products.json?limit=4&sort_by=best-selling')
+        fetch('/collections/473827148012/products.json?limit=8&sort_by=best-selling')
           .then(function (r) { return r.json(); })
           .then(function (data) {
-            var products = (data.products || []).slice(0, 4);
+            var products = (data.products || []).slice(0, 8);
             if (!products.length) { grid.remove(); return; }
             products.forEach(function (product) {
               var card = document.createElement('a');
