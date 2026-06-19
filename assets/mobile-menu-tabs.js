@@ -47,7 +47,7 @@
       /* ── Tab pill ── */
       .mmt-tab {
         flex: 0 0 auto;
-        padding: 7px 14px;
+        padding: 7px 7px;
         border: none;
         border-radius: 999px;
         background: transparent;
