@@ -49,7 +49,7 @@
         flex: 0 0 auto;
         padding: 7px 7px;
         border: none;
-        border-radius: 999px;
+        border-radius: 5px;
         background: transparent;
         font-size: 11px;
         font-weight: 700;
