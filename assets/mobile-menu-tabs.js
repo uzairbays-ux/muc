@@ -39,7 +39,7 @@
         scrollbar-width: none;
         border-bottom: 1.5px solid rgba(0,0,0,0.1);
         padding: 8px 12px;
-        gap: 8px;
+        gap: 4px;
         background: var(--color-background, #fff);
       }
       .mmt-tab-bar::-webkit-scrollbar { display: none; }
