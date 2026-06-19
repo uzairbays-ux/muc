@@ -1064,6 +1064,128 @@
         "padding-block-end": 20
       }
     },
+    "card_grid_MnB8Gn": {
+      "type": "card-grid",
+      "blocks": {
+        "card_jVybcz": {
+          "type": "card",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/B_BW.jpg",
+            "link": "shopify://collections/bath-body-works",
+            "open_new_tab": false
+          }
+        },
+        "card_GbUJi9": {
+          "type": "card",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/Estelin.jpg",
+            "link": "shopify://collections/estelin",
+            "open_new_tab": false
+          }
+        },
+        "card_w6mkEL": {
+          "type": "card",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/Framesi_9e368024-42a5-4675-8a1a-b3cb1e3a22d5.jpg",
+            "link": "shopify://collections/framesi",
+            "open_new_tab": false
+          }
+        },
+        "card_qVi44P": {
+          "type": "card",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/luscious.jpg",
+            "link": "shopify://collections/luscious-cosmetics",
+            "open_new_tab": false
+          }
+        },
+        "card_h6R94P": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/huda_beauty_flat_20_off_500x500_v2.png",
+            "link": "shopify://collections/huda-beauty",
+            "open_new_tab": false
+          }
+        },
+        "card_whDK6f": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/morphe_logo_flat_20_off_500x500_ce72c647-522b-4b4f-9f96-2f0c25038294.png",
+            "link": "shopify://collections/morphe",
+            "open_new_tab": false
+          }
+        },
+        "card_iJgEgf": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/nyx_logo_aligned_white_box_500x500_393b5a2b-c03b-43df-a57d-5d8eaa54d5a9.png",
+            "link": "shopify://collections/nyx",
+            "open_new_tab": false
+          }
+        },
+        "card_mcFcz9": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/one_size_logo_flat_20_off_500x500_42994c4e-e45a-4cdf-b761-1d09f07bb440.png",
+            "link": "shopify://collections/o-s",
+            "open_new_tab": false
+          }
+        },
+        "card_tBr3yf": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/sheglam_logo_flat_20_off_500x500_183d5dff-d08b-47a1-a50b-2c6dae5403b6.png",
+            "link": "shopify://collections/sheglam",
+            "open_new_tab": false
+          }
+        },
+        "card_djrWXM": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/tarte_logo_flat_20_off_500x500_v2.png",
+            "link": "shopify://collections/tarte",
+            "open_new_tab": false
+          }
+        }
+      },
+      "block_order": [
+        "card_jVybcz",
+        "card_GbUJi9",
+        "card_w6mkEL",
+        "card_qVi44P",
+        "card_h6R94P",
+        "card_whDK6f",
+        "card_iJgEgf",
+        "card_mcFcz9",
+        "card_tBr3yf",
+        "card_djrWXM"
+      ],
+      "name": "Card grid",
+      "settings": {
+        "heading": "Premium Brands",
+        "subheading": "",
+        "heading_alignment": "center",
+        "desktop_layout": "slider",
+        "mobile_layout": "slider",
+        "desktop_columns": "4",
+        "mobile_columns": "2",
+        "desktop_slider_per_view": "4",
+        "mobile_slider_per_view": "2",
+        "auto_rotate": true,
+        "rotate_interval": 4,
+        "gap": 10,
+        "desktop_side_padding": 0,
+        "mobile_side_padding": 0,
+        "section_width": "page-width",
+        "color_scheme": "",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
+    },
     "card_grid_tLffKU": {
       "type": "card-grid",
       "blocks": {
@@ -2303,6 +2425,7 @@
     "card_grid_HA8C7w",
     "card_grid_TBdpWJ",
     "product_list_CVJar6",
+    "card_grid_MnB8Gn",
     "card_grid_tLffKU",
     "card_grid_GWUm6j",
     "stacked_banners_QWcUpX",
