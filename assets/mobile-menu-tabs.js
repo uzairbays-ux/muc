@@ -39,7 +39,7 @@
         scrollbar-width: none;
         border-bottom: 1.5px solid rgba(0,0,0,0.1);
         padding: 8px 12px;
-        gap: 8px;
+        gap: 4px;
         background: var(--color-background, #fff);
       }
       .mmt-tab-bar::-webkit-scrollbar { display: none; }
@@ -47,11 +47,11 @@
       /* ── Tab pill ── */
       .mmt-tab {
         flex: 0 0 auto;
-        padding: 7px 14px;
+        padding: 7px 7px;
         border: none;
-        border-radius: 999px;
+        border-radius: 5px;
         background: transparent;
-        font-size: 11px;
+        font-size: 12px;
         font-weight: 700;
         letter-spacing: 0.08em;
         text-transform: uppercase;
