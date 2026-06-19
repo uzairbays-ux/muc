@@ -116,10 +116,21 @@
             "open_new_tab": false,
             "alt": ""
           }
+        },
+        "slide_WR6nXe": {
+          "type": "slide",
+          "settings": {
+            "desktop_image": "shopify://shop_images/home_page_banner_1920_x_750_copy.jpg",
+            "mobile_image": "shopify://shop_images/home_page_banner_1920_x_750_copy_c0af3bd5-090f-4130-8bfc-6be537e1a255.jpg",
+            "link": "shopify://pages/framesi-masterclass",
+            "open_new_tab": false,
+            "alt": ""
+          }
         }
       },
       "block_order": [
-        "slide_4mM8cj"
+        "slide_4mM8cj",
+        "slide_WR6nXe"
       ],
       "name": "Featured banner",
       "settings": {
@@ -587,7 +598,7 @@
         "card_L4QwKh": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/Estelin_ef825ae6-354a-4cdb-aaa9-9a2414d43c2c.jpg",
+            "image": "shopify://shop_images/500_x_500_Banners_copy_a88bcf5d-ded4-4cc4-9f55-bd025e1f5fad.webp",
             "link": "shopify://collections/estelin",
             "open_new_tab": false
           }
