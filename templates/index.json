@@ -236,7 +236,7 @@
         "show_arrows": true,
         "show_dots": false,
         "color_scheme": "scheme-1",
-        "padding-block-start": 24,
+        "padding-block-start": 12,
         "padding-block-end": 24
       }
     },
