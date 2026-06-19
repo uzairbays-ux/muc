@@ -31,6 +31,8 @@
     padding: {{ block.settings.item_padding }}px;
     background-color: {{ block.settings.item_background }};
     border-radius: {{ block.settings.border_radius }}px;
+    text-decoration: none;
+    color: inherit;
   }
 
   .ai-proposition-icon-{{ ai_gen_id }} {
@@ -118,12 +120,18 @@
         {% liquid
           assign icon_key = 'icon_' | append: i
           assign text_key = 'text_' | append: i
-          
+          assign link_key = 'link_' | append: i
+
           assign icon = block.settings[icon_key]
           assign text = block.settings[text_key]
+          assign link = block.settings[link_key]
         %}
-        
-        <div class="ai-proposition-item-{{ ai_gen_id }}">
+
+        {% if link != blank %}
+          <a href="{{ link }}" class="ai-proposition-item-{{ ai_gen_id }} ai-proposition-item--linked-{{ ai_gen_id }}">
+        {% else %}
+          <div class="ai-proposition-item-{{ ai_gen_id }}">
+        {% endif %}
           {%- unless icon == blank or icon == 'none' -%}
             <div class="ai-proposition-icon-{{ ai_gen_id }}">
               {%- liquid
@@ -144,7 +152,11 @@
           {% if text != blank %}
             <p class="ai-proposition-text-{{ ai_gen_id }}">{{ text }}</p>
           {% endif %}
-        </div>
+        {% if link != blank %}
+          </a>
+        {% else %}
+          </div>
+        {% endif %}
       {% endfor %}
     </div>
   </div>
@@ -506,6 +518,11 @@
       "default": "Free Shipping"
     },
     {
+      "type": "url",
+      "id": "link_1",
+      "label": "Link"
+    },
+    {
       "type": "header",
       "content": "Proposition 2"
     },
@@ -527,6 +544,11 @@
       "id": "text_2",
       "label": "Text",
       "default": "Authentic Products"
+    },
+    {
+      "type": "url",
+      "id": "link_2",
+      "label": "Link"
     },
     {
       "type": "header",
@@ -552,6 +574,11 @@
       "default": "Easy Returns"
     },
     {
+      "type": "url",
+      "id": "link_3",
+      "label": "Link"
+    },
+    {
       "type": "header",
       "content": "Proposition 4"
     },
@@ -573,6 +600,11 @@
       "id": "text_4",
       "label": "Text",
       "default": "Secure Payment"
+    },
+    {
+      "type": "url",
+      "id": "link_4",
+      "label": "Link"
     }
   ],
   "presets": [

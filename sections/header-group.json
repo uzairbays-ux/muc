@@ -46,6 +46,7 @@
             "text_weight": "400",
             "icon_1": "free_shipping",
             "text_1": "Track Your Order",
+            "link_1": "/pages/track-your-order",
             "icon_2": "authentic",
             "text_2": "Authentic Products",
             "icon_3": "easy_returns",
