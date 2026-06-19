@@ -51,7 +51,7 @@
         border: none;
         border-radius: 5px;
         background: transparent;
-        font-size: 11px;
+        font-size: 12px;
         font-weight: 700;
         letter-spacing: 0.08em;
         text-transform: uppercase;
