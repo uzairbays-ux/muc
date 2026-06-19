@@ -356,26 +356,25 @@
             row.setAttribute('aria-expanded', 'false');
           }
 
-          /* Thumbnail */
-          var img = child.querySelector('img');
+          /* Label text (resolved early so img alt can use it) */
+          var textNode = childA.querySelector('.menu-drawer__menu-item-text');
+          var labelText = (textNode ? textNode.textContent : childA.textContent).trim();
+
+          /* Thumbnail — reads data-mmt-img set by header-drawer.liquid */
+          var mmtImg = child.dataset.mmtImg;
           var thumb;
-          if (img) {
+          if (mmtImg) {
             thumb = document.createElement('img');
-            thumb.src = img.src;
-            if (img.srcset) thumb.srcset = img.srcset;
-            thumb.alt = img.alt || '';
+            thumb.src = mmtImg;
+            thumb.alt = labelText;
             thumb.width = 48;
             thumb.height = 48;
             thumb.loading = 'lazy';
           } else {
             thumb = document.createElement('span');
           }
-          thumb.className = 'mmt-child-img' + (img ? '' : ' mmt-child-img--placeholder');
+          thumb.className = 'mmt-child-img' + (mmtImg ? '' : ' mmt-child-img--placeholder');
           row.appendChild(thumb);
-
-          /* Label — link if no grandchildren, span if accordion */
-          var textNode = childA.querySelector('.menu-drawer__menu-item-text');
-          var labelText = (textNode ? textNode.textContent : childA.textContent).trim();
 
           if (grandLis.length) {
             var label = document.createElement('span');

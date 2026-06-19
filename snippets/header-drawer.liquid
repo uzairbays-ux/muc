@@ -152,6 +152,7 @@
                           <li
                             class="menu-drawer__list-item"
                             style="--menu-drawer-animation-index: {{ forloop.index }};"
+                            {% if childlink.object.image %}data-mmt-img="{{ childlink.object.image | image_url: width: 150 }}"{% endif %}
                           >
                             <a
                               id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}"
@@ -213,6 +214,7 @@
                       <li
                         class="menu-drawer__list-item"
                         style="--menu-drawer-animation-index: {{ animation_index }};"
+                        {% if childlink.object.image %}data-mmt-img="{{ childlink.object.image | image_url: width: 150 }}"{% endif %}
                       >
                         <a
                           href="{{ childlink.url }}"
@@ -335,6 +337,7 @@
                                 {%- endif -%}
                                 {% if block_settings.drawer_dividers %} menu-drawer__list-item--divider{% endif %}
                               "
+                              {% if childlink.object.image %}data-mmt-img="{{ childlink.object.image | image_url: width: 150 }}"{% endif %}
                             >
                               {%- if childlink.links == blank -%}
                                 {%- comment -%}
