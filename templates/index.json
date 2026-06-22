@@ -1094,15 +1094,6 @@
             "open_new_tab": false
           }
         },
-        "card_qVi44P": {
-          "type": "card",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/luscious.jpg",
-            "link": "shopify://collections/luscious-cosmetics",
-            "open_new_tab": false
-          }
-        },
         "card_h6R94P": {
           "type": "card",
           "settings": {
@@ -1150,19 +1141,28 @@
             "link": "shopify://collections/tarte",
             "open_new_tab": false
           }
+        },
+        "card_qVi44P": {
+          "type": "card",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/milk_logo_aligned_final_500x500_f0ca337d-34aa-4531-af6c-bb404e323cbc.png",
+            "link": "shopify://collections/milk",
+            "open_new_tab": false
+          }
         }
       },
       "block_order": [
         "card_jVybcz",
         "card_GbUJi9",
         "card_w6mkEL",
-        "card_qVi44P",
         "card_h6R94P",
         "card_whDK6f",
         "card_iJgEgf",
         "card_mcFcz9",
         "card_tBr3yf",
-        "card_djrWXM"
+        "card_djrWXM",
+        "card_qVi44P"
       ],
       "name": "Card grid",
       "settings": {
