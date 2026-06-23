@@ -109,6 +109,7 @@
       "blocks": {
         "slide_4mM8cj": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "desktop_image": "shopify://shop_images/sale-banner.webp",
             "mobile_image": "shopify://shop_images/sale-banner.webp",
