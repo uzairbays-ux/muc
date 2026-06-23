@@ -152,13 +152,14 @@
         "card_x4i8pi": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/ST_750_x_750.jpg",
+            "image": "shopify://shop_images/500-x-500_6.png",
             "link": "shopify://collections/st-london",
             "open_new_tab": false
           }
         },
         "card_LJWfzX": {
           "type": "card",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/post_copy.jpg",
             "link": "shopify://pages/framesi-masterclass",
@@ -591,7 +592,7 @@
         "card_CaecqX": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/kryolan_500_x_500.jpg",
+            "image": "shopify://shop_images/Kryolan_c34354ab-129e-4ea9-a972-266ac505909e.jpg",
             "link": "shopify://collections/kryolan",
             "open_new_tab": false
           }
@@ -607,7 +608,7 @@
         "card_QQLjCx": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/500_x_500_Banners_copy.jpg",
+            "image": "shopify://shop_images/Framesi_c2c2accf-d397-4afd-b634-ba55b6a30401.jpg",
             "link": "shopify://collections/framesi",
             "open_new_tab": false
           }
@@ -755,7 +756,7 @@
         "card_ceiizR": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/gosh_500_x_500.jpg",
+            "image": "shopify://shop_images/Gosh_c12b9049-3b3c-41c5-895b-3aea31358942.jpg",
             "link": "shopify://collections/gosh",
             "open_new_tab": false
           }
@@ -763,7 +764,7 @@
         "card_c49pAk": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/Bath_body_5ec817f1-91eb-4096-9e5b-df6444c8f6f7.jpg",
+            "image": "shopify://shop_images/B_BW_ef057ea0-8e3c-4e18-b9ac-ec809c03f9a5.jpg",
             "link": "shopify://collections/bath-body-works",
             "open_new_tab": false
           }
@@ -1193,7 +1194,7 @@
         "card_m4dJ4r": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/janssen_600_x_375.jpg",
+            "image": "shopify://shop_images/Janssen_ea1ffbd1-263f-4cc1-8f34-28b010eeb256.jpg",
             "link": "shopify://collections/janssen",
             "open_new_tab": false
           }
@@ -1763,7 +1764,7 @@
         "category_W3MDAj": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/femina_500x500_b02b10db-658e-4453-ba5b-80a0e7afa5cc.jpg",
+            "image": "shopify://shop_images/Femina_911b325a-b1c2-4139-8431-bf455cd0570a.jpg",
             "label": "",
             "link": "shopify://collections/femina",
             "card_background": "rgba(0,0,0,0)"
@@ -1799,7 +1800,7 @@
         "category_KWk6xF": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/200_x_200_Banners_copy.jpg",
+            "image": "shopify://shop_images/Just-For-men_48cc30f3-8761-43d9-8724-d85046e3e24e.jpg",
             "label": "",
             "link": "shopify://collections/just-for-men",
             "card_background": "rgba(0,0,0,0)"
