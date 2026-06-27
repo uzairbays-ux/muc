@@ -41,7 +41,7 @@
           assign variant_style = block_settings.variant_style
           assign option_name_lower = product_option.name | downcase
           assign is_color_option = false
-          if option_name_lower == 'color' or option_name_lower == 'colour' or option_name_lower == 'shade' or option_name_lower == 'shades'
+          if option_name_lower == 'color' or option_name_lower == 'colour' or option_name_lower == 'shade' or option_name_lower == 'shades' or option_name_lower == 'size'
             assign is_color_option = true
           endif
 

@@ -12,7 +12,7 @@
     endif
     if variant_option == nil and product_option.values.size > 1
       assign option_name_lower = product_option.name | downcase
-      if option_name_lower == 'color' or option_name_lower == 'colour' or option_name_lower == 'shade' or option_name_lower == 'shades'
+      if option_name_lower == 'color' or option_name_lower == 'colour' or option_name_lower == 'shade' or option_name_lower == 'shades' or option_name_lower == 'size'
         assign variant_option = product_option
       endif
     endif
