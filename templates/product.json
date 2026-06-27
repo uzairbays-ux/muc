@@ -139,7 +139,7 @@
                   "type": "text",
                   "name": "Product Vendor",
                   "settings": {
-                    "text": "<p><a href=\"/collections/vendors?q=<shopify-token value=\">{{ closest.product.vendor }}</a></p>",
+                    "text": "<p><a href=\"/collections/vendors?q={{ closest.product.vendor }}\">{{ closest.product.vendor }}</a></p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
