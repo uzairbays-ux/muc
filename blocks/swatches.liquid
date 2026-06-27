@@ -56,9 +56,44 @@
     opacity: 0.4;
     text-decoration: line-through;
   }
+
+  .variant-pill--image {
+    padding: 0;
+    border-radius: var(--variant-picker-swatch-radius, 4px);
+    overflow: hidden;
+    width: 28px;
+    height: 28px;
+    border: 1px solid rgba(0,0,0,0.15);
+  }
+
+  .variant-pill--image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @media screen and (min-width: 750px) {
+    .variant-pill--image {
+      width: 32px;
+      height: 32px;
+    }
+  }
 {% endstylesheet %}
 
-{% if product_has_swatches %}
+{%- liquid
+  assign use_variant_images = false
+  if settings.show_variant_image and variant_option != nil
+    for value in variant_option.values
+      if value.variant.featured_media
+        assign use_variant_images = true
+        break
+      endif
+    endfor
+  endif
+-%}
+
+{% if product_has_swatches or use_variant_images %}
   <product-swatches
     data-product-id="{{ closest.product.id }}"
     data-product-url="{{ closest.product.url }}"
@@ -74,7 +109,29 @@
     "
     {{ block.shopify_attributes }}
   >
-    {% render 'variant-swatches', product_resource: closest.product %}
+    {%- if product_has_swatches -%}
+      {% render 'variant-swatches', product_resource: closest.product %}
+    {%- else -%}
+      <div class="variant-pills">
+        {%- for value in variant_option.values -%}
+          {%- assign v_media = value.variant.featured_media -%}
+          <a
+            href="{{ closest.product.url }}?variant={{ value.variant.id }}"
+            class="variant-pill variant-pill--image{% unless value.available %} variant-pill--unavailable{% endunless %}"
+            aria-label="{{ variant_option.name }}: {{ value.title }}"
+            title="{{ value.title }}"
+          >
+            <img
+              src="{{ v_media | image_url: width: 72 }}"
+              alt="{{ value.title }}"
+              width="36"
+              height="36"
+              loading="lazy"
+            >
+          </a>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
   </product-swatches>
 {% elsif variant_option != nil %}
   <div class="variant-pills" {{ block.shopify_attributes }}>
