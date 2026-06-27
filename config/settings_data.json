@@ -71,6 +71,8 @@
     "currency_code_enabled_product_pages": true,
     "currency_code_enabled_product_cards": true,
     "currency_code_enabled_cart_items": true,
+    "quick_add": true,
+    "mobile_quick_add": true,
     "empty_state_collection": "bestsellers",
     "product_corner_radius": 0,
     "card_corner_radius": 4,
