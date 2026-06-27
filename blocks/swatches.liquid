@@ -57,6 +57,13 @@
     text-decoration: line-through;
   }
 
+  .variant-pill--more {
+    background: rgba(0,0,0,0.05);
+    color: rgba(0,0,0,0.6);
+    font-size: 11px;
+    font-weight: 600;
+  }
+
   .variant-pill--image {
     padding: 0;
     border-radius: var(--variant-picker-swatch-radius, 4px);
@@ -112,8 +119,11 @@
     {%- if product_has_swatches -%}
       {% render 'variant-swatches', product_resource: closest.product %}
     {%- else -%}
+      {%- assign max_shown = 4 -%}
+      {%- assign total_values = variant_option.values.size -%}
+      {%- assign hidden_count = total_values | minus: max_shown -%}
       <div class="variant-pills">
-        {%- for value in variant_option.values -%}
+        {%- for value in variant_option.values limit: max_shown -%}
           {%- assign v_media = value.variant.featured_media -%}
           <a
             href="{{ closest.product.url }}?variant={{ value.variant.id }}"
@@ -130,12 +140,18 @@
             >
           </a>
         {%- endfor -%}
+        {%- if hidden_count > 0 -%}
+          <a href="{{ closest.product.url }}" class="variant-pill variant-pill--more" aria-label="{{ hidden_count | plus: max_shown }} variants">+{{ hidden_count }}</a>
+        {%- endif -%}
       </div>
     {%- endif -%}
   </product-swatches>
 {% elsif variant_option != nil %}
+  {%- assign max_shown = 4 -%}
+  {%- assign total_values = variant_option.values.size -%}
+  {%- assign hidden_count = total_values | minus: max_shown -%}
   <div class="variant-pills" {{ block.shopify_attributes }}>
-    {%- for value in variant_option.values -%}
+    {%- for value in variant_option.values limit: max_shown -%}
       <a
         href="{{ closest.product.url }}?variant={{ value.variant.id }}"
         class="variant-pill{% unless value.available %} variant-pill--unavailable{% endunless %}"
@@ -144,6 +160,9 @@
         {{- value.title -}}
       </a>
     {%- endfor -%}
+    {%- if hidden_count > 0 -%}
+      <a href="{{ closest.product.url }}" class="variant-pill variant-pill--more" aria-label="{{ total_values }} variants">+{{ hidden_count }}</a>
+    {%- endif -%}
   </div>
 {% endif %}
 
