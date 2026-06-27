@@ -474,63 +474,6 @@
     text-decoration-thickness: 1.5px;
     text-decoration-color: rgb(var(--color-foreground-rgb) / 0.35);
   }
-
-  /* ── Mobile PDP layout ─────────────────────────────────────────────────────
-     JS (baadmay-scripts.js) moves .variant-picker and product-sku-component
-     out of .product-details and into [data-product-grid-content] directly.
-     These rules style them in their new position.
-  ── */
-  @media screen and (max-width: 749px) {
-    /* Make the outer grid a simple flex column so moved elements land correctly */
-    [data-product-grid-content] {
-      display: flex !important;
-      flex-direction: column !important;
-    }
-
-    /* Variant picker moved above gallery */
-    [data-product-grid-content] > .variant-picker {
-      width: 100%;
-      padding: 8px 16px 4px;
-      box-sizing: border-box;
-    }
-
-    /* SKU moved below gallery */
-    [data-product-grid-content] > product-sku-component {
-      display: block !important;
-      width: 100%;
-      padding: 4px 16px;
-      box-sizing: border-box;
-    }
-
-    /* Hide inline buy-buttons visually but keep in DOM for the IntersectionObserver */
-    .buy-buttons-block {
-      visibility: hidden !important;
-      height: 0 !important;
-      overflow: hidden !important;
-      margin: 0 !important;
-      padding: 0 !important;
-    }
-
-    /* Sticky ATC always visible on mobile — bypass the JS scroll trigger */
-    .sticky-add-to-cart__bar {
-      opacity: 1 !important;
-      transform: translateZ(0) translateX(-50%) translateY(-8px) !important;
-      width: calc(100vw - 24px) !important;
-      border-radius: 12px !important;
-    }
-
-    /* Keep "unavailable" state hidden */
-    sticky-add-to-cart:not([data-variant-available='true']) .sticky-add-to-cart__bar {
-      opacity: 0 !important;
-      transform: translateZ(0) translateX(-50%) translateY(calc(100% + 40px)) !important;
-      display: none !important;
-    }
-
-    /* Add bottom padding to page so content isn't hidden behind sticky bar */
-    .product-information {
-      padding-bottom: 90px;
-    }
-  }
 {% endstylesheet %}
 
 {% schema %}
