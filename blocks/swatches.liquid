@@ -136,12 +136,12 @@
           <a
             href="{{ closest.product.url }}?variant={{ value.variant.id }}"
             class="variant-pill variant-pill--image{% unless value.available %} variant-pill--unavailable{% endunless %}"
-            aria-label="{{ variant_option.name }}: {{ value.title }}"
-            title="{{ value.title }}"
+            aria-label="{{ variant_option.name }}: {{ value.name }}"
+            title="{{ value.name }}"
           >
             <img
               src="{{ v_media | image_url: width: 72 }}"
-              alt="{{ value.title }}"
+              alt="{{ value.name }}"
               width="36"
               height="36"
               loading="lazy"
@@ -163,9 +163,9 @@
       <a
         href="{{ closest.product.url }}?variant={{ value.variant.id }}"
         class="variant-pill{% unless value.available %} variant-pill--unavailable{% endunless %}"
-        aria-label="{{ variant_option.name }}: {{ value.title }}"
+        aria-label="{{ variant_option.name }}: {{ value.name }}"
       >
-        {{- value.title -}}
+        {{- value.name -}}
       </a>
     {%- endfor -%}
     {%- if hidden_count > 0 -%}
