@@ -208,6 +208,8 @@
                 "background": false,
                 "background_color": "#00000026",
                 "corner_radius": 0,
+                "custom_class_desktop": "",
+                "custom_class_mobile": "",
                 "padding-block-start": 4,
                 "padding-block-end": 4,
                 "padding-inline-start": 0,
@@ -232,6 +234,7 @@
               "type": "price",
               "settings": {
                 "show_sale_price_first": true,
+                "show_sale_badge": true,
                 "show_installments": false,
                 "show_tax_info": false,
                 "type_preset": "h6",
@@ -250,6 +253,20 @@
               },
               "blocks": {}
             },
+            "swatches_4YbbXV": {
+              "type": "swatches",
+              "name": "t:names.swatches",
+              "settings": {
+                "product_swatches_alignment": "flex-start",
+                "product_swatches_alignment_mobile": "flex-start",
+                "hide_padding": false,
+                "product_swatches_padding_top": 4,
+                "product_swatches_padding_bottom": 0,
+                "product_swatches_padding_left": 0,
+                "product_swatches_padding_right": 0
+              },
+              "blocks": {}
+            },
             "custom_liquid_yL6BdP": {
               "type": "custom-liquid",
               "name": "t:names.custom_liquid",
@@ -265,6 +282,7 @@
             "product_title_4nY4eT",
             "review_QhafGF",
             "price_EzJzMm",
+            "swatches_4YbbXV",
             "custom_liquid_yL6BdP"
           ]
         }
