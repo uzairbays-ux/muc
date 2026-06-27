@@ -11,7 +11,10 @@
       assign product_has_swatches = true
     endif
     if variant_option == nil and product_option.values.size > 1
-      assign variant_option = product_option
+      assign option_name_lower = product_option.name | downcase
+      if option_name_lower == 'color' or option_name_lower == 'colour' or option_name_lower == 'shade' or option_name_lower == 'shades'
+        assign variant_option = product_option
+      endif
     endif
   endfor
 -%}
