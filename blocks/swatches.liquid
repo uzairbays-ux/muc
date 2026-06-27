@@ -2,15 +2,14 @@
 
 {%- liquid
   assign block_settings = block.settings
-  assign product_has_real_swatches = false
+  assign product_has_swatches = false
   assign variant_option = nil
 
   for product_option in closest.product.options_with_values
-    for value in product_option.values
-      if value.swatch.color or value.swatch.image
-        assign product_has_real_swatches = true
-      endif
-    endfor
+    assign swatch_count = product_option.values | map: 'swatch' | compact | size
+    if swatch_count > 0
+      assign product_has_swatches = true
+    endif
     if variant_option == nil and product_option.values.size > 1
       assign variant_option = product_option
     endif
@@ -59,7 +58,7 @@
   }
 {% endstylesheet %}
 
-{% if product_has_real_swatches %}
+{% if product_has_swatches %}
   <product-swatches
     data-product-id="{{ closest.product.id }}"
     data-product-url="{{ closest.product.url }}"
