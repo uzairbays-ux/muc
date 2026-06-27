@@ -41,8 +41,12 @@
           assign variant_style = block_settings.variant_style
           assign option_name_lower = product_option.name | downcase
           assign is_color_option = false
-          if option_name_lower == 'color' or option_name_lower == 'colour' or option_name_lower == 'shade' or option_name_lower == 'shades' or option_name_lower == 'size'
+          assign is_size_option = false
+          if option_name_lower == 'color' or option_name_lower == 'colour' or option_name_lower == 'shade' or option_name_lower == 'shades'
             assign is_color_option = true
+          elsif option_name_lower == 'size'
+            assign is_color_option = true
+            assign is_size_option = true
           endif
 
           assign show_as_swatch = false
@@ -134,7 +138,9 @@
                     data-current-checked="false"
                   {% endif %}
                 >
-                {% if variant_style == 'swatch' %}
+                {% if variant_style == 'swatch' and is_size_option %}
+                  <span class="variant-option__size-pill">{{- product_option_value | escape -}}</span>
+                {% elsif variant_style == 'swatch' %}
                   {% render 'swatch',
                     swatch: product_option_value.swatch,
                     variant_image: featured_media,
@@ -373,5 +379,36 @@
   .variant-picker--right .variant-option {
     text-align: right;
     justify-content: right;
+  }
+
+  .variant-option__size-pill {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 48px;
+    height: var(--variant-picker-swatch-size, 36px);
+    padding: 0 10px;
+    font-size: 12px;
+    font-weight: 500;
+    border: 1px solid rgba(0,0,0,0.18);
+    border-radius: 6px;
+    white-space: nowrap;
+  }
+
+  .variant-option__button-label--has-swatch:has(.variant-option__size-pill) {
+    border: none;
+    background: none;
+    padding: 0;
+  }
+
+  input:checked + .variant-option__button-label--has-swatch .variant-option__size-pill {
+    border-color: rgb(var(--color-foreground-rgb));
+    border-width: 2px;
+    font-weight: 600;
+  }
+
+  input[aria-disabled='true'] + .variant-option__button-label--has-swatch .variant-option__size-pill {
+    opacity: 0.4;
+    text-decoration: line-through;
   }
 {% endstylesheet %}

@@ -97,7 +97,8 @@
 
 {%- liquid
   assign use_variant_images = false
-  if settings.show_variant_image and variant_option != nil
+  assign variant_option_name_lower = variant_option.name | downcase
+  if settings.show_variant_image and variant_option != nil and variant_option_name_lower != 'size'
     for value in variant_option.values
       if value.variant.featured_media
         assign use_variant_images = true
