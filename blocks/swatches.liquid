@@ -2,11 +2,16 @@
 
 {%- liquid
   assign block_settings = block.settings
+  assign product_has_swatches = false
+  assign variant_option = nil
+
   for product_option in closest.product.options_with_values
     assign swatch_count = product_option.values | map: 'swatch' | compact | size
-
     if swatch_count > 0
       assign product_has_swatches = true
+    endif
+    if variant_option == nil and product_option.values.size > 1
+      assign variant_option = product_option
     endif
   endfor
 -%}
@@ -19,6 +24,37 @@
     overflow: hidden;
     gap: 0;
     flex-shrink: 0;
+  }
+
+  .variant-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    padding: {{ block_settings.product_swatches_padding_top }}px {{ block_settings.product_swatches_padding_right }}px {{ block_settings.product_swatches_padding_bottom }}px {{ block_settings.product_swatches_padding_left }}px;
+  }
+
+  .variant-pill {
+    display: inline-block;
+    padding: 3px 8px;
+    font-size: 11px;
+    font-weight: 500;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 4px;
+    color: rgba(0,0,0,0.75);
+    text-decoration: none;
+    white-space: nowrap;
+    line-height: 1.4;
+    transition: border-color 0.15s, background 0.15s;
+  }
+
+  .variant-pill:hover {
+    border-color: rgba(0,0,0,0.6);
+    background: rgba(0,0,0,0.04);
+  }
+
+  .variant-pill--unavailable {
+    opacity: 0.4;
+    text-decoration: line-through;
   }
 {% endstylesheet %}
 
@@ -40,6 +76,18 @@
   >
     {% render 'variant-swatches', product_resource: closest.product %}
   </product-swatches>
+{% elsif variant_option != nil %}
+  <div class="variant-pills" {{ block.shopify_attributes }}>
+    {%- for value in variant_option.values -%}
+      <a
+        href="{{ closest.product.url }}?variant={{ value.variant.id }}"
+        class="variant-pill{% unless value.available %} variant-pill--unavailable{% endunless %}"
+        aria-label="{{ variant_option.name }}: {{ value.title }}"
+      >
+        {{- value.title -}}
+      </a>
+    {%- endfor -%}
+  </div>
 {% endif %}
 
 {% schema %}
