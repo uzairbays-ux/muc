@@ -390,25 +390,28 @@
     padding: 0 10px;
     font-size: 12px;
     font-weight: 500;
-    border: 1px solid rgba(0,0,0,0.18);
+    border: 1.5px solid rgba(0,0,0,0.18);
     border-radius: 6px;
     white-space: nowrap;
   }
 
-  .variant-option__button-label--has-swatch:has(.variant-option__size-pill) {
-    border: none;
-    background: none;
-    padding: 0;
+  /* Remove the outline ring the theme applies to selected swatches — the pill border handles selection instead */
+  .variant-option__button-label--has-swatch:has(.variant-option__size-pill),
+  .variant-option__button-label--has-swatch:has(.variant-option__size-pill):has(:checked),
+  .variant-option__button-label--has-swatch:has(.variant-option__size-pill):hover {
+    outline: none !important;
   }
 
-  input:checked + .variant-option__button-label--has-swatch .variant-option__size-pill {
+  /* Selected: thicker border on the pill */
+  .variant-option__button-label--has-swatch:has(:checked) .variant-option__size-pill {
     border-color: rgb(var(--color-foreground-rgb));
     border-width: 2px;
     font-weight: 600;
   }
 
-  input[aria-disabled='true'] + .variant-option__button-label--has-swatch .variant-option__size-pill {
-    opacity: 0.4;
+  /* Unavailable: strikethrough */
+  .variant-option__button-label--has-swatch:has([data-option-available='false']) .variant-option__size-pill {
+    opacity: 0.45;
     text-decoration: line-through;
   }
 {% endstylesheet %}
