@@ -456,6 +456,14 @@
               },
               "blocks": {}
             },
+            "custom_liquid_Ct6iwn": {
+              "type": "custom-liquid",
+              "name": "t:names.custom_liquid",
+              "settings": {
+                "custom_liquid": "{% render 'baadmay-product-grid-item',product:  %}"
+              },
+              "blocks": {}
+            },
             "swatches_bpac49": {
               "type": "swatches",
               "name": "t:names.swatches",
@@ -469,14 +477,6 @@
                 "product_swatches_padding_right": 0
               },
               "blocks": {}
-            },
-            "custom_liquid_Ct6iwn": {
-              "type": "custom-liquid",
-              "name": "t:names.custom_liquid",
-              "settings": {
-                "custom_liquid": "{% render 'baadmay-product-grid-item',product:  %}"
-              },
-              "blocks": {}
             }
           },
           "block_order": [
@@ -485,8 +485,8 @@
             "product_title_YXxMTj",
             "review_LCLnXa",
             "price_JQzVV4",
-            "swatches_bpac49",
-            "custom_liquid_Ct6iwn"
+            "custom_liquid_Ct6iwn",
+            "swatches_bpac49"
           ]
         }
       },
@@ -1048,6 +1048,20 @@
                 "custom_liquid": "{% render 'baadmay-product-grid-item',product:  %}"
               },
               "blocks": {}
+            },
+            "swatches_Tb6R6r": {
+              "type": "swatches",
+              "name": "t:names.swatches",
+              "settings": {
+                "product_swatches_alignment": "flex-start",
+                "product_swatches_alignment_mobile": "flex-start",
+                "hide_padding": false,
+                "product_swatches_padding_top": 4,
+                "product_swatches_padding_bottom": 0,
+                "product_swatches_padding_left": 0,
+                "product_swatches_padding_right": 0
+              },
+              "blocks": {}
             }
           },
           "block_order": [
@@ -1056,7 +1070,8 @@
             "product_title_mctczp",
             "review_hDcVD3",
             "price_j9XwYp",
-            "custom_liquid_GMXHWY"
+            "custom_liquid_GMXHWY",
+            "swatches_Tb6R6r"
           ]
         }
       },
