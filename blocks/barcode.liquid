@@ -49,6 +49,7 @@
     {% render 'typography-style', settings: block_settings %}
     {% render 'spacing-style', settings: block_settings %}
     --width: {{ block_settings.width }};
+    --mobile-order: {{ block_settings.mobile_order | default: 0 }};
   "
   {{ block.shopify_attributes }}
 >
@@ -60,6 +61,17 @@
   "name": "Product barcode",
   "tag": null,
   "settings": [
+    {
+      "type": "header",
+      "content": "Mobile layout"
+    },
+    {
+      "type": "number",
+      "id": "mobile_order",
+      "label": "Mobile order",
+      "info": "Position on mobile. Lower = earlier. Gallery is fixed at 40.",
+      "default": 0
+    },
     {
       "type": "paragraph",
       "content": "Displays the barcode of the selected variant. Updates live on variant change. Hidden automatically when the variant has no barcode."

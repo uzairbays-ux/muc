@@ -474,6 +474,42 @@
     text-decoration-thickness: 1.5px;
     text-decoration-color: rgb(var(--color-foreground-rgb) / 0.35);
   }
+
+  /* ── Mobile PDP block ordering ── */
+  @media screen and (max-width: 749px) {
+    /* Turn product grid into a flex column so order property works across all children */
+    [data-product-grid-content] {
+      display: flex !important;
+      flex-direction: column;
+    }
+
+    /* Unwrap the three container levels so all blocks become flex siblings with the gallery */
+    .product-details,
+    .product-details > .group-block,
+    .product-details > .group-block > .group-block-content {
+      display: contents;
+    }
+
+    /* Gallery fixed at position 40 — blocks use mobile_order setting to sit above/below */
+    .product-information__media {
+      order: 40;
+    }
+
+    /* Hidden title injected by _product-details.liquid — keep it hidden and out of flow */
+    .view-product-title {
+      display: none !important;
+    }
+
+    /* Apply --mobile-order CSS variable to every block wrapper type */
+    .group-block,
+    product-sku-component,
+    product-barcode-component,
+    .buy-buttons-block,
+    .accordion,
+    .block-mobile-order {
+      order: var(--mobile-order, 0);
+    }
+  }
 {% endstylesheet %}
 
 {% schema %}

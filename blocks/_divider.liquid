@@ -1,12 +1,25 @@
 
 
-{% render 'divider', id: block.id, settings: block.settings, attributes: true %}
+<div class="block-mobile-order" style="--mobile-order: {{ block.settings.mobile_order | default: 0 }};">
+  {% render 'divider', id: block.id, settings: block.settings, attributes: true %}
+</div>
 
 {% schema %}
 {
   "name": "t:names.divider",
   "tag": null,
   "settings": [
+    {
+      "type": "header",
+      "content": "Mobile layout"
+    },
+    {
+      "type": "number",
+      "id": "mobile_order",
+      "label": "Mobile order",
+      "info": "Position on mobile. Lower = earlier. Gallery is fixed at 40.",
+      "default": 0
+    },
     {
       "type": "range",
       "id": "thickness",

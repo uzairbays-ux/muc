@@ -1,12 +1,3 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
     "main": {
@@ -132,7 +123,8 @@
                 "padding-block-start": 0,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
-                "padding-inline-end": 0
+                "padding-inline-end": 0,
+                "mobile_order": 10
               },
               "blocks": {
                 "text_6AanU6": {
@@ -217,7 +209,8 @@
                 "padding-block-start": 0,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
-                "padding-inline-end": 0
+                "padding-inline-end": 0,
+                "mobile_order": 20
               },
               "blocks": {
                 "text_LabgbW": {
@@ -306,7 +299,8 @@
                 "corner_radius": "square",
                 "width_percent": 100,
                 "padding-block-start": 0,
-                "padding-block-end": 0
+                "padding-block-end": 0,
+                "mobile_order": 50
               },
               "blocks": {}
             },
@@ -329,7 +323,8 @@
                 "padding-block-start": 0,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
-                "padding-inline-end": 0
+                "padding-inline-end": 0,
+                "mobile_order": 55
               },
               "blocks": {}
             },
@@ -342,7 +337,8 @@
                 "padding-block-start": 0,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
-                "padding-inline-end": 0
+                "padding-inline-end": 0,
+                "mobile_order": 60
               },
               "blocks": {}
             },
@@ -355,7 +351,8 @@
                 "padding-block-start": 0,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
-                "padding-inline-end": 0
+                "padding-inline-end": 0,
+                "mobile_order": 70
               },
               "blocks": {
                 "quantity": {
@@ -400,7 +397,8 @@
                 "padding-block-start": 0,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
-                "padding-inline-end": 0
+                "padding-inline-end": 0,
+                "mobile_order": 75
               },
               "blocks": {}
             },
@@ -427,7 +425,8 @@
                 "padding-block-start": 0,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
-                "padding-inline-end": 0
+                "padding-inline-end": 0,
+                "mobile_order": 80
               },
               "blocks": {}
             },
@@ -447,7 +446,8 @@
                 "padding-block-start": 0,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
-                "padding-inline-end": 0
+                "padding-inline-end": 0,
+                "mobile_order": 85
               },
               "blocks": {
                 "accordion_row_ByPFfK": {
@@ -639,7 +639,8 @@
                 "padding-block-start": 0,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
-                "padding-inline-end": 0
+                "padding-inline-end": 0,
+                "mobile_order": 90
               },
               "blocks": {}
             }

@@ -12,6 +12,7 @@
      --summary-font-case: var(--font-{{ block_settings.type_preset }}--case);
     {% render 'spacing-style', settings: block_settings %}
     {% render 'border-override', settings: block_settings %}
+    --mobile-order: {{ block_settings.mobile_order | default: 0 }};
   "
   {{ block.shopify_attributes }}
 >
@@ -79,6 +80,17 @@
     }
   ],
   "settings": [
+    {
+      "type": "header",
+      "content": "Mobile layout"
+    },
+    {
+      "type": "number",
+      "id": "mobile_order",
+      "label": "Mobile order",
+      "info": "Position on mobile. Lower = earlier. Gallery is fixed at 40.",
+      "default": 0
+    },
     {
       "type": "select",
       "id": "icon",

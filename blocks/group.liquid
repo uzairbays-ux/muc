@@ -4,7 +4,8 @@
   {% content_for 'blocks' %}
 {% endcapture %}
 
-{% render 'group', children: children, settings: block.settings, shopify_attributes: block.shopify_attributes %}
+{%- capture _mo_style %}--mobile-order: {{ block.settings.mobile_order | default: 0 }};{%- endcapture -%}
+{% render 'group', children: children, settings: block.settings, shopify_attributes: block.shopify_attributes, style: _mo_style %}
 
 {% schema %}
 {
@@ -22,6 +23,17 @@
     }
   ],
   "settings": [
+    {
+      "type": "header",
+      "content": "Mobile layout"
+    },
+    {
+      "type": "number",
+      "id": "mobile_order",
+      "label": "Mobile order",
+      "info": "Position on mobile. Lower = earlier. Gallery is fixed at 40.",
+      "default": 0
+    },
     {
       "type": "header",
       "content": "t:content.layout"
