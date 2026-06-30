@@ -537,6 +537,14 @@
   }
 {% endstylesheet %}
 
+{% style %}
+  @media screen and (max-width: 749px) {
+    [data-product-grid-content] > .product-information__media {
+      order: {{ section.settings.gallery_mobile_order | default: 40 }} !important;
+    }
+  }
+{% endstyle %}
+
 {% schema %}
 {
   "name": "t:names.product_information",
@@ -549,6 +557,17 @@
     "groups": ["header", "footer"]
   },
   "settings": [
+    {
+      "type": "header",
+      "content": "Mobile layout"
+    },
+    {
+      "type": "number",
+      "id": "gallery_mobile_order",
+      "label": "Gallery mobile order",
+      "info": "Controls where the product images appear on mobile. Lower = earlier on page. Default: 40. Set blocks above gallery to < 40, blocks below to > 40.",
+      "default": 40
+    },
     {
       "type": "header",
       "content": "t:content.layout"
