@@ -478,10 +478,14 @@
   /* ── Mobile PDP block ordering ── */
   @media screen and (max-width: 749px) {
     /* Turn product grid into a flex column so CSS order works across all children.
+       padding-inline: 16px restores the page margin that was provided by the CSS subgrid columns.
+       overflow-x: clip prevents any overflowing child (e.g. wide swatch rows) from causing horizontal scroll.
        !important needed: snippet stylesheet sets display:grid on this element. */
     [data-product-grid-content] {
       display: flex !important;
       flex-direction: column !important;
+      padding-inline: 16px;
+      overflow-x: clip;
     }
 
     /* Unwrap the three container levels so every block becomes a direct flex child.
@@ -498,6 +502,11 @@
       display: contents !important;
     }
 
+    /* The outer group-block's media-wrapper escapes display:contents as an empty flex item — hide it */
+    .product-details > .group-block > .group-block__media-wrapper {
+      display: none;
+    }
+
     /* Hidden title injected by _product-details.liquid — keep it out of flow */
     .view-product-title {
       display: none !important;
@@ -508,9 +517,11 @@
       order: 99;
     }
 
-    /* Gallery at position 40.
-       0,1,1 specificity (attr+class) beats theme's .product-information__media { order:0 } */
+    /* Gallery: full-bleed (negates the 16px container padding on each side) */
     [data-product-grid-content] > .product-information__media {
+      margin-inline: -16px;
+      width: calc(100% + 32px) !important;
+      max-width: none !important;
       order: 40 !important;
     }
 
