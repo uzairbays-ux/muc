@@ -477,37 +477,44 @@
 
   /* ── Mobile PDP block ordering ── */
   @media screen and (max-width: 749px) {
-    /* Turn product grid into a flex column so order property works across all children */
+    /* Turn product grid into a flex column so CSS order works across all children.
+       !important needed: snippet stylesheet sets display:grid on this element. */
     [data-product-grid-content] {
       display: flex !important;
-      flex-direction: column;
+      flex-direction: column !important;
     }
 
-    /* Unwrap the three container levels so all blocks become flex siblings with the gallery */
-    .product-details,
-    .product-details > .group-block,
+    /* Unwrap the three container levels so every block becomes a direct flex child.
+       !important beats:
+         _product-details.liquid → .product-details { display: flex }
+         base.css / group.liquid → .layout-panel-flex { display: flex }  */
+    .product-details {
+      display: contents !important;
+    }
+    .product-details > .group-block {
+      display: contents !important;
+    }
     .product-details > .group-block > .group-block-content {
-      display: contents;
+      display: contents !important;
     }
 
-    /* Hidden title injected by _product-details.liquid — keep it hidden and out of flow */
+    /* Hidden title injected by _product-details.liquid — keep it out of flow */
     .view-product-title {
       display: none !important;
     }
 
-    /* Catch-all: push any unrecognised flex child (e.g. app blocks) to the end.
-       Higher specificity overrides below take precedence for known elements. */
+    /* Catch-all: push any unrecognised flex child (app blocks without --mobile-order) to end */
     [data-product-grid-content] > * {
       order: 99;
     }
 
-    /* Gallery fixed at position 40 — higher specificity beats theme's order:0 rule */
+    /* Gallery at position 40.
+       0,1,1 specificity (attr+class) beats theme's .product-information__media { order:0 } */
     [data-product-grid-content] > .product-information__media {
-      order: 40;
+      order: 40 !important;
     }
 
-    /* Apply --mobile-order CSS variable to every block wrapper type.
-       Fallback 99 keeps unset blocks after the gallery. */
+    /* Named block wrappers: use --mobile-order variable, fallback 99 (after gallery) */
     .group-block,
     product-sku-component,
     product-barcode-component,
