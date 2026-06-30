@@ -1,12 +1,25 @@
 
 
-{% render 'text', block: block %}
+<div class="block-mobile-order" style="--mobile-order: {{ block.settings.mobile_order | default: 0 }};">
+  {% render 'text', block: block %}
+</div>
 
 {% schema %}
 {
   "name": "t:names.text",
   "tag": null,
   "settings": [
+    {
+      "type": "header",
+      "content": "Mobile layout"
+    },
+    {
+      "type": "number",
+      "id": "mobile_order",
+      "label": "Mobile order",
+      "info": "Position on mobile. Lower = earlier. Gallery is fixed at 40.",
+      "default": 0
+    },
     {
       "type": "richtext",
       "id": "text",

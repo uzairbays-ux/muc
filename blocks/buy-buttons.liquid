@@ -37,6 +37,7 @@
 
 <span
   class="buy-buttons-block buy-buttons-block--{{ block.id }}"
+  style="--mobile-order: {{ block.settings.mobile_order | default: 0 }};"
   {{ block.shopify_attributes }}
 >
   {%- if product != blank -%}
@@ -371,6 +372,17 @@
   "name": "t:names.product_buy_buttons",
   "tag": null,
   "settings": [
+    {
+      "type": "header",
+      "content": "Mobile layout"
+    },
+    {
+      "type": "number",
+      "id": "mobile_order",
+      "label": "Mobile order",
+      "info": "Position on mobile. Lower = earlier. Gallery is fixed at 40.",
+      "default": 0
+    },
     {
       "type": "paragraph",
       "content": "t:content.resource_reference_product"

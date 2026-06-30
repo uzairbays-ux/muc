@@ -49,6 +49,7 @@
     {% render 'typography-style', settings: block_settings %}
     {% render 'spacing-style', settings: block_settings %}
     --width: {{ block_settings.width }};
+    --mobile-order: {{ block_settings.mobile_order | default: 0 }};
   "
   {{ block.shopify_attributes }}
 >
@@ -74,6 +75,17 @@
   "name": "t:names.product_sku",
   "tag": null,
   "settings": [
+    {
+      "type": "header",
+      "content": "Mobile layout"
+    },
+    {
+      "type": "number",
+      "id": "mobile_order",
+      "label": "Mobile order",
+      "info": "Position on mobile. Lower = earlier. Gallery is fixed at 40.",
+      "default": 0
+    },
     {
       "type": "paragraph",
       "content": "t:content.resource_reference_product_sku"

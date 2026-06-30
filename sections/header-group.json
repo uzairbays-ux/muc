@@ -33,7 +33,7 @@
             "section_padding": 0,
             "gap": 10,
             "horizontal_gap": 25,
-            "item_padding": 10,
+            "item_padding": 5,
             "item_gap": 10,
             "border_radius": 8,
             "item_background": "#ffffff",
@@ -49,10 +49,13 @@
             "link_1": "/pages/track-your-order",
             "icon_2": "authentic",
             "text_2": "Authentic Products",
+            "link_2": "",
             "icon_3": "easy_returns",
             "text_3": "Easy Returns",
+            "link_3": "",
             "icon_4": "secure_payment",
-            "text_4": "Secure Payment"
+            "text_4": "Secure Payment",
+            "link_4": ""
           },
           "blocks": {}
         }
