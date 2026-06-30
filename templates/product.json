@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -90,6 +99,7 @@
               "type": "group",
               "name": "t:names.group",
               "settings": {
+                "mobile_order": 0,
                 "content_direction": "row",
                 "vertical_on_mobile": false,
                 "horizontal_alignment": "flex-start",
@@ -123,14 +133,14 @@
                 "padding-block-start": 0,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
-                "padding-inline-end": 0,
-                "mobile_order": 10
+                "padding-inline-end": 0
               },
               "blocks": {
                 "text_6AanU6": {
                   "type": "text",
                   "name": "Product Vendor",
                   "settings": {
+                    "mobile_order": 0,
                     "text": "<p><a href=\"/collections/vendors?q={{ closest.product.vendor }}\">{{ closest.product.vendor }}</a></p>",
                     "width": "fit-content",
                     "max_width": "normal",
@@ -176,6 +186,7 @@
               "type": "group",
               "name": "Header",
               "settings": {
+                "mobile_order": 0,
                 "content_direction": "column",
                 "vertical_on_mobile": true,
                 "horizontal_alignment": "flex-start",
@@ -209,14 +220,14 @@
                 "padding-block-start": 0,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
-                "padding-inline-end": 0,
-                "mobile_order": 20
+                "padding-inline-end": 0
               },
               "blocks": {
                 "text_LabgbW": {
                   "type": "text",
                   "name": "Product title",
                   "settings": {
+                    "mobile_order": 0,
                     "text": "<h1>{{ closest.product.title }}</h1>",
                     "width": "100%",
                     "max_width": "narrow",
@@ -243,6 +254,7 @@
                   "type": "_divider",
                   "name": "t:names.divider",
                   "settings": {
+                    "mobile_order": 0,
                     "thickness": 1,
                     "corner_radius": "square",
                     "width_percent": 100,
@@ -295,12 +307,12 @@
               "name": "t:names.divider",
               "disabled": true,
               "settings": {
+                "mobile_order": 0,
                 "thickness": 1,
                 "corner_radius": "square",
                 "width_percent": 100,
                 "padding-block-start": 0,
-                "padding-block-end": 0,
-                "mobile_order": 50
+                "padding-block-end": 0
               },
               "blocks": {}
             },
@@ -309,6 +321,7 @@
               "name": "t:names.product_sku",
               "disabled": true,
               "settings": {
+                "mobile_order": 0,
                 "show_label": true,
                 "label": "SKU:",
                 "type_preset": "",
@@ -323,36 +336,35 @@
                 "padding-block-start": 0,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
-                "padding-inline-end": 0,
-                "mobile_order": 55
+                "padding-inline-end": 0
               },
               "blocks": {}
             },
             "variant_picker_R3rGDr": {
               "type": "variant-picker",
               "settings": {
+                "mobile_order": 0,
                 "variant_style": "buttons",
                 "show_swatches": true,
                 "alignment": "left",
                 "padding-block-start": 0,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
-                "padding-inline-end": 0,
-                "mobile_order": 60
+                "padding-inline-end": 0
               },
               "blocks": {}
             },
             "buy_buttons_eYQEYi": {
               "type": "buy-buttons",
               "settings": {
+                "mobile_order": 0,
                 "stacking": true,
                 "show_pickup_availability": false,
                 "gift_card_form": true,
                 "padding-block-start": 0,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
-                "padding-inline-end": 0,
-                "mobile_order": 70
+                "padding-inline-end": 0
               },
               "blocks": {
                 "quantity": {
@@ -383,6 +395,7 @@
               "type": "barcode",
               "name": "Product barcode",
               "settings": {
+                "mobile_order": 0,
                 "show_label": true,
                 "label": "Barcode:",
                 "type_preset": "",
@@ -397,8 +410,7 @@
                 "padding-block-start": 0,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
-                "padding-inline-end": 0,
-                "mobile_order": 75
+                "padding-inline-end": 0
               },
               "blocks": {}
             },
@@ -411,6 +423,7 @@
               "name": "t:names.product_sku",
               "disabled": true,
               "settings": {
+                "mobile_order": 0,
                 "show_label": true,
                 "label": "SKU:",
                 "type_preset": "",
@@ -425,8 +438,7 @@
                 "padding-block-start": 0,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
-                "padding-inline-end": 0,
-                "mobile_order": 80
+                "padding-inline-end": 0
               },
               "blocks": {}
             },
@@ -434,6 +446,7 @@
               "type": "accordion",
               "name": "t:names.accordion",
               "settings": {
+                "mobile_order": 0,
                 "icon": "caret",
                 "dividers": true,
                 "type_preset": "h6",
@@ -446,8 +459,7 @@
                 "padding-block-start": 0,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
-                "padding-inline-end": 0,
-                "mobile_order": 85
+                "padding-inline-end": 0
               },
               "blocks": {
                 "accordion_row_ByPFfK": {
@@ -463,6 +475,7 @@
                     "text_L9Wpcd": {
                       "type": "text",
                       "settings": {
+                        "mobile_order": 0,
                         "text": "{{ closest.product.description }}",
                         "width": "100%",
                         "max_width": "normal",
@@ -502,6 +515,7 @@
                     "text_7GyKbG": {
                       "type": "text",
                       "settings": {
+                        "mobile_order": 0,
                         "text": "<p>Our goal is for every customer to be totally satisfied with their purchase. If this isn't the case, let us know and we'll do our best to work with you to make it right.</p>",
                         "width": "100%",
                         "max_width": "normal",
@@ -541,6 +555,7 @@
                     "text_rez87z": {
                       "type": "text",
                       "settings": {
+                        "mobile_order": 0,
                         "text": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>",
                         "width": "100%",
                         "max_width": "normal",
@@ -581,6 +596,7 @@
                     "text_63Decw": {
                       "type": "text",
                       "settings": {
+                        "mobile_order": 0,
                         "text": "<p>Our products are manufactured both locally and globally. We carefully select our manufacturing partners to ensure our products are high quality and a fair value.</p>",
                         "width": "100%",
                         "max_width": "normal",
@@ -621,6 +637,7 @@
               "name": "Product description",
               "disabled": true,
               "settings": {
+                "mobile_order": 0,
                 "text": "{{ closest.product.description }}",
                 "width": "100%",
                 "max_width": "normal",
@@ -639,8 +656,7 @@
                 "padding-block-start": 0,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
-                "padding-inline-end": 0,
-                "mobile_order": 90
+                "padding-inline-end": 0
               },
               "blocks": {}
             }
@@ -796,6 +812,7 @@
           "type": "text",
           "name": "t:names.header",
           "settings": {
+            "mobile_order": 0,
             "text": "<h3>You may also like </h3>",
             "width": "fit-content",
             "max_width": "normal",
@@ -870,6 +887,7 @@
               "name": "t:names.text",
               "disabled": true,
               "settings": {
+                "mobile_order": 0,
                 "text": "<p><a href=\"/collections/vendors?q={{ closest.product.vendor }}\">{{ closest.product.vendor }}</a></p>",
                 "width": "fit-content",
                 "max_width": "normal",
