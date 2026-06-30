@@ -486,19 +486,18 @@
       flex-direction: column !important;
       padding-inline: 16px;
       overflow-x: clip;
+      gap: 12px;
     }
 
-    /* Unwrap the three container levels so every block becomes a direct flex child.
+    /* Unwrap the two outer container levels so group-block-content becomes a direct flex child.
        !important beats:
          _product-details.liquid → .product-details { display: flex }
-         base.css / group.liquid → .layout-panel-flex { display: flex }  */
+       group-block-content is NOT display:contents — it keeps its own flex layout so inner
+       blocks (e.g. vendor pill + review stars side-by-side) stay intact. */
     .product-details {
       display: contents !important;
     }
     .product-details > .group-block {
-      display: contents !important;
-    }
-    .product-details > .group-block > .group-block-content {
       display: contents !important;
     }
 
@@ -525,8 +524,9 @@
       order: 40 !important;
     }
 
-    /* Named block wrappers: use --mobile-order variable, fallback 99 (after gallery) */
-    .group-block,
+    /* Named block wrappers: use --mobile-order variable (CSS var inherits through display:contents).
+       group-block-content is now the actual flex item for group blocks. */
+    .group-block-content,
     product-sku-component,
     product-barcode-component,
     .buy-buttons-block,
