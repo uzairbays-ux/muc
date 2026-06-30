@@ -130,8 +130,8 @@
                 "link": "",
                 "open_in_new_tab": false,
                 "placeholder": "",
-                "padding-block-start": 0,
-                "padding-block-end": 0,
+                "padding-block-start": 10,
+                "padding-block-end": 10,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
@@ -230,7 +230,7 @@
                     "mobile_order": 0,
                     "text": "<h1>{{ closest.product.title }}</h1>",
                     "width": "100%",
-                    "max_width": "narrow",
+                    "max_width": "normal",
                     "alignment": "left",
                     "type_preset": "custom",
                     "font": "var(--font-heading--family)",
@@ -343,7 +343,7 @@
             "variant_picker_R3rGDr": {
               "type": "variant-picker",
               "settings": {
-                "mobile_order": 0,
+                "mobile_order": 50,
                 "variant_style": "buttons",
                 "show_swatches": true,
                 "alignment": "left",
@@ -357,7 +357,7 @@
             "buy_buttons_eYQEYi": {
               "type": "buy-buttons",
               "settings": {
-                "mobile_order": 0,
+                "mobile_order": 60,
                 "stacking": true,
                 "show_pickup_availability": false,
                 "gift_card_form": true,
@@ -395,7 +395,7 @@
               "type": "barcode",
               "name": "Product barcode",
               "settings": {
-                "mobile_order": 0,
+                "mobile_order": 70,
                 "show_label": true,
                 "label": "Barcode:",
                 "type_preset": "",
