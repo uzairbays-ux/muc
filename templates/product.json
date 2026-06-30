@@ -98,7 +98,7 @@
           "blocks": {
             "group_38ENnf": {
               "type": "group",
-              "name": "t:names.group",
+              "name": "Vendor & Rating",
               "settings": {
                 "mobile_order": 0,
                 "content_direction": "row",
@@ -142,7 +142,7 @@
                   "name": "Product Vendor",
                   "settings": {
                     "mobile_order": 0,
-                    "text": "<p><a href=\"/collections/vendors?q={{ closest.product.vendor }}\">{{ closest.product.vendor }}</a></p>",
+                    "text": "<p><a href=\"/collections/vendors?q=<shopify-token value=\">\"&gt;{{ closest.product.vendor }}</a></p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -239,7 +239,7 @@
                     "line_height": "tight",
                     "letter_spacing": "tight",
                     "case": "none",
-                    "wrap": "balance",
+                    "wrap": "pretty",
                     "color": "var(--color-foreground-heading)",
                     "background": false,
                     "background_color": "#00000026",
@@ -330,7 +330,7 @@
             "variant_picker_R3rGDr": {
               "type": "variant-picker",
               "settings": {
-                "mobile_order": 50,
+                "mobile_order": 3,
                 "variant_style": "buttons",
                 "show_swatches": true,
                 "alignment": "left",
@@ -344,7 +344,7 @@
             "buy_buttons_eYQEYi": {
               "type": "buy-buttons",
               "settings": {
-                "mobile_order": 60,
+                "mobile_order": 4,
                 "stacking": true,
                 "show_pickup_availability": false,
                 "gift_card_form": true,
@@ -382,7 +382,7 @@
               "type": "barcode",
               "name": "Product barcode",
               "settings": {
-                "mobile_order": 70,
+                "mobile_order": 5,
                 "show_label": true,
                 "label": "Barcode:",
                 "type_preset": "",
