@@ -489,15 +489,24 @@
       gap: 12px;
     }
 
-    /* Unwrap the two outer container levels so group-block-content becomes a direct flex child.
+    /* Unwrap three container levels so every inner block becomes a direct flex child.
+       _product-details renders itself via render 'group', so the chain is:
+         .product-details > .group-block (outer) > .group-block-content (outer) > [inner blocks]
+       All three must be display:contents so inner blocks participate in [data-product-grid-content]'s
+       flex context and CSS order can interleave them with the gallery.
+       The inner .group-block-content elements (e.g. vendor+stars row) are NOT matched by these
+       selectors (they're more than one level down from .product-details), so they keep display:flex
+       and their internal row layout stays intact.
        !important beats:
          _product-details.liquid → .product-details { display: flex }
-       group-block-content is NOT display:contents — it keeps its own flex layout so inner
-       blocks (e.g. vendor pill + review stars side-by-side) stay intact. */
+         base.css / group.liquid → .layout-panel-flex { display: flex }  */
     .product-details {
       display: contents !important;
     }
     .product-details > .group-block {
+      display: contents !important;
+    }
+    .product-details > .group-block > .group-block-content {
       display: contents !important;
     }
 
@@ -524,9 +533,10 @@
       order: 40 !important;
     }
 
-    /* Named block wrappers: use --mobile-order variable (CSS var inherits through display:contents).
-       group-block-content is now the actual flex item for group blocks. */
-    .group-block-content,
+    /* Named block wrappers: --mobile-order is set as inline style on each element.
+       .group-block here targets the INNER group blocks (group_38ENnf, group_icgrde etc.) —
+       the OUTER .group-block has display:contents so its order property is ignored. */
+    .group-block,
     product-sku-component,
     product-barcode-component,
     .buy-buttons-block,
