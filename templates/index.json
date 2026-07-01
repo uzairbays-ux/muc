@@ -1964,8 +1964,8 @@
         "banner_Kt9k6X": {
           "type": "banner",
           "settings": {
-            "desktop_image": "shopify://shop_images/Chinesse_banner_desktop_copy.jpg",
-            "mobile_image": "shopify://shop_images/Chinesse_Banner_copy.jpg",
+            "desktop_image": "shopify://shop_images/chinese-desktop.webp",
+            "mobile_image": "shopify://shop_images/Chinesse_Banner.webp",
             "link": "shopify://collections/chinese-brands",
             "open_new_tab": false
           }
