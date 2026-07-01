@@ -169,7 +169,7 @@
         "card_G4PiLa": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/maybilline_750_x_750.jpg",
+            "image": "shopify://shop_images/maybelline_5287fd9f-fa13-433c-aebd-17af3c4a949b.jpg",
             "link": "shopify://collections/maybelline",
             "open_new_tab": false
           }
@@ -177,7 +177,7 @@
         "card_7Rimtd": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/ELF.jpg",
+            "image": "shopify://shop_images/ELF.png",
             "link": "shopify://collections/elf",
             "open_new_tab": false
           }
@@ -185,7 +185,7 @@
         "card_nbr3cj": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/the_ordinary_750_x_750.jpg",
+            "image": "shopify://shop_images/The-Ordinary_77f72521-6e89-4679-99fa-954018c0259e.jpg",
             "link": "shopify://collections/to",
             "open_new_tab": false
           }
@@ -193,7 +193,7 @@
         "card_YUtaR6": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/750_x_750_Banners_copy.jpg",
+            "image": "shopify://shop_images/Revolution_53dec6ba-11b4-4cf5-b4af-da4c37a72844.jpg",
             "link": "shopify://collections/revolution",
             "open_new_tab": false
           }
@@ -201,7 +201,7 @@
         "card_hxUFFx": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/cerave_750_x_750.jpg",
+            "image": "shopify://shop_images/CeraVe_65627861-6c69-4df1-ac98-78dadd0e4e80.jpg",
             "link": "shopify://collections/cerave",
             "open_new_tab": false
           }
@@ -209,7 +209,7 @@
         "card_b9F39r": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/bioaqua_750_x_750.jpg",
+            "image": "shopify://shop_images/Bioaqua_627d505a-45d9-4e4d-ab99-85ef4ec36196.jpg",
             "link": "shopify://collections/bioaqua",
             "open_new_tab": false
           }
@@ -363,6 +363,7 @@
               "type": "text",
               "name": "t:names.text",
               "settings": {
+                "mobile_order": 0,
                 "text": "<p>{{ closest.product.vendor }}</p>",
                 "width": "fit-content",
                 "max_width": "normal",
@@ -948,6 +949,7 @@
               "type": "text",
               "name": "t:names.text",
               "settings": {
+                "mobile_order": 0,
                 "text": "<p>{{ closest.product.vendor }}</p>",
                 "width": "fit-content",
                 "max_width": "normal",
