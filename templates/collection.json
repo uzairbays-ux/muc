@@ -16,6 +16,7 @@
           "type": "text",
           "name": "Title",
           "settings": {
+            "mobile_order": 0,
             "text": "<h2>{{ closest.collection.title }}</h2>",
             "width": "100%",
             "max_width": "narrow",
@@ -43,6 +44,7 @@
           "name": "Description",
           "disabled": true,
           "settings": {
+            "mobile_order": 0,
             "text": "{{ closest.collection.description }}",
             "width": "100%",
             "max_width": "none",
@@ -77,7 +79,7 @@
         "horizontal_alignment": "flex-start",
         "vertical_alignment": "center",
         "align_baseline": false,
-        "horizontal_alignment_flex_direction_column": "flex-start",
+        "horizontal_alignment_flex_direction_column": "center",
         "vertical_alignment_flex_direction_column": "center",
         "gap": 12,
         "section_width": "page-width",
@@ -161,6 +163,7 @@
               "type": "text",
               "name": "Brand",
               "settings": {
+                "mobile_order": 0,
                 "text": "<p>{{ closest.product.vendor }}</p>",
                 "width": "fit-content",
                 "max_width": "normal",
