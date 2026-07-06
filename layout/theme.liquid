@@ -37,8 +37,7 @@
 
     {{ content_for_header }}
 
-    {% # Meta Pixel Code — deferred until first interaction to improve INP.
-       fbq() calls are queued by the stub and replayed when fbevents.js finally loads. %}
+    {% # Meta Pixel Code — deferred until first interaction to improve INP. %}
     <script>
       (function () {
         if (window.fbq) return;
