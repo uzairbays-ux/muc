@@ -341,6 +341,7 @@
         },
         "jhg_1": {
           "type": "store",
+          "disabled": true,
           "settings": {
             "name": "GTS Mall",
             "address": "GTS Mall, Session Chowk Saddar",
