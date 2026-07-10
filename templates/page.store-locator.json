@@ -253,6 +253,7 @@
         },
         "fsd_1": {
           "type": "store",
+          "name": "Kohinoor City",
           "settings": {
             "name": "Kohinoor City",
             "address": "Mezzanine Floor, Centre Point Plaza, Kohinoor City",
@@ -266,6 +267,7 @@
         },
         "fsd_2": {
           "type": "store",
+          "name": "Lyallpur Galleria",
           "settings": {
             "name": "Lyallpur Galleria",
             "address": "Shop # 9, First Floor, Lyallpur Galleria, East Canal Road",
@@ -279,6 +281,7 @@
         },
         "hyd_1": {
           "type": "store",
+          "name": "Rabi Centre",
           "settings": {
             "name": "Rabi Centre",
             "address": "Ground Floor, Rabi Centre Saddar, Cantt",
@@ -292,6 +295,7 @@
         },
         "rwp_1": {
           "type": "store",
+          "name": "Rose Arcade",
           "settings": {
             "name": "Rose Arcade",
             "address": "1st Floor, Rose Arcade, Rehmanabad Chowk",
@@ -305,6 +309,7 @@
         },
         "bwp_1": {
           "type": "store",
+          "name": "Jhandir Plaza",
           "settings": {
             "name": "Jhandir Plaza",
             "address": "Shop # 1, 9-C, Model Town, Block A, Jhandir Plaza",
@@ -318,6 +323,7 @@
         },
         "skr_1": {
           "type": "store",
+          "name": "Aqsa Tower",
           "settings": {
             "name": "Aqsa Tower",
             "address": "Shop # 4, Ground Floor, Aqsa Tower, Mission Road",
@@ -331,6 +337,7 @@
         },
         "grw_1": {
           "type": "store",
+          "name": "Malik Tower",
           "settings": {
             "name": "Malik Tower",
             "address": "405-C, Ground Floor, Malik Tower, Main Market, Satellite Town",
