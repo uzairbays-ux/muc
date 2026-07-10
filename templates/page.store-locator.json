@@ -15,7 +15,6 @@
         "khi_1": {
           "type": "store",
           "name": "Tariq Center",
-          "disabled": true,
           "settings": {
             "name": "Tariq Center",
             "address": "756-C, Central Commercial Area, Behind Tariq Center, Tariq Road",
