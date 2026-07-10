@@ -242,21 +242,6 @@
             "map_embed_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3406.417081794885!2d74.18482221462715!3d31.375061261443186!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3918ff8e3fb92bcb%3A0x2a7c495b24208e97!2sBeauty%20'n%20Style%20Pakistan%20-%20Bahria%20Town%20Branch!5e0!3m2!1sen!2s!4v1662440174462!5m2!1sen!2s"
           }
         },
-        "isb_1": {
-          "type": "store",
-          "name": "Centaurus Mall",
-          "disabled": true,
-          "settings": {
-            "name": "Centaurus Mall",
-            "address": "Shop # 211, 2nd Floor, Centaurus Mall, 1 Jinnah Avenue, Sec F-8",
-            "city": "Islamabad",
-            "postal_code": "",
-            "phone": "051-2701288",
-            "hours": "",
-            "directions_url": "",
-            "map_embed_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3319.049939943583!2d73.04786871468967!3d33.707656643258616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38dfbfb0f4f77379%3A0xf8c50b8651f56d02!2sThe%20Centaurus%20Mall%20Islamabad!5e0!3m2!1sen!2s!4v1662441127398!5m2!1sen!2s"
-          }
-        },
         "mul_1": {
           "type": "store",
           "name": "Saddar Bazaar",
@@ -302,36 +287,6 @@
             "map_embed_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1682.1609757003257!2d74.55631945799313!3d32.517547256974986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391eebd21cb12dd5%3A0x5dd254f9582fc77b!2sMakeup%20City%20Mall%20of%20Sialkot!5e0!3m2!1sen!2s!4v1662442494993!5m2!1sen!2s"
           }
         },
-        "fsd_1": {
-          "type": "store",
-          "name": "Kohinoor City",
-          "disabled": true,
-          "settings": {
-            "name": "Kohinoor City",
-            "address": "Mezzanine Floor, Centre Point Plaza, Kohinoor City",
-            "city": "Faisalabad",
-            "postal_code": "",
-            "phone": "041-8554008",
-            "hours": "",
-            "directions_url": "",
-            "map_embed_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d506.1718540279503!2d73.1163707557649!3d31.41123908342266!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39226902636425ef%3A0x145c44aba0fb1b59!2sZR%20makeup%20city%20Faisalabad.com!5e0!3m2!1sen!2s!4v1662442950152!5m2!1sen!2s"
-          }
-        },
-        "fsd_2": {
-          "type": "store",
-          "name": "Lyallpur Galleria",
-          "disabled": true,
-          "settings": {
-            "name": "Lyallpur Galleria",
-            "address": "Shop # 9, First Floor, Lyallpur Galleria, East Canal Road",
-            "city": "Faisalabad",
-            "postal_code": "",
-            "phone": "041-6078501",
-            "hours": "",
-            "directions_url": "",
-            "map_embed_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d851.0308284809851!2d73.13134332918504!3d31.43827194307152!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3922699d8cd7e9cb%3A0x8d6ff3a6fec7865f!2sMakeup%20City%20Lyallupur!5e0!3m2!1sen!2s!4v1662443016288!5m2!1sen!2s"
-          }
-        },
         "rwp_1": {
           "type": "store",
           "name": "Rose Arcade",
@@ -361,6 +316,48 @@
             "directions_url": "",
             "map_embed_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3377.5669342638043!2d74.19666681464774!3d32.161983522397364!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391f2b7e8093e489%3A0xcf3dcbc4316cc49d!2sMakeup%20City%20Gujranwala!5e0!3m2!1sen!2s!4v1662443661698!5m2!1sen!2s"
           }
+        },
+        "fsd_1": {
+          "type": "store",
+          "name": "Kohinoor City",
+          "settings": {
+            "name": "Kohinoor City",
+            "address": "Mezzanine Floor, Centre Point Plaza, Kohinoor City",
+            "city": "Faisalabad",
+            "postal_code": "",
+            "phone": "041-8554008",
+            "hours": "",
+            "directions_url": "",
+            "map_embed_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d506.1718540279503!2d73.1163707557649!3d31.41123908342266!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39226902636425ef%3A0x145c44aba0fb1b59!2sZR%20makeup%20city%20Faisalabad.com!5e0!3m2!1sen!2s!4v1662442950152!5m2!1sen!2s"
+          }
+        },
+        "fsd_2": {
+          "type": "store",
+          "name": "Lyallpur Galleria",
+          "settings": {
+            "name": "Lyallpur Galleria",
+            "address": "Shop # 9, First Floor, Lyallpur Galleria, East Canal Road",
+            "city": "Faisalabad",
+            "postal_code": "",
+            "phone": "041-6078501",
+            "hours": "",
+            "directions_url": "",
+            "map_embed_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d851.0308284809851!2d73.13134332918504!3d31.43827194307152!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3922699d8cd7e9cb%3A0x8d6ff3a6fec7865f!2sMakeup%20City%20Lyallupur!5e0!3m2!1sen!2s!4v1662443016288!5m2!1sen!2s"
+          }
+        },
+        "isb_1": {
+          "type": "store",
+          "name": "Centaurus Mall",
+          "settings": {
+            "name": "Centaurus Mall",
+            "address": "Shop # 211, 2nd Floor, Centaurus Mall, 1 Jinnah Avenue, Sec F-8",
+            "city": "Islamabad",
+            "postal_code": "",
+            "phone": "051-2701288",
+            "hours": "",
+            "directions_url": "",
+            "map_embed_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3319.049939943583!2d73.04786871468967!3d33.707656643258616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38dfbfb0f4f77379%3A0xf8c50b8651f56d02!2sThe%20Centaurus%20Mall%20Islamabad!5e0!3m2!1sen!2s!4v1662441127398!5m2!1sen!2s"
+          }
         }
       },
       "block_order": [
@@ -380,14 +377,14 @@
         "lhr_4",
         "lhr_5",
         "lhr_6",
-        "isb_1",
         "mul_1",
         "skt_1",
         "skt_2",
+        "rwp_1",
+        "grw_1",
         "fsd_1",
         "fsd_2",
-        "rwp_1",
-        "grw_1"
+        "isb_1"
       ],
       "settings": {
         "heading": "Find a Store Near You",
