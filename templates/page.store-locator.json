@@ -155,7 +155,6 @@
         "lhr_1": {
           "type": "store",
           "name": "Packages Mall",
-          "disabled": true,
           "settings": {
             "name": "Packages Mall",
             "address": "Shop # 1063, Packages Mall, Main Walton Road",
@@ -170,7 +169,6 @@
         "lhr_2": {
           "type": "store",
           "name": "Fortress Square Mall",
-          "disabled": true,
           "settings": {
             "name": "Fortress Square Mall",
             "address": "Shop No 58 & 61, Fortress Square Mall",
@@ -185,7 +183,6 @@
         "lhr_3": {
           "type": "store",
           "name": "Hyper Star, Fortress Stadium",
-          "disabled": true,
           "settings": {
             "name": "Hyper Star, Fortress Stadium",
             "address": "Ground Floor, Opposite Counter No. 23, Fortress Stadium",
@@ -200,7 +197,6 @@
         "lhr_4": {
           "type": "store",
           "name": "City Tower, Gulberg II",
-          "disabled": true,
           "settings": {
             "name": "City Tower, Gulberg II",
             "address": "Shop # 28, Ground Floor, City Tower, Main Boulevard, Gulberg II",
@@ -215,7 +211,6 @@
         "lhr_5": {
           "type": "store",
           "name": "Emporium Mall",
-          "disabled": true,
           "settings": {
             "name": "Emporium Mall",
             "address": "Shop # 45 G, Ground Floor, Emporium Mall, Johar Town",
@@ -230,7 +225,6 @@
         "lhr_6": {
           "type": "store",
           "name": "Bahria Town",
-          "disabled": true,
           "settings": {
             "name": "Bahria Town",
             "address": "Beauty n Style 174, Commercial Zone Sector C, Block-B, Bahria Town",
@@ -245,7 +239,6 @@
         "mul_1": {
           "type": "store",
           "name": "Saddar Bazaar",
-          "disabled": true,
           "settings": {
             "name": "Saddar Bazaar",
             "address": "Shop # 39 & 40, Ghani Bukhari Road, Saddar Bazaar, Cantt",
@@ -260,7 +253,6 @@
         "skt_1": {
           "type": "store",
           "name": "V-Mall",
-          "disabled": true,
           "settings": {
             "name": "V-Mall",
             "address": "Shop # 8, 15 Div. V-Mall, Sialkot Cantonment",
@@ -275,7 +267,6 @@
         "skt_2": {
           "type": "store",
           "name": "Mall of Sialkot",
-          "disabled": true,
           "settings": {
             "name": "Mall of Sialkot",
             "address": "Shop # 9, Ground Floor, Mall of Sialkot, Aziz Shaheed Road, Cantt",
@@ -290,7 +281,6 @@
         "rwp_1": {
           "type": "store",
           "name": "Rose Arcade",
-          "disabled": true,
           "settings": {
             "name": "Rose Arcade",
             "address": "1st Floor, Rose Arcade, Rehmanabad Chowk",
@@ -305,7 +295,6 @@
         "grw_1": {
           "type": "store",
           "name": "Malik Tower",
-          "disabled": true,
           "settings": {
             "name": "Malik Tower",
             "address": "405-C, Ground Floor, Malik Tower, Main Market, Satellite Town",
