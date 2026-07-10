@@ -14,6 +14,7 @@
       "blocks": {
         "khi_1": {
           "type": "store",
+          "name": "Tariq Center",
           "settings": {
             "name": "Tariq Center",
             "address": "756-C, Central Commercial Area, Behind Tariq Center, Tariq Road",
@@ -27,6 +28,7 @@
         },
         "khi_2": {
           "type": "store",
+          "name": "Dolmen Mall, Tariq Road",
           "settings": {
             "name": "Dolmen Mall, Tariq Road",
             "address": "Shop # TF-1, 3rd Floor, Block No.3, Dolmen Mall, Tariq Road",
@@ -40,6 +42,7 @@
         },
         "khi_3": {
           "type": "store",
+          "name": "LuckyOne Mall",
           "settings": {
             "name": "LuckyOne Mall",
             "address": "LG 15 & 16, LuckyOne Mall, Rashid Minhas Road",
@@ -53,6 +56,7 @@
         },
         "khi_4": {
           "type": "store",
+          "name": "Ocean Mall",
           "settings": {
             "name": "Ocean Mall",
             "address": "Shop # G-12, Ground Floor, Ocean Mall, Clifton",
@@ -66,6 +70,7 @@
         },
         "khi_5": {
           "type": "store",
+          "name": "Dolmen Mall, Clifton",
           "settings": {
             "name": "Dolmen Mall, Clifton",
             "address": "Shop # G-6 & 7, Next to Carrefour, Dolmen Mall, Clifton",
@@ -79,6 +84,7 @@
         },
         "khi_6": {
           "type": "store",
+          "name": "Square One Mall",
           "settings": {
             "name": "Square One Mall",
             "address": "Ground Floor, Near Askari IV, National Stadium Road, Gulshan-e-Iqbal",
@@ -92,6 +98,7 @@
         },
         "lhr_1": {
           "type": "store",
+          "name": "Packages Mall",
           "settings": {
             "name": "Packages Mall",
             "address": "Shop # 1063, Packages Mall, Main Walton Road",
@@ -105,6 +112,7 @@
         },
         "lhr_2": {
           "type": "store",
+          "name": "Fortress Square Mall",
           "settings": {
             "name": "Fortress Square Mall",
             "address": "Shop No 58 & 61, Fortress Square Mall",
@@ -118,6 +126,7 @@
         },
         "lhr_3": {
           "type": "store",
+          "name": "Hyper Star, Fortress Stadium",
           "settings": {
             "name": "Hyper Star, Fortress Stadium",
             "address": "Ground Floor, Opposite Counter No. 23, Fortress Stadium",
@@ -131,6 +140,7 @@
         },
         "lhr_4": {
           "type": "store",
+          "name": "City Tower, Gulberg II",
           "disabled": true,
           "settings": {
             "name": "City Tower, Gulberg II",
@@ -145,6 +155,7 @@
         },
         "lhr_5": {
           "type": "store",
+          "name": "Emporium Mall",
           "settings": {
             "name": "Emporium Mall",
             "address": "Shop # 45 G, Ground Floor, Emporium Mall, Johar Town",
@@ -158,6 +169,7 @@
         },
         "lhr_6": {
           "type": "store",
+          "name": "Bahria Town",
           "settings": {
             "name": "Bahria Town",
             "address": "Beauty n Style 174, Commercial Zone Sector C, Block-B, Bahria Town",
@@ -171,6 +183,7 @@
         },
         "isb_1": {
           "type": "store",
+          "name": "Centaurus Mall",
           "settings": {
             "name": "Centaurus Mall",
             "address": "Shop # 211, 2nd Floor, Centaurus Mall, 1 Jinnah Avenue, Sec F-8",
@@ -184,6 +197,7 @@
         },
         "mul_1": {
           "type": "store",
+          "name": "Saddar Bazaar",
           "settings": {
             "name": "Saddar Bazaar",
             "address": "Shop # 39 & 40, Ghani Bukhari Road, Saddar Bazaar, Cantt",
@@ -197,6 +211,7 @@
         },
         "mul_2": {
           "type": "store",
+          "name": "Sharif Complex",
           "settings": {
             "name": "Sharif Complex",
             "address": "20/A Sharif Complex, Shop # 1, Tahseel Chowk, Near Shell Petrol Pump, Gulgasht",
@@ -210,6 +225,7 @@
         },
         "skt_1": {
           "type": "store",
+          "name": "V-Mall",
           "settings": {
             "name": "V-Mall",
             "address": "Shop # 8, 15 Div. V-Mall, Sialkot Cantonment",
@@ -223,6 +239,7 @@
         },
         "skt_2": {
           "type": "store",
+          "name": "Mall of Sialkot",
           "settings": {
             "name": "Mall of Sialkot",
             "address": "Shop # 9, Ground Floor, Mall of Sialkot, Aziz Shaheed Road, Cantt",
