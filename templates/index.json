@@ -1101,33 +1101,6 @@
     "card_grid_MnB8Gn": {
       "type": "card-grid",
       "blocks": {
-        "card_jVybcz": {
-          "type": "card",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/B_BW.jpg",
-            "link": "shopify://collections/bath-body-works",
-            "open_new_tab": false
-          }
-        },
-        "card_GbUJi9": {
-          "type": "card",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/Estelin.jpg",
-            "link": "shopify://collections/estelin",
-            "open_new_tab": false
-          }
-        },
-        "card_w6mkEL": {
-          "type": "card",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/Framesi_9e368024-42a5-4675-8a1a-b3cb1e3a22d5.jpg",
-            "link": "shopify://collections/framesi",
-            "open_new_tab": false
-          }
-        },
         "card_h6R94P": {
           "type": "card",
           "settings": {
@@ -1176,27 +1149,59 @@
             "open_new_tab": false
           }
         },
-        "card_qVi44P": {
+        "card_wkmjxd": {
           "type": "card",
-          "disabled": true,
           "settings": {
-            "image": "shopify://shop_images/milk_logo_aligned_final_500x500_f0ca337d-34aa-4531-af6c-bb404e323cbc.png",
-            "link": "shopify://collections/milk",
+            "image": "shopify://shop_images/charlotte_tilbury_logo_enhanced_500x500_0f33ca02-cd18-4743-b2dd-ee0f456ee583.webp",
+            "link": "shopify://collections/charlotte-tilbury",
+            "open_new_tab": false
+          }
+        },
+        "card_TrfdaU": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/dior_replaced_logo_500x500_db799f39-b2fa-4106-b973-64884358351f.webp",
+            "link": "shopify://collections/dior",
+            "open_new_tab": false
+          }
+        },
+        "card_JFEeE9": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/OLAPLEX_Image_Jul_7_2026_11_30_41_AM.webp",
+            "link": "shopify://collections/olaplex",
+            "open_new_tab": false
+          }
+        },
+        "card_kzxKcf": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/Rare_beauty_e_Jul_2_2026_11_02_19_AM.webp",
+            "link": "shopify://collections/rare-beauty",
+            "open_new_tab": false
+          }
+        },
+        "card_xxU9nH": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/rhode_Image_Jul_8_2026_09_44_41_AM.webp",
+            "link": "shopify://collections/rhode",
             "open_new_tab": false
           }
         }
       },
       "block_order": [
-        "card_jVybcz",
-        "card_GbUJi9",
-        "card_w6mkEL",
         "card_h6R94P",
         "card_whDK6f",
         "card_iJgEgf",
         "card_mcFcz9",
         "card_tBr3yf",
         "card_djrWXM",
-        "card_qVi44P"
+        "card_wkmjxd",
+        "card_TrfdaU",
+        "card_JFEeE9",
+        "card_kzxKcf",
+        "card_xxU9nH"
       ],
       "name": "Card grid",
       "settings": {
