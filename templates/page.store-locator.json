@@ -15,6 +15,7 @@
         "khi_1": {
           "type": "store",
           "name": "Tariq Center",
+          "disabled": true,
           "settings": {
             "name": "Tariq Center",
             "address": "756-C, Central Commercial Area, Behind Tariq Center, Tariq Road",
@@ -29,6 +30,7 @@
         "khi_2": {
           "type": "store",
           "name": "Dolmen Mall, Tariq Road",
+          "disabled": true,
           "settings": {
             "name": "Dolmen Mall, Tariq Road",
             "address": "Shop # TF-1, 3rd Floor, Block No.3, Dolmen Mall, Tariq Road",
@@ -43,6 +45,7 @@
         "khi_3": {
           "type": "store",
           "name": "LuckyOne Mall",
+          "disabled": true,
           "settings": {
             "name": "LuckyOne Mall",
             "address": "LG 15 & 16, LuckyOne Mall, Rashid Minhas Road",
@@ -57,6 +60,7 @@
         "khi_4": {
           "type": "store",
           "name": "Ocean Mall",
+          "disabled": true,
           "settings": {
             "name": "Ocean Mall",
             "address": "Shop # G-12, Ground Floor, Ocean Mall, Clifton",
@@ -71,6 +75,7 @@
         "khi_5": {
           "type": "store",
           "name": "Dolmen Mall, Clifton",
+          "disabled": true,
           "settings": {
             "name": "Dolmen Mall, Clifton",
             "address": "Shop # G-6 & 7, Next to Carrefour, Dolmen Mall, Clifton",
@@ -85,6 +90,7 @@
         "khi_6": {
           "type": "store",
           "name": "Square One Mall",
+          "disabled": true,
           "settings": {
             "name": "Square One Mall",
             "address": "Ground Floor, Near Askari IV, National Stadium Road, Gulshan-e-Iqbal",
@@ -99,6 +105,7 @@
         "lhr_1": {
           "type": "store",
           "name": "Packages Mall",
+          "disabled": true,
           "settings": {
             "name": "Packages Mall",
             "address": "Shop # 1063, Packages Mall, Main Walton Road",
@@ -113,6 +120,7 @@
         "lhr_2": {
           "type": "store",
           "name": "Fortress Square Mall",
+          "disabled": true,
           "settings": {
             "name": "Fortress Square Mall",
             "address": "Shop No 58 & 61, Fortress Square Mall",
@@ -127,6 +135,7 @@
         "lhr_3": {
           "type": "store",
           "name": "Hyper Star, Fortress Stadium",
+          "disabled": true,
           "settings": {
             "name": "Hyper Star, Fortress Stadium",
             "address": "Ground Floor, Opposite Counter No. 23, Fortress Stadium",
@@ -156,6 +165,7 @@
         "lhr_5": {
           "type": "store",
           "name": "Emporium Mall",
+          "disabled": true,
           "settings": {
             "name": "Emporium Mall",
             "address": "Shop # 45 G, Ground Floor, Emporium Mall, Johar Town",
@@ -170,6 +180,7 @@
         "lhr_6": {
           "type": "store",
           "name": "Bahria Town",
+          "disabled": true,
           "settings": {
             "name": "Bahria Town",
             "address": "Beauty n Style 174, Commercial Zone Sector C, Block-B, Bahria Town",
@@ -184,6 +195,7 @@
         "isb_1": {
           "type": "store",
           "name": "Centaurus Mall",
+          "disabled": true,
           "settings": {
             "name": "Centaurus Mall",
             "address": "Shop # 211, 2nd Floor, Centaurus Mall, 1 Jinnah Avenue, Sec F-8",
@@ -198,6 +210,7 @@
         "mul_1": {
           "type": "store",
           "name": "Saddar Bazaar",
+          "disabled": true,
           "settings": {
             "name": "Saddar Bazaar",
             "address": "Shop # 39 & 40, Ghani Bukhari Road, Saddar Bazaar, Cantt",
@@ -212,6 +225,7 @@
         "mul_2": {
           "type": "store",
           "name": "Sharif Complex",
+          "disabled": true,
           "settings": {
             "name": "Sharif Complex",
             "address": "20/A Sharif Complex, Shop # 1, Tahseel Chowk, Near Shell Petrol Pump, Gulgasht",
@@ -226,6 +240,7 @@
         "skt_1": {
           "type": "store",
           "name": "V-Mall",
+          "disabled": true,
           "settings": {
             "name": "V-Mall",
             "address": "Shop # 8, 15 Div. V-Mall, Sialkot Cantonment",
@@ -240,6 +255,7 @@
         "skt_2": {
           "type": "store",
           "name": "Mall of Sialkot",
+          "disabled": true,
           "settings": {
             "name": "Mall of Sialkot",
             "address": "Shop # 9, Ground Floor, Mall of Sialkot, Aziz Shaheed Road, Cantt",
@@ -254,6 +270,7 @@
         "fsd_1": {
           "type": "store",
           "name": "Kohinoor City",
+          "disabled": true,
           "settings": {
             "name": "Kohinoor City",
             "address": "Mezzanine Floor, Centre Point Plaza, Kohinoor City",
@@ -268,6 +285,7 @@
         "fsd_2": {
           "type": "store",
           "name": "Lyallpur Galleria",
+          "disabled": true,
           "settings": {
             "name": "Lyallpur Galleria",
             "address": "Shop # 9, First Floor, Lyallpur Galleria, East Canal Road",
@@ -282,6 +300,7 @@
         "hyd_1": {
           "type": "store",
           "name": "Rabi Centre",
+          "disabled": true,
           "settings": {
             "name": "Rabi Centre",
             "address": "Ground Floor, Rabi Centre Saddar, Cantt",
@@ -296,6 +315,7 @@
         "rwp_1": {
           "type": "store",
           "name": "Rose Arcade",
+          "disabled": true,
           "settings": {
             "name": "Rose Arcade",
             "address": "1st Floor, Rose Arcade, Rehmanabad Chowk",
@@ -310,6 +330,7 @@
         "bwp_1": {
           "type": "store",
           "name": "Jhandir Plaza",
+          "disabled": true,
           "settings": {
             "name": "Jhandir Plaza",
             "address": "Shop # 1, 9-C, Model Town, Block A, Jhandir Plaza",
@@ -324,6 +345,7 @@
         "skr_1": {
           "type": "store",
           "name": "Aqsa Tower",
+          "disabled": true,
           "settings": {
             "name": "Aqsa Tower",
             "address": "Shop # 4, Ground Floor, Aqsa Tower, Mission Road",
@@ -338,6 +360,7 @@
         "grw_1": {
           "type": "store",
           "name": "Malik Tower",
+          "disabled": true,
           "settings": {
             "name": "Malik Tower",
             "address": "405-C, Ground Floor, Malik Tower, Main Market, Satellite Town",
@@ -347,34 +370,6 @@
             "hours": "",
             "directions_url": "",
             "map_embed_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3377.5669342638043!2d74.19666681464774!3d32.161983522397364!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391f2b7e8093e489%3A0xcf3dcbc4316cc49d!2sMakeup%20City%20Gujranwala!5e0!3m2!1sen!2s!4v1662443661698!5m2!1sen!2s"
-          }
-        },
-        "gjt_1": {
-          "type": "store",
-          "disabled": true,
-          "settings": {
-            "name": "Kacheri Road",
-            "address": "Kacheri Road, Opp: Eden Rode",
-            "city": "Gujrat",
-            "postal_code": "",
-            "phone": "053-3515388",
-            "hours": "",
-            "directions_url": "",
-            "map_embed_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3362.049301965816!2d74.07781721465885!3d32.57820920140398!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391f1b48185c52f5%3A0x8c8121469add83ec!2sMake-up%20City!5e0!3m2!1sen!2s!4v1662443918096!5m2!1sen!2s"
-          }
-        },
-        "jhg_1": {
-          "type": "store",
-          "disabled": true,
-          "settings": {
-            "name": "GTS Mall",
-            "address": "GTS Mall, Session Chowk Saddar",
-            "city": "Jhang",
-            "postal_code": "",
-            "phone": "0308-0622961",
-            "hours": "",
-            "directions_url": "",
-            "map_embed_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3410.1001355979915!2d72.31689721462457!3d31.273325266429175!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x392399c5c92b8ddb%3A0x4f404e0996b896bf!2sUnze%20London!5e0!3m2!1sen!2s!4v1662444173001!5m2!1sen!2s"
           }
         }
       },
@@ -402,9 +397,7 @@
         "rwp_1",
         "bwp_1",
         "skr_1",
-        "grw_1",
-        "gjt_1",
-        "jhg_1"
+        "grw_1"
       ],
       "settings": {
         "heading": "Find a Store Near You",
