@@ -26,25 +26,9 @@
             "map_embed_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3619.6289162562675!2d67.06049081447783!3d24.876520550741386!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33fefc178f38f%3A0x1194fc6589fcf302!2sMakeup%20City%20Dolmen%20Mall%20Tariq%20Road!5e0!3m2!1sen!2s!4v1662379073102!5m2!1sen!2s"
           }
         },
-        "khi_2": {
-          "type": "store",
-          "name": "Dolmen Mall, Tariq Road",
-          "disabled": true,
-          "settings": {
-            "name": "Dolmen Mall, Tariq Road",
-            "address": "Shop # TF-1, 3rd Floor, Block No.3, Dolmen Mall, Tariq Road",
-            "city": "Karachi",
-            "postal_code": "",
-            "phone": "021-34321536",
-            "hours": "",
-            "directions_url": "",
-            "map_embed_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14478.51170882996!2d67.05392472202102!3d24.87655431455703!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33f72188a44f1%3A0x5b84e7837ce702ce!2sMakeup%20City%20-%20Cosmetics%20Store%20Pakistan!5e0!3m2!1sen!2s!4v1662379334936!5m2!1sen!2s"
-          }
-        },
         "khi_3": {
           "type": "store",
           "name": "LuckyOne Mall",
-          "disabled": true,
           "settings": {
             "name": "LuckyOne Mall",
             "address": "LG 15 & 16, LuckyOne Mall, Rashid Minhas Road",
@@ -56,25 +40,23 @@
             "map_embed_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3617.991559675814!2d67.0850751144791!3d24.932357448513507!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33f3591b096dd%3A0x60f66b1ffa8e34f9!2sMakeup%20City%20-%20LuckyOne%20Mall!5e0!3m2!1sen!2s!4v1662379441791!5m2!1sen!2s"
           }
         },
-        "khi_4": {
+        "khi_2": {
           "type": "store",
-          "name": "Ocean Mall",
-          "disabled": true,
+          "name": "Dolmen Mall, Tariq Road",
           "settings": {
-            "name": "Ocean Mall",
-            "address": "Shop # G-12, Ground Floor, Ocean Mall, Clifton",
+            "name": "Dolmen Mall, Tariq Road",
+            "address": "Shop # TF-1, 3rd Floor, Block No.3, Dolmen Mall, Tariq Road",
             "city": "Karachi",
             "postal_code": "",
-            "phone": "021-35141029",
+            "phone": "021-34321536",
             "hours": "",
             "directions_url": "",
-            "map_embed_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3621.172586266433!2d67.0335302144768!3d24.8237708528418!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33db741684d5b%3A0xef304705395ee089!2sMakeup%20City%20Ocean%20Mall!5e0!3m2!1sen!2s!4v1662379599755!5m2!1sen!2s"
+            "map_embed_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14478.51170882996!2d67.05392472202102!3d24.87655431455703!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33f72188a44f1%3A0x5b84e7837ce702ce!2sMakeup%20City%20-%20Cosmetics%20Store%20Pakistan!5e0!3m2!1sen!2s!4v1662379334936!5m2!1sen!2s"
           }
         },
         "khi_5": {
           "type": "store",
           "name": "Dolmen Mall, Clifton",
-          "disabled": true,
           "settings": {
             "name": "Dolmen Mall, Clifton",
             "address": "Shop # G-6 & 7, Next to Carrefour, Dolmen Mall, Clifton",
@@ -86,10 +68,23 @@
             "map_embed_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3621.8171359888524!2d67.02867951447634!3d24.801714453718823!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33d30d192a78d%3A0xb388ff6ae9f65059!2sMakeup%20City%20-%20Dolmen%20Mall%20Clifton!5e0!3m2!1sen!2s!4v1662379681309!5m2!1sen!2s"
           }
         },
+        "khi_4": {
+          "type": "store",
+          "name": "Ocean Mall",
+          "settings": {
+            "name": "Ocean Mall",
+            "address": "Shop # G-12, Ground Floor, Ocean Mall, Clifton",
+            "city": "Karachi",
+            "postal_code": "",
+            "phone": "021-35141029",
+            "hours": "",
+            "directions_url": "",
+            "map_embed_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3621.172586266433!2d67.0335302144768!3d24.8237708528418!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33db741684d5b%3A0xef304705395ee089!2sMakeup%20City%20Ocean%20Mall!5e0!3m2!1sen!2s!4v1662379599755!5m2!1sen!2s"
+          }
+        },
         "khi_6": {
           "type": "store",
           "name": "Square One Mall",
-          "disabled": true,
           "settings": {
             "name": "Square One Mall",
             "address": "Ground Floor, Near Askari IV, National Stadium Road, Gulshan-e-Iqbal",
@@ -99,6 +94,48 @@
             "hours": "",
             "directions_url": "",
             "map_embed_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3618.909311573456!2d67.1113361761101!3d24.901074843629765!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33923c4c859f5%3A0x4ca89b0a2f59cf8d!2sSquare%20One%20Mall!5e0!3m2!1sen!2s!4v1698046852287!5m2!1sen!2s"
+          }
+        },
+        "hyd_1": {
+          "type": "store",
+          "name": "Rabi Centre",
+          "settings": {
+            "name": "Rabi Centre",
+            "address": "Ground Floor, Rabi Centre Saddar, Cantt",
+            "city": "Hyderabad",
+            "postal_code": "",
+            "phone": "022-2784665",
+            "hours": "",
+            "directions_url": "",
+            "map_embed_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3604.268474537017!2d68.3557546144884!3d25.39582232984662!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x394c7105e54d61c3%3A0x8f15e66fc5d52c1e!2sMakeup%20City%20Hyderabad!5e0!3m2!1sen!2s!4v1662443147369!5m2!1sen!2s"
+          }
+        },
+        "skr_1": {
+          "type": "store",
+          "name": "Aqsa Tower",
+          "settings": {
+            "name": "Aqsa Tower",
+            "address": "Shop # 4, Ground Floor, Aqsa Tower, Mission Road",
+            "city": "Sukkur",
+            "postal_code": "",
+            "phone": "071-5627901",
+            "hours": "",
+            "directions_url": "",
+            "map_embed_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.5253242199005!2d68.88285821453815!3d27.70106223237622!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3935d5c1bb4f0407%3A0xfa1ec10406df1bcb!2sMakeup%20City%20Sukkur!5e0!3m2!1sen!2s!4v1662443585233!5m2!1sen!2s"
+          }
+        },
+        "bwp_1": {
+          "type": "store",
+          "name": "Jhandir Plaza",
+          "settings": {
+            "name": "Jhandir Plaza",
+            "address": "Shop # 1, 9-C, Model Town, Block A, Jhandir Plaza",
+            "city": "Bahawalpur",
+            "postal_code": "",
+            "phone": "062-2885133",
+            "hours": "",
+            "directions_url": "",
+            "map_embed_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13906.644485192208!2d71.65000720781248!3d29.380210099999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x393b97694a81d7df%3A0x2727708bddcfc691!2sMakeup%20City%20Bahawlpur!5e0!3m2!1sen!2s!4v1662443509953!5m2!1sen!2s"
           }
         },
         "lhr_1": {
@@ -296,21 +333,6 @@
             "map_embed_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d851.0308284809851!2d73.13134332918504!3d31.43827194307152!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3922699d8cd7e9cb%3A0x8d6ff3a6fec7865f!2sMakeup%20City%20Lyallupur!5e0!3m2!1sen!2s!4v1662443016288!5m2!1sen!2s"
           }
         },
-        "hyd_1": {
-          "type": "store",
-          "name": "Rabi Centre",
-          "disabled": true,
-          "settings": {
-            "name": "Rabi Centre",
-            "address": "Ground Floor, Rabi Centre Saddar, Cantt",
-            "city": "Hyderabad",
-            "postal_code": "",
-            "phone": "022-2784665",
-            "hours": "",
-            "directions_url": "",
-            "map_embed_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3604.268474537017!2d68.3557546144884!3d25.39582232984662!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x394c7105e54d61c3%3A0x8f15e66fc5d52c1e!2sMakeup%20City%20Hyderabad!5e0!3m2!1sen!2s!4v1662443147369!5m2!1sen!2s"
-          }
-        },
         "rwp_1": {
           "type": "store",
           "name": "Rose Arcade",
@@ -324,36 +346,6 @@
             "hours": "",
             "directions_url": "",
             "map_embed_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3321.7336899525217!2d73.07374231468766!3d33.63814644688662!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38df95a5de379cf1%3A0xafa0fabfa01c3df7!2sMakeup%20City%20Rawalpindi!5e0!3m2!1sen!2s!4v1662443269233!5m2!1sen!2s"
-          }
-        },
-        "bwp_1": {
-          "type": "store",
-          "name": "Jhandir Plaza",
-          "disabled": true,
-          "settings": {
-            "name": "Jhandir Plaza",
-            "address": "Shop # 1, 9-C, Model Town, Block A, Jhandir Plaza",
-            "city": "Bahawalpur",
-            "postal_code": "",
-            "phone": "062-2885133",
-            "hours": "",
-            "directions_url": "",
-            "map_embed_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13906.644485192208!2d71.65000720781248!3d29.380210099999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x393b97694a81d7df%3A0x2727708bddcfc691!2sMakeup%20City%20Bahawlpur!5e0!3m2!1sen!2s!4v1662443509953!5m2!1sen!2s"
-          }
-        },
-        "skr_1": {
-          "type": "store",
-          "name": "Aqsa Tower",
-          "disabled": true,
-          "settings": {
-            "name": "Aqsa Tower",
-            "address": "Shop # 4, Ground Floor, Aqsa Tower, Mission Road",
-            "city": "Sukkur",
-            "postal_code": "",
-            "phone": "071-5627901",
-            "hours": "",
-            "directions_url": "",
-            "map_embed_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.5253242199005!2d68.88285821453815!3d27.70106223237622!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3935d5c1bb4f0407%3A0xfa1ec10406df1bcb!2sMakeup%20City%20Sukkur!5e0!3m2!1sen!2s!4v1662443585233!5m2!1sen!2s"
           }
         },
         "grw_1": {
@@ -374,11 +366,14 @@
       },
       "block_order": [
         "khi_1",
-        "khi_2",
         "khi_3",
-        "khi_4",
+        "khi_2",
         "khi_5",
+        "khi_4",
         "khi_6",
+        "hyd_1",
+        "skr_1",
+        "bwp_1",
         "lhr_1",
         "lhr_2",
         "lhr_3",
@@ -392,10 +387,7 @@
         "skt_2",
         "fsd_1",
         "fsd_2",
-        "hyd_1",
         "rwp_1",
-        "bwp_1",
-        "skr_1",
         "grw_1"
       ],
       "settings": {
