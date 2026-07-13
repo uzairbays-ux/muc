@@ -1385,7 +1385,7 @@
         "card_9PabLY": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/fara_600_x_375_Banners_copy.jpg",
+            "image": "shopify://shop_images/600_x_375_Banners_copy_fara.webp",
             "link": "shopify://collections/fara",
             "open_new_tab": false
           }
@@ -1393,7 +1393,7 @@
         "card_rhG3VD": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/elvawn_600_x_375_Banners_copy.jpg",
+            "image": "shopify://shop_images/600_x_375_Banners_copy_elvwan.webp",
             "link": "shopify://collections/elvawn",
             "open_new_tab": false
           }
