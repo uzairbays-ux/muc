@@ -20,7 +20,7 @@
             "address": "756-C, Central Commercial Area, Behind Tariq Center, Tariq Road",
             "city": "Karachi",
             "postal_code": "",
-            "phone": "021-34302233",
+            "phone": "021-34300799",
             "hours": "",
             "directions_url": "",
             "map_embed_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3619.6289162562675!2d67.06049081447783!3d24.876520550741386!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33fefc178f38f%3A0x1194fc6589fcf302!2sMakeup%20City%20Dolmen%20Mall%20Tariq%20Road!5e0!3m2!1sen!2s!4v1662379073102!5m2!1sen!2s"
@@ -59,10 +59,10 @@
           "name": "Dolmen Mall, Clifton",
           "settings": {
             "name": "Dolmen Mall, Clifton",
-            "address": "Shop # G-6 & 7, Next to Carrefour, Dolmen Mall, Clifton",
+            "address": "Shop # S-29, 2nd Floor, Dolmen Mall, Clifton",
             "city": "Karachi",
             "postal_code": "",
-            "phone": "021-35294001",
+            "phone": "021-38890302",
             "hours": "",
             "directions_url": "",
             "map_embed_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3621.8171359888524!2d67.02867951447634!3d24.801714453718823!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33d30d192a78d%3A0xb388ff6ae9f65059!2sMakeup%20City%20-%20Dolmen%20Mall%20Clifton!5e0!3m2!1sen!2s!4v1662379681309!5m2!1sen!2s"
@@ -182,6 +182,7 @@
         },
         "lhr_3": {
           "type": "store",
+          "disabled": true,
           "name": "Hyper Star, Fortress Stadium",
           "settings": {
             "name": "Hyper Star, Fortress Stadium",
@@ -238,6 +239,7 @@
         },
         "mul_1": {
           "type": "store",
+          "disabled": true,
           "name": "Saddar Bazaar",
           "settings": {
             "name": "Saddar Bazaar",
@@ -280,6 +282,7 @@
         },
         "rwp_1": {
           "type": "store",
+          "disabled": true,
           "name": "Rose Arcade",
           "settings": {
             "name": "Rose Arcade",
@@ -334,6 +337,48 @@
             "map_embed_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d851.0308284809851!2d73.13134332918504!3d31.43827194307152!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3922699d8cd7e9cb%3A0x8d6ff3a6fec7865f!2sMakeup%20City%20Lyallupur!5e0!3m2!1sen!2s!4v1662443016288!5m2!1sen!2s"
           }
         },
+        "lhr_7": {
+          "type": "store",
+          "name": "Dolmen Mall Lahore",
+          "settings": {
+            "name": "Dolmen Mall Lahore",
+            "address": "Shop # F-26, First Floor, Dolmen Mall, DHA Phase 6",
+            "city": "Lahore",
+            "postal_code": "",
+            "phone": "042-37263016",
+            "hours": "",
+            "directions_url": "",
+            "map_embed_url": "https://maps.google.com/maps?q=Makeup%20City%20Dolmen%20Mall%20Lahore%20DHA%20Phase%206&output=embed"
+          }
+        },
+        "mul_3": {
+          "type": "store",
+          "name": "Mall of Multan",
+          "settings": {
+            "name": "Mall of Multan",
+            "address": "2nd Floor, Mall of Multan, Bosan Road, Near Toyota Showroom",
+            "city": "Multan",
+            "postal_code": "",
+            "phone": "0319-1361103",
+            "hours": "",
+            "directions_url": "",
+            "map_embed_url": "https://maps.google.com/maps?q=Makeup%20City%20Mall%20of%20Multan%20Bosan%20Road&output=embed"
+          }
+        },
+        "gjt_1": {
+          "type": "store",
+          "name": "Kacheri Road",
+          "settings": {
+            "name": "Kacheri Road",
+            "address": "Makeup City, Kacheri Road, Opp. Eden Rode",
+            "city": "Gujrat",
+            "postal_code": "",
+            "phone": "053-3515388",
+            "hours": "",
+            "directions_url": "",
+            "map_embed_url": "https://maps.google.com/maps?q=Makeup%20City%20Kacheri%20Road%20Gujrat&output=embed"
+          }
+        },
         "isb_1": {
           "type": "store",
           "name": "Centaurus Mall",
@@ -360,7 +405,9 @@
         "skr_1",
         "bwp_1",
         "mul_2",
+        "mul_3",
         "lhr_1",
+        "lhr_7",
         "lhr_2",
         "lhr_3",
         "lhr_4",
@@ -373,6 +420,7 @@
         "grw_1",
         "fsd_1",
         "fsd_2",
+        "gjt_1",
         "isb_1"
       ],
       "settings": {
