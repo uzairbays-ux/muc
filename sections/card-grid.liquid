@@ -13,7 +13,7 @@
   assign mobile_side_padding = s.mobile_side_padding | default: 0
 %}
 
-<div class="section-background color-{{ s.color_scheme }}"></div>
+<div class="section-background color-{{ s.color_scheme }}"{% if s.background_image != blank %} style="background-image: url('{{ s.background_image | image_url: width: 1920 }}'); background-position: center center; background-size: cover; background-repeat: no-repeat;"{% endif %}></div>
 <div
   class="section section--{{ s.section_width }} color-{{ s.color_scheme }} spacing-style"
   style="{% render 'spacing-style', settings: s %}"
@@ -449,6 +449,12 @@
     {
       "type": "header",
       "content": "Layout"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background image",
+      "info": "Displayed behind the section. Defaults to center center cover."
     },
     {
       "type": "select",
