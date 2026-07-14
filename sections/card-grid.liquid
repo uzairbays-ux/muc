@@ -13,7 +13,27 @@
   assign mobile_side_padding = s.mobile_side_padding | default: 0
 %}
 
-<div class="section-background color-{{ s.color_scheme }}"{% if s.background_image != blank %} style="background-image: url('{{ s.background_image | image_url: width: 1920 }}'); background-position: center center; background-size: cover; background-repeat: no-repeat;"{% endif %}></div>
+{% liquid
+  assign bg_styles = ''
+  if s.background_image != blank or s.gradient_color_1 != blank or s.gradient_color_2 != blank
+    assign bg_layers = ''
+    if s.gradient_color_1 != blank and s.gradient_color_2 != blank
+      assign grad_opacity = s.gradient_opacity | default: 50 | divided_by: 100.0
+      assign grad_dir = s.gradient_direction | default: 'to bottom'
+      assign bg_layers = 'linear-gradient(' | append: grad_dir | append: ', rgba(' | append: s.gradient_color_1.red | append: ',' | append: s.gradient_color_1.green | append: ',' | append: s.gradient_color_1.blue | append: ',' | append: grad_opacity | append: '), rgba(' | append: s.gradient_color_2.red | append: ',' | append: s.gradient_color_2.green | append: ',' | append: s.gradient_color_2.blue | append: ',' | append: grad_opacity | append: '))'
+    endif
+    if s.background_image != blank
+      assign img_layer = 'url(' | append: s.background_image | image_url: width: 1920 | append: ')'
+      if bg_layers != ''
+        assign bg_layers = bg_layers | append: ', ' | append: img_layer
+      else
+        assign bg_layers = img_layer
+      endif
+    endif
+    assign bg_styles = 'background-image: ' | append: bg_layers | append: '; background-position: center center; background-size: cover; background-repeat: no-repeat;'
+  endif
+%}
+<div class="section-background color-{{ s.color_scheme }}"{% if bg_styles != '' %} style="{{ bg_styles }}"{% endif %}></div>
 <div
   class="section section--{{ s.section_width }} color-{{ s.color_scheme }} spacing-style"
   style="{% render 'spacing-style', settings: s %}"
@@ -455,6 +475,42 @@
       "id": "background_image",
       "label": "Background image",
       "info": "Displayed behind the section. Defaults to center center cover."
+    },
+    {
+      "type": "color",
+      "id": "gradient_color_1",
+      "label": "Gradient color 1",
+      "info": "Start color of the gradient overlay."
+    },
+    {
+      "type": "color",
+      "id": "gradient_color_2",
+      "label": "Gradient color 2",
+      "info": "End color of the gradient overlay."
+    },
+    {
+      "type": "range",
+      "id": "gradient_opacity",
+      "label": "Gradient opacity",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 50
+    },
+    {
+      "type": "select",
+      "id": "gradient_direction",
+      "label": "Gradient direction",
+      "options": [
+        { "value": "to right", "label": "Left to right" },
+        { "value": "to left", "label": "Right to left" },
+        { "value": "to bottom", "label": "Top to bottom" },
+        { "value": "to top", "label": "Bottom to top" },
+        { "value": "to bottom right", "label": "Diagonal down" },
+        { "value": "to top right", "label": "Diagonal up" }
+      ],
+      "default": "to bottom"
     },
     {
       "type": "select",
