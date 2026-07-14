@@ -1135,6 +1135,7 @@
         },
         "card_tBr3yf": {
           "type": "card",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/sheglam_logo_flat_20_off_500x500_183d5dff-d08b-47a1-a50b-2c6dae5403b6.png",
             "link": "shopify://collections/sheglam",
@@ -1143,6 +1144,7 @@
         },
         "card_djrWXM": {
           "type": "card",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/tarte_logo_flat_20_off_500x500_v2.png",
             "link": "shopify://collections/tarte",
@@ -1151,6 +1153,7 @@
         },
         "card_wkmjxd": {
           "type": "card",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/charlotte_tilbury_logo_enhanced_500x500_0f33ca02-cd18-4743-b2dd-ee0f456ee583.webp",
             "link": "shopify://collections/charlotte-tilbury",
@@ -1159,6 +1162,7 @@
         },
         "card_TrfdaU": {
           "type": "card",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/dior_replaced_logo_500x500_db799f39-b2fa-4106-b973-64884358351f.webp",
             "link": "shopify://collections/dior",
@@ -1167,6 +1171,7 @@
         },
         "card_JFEeE9": {
           "type": "card",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/OLAPLEX_Image_Jul_7_2026_11_30_41_AM.webp",
             "link": "shopify://collections/olaplex",
@@ -1175,6 +1180,7 @@
         },
         "card_kzxKcf": {
           "type": "card",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Rare_beauty_e_Jul_2_2026_11_02_19_AM.webp",
             "link": "shopify://collections/rare-beauty",
@@ -1183,6 +1189,7 @@
         },
         "card_xxU9nH": {
           "type": "card",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/rhode_Image_Jul_8_2026_09_44_41_AM.webp",
             "link": "shopify://collections/rhode",
@@ -1208,6 +1215,138 @@
         "heading": "Premium Brands",
         "subheading": "",
         "heading_alignment": "center",
+        "desktop_layout": "grid",
+        "mobile_layout": "grid",
+        "desktop_columns": "4",
+        "mobile_columns": "2",
+        "desktop_slider_per_view": "4",
+        "mobile_slider_per_view": "2",
+        "auto_rotate": true,
+        "rotate_interval": 4,
+        "gap": 10,
+        "desktop_side_padding": 0,
+        "mobile_side_padding": 0,
+        "section_width": "page-width",
+        "color_scheme": "",
+        "padding-block-start": 0,
+        "padding-block-end": 10
+      }
+    },
+    "card_grid_TjTiTr": {
+      "type": "card-grid",
+      "blocks": {
+        "card_HP6WDU": {
+          "type": "card",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/huda_beauty_flat_20_off_500x500_v2.png",
+            "link": "shopify://collections/huda-beauty",
+            "open_new_tab": false
+          }
+        },
+        "card_GfdFFC": {
+          "type": "card",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/morphe_logo_flat_20_off_500x500_ce72c647-522b-4b4f-9f96-2f0c25038294.png",
+            "link": "shopify://collections/morphe",
+            "open_new_tab": false
+          }
+        },
+        "card_WEPLyT": {
+          "type": "card",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/nyx_logo_aligned_white_box_500x500_393b5a2b-c03b-43df-a57d-5d8eaa54d5a9.png",
+            "link": "shopify://collections/nyx",
+            "open_new_tab": false
+          }
+        },
+        "card_RfbTim": {
+          "type": "card",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/one_size_logo_flat_20_off_500x500_42994c4e-e45a-4cdf-b761-1d09f07bb440.png",
+            "link": "shopify://collections/o-s",
+            "open_new_tab": false
+          }
+        },
+        "card_wKRFBX": {
+          "type": "card",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/sheglam_logo_flat_20_off_500x500_183d5dff-d08b-47a1-a50b-2c6dae5403b6.png",
+            "link": "shopify://collections/sheglam",
+            "open_new_tab": false
+          }
+        },
+        "card_7y6cCp": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/tarte_logo_flat_20_off_500x500_v2.png",
+            "link": "shopify://collections/tarte",
+            "open_new_tab": false
+          }
+        },
+        "card_fP7BL6": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/charlotte_tilbury_logo_enhanced_500x500_0f33ca02-cd18-4743-b2dd-ee0f456ee583.webp",
+            "link": "shopify://collections/charlotte-tilbury",
+            "open_new_tab": false
+          }
+        },
+        "card_hAch3i": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/dior_replaced_logo_500x500_db799f39-b2fa-4106-b973-64884358351f.webp",
+            "link": "shopify://collections/dior",
+            "open_new_tab": false
+          }
+        },
+        "card_pDmnkE": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/OLAPLEX_Image_Jul_7_2026_11_30_41_AM.webp",
+            "link": "shopify://collections/olaplex",
+            "open_new_tab": false
+          }
+        },
+        "card_hhYxMp": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/Rare_beauty_e_Jul_2_2026_11_02_19_AM.webp",
+            "link": "shopify://collections/rare-beauty",
+            "open_new_tab": false
+          }
+        },
+        "card_A9eJDx": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/rhode_Image_Jul_8_2026_09_44_41_AM.webp",
+            "link": "shopify://collections/rhode",
+            "open_new_tab": false
+          }
+        }
+      },
+      "block_order": [
+        "card_HP6WDU",
+        "card_GfdFFC",
+        "card_WEPLyT",
+        "card_RfbTim",
+        "card_wKRFBX",
+        "card_7y6cCp",
+        "card_fP7BL6",
+        "card_hAch3i",
+        "card_pDmnkE",
+        "card_hhYxMp",
+        "card_A9eJDx"
+      ],
+      "name": "Card grid",
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "heading_alignment": "center",
         "desktop_layout": "slider",
         "mobile_layout": "slider",
         "desktop_columns": "4",
@@ -1222,7 +1361,7 @@
         "section_width": "page-width",
         "color_scheme": "",
         "padding-block-start": 0,
-        "padding-block-end": 0
+        "padding-block-end": 20
       }
     },
     "card_grid_tLffKU": {
@@ -2465,6 +2604,7 @@
     "card_grid_TBdpWJ",
     "product_list_CVJar6",
     "card_grid_MnB8Gn",
+    "card_grid_TjTiTr",
     "card_grid_tLffKU",
     "card_grid_GWUm6j",
     "stacked_banners_QWcUpX",
