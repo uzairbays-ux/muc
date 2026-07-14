@@ -48,54 +48,65 @@
     </div>
   {%- endif -%}
 
-  <card-grid-slider
-    class="card-grid__grid"
-    data-desktop-layout="{{ desktop_layout }}"
-    data-mobile-layout="{{ mobile_layout }}"
-    data-auto-rotate="{{ auto_rotate }}"
-    data-rotate-interval="{{ rotate_interval }}"
-    style="--cg-desktop-cols: {{ desktop_columns }}; --cg-mobile-cols: {{ mobile_columns }}; --cg-desktop-per-view: {{ desktop_slider_per_view }}; --cg-mobile-per-view: {{ mobile_slider_per_view }}; --cg-gap: {{ gap }}px; --cg-desktop-side-padding: {{ desktop_side_padding }}px; --cg-mobile-side-padding: {{ mobile_side_padding }}px;"
-  >
-    {%- for block in section.blocks -%}
-      {%- assign b = block.settings -%}
-      <div class="card-grid__item" {{ block.shopify_attributes }}>
-        {%- if b.link != blank -%}
-          <a href="{{ b.link }}" class="card-grid__link" {% if b.open_new_tab %}target="_blank" rel="noopener"{% endif %}>
-        {%- endif -%}
-          <div class="card-grid__image-wrapper">
-            {%- if b.image != blank -%}
-              {{
-                b.image
-                | image_url: width: 900
-                | image_tag:
-                  loading: 'lazy',
-                  widths: '400,600,750,900',
-                  sizes: '(max-width: 749px) 50vw, 25vw',
-                  class: 'card-grid__image',
-                  alt: b.image.alt | default: ''
-              }}
-            {%- else -%}
+  <div class="card-grid__slider-wrapper">
+    <card-grid-slider
+      class="card-grid__grid"
+      data-desktop-layout="{{ desktop_layout }}"
+      data-mobile-layout="{{ mobile_layout }}"
+      data-auto-rotate="{{ auto_rotate }}"
+      data-rotate-interval="{{ rotate_interval }}"
+      data-show-arrows="{{ s.show_arrows }}"
+      style="--cg-desktop-cols: {{ desktop_columns }}; --cg-mobile-cols: {{ mobile_columns }}; --cg-desktop-per-view: {{ desktop_slider_per_view }}; --cg-mobile-per-view: {{ mobile_slider_per_view }}; --cg-gap: {{ gap }}px; --cg-desktop-side-padding: {{ desktop_side_padding }}px; --cg-mobile-side-padding: {{ mobile_side_padding }}px;"
+    >
+      {%- for block in section.blocks -%}
+        {%- assign b = block.settings -%}
+        <div class="card-grid__item" {{ block.shopify_attributes }}>
+          {%- if b.link != blank -%}
+            <a href="{{ b.link }}" class="card-grid__link" {% if b.open_new_tab %}target="_blank" rel="noopener"{% endif %}>
+          {%- endif -%}
+            <div class="card-grid__image-wrapper">
+              {%- if b.image != blank -%}
+                {{
+                  b.image
+                  | image_url: width: 900
+                  | image_tag:
+                    loading: 'lazy',
+                    widths: '400,600,750,900',
+                    sizes: '(max-width: 749px) 50vw, 25vw',
+                    class: 'card-grid__image',
+                    alt: b.image.alt | default: ''
+                }}
+              {%- else -%}
+                <div class="card-grid__placeholder">
+                  {{ 'collection-1' | placeholder_svg_tag: 'placeholder-svg' }}
+                </div>
+              {%- endif -%}
+            </div>
+          {%- if b.link != blank -%}
+            </a>
+          {%- endif -%}
+        </div>
+      {%- else -%}
+        {%- for i in (1..4) -%}
+          <div class="card-grid__item">
+            <div class="card-grid__image-wrapper">
               <div class="card-grid__placeholder">
                 {{ 'collection-1' | placeholder_svg_tag: 'placeholder-svg' }}
               </div>
-            {%- endif -%}
-          </div>
-        {%- if b.link != blank -%}
-          </a>
-        {%- endif -%}
-      </div>
-    {%- else -%}
-      {%- for i in (1..4) -%}
-        <div class="card-grid__item">
-          <div class="card-grid__image-wrapper">
-            <div class="card-grid__placeholder">
-              {{ 'collection-1' | placeholder_svg_tag: 'placeholder-svg' }}
             </div>
           </div>
-        </div>
+        {%- endfor -%}
       {%- endfor -%}
-    {%- endfor -%}
-  </card-grid-slider>
+    </card-grid-slider>
+    {%- if s.show_arrows -%}
+      <button class="card-grid__arrow card-grid__arrow--prev" aria-label="Previous" data-direction="prev">
+        {{ 'icon-chevron-left.svg' | inline_asset_content }}
+      </button>
+      <button class="card-grid__arrow card-grid__arrow--next" aria-label="Next" data-direction="next">
+        {{ 'icon-chevron-right.svg' | inline_asset_content }}
+      </button>
+    {%- endif -%}
+  </div>
 </div>
 
 {% stylesheet %}
@@ -228,6 +239,57 @@
     height: 50%;
     opacity: 0.3;
   }
+
+  .card-grid__slider-wrapper {
+    position: relative;
+  }
+
+  .card-grid__arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    background-color: rgb(var(--color-background));
+    color: rgb(var(--color-foreground));
+    box-shadow: 0 2px 8px rgb(0 0 0 / 0.15);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    transition: opacity 200ms ease, transform 200ms ease;
+  }
+
+  .card-grid__arrow:hover {
+    transform: translateY(-50%) scale(1.1);
+  }
+
+  .card-grid__arrow svg {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .card-grid__arrow--prev {
+    left: 8px;
+  }
+
+  .card-grid__arrow--next {
+    right: 8px;
+  }
+
+  .card-grid__arrow[disabled] {
+    opacity: 0.3;
+    pointer-events: none;
+  }
 {% endstylesheet %}
 
 <script>
@@ -236,6 +298,8 @@
 
     class CardGridSlider extends HTMLElement {
       connectedCallback() {
+        this._setupArrows();
+
         if (this.dataset.autoRotate !== 'true') return;
 
         const seconds = parseInt(this.dataset.rotateInterval, 10);
@@ -266,6 +330,62 @@
         clearInterval(this._tick);
         clearTimeout(this._resumeTimer);
         if (this._io) this._io.disconnect();
+      }
+
+      _setupArrows() {
+        if (this.dataset.showArrows !== 'true') return;
+
+        const wrapper = this.closest('.card-grid__slider-wrapper');
+        if (!wrapper) return;
+
+        this._prevBtn = wrapper.querySelector('.card-grid__arrow--prev');
+        this._nextBtn = wrapper.querySelector('.card-grid__arrow--next');
+
+        if (this._prevBtn) {
+          this._prevBtn.addEventListener('click', () => this.navigate('prev'));
+        }
+        if (this._nextBtn) {
+          this._nextBtn.addEventListener('click', () => this.navigate('next'));
+        }
+
+        this.addEventListener('scroll', () => this._updateArrowState(), { passive: true });
+        window.addEventListener('resize', () => this._updateArrowState());
+        this._updateArrowState();
+      }
+
+      _updateArrowState() {
+        if (!this._prevBtn || !this._nextBtn) return;
+        if (this.currentLayout() !== 'slider') {
+          this._prevBtn.style.display = 'none';
+          this._nextBtn.style.display = 'none';
+          return;
+        }
+        this._prevBtn.style.display = '';
+        this._nextBtn.style.display = '';
+
+        const atStart = this.scrollLeft <= 2;
+        const atEnd = this.scrollLeft + this.clientWidth >= this.scrollWidth - 2;
+
+        this._prevBtn.disabled = atStart;
+        this._nextBtn.disabled = atEnd;
+      }
+
+      navigate(direction) {
+        if (this.currentLayout() !== 'slider') return;
+        if (this.scrollWidth <= this.clientWidth + 1) return;
+
+        const firstItem = this.querySelector('.card-grid__item');
+        if (!firstItem) return;
+
+        const styles = getComputedStyle(this);
+        const gap = parseFloat(styles.columnGap || styles.gap || '0') || 0;
+        const delta = firstItem.offsetWidth + gap;
+
+        if (direction === 'next') {
+          this.scrollBy({ left: delta, behavior: 'smooth' });
+        } else {
+          this.scrollBy({ left: -delta, behavior: 'smooth' });
+        }
       }
 
       currentLayout() {
@@ -416,6 +536,13 @@
         { "value": "2.5", "label": "2.5" }
       ],
       "default": "1.5"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_arrows",
+      "label": "Show navigation arrows",
+      "info": "Displays prev/next arrows on the slider. Only applies in Slider mode.",
+      "default": false
     },
     {
       "type": "checkbox",
