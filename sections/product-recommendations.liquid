@@ -172,6 +172,90 @@
   </div>
 </product-recommendations>
 
+{% style %}
+  /*
+   * Old-Safari fallback for the product recommendations carousel.
+   *
+   * This theme's carousel/gallery layout relies on native CSS nesting (Safari 16.5+).
+   * On older Safari (e.g. an iPhone X on iOS 16.4) the nested rules that hide a card's
+   * extra images and lay out the slideshow are dropped, so the carousel collapses —
+   * each card stacks all of its product images vertically and the title/price detaches.
+   *
+   * Gated on nesting-detection: "@supports not (selector(and))" (with the CSS nesting
+   * selector) is true only on browsers WITHOUT native CSS nesting (Safari < 16.5), so
+   * this never affects modern browsers. Rendered as an inline style tag — a separate,
+   * flat stylesheet — so it can't be dropped by the nesting-related parse errors in the
+   * main bundle on old Safari. It replaces the broken carousel with a simple, robust
+   * grid of single-image cards.
+   */
+  @supports not (selector(&)) {
+    /* Outer carousel -> responsive grid */
+    product-recommendations .resource-list__carousel > slideshow-container > slideshow-slides {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      overflow: visible;
+      scroll-snap-type: none;
+      padding-inline: 0;
+    }
+
+    product-recommendations
+      .resource-list__carousel
+      > slideshow-container
+      > slideshow-slides
+      > .resource-list__slide {
+      width: auto;
+      max-width: none;
+      scroll-snap-align: none;
+    }
+
+    product-recommendations slideshow-arrows {
+      display: none;
+    }
+
+    @media screen and (min-width: 750px) {
+      product-recommendations .resource-list__carousel > slideshow-container > slideshow-slides {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    /* Inner card gallery -> show only the first image at the configured ratio */
+    product-recommendations .card-gallery slideshow-slides {
+      display: block;
+      overflow: hidden;
+    }
+
+    product-recommendations .card-gallery slideshow-slide {
+      width: 100%;
+    }
+
+    product-recommendations .card-gallery slideshow-slide:not(:first-child) {
+      display: none;
+    }
+
+    product-recommendations .card-gallery .product-media-container {
+      aspect-ratio: auto;
+      position: relative;
+      height: 0;
+      padding-bottom: var(--gallery-ratio-padding, 100%);
+      overflow: hidden;
+    }
+
+    product-recommendations .card-gallery .product-media {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    product-recommendations .card-gallery .product-media__image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+{% endstyle %}
+
 {% schema %}
 {
   "name": "t:names.product_recommendations",
