@@ -44,15 +44,26 @@
   endif
 
   assign ratio = '1'
+  # Padding-bottom equivalent of the ratio (height / width * 100), used by the
+  # iOS < 16.4 aspect-ratio fallback in product-grid.liquid.
+  assign ratio_padding = 100
   case block_settings.image_ratio
     when 'landscape'
       assign ratio = '16 / 9'
+      assign ratio_padding = 56.25
     when 'portrait'
       assign ratio = '4 / 5'
+      assign ratio_padding = 125
     when 'square'
       assign ratio = '1'
+      assign ratio_padding = 100
     when 'adapt'
       assign ratio = product.featured_media.preview_image.aspect_ratio | default: '1'
+      assign adapt_ratio = product.featured_media.preview_image.aspect_ratio | default: 1.0
+      if adapt_ratio == 0.0
+        assign adapt_ratio = 1.0
+      endif
+      assign ratio_padding = 100.0 | divided_by: adapt_ratio
   endcase
 
   if block_settings.image_ratio == 'adapt' and block_settings.constrain_to_viewport
@@ -70,6 +81,7 @@
     {% render 'border-override', settings: block_settings %}
     {% render 'spacing-style', settings: block_settings %}
     --gallery-aspect-ratio: {{ ratio }};
+    --gallery-ratio-padding: {{ ratio_padding }}%;
   "
   data-product-id="{{ product.id }}"
   {% if settings.show_second_image_on_hover %}

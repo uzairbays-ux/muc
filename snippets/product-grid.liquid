@@ -188,12 +188,40 @@
     }
   }
 
-  /* This triggers iOS < 16.4 */
+  /* This targets iOS < 16.4 (e.g. iPhone X on older iOS). */
   @supports not (background-color: rgb(from red 150 g b / alpha)) {
-    /* Force aspect ratio to auto for iOS < 16.4 since it's not compatible with the infinite pagination */
+    /*
+     * iOS < 16.4 mishandles `aspect-ratio` inside the infinite-scroll grid, so the
+     * theme default drops the ratio (`aspect-ratio: auto`) — which lets each card take
+     * its natural (often portrait) height and look inconsistent with newer devices.
+     * Instead, recreate a uniform card with the padding-bottom ratio hack, which
+     * predates the `aspect-ratio` property and isn't affected by the iOS bug.
+     * `--gallery-ratio-padding` is set per card in card-gallery.liquid from the
+     * configured image ratio (100% square, 125% portrait, 56.25% landscape, natural for adapt).
+     */
     .product-grid .product-media,
     .product-grid .product-media-container {
       aspect-ratio: auto;
+    }
+
+    .product-grid .product-media-container {
+      position: relative;
+      height: 0;
+      padding-bottom: var(--gallery-ratio-padding, 100%);
+      overflow: hidden;
+    }
+
+    .product-grid .product-media-container .product-media {
+      position: absolute;
+      inset: 0;
+      height: 100%;
+      width: 100%;
+    }
+
+    .product-grid .product-media-container .product-media__image {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
     }
   }
 
