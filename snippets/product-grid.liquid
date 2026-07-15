@@ -188,16 +188,16 @@
     }
   }
 
-  /* This targets iOS < 16.4 (e.g. iPhone X on older iOS). */
-  @supports not (background-color: rgb(from red 150 g b / alpha)) {
+  /* Targets Safari without native CSS nesting support (iOS < 16.5, e.g. iPhone X on 16.4). */
+  @supports not (selector(&)) {
     /*
-     * iOS < 16.4 mishandles `aspect-ratio` inside the infinite-scroll grid, so the
-     * theme default drops the ratio (`aspect-ratio: auto`) — which lets each card take
-     * its natural (often portrait) height and look inconsistent with newer devices.
-     * Instead, recreate a uniform card with the padding-bottom ratio hack, which
-     * predates the `aspect-ratio` property and isn't affected by the iOS bug.
-     * `--gallery-ratio-padding` is set per card in card-gallery.liquid from the
-     * configured image ratio (100% square, 125% portrait, 56.25% landscape, natural for adapt).
+     * This theme relies on native CSS nesting (Safari 16.5+). On older Safari the nested
+     * rules that give product cards their aspect-ratio are dropped, so images fall back to
+     * their natural (often portrait) height and look inconsistent with newer devices.
+     * Recreate a uniform card with the padding-bottom ratio hack, which predates the
+     * `aspect-ratio` property and needs no nesting. `--gallery-ratio-padding` is set per
+     * card in card-gallery.liquid (100% square, 125% portrait, 56.25% landscape, natural
+     * for adapt). Gated on nesting-detection so modern browsers are never affected.
      */
     .product-grid .product-media,
     .product-grid .product-media-container {
