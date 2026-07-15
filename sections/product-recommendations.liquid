@@ -172,22 +172,23 @@
   </div>
 </product-recommendations>
 
-{% stylesheet %}
+{% style %}
   /*
-   * Old-iOS (Safari < 16.4) fallback for the product recommendations carousel.
+   * Old-Safari fallback for the product recommendations carousel.
    *
-   * This theme's carousel/gallery layout relies on native CSS nesting (Safari 16.5+)
-   * and relative-color syntax (16.4+). On older iOS (e.g. an iPhone X that hasn't been
-   * updated) those rules are dropped and the carousel collapses — each card stacks all
-   * of its product images vertically and the title/price detaches.
+   * This theme's carousel/gallery layout relies on native CSS nesting (Safari 16.5+).
+   * On older Safari (e.g. an iPhone X on iOS 16.4) the nested rules that hide a card's
+   * extra images and lay out the slideshow are dropped, so the carousel collapses —
+   * each card stacks all of its product images vertically and the title/price detaches.
    *
-   * This block is gated on the same relative-color @supports check used in
-   * product-grid.liquid, so it applies ONLY to old iOS and never affects modern
-   * browsers. It replaces the broken carousel with a simple, robust grid of
-   * single-image cards. (@supports/@media at-rule nesting is universally supported and
-   * is unrelated to the style-rule nesting that old Safari lacks.)
+   * Gated on nesting-detection: "@supports not (selector(and))" (with the CSS nesting
+   * selector) is true only on browsers WITHOUT native CSS nesting (Safari < 16.5), so
+   * this never affects modern browsers. Rendered as an inline style tag — a separate,
+   * flat stylesheet — so it can't be dropped by the nesting-related parse errors in the
+   * main bundle on old Safari. It replaces the broken carousel with a simple, robust
+   * grid of single-image cards.
    */
-  @supports not (background-color: rgb(from red 150 g b / alpha)) {
+  @supports not (selector(&)) {
     /* Outer carousel -> responsive grid */
     product-recommendations .resource-list__carousel > slideshow-container > slideshow-slides {
       display: grid;
@@ -253,7 +254,7 @@
       object-fit: cover;
     }
   }
-{% endstylesheet %}
+{% endstyle %}
 
 {% schema %}
 {
