@@ -172,6 +172,89 @@
   </div>
 </product-recommendations>
 
+{% stylesheet %}
+  /*
+   * Old-iOS (Safari < 16.4) fallback for the product recommendations carousel.
+   *
+   * This theme's carousel/gallery layout relies on native CSS nesting (Safari 16.5+)
+   * and relative-color syntax (16.4+). On older iOS (e.g. an iPhone X that hasn't been
+   * updated) those rules are dropped and the carousel collapses — each card stacks all
+   * of its product images vertically and the title/price detaches.
+   *
+   * This block is gated on the same relative-color @supports check used in
+   * product-grid.liquid, so it applies ONLY to old iOS and never affects modern
+   * browsers. It replaces the broken carousel with a simple, robust grid of
+   * single-image cards. (@supports/@media at-rule nesting is universally supported and
+   * is unrelated to the style-rule nesting that old Safari lacks.)
+   */
+  @supports not (background-color: rgb(from red 150 g b / alpha)) {
+    /* Outer carousel -> responsive grid */
+    product-recommendations .resource-list__carousel > slideshow-container > slideshow-slides {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      overflow: visible;
+      scroll-snap-type: none;
+      padding-inline: 0;
+    }
+
+    product-recommendations
+      .resource-list__carousel
+      > slideshow-container
+      > slideshow-slides
+      > .resource-list__slide {
+      width: auto;
+      max-width: none;
+      scroll-snap-align: none;
+    }
+
+    product-recommendations slideshow-arrows {
+      display: none;
+    }
+
+    @media screen and (min-width: 750px) {
+      product-recommendations .resource-list__carousel > slideshow-container > slideshow-slides {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    /* Inner card gallery -> show only the first image at the configured ratio */
+    product-recommendations .card-gallery slideshow-slides {
+      display: block;
+      overflow: hidden;
+    }
+
+    product-recommendations .card-gallery slideshow-slide {
+      width: 100%;
+    }
+
+    product-recommendations .card-gallery slideshow-slide:not(:first-child) {
+      display: none;
+    }
+
+    product-recommendations .card-gallery .product-media-container {
+      aspect-ratio: auto;
+      position: relative;
+      height: 0;
+      padding-bottom: var(--gallery-ratio-padding, 100%);
+      overflow: hidden;
+    }
+
+    product-recommendations .card-gallery .product-media {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    product-recommendations .card-gallery .product-media__image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+{% endstylesheet %}
+
 {% schema %}
 {
   "name": "t:names.product_recommendations",
