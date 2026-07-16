@@ -608,7 +608,7 @@
         "card_CaecqX": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/Kryolan_c34354ab-129e-4ea9-a972-266ac505909e.jpg",
+            "image": "shopify://shop_images/500_x_500_kryolan.jpg",
             "link": "shopify://collections/kryolan",
             "open_new_tab": false
           }
@@ -624,7 +624,7 @@
         "card_QQLjCx": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/Framesi_c2c2accf-d397-4afd-b634-ba55b6a30401.jpg",
+            "image": "shopify://shop_images/500_x_500_framesi.jpg",
             "link": "shopify://collections/framesi",
             "open_new_tab": false
           }
@@ -753,7 +753,7 @@
         "card_J3czmk": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/Lamel_bfa6d78e-6485-42fc-9019-0b9efade32b9.jpg",
+            "image": "shopify://shop_images/500_x_500_lamel.jpg",
             "link": "shopify://collections/lamel",
             "open_new_tab": false
           }
@@ -777,7 +777,7 @@
         "card_ceiizR": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/Gosh_c12b9049-3b3c-41c5-895b-3aea31358942.jpg",
+            "image": "shopify://shop_images/500_x_500_gosh.jpg",
             "link": "shopify://collections/gosh",
             "open_new_tab": false
           }
@@ -785,7 +785,7 @@
         "card_c49pAk": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/B_BW_ef057ea0-8e3c-4e18-b9ac-ec809c03f9a5.jpg",
+            "image": "shopify://shop_images/500_x_500_bath_body.jpg",
             "link": "shopify://collections/bath-body-works",
             "open_new_tab": false
           }
@@ -793,7 +793,7 @@
         "card_AHQBXy": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/La_roche_posay.png",
+            "image": "shopify://shop_images/500_x_500_la_rache_posay.jpg",
             "link": "shopify://collections/la-roche-posay",
             "open_new_tab": false
           }
