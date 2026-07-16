@@ -1607,8 +1607,8 @@
         "banner_nrAdDN": {
           "type": "banner",
           "settings": {
-            "desktop_image": "shopify://shop_images/k-banner-desktop.avif",
-            "mobile_image": "shopify://shop_images/Korean-Brand-Main-Banner_8772b907-db91-4be0-8e76-580735042852.jpg",
+            "desktop_image": "shopify://shop_images/Korean_Brand_Main_Banner_2746_x_572_copy.jpg",
+            "mobile_image": "shopify://shop_images/Korean_Brand_Main_Banner_copy_226acdda-8e93-47ab-9a3c-74f701a82f5c.jpg",
             "link": "shopify://pages/korean-brand-k-beauty",
             "open_new_tab": false
           }
@@ -2138,8 +2138,8 @@
         "banner_Kt9k6X": {
           "type": "banner",
           "settings": {
-            "desktop_image": "shopify://shop_images/chinese-desktop.webp",
-            "mobile_image": "shopify://shop_images/Chinesse_Banner.webp",
+            "desktop_image": "shopify://shop_images/Chinese_Beauty_Main_Banner_2746_x_572_copy.jpg",
+            "mobile_image": "shopify://shop_images/Chinese_Beauty_Main_Banner_copy.jpg",
             "link": "shopify://collections/chinese-brands",
             "open_new_tab": false
           }
