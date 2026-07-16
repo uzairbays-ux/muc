@@ -121,9 +121,9 @@
         "slide_WR6nXe": {
           "type": "slide",
           "settings": {
-            "desktop_image": "shopify://shop_images/Loreal_Banner_jpg.webp",
-            "mobile_image": "shopify://shop_images/Loreal_Banner_jpg_ab163d66-8438-43e8-92b6-dd2639d2fff1.webp",
-            "link": "shopify://collections/loreal-paris",
+            "desktop_image": "shopify://shop_images/main_banner_1920_x_750_copy.jpg",
+            "mobile_image": "shopify://shop_images/main_banner_1920_x_750_copy_ef8d2991-5153-4345-be88-fad913e1958c.jpg",
+            "link": "shopify://collections/sale",
             "open_new_tab": false,
             "alt": ""
           }
