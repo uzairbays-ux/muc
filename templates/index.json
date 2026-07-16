@@ -1390,7 +1390,7 @@
         "card_m4dJ4r": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/Janssen_ea1ffbd1-263f-4cc1-8f34-28b010eeb256.jpg",
+            "image": "shopify://shop_images/600_x_375_janssen.jpg",
             "link": "shopify://collections/janssen",
             "open_new_tab": false
           }
@@ -1406,7 +1406,7 @@
         "card_NaiUMg": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/non-sale-Bourjois.webp",
+            "image": "shopify://shop_images/600_x_375_bourjois.jpg",
             "link": "shopify://collections/bourjois",
             "open_new_tab": false
           }
@@ -1517,7 +1517,7 @@
         "card_wKbPRz": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/non-sale-Essence.webp",
+            "image": "shopify://shop_images/600_x_375_essence.jpg",
             "link": "shopify://collections/essence",
             "open_new_tab": false
           }
@@ -1525,7 +1525,7 @@
         "card_Dj4Jhk": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/Garnier_62bfe2cd-6acc-461d-b3fa-483ed6fb2dce.jpg",
+            "image": "shopify://shop_images/600_x_375_garnier.jpg",
             "link": "shopify://collections/garnier",
             "open_new_tab": false
           }
@@ -1533,7 +1533,7 @@
         "card_VaLrJE": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/Trouble-Maker_01712fde-f567-4af0-a731-45a6b7218eab.jpg",
+            "image": "shopify://shop_images/600_x_375_trouble_maker.jpg",
             "link": "shopify://collections/trouble-maker",
             "open_new_tab": false
           }
@@ -1541,7 +1541,7 @@
         "card_hVQxRA": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/non-sale-Rimmel.webp",
+            "image": "shopify://shop_images/600_x_375_rimmel.jpg",
             "link": "shopify://collections/rimmel-london",
             "open_new_tab": false
           }
@@ -1961,7 +1961,7 @@
         "category_Xea9DL": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/Colorwow_2e03feea-da5f-40dd-8b9e-5b39205f1faf.jpg",
+            "image": "shopify://shop_images/colorwow_small_500_x_500.jpg",
             "label": "",
             "link": "shopify://collections/color-wow",
             "card_background": "rgba(0,0,0,0)"
