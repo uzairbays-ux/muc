@@ -632,7 +632,7 @@
         "card_p9kYBe": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/luscious_f202a624-039f-43ee-9e04-6d2df2c18c9d.jpg",
+            "image": "shopify://shop_images/500_x_500_luscious.jpg",
             "link": "shopify://collections/luscious-cosmetics",
             "open_new_tab": false
           }
@@ -761,7 +761,7 @@
         "card_gBiw68": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/Loreal_98981345-587c-415d-9ca5-535989fd3ca0.jpg",
+            "image": "shopify://shop_images/500_x_500_loreal.jpg",
             "link": "shopify://collections/loreal-paris",
             "open_new_tab": false
           }
@@ -769,7 +769,7 @@
         "card_dnezUz": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/oneskin_500x500_b15373ee-7879-4c39-95e8-542962e84ea1.jpg",
+            "image": "shopify://shop_images/500_x_500_on_skin.jpg",
             "link": "shopify://collections/oneskin",
             "open_new_tab": false
           }
