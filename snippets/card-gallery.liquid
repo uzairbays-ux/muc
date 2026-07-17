@@ -210,6 +210,14 @@
     aspect-ratio: var(--gallery-aspect-ratio);
   }
 
+  /* Inactive slides must not stack vertically — hide them explicitly.
+     The CSS nesting in slideshow-styles.liquid produces a broken selector
+     (slideshow-slide slideshow-component slideshow-slide:not(...)) that
+     never matches, so content-visibility: hidden never fires here. */
+  .card-gallery slideshow-slide:not([aria-hidden='false']):not([hidden]) {
+    display: none;
+  }
+
   .card-gallery__placeholder svg {
     height: 100%;
     width: 100%;
