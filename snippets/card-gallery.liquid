@@ -44,15 +44,20 @@
   endif
 
   assign ratio = '1'
+  assign ratio_number = 1
   case block_settings.image_ratio
     when 'landscape'
       assign ratio = '16 / 9'
+      assign ratio_number = '1.7778'
     when 'portrait'
       assign ratio = '4 / 5'
+      assign ratio_number = '0.8'
     when 'square'
       assign ratio = '1'
+      assign ratio_number = '1'
     when 'adapt'
       assign ratio = product.featured_media.preview_image.aspect_ratio | default: '1'
+      assign ratio_number = product.featured_media.preview_image.aspect_ratio | default: '1'
   endcase
 
   if block_settings.image_ratio == 'adapt' and block_settings.constrain_to_viewport
@@ -70,6 +75,7 @@
     {% render 'border-override', settings: block_settings %}
     {% render 'spacing-style', settings: block_settings %}
     --gallery-aspect-ratio: {{ ratio }};
+    --gallery-aspect-ratio-number: {{ ratio_number }};
   "
   data-product-id="{{ product.id }}"
   {% if settings.show_second_image_on_hover %}
@@ -208,18 +214,17 @@
     container-type: inline-size;
     container-name: card-gallery-container;
     aspect-ratio: var(--gallery-aspect-ratio);
-    /* As a flex item in product-card__content, min-height defaults to auto,
-       which lets content override aspect-ratio. Force it to 0 so the
-       aspect-ratio height is respected and overflow: hidden actually clips. */
+    /* min-height:auto (flex default) lets content override aspect-ratio.
+       Force it to 0 so aspect-ratio + overflow:hidden actually clips. */
     min-height: 0;
   }
 
-  /* Inactive slides must not stack vertically — hide them explicitly.
-     The CSS nesting in slideshow-styles.liquid produces a broken selector
-     (slideshow-slide slideshow-component slideshow-slide:not(...)) that
-     never matches, so content-visibility: hidden never fires here. */
-  .card-gallery slideshow-slide:not([aria-hidden='false']):not([hidden]) {
-    display: block;
+  /* Pin the slideshow to exactly the gallery's intended height using the
+     container's inline size. This is more reliable than relying on
+     aspect-ratio alone in the flex context, and fixes collapsed galleries
+     when content-visibility:auto makes off-screen slides report 0 height. */
+  .card-gallery slideshow-component {
+    height: calc(100cqw / var(--gallery-aspect-ratio-number, 1));
   }
 
   .card-gallery__placeholder svg {
