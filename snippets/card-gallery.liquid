@@ -205,8 +205,9 @@
 {% stylesheet %}
   .card-gallery {
     overflow: hidden;
-    container-type: inline-size; /* Make card-gallery a container */
-    container-name: card-gallery-container; /* Optional: name the container */
+    container-type: inline-size;
+    container-name: card-gallery-container;
+    aspect-ratio: var(--gallery-aspect-ratio);
   }
 
   .card-gallery__placeholder svg {
