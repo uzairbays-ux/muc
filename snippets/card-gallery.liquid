@@ -227,6 +227,22 @@
     height: calc(100cqw / var(--gallery-aspect-ratio-number, 1));
   }
 
+  /*
+   * Variant-image slides in product-recommendations stack vertically because
+   * #updateVariantImages() strips [hidden] from the selected variant's slide,
+   * putting it back in the flex row, but slideshow.select() returns early
+   * (no scroll instance — setupSlideshowWithoutControls ran) so aria-hidden
+   * never gets set to "false" and the slide sits visible-but-unscrolled-to.
+   * Scope to .product-recommendations so home-page and collection carousels
+   * are unaffected. The :not([reveal]) guard preserves the reveal mechanic
+   * used when select() DOES work (non-variant slideshows with a scroll setup).
+   */
+  .product-recommendations
+    .card-gallery
+    slideshow-slide[variant-image]:not([aria-hidden='false']):not([reveal]) {
+    display: none;
+  }
+
   .card-gallery__placeholder svg {
     height: 100%;
     width: 100%;
