@@ -215,7 +215,7 @@
      (slideshow-slide slideshow-component slideshow-slide:not(...)) that
      never matches, so content-visibility: hidden never fires here. */
   .card-gallery slideshow-slide:not([aria-hidden='false']):not([hidden]) {
-    display: none;
+    display: block;
   }
 
   .card-gallery__placeholder svg {
