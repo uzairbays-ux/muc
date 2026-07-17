@@ -208,6 +208,10 @@
     container-type: inline-size;
     container-name: card-gallery-container;
     aspect-ratio: var(--gallery-aspect-ratio);
+    /* As a flex item in product-card__content, min-height defaults to auto,
+       which lets content override aspect-ratio. Force it to 0 so the
+       aspect-ratio height is respected and overflow: hidden actually clips. */
+    min-height: 0;
   }
 
   /* Inactive slides must not stack vertically — hide them explicitly.
