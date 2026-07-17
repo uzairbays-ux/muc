@@ -13,12 +13,11 @@
   "sections": {
     "campaign_popup_WwBhLG": {
       "type": "campaign-popup",
-      "disabled": true,
       "name": "Campaign popup",
       "settings": {
         "enabled": true,
-        "image": "shopify://shop_images/popop_banner.jpg",
-        "link": "shopify://pages/framesi-masterclass",
+        "image": "shopify://shop_images/pop-up-may.jpg",
+        "link": "shopify://products/maybelline-lifter-glaze-tinted-lip-oil-balm",
         "open_new_tab": false,
         "delay_seconds": 3,
         "interval_hours": 24
@@ -31,6 +30,7 @@
           "type": "group",
           "name": "t:names.group",
           "settings": {
+            "mobile_order": 0,
             "content_direction": "column",
             "vertical_on_mobile": true,
             "horizontal_alignment": "flex-start",
@@ -90,6 +90,7 @@
             "text_ArdAkM": {
               "type": "text",
               "settings": {
+                "mobile_order": 0,
                 "text": "<h2>Join our email list</h2>",
                 "width": "100%",
                 "max_width": "normal",
@@ -115,6 +116,7 @@
             "text_gPDJHW": {
               "type": "text",
               "settings": {
+                "mobile_order": 0,
                 "text": "<p>Get exclusive deals and early access to new products.</p>",
                 "width": "100%",
                 "max_width": "normal",
@@ -174,6 +176,7 @@
           "type": "group",
           "name": "t:names.group",
           "settings": {
+            "mobile_order": 0,
             "content_direction": "column",
             "vertical_on_mobile": true,
             "horizontal_alignment": "flex-start",
@@ -214,6 +217,7 @@
         "group_H6VpwJ": {
           "type": "group",
           "settings": {
+            "mobile_order": 0,
             "content_direction": "column",
             "vertical_on_mobile": true,
             "horizontal_alignment": "flex-start",
@@ -279,6 +283,7 @@
         "group_UAb9rN": {
           "type": "group",
           "settings": {
+            "mobile_order": 0,
             "content_direction": "column",
             "vertical_on_mobile": true,
             "horizontal_alignment": "flex-start",
