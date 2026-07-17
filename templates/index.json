@@ -761,7 +761,7 @@
         "card_gBiw68": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/500_x_500_loreal.jpg",
+            "image": "shopify://shop_images/500_x_500_loreal__jpg.jpg",
             "link": "shopify://collections/loreal-paris",
             "open_new_tab": false
           }
@@ -1525,7 +1525,7 @@
         "card_Dj4Jhk": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/600_x_375_garnier.jpg",
+            "image": "shopify://shop_images/600_x_375_garnier_cf66ac9e-62f8-4265-adf5-4106dce49019.jpg",
             "link": "shopify://collections/garnier",
             "open_new_tab": false
           }
