@@ -13,6 +13,7 @@
   "sections": {
     "campaign_popup_WwBhLG": {
       "type": "campaign-popup",
+      "disabled": true,
       "name": "Campaign popup",
       "settings": {
         "enabled": true,
