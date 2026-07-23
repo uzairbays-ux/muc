@@ -1250,21 +1250,19 @@
     "card_grid_TjTiTr": {
       "type": "card-grid",
       "blocks": {
-        "card_HP6WDU": {
+        "card_GfdFFC": {
           "type": "card",
-          "disabled": true,
           "settings": {
-            "image": "shopify://shop_images/huda_beauty_flat_20_off_500x500_v2.png",
-            "link": "shopify://collections/huda-beauty",
+            "image": "shopify://shop_images/wishful_500_x_500.png",
+            "link": "shopify://collections/wishful",
             "open_new_tab": false
           }
         },
-        "card_GfdFFC": {
+        "card_HP6WDU": {
           "type": "card",
-          "disabled": true,
           "settings": {
-            "image": "shopify://shop_images/morphe_logo_flat_20_off_500x500_ce72c647-522b-4b4f-9f96-2f0c25038294.png",
-            "link": "shopify://collections/morphe",
+            "image": "shopify://shop_images/glow_recipe_500_x500_84021ef9-52aa-480e-bcef-4b0085cbe18a.png",
+            "link": "shopify://collections/glow-recipe",
             "open_new_tab": false
           }
         },
@@ -1345,8 +1343,8 @@
         }
       },
       "block_order": [
-        "card_HP6WDU",
         "card_GfdFFC",
+        "card_HP6WDU",
         "card_WEPLyT",
         "card_RfbTim",
         "card_wKRFBX",
