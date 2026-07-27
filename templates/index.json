@@ -639,9 +639,8 @@
         },
         "card_zHjYpW": {
           "type": "card",
-          "disabled": true,
           "settings": {
-            "image": "shopify://shop_images/Lamel.jpg",
+            "image": "shopify://shop_images/FreshLabs-Group.webp",
             "link": "shopify://collections/lamel",
             "open_new_tab": false
           }
@@ -689,8 +688,8 @@
         "heading": "",
         "subheading": "",
         "heading_alignment": "left",
-        "desktop_layout": "grid",
-        "mobile_layout": "grid",
+        "desktop_layout": "slider",
+        "mobile_layout": "slider",
         "desktop_columns": "4",
         "mobile_columns": "2",
         "desktop_slider_per_view": "4",
