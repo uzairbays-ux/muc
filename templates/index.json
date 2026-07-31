@@ -1120,6 +1120,7 @@
       "blocks": {
         "card_h6R94P": {
           "type": "card",
+          "name": "Huda Beauty",
           "settings": {
             "image": "shopify://shop_images/huda_beauty_flat_20_off_500x500_v2_3c6c1ce9-b823-4224-85ac-9db69c02d522.png",
             "link": "shopify://collections/huda-beauty",
@@ -1128,6 +1129,7 @@
         },
         "card_whDK6f": {
           "type": "card",
+          "name": "Morphe",
           "settings": {
             "image": "shopify://shop_images/morphe_logo_flat_20_off_500x500_556ffd51-8b97-48f2-a023-1a46356a27d8.png",
             "link": "shopify://collections/morphe",
@@ -1136,6 +1138,7 @@
         },
         "card_iJgEgf": {
           "type": "card",
+          "name": "NYX",
           "settings": {
             "image": "shopify://shop_images/nyx_logo_aligned_white_box_500x500_da34c49d-b9ca-4066-b80e-5056a8490fd8.png",
             "link": "shopify://collections/nyx",
@@ -1144,6 +1147,7 @@
         },
         "card_mcFcz9": {
           "type": "card",
+          "name": "O/S",
           "settings": {
             "image": "shopify://shop_images/one_size_logo_flat_20_off_500x500_1f05f265-2097-4b24-8592-1c3e12600604.png",
             "link": "shopify://collections/o-s",
