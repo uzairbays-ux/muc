@@ -178,14 +178,16 @@
         },
         "card_7Rimtd": {
           "type": "card",
+          "name": "ELF",
           "settings": {
-            "image": "shopify://shop_images/750_x_750_elf.jpg",
+            "image": "shopify://shop_images/ELF_c7720807-956c-47aa-987c-b74ad31fafbf.png",
             "link": "shopify://collections/elf",
             "open_new_tab": false
           }
         },
         "card_nbr3cj": {
           "type": "card",
+          "name": "Ordinary",
           "settings": {
             "image": "shopify://shop_images/750_x_750_the_ordinary.jpg",
             "link": "shopify://collections/to",
@@ -194,6 +196,7 @@
         },
         "card_YUtaR6": {
           "type": "card",
+          "name": "Revolution",
           "settings": {
             "image": "shopify://shop_images/750_x_750_revolution.jpg",
             "link": "shopify://collections/revolution",
@@ -202,6 +205,7 @@
         },
         "card_hxUFFx": {
           "type": "card",
+          "name": "CeraVe",
           "settings": {
             "image": "shopify://shop_images/CeraVe_65627861-6c69-4df1-ac98-78dadd0e4e80.jpg",
             "link": "shopify://collections/cerave",
@@ -210,8 +214,9 @@
         },
         "card_b9F39r": {
           "type": "card",
+          "name": "Bioaqua",
           "settings": {
-            "image": "shopify://shop_images/750_x_750_bioaqua.jpg",
+            "image": "shopify://shop_images/Bioaqua_419949ce-e092-454f-9efd-a294b1c08bed.jpg",
             "link": "shopify://collections/bioaqua",
             "open_new_tab": false
           }
