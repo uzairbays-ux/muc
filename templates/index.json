@@ -153,9 +153,8 @@
       "blocks": {
         "card_x4i8pi": {
           "type": "card",
-          "disabled": true,
           "settings": {
-            "image": "shopify://shop_images/750_x_750_ST_copy.jpg",
+            "image": "shopify://shop_images/500-x-500_6_ea43918a-ba79-44b4-ae83-4152851ee778.png",
             "link": "shopify://collections/st-london",
             "open_new_tab": false
           }
