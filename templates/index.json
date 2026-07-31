@@ -1149,22 +1149,24 @@
           "type": "card",
           "name": "O/S",
           "settings": {
-            "image": "shopify://shop_images/one_size_logo_flat_20_off_500x500_1f05f265-2097-4b24-8592-1c3e12600604.png",
+            "image": "shopify://shop_images/one_size_logo_flat_20_off_500x500_394dbf39-00c7-487c-87aa-887c79555521.webp",
             "link": "shopify://collections/o-s",
             "open_new_tab": false
           }
         },
         "card_tBr3yf": {
           "type": "card",
+          "name": "Sheglam",
           "disabled": true,
           "settings": {
-            "image": "shopify://shop_images/sheglam_logo_flat_20_off_500x500_183d5dff-d08b-47a1-a50b-2c6dae5403b6.png",
+            "image": "shopify://shop_images/sheglam_logo_flat_20_off_500x500_30a3ed63-b7d8-4671-bc52-4315c4a84cc0.webp",
             "link": "shopify://collections/sheglam",
             "open_new_tab": false
           }
         },
         "card_djrWXM": {
           "type": "card",
+          "name": "Tarte",
           "disabled": true,
           "settings": {
             "image": "shopify://shop_images/tarte_logo_flat_20_off_500x500_v2.png",
@@ -1174,6 +1176,7 @@
         },
         "card_wkmjxd": {
           "type": "card",
+          "name": "Charlotte Tilbury",
           "disabled": true,
           "settings": {
             "image": "shopify://shop_images/charlotte_tilbury_logo_enhanced_500x500_0f33ca02-cd18-4743-b2dd-ee0f456ee583.webp",
@@ -1183,6 +1186,7 @@
         },
         "card_TrfdaU": {
           "type": "card",
+          "name": "Dior",
           "disabled": true,
           "settings": {
             "image": "shopify://shop_images/dior_replaced_logo_500x500_db799f39-b2fa-4106-b973-64884358351f.webp",
@@ -1192,6 +1196,7 @@
         },
         "card_JFEeE9": {
           "type": "card",
+          "name": "Olaplex",
           "disabled": true,
           "settings": {
             "image": "shopify://shop_images/OLAPLEX_Image_Jul_7_2026_11_30_41_AM.webp",
@@ -1201,6 +1206,7 @@
         },
         "card_kzxKcf": {
           "type": "card",
+          "name": "Rare Beauty",
           "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Rare_beauty_e_Jul_2_2026_11_02_19_AM.webp",
@@ -1210,9 +1216,10 @@
         },
         "card_xxU9nH": {
           "type": "card",
+          "name": "Rhode",
           "disabled": true,
           "settings": {
-            "image": "shopify://shop_images/rhode_Image_Jul_8_2026_09_44_41_AM.webp",
+            "image": "shopify://shop_images/rhode_Image_Jul_8_2026_09_44_41_AM_ec288664-790e-455f-b8ca-6165ca1f6425.webp",
             "link": "shopify://collections/rhode",
             "open_new_tab": false
           }
@@ -1263,6 +1270,7 @@
       "blocks": {
         "card_GfdFFC": {
           "type": "card",
+          "name": "Wishful",
           "settings": {
             "image": "shopify://shop_images/Wishful_Image_Jul_20_2026_03_09_49_PM.webp",
             "link": "shopify://collections/wishful",
@@ -1271,6 +1279,7 @@
         },
         "card_HP6WDU": {
           "type": "card",
+          "name": "Glow Recipe",
           "settings": {
             "image": "shopify://shop_images/glow_recipe_500_x500_84021ef9-52aa-480e-bcef-4b0085cbe18a.png",
             "link": "shopify://collections/glow-recipe",
@@ -1279,6 +1288,7 @@
         },
         "card_WEPLyT": {
           "type": "card",
+          "name": "NYX",
           "disabled": true,
           "settings": {
             "image": "shopify://shop_images/nyx_logo_aligned_white_box_500x500_393b5a2b-c03b-43df-a57d-5d8eaa54d5a9.png",
@@ -1288,6 +1298,7 @@
         },
         "card_RfbTim": {
           "type": "card",
+          "name": "O/S",
           "disabled": true,
           "settings": {
             "image": "shopify://shop_images/one_size_logo_flat_20_off_500x500_42994c4e-e45a-4cdf-b761-1d09f07bb440.png",
@@ -1297,6 +1308,7 @@
         },
         "card_wKRFBX": {
           "type": "card",
+          "name": "Sheglam",
           "disabled": true,
           "settings": {
             "image": "shopify://shop_images/sheglam_logo_flat_20_off_500x500_183d5dff-d08b-47a1-a50b-2c6dae5403b6.png",
@@ -1306,6 +1318,7 @@
         },
         "card_7y6cCp": {
           "type": "card",
+          "name": "Tarte",
           "settings": {
             "image": "shopify://shop_images/tarte_logo_flat_20_off_500x500_v2.webp",
             "link": "shopify://collections/tarte",
@@ -1314,6 +1327,7 @@
         },
         "card_fP7BL6": {
           "type": "card",
+          "name": "Charlotte Tilbury",
           "settings": {
             "image": "shopify://shop_images/charlotte_tilbury_logo_enhanced_500x500_85173986-009b-4ec6-8e75-89510bb7088c.png",
             "link": "shopify://collections/charlotte-tilbury",
@@ -1322,6 +1336,7 @@
         },
         "card_hAch3i": {
           "type": "card",
+          "name": "Dior",
           "settings": {
             "image": "shopify://shop_images/dior_replaced_logo_500x500_19bb6d68-57fb-4500-9561-89a8b84201a0.png",
             "link": "shopify://collections/dior",
@@ -1330,22 +1345,25 @@
         },
         "card_pDmnkE": {
           "type": "card",
+          "name": "Olaplex",
           "settings": {
-            "image": "shopify://shop_images/OLAPLEX_Image_Jul_7_2026_11_30_41_AM.png",
+            "image": "shopify://shop_images/OLAPLEX_Image_Jul_7_2026_11_30_41_AM_20ff07d5-e7f9-41dd-bddd-dfec702f0951.webp",
             "link": "shopify://collections/olaplex",
             "open_new_tab": false
           }
         },
         "card_hhYxMp": {
           "type": "card",
+          "name": "Rare Beauty",
           "settings": {
-            "image": "shopify://shop_images/Rare_beauty_e_Jul_2_2026_11_02_19_AM.png",
+            "image": "shopify://shop_images/Rare_beauty_e_Jul_2_2026_11_02_19_AM_98a9b57a-12aa-4676-b2aa-488fa01cc95b.webp",
             "link": "shopify://collections/rare-beauty",
             "open_new_tab": false
           }
         },
         "card_A9eJDx": {
           "type": "card",
+          "name": "Rhode",
           "settings": {
             "image": "shopify://shop_images/rhode_Image_Jul_8_2026_09_44_41_AM.png",
             "link": "shopify://collections/rhode",
