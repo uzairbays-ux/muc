@@ -120,7 +120,6 @@
         },
         "slide_WR6nXe": {
           "type": "slide",
-          "disabled": true,
           "settings": {
             "desktop_image": "shopify://shop_images/main-banner-1920-x-750.jpg",
             "mobile_image": "shopify://shop_images/main-banner-1920-x-750.jpg",
@@ -134,7 +133,6 @@
         "slide_4mM8cj",
         "slide_WR6nXe"
       ],
-      "disabled": true,
       "name": "Featured banner",
       "settings": {
         "autoplay": true,
@@ -154,7 +152,7 @@
         "card_x4i8pi": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/500-x-500_6_ea43918a-ba79-44b4-ae83-4152851ee778.png",
+            "image": "shopify://shop_images/ST-London_445dc7f2-e4e0-4538-a9c3-d32191e76ee6.jpg",
             "link": "shopify://collections/st-london",
             "open_new_tab": false
           }
@@ -172,7 +170,7 @@
           "type": "card",
           "name": "Maybelline",
           "settings": {
-            "image": "shopify://shop_images/Maybillne-750-x-750.jpg",
+            "image": "shopify://shop_images/Maybilline.jpg",
             "link": "shopify://collections/maybelline",
             "open_new_tab": false
           }
@@ -181,7 +179,7 @@
           "type": "card",
           "name": "ELF",
           "settings": {
-            "image": "shopify://shop_images/ELF_c7720807-956c-47aa-987c-b74ad31fafbf.png",
+            "image": "shopify://shop_images/ELF_a43cf89f-6d4e-4d8b-a4ce-a8bd8c1003b7.jpg",
             "link": "shopify://collections/elf",
             "open_new_tab": false
           }
@@ -190,7 +188,7 @@
           "type": "card",
           "name": "Ordinary",
           "settings": {
-            "image": "shopify://shop_images/The-Ordinary_59288d17-e2bf-4b75-aa49-828d0847f00c.jpg",
+            "image": "shopify://shop_images/The-Ordinary_6841b8ee-f2ea-46b1-b8f2-f9f2dbaf4930.jpg",
             "link": "shopify://collections/to",
             "open_new_tab": false
           }
@@ -199,7 +197,7 @@
           "type": "card",
           "name": "Revolution",
           "settings": {
-            "image": "shopify://shop_images/Revolution_0493ff4a-0d4e-4f1f-974d-26948d538857.jpg",
+            "image": "shopify://shop_images/Revolution_a8b4b25e-8187-4227-a83e-ae25c318f998.jpg",
             "link": "shopify://collections/revolution",
             "open_new_tab": false
           }
@@ -208,7 +206,7 @@
           "type": "card",
           "name": "CeraVe",
           "settings": {
-            "image": "shopify://shop_images/CeraVe_65627861-6c69-4df1-ac98-78dadd0e4e80.jpg",
+            "image": "shopify://shop_images/Cerave_6796a457-83aa-4eff-ac8e-57b4ec69463b.jpg",
             "link": "shopify://collections/cerave",
             "open_new_tab": false
           }
@@ -217,7 +215,7 @@
           "type": "card",
           "name": "Bioaqua",
           "settings": {
-            "image": "shopify://shop_images/Bioaqua_419949ce-e092-454f-9efd-a294b1c08bed.jpg",
+            "image": "shopify://shop_images/Bioaqua_46d50632-e011-4b6d-8a51-7a0fdbf97c6c.jpg",
             "link": "shopify://collections/bioaqua",
             "open_new_tab": false
           }
