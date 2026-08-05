@@ -167,6 +167,15 @@
             "open_new_tab": false
           }
         },
+        "card_ftKGeC": {
+          "type": "card",
+          "name": "Kryolan",
+          "settings": {
+            "image": "shopify://shop_images/kryolan_630a4a6b-46b4-4b1a-bd3b-9ee016588e18.jpg",
+            "link": "shopify://collections/kryolan",
+            "open_new_tab": false
+          }
+        },
         "card_G4PiLa": {
           "type": "card",
           "name": "Maybelline",
@@ -225,6 +234,7 @@
       "block_order": [
         "card_x4i8pi",
         "card_LJWfzX",
+        "card_ftKGeC",
         "card_G4PiLa",
         "card_7Rimtd",
         "card_nbr3cj",
