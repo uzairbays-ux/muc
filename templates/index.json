@@ -120,10 +120,9 @@
         },
         "slide_WR6nXe": {
           "type": "slide",
-          "disabled": true,
           "settings": {
-            "desktop_image": "shopify://shop_images/main_banner_1920_x_750_copy.jpg",
-            "mobile_image": "shopify://shop_images/main_banner_1920_x_750_copy_ef8d2991-5153-4345-be88-fad913e1958c.jpg",
+            "desktop_image": "shopify://shop_images/main-banner-1920-x-750.jpg",
+            "mobile_image": "shopify://shop_images/main-banner-1920-x-750.jpg",
             "link": "shopify://collections/sale",
             "open_new_tab": false,
             "alt": ""
@@ -134,7 +133,6 @@
         "slide_4mM8cj",
         "slide_WR6nXe"
       ],
-      "disabled": true,
       "name": "Featured banner",
       "settings": {
         "autoplay": true,
