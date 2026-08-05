@@ -159,10 +159,9 @@
         },
         "card_LJWfzX": {
           "type": "card",
-          "disabled": true,
           "settings": {
-            "image": "shopify://shop_images/post_copy.jpg",
-            "link": "shopify://pages/framesi-masterclass",
+            "image": "shopify://shop_images/framesi_df4258f7-bf5e-4618-8f7b-e402cc115907.jpg",
+            "link": "shopify://collections/framesi",
             "open_new_tab": false
           }
         },
