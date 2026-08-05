@@ -1131,7 +1131,7 @@
           "type": "card",
           "name": "Huda Beauty",
           "settings": {
-            "image": "shopify://shop_images/huda_beauty_flat_20_off_500x500_v2_beb52ede-69f0-40e6-982d-64bedfc77ad0.webp",
+            "image": "shopify://shop_images/Huda-Beauty.jpg",
             "link": "shopify://collections/huda-beauty",
             "open_new_tab": false
           }
@@ -1140,7 +1140,7 @@
           "type": "card",
           "name": "Morphe",
           "settings": {
-            "image": "shopify://shop_images/morphe_logo_flat_20_off_500x500_6647c1b4-f607-493d-a790-85fd74d3439b.webp",
+            "image": "shopify://shop_images/Morphe.jpg",
             "link": "shopify://collections/morphe",
             "open_new_tab": false
           }
@@ -1149,7 +1149,7 @@
           "type": "card",
           "name": "NYX",
           "settings": {
-            "image": "shopify://shop_images/nyx_logo_aligned_white_box_500x500_b40728cc-8de3-407a-aac9-df83a09d061a.webp",
+            "image": "shopify://shop_images/NYX_b72c2bd9-a91d-4f66-b7aa-7a8b63473b3c.jpg",
             "link": "shopify://collections/nyx",
             "open_new_tab": false
           }
@@ -1158,16 +1158,16 @@
           "type": "card",
           "name": "O/S",
           "settings": {
-            "image": "shopify://shop_images/one_size_logo_flat_20_off_500x500_394dbf39-00c7-487c-87aa-887c79555521.webp",
+            "image": "shopify://shop_images/OneSize.jpg",
             "link": "shopify://collections/o-s",
             "open_new_tab": false
           }
         },
         "card_tBr3yf": {
           "type": "card",
-          "name": "Sheglam",
+          "name": "Milk",
           "settings": {
-            "image": "shopify://shop_images/milk_logo_aligned_final_500x500_110203c2-59d8-4824-a8d0-21fa4d6c7395.webp",
+            "image": "shopify://shop_images/Milk-Makeup.jpg",
             "link": "shopify://collections/milk",
             "open_new_tab": false
           }
@@ -1280,7 +1280,7 @@
           "type": "card",
           "name": "Wishful",
           "settings": {
-            "image": "shopify://shop_images/Wishful_Image_Jul_20_2026_03_09_49_PM.webp",
+            "image": "shopify://shop_images/wishful.jpg",
             "link": "shopify://collections/wishful",
             "open_new_tab": false
           }
@@ -1289,7 +1289,7 @@
           "type": "card",
           "name": "Glow Recipe",
           "settings": {
-            "image": "shopify://shop_images/Glow_recipe_Image_Jul_20_2026_03_13_36_PM.webp",
+            "image": "shopify://shop_images/Glow-recipe.jpg",
             "link": "shopify://collections/glow-recipe",
             "open_new_tab": false
           }
@@ -1317,9 +1317,8 @@
         "card_wKRFBX": {
           "type": "card",
           "name": "Sheglam",
-          "disabled": true,
           "settings": {
-            "image": "shopify://shop_images/sheglam_logo_flat_20_off_500x500_183d5dff-d08b-47a1-a50b-2c6dae5403b6.png",
+            "image": "shopify://shop_images/Sheglam.jpg",
             "link": "shopify://collections/sheglam",
             "open_new_tab": false
           }
@@ -1328,7 +1327,7 @@
           "type": "card",
           "name": "Tarte",
           "settings": {
-            "image": "shopify://shop_images/tarte_logo_flat_20_off_500x500_v2.webp",
+            "image": "shopify://shop_images/tarte.jpg",
             "link": "shopify://collections/tarte",
             "open_new_tab": false
           }
@@ -1337,7 +1336,7 @@
           "type": "card",
           "name": "Charlotte Tilbury",
           "settings": {
-            "image": "shopify://shop_images/charlotte_tilbury_logo_enhanced_500x500_07d77159-1154-41be-94ea-9ef5a65d3e02.webp",
+            "image": "shopify://shop_images/charlotte-tilbury.jpg",
             "link": "shopify://collections/charlotte-tilbury",
             "open_new_tab": false
           }
@@ -1346,7 +1345,7 @@
           "type": "card",
           "name": "Dior",
           "settings": {
-            "image": "shopify://shop_images/dior_replaced_logo_500x500_006643ea-1994-4b65-b37c-8fd4807fd15a.webp",
+            "image": "shopify://shop_images/Dior.jpg",
             "link": "shopify://collections/dior",
             "open_new_tab": false
           }
@@ -1355,7 +1354,7 @@
           "type": "card",
           "name": "Olaplex",
           "settings": {
-            "image": "shopify://shop_images/OLAPLEX_Image_Jul_7_2026_11_30_41_AM_20ff07d5-e7f9-41dd-bddd-dfec702f0951.webp",
+            "image": "shopify://shop_images/Olaplex.jpg",
             "link": "shopify://collections/olaplex",
             "open_new_tab": false
           }
@@ -1364,7 +1363,7 @@
           "type": "card",
           "name": "Rare Beauty",
           "settings": {
-            "image": "shopify://shop_images/Rare_beauty_e_Jul_2_2026_11_02_19_AM_98a9b57a-12aa-4676-b2aa-488fa01cc95b.webp",
+            "image": "shopify://shop_images/Rare-Beauty.jpg",
             "link": "shopify://collections/rare-beauty",
             "open_new_tab": false
           }
@@ -1373,7 +1372,7 @@
           "type": "card",
           "name": "Rhode",
           "settings": {
-            "image": "shopify://shop_images/rhode_Image_Jul_8_2026_09_44_41_AM.png",
+            "image": "shopify://shop_images/Rhode.jpg",
             "link": "shopify://collections/rhode",
             "open_new_tab": false
           }
@@ -1643,7 +1642,7 @@
           "type": "banner",
           "settings": {
             "desktop_image": "shopify://shop_images/Korean-Brand-Main-Banner-2746-x-572.jpg",
-            "mobile_image": "shopify://shop_images/Korean-Brand-Main-Banner_c626dc9e-2f2b-4cbf-8aa3-4c0f4661abd5.jpg",
+            "mobile_image": "shopify://shop_images/Korean-Brand-Main-Banner_8b9377ca-800f-403f-bc34-010652a3b09d.jpg",
             "link": "shopify://pages/korean-brand-k-beauty",
             "open_new_tab": false
           }
