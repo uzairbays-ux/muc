@@ -1441,6 +1441,7 @@
         },
         "card_NaiUMg": {
           "type": "card",
+          "name": "Bourjois",
           "settings": {
             "image": "shopify://shop_images/Bourjois_5a7203ca-b451-41e9-bf53-908f3cbd1168.jpg",
             "link": "shopify://collections/bourjois",
@@ -1552,6 +1553,7 @@
         },
         "card_wKbPRz": {
           "type": "card",
+          "name": "Essence",
           "settings": {
             "image": "shopify://shop_images/Essence_291c4ff6-54a7-4dda-8242-8a99484643d0.jpg",
             "link": "shopify://collections/essence",
@@ -1560,6 +1562,7 @@
         },
         "card_Dj4Jhk": {
           "type": "card",
+          "name": "Garnier",
           "settings": {
             "image": "shopify://shop_images/Garnier_f52c9d92-dcf6-44ab-a055-a772754dd6a5.jpg",
             "link": "shopify://collections/garnier",
@@ -1568,6 +1571,7 @@
         },
         "card_VaLrJE": {
           "type": "card",
+          "name": "Trouble Maker",
           "settings": {
             "image": "shopify://shop_images/Trouble-Maker_d3344d27-0e5e-434f-81ca-1f31ecfc18e6.jpg",
             "link": "shopify://collections/trouble-maker",
@@ -1576,6 +1580,7 @@
         },
         "card_hVQxRA": {
           "type": "card",
+          "name": "Rimmel London",
           "settings": {
             "image": "shopify://shop_images/Rimmel_cfd0d25e-b1f5-4841-b6b2-491c692f1777.jpg",
             "link": "shopify://collections/rimmel-london",
@@ -1584,6 +1589,7 @@
         },
         "card_9PabLY": {
           "type": "card",
+          "name": "FA'RA London",
           "settings": {
             "image": "shopify://shop_images/Fara-London.jpg",
             "link": "shopify://collections/fara",
@@ -1592,6 +1598,7 @@
         },
         "card_rhG3VD": {
           "type": "card",
+          "name": "EL'VAWN",
           "settings": {
             "image": "shopify://shop_images/Elvawn_80070dac-5416-4e66-9de8-ad7883fef2a8.jpg",
             "link": "shopify://collections/elvawn",
