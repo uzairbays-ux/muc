@@ -1423,6 +1423,7 @@
       "blocks": {
         "card_m4dJ4r": {
           "type": "card",
+          "name": "Janssen",
           "settings": {
             "image": "shopify://shop_images/Janssen_72288a1f-2fbc-4284-9d95-28d0d1e3b3be.jpg",
             "link": "shopify://collections/janssen",
@@ -1431,6 +1432,7 @@
         },
         "card_4rqnJx": {
           "type": "card",
+          "name": "British Lingerie Studio",
           "settings": {
             "image": "shopify://shop_images/BLS-azadi.jpg",
             "link": "shopify://collections/bls",
