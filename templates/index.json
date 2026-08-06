@@ -1439,12 +1439,12 @@
             "open_new_tab": false
           }
         },
-        "card_NaiUMg": {
+        "card_q7xRrJ": {
           "type": "card",
-          "name": "Bourjois",
+          "name": "FA'RA London",
           "settings": {
-            "image": "shopify://shop_images/Bourjois_5a7203ca-b451-41e9-bf53-908f3cbd1168.jpg",
-            "link": "shopify://collections/bourjois",
+            "image": "shopify://shop_images/Fara-London.jpg",
+            "link": "shopify://collections/fara",
             "open_new_tab": false
           }
         },
@@ -1488,7 +1488,7 @@
       "block_order": [
         "card_m4dJ4r",
         "card_4rqnJx",
-        "card_NaiUMg",
+        "card_q7xRrJ",
         "card_9H67GY",
         "card_3iUqF9",
         "card_Fzb4HD",
@@ -1587,12 +1587,12 @@
             "open_new_tab": false
           }
         },
-        "card_9PabLY": {
+        "card_8xFcVE": {
           "type": "card",
-          "name": "FA'RA London",
+          "name": "Bourjois",
           "settings": {
-            "image": "shopify://shop_images/Fara-London.jpg",
-            "link": "shopify://collections/fara",
+            "image": "shopify://shop_images/Bourjois_5a7203ca-b451-41e9-bf53-908f3cbd1168.jpg",
+            "link": "shopify://collections/bourjois",
             "open_new_tab": false
           }
         },
@@ -1614,7 +1614,7 @@
         "card_Dj4Jhk",
         "card_VaLrJE",
         "card_hVQxRA",
-        "card_9PabLY",
+        "card_8xFcVE",
         "card_rhG3VD"
       ],
       "name": "Card grid",
