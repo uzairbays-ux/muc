@@ -64,8 +64,8 @@
         "banner_gti3hP": {
           "type": "banner",
           "settings": {
-            "desktop_image": "shopify://shop_images/k-banner-desktop.avif",
-            "mobile_image": "shopify://shop_images/Korean-Brand-Main-Banner.jpg",
+            "desktop_image": "shopify://shop_images/Korean_Brand_Main_Banner_2746_x_572_copy_a4cbd158-7549-4e60-bba6-511c0a329805.jpg",
+            "mobile_image": "shopify://shop_images/Korean_Brand_Main_Banner_copy_955c3b82-518d-475a-9884-b3e288c32c9f.jpg",
             "link": "shopify://pages/korean-brand-k-beauty",
             "open_new_tab": false
           }

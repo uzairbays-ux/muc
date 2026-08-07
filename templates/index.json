@@ -121,9 +121,9 @@
         "slide_WR6nXe": {
           "type": "slide",
           "settings": {
-            "desktop_image": "shopify://shop_images/Loreal_Banner_jpg.webp",
-            "mobile_image": "shopify://shop_images/Loreal_Banner_jpg_ab163d66-8438-43e8-92b6-dd2639d2fff1.webp",
-            "link": "shopify://collections/loreal-paris",
+            "desktop_image": "shopify://shop_images/main-banner-1920-x-750.jpg",
+            "mobile_image": "shopify://shop_images/main-banner-1920-x-750.jpg",
+            "link": "shopify://collections/sale",
             "open_new_tab": false,
             "alt": ""
           }
@@ -151,65 +151,81 @@
       "blocks": {
         "card_x4i8pi": {
           "type": "card",
+          "name": "ST London",
           "settings": {
-            "image": "shopify://shop_images/500-x-500_6.png",
+            "image": "shopify://shop_images/ST-London_445dc7f2-e4e0-4538-a9c3-d32191e76ee6.jpg",
             "link": "shopify://collections/st-london",
             "open_new_tab": false
           }
         },
         "card_LJWfzX": {
           "type": "card",
-          "disabled": true,
+          "name": "Framesi",
           "settings": {
-            "image": "shopify://shop_images/post_copy.jpg",
-            "link": "shopify://pages/framesi-masterclass",
+            "image": "shopify://shop_images/framesi_df4258f7-bf5e-4618-8f7b-e402cc115907.jpg",
+            "link": "shopify://collections/framesi",
+            "open_new_tab": false
+          }
+        },
+        "card_ftKGeC": {
+          "type": "card",
+          "name": "Kryolan",
+          "settings": {
+            "image": "shopify://shop_images/kryolan_630a4a6b-46b4-4b1a-bd3b-9ee016588e18.jpg",
+            "link": "shopify://collections/kryolan",
             "open_new_tab": false
           }
         },
         "card_G4PiLa": {
           "type": "card",
+          "name": "Maybelline",
           "settings": {
-            "image": "shopify://shop_images/maybelline_5287fd9f-fa13-433c-aebd-17af3c4a949b.jpg",
+            "image": "shopify://shop_images/Maybilline.jpg",
             "link": "shopify://collections/maybelline",
             "open_new_tab": false
           }
         },
         "card_7Rimtd": {
           "type": "card",
+          "name": "ELF",
           "settings": {
-            "image": "shopify://shop_images/ELF.png",
+            "image": "shopify://shop_images/ELF_a43cf89f-6d4e-4d8b-a4ce-a8bd8c1003b7.jpg",
             "link": "shopify://collections/elf",
             "open_new_tab": false
           }
         },
         "card_nbr3cj": {
           "type": "card",
+          "name": "Ordinary",
           "settings": {
-            "image": "shopify://shop_images/The-Ordinary_77f72521-6e89-4679-99fa-954018c0259e.jpg",
+            "image": "shopify://shop_images/The-Ordinary_6841b8ee-f2ea-46b1-b8f2-f9f2dbaf4930.jpg",
             "link": "shopify://collections/to",
             "open_new_tab": false
           }
         },
         "card_YUtaR6": {
           "type": "card",
+          "name": "Revolution",
           "settings": {
-            "image": "shopify://shop_images/Revolution_53dec6ba-11b4-4cf5-b4af-da4c37a72844.jpg",
+            "image": "shopify://shop_images/Revolution_a8b4b25e-8187-4227-a83e-ae25c318f998.jpg",
             "link": "shopify://collections/revolution",
             "open_new_tab": false
           }
         },
         "card_hxUFFx": {
           "type": "card",
+          "name": "CeraVe",
           "settings": {
-            "image": "shopify://shop_images/CeraVe_65627861-6c69-4df1-ac98-78dadd0e4e80.jpg",
+            "image": "shopify://shop_images/Cerave_6796a457-83aa-4eff-ac8e-57b4ec69463b.jpg",
             "link": "shopify://collections/cerave",
             "open_new_tab": false
           }
         },
         "card_b9F39r": {
           "type": "card",
+          "name": "Bioaqua",
           "settings": {
-            "image": "shopify://shop_images/Bioaqua_627d505a-45d9-4e4d-ab99-85ef4ec36196.jpg",
+            "image": "shopify://shop_images/Bioaqua_46d50632-e011-4b6d-8a51-7a0fdbf97c6c.jpg",
             "link": "shopify://collections/bioaqua",
             "open_new_tab": false
           }
@@ -218,6 +234,7 @@
       "block_order": [
         "card_x4i8pi",
         "card_LJWfzX",
+        "card_ftKGeC",
         "card_G4PiLa",
         "card_7Rimtd",
         "card_nbr3cj",
@@ -608,7 +625,7 @@
         "card_CaecqX": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/Kryolan_c34354ab-129e-4ea9-a972-266ac505909e.jpg",
+            "image": "shopify://shop_images/Kryolan_56e2854c-dab9-498f-a43e-077689ffd226.jpg",
             "link": "shopify://collections/kryolan",
             "open_new_tab": false
           }
@@ -616,7 +633,7 @@
         "card_L4QwKh": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/Estelin_74ba0fda-0853-4302-9f5f-77dc22ca2d4f.jpg",
+            "image": "shopify://shop_images/Estelin_93b713f5-b7ed-4abd-bfa4-f37c1f79ae7f.jpg",
             "link": "shopify://collections/estelin",
             "open_new_tab": false
           }
@@ -624,7 +641,7 @@
         "card_QQLjCx": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/Framesi_c2c2accf-d397-4afd-b634-ba55b6a30401.jpg",
+            "image": "shopify://shop_images/Framesi_78424700-c3e5-4453-9b0c-51c66d857fa9.jpg",
             "link": "shopify://collections/framesi",
             "open_new_tab": false
           }
@@ -632,17 +649,16 @@
         "card_p9kYBe": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/luscious_f202a624-039f-43ee-9e04-6d2df2c18c9d.jpg",
+            "image": "shopify://shop_images/luscious_a2fad681-5614-44e5-bed5-4add2eab5bfa.jpg",
             "link": "shopify://collections/luscious-cosmetics",
             "open_new_tab": false
           }
         },
         "card_zHjYpW": {
           "type": "card",
-          "disabled": true,
           "settings": {
-            "image": "shopify://shop_images/Lamel.jpg",
-            "link": "shopify://collections/lamel",
+            "image": "shopify://shop_images/Fresh-labs_jpg.jpg",
+            "link": "shopify://collections/freshlabs",
             "open_new_tab": false
           }
         },
@@ -689,8 +705,8 @@
         "heading": "",
         "subheading": "",
         "heading_alignment": "left",
-        "desktop_layout": "grid",
-        "mobile_layout": "grid",
+        "desktop_layout": "slider",
+        "mobile_layout": "slider",
         "desktop_columns": "4",
         "mobile_columns": "2",
         "desktop_slider_per_view": "4",
@@ -753,7 +769,7 @@
         "card_J3czmk": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/Lamel_bfa6d78e-6485-42fc-9019-0b9efade32b9.jpg",
+            "image": "shopify://shop_images/Lamel_2fd4e6f6-9788-474a-bb7f-f7a4b5ec0f4a.jpg",
             "link": "shopify://collections/lamel",
             "open_new_tab": false
           }
@@ -761,7 +777,7 @@
         "card_gBiw68": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/Loreal_98981345-587c-415d-9ca5-535989fd3ca0.jpg",
+            "image": "shopify://shop_images/Loreal_b5a8a277-4753-47a3-a3d7-63f232288cbd.jpg",
             "link": "shopify://collections/loreal-paris",
             "open_new_tab": false
           }
@@ -769,7 +785,7 @@
         "card_dnezUz": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/oneskin_500x500_b15373ee-7879-4c39-95e8-542962e84ea1.jpg",
+            "image": "shopify://shop_images/One-Skin.jpg",
             "link": "shopify://collections/oneskin",
             "open_new_tab": false
           }
@@ -777,7 +793,7 @@
         "card_ceiizR": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/Gosh_c12b9049-3b3c-41c5-895b-3aea31358942.jpg",
+            "image": "shopify://shop_images/Gosh_jpg.jpg",
             "link": "shopify://collections/gosh",
             "open_new_tab": false
           }
@@ -785,7 +801,7 @@
         "card_c49pAk": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/B_BW_ef057ea0-8e3c-4e18-b9ac-ec809c03f9a5.jpg",
+            "image": "shopify://shop_images/Bath-_-body_488d70c6-3f4b-492d-a2fd-72e440469fb7.jpg",
             "link": "shopify://collections/bath-body-works",
             "open_new_tab": false
           }
@@ -793,7 +809,7 @@
         "card_AHQBXy": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/La_roche_posay.png",
+            "image": "shopify://shop_images/la-roche-posay.jpg",
             "link": "shopify://collections/la-roche-posay",
             "open_new_tab": false
           }
@@ -1113,47 +1129,52 @@
       "blocks": {
         "card_h6R94P": {
           "type": "card",
+          "name": "Huda Beauty",
           "settings": {
-            "image": "shopify://shop_images/huda_beauty_flat_20_off_500x500_v2.png",
+            "image": "shopify://shop_images/Huda-Beauty.jpg",
             "link": "shopify://collections/huda-beauty",
             "open_new_tab": false
           }
         },
         "card_whDK6f": {
           "type": "card",
+          "name": "Morphe",
           "settings": {
-            "image": "shopify://shop_images/morphe_logo_flat_20_off_500x500_ce72c647-522b-4b4f-9f96-2f0c25038294.png",
+            "image": "shopify://shop_images/Morphe.jpg",
             "link": "shopify://collections/morphe",
             "open_new_tab": false
           }
         },
         "card_iJgEgf": {
           "type": "card",
+          "name": "NYX",
           "settings": {
-            "image": "shopify://shop_images/nyx_logo_aligned_white_box_500x500_393b5a2b-c03b-43df-a57d-5d8eaa54d5a9.png",
+            "image": "shopify://shop_images/NYX_b72c2bd9-a91d-4f66-b7aa-7a8b63473b3c.jpg",
             "link": "shopify://collections/nyx",
             "open_new_tab": false
           }
         },
         "card_mcFcz9": {
           "type": "card",
+          "name": "O/S",
           "settings": {
-            "image": "shopify://shop_images/one_size_logo_flat_20_off_500x500_42994c4e-e45a-4cdf-b761-1d09f07bb440.png",
+            "image": "shopify://shop_images/OneSize.jpg",
             "link": "shopify://collections/o-s",
             "open_new_tab": false
           }
         },
         "card_tBr3yf": {
           "type": "card",
-          "disabled": true,
+          "name": "Milk",
           "settings": {
-            "image": "shopify://shop_images/sheglam_logo_flat_20_off_500x500_183d5dff-d08b-47a1-a50b-2c6dae5403b6.png",
-            "link": "shopify://collections/sheglam",
+            "image": "shopify://shop_images/Milk-Makeup.jpg",
+            "link": "shopify://collections/milk",
             "open_new_tab": false
           }
         },
         "card_djrWXM": {
           "type": "card",
+          "name": "Tarte",
           "disabled": true,
           "settings": {
             "image": "shopify://shop_images/tarte_logo_flat_20_off_500x500_v2.png",
@@ -1163,6 +1184,7 @@
         },
         "card_wkmjxd": {
           "type": "card",
+          "name": "Charlotte Tilbury",
           "disabled": true,
           "settings": {
             "image": "shopify://shop_images/charlotte_tilbury_logo_enhanced_500x500_0f33ca02-cd18-4743-b2dd-ee0f456ee583.webp",
@@ -1172,6 +1194,7 @@
         },
         "card_TrfdaU": {
           "type": "card",
+          "name": "Dior",
           "disabled": true,
           "settings": {
             "image": "shopify://shop_images/dior_replaced_logo_500x500_db799f39-b2fa-4106-b973-64884358351f.webp",
@@ -1181,6 +1204,7 @@
         },
         "card_JFEeE9": {
           "type": "card",
+          "name": "Olaplex",
           "disabled": true,
           "settings": {
             "image": "shopify://shop_images/OLAPLEX_Image_Jul_7_2026_11_30_41_AM.webp",
@@ -1190,6 +1214,7 @@
         },
         "card_kzxKcf": {
           "type": "card",
+          "name": "Rare Beauty",
           "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Rare_beauty_e_Jul_2_2026_11_02_19_AM.webp",
@@ -1199,9 +1224,10 @@
         },
         "card_xxU9nH": {
           "type": "card",
+          "name": "Rhode",
           "disabled": true,
           "settings": {
-            "image": "shopify://shop_images/rhode_Image_Jul_8_2026_09_44_41_AM.webp",
+            "image": "shopify://shop_images/rhode_Image_Jul_8_2026_09_44_41_AM_ec288664-790e-455f-b8ca-6165ca1f6425.webp",
             "link": "shopify://collections/rhode",
             "open_new_tab": false
           }
@@ -1225,12 +1251,12 @@
         "heading": "Premium Brands",
         "subheading": "",
         "heading_alignment": "center",
-        "desktop_layout": "grid",
-        "mobile_layout": "grid",
+        "desktop_layout": "slider",
+        "mobile_layout": "slider",
         "desktop_columns": "4",
         "mobile_columns": "2",
         "desktop_slider_per_view": "4",
-        "mobile_slider_per_view": "2",
+        "mobile_slider_per_view": "2.2",
         "show_arrows": false,
         "auto_rotate": true,
         "rotate_interval": 4,
@@ -1250,26 +1276,27 @@
     "card_grid_TjTiTr": {
       "type": "card-grid",
       "blocks": {
-        "card_HP6WDU": {
+        "card_GfdFFC": {
           "type": "card",
-          "disabled": true,
+          "name": "Wishful",
           "settings": {
-            "image": "shopify://shop_images/huda_beauty_flat_20_off_500x500_v2.png",
-            "link": "shopify://collections/huda-beauty",
+            "image": "shopify://shop_images/wishful.jpg",
+            "link": "shopify://collections/wishful",
             "open_new_tab": false
           }
         },
-        "card_GfdFFC": {
+        "card_HP6WDU": {
           "type": "card",
-          "disabled": true,
+          "name": "Glow Recipe",
           "settings": {
-            "image": "shopify://shop_images/morphe_logo_flat_20_off_500x500_ce72c647-522b-4b4f-9f96-2f0c25038294.png",
-            "link": "shopify://collections/morphe",
+            "image": "shopify://shop_images/Glow-recipe.jpg",
+            "link": "shopify://collections/glow-recipe",
             "open_new_tab": false
           }
         },
         "card_WEPLyT": {
           "type": "card",
+          "name": "NYX",
           "disabled": true,
           "settings": {
             "image": "shopify://shop_images/nyx_logo_aligned_white_box_500x500_393b5a2b-c03b-43df-a57d-5d8eaa54d5a9.png",
@@ -1279,6 +1306,7 @@
         },
         "card_RfbTim": {
           "type": "card",
+          "name": "O/S",
           "disabled": true,
           "settings": {
             "image": "shopify://shop_images/one_size_logo_flat_20_off_500x500_42994c4e-e45a-4cdf-b761-1d09f07bb440.png",
@@ -1288,65 +1316,71 @@
         },
         "card_wKRFBX": {
           "type": "card",
-          "disabled": true,
+          "name": "Sheglam",
           "settings": {
-            "image": "shopify://shop_images/sheglam_logo_flat_20_off_500x500_183d5dff-d08b-47a1-a50b-2c6dae5403b6.png",
+            "image": "shopify://shop_images/Sheglam.jpg",
             "link": "shopify://collections/sheglam",
             "open_new_tab": false
           }
         },
         "card_7y6cCp": {
           "type": "card",
+          "name": "Tarte",
           "settings": {
-            "image": "shopify://shop_images/tarte_logo_flat_20_off_500x500_v2.png",
+            "image": "shopify://shop_images/tarte.jpg",
             "link": "shopify://collections/tarte",
             "open_new_tab": false
           }
         },
         "card_fP7BL6": {
           "type": "card",
+          "name": "Charlotte Tilbury",
           "settings": {
-            "image": "shopify://shop_images/charlotte_tilbury_logo_enhanced_500x500_0f33ca02-cd18-4743-b2dd-ee0f456ee583.webp",
+            "image": "shopify://shop_images/charlotte-tilbury.jpg",
             "link": "shopify://collections/charlotte-tilbury",
             "open_new_tab": false
           }
         },
         "card_hAch3i": {
           "type": "card",
+          "name": "Dior",
           "settings": {
-            "image": "shopify://shop_images/dior_replaced_logo_500x500_db799f39-b2fa-4106-b973-64884358351f.webp",
+            "image": "shopify://shop_images/Dior.jpg",
             "link": "shopify://collections/dior",
             "open_new_tab": false
           }
         },
         "card_pDmnkE": {
           "type": "card",
+          "name": "Olaplex",
           "settings": {
-            "image": "shopify://shop_images/OLAPLEX_Image_Jul_7_2026_11_30_41_AM.webp",
+            "image": "shopify://shop_images/Olaplex.jpg",
             "link": "shopify://collections/olaplex",
             "open_new_tab": false
           }
         },
         "card_hhYxMp": {
           "type": "card",
+          "name": "Rare Beauty",
           "settings": {
-            "image": "shopify://shop_images/Rare_beauty_e_Jul_2_2026_11_02_19_AM.webp",
+            "image": "shopify://shop_images/Rare-Beauty.jpg",
             "link": "shopify://collections/rare-beauty",
             "open_new_tab": false
           }
         },
         "card_A9eJDx": {
           "type": "card",
+          "name": "Rhode",
           "settings": {
-            "image": "shopify://shop_images/rhode_Image_Jul_8_2026_09_44_41_AM.webp",
+            "image": "shopify://shop_images/Rhode.jpg",
             "link": "shopify://collections/rhode",
             "open_new_tab": false
           }
         }
       },
       "block_order": [
-        "card_HP6WDU",
         "card_GfdFFC",
+        "card_HP6WDU",
         "card_WEPLyT",
         "card_RfbTim",
         "card_wKRFBX",
@@ -1367,8 +1401,8 @@
         "desktop_columns": "4",
         "mobile_columns": "2",
         "desktop_slider_per_view": "4",
-        "mobile_slider_per_view": "2",
-        "show_arrows": true,
+        "mobile_slider_per_view": "2.2",
+        "show_arrows": false,
         "auto_rotate": true,
         "rotate_interval": 4,
         "gap": 10,
@@ -1389,25 +1423,28 @@
       "blocks": {
         "card_m4dJ4r": {
           "type": "card",
+          "name": "Janssen",
           "settings": {
-            "image": "shopify://shop_images/Janssen_ea1ffbd1-263f-4cc1-8f34-28b010eeb256.jpg",
+            "image": "shopify://shop_images/Janssen_72288a1f-2fbc-4284-9d95-28d0d1e3b3be.jpg",
             "link": "shopify://collections/janssen",
             "open_new_tab": false
           }
         },
         "card_4rqnJx": {
           "type": "card",
+          "name": "British Lingerie Studio",
           "settings": {
-            "image": "shopify://shop_images/non-sale-BLS.webp",
+            "image": "shopify://shop_images/BLS-azadi.jpg",
             "link": "shopify://collections/bls",
             "open_new_tab": false
           }
         },
-        "card_NaiUMg": {
+        "card_q7xRrJ": {
           "type": "card",
+          "name": "FA'RA London",
           "settings": {
-            "image": "shopify://shop_images/non-sale-Bourjois.webp",
-            "link": "shopify://collections/bourjois",
+            "image": "shopify://shop_images/Fara-London.jpg",
+            "link": "shopify://collections/fara",
             "open_new_tab": false
           }
         },
@@ -1451,7 +1488,7 @@
       "block_order": [
         "card_m4dJ4r",
         "card_4rqnJx",
-        "card_NaiUMg",
+        "card_q7xRrJ",
         "card_9H67GY",
         "card_3iUqF9",
         "card_Fzb4HD",
@@ -1516,48 +1553,54 @@
         },
         "card_wKbPRz": {
           "type": "card",
+          "name": "Essence",
           "settings": {
-            "image": "shopify://shop_images/non-sale-Essence.webp",
+            "image": "shopify://shop_images/Essence_291c4ff6-54a7-4dda-8242-8a99484643d0.jpg",
             "link": "shopify://collections/essence",
             "open_new_tab": false
           }
         },
         "card_Dj4Jhk": {
           "type": "card",
+          "name": "Garnier",
           "settings": {
-            "image": "shopify://shop_images/Garnier_62bfe2cd-6acc-461d-b3fa-483ed6fb2dce.jpg",
+            "image": "shopify://shop_images/Garnier_f52c9d92-dcf6-44ab-a055-a772754dd6a5.jpg",
             "link": "shopify://collections/garnier",
             "open_new_tab": false
           }
         },
         "card_VaLrJE": {
           "type": "card",
+          "name": "Trouble Maker",
           "settings": {
-            "image": "shopify://shop_images/Trouble-Maker_01712fde-f567-4af0-a731-45a6b7218eab.jpg",
+            "image": "shopify://shop_images/Trouble-Maker_d3344d27-0e5e-434f-81ca-1f31ecfc18e6.jpg",
             "link": "shopify://collections/trouble-maker",
             "open_new_tab": false
           }
         },
         "card_hVQxRA": {
           "type": "card",
+          "name": "Rimmel London",
           "settings": {
-            "image": "shopify://shop_images/non-sale-Rimmel.webp",
+            "image": "shopify://shop_images/Rimmel_cfd0d25e-b1f5-4841-b6b2-491c692f1777.jpg",
             "link": "shopify://collections/rimmel-london",
             "open_new_tab": false
           }
         },
-        "card_9PabLY": {
+        "card_8xFcVE": {
           "type": "card",
+          "name": "Bourjois",
           "settings": {
-            "image": "shopify://shop_images/600_x_375_Banners_copy_fara.webp",
-            "link": "shopify://collections/fara",
+            "image": "shopify://shop_images/Bourjois_5a7203ca-b451-41e9-bf53-908f3cbd1168.jpg",
+            "link": "shopify://collections/bourjois",
             "open_new_tab": false
           }
         },
         "card_rhG3VD": {
           "type": "card",
+          "name": "EL'VAWN",
           "settings": {
-            "image": "shopify://shop_images/600_x_375_Banners_copy_elvwan.webp",
+            "image": "shopify://shop_images/Elvawn_80070dac-5416-4e66-9de8-ad7883fef2a8.jpg",
             "link": "shopify://collections/elvawn",
             "open_new_tab": false
           }
@@ -1571,7 +1614,7 @@
         "card_Dj4Jhk",
         "card_VaLrJE",
         "card_hVQxRA",
-        "card_9PabLY",
+        "card_8xFcVE",
         "card_rhG3VD"
       ],
       "name": "Card grid",
@@ -1607,8 +1650,8 @@
         "banner_nrAdDN": {
           "type": "banner",
           "settings": {
-            "desktop_image": "shopify://shop_images/k-banner-desktop.avif",
-            "mobile_image": "shopify://shop_images/Korean-Brand-Main-Banner_8772b907-db91-4be0-8e76-580735042852.jpg",
+            "desktop_image": "shopify://shop_images/Korean-Brand-Main-Banner-2746-x-572.jpg",
+            "mobile_image": "shopify://shop_images/Korean-Brand-Main-Banner_8b9377ca-800f-403f-bc34-010652a3b09d.jpg",
             "link": "shopify://pages/korean-brand-k-beauty",
             "open_new_tab": false
           }
@@ -1943,7 +1986,7 @@
         "category_Cwy3f6": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/babi_mild_8bbb3169-608b-457d-b22d-296d21a57340.webp",
+            "image": "shopify://shop_images/Babimild_52acef81-e665-4ec9-962b-a9beb82ad917.jpg",
             "label": "",
             "link": "shopify://collections/babi-mild",
             "card_background": "rgba(0,0,0,0)"
@@ -1952,7 +1995,7 @@
         "category_pjBD9X": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/st_ives_83530767-0134-49c3-a6be-43c7e03d2389.webp",
+            "image": "shopify://shop_images/St_Ives_0651bdd5-e690-4100-a86c-d7ad682bf8e4.jpg",
             "label": "",
             "link": "shopify://collections/st-ives",
             "card_background": "rgba(0,0,0,0)"
@@ -1961,7 +2004,7 @@
         "category_Xea9DL": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/Colorwow_2e03feea-da5f-40dd-8b9e-5b39205f1faf.jpg",
+            "image": "shopify://shop_images/Color-Wow.jpg",
             "label": "",
             "link": "shopify://collections/color-wow",
             "card_background": "rgba(0,0,0,0)"
@@ -1970,7 +2013,7 @@
         "category_W3MDAj": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/Femina_911b325a-b1c2-4139-8431-bf455cd0570a.jpg",
+            "image": "shopify://shop_images/Femina_cdd32821-76f4-498e-9abd-4d18f8c9944c.jpg",
             "label": "",
             "link": "shopify://collections/femina",
             "card_background": "rgba(0,0,0,0)"
@@ -1979,7 +2022,7 @@
         "category_TkjWqQ": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/maxfactor_da69f660-6050-4648-a528-3ee1812e67ca.jpg",
+            "image": "shopify://shop_images/maxfactor_eb2e530c-653d-487d-b2ef-cdc97d9efc0f.jpg",
             "label": "",
             "link": "shopify://collections/max-factor",
             "card_background": "rgba(0,0,0,0)"
@@ -1988,7 +2031,7 @@
         "category_EAWHGr": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/Schwarzkopf_086d8340-63ac-409b-8312-8c3e3686e837.jpg",
+            "image": "shopify://shop_images/Schwarzkopf_aed76e0d-98c1-459e-81ce-17db94cd1b62.jpg",
             "label": "",
             "link": "shopify://collections/schwarzkopf",
             "card_background": "rgba(0,0,0,0)"
@@ -1997,7 +2040,7 @@
         "category_DtkmJB": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/blue_face.webp",
+            "image": "shopify://shop_images/Bleuface_d1e51fb8-1358-40cc-b28d-f53f0746fb2d.jpg",
             "label": "",
             "link": "shopify://collections/bleuface",
             "card_background": "rgba(0,0,0,0)"
@@ -2006,7 +2049,7 @@
         "category_KWk6xF": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/Just-For-men_48cc30f3-8761-43d9-8724-d85046e3e24e.jpg",
+            "image": "shopify://shop_images/Just-For-men_a53bc858-4a73-40bc-84fc-15e7b56fcfa7.jpg",
             "label": "",
             "link": "shopify://collections/just-for-men",
             "card_background": "rgba(0,0,0,0)"
@@ -2138,8 +2181,8 @@
         "banner_Kt9k6X": {
           "type": "banner",
           "settings": {
-            "desktop_image": "shopify://shop_images/chinese-desktop.webp",
-            "mobile_image": "shopify://shop_images/Chinesse_Banner.webp",
+            "desktop_image": "shopify://shop_images/Chinese-Beauty-Main-Banner-2746-x-572.jpg",
+            "mobile_image": "shopify://shop_images/Chinese-Beauty-Main-Banner.jpg",
             "link": "shopify://collections/chinese-brands",
             "open_new_tab": false
           }
@@ -2618,7 +2661,7 @@
         "button_label": "View More",
         "button_link": "shopify://pages/brands",
         "open_new_tab": false,
-        "background_image": "shopify://shop_images/v1022-21-b.webp",
+        "background_image": "shopify://shop_images/shop-all.webp",
         "padding-block-start": 0,
         "padding-block-end": 0
       }

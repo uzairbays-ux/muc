@@ -47,18 +47,23 @@
   # Padding-bottom equivalent of the ratio (height / width * 100), used by the
   # iOS < 16.4 aspect-ratio fallback in product-grid.liquid.
   assign ratio_padding = 100
+  assign ratio_number = 1
   case block_settings.image_ratio
     when 'landscape'
       assign ratio = '16 / 9'
       assign ratio_padding = 56.25
+      assign ratio_number = '1.7778'
     when 'portrait'
       assign ratio = '4 / 5'
       assign ratio_padding = 125
+      assign ratio_number = '0.8'
     when 'square'
       assign ratio = '1'
       assign ratio_padding = 100
+      assign ratio_number = '1'
     when 'adapt'
       assign ratio = product.featured_media.preview_image.aspect_ratio | default: '1'
+      assign ratio_number = product.featured_media.preview_image.aspect_ratio | default: '1'
       assign adapt_ratio = product.featured_media.preview_image.aspect_ratio | default: 1.0
       if adapt_ratio == 0.0
         assign adapt_ratio = 1.0
@@ -82,6 +87,7 @@
     {% render 'spacing-style', settings: block_settings %}
     --gallery-aspect-ratio: {{ ratio }};
     --gallery-ratio-padding: {{ ratio_padding }}%;
+    --gallery-aspect-ratio-number: {{ ratio_number }};
   "
   data-product-id="{{ product.id }}"
   {% if settings.show_second_image_on_hover %}
@@ -217,8 +223,36 @@
 {% stylesheet %}
   .card-gallery {
     overflow: hidden;
-    container-type: inline-size; /* Make card-gallery a container */
-    container-name: card-gallery-container; /* Optional: name the container */
+    container-type: inline-size;
+    container-name: card-gallery-container;
+    aspect-ratio: var(--gallery-aspect-ratio);
+    /* min-height:auto (flex default) lets content override aspect-ratio.
+       Force it to 0 so aspect-ratio + overflow:hidden actually clips. */
+    min-height: 0;
+  }
+
+  /* Pin the slideshow to exactly the gallery's intended height using the
+     container's inline size. This is more reliable than relying on
+     aspect-ratio alone in the flex context, and fixes collapsed galleries
+     when content-visibility:auto makes off-screen slides report 0 height. */
+  .card-gallery slideshow-component {
+    height: calc(100cqw / var(--gallery-aspect-ratio-number, 1));
+  }
+
+  /*
+   * Variant-image slides in product-recommendations stack vertically because
+   * #updateVariantImages() strips [hidden] from the selected variant's slide,
+   * putting it back in the flex row, but slideshow.select() returns early
+   * (no scroll instance — setupSlideshowWithoutControls ran) so aria-hidden
+   * never gets set to "false" and the slide sits visible-but-unscrolled-to.
+   * Scope to .product-recommendations so home-page and collection carousels
+   * are unaffected. The :not([reveal]) guard preserves the reveal mechanic
+   * used when select() DOES work (non-variant slideshows with a scroll setup).
+   */
+  .product-recommendations
+    .card-gallery
+    slideshow-slide[variant-image]:not([aria-hidden='false']):not([reveal]) {
+    display: none;
   }
 
   .card-gallery__placeholder svg {
