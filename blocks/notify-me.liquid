@@ -16,10 +16,10 @@
 
   # Same guard as blocks/buy-buttons.liquid: a genuinely sold-out variant that
   # can be restocked, rather than one that is merely unavailable.
+  # Kept on one line: inside a {% liquid %} tag each newline starts a new
+  # statement, so a condition split across lines silently breaks.
   assign is_sold_out = false
-  if variant.available == false
-    and variant.inventory_management == 'shopify'
-    and variant.inventory_policy == 'deny'
+  if variant.available == false and variant.inventory_management == 'shopify' and variant.inventory_policy == 'deny'
     assign is_sold_out = true
   endif
 
