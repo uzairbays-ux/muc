@@ -17,8 +17,10 @@
   # Deliberately just `available`, matching the "Sold out" button. Also gating
   # on inventory_management/inventory_policy added two more ways for the block
   # to render nothing at all, which takes the nested form down with it.
-  # Keep conditions on one line: inside a {% liquid %} tag every newline starts
-  # a new statement, so a condition split across lines silently breaks.
+  # Keep each condition on one line -- in a liquid tag every newline starts a
+  # new statement, so a condition split across lines silently breaks. Never
+  # write tag delimiters in these comments either: the closing brace ends the
+  # enclosing liquid tag right there.
   assign is_sold_out = false
   if variant.available == false
     assign is_sold_out = true
