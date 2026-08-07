@@ -121,10 +121,21 @@
     padding: var(--padding-4xl) var(--padding-xl) var(--padding-xl);
     max-width: var(--normal-content-width);
     max-height: var(--modal-max-height);
+    /* A long product name in the heading can outgrow the viewport, which
+       clipped the top of the dialog. Scroll the content instead. */
+    overflow-y: auto;
+    overscroll-behavior: contain;
 
     @media screen and (min-width: 750px) {
       padding: var(--padding-5xl);
     }
+  }
+
+  /* Product names are long, so keep the heading from dominating the dialog */
+  .notify-me__heading {
+    font-size: 1.25rem;
+    line-height: 1.25;
+    margin-block-end: var(--margin-xs);
   }
 
   .notify-me__content[open] {
