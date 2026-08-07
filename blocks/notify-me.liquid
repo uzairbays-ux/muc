@@ -53,6 +53,12 @@
 
   assign form_id = 'NotifyMe-' | append: block.id
 
+  # Captured, not passed directly: handing product.url to return_to renders the
+  # drop itself ("BasicUrlDrop") instead of the path.
+  capture return_path
+    echo product.url
+  endcapture
+
   # Commas separate tags, so they must not survive in the product name.
   assign tag_prefix = block_settings.tag_prefix | default: 'notify-me'
   assign safe_title = product_title | replace: ',', ' ' | strip | truncate: 180, ''
@@ -150,7 +156,7 @@
             relative path is used rather than 'back', which depends on the
             referer -- unreliable behind the preview proxy.
           {%- endcomment -%}
-          {%- form 'customer', id: form_id, return_to: product.url, class: 'notify-me__form' -%}
+          {%- form 'customer', id: form_id, return_to: return_path, class: 'notify-me__form' -%}
             {%- if form.posted_successfully? -%}
               <p class="notify-me__status notify-me__status--success">
                 {{ block_settings.success_text | default: "Thanks! We'll email you when it's back in stock." }}
