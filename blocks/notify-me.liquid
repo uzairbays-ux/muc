@@ -58,14 +58,19 @@
     type="module"
   ></script>
 
+  {%- comment -%}
+    spacing-style belongs on the wrapper, not the button: it sets
+    --padding-block-start and friends to 0, which flattens the button's own
+    --button-padding-block and leaves it looking unstyled.
+  {%- endcomment -%}
   <dialog-component
-    class="notify-me"
+    class="notify-me spacing-style"
+    style="{% render 'spacing-style', settings: block_settings %}"
     {{ block.shopify_attributes }}
   >
     <button
       on:click="/showDialog"
-      class="notify-me__button {{ block_settings.style_class }} spacing-style"
-      style="{% render 'spacing-style', settings: block_settings %}"
+      class="notify-me__button {{ block_settings.style_class | default: 'button-secondary' }}"
     >
       {{ button_label }}
     </button>
