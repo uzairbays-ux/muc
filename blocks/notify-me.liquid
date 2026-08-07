@@ -83,6 +83,15 @@
       const number = phone.value.trim().replace(/,/g, ' ');
       if (number) tags.value = `${tags.value}, phone: ${number}`;
     });
+
+    // Shopify redirects back with the dialog closed, so the success message
+    // would never be seen. Reopen it when this block's own form succeeded.
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.notify-me').forEach((block) => {
+        if (!block.querySelector('.notify-me__status--success')) return;
+        block.showDialog?.();
+      });
+    });
   </script>
 
   {%- comment -%}
@@ -129,7 +138,13 @@
             AJAX version fail. The customer form is the only one that writes
             tags, and the tag is what a restock segment is built from.
           {%- endcomment -%}
-          {%- form 'customer', class: 'notify-me__form' -%}
+          {%- comment -%}
+            An explicit id is required. Without one Shopify names every
+            customer form `contact_form`, colliding with the footer email
+            signup: the post-submit redirect appends #contact_form and jumps
+            to the footer, and form.posted_successfully? fires on both forms.
+          {%- endcomment -%}
+          {%- form 'customer', id: form_id, class: 'notify-me__form' -%}
             {%- if form.posted_successfully? -%}
               <p class="notify-me__status notify-me__status--success">
                 {{ block_settings.success_text | default: "Thanks! We'll email you when it's back in stock." }}
