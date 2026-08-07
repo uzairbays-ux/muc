@@ -14,12 +14,13 @@
   assign product = closest.product
   assign variant = product.selected_or_first_available_variant
 
-  # Same guard as blocks/buy-buttons.liquid: a genuinely sold-out variant that
-  # can be restocked, rather than one that is merely unavailable.
-  # Kept on one line: inside a {% liquid %} tag each newline starts a new
-  # statement, so a condition split across lines silently breaks.
+  # Deliberately just `available`, matching the "Sold out" button. Also gating
+  # on inventory_management/inventory_policy added two more ways for the block
+  # to render nothing at all, which takes the nested form down with it.
+  # Keep conditions on one line: inside a {% liquid %} tag every newline starts
+  # a new statement, so a condition split across lines silently breaks.
   assign is_sold_out = false
-  if variant.available == false and variant.inventory_management == 'shopify' and variant.inventory_policy == 'deny'
+  if variant.available == false
     assign is_sold_out = true
   endif
 
