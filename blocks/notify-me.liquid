@@ -144,7 +144,13 @@
             signup: the post-submit redirect appends #contact_form and jumps
             to the footer, and form.posted_successfully? fires on both forms.
           {%- endcomment -%}
-          {%- form 'customer', id: form_id, class: 'notify-me__form' -%}
+          {%- comment -%}
+            return_to is required, otherwise the customer form uses its default
+            redirect and dumps the shopper on the home page. An explicit
+            relative path is used rather than 'back', which depends on the
+            referer -- unreliable behind the preview proxy.
+          {%- endcomment -%}
+          {%- form 'customer', id: form_id, return_to: product.url, class: 'notify-me__form' -%}
             {%- if form.posted_successfully? -%}
               <p class="notify-me__status notify-me__status--success">
                 {{ block_settings.success_text | default: "Thanks! We'll email you when it's back in stock." }}
