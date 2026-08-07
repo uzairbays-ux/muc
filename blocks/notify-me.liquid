@@ -1,0 +1,271 @@
+{%- doc -%}
+  "Notify me" trigger for out-of-stock products.
+
+  Renders a button that opens a dialog containing whatever blocks the merchant
+  nests inside it — intended to hold the Shopify Forms app block, which handles
+  the customer record, validation and submissions itself.
+
+  By default the block renders nothing while the variant is in stock. It always
+  renders in the theme editor so the nested form stays reachable for editing.
+{%- enddoc -%}
+
+{%- liquid
+  assign block_settings = block.settings
+  assign product = closest.product
+  assign variant = product.selected_or_first_available_variant
+
+  # Same guard as blocks/buy-buttons.liquid: a genuinely sold-out variant that
+  # can be restocked, rather than one that is merely unavailable.
+  assign is_sold_out = false
+  if variant.available == false
+    and variant.inventory_management == 'shopify'
+    and variant.inventory_policy == 'deny'
+    assign is_sold_out = true
+  endif
+
+  assign should_render = is_sold_out
+  if block_settings.only_when_sold_out == false
+    assign should_render = true
+  endif
+  if request.design_mode
+    assign should_render = true
+  endif
+-%}
+
+{%- if should_render -%}
+  <script
+    src="{{ 'dialog.js' | asset_url }}"
+    type="module"
+  ></script>
+
+  <dialog-component
+    class="notify-me"
+    {{ block.shopify_attributes }}
+  >
+    <button
+      on:click="/showDialog"
+      class="notify-me__button {{ block_settings.style_class }} spacing-style"
+      style="{% render 'spacing-style', settings: block_settings %}"
+    >
+      {{ block_settings.button_label | default: 'Notify me when available' }}
+    </button>
+
+    <dialog
+      ref="dialog"
+      class="notify-me__content dialog-modal color-{{ settings.popover_color_scheme }}{% if block_settings.behavior == 'drawer' %} notify-me__content--drawer dialog-drawer{% endif %}"
+      scroll-lock
+      aria-labelledby="notify-me-heading-{{ block.id }}"
+    >
+      <h2
+        id="notify-me-heading-{{ block.id }}"
+        class="notify-me__heading{% if block_settings.heading == blank %} visually-hidden{% endif %}"
+      >
+        {{ block_settings.heading | default: 'Notify me when available' }}
+      </h2>
+
+      {%- if block_settings.subheading != blank -%}
+        <p class="notify-me__subheading">{{ block_settings.subheading }}</p>
+      {%- endif -%}
+
+      <div class="notify-me__inner">
+        {% content_for 'blocks' %}
+      </div>
+
+      <button
+        ref="closeButton"
+        on:click="/closeDialog"
+        class="button button-unstyled close-button notify-me__close"
+        aria-label="{{ 'accessibility.close_dialog' | t }}"
+      >
+        {{- 'icon-close.svg' | inline_asset_content -}}
+      </button>
+    </dialog>
+  </dialog-component>
+{%- endif -%}
+
+{% stylesheet %}
+  .notify-me {
+    display: block;
+  }
+
+  .notify-me__button {
+    width: 100%;
+    cursor: pointer;
+  }
+
+  .notify-me__content {
+    box-shadow: var(--shadow-popover);
+    border: var(--style-border-popover);
+    border-radius: var(--style-border-radius-popover);
+    background-color: var(--color-background);
+    padding: var(--padding-4xl) var(--padding-xl) var(--padding-xl);
+    max-width: var(--normal-content-width);
+    max-height: var(--modal-max-height);
+
+    @media screen and (min-width: 750px) {
+      padding: var(--padding-5xl);
+    }
+  }
+
+  .notify-me__content[open] {
+    animation: modalSlideInTop var(--animation-speed) var(--animation-easing) forwards;
+  }
+
+  .notify-me__content.dialog-closing {
+    animation: modalSlideOutTop var(--animation-speed) var(--animation-easing) forwards;
+  }
+
+  .notify-me__content--drawer {
+    position: fixed;
+    border-radius: 0;
+    width: var(--sidebar-width);
+    max-width: 95vw;
+    height: 100%;
+    margin: 0 0 0 auto;
+  }
+
+  /* Needed to ensure the drawer is full height */
+  .notify-me__content--drawer:modal {
+    max-height: 100dvh;
+  }
+
+  .notify-me__subheading {
+    margin-block: var(--margin-xs) var(--margin-md);
+    opacity: 0.75;
+  }
+
+  .notify-me__close {
+    top: var(--margin-2xs);
+    right: var(--margin-2xs);
+    opacity: 0.8;
+    animation: none;
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Notify me",
+  "tag": null,
+  "blocks": [
+    {
+      "type": "@app"
+    },
+    {
+      "type": "@theme"
+    }
+  ],
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "Add your Shopify Forms block inside this block. The form handles its own submissions and customer records."
+    },
+    {
+      "type": "checkbox",
+      "id": "only_when_sold_out",
+      "label": "Only show when sold out",
+      "info": "Applies to variants that track inventory and stop selling when out of stock. Always visible in the theme editor.",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Notify me when available"
+    },
+    {
+      "type": "select",
+      "id": "style_class",
+      "label": "Button style",
+      "options": [
+        {
+          "value": "button",
+          "label": "t:options.primary"
+        },
+        {
+          "value": "button-secondary",
+          "label": "t:options.secondary"
+        }
+      ],
+      "default": "button-secondary"
+    },
+    {
+      "type": "select",
+      "id": "behavior",
+      "label": "t:settings.behavior",
+      "options": [
+        {
+          "value": "default",
+          "label": "t:options.default"
+        },
+        {
+          "value": "drawer",
+          "label": "t:options.drawer"
+        }
+      ],
+      "default": "default"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Popup heading",
+      "default": "Notify me when available"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Popup subheading",
+      "default": "Leave your details and we'll let you know as soon as this is back."
+    },
+    {
+      "type": "header",
+      "content": "t:content.padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-inline-start",
+      "label": "t:settings.left",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-inline-end",
+      "label": "t:settings.right",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    }
+  ],
+  "presets": [
+    {
+      "name": "Notify me",
+      "category": "t:categories.product"
+    }
+  ]
+}
+{% endschema %}

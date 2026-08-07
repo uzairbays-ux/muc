@@ -237,21 +237,6 @@
         {%- endif -%}
       {%- endform -%}
     </product-form-component>
-
-    {%- comment -%}
-      Rendered outside the product form: nested <form> elements are invalid HTML.
-      Only for genuinely sold-out variants, not "unavailable" ones, where
-      restocking is not what the shopper is waiting on.
-    {%- endcomment -%}
-    {%- if block_settings.show_notify_me
-      and can_add_to_cart == false
-      and inventory_managed
-      and inventory_policy == 'deny'
-      and product.gift_card? == false
-    -%}
-      <script src="{{ 'notify-me.js' | asset_url }}" type="module"></script>
-      {%- render 'notify-me', product: product, variant: variant, settings: block_settings -%}
-    {%- endif -%}
   {%- else -%}
     <div class="product-form-buttons">
       <button
@@ -382,72 +367,6 @@
 
 {% render 'buy-buttons-styles' %}
 
-{% stylesheet %}
-  .notify-me {
-    display: block;
-    margin-block-start: 0.75rem;
-  }
-
-  .notify-me__toggle {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    cursor: pointer;
-    list-style: none;
-  }
-
-  /* Safari still needs the WebKit pseudo-element to drop the disclosure marker */
-  .notify-me__toggle::-webkit-details-marker {
-    display: none;
-  }
-
-  .notify-me__form {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    margin-block-start: 0.75rem;
-  }
-
-  .notify-me__field {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-  }
-
-  .notify-me__field label {
-    font-size: 0.8125rem;
-  }
-
-  .notify-me__field input {
-    width: 100%;
-    padding: 0.625rem 0.75rem;
-    border: 1px solid currentcolor;
-    border-radius: var(--style-border-radius-inputs, 4px);
-    background: transparent;
-    color: inherit;
-    font: inherit;
-  }
-
-  .notify-me__submit[aria-busy='true'] {
-    opacity: 0.6;
-    cursor: progress;
-  }
-
-  .notify-me__status:empty {
-    display: none;
-  }
-
-  .notify-me__status {
-    margin-block-start: 0.75rem;
-    font-size: 0.875rem;
-  }
-
-  .notify-me__status--error {
-    color: var(--color-error, #d72c0d);
-  }
-{% endstylesheet %}
-
 {% schema %}
 {
   "name": "t:names.product_buy_buttons",
@@ -489,65 +408,6 @@
     {
       "type": "paragraph",
       "content": "t:content.gift_card_form_description"
-    },
-    {
-      "type": "header",
-      "content": "Notify me (out of stock)"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_notify_me",
-      "label": "Show \"Notify me\" form when sold out",
-      "default": true
-    },
-    {
-      "type": "text",
-      "id": "notify_tag_prefix",
-      "label": "Customer tag prefix",
-      "info": "Creates two tags per signup, e.g. 'notify-me' and 'notify-me: Product name'.",
-      "default": "notify-me"
-    },
-    {
-      "type": "text",
-      "id": "notify_button_label",
-      "label": "Button label",
-      "default": "Notify me when available"
-    },
-    {
-      "type": "text",
-      "id": "notify_name_label",
-      "label": "Name field label",
-      "default": "Name"
-    },
-    {
-      "type": "text",
-      "id": "notify_email_label",
-      "label": "Email field label",
-      "default": "Email"
-    },
-    {
-      "type": "text",
-      "id": "notify_phone_label",
-      "label": "Phone field label",
-      "default": "Phone number"
-    },
-    {
-      "type": "text",
-      "id": "notify_submit_label",
-      "label": "Submit button label",
-      "default": "Notify me"
-    },
-    {
-      "type": "text",
-      "id": "notify_success_text",
-      "label": "Success message",
-      "default": "Thanks! We will email you when this is back in stock."
-    },
-    {
-      "type": "text",
-      "id": "notify_error_text",
-      "label": "Error message",
-      "default": "Something went wrong. Please try again."
     },
     {
       "type": "header",
