@@ -95,6 +95,8 @@
     document.addEventListener('DOMContentLoaded', () => {
       document.querySelectorAll('.notify-me').forEach((block) => {
         if (!block.querySelector('.notify-me__status--success')) return;
+        // "Leave your details..." is wrong once they already have
+        block.querySelector('.notify-me__subheading')?.remove();
         block.showDialog?.();
       });
     });
@@ -158,13 +160,33 @@
           {%- endcomment -%}
           {%- form 'customer', id: form_id, return_to: return_path, class: 'notify-me__form' -%}
             {%- if form.posted_successfully? -%}
-              <p class="notify-me__status notify-me__status--success">
-                {{ block_settings.success_text | default: "Thanks! We'll email you when it's back in stock." }}
-              </p>
+              {%- comment -%}
+                Replace the fields entirely rather than leaving an empty form
+                under a line of text -- the shopper is done here.
+              {%- endcomment -%}
+              <div class="notify-me__success notify-me__status--success" role="status">
+                <span class="notify-me__success-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10" opacity="0.25"></circle>
+                    <path d="M7 12.5l3.2 3.2L17 9" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                </span>
+                <p class="notify-me__success-text">
+                  {{ block_settings.success_text | default: "Thanks! We'll email you when it's back in stock." }}
+                </p>
+                <button
+                  type="button"
+                  class="notify-me__success-close {{ block_settings.style_class | default: 'button-secondary' }}"
+                  on:click="/closeDialog"
+                >
+                  {{ block_settings.success_close_label | default: 'Continue shopping' }}
+                </button>
+              </div>
             {%- else -%}
               {{ form.errors | default_errors }}
             {%- endif -%}
 
+            {%- unless form.posted_successfully? -%}
             <input type="hidden" name="contact[tags]" value="{{ notify_tags | escape }}" data-notify-tags>
 
             <div class="notify-me__field">
@@ -193,6 +215,7 @@
             <button type="submit" class="notify-me__submit button">
               {{ block_settings.submit_label | default: 'Notify me' }}
             </button>
+            {%- endunless -%}
           {%- endform -%}
         {%- endif -%}
       </div>
@@ -300,6 +323,30 @@
     margin-block-end: var(--margin-sm, 12px);
   }
 
+  .notify-me__success {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--gap-sm, 12px);
+    padding-block: var(--padding-md, 16px);
+  }
+
+  .notify-me__success-icon svg {
+    width: 48px;
+    height: 48px;
+  }
+
+  .notify-me__success-text {
+    margin: 0;
+    font-size: 1rem;
+  }
+
+  .notify-me__success-close {
+    width: 100%;
+    cursor: pointer;
+  }
+
   .notify-me__subheading {
     margin-block: var(--margin-xs) var(--margin-md);
     opacity: 0.75;
@@ -379,6 +426,12 @@
       "id": "success_text",
       "label": "Success message",
       "default": "Thanks! We'll email you when it's back in stock."
+    },
+    {
+      "type": "text",
+      "id": "success_close_label",
+      "label": "Success button label",
+      "default": "Continue shopping"
     },
     {
       "type": "checkbox",
