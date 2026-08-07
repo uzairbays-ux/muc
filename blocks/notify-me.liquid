@@ -50,6 +50,13 @@
 
   assign subheading_text = block_settings.subheading
   assign subheading_text = subheading_text | replace: '[product]', product_title | replace: '[variant]', variant_title
+
+  assign form_id = 'NotifyMe-' | append: block.id
+
+  # Commas separate tags, so they must not survive in the product name.
+  assign tag_prefix = block_settings.tag_prefix | default: 'notify-me'
+  assign safe_title = product_title | replace: ',', ' ' | strip | truncate: 180, ''
+  assign notify_tags = tag_prefix | append: ', ' | append: tag_prefix | append: ': ' | append: safe_title
 -%}
 
 {%- if should_render -%}
@@ -57,6 +64,26 @@
     src="{{ 'dialog.js' | asset_url }}"
     type="module"
   ></script>
+
+  {%- comment -%}
+    contact[phone] is not a documented field for the customer form, so it may
+    not persist. Mirror the number into a tag on submit as well -- tags are
+    stored reliably. This runs before a NATIVE submit, so Shopify's spam
+    protection still sees a genuine form submission.
+  {%- endcomment -%}
+  <script>
+    document.addEventListener('submit', (event) => {
+      const form = event.target.closest('.notify-me__form');
+      if (!form) return;
+
+      const tags = form.querySelector('[data-notify-tags]');
+      const phone = form.querySelector('[data-notify-phone]');
+      if (!tags || !phone) return;
+
+      const number = phone.value.trim().replace(/,/g, ' ');
+      if (number) tags.value = `${tags.value}, phone: ${number}`;
+    });
+  </script>
 
   {%- comment -%}
     spacing-style belongs on the wrapper, not the button: it sets
@@ -93,7 +120,54 @@
       {%- endif -%}
 
       <div class="notify-me__inner">
-        {% content_for 'blocks' %}
+        {%- if block_settings.form_source == 'app_block' -%}
+          {% content_for 'blocks' %}
+        {%- else -%}
+          {%- comment -%}
+            A native submit, not fetch: Shopify's invisible spam protection on
+            /contact rejects programmatic posts, which is what made the earlier
+            AJAX version fail. The customer form is the only one that writes
+            tags, and the tag is what a restock segment is built from.
+          {%- endcomment -%}
+          {%- form 'customer', class: 'notify-me__form' -%}
+            {%- if form.posted_successfully? -%}
+              <p class="notify-me__status notify-me__status--success">
+                {{ block_settings.success_text | default: "Thanks! We'll email you when it's back in stock." }}
+              </p>
+            {%- else -%}
+              {{ form.errors | default_errors }}
+            {%- endif -%}
+
+            <input type="hidden" name="contact[tags]" value="{{ notify_tags | escape }}" data-notify-tags>
+
+            <div class="notify-me__field">
+              <label for="{{ form_id }}-name">{{ block_settings.name_label | default: 'Name' }}</label>
+              <input id="{{ form_id }}-name" type="text" name="contact[first_name]" autocomplete="name" required>
+            </div>
+
+            <div class="notify-me__field">
+              <label for="{{ form_id }}-email">{{ block_settings.email_label | default: 'Email' }}</label>
+              <input
+                id="{{ form_id }}-email"
+                type="email"
+                name="contact[email]"
+                autocomplete="email"
+                autocorrect="off"
+                autocapitalize="off"
+                required
+              >
+            </div>
+
+            <div class="notify-me__field">
+              <label for="{{ form_id }}-phone">{{ block_settings.phone_label | default: 'Phone number' }}</label>
+              <input id="{{ form_id }}-phone" type="tel" name="contact[phone]" autocomplete="tel" data-notify-phone>
+            </div>
+
+            <button type="submit" class="notify-me__submit button">
+              {{ block_settings.submit_label | default: 'Notify me' }}
+            </button>
+          {%- endform -%}
+        {%- endif -%}
       </div>
 
       <button
@@ -165,6 +239,40 @@
     max-height: 100dvh;
   }
 
+  .notify-me__form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-sm, 12px);
+  }
+
+  .notify-me__field {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .notify-me__field label {
+    font-size: 0.8125rem;
+  }
+
+  .notify-me__field input {
+    width: 100%;
+    padding: 0.625rem 0.75rem;
+    border: 1px solid var(--color-input-border, currentcolor);
+    border-radius: var(--style-border-radius-inputs, 4px);
+    color: inherit;
+    font: inherit;
+  }
+
+  .notify-me__submit {
+    width: 100%;
+    margin-block-start: 4px;
+  }
+
+  .notify-me__status--success {
+    margin-block-end: var(--margin-sm, 12px);
+  }
+
   .notify-me__subheading {
     margin-block: var(--margin-xs) var(--margin-md);
     opacity: 0.75;
@@ -192,8 +300,58 @@
   ],
   "settings": [
     {
-      "type": "paragraph",
-      "content": "Add your Shopify Forms block inside this block. The form handles its own submissions and customer records."
+      "type": "select",
+      "id": "form_source",
+      "label": "Form",
+      "info": "The built-in form tags the customer per product, which is what a restock segment is built from. The Shopify Forms block cannot do that.",
+      "options": [
+        {
+          "value": "theme",
+          "label": "Built-in form (tags the customer)"
+        },
+        {
+          "value": "app_block",
+          "label": "Shopify Forms block added inside"
+        }
+      ],
+      "default": "theme"
+    },
+    {
+      "type": "text",
+      "id": "tag_prefix",
+      "label": "Customer tag prefix",
+      "info": "Creates 'notify-me' and 'notify-me: Product name'. Build your restock segment on the second one.",
+      "default": "notify-me"
+    },
+    {
+      "type": "text",
+      "id": "name_label",
+      "label": "Name field label",
+      "default": "Name"
+    },
+    {
+      "type": "text",
+      "id": "email_label",
+      "label": "Email field label",
+      "default": "Email"
+    },
+    {
+      "type": "text",
+      "id": "phone_label",
+      "label": "Phone field label",
+      "default": "Phone number"
+    },
+    {
+      "type": "text",
+      "id": "submit_label",
+      "label": "Submit button label",
+      "default": "Notify me"
+    },
+    {
+      "type": "text",
+      "id": "success_text",
+      "label": "Success message",
+      "default": "Thanks! We'll email you when it's back in stock."
     },
     {
       "type": "checkbox",
