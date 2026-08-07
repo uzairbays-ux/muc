@@ -30,6 +30,23 @@
   if request.design_mode
     assign should_render = true
   endif
+
+  # [product] and [variant] are substituted into the labels so the button and
+  # dialog name the item the shopper is actually waiting on.
+  assign product_title = product.title | strip_html
+  assign variant_title = ''
+  if product.has_only_default_variant == false
+    assign variant_title = variant.title
+  endif
+
+  assign button_label = block_settings.button_label | default: 'Notify me when available'
+  assign button_label = button_label | replace: '[product]', product_title | replace: '[variant]', variant_title
+
+  assign heading_text = block_settings.heading | default: 'Notify me when available'
+  assign heading_text = heading_text | replace: '[product]', product_title | replace: '[variant]', variant_title
+
+  assign subheading_text = block_settings.subheading
+  assign subheading_text = subheading_text | replace: '[product]', product_title | replace: '[variant]', variant_title
 -%}
 
 {%- if should_render -%}
@@ -47,7 +64,7 @@
       class="notify-me__button {{ block_settings.style_class }} spacing-style"
       style="{% render 'spacing-style', settings: block_settings %}"
     >
-      {{ block_settings.button_label | default: 'Notify me when available' }}
+      {{ button_label }}
     </button>
 
     <dialog
@@ -60,11 +77,11 @@
         id="notify-me-heading-{{ block.id }}"
         class="notify-me__heading{% if block_settings.heading == blank %} visually-hidden{% endif %}"
       >
-        {{ block_settings.heading | default: 'Notify me when available' }}
+        {{ heading_text }}
       </h2>
 
-      {%- if block_settings.subheading != blank -%}
-        <p class="notify-me__subheading">{{ block_settings.subheading }}</p>
+      {%- if subheading_text != blank -%}
+        <p class="notify-me__subheading">{{ subheading_text }}</p>
       {%- endif -%}
 
       <div class="notify-me__inner">
@@ -170,6 +187,7 @@
       "type": "text",
       "id": "button_label",
       "label": "Button label",
+      "info": "Use [product] for the product name and [variant] for the variant name.",
       "default": "Notify me when available"
     },
     {
@@ -208,13 +226,15 @@
       "type": "text",
       "id": "heading",
       "label": "Popup heading",
-      "default": "Notify me when available"
+      "info": "Use [product] for the product name and [variant] for the variant name.",
+      "default": "Notify me when [product] is back"
     },
     {
       "type": "text",
       "id": "subheading",
       "label": "Popup subheading",
-      "default": "Leave your details and we'll let you know as soon as this is back."
+      "info": "Use [product] for the product name and [variant] for the variant name.",
+      "default": "Leave your details and we'll email you as soon as [product] is back in stock."
     },
     {
       "type": "header",
