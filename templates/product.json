@@ -351,6 +351,23 @@
               },
               "block_order": []
             },
+            "forms_inline_Kzi8kg": {
+              "type": "shopify://apps/forms/blocks/inline/8744a304-fcb1-4347-b211-bb6b4759a76a",
+              "settings": {
+                "form_id": "1102917",
+                "text_color": "#202020",
+                "button_background_color": "#202020",
+                "button_label_color": "#FFFFFF",
+                "links_color": "#1878B9",
+                "errors_color": "#E02229",
+                "text_alignment": "center",
+                "form_alignment": "center",
+                "padding_top": 0,
+                "padding_bottom": 24,
+                "padding_right": 0,
+                "padding_left": 0
+              }
+            },
             "barcode_6exrQt": {
               "type": "barcode",
               "name": "Product barcode",
@@ -441,7 +458,28 @@
               "blocks": {
                 "judge_me_reviews_review_snippet_widget_gdyTbb": {
                   "type": "shopify://apps/judge-me-reviews/blocks/review_snippet_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-                  "settings": {}
+                  "settings": {
+                    "reviews_selection": "auto",
+                    "products": [],
+                    "filter_pinned": false,
+                    "filter_featured": false,
+                    "filter_custom_tags": "",
+                    "min_star_rating": "inherit",
+                    "show_review_media": true,
+                    "max_reviews": 5,
+                    "review_length": "medium",
+                    "text_size": "medium",
+                    "max_width": 1100,
+                    "max_image_size": "small",
+                    "arrows_visibility": "always_shown",
+                    "transition_speed": 5,
+                    "corner_styling": "inherit",
+                    "text_color": "",
+                    "card_color": "",
+                    "stars_color": "",
+                    "arrows_color": "",
+                    "arrows_background_color": ""
+                  }
                 }
               },
               "block_order": [
@@ -674,6 +712,7 @@
             "sku_CbFtQN",
             "variant_picker_R3rGDr",
             "buy_buttons_eYQEYi",
+            "forms_inline_Kzi8kg",
             "barcode_6exrQt",
             "sku_fiiUqj",
             "group_NpaVge",
