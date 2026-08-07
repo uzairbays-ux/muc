@@ -62,7 +62,16 @@
   # Commas separate tags, so they must not survive in the product name.
   assign tag_prefix = block_settings.tag_prefix | default: 'notify-me'
   assign safe_title = product_title | replace: ',', ' ' | strip | truncate: 180, ''
-  assign notify_tags = tag_prefix | append: ', ' | append: tag_prefix | append: ': ' | append: safe_title
+
+  # Three tags, each with a job:
+  #   notify-me                 -- every signup, for a catch-all segment
+  #   notify-me: <Title>        -- human readable in the admin
+  #   notify-me-<handle>        -- what segments should match on. The title
+  #                                version contains spaces and apostrophes that
+  #                                are awkward to quote in a segment query, and
+  #                                it breaks silently if the title is edited.
+  assign handle_tag = tag_prefix | append: '-' | append: product.handle
+  assign notify_tags = tag_prefix | append: ', ' | append: tag_prefix | append: ': ' | append: safe_title | append: ', ' | append: handle_tag
 -%}
 
 {%- if should_render -%}
