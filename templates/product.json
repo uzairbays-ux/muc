@@ -6,7 +6,8 @@
  * or related systems. Please exercise caution as any changes
  * made to this file may be overwritten.
  * ------------------------------------------------------------
- */{
+ */
+{
   "sections": {
     "main": {
       "type": "product-information",
@@ -350,6 +351,40 @@
               },
               "block_order": []
             },
+            "notify_me_Y3EYbm": {
+              "type": "notify-me",
+              "name": "Notify me",
+              "settings": {
+                "only_when_sold_out": true,
+                "button_label": "Notify me when available",
+                "style_class": "button-secondary",
+                "behavior": "default",
+                "heading": "Notify me when [product] is back",
+                "subheading": "Leave your details and we'll email you as soon as [product] is back in stock.",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "forms_inline_Kzi8kg": {
+              "type": "shopify://apps/forms/blocks/inline/8744a304-fcb1-4347-b211-bb6b4759a76a",
+              "settings": {
+                "form_id": "1102917",
+                "text_color": "#202020",
+                "button_background_color": "#202020",
+                "button_label_color": "#FFFFFF",
+                "links_color": "#1878B9",
+                "errors_color": "#E02229",
+                "text_alignment": "center",
+                "form_alignment": "center",
+                "padding_top": 0,
+                "padding_bottom": 24,
+                "padding_right": 0,
+                "padding_left": 0
+              }
+            },
             "barcode_6exrQt": {
               "type": "barcode",
               "name": "Product barcode",
@@ -685,39 +720,6 @@
                 "padding-inline-end": 0
               },
               "blocks": {}
-            },
-            "notify_me_Kzi8kg": {
-              "type": "notify-me",
-              "settings": {
-                "only_when_sold_out": true,
-                "button_label": "Notify me when available",
-                "style_class": "button",
-                "behavior": "default",
-                "heading": "Notify me when [product] is back",
-                "subheading": "Leave your details and we'll email you as soon as [product] is back in stock."
-              },
-              "blocks": {
-                "forms_inline_Kzi8kg": {
-                  "type": "shopify://apps/forms/blocks/inline/8744a304-fcb1-4347-b211-bb6b4759a76a",
-                  "settings": {
-                    "form_id": "1102917",
-                    "text_color": "#202020",
-                    "button_background_color": "#202020",
-                    "button_label_color": "#FFFFFF",
-                    "links_color": "#1878B9",
-                    "errors_color": "#E02229",
-                    "text_alignment": "center",
-                    "form_alignment": "center",
-                    "padding_top": 0,
-                    "padding_bottom": 24,
-                    "padding_right": 0,
-                    "padding_left": 0
-                  }
-                }
-              },
-              "block_order": [
-                "forms_inline_Kzi8kg"
-              ]
             }
           },
           "block_order": [
@@ -727,7 +729,8 @@
             "sku_CbFtQN",
             "variant_picker_R3rGDr",
             "buy_buttons_eYQEYi",
-            "notify_me_Kzi8kg",
+            "notify_me_Y3EYbm",
+            "forms_inline_Kzi8kg",
             "barcode_6exrQt",
             "sku_fiiUqj",
             "group_NpaVge",
