@@ -25,7 +25,7 @@
 {% comment %} We always render this full-width, as the child blocks have width: page/full settings {% endcomment %}
 <div class="section-background color-{{ section.settings.color_scheme }}"></div>
 <results-list
-  class="section product-grid-container color-{{ section.settings.color_scheme }}"
+  class="section product-grid-container collection-page-grid color-{{ section.settings.color_scheme }}"
   style="--padding-block-start: {{ section.settings.padding-block-start }}px; --padding-block-end: {{ section.settings.padding-block-end }}px;"
   section-id="{{ section.id }}"
   infinite-scroll="{{ section.settings.enable_infinite_scroll }}"
@@ -75,6 +75,15 @@
     {% endpaginate %}
   </div>
 </results-list>
+
+{% stylesheet %}
+  /* Sale badge on the collection page grid only: plain black text, no pill fill.
+     Scoped to .collection-page-grid so search results keep the red pill. */
+  .collection-page-grid .sale-badge__pill {
+    color: #000;
+    background: transparent;
+  }
+{% endstylesheet %}
 
 {% schema %}
 {
