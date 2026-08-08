@@ -158,6 +158,33 @@
             "open_new_tab": false
           }
         },
+        "card_G4PiLa": {
+          "type": "card",
+          "name": "Maybelline",
+          "settings": {
+            "image": "shopify://shop_images/Maybilline.jpg",
+            "link": "shopify://collections/maybelline",
+            "open_new_tab": false
+          }
+        },
+        "card_YUtaR6": {
+          "type": "card",
+          "name": "Revolution",
+          "settings": {
+            "image": "shopify://shop_images/Revolution_a8b4b25e-8187-4227-a83e-ae25c318f998.jpg",
+            "link": "shopify://collections/revolution",
+            "open_new_tab": false
+          }
+        },
+        "card_7Rimtd": {
+          "type": "card",
+          "name": "ELF",
+          "settings": {
+            "image": "shopify://shop_images/ELF_a43cf89f-6d4e-4d8b-a4ce-a8bd8c1003b7.jpg",
+            "link": "shopify://collections/elf",
+            "open_new_tab": false
+          }
+        },
         "card_LJWfzX": {
           "type": "card",
           "name": "Framesi",
@@ -176,39 +203,12 @@
             "open_new_tab": false
           }
         },
-        "card_G4PiLa": {
-          "type": "card",
-          "name": "Maybelline",
-          "settings": {
-            "image": "shopify://shop_images/Maybilline.jpg",
-            "link": "shopify://collections/maybelline",
-            "open_new_tab": false
-          }
-        },
-        "card_7Rimtd": {
-          "type": "card",
-          "name": "ELF",
-          "settings": {
-            "image": "shopify://shop_images/ELF_a43cf89f-6d4e-4d8b-a4ce-a8bd8c1003b7.jpg",
-            "link": "shopify://collections/elf",
-            "open_new_tab": false
-          }
-        },
         "card_nbr3cj": {
           "type": "card",
           "name": "Ordinary",
           "settings": {
             "image": "shopify://shop_images/The-Ordinary_6841b8ee-f2ea-46b1-b8f2-f9f2dbaf4930.jpg",
             "link": "shopify://collections/to",
-            "open_new_tab": false
-          }
-        },
-        "card_YUtaR6": {
-          "type": "card",
-          "name": "Revolution",
-          "settings": {
-            "image": "shopify://shop_images/Revolution_a8b4b25e-8187-4227-a83e-ae25c318f998.jpg",
-            "link": "shopify://collections/revolution",
             "open_new_tab": false
           }
         },
@@ -233,12 +233,12 @@
       },
       "block_order": [
         "card_x4i8pi",
+        "card_G4PiLa",
+        "card_YUtaR6",
+        "card_7Rimtd",
         "card_LJWfzX",
         "card_ftKGeC",
-        "card_G4PiLa",
-        "card_7Rimtd",
         "card_nbr3cj",
-        "card_YUtaR6",
         "card_hxUFFx",
         "card_b9F39r"
       ],
