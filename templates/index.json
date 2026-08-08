@@ -782,19 +782,19 @@
             "open_new_tab": false
           }
         },
-        "card_dnezUz": {
-          "type": "card",
-          "settings": {
-            "image": "shopify://shop_images/One-Skin.jpg",
-            "link": "shopify://collections/oneskin",
-            "open_new_tab": false
-          }
-        },
         "card_ceiizR": {
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/Gosh_jpg.jpg",
             "link": "shopify://collections/gosh",
+            "open_new_tab": false
+          }
+        },
+        "card_dnezUz": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/One-Skin.jpg",
+            "link": "shopify://collections/oneskin",
             "open_new_tab": false
           }
         },
@@ -822,8 +822,8 @@
         "card_nkVxPj",
         "card_J3czmk",
         "card_gBiw68",
-        "card_dnezUz",
         "card_ceiizR",
+        "card_dnezUz",
         "card_c49pAk",
         "card_AHQBXy"
       ],
