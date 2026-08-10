@@ -194,11 +194,39 @@
     background: transparent;
   }
 
-  /* On phones, push the product rating to the far right of its row. */
+  /* Phones: brand on the left, rating on the right (spread the row apart). */
   @media screen and (max-width: 749px) {
+    [id^='ProductInformation'] .group-block-content:has(> .rating-wrapper) {
+      justify-content: space-between;
+      --horizontal-alignment: space-between;
+    }
+
     [id^='ProductInformation'] .rating-wrapper {
       margin-inline-start: auto;
     }
+
+    /* Notify-me renders after the add-to-cart button on phones. */
+    [id^='ProductInformation'] notify-me-availability {
+      order: var(--mobile-order, 5);
+    }
+  }
+
+  /* Extra breathing room below the price. */
+  [id^='ProductInformation'] product-price {
+    display: block;
+    margin-block-end: 14px;
+  }
+
+  /* Make the About Product accordion stand out as a bordered card. */
+  [id^='ProductInformation'] .accordion {
+    border: 1px solid rgb(var(--color-foreground-rgb) / 0.14);
+    border-radius: 12px;
+    padding-inline: 16px;
+    background: rgb(var(--color-foreground-rgb) / 0.03);
+  }
+
+  [id^='ProductInformation'] .accordion .details__header {
+    font-weight: 600;
   }
 {% endstyle %}
 

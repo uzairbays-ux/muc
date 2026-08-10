@@ -79,7 +79,7 @@
   when the shopper switches to a sold-out variant client-side. The actual content
   only renders when should_render is true, exactly as before.
 {%- endcomment -%}
-<notify-me-availability class="notify-me-slot" data-product-id="{{ product.id }}">
+<notify-me-availability class="notify-me-slot" data-product-id="{{ product.id }}" style="--mobile-order: {{ block_settings.mobile_order | default: 5 }};">
 {%- if should_render -%}
   <script
     src="{{ 'dialog.js' | asset_url }}"
