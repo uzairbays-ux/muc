@@ -1,10 +1,11 @@
 {%- comment -%}
   Encourages account creation: a one-time, dismissable tooltip near the account
-  icon. Shows only for logged-out visitors, ~2.5s after load, once per browser.
+  icon for logged-out visitors.
 
-  Visibility is driven by a class on <html> (which the theme never morphs), so a
-  freshly re-rendered header tooltip still picks it up. All interaction is
-  delegated at the document level for the same reason.
+  The reveal is a pure CSS animation (fires ~2.5s after the element mounts, so it
+  works even though the theme morphs the header after load). JS is used only to
+  SUPPRESS it for visitors who already dismissed it (a class on <html>, which the
+  theme never morphs), and to handle the dismiss click (delegated at document).
 {%- endcomment -%}
 {%- unless customer -%}
   <div class="acct-tip" data-acct-tip>
@@ -33,14 +34,26 @@
       line-height: 1.35;
       opacity: 0;
       transform: translateY(-6px);
-      transition: opacity 0.25s ease, transform 0.25s ease;
       pointer-events: none;
+      animation: acctTipReveal 12s ease forwards;
     }
 
-    html.acct-tip-show .acct-tip {
-      opacity: 1;
-      transform: translateY(0);
-      pointer-events: auto;
+    /* hidden until ~2.4s, fade in by ~2.8s, hold, then fade out by 12s */
+    @keyframes acctTipReveal {
+      0%, 20%   { opacity: 0; transform: translateY(-6px); pointer-events: none; }
+      23%, 90%  { opacity: 1; transform: translateY(0);    pointer-events: auto; }
+      100%      { opacity: 0; transform: translateY(-6px); pointer-events: none; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .acct-tip { animation-duration: 10s; }
+    }
+
+    /* Suppressed for visitors who dismissed it */
+    html.acct-tip-off .acct-tip {
+      animation: none !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
     }
 
     .acct-tip::before {
@@ -54,21 +67,9 @@
       transform: rotate(45deg);
     }
 
-    .acct-tip__body {
-      display: block;
-      text-decoration: none;
-      color: inherit;
-    }
-
-    .acct-tip__title {
-      display: block;
-      font-weight: 700;
-      margin-bottom: 2px;
-    }
-
-    .acct-tip__text {
-      color: rgb(var(--color-foreground-rgb, 34 34 34) / 0.75);
-    }
+    .acct-tip__body { display: block; text-decoration: none; color: inherit; }
+    .acct-tip__title { display: block; font-weight: 700; margin-bottom: 2px; }
+    .acct-tip__text { color: rgb(var(--color-foreground-rgb, 34 34 34) / 0.75); }
 
     .acct-tip__close {
       position: absolute;
@@ -83,42 +84,29 @@
       color: inherit;
       opacity: 0.55;
     }
-
-    .acct-tip__close:hover {
-      opacity: 1;
-    }
+    .acct-tip__close:hover { opacity: 1; }
   {% endstyle %}
 
   <script>
     (function () {
+      var KEY = 'mc-acct-tip-dismissed';
+      /* Suppress on load for already-dismissed visitors (runs before the reveal). */
+      try { if (localStorage.getItem(KEY)) document.documentElement.classList.add('acct-tip-off'); } catch (e) {}
+
       if (window.__acctTipInit) return;
       window.__acctTipInit = true;
-      var KEY = 'mc-acct-tip-dismissed';
-      var dismissed = false;
-      try { dismissed = !!localStorage.getItem(KEY); } catch (e) {}
-      var hideTimer;
-
-      function hide(persist) {
-        document.documentElement.classList.remove('acct-tip-show');
-        if (persist) { try { localStorage.setItem(KEY, '1'); } catch (e) {} }
-      }
 
       document.addEventListener('click', function (e) {
         if (e.target.closest('[data-acct-tip-close]')) {
           e.preventDefault(); e.stopPropagation();
-          clearTimeout(hideTimer); hide(true); return;
+          document.documentElement.classList.add('acct-tip-off');
+          try { localStorage.setItem(KEY, '1'); } catch (err) {}
+          return;
         }
         if (e.target.closest('.acct-tip__body')) {
-          try { localStorage.setItem(KEY, '1'); } catch (e) {}
+          try { localStorage.setItem(KEY, '1'); } catch (err) {}
         }
       });
-
-      if (!dismissed) {
-        setTimeout(function () {
-          document.documentElement.classList.add('acct-tip-show');
-          hideTimer = setTimeout(function () { hide(false); }, 8000);
-        }, 2500);
-      }
     })();
   </script>
 {%- endunless -%}
