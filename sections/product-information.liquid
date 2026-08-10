@@ -193,6 +193,13 @@
   #MainContent .shopify-section .section-background {
     background: transparent;
   }
+
+  /* On phones, push the product rating to the far right of its row. */
+  @media screen and (max-width: 749px) {
+    [id^='ProductInformation'] .rating-wrapper {
+      margin-inline-start: auto;
+    }
+  }
 {% endstyle %}
 
 {% stylesheet %}
