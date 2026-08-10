@@ -435,12 +435,20 @@
         });
         panel.appendChild(ul);
       } else {
-        /* No child nav links — fetch 8 products from the featured collection */
+        /* No child nav links — show THIS tab's own collection products, derived from its
+           link (e.g. Sale -> /collections/sale). Tabs that don't point to a collection
+           (or whose collection is empty) render no product grid at all. */
+        var collMatch;
+        try {
+          collMatch = new URL(href, window.location.origin).pathname.match(/\/collections\/[^\/?#]+/);
+        } catch (e) { collMatch = null; }
+
+        if (collMatch) {
         var grid = document.createElement('div');
         grid.className = 'mmt-product-grid';
         panel.appendChild(grid);
 
-        fetch('/products.json?collection_id=473827148012&limit=8&sort_by=best-selling')
+        fetch(collMatch[0] + '/products.json?limit=8')
           .then(function (r) { return r.json(); })
           .then(function (data) {
             var products = (data.products || []).slice(0, 8);
@@ -475,7 +483,8 @@
               grid.appendChild(card);
             });
           })
-          .catch(function () {});
+          .catch(function () { grid.remove(); });
+        }
       }
 
       contentArea.appendChild(panel);
