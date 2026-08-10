@@ -19,16 +19,21 @@
   # product photos being used as swatch backgrounds.
   assign mapped_color = null
   if label != blank and settings.swatch_color_definitions != blank
-    assign label_lower = label | downcase | strip
+    # Normalize by lowercasing and removing spaces so spelling variants of the same
+    # shade ("FS 38", "Fs38", "fs 38", and "1W" / "1 W") all match one definition line.
+    assign label_key = label | downcase | strip | remove: ' '
     assign color_lines = settings.swatch_color_definitions | newline_to_br | split: '<br />'
     for color_line in color_lines
       assign trimmed_line = color_line | strip
       if trimmed_line != blank and mapped_color == null
         assign line_parts = trimmed_line | split: ':'
         if line_parts.size >= 2
-          assign def_name = line_parts[0] | downcase | strip
-          if def_name == label_lower
-            assign mapped_color = line_parts[1] | strip
+          assign def_name = line_parts | first
+          assign def_key = def_name | downcase | strip | remove: ' '
+          if def_key == label_key
+            # Take everything after the first colon (so values may contain colons) and
+            # strip a stray trailing ";" that's easy to leave in by mistake.
+            assign mapped_color = trimmed_line | remove_first: def_name | remove_first: ':' | strip | replace: ';', ''
           endif
         endif
       endif
@@ -44,14 +49,15 @@
       assign extra_classes = extra_classes | append: ' swatch--variant-image'
     endif
 
+  elsif swatch.color
+    # Native Shopify color — preferred over the swatch image so the actual shade
+    # color is shown; the swatch image below acts as the fallback.
+    assign swatch_value = 'rgb(' | append: swatch.color.rgb | append: ')'
+
   elsif swatch.image
-    # Explicit swatch image from Shopify metafield
+    # Fallback: explicit swatch image from Shopify
     assign swatch_image_url = swatch.image | image_url: width: 80
     assign swatch_value = 'url(' | append: swatch_image_url | append: ')'
-
-  elsif swatch.color
-    # Native Shopify color metafield
-    assign swatch_value = 'rgb(' | append: swatch.color.rgb | append: ')'
 
   elsif settings.show_variant_image and variant_image
     # Fallback: variant product photo (only when no color is defined)
