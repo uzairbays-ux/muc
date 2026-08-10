@@ -87,45 +87,45 @@
 
   <script>
     (function () {
+      /* Everything re-queries the tooltip live and is delegated at document level, so
+         it survives the theme morphing/re-rendering the header after load. */
       if (window.__acctTipInit) return;
       window.__acctTipInit = true;
       var KEY = 'mc-acct-tip-dismissed';
+      var dismissed = false;
+      try { dismissed = !!localStorage.getItem(KEY); } catch (e) {}
+      var hideTimer;
 
-      function init() {
-        try { if (localStorage.getItem(KEY)) return; } catch (e) {}
+      function dismiss(persist) {
+        var tip = document.querySelector('[data-acct-tip]');
+        if (tip) {
+          tip.removeAttribute('data-show');
+          setTimeout(function () { var t = document.querySelector('[data-acct-tip]'); if (t) t.hidden = true; }, 300);
+        }
+        if (persist) { dismissed = true; try { localStorage.setItem(KEY, '1'); } catch (e) {} }
+      }
+
+      document.addEventListener('click', function (e) {
+        if (e.target.closest('[data-acct-tip-close]')) {
+          e.preventDefault(); e.stopPropagation();
+          clearTimeout(hideTimer); dismiss(true); return;
+        }
+        if (e.target.closest('.acct-tip__body')) {
+          try { localStorage.setItem(KEY, '1'); } catch (e) {}
+        }
+      });
+
+      setTimeout(function show() {
+        if (dismissed) return;
         var tip = document.querySelector('[data-acct-tip]');
         if (!tip) return;
-        var hideTimer;
-
-        function dismiss(persist) {
-          tip.removeAttribute('data-show');
-          setTimeout(function () { tip.hidden = true; }, 300);
-          if (persist !== false) { try { localStorage.setItem(KEY, '1'); } catch (e) {} }
-        }
-
-        setTimeout(function () {
-          tip.hidden = false;
-          requestAnimationFrame(function () { tip.setAttribute('data-show', ''); });
-          hideTimer = setTimeout(function () { dismiss(false); }, 8000);
-        }, 2500);
-
-        var closeBtn = tip.querySelector('[data-acct-tip-close]');
-        if (closeBtn) closeBtn.addEventListener('click', function (e) {
-          e.preventDefault(); e.stopPropagation();
-          clearTimeout(hideTimer); dismiss(true);
+        tip.hidden = false;
+        requestAnimationFrame(function () {
+          var t = document.querySelector('[data-acct-tip]');
+          if (t) t.setAttribute('data-show', '');
         });
-
-        var body = tip.querySelector('.acct-tip__body');
-        if (body) body.addEventListener('click', function () {
-          try { localStorage.setItem(KEY, '1'); } catch (e) {}
-        });
-      }
-
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', init);
-      } else {
-        init();
-      }
+        hideTimer = setTimeout(function () { dismiss(false); }, 8000);
+      }, 2500);
     })();
   </script>
 {%- endunless -%}
