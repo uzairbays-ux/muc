@@ -113,14 +113,16 @@
       var S = window.__kjPdpVto;
       var MP_VER = 'https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.21';
 
-      /* muc: mount the stage as an overlay over the Horizon media gallery */
+      /* muc: mount the stage as an overlay over the Horizon media gallery, and move
+         the "try me on" button to the bottom of the gallery section. */
       function mountStage() {
-        var stage = document.querySelector('[data-kj-vto-stage]');
         var media = document.querySelector('.product-information__media');
-        if (stage && media && stage.parentElement !== media) {
-          media.style.position = 'relative';
-          media.appendChild(stage);
-        }
+        if (!media) return;
+        media.style.position = 'relative';
+        var stage = document.querySelector('[data-kj-vto-stage]');
+        if (stage && stage.parentElement !== media) media.appendChild(stage);
+        var openrow = document.querySelector('.kj-pdpvto-openrow');
+        if (openrow && openrow.parentElement !== media) media.appendChild(openrow);
       }
 
       function els() {
@@ -360,12 +362,13 @@
   </script>
 
   {% style %}
-    .kj-pdpvto-openrow { display: flex; justify-content: center; margin: 10px 0 4px; }
+    .kj-pdpvto-openrow { display: flex; width: 100%; margin: 12px 0 0; }
 
     .kj-pdpvto-open {
-      display: inline-flex; align-items: center; gap: 8px;
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      width: 100%;
       background: var(--color-background, #fff); border: 1px solid rgb(var(--color-foreground-rgb, 34 34 34) / 0.25);
-      color: var(--color-foreground, #222); border-radius: 6px; padding: 10px 18px;
+      color: var(--color-foreground, #222); border-radius: 6px; padding: 12px 18px;
       font-size: 13px; letter-spacing: 0.3px; cursor: pointer; transition: border-color 0.2s ease;
     }
     .kj-pdpvto-open:hover { border-color: var(--color-foreground, #222); }
