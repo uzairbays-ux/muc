@@ -196,7 +196,15 @@
 
   /* Phones: brand on the left, rating on the right (spread the row apart). */
   @media screen and (max-width: 749px) {
+    /* The brand/rating group is fit-content by default, leaving no room to spread —
+       force it full width first, then space it apart. */
+    [id^='ProductInformation'] .group-block:has(.rating-wrapper) {
+      width: 100%;
+      --size-style-width: 100%;
+    }
+
     [id^='ProductInformation'] .group-block-content:has(> .rating-wrapper) {
+      width: 100%;
       justify-content: space-between;
       --horizontal-alignment: space-between;
     }
