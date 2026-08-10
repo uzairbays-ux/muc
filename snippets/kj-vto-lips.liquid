@@ -1,0 +1,406 @@
+{%- comment -%}
+  Lipstick virtual try-on for the product page. Ports the ST London PDP engine
+  (MediaPipe FaceLandmarker lip tint) into Makeup City's Horizon product page.
+
+  - Shades + hex come from this store's map (snippets/kj-shade-hex.liquid).
+  - Only renders when the product is lip-related AND has >= 1 mapped shade.
+  - The camera stage overlays the Horizon media gallery (.product-information__media);
+    the "try me on" button lives wherever this block is placed.
+  - Shade sync is wired to Horizon's variant picker (radio change + variant:update).
+{%- endcomment -%}
+
+{%- liquid
+  assign current_variant = product.selected_or_first_available_variant
+
+  # Only for lip products
+  assign is_lip = false
+  assign type_l = product.type | downcase
+  assign title_l = product.title | downcase
+  if type_l contains 'lip' or title_l contains 'lipstick' or title_l contains 'lip gloss' or title_l contains 'lip liner' or title_l contains 'lip crayon'
+    assign is_lip = true
+  endif
+
+  # Build "shade":"#hex" pairs from mapped variants (or the title's last segment for single-variant products)
+  assign vto_shade_count = 0
+  assign vto_pairs = ''
+  assign init_shade = current_variant.title | downcase
+-%}
+
+{%- if is_lip -%}
+  {%- if product.has_only_default_variant -%}
+    {%- assign t_parts = product.title | split: ' - ' -%}
+    {%- assign t_last = t_parts | last | strip -%}
+    {%- capture t_hex %}{% render 'kj-shade-hex', shade: t_last %}{%- endcapture -%}
+    {%- assign t_hex = t_hex | strip -%}
+    {%- if t_hex != blank -%}
+      {%- assign t_key = t_last | downcase | replace: '"', '' -%}
+      {%- capture vto_pairs %}"{{ t_key }}":"{{ t_hex }}"{%- endcapture -%}
+      {%- assign vto_shade_count = 1 -%}
+      {%- assign init_shade = t_key -%}
+    {%- endif -%}
+  {%- else -%}
+    {%- for variant in product.variants -%}
+      {%- capture vv_hex %}{% render 'kj-shade-hex', shade: variant.title %}{%- endcapture -%}
+      {%- assign vv_hex = vv_hex | strip -%}
+      {%- if vv_hex != blank -%}
+        {%- assign vv_key = variant.title | downcase | replace: '"', '' -%}
+        {%- capture vv_pair %}"{{ vv_key }}":"{{ vv_hex }}"{%- endcapture -%}
+        {%- if vto_pairs == '' -%}
+          {%- assign vto_pairs = vv_pair -%}
+        {%- else -%}
+          {%- assign vto_pairs = vto_pairs | append: ',' | append: vv_pair -%}
+        {%- endif -%}
+        {%- assign vto_shade_count = vto_shade_count | plus: 1 -%}
+      {%- endif -%}
+    {%- endfor -%}
+  {%- endif -%}
+{%- endif -%}
+
+{%- if vto_shade_count > 0 -%}
+  <div class="kj-pdpvto-openrow">
+    <button type="button" class="kj-pdpvto-open" data-kj-vto-open>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+      try me on
+    </button>
+  </div>
+  <span data-kj-pdp-shade hidden>{{ init_shade }}</span>
+  <script type="application/json" data-kj-vto-map>{ {{ vto_pairs }} }</script>
+
+  <div class="kj-pdpvto-stage" data-kj-vto-stage hidden>
+    <div class="kj-pdpvto-consent" data-kj-vto-consent hidden>
+      <div class="kj-pdpvto-card">
+        <button type="button" class="kj-pdpvto-card-x" data-kj-vto-close aria-label="Close">&times;</button>
+        <h4>privacy policy</h4>
+        <p>by clicking &quot;agree&quot;, i consent to my device camera being used for the <strong>virtual try-on</strong>. camera frames are processed in real time on this device to render shades and are never stored or uploaded.</p>
+        <p>close the try-on at any time to turn the camera off.</p>
+        <label class="kj-pdpvto-agree-row"><input type="checkbox" data-kj-vto-check> i agree</label>
+        <button type="button" class="kj-pdpvto-agree" data-kj-vto-agree disabled>agree</button>
+        <button type="button" class="kj-pdpvto-nothanks" data-kj-vto-close>no thanks</button>
+      </div>
+    </div>
+
+    <div class="kj-pdpvto-ready" data-kj-vto-ready hidden>
+      <span class="kj-pdpvto-spinner" aria-hidden="true"></span>
+      <span data-kj-vto-ready-label>getting ready</span>
+    </div>
+
+    <div class="kj-pdpvto-live" data-kj-vto-live hidden>
+      <video data-kj-vto-video playsinline muted></video>
+      <canvas data-kj-vto-canvas></canvas>
+      <div class="kj-pdpvto-divider" data-kj-vto-divider hidden>
+        <span class="kj-pdpvto-handle" data-kj-vto-handle>
+          <svg width="7" height="10" viewBox="0 0 7 10" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 1 2 5l4 4"/></svg>
+          <svg width="7" height="10" viewBox="0 0 7 10" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l4 4-4 4"/></svg>
+        </span>
+      </div>
+      <button type="button" class="kj-pdpvto-x" data-kj-vto-close aria-label="Close try-on">&times;</button>
+      <div class="kj-pdpvto-tools">
+        <button type="button" class="kj-pdpvto-tool" data-kj-vto-snap aria-label="Save photo">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+        </button>
+        <button type="button" class="kj-pdpvto-tool" data-kj-vto-compare aria-label="Compare before and after">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3.5" y="4.5" width="17" height="15" rx="1.5"/><line x1="12" y1="4.5" x2="12" y2="19.5"/></svg>
+        </button>
+      </div>
+      <div class="kj-pdpvto-flash" data-kj-vto-flash></div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      if (window.__kjPdpVto) return;
+      window.__kjPdpVto = { stream: null, raf: null, face: null, color: null, loading: false, agreed: false, compare: false, split: 0.5, drag: false, map: null };
+      var S = window.__kjPdpVto;
+      var MP_VER = 'https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.21';
+
+      /* muc: mount the stage as an overlay over the Horizon media gallery */
+      function mountStage() {
+        var stage = document.querySelector('[data-kj-vto-stage]');
+        var media = document.querySelector('.product-information__media');
+        if (stage && media && stage.parentElement !== media) {
+          media.style.position = 'relative';
+          media.appendChild(stage);
+        }
+      }
+
+      function els() {
+        var stage = document.querySelector('[data-kj-vto-stage]');
+        if (!stage) return null;
+        return {
+          stage: stage,
+          consent: stage.querySelector('[data-kj-vto-consent]'),
+          ready: stage.querySelector('[data-kj-vto-ready]'),
+          readyLabel: stage.querySelector('[data-kj-vto-ready-label]'),
+          live: stage.querySelector('[data-kj-vto-live]'),
+          video: stage.querySelector('[data-kj-vto-video]'),
+          canvas: stage.querySelector('[data-kj-vto-canvas]'),
+          divider: stage.querySelector('[data-kj-vto-divider]'),
+          flash: stage.querySelector('[data-kj-vto-flash]')
+        };
+      }
+
+      function shadeMap() {
+        if (S.map) return S.map;
+        var tag = document.querySelector('[data-kj-vto-map]');
+        try { S.map = JSON.parse(tag.textContent); } catch (err) { S.map = {}; }
+        return S.map;
+      }
+
+      function currentShadeColor() {
+        var map = shadeMap();
+        var label = document.querySelector('[data-kj-pdp-shade]');
+        var key = label ? label.textContent.trim().toLowerCase() : '';
+        if (map[key]) return map[key];
+        for (var k in map) return map[k];
+        return '#C98A78';
+      }
+
+      function setState(name) {
+        var e = els();
+        if (!e) return;
+        e.consent.hidden = name !== 'consent';
+        e.ready.hidden = name !== 'ready';
+        e.live.hidden = name !== 'live';
+      }
+
+      function drawFrame(e, faceRes) {
+        if (!e.ready.hidden) setState('live');
+        var canvas = e.canvas, ctx = canvas.getContext('2d');
+        if (canvas.width !== e.video.videoWidth && e.video.videoWidth) {
+          canvas.width = e.video.videoWidth;
+          canvas.height = e.video.videoHeight;
+        }
+        if (!canvas.width) return;
+        ctx.save();
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.drawImage(e.video, 0, 0, canvas.width, canvas.height);
+        if (faceRes && faceRes.faceLandmarks && faceRes.faceLandmarks.length > 0) {
+          var lm = faceRes.faceLandmarks[0];
+          var outer = [61, 146, 91, 181, 84, 17, 314, 405, 321, 375, 291, 409, 270, 269, 267, 0, 37, 39, 40, 185, 61];
+          var inner = [78, 95, 88, 178, 87, 14, 317, 402, 318, 324, 308, 415, 310, 311, 312, 13, 82, 81, 80, 191, 78];
+          if (S.compare) {
+            ctx.beginPath();
+            ctx.rect(0, 0, canvas.width * (1 - S.split), canvas.height);
+            ctx.clip();
+          }
+          ctx.globalCompositeOperation = 'multiply';
+          ctx.fillStyle = (S.color || '#C98A78') + '80';
+          ctx.beginPath();
+          outer.forEach(function (idx, i) {
+            var pt = lm[idx];
+            if (i === 0) ctx.moveTo(pt.x * canvas.width, pt.y * canvas.height);
+            else ctx.lineTo(pt.x * canvas.width, pt.y * canvas.height);
+          });
+          inner.forEach(function (idx, i) {
+            var pt = lm[idx];
+            if (i === 0) ctx.moveTo(pt.x * canvas.width, pt.y * canvas.height);
+            else ctx.lineTo(pt.x * canvas.width, pt.y * canvas.height);
+          });
+          ctx.fill('evenodd');
+          ctx.globalCompositeOperation = 'source-over';
+        }
+        ctx.restore();
+      }
+
+      function cameraFail() {
+        var e = els();
+        if (e && e.readyLabel) e.readyLabel.textContent = 'camera unavailable — please allow camera access';
+      }
+
+      function loadFace() {
+        if (S.face) return Promise.resolve();
+        return import(MP_VER + '/vision_bundle.mjs').then(function (m) {
+          return m.FilesetResolver.forVisionTasks(MP_VER + '/wasm').then(function (fs) {
+            var make = function (delegate) {
+              return m.FaceLandmarker.createFromOptions(fs, {
+                baseOptions: { modelAssetPath: 'https://storage.googleapis.com/mediapipe-models/face_landmarker/face_landmarker/float16/1/face_landmarker.task', delegate: delegate },
+                runningMode: 'VIDEO',
+                numFaces: 1
+              });
+            };
+            return make('GPU').catch(function () { return make('CPU'); }).then(function (r) { S.face = r; });
+          });
+        });
+      }
+
+      function startLoop() {
+        if (S.raf) cancelAnimationFrame(S.raf);
+        var tick = function () {
+          var e = els();
+          if (!e || e.stage.hidden || !S.stream) { S.raf = null; return; }
+          if (e.video.readyState >= 2 && S.face) {
+            var faceRes = null;
+            try { faceRes = S.face.detectForVideo(e.video, performance.now()); } catch (err) {}
+            drawFrame(e, faceRes);
+          }
+          S.raf = requestAnimationFrame(tick);
+        };
+        S.raf = requestAnimationFrame(tick);
+      }
+
+      function startAR() {
+        var e = els();
+        if (!e || S.loading) return;
+        S.loading = true;
+        loadFace()
+          .then(function () {
+            return navigator.mediaDevices.getUserMedia({
+              video: { facingMode: 'user', width: { ideal: 1280 }, height: { ideal: 720 } },
+              audio: false
+            });
+          })
+          .then(function (stream) {
+            S.loading = false;
+            S.stream = stream;
+            e.video.srcObject = stream;
+            var p = e.video.play();
+            if (p && p.catch) p.catch(function () {});
+            startLoop();
+          })
+          .catch(function () { S.loading = false; cameraFail(); });
+      }
+
+      function closeVto() {
+        var e = els();
+        if (!e) return;
+        e.stage.hidden = true;
+        setState('none');
+        S.compare = false;
+        if (e.divider) e.divider.hidden = true;
+        var cmp = e.stage.querySelector('[data-kj-vto-compare]');
+        if (cmp) cmp.classList.remove('active');
+        if (S.raf) { cancelAnimationFrame(S.raf); S.raf = null; }
+        if (S.stream) { S.stream.getTracks().forEach(function (t) { t.stop(); }); S.stream = null; }
+        if (e.video) e.video.srcObject = null;
+      }
+
+      document.addEventListener('click', function (ev) {
+        var open = ev.target.closest('[data-kj-vto-open]');
+        if (open) {
+          mountStage();
+          var e = els();
+          if (!e || !e.stage.hidden) return;
+          S.color = currentShadeColor();
+          if (e.readyLabel) e.readyLabel.textContent = 'getting ready';
+          e.stage.hidden = false;
+          if (S.agreed) { setState('ready'); startAR(); }
+          else { setState('consent'); }
+          return;
+        }
+        if (ev.target.closest('[data-kj-vto-close]')) { closeVto(); return; }
+        var agree = ev.target.closest('[data-kj-vto-agree]');
+        if (agree && !agree.disabled) { S.agreed = true; setState('ready'); startAR(); return; }
+        var snap = ev.target.closest('[data-kj-vto-snap]');
+        if (snap) {
+          var e2 = els();
+          if (!e2 || !e2.canvas.width) return;
+          var a = document.createElement('a');
+          a.download = 'makeup-city-try-on.png';
+          a.href = e2.canvas.toDataURL('image/png');
+          a.click();
+          if (e2.flash) { e2.flash.classList.remove('on'); void e2.flash.offsetWidth; e2.flash.classList.add('on'); }
+          return;
+        }
+        var cmp = ev.target.closest('[data-kj-vto-compare]');
+        if (cmp) {
+          var e3 = els();
+          if (!e3) return;
+          S.compare = !S.compare;
+          S.split = 0.5;
+          e3.divider.hidden = !S.compare;
+          e3.divider.style.left = '50%';
+          cmp.classList.toggle('active', S.compare);
+        }
+      });
+
+      document.addEventListener('change', function (ev) {
+        var check = ev.target.closest('[data-kj-vto-check]');
+        if (check) {
+          var agree = document.querySelector('[data-kj-vto-agree]');
+          if (agree) agree.disabled = !check.checked;
+          return;
+        }
+        /* muc: shade selection in the Horizon variant picker retints the try-on */
+        var radio = ev.target.closest('.variant-picker input[type="radio"], variant-picker input[type="radio"]');
+        if (radio && radio.checked) {
+          var shade = (radio.value || radio.getAttribute('aria-label') || '').trim();
+          if (!shade) return;
+          var lbl = document.querySelector('[data-kj-pdp-shade]');
+          if (lbl) lbl.textContent = shade.toLowerCase();
+          document.dispatchEvent(new CustomEvent('kj:shade', { detail: { title: shade } }));
+        }
+      });
+
+      document.addEventListener('kj:shade', function (ev) {
+        var map = shadeMap();
+        var key = ((ev.detail && ev.detail.title) || '').toLowerCase().trim();
+        if (map[key]) S.color = map[key];
+      });
+
+      /* compare divider drag */
+      document.addEventListener('pointerdown', function (ev) {
+        if (!ev.target.closest('[data-kj-vto-handle]')) return;
+        ev.preventDefault(); S.drag = true;
+      });
+      document.addEventListener('pointermove', function (ev) {
+        if (!S.drag) return;
+        var e = els();
+        if (!e) return;
+        var r = e.stage.getBoundingClientRect();
+        S.split = Math.min(0.88, Math.max(0.12, (ev.clientX - r.left) / r.width));
+        e.divider.style.left = (S.split * 100) + '%';
+      });
+      document.addEventListener('pointerup', function () { S.drag = false; });
+
+      /* mount now and after Horizon re-renders the gallery on variant change */
+      if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', mountStage);
+      else mountStage();
+      document.addEventListener('variant:update', function () { setTimeout(mountStage, 50); });
+    })();
+  </script>
+
+  {% style %}
+    .kj-pdpvto-openrow { display: flex; justify-content: center; margin: 10px 0 4px; }
+
+    .kj-pdpvto-open {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--color-background, #fff); border: 1px solid rgb(var(--color-foreground-rgb, 34 34 34) / 0.25);
+      color: var(--color-foreground, #222); border-radius: 6px; padding: 10px 18px;
+      font-size: 13px; letter-spacing: 0.3px; cursor: pointer; transition: border-color 0.2s ease;
+    }
+    .kj-pdpvto-open:hover { border-color: var(--color-foreground, #222); }
+
+    .kj-pdpvto-stage { position: absolute; inset: 0; z-index: 6; border-radius: inherit; overflow: hidden; }
+    .kj-pdpvto-stage[hidden], .kj-pdpvto-stage [hidden] { display: none !important; }
+
+    .kj-pdpvto-consent { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; padding: 20px; background: rgb(0 0 0 / 0.25); }
+    .kj-pdpvto-card { position: relative; width: min(400px, 94%); background: #fff; box-shadow: 0 10px 34px rgb(0 0 0 / 0.2); padding: 24px 26px; text-align: left; border-radius: 10px; color: #222; }
+    .kj-pdpvto-card h4 { font-size: 15px; font-weight: 700; margin: 0 0 12px; }
+    .kj-pdpvto-card p { font-size: 12px; line-height: 1.55; color: #444; margin: 0 0 10px; }
+    .kj-pdpvto-card-x { position: absolute; top: 10px; right: 12px; background: none; border: none; font-size: 20px; line-height: 1; color: #222; cursor: pointer; }
+    .kj-pdpvto-agree-row { display: flex; align-items: center; gap: 7px; font-size: 12px; color: #222; margin: 14px 0; cursor: pointer; }
+    .kj-pdpvto-agree { display: block; width: 100%; background: #fff; border: 1px solid #222; padding: 10px 16px; font-size: 13px; cursor: pointer; border-radius: 6px; transition: all 0.15s ease; }
+    .kj-pdpvto-agree:disabled { border-color: #c9c9c9; color: #a5a5a5; cursor: not-allowed; }
+    .kj-pdpvto-agree:not(:disabled):hover { background: #222; color: #fff; }
+    .kj-pdpvto-nothanks { display: block; margin: 12px auto 0; background: none; border: none; font-size: 12px; color: #222; text-decoration: underline; cursor: pointer; }
+
+    .kj-pdpvto-ready { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; background: #fbf1ee; color: #d98a93; font-size: 20px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; text-align: center; padding: 20px; }
+    .kj-pdpvto-spinner { width: 40px; height: 40px; border-radius: 50%; border: 3px dotted #e4b4b9; animation: kj-vto-spin 1.2s linear infinite; }
+    @keyframes kj-vto-spin { to { transform: rotate(360deg); } }
+
+    .kj-pdpvto-live { position: absolute; inset: 0; background: #000; overflow: hidden; }
+    .kj-pdpvto-live video { display: none; }
+    .kj-pdpvto-live canvas { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transform: scaleX(-1); }
+
+    .kj-pdpvto-x { position: absolute; top: 12px; right: 12px; z-index: 4; width: 34px; height: 34px; border-radius: 50%; background: rgb(255 255 255 / 0.88); border: none; color: #222; font-size: 19px; line-height: 1; cursor: pointer; }
+    .kj-pdpvto-tools { position: absolute; right: 12px; bottom: 14px; z-index: 4; display: flex; flex-direction: column; gap: 10px; }
+    .kj-pdpvto-tool { width: 38px; height: 38px; border-radius: 8px; background: rgb(255 255 255 / 0.92); border: none; display: flex; align-items: center; justify-content: center; color: #222; cursor: pointer; box-shadow: 0 2px 8px rgb(0 0 0 / 0.18); }
+    .kj-pdpvto-tool.active { outline: 2px solid #222; }
+
+    .kj-pdpvto-divider { position: absolute; top: 0; bottom: 0; left: 50%; width: 2px; background: #fff; z-index: 3; box-shadow: 0 0 6px rgb(0 0 0 / 0.25); }
+    .kj-pdpvto-handle { position: absolute; bottom: 16px; left: 50%; transform: translateX(-50%); width: 62px; height: 32px; border-radius: 16px; background: #fff; box-shadow: 0 2px 8px rgb(0 0 0 / 0.2); display: flex; align-items: center; justify-content: center; gap: 8px; color: #222; cursor: ew-resize; touch-action: none; user-select: none; }
+    .kj-pdpvto-flash { position: absolute; inset: 0; z-index: 5; background: #fff; opacity: 0; pointer-events: none; }
+    .kj-pdpvto-flash.on { animation: kj-vto-flash 0.45s ease-out; }
+    @keyframes kj-vto-flash { 0% { opacity: 0.9; } 100% { opacity: 0; } }
+  {% endstyle %}
+{%- endif -%}
