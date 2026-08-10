@@ -158,6 +158,33 @@
             "open_new_tab": false
           }
         },
+        "card_G4PiLa": {
+          "type": "card",
+          "name": "Maybelline",
+          "settings": {
+            "image": "shopify://shop_images/Maybilline.jpg",
+            "link": "shopify://collections/maybelline",
+            "open_new_tab": false
+          }
+        },
+        "card_YUtaR6": {
+          "type": "card",
+          "name": "Revolution",
+          "settings": {
+            "image": "shopify://shop_images/Revolution_a8b4b25e-8187-4227-a83e-ae25c318f998.jpg",
+            "link": "shopify://collections/revolution",
+            "open_new_tab": false
+          }
+        },
+        "card_7Rimtd": {
+          "type": "card",
+          "name": "ELF",
+          "settings": {
+            "image": "shopify://shop_images/ELF_a43cf89f-6d4e-4d8b-a4ce-a8bd8c1003b7.jpg",
+            "link": "shopify://collections/elf",
+            "open_new_tab": false
+          }
+        },
         "card_LJWfzX": {
           "type": "card",
           "name": "Framesi",
@@ -176,39 +203,12 @@
             "open_new_tab": false
           }
         },
-        "card_G4PiLa": {
-          "type": "card",
-          "name": "Maybelline",
-          "settings": {
-            "image": "shopify://shop_images/Maybilline.jpg",
-            "link": "shopify://collections/maybelline",
-            "open_new_tab": false
-          }
-        },
-        "card_7Rimtd": {
-          "type": "card",
-          "name": "ELF",
-          "settings": {
-            "image": "shopify://shop_images/ELF_a43cf89f-6d4e-4d8b-a4ce-a8bd8c1003b7.jpg",
-            "link": "shopify://collections/elf",
-            "open_new_tab": false
-          }
-        },
         "card_nbr3cj": {
           "type": "card",
           "name": "Ordinary",
           "settings": {
             "image": "shopify://shop_images/The-Ordinary_6841b8ee-f2ea-46b1-b8f2-f9f2dbaf4930.jpg",
             "link": "shopify://collections/to",
-            "open_new_tab": false
-          }
-        },
-        "card_YUtaR6": {
-          "type": "card",
-          "name": "Revolution",
-          "settings": {
-            "image": "shopify://shop_images/Revolution_a8b4b25e-8187-4227-a83e-ae25c318f998.jpg",
-            "link": "shopify://collections/revolution",
             "open_new_tab": false
           }
         },
@@ -233,12 +233,12 @@
       },
       "block_order": [
         "card_x4i8pi",
+        "card_G4PiLa",
+        "card_YUtaR6",
+        "card_7Rimtd",
         "card_LJWfzX",
         "card_ftKGeC",
-        "card_G4PiLa",
-        "card_7Rimtd",
         "card_nbr3cj",
-        "card_YUtaR6",
         "card_hxUFFx",
         "card_b9F39r"
       ],
@@ -630,14 +630,6 @@
             "open_new_tab": false
           }
         },
-        "card_L4QwKh": {
-          "type": "card",
-          "settings": {
-            "image": "shopify://shop_images/Estelin_93b713f5-b7ed-4abd-bfa4-f37c1f79ae7f.jpg",
-            "link": "shopify://collections/estelin",
-            "open_new_tab": false
-          }
-        },
         "card_QQLjCx": {
           "type": "card",
           "settings": {
@@ -651,6 +643,14 @@
           "settings": {
             "image": "shopify://shop_images/luscious_a2fad681-5614-44e5-bed5-4add2eab5bfa.jpg",
             "link": "shopify://collections/luscious-cosmetics",
+            "open_new_tab": false
+          }
+        },
+        "card_L4QwKh": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/Estelin_93b713f5-b7ed-4abd-bfa4-f37c1f79ae7f.jpg",
+            "link": "shopify://collections/estelin",
             "open_new_tab": false
           }
         },
@@ -692,9 +692,9 @@
       },
       "block_order": [
         "card_CaecqX",
-        "card_L4QwKh",
         "card_QQLjCx",
         "card_p9kYBe",
+        "card_L4QwKh",
         "card_zHjYpW",
         "card_pfpRwk",
         "card_NFeL6V",
@@ -782,19 +782,19 @@
             "open_new_tab": false
           }
         },
-        "card_dnezUz": {
-          "type": "card",
-          "settings": {
-            "image": "shopify://shop_images/One-Skin.jpg",
-            "link": "shopify://collections/oneskin",
-            "open_new_tab": false
-          }
-        },
         "card_ceiizR": {
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/Gosh_jpg.jpg",
             "link": "shopify://collections/gosh",
+            "open_new_tab": false
+          }
+        },
+        "card_dnezUz": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/One-Skin.jpg",
+            "link": "shopify://collections/oneskin",
             "open_new_tab": false
           }
         },
@@ -822,8 +822,8 @@
         "card_nkVxPj",
         "card_J3czmk",
         "card_gBiw68",
-        "card_dnezUz",
         "card_ceiizR",
+        "card_dnezUz",
         "card_c49pAk",
         "card_AHQBXy"
       ],
@@ -1136,21 +1136,21 @@
             "open_new_tab": false
           }
         },
-        "card_whDK6f": {
-          "type": "card",
-          "name": "Morphe",
-          "settings": {
-            "image": "shopify://shop_images/Morphe.jpg",
-            "link": "shopify://collections/morphe",
-            "open_new_tab": false
-          }
-        },
         "card_iJgEgf": {
           "type": "card",
           "name": "NYX",
           "settings": {
             "image": "shopify://shop_images/NYX_b72c2bd9-a91d-4f66-b7aa-7a8b63473b3c.jpg",
             "link": "shopify://collections/nyx",
+            "open_new_tab": false
+          }
+        },
+        "card_whDK6f": {
+          "type": "card",
+          "name": "Morphe",
+          "settings": {
+            "image": "shopify://shop_images/Morphe.jpg",
+            "link": "shopify://collections/morphe",
             "open_new_tab": false
           }
         },
@@ -1235,8 +1235,8 @@
       },
       "block_order": [
         "card_h6R94P",
-        "card_whDK6f",
         "card_iJgEgf",
+        "card_whDK6f",
         "card_mcFcz9",
         "card_tBr3yf",
         "card_djrWXM",
@@ -1276,6 +1276,15 @@
     "card_grid_TjTiTr": {
       "type": "card-grid",
       "blocks": {
+        "card_A9eJDx": {
+          "type": "card",
+          "name": "Rhode",
+          "settings": {
+            "image": "shopify://shop_images/Rhode.jpg",
+            "link": "shopify://collections/rhode",
+            "open_new_tab": false
+          }
+        },
         "card_GfdFFC": {
           "type": "card",
           "name": "Wishful",
@@ -1367,18 +1376,10 @@
             "link": "shopify://collections/rare-beauty",
             "open_new_tab": false
           }
-        },
-        "card_A9eJDx": {
-          "type": "card",
-          "name": "Rhode",
-          "settings": {
-            "image": "shopify://shop_images/Rhode.jpg",
-            "link": "shopify://collections/rhode",
-            "open_new_tab": false
-          }
         }
       },
       "block_order": [
+        "card_A9eJDx",
         "card_GfdFFC",
         "card_HP6WDU",
         "card_WEPLyT",
@@ -1388,8 +1389,7 @@
         "card_fP7BL6",
         "card_hAch3i",
         "card_pDmnkE",
-        "card_hhYxMp",
-        "card_A9eJDx"
+        "card_hhYxMp"
       ],
       "name": "Card grid",
       "settings": {
@@ -1430,21 +1430,21 @@
             "open_new_tab": false
           }
         },
-        "card_4rqnJx": {
-          "type": "card",
-          "name": "British Lingerie Studio",
-          "settings": {
-            "image": "shopify://shop_images/BLS-azadi.jpg",
-            "link": "shopify://collections/bls",
-            "open_new_tab": false
-          }
-        },
         "card_q7xRrJ": {
           "type": "card",
           "name": "FA'RA London",
           "settings": {
             "image": "shopify://shop_images/Fara-London.jpg",
             "link": "shopify://collections/fara",
+            "open_new_tab": false
+          }
+        },
+        "card_4rqnJx": {
+          "type": "card",
+          "name": "British Lingerie Studio",
+          "settings": {
+            "image": "shopify://shop_images/BLS-azadi.jpg",
+            "link": "shopify://collections/bls",
             "open_new_tab": false
           }
         },
@@ -1487,8 +1487,8 @@
       },
       "block_order": [
         "card_m4dJ4r",
-        "card_4rqnJx",
         "card_q7xRrJ",
+        "card_4rqnJx",
         "card_9H67GY",
         "card_3iUqF9",
         "card_Fzb4HD",
@@ -1587,21 +1587,21 @@
             "open_new_tab": false
           }
         },
-        "card_8xFcVE": {
-          "type": "card",
-          "name": "Bourjois",
-          "settings": {
-            "image": "shopify://shop_images/Bourjois_5a7203ca-b451-41e9-bf53-908f3cbd1168.jpg",
-            "link": "shopify://collections/bourjois",
-            "open_new_tab": false
-          }
-        },
         "card_rhG3VD": {
           "type": "card",
           "name": "EL'VAWN",
           "settings": {
             "image": "shopify://shop_images/Elvawn_80070dac-5416-4e66-9de8-ad7883fef2a8.jpg",
             "link": "shopify://collections/elvawn",
+            "open_new_tab": false
+          }
+        },
+        "card_8xFcVE": {
+          "type": "card",
+          "name": "Bourjois",
+          "settings": {
+            "image": "shopify://shop_images/Bourjois_5a7203ca-b451-41e9-bf53-908f3cbd1168.jpg",
+            "link": "shopify://collections/bourjois",
             "open_new_tab": false
           }
         }
@@ -1614,8 +1614,8 @@
         "card_Dj4Jhk",
         "card_VaLrJE",
         "card_hVQxRA",
-        "card_8xFcVE",
-        "card_rhG3VD"
+        "card_rhG3VD",
+        "card_8xFcVE"
       ],
       "name": "Card grid",
       "settings": {
