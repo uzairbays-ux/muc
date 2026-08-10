@@ -176,6 +176,30 @@
   additional_blocks: additional_blocks
 %}
 
+{% comment %}
+  Vertical gradient page background on the product page only (this section renders
+  only on the product template). White fades in at the top and bottom of the
+  viewport, keeping the existing scheme color through the middle. Rendered as an
+  inline {% raw %}{% style %}{% endraw %} so it doesn't leak to other templates,
+  and section backgrounds are made transparent so the gradient shows through.
+{% endcomment %}
+{% style %}
+  body {
+    background: linear-gradient(
+      to bottom,
+      #ffffff 0%,
+      var(--color-background) 12%,
+      var(--color-background) 88%,
+      #ffffff 100%
+    ) no-repeat;
+    background-attachment: fixed;
+  }
+
+  .shopify-section:not(.header-section):not(.footer-section) .section-background {
+    background: transparent;
+  }
+{% endstyle %}
+
 {% stylesheet %}
   .sticky-add-to-cart__bar {
     position: fixed;
