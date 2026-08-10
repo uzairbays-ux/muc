@@ -71,18 +71,28 @@
 
   @media screen and (max-width: 749px) {
     .trust-badges {
-      gap: 6px;
+      flex-wrap: nowrap;
+      gap: 5px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .trust-badges::-webkit-scrollbar {
+      display: none;
     }
 
     .trust-badge {
-      padding: 4px 8px;
-      gap: 5px;
-      font-size: 0.6875rem;
+      padding: 4px 7px;
+      gap: 4px;
+      font-size: 0.625rem;
+      flex: 0 0 auto;
+      white-space: nowrap;
     }
 
     .trust-badge__icon {
-      width: 13px;
-      height: 13px;
+      width: 12px;
+      height: 12px;
     }
   }
 {% endstylesheet %}
