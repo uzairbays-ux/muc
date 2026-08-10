@@ -7,12 +7,18 @@
 
   for product_option in closest.product.options_with_values
     assign swatch_count = product_option.values | map: 'swatch' | compact | size
-    if swatch_count > 0
+    assign option_name_lower = product_option.name | downcase
+    assign is_color_name = false
+    if option_name_lower == 'color' or option_name_lower == 'colour' or option_name_lower == 'shade' or option_name_lower == 'shades'
+      assign is_color_name = true
+    endif
+    # Treat name-based color options as swatch options so cards use the real swatch
+    # renderer (colors come from theme swatch_color_definitions), not the text-pill fallback.
+    if swatch_count > 0 or is_color_name
       assign product_has_swatches = true
     endif
     if variant_option == nil and product_option.values.size > 1
-      assign option_name_lower = product_option.name | downcase
-      if option_name_lower == 'color' or option_name_lower == 'colour' or option_name_lower == 'shade' or option_name_lower == 'shades' or option_name_lower == 'size'
+      if is_color_name or option_name_lower == 'size'
         assign variant_option = product_option
       endif
     endif
