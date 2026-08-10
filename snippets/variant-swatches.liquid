@@ -96,9 +96,17 @@
     {%- for product_option in product_resource.options_with_values -%}
       {%- liquid
         assign swatch_count = product_option.values | map: 'swatch' | compact | size
+        # Also treat name-based color options as swatch options (like the main product
+        # picker does), so cards render color swatches even when there are no native
+        # Shopify swatches — the color comes from the theme swatch_color_definitions.
+        assign option_name_lower = product_option.name | downcase
+        assign is_color_option = false
+        if option_name_lower == 'color' or option_name_lower == 'colour' or option_name_lower == 'shade' or option_name_lower == 'shades'
+          assign is_color_option = true
+        endif
       -%}
 
-      {% if swatch_count == 0 %}
+      {% if swatch_count == 0 and is_color_option == false %}
         {% continue %}
       {% endif %}
 
