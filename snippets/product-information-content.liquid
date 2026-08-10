@@ -163,6 +163,14 @@
       grid-column: 2;
     }
 
+    /* Sticky media gallery on desktop (align-self:start so it isn't stretched to the
+       full row height, which would prevent sticky from engaging). */
+    .product-information__grid:not(.product-information--media-none) .product-information__media {
+      position: sticky;
+      top: calc(var(--header-height, 0px) + 1.5rem);
+      align-self: start;
+    }
+
     /* Position when there is no media */
     .product-information__grid.product-information--media-none {
       .product-details {
