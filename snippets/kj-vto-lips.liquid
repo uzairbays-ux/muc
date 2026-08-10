@@ -118,7 +118,9 @@
       function mountStage() {
         var media = document.querySelector('.product-information__media');
         if (!media) return;
-        media.style.position = 'relative';
+        /* Do NOT force position here — on desktop the media is position:sticky (already a
+           containing block for the absolute overlay); forcing relative would break sticky.
+           Mobile positioning is handled via CSS below. */
         var stage = document.querySelector('[data-kj-vto-stage]');
         if (stage && stage.parentElement !== media) media.appendChild(stage);
         var openrow = document.querySelector('.kj-pdpvto-openrow');
@@ -372,6 +374,12 @@
       font-size: 13px; letter-spacing: 0.3px; cursor: pointer; transition: opacity 0.2s ease;
     }
     .kj-pdpvto-open:hover { opacity: 0.88; }
+
+    /* On mobile the media isn't sticky, so give it a containing block for the overlay
+       (desktop keeps position:sticky, which is already a containing block). */
+    @media screen and (max-width: 749px) {
+      .product-information__media { position: relative; }
+    }
 
     .kj-pdpvto-stage { position: absolute; inset: 0; z-index: 6; border-radius: inherit; overflow: hidden; }
     .kj-pdpvto-stage[hidden], .kj-pdpvto-stage [hidden] { display: none !important; }

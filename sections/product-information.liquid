@@ -231,8 +231,9 @@
     font-size: 1.25rem;
   }
 
-  /* Hide the sale badge in the product-page gallery only (kept on cards). */
-  [id^='ProductInformation'] .product-information__media .product-badges {
+  /* Hide the sale badge in the product-page gallery only (this inline style renders
+     on the product page only; cards on other pages keep their badges). */
+  .product-information__media .product-badges {
     display: none;
   }
 
