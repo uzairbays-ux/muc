@@ -723,11 +723,18 @@
                 "padding-inline-end": 0
               },
               "blocks": {}
+            },
+            "trust_badges_row": {
+              "type": "custom-liquid",
+              "settings": {
+                "custom_liquid": "{% render 'trust-badges' %}"
+              }
             }
           },
           "block_order": [
             "group_38ENnf",
             "group_icgrde",
+            "trust_badges_row",
             "divider_VJhene",
             "sku_CbFtQN",
             "variant_picker_R3rGDr",

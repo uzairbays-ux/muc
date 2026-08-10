@@ -1,0 +1,78 @@
+{%- doc -%}
+  Trust badges row for the product page (100% Original / Fast Shipping / Over 1M+ Delivered).
+  Rendered via a custom-liquid block. Edit the three labels below to change the text.
+{%- enddoc -%}
+
+{%- liquid
+  assign badge_1 = '100% Original'
+  assign badge_2 = 'Fast Shipping'
+  assign badge_3 = 'Over 1M+ Delivered'
+-%}
+
+<div class="trust-badges" role="list">
+  <span class="trust-badge" role="listitem">
+    <svg class="trust-badge__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M12 2.5 4.5 5.5v5.2c0 4.6 3.1 8.5 7.5 9.8 4.4-1.3 7.5-5.2 7.5-9.8V5.5L12 2.5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+      <path d="m8.8 12 2.2 2.2 4.4-4.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <span class="trust-badge__text">{{ badge_1 }}</span>
+  </span>
+
+  <span class="trust-badge" role="listitem">
+    <svg class="trust-badge__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M2.75 6.25h9.5v9H2.75z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+      <path d="M12.25 9.25h4l2.9 3v3h-6.9z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+      <circle cx="6.5" cy="16.5" r="1.6" stroke="currentColor" stroke-width="1.6"/>
+      <circle cx="16" cy="16.5" r="1.6" stroke="currentColor" stroke-width="1.6"/>
+    </svg>
+    <span class="trust-badge__text">{{ badge_2 }}</span>
+  </span>
+
+  <span class="trust-badge" role="listitem">
+    <svg class="trust-badge__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M12 2.75 20 6.5v7.7L12 18 4 14.2V6.5l8-3.75Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+      <path d="m4 6.5 8 3.75L20 6.5M12 10.25V18" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+    </svg>
+    <span class="trust-badge__text">{{ badge_3 }}</span>
+  </span>
+</div>
+
+{% stylesheet %}
+  .trust-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-block: 10px 4px;
+  }
+
+  .trust-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: rgb(var(--color-foreground-rgb, 34 34 34) / 0.05);
+    color: var(--color-foreground);
+    font-size: 0.8125rem;
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  .trust-badge__icon {
+    width: 16px;
+    height: 16px;
+    flex: none;
+    color: var(--color-primary, var(--color-foreground));
+  }
+
+  .trust-badge__text {
+    font-weight: 500;
+  }
+
+  @media screen and (max-width: 749px) {
+    .trust-badge {
+      padding: 5px 10px;
+      font-size: 0.75rem;
+    }
+  }
+{% endstylesheet %}

@@ -184,18 +184,13 @@
   and section backgrounds are made transparent so the gradient shows through.
 {% endcomment %}
 {% style %}
-  body {
-    background: linear-gradient(
-      to bottom,
-      #ffffff 0%,
-      #fbeef1 14%,
-      #fbeef1 86%,
-      #ffffff 100%
-    ) no-repeat;
-    background-attachment: fixed;
+  #MainContent {
+    background: linear-gradient(to bottom, #ffffff 0%, #fbeef1 100%) no-repeat;
+    background-size: 100% 100%;
   }
 
-  .shopify-section:not(.header-section):not(.footer-section) .section-background {
+  /* Scoped to #MainContent so the header and footer keep their own backgrounds. */
+  #MainContent .shopify-section .section-background {
     background: transparent;
   }
 {% endstyle %}
