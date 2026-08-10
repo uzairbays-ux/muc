@@ -74,6 +74,12 @@
   assign notify_tags = tag_prefix | append: ', ' | append: tag_prefix | append: ': ' | append: safe_title | append: ', ' | append: handle_tag
 -%}
 
+{%- comment -%}
+  Always render a stable wrapper (empty while in stock) so the block can be shown
+  when the shopper switches to a sold-out variant client-side. The actual content
+  only renders when should_render is true, exactly as before.
+{%- endcomment -%}
+<notify-me-availability class="notify-me-slot" data-product-id="{{ product.id }}">
 {%- if should_render -%}
   <script
     src="{{ 'dialog.js' | asset_url }}"
@@ -299,6 +305,35 @@
     </dialog>
   </dialog-component>
 {%- endif -%}
+</notify-me-availability>
+
+{%- comment -%}
+  When the shopper selects a different variant, the theme re-fetches the product
+  HTML and fires a bubbling `variant:update` event carrying it (detail.data.html).
+  Swap our slot's contents from that HTML so the notify-me form appears for
+  sold-out variants and disappears for available ones — matching the server render.
+{%- endcomment -%}
+<script>
+  (() => {
+    if (window.__notifyMeVariantSync) return;
+    window.__notifyMeVariantSync = true;
+    document.addEventListener('variant:update', (event) => {
+      const html = event.detail && event.detail.data && event.detail.data.html;
+      if (!html || typeof html.querySelector !== 'function') return;
+      document.querySelectorAll('notify-me-availability.notify-me-slot').forEach((slot) => {
+        const pid = slot.getAttribute('data-product-id');
+        const fresh = html.querySelector(
+          pid
+            ? 'notify-me-availability.notify-me-slot[data-product-id="' + pid + '"]'
+            : 'notify-me-availability.notify-me-slot'
+        );
+        if (fresh && fresh.innerHTML.trim() !== slot.innerHTML.trim()) {
+          slot.innerHTML = fresh.innerHTML;
+        }
+      });
+    });
+  })();
+</script>
 
 {% stylesheet %}
   .notify-me {
