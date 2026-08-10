@@ -1,0 +1,131 @@
+{%- comment -%}
+  Encourages account creation: a one-time, dismissable tooltip near the account
+  icon. Shows only for logged-out visitors, ~2.5s after load, once per browser.
+{%- endcomment -%}
+{%- unless customer -%}
+  <div class="acct-tip" data-acct-tip hidden>
+    <button type="button" class="acct-tip__close" aria-label="Dismiss" data-acct-tip-close>&times;</button>
+    <a href="{{ routes.account_register_url }}" class="acct-tip__body">
+      <span class="acct-tip__title">New here?</span>
+      <span class="acct-tip__text">Create an account for faster checkout &amp; order tracking</span>
+    </a>
+  </div>
+
+  {% style %}
+    .account-button { position: relative; }
+
+    .acct-tip {
+      position: absolute;
+      top: calc(100% + 10px);
+      right: 0;
+      z-index: 60;
+      width: 224px;
+      background: var(--color-background, #fff);
+      color: var(--color-foreground, #222);
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgb(0 0 0 / 0.18);
+      padding: 12px 26px 12px 14px;
+      font-size: 13px;
+      line-height: 1.35;
+      opacity: 0;
+      transform: translateY(-6px);
+      transition: opacity 0.25s ease, transform 0.25s ease;
+      pointer-events: none;
+    }
+
+    .acct-tip[data-show] {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    .acct-tip::before {
+      content: "";
+      position: absolute;
+      top: -5px;
+      right: 15px;
+      width: 11px;
+      height: 11px;
+      background: inherit;
+      transform: rotate(45deg);
+    }
+
+    .acct-tip__body {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .acct-tip__title {
+      display: block;
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+
+    .acct-tip__text {
+      color: rgb(var(--color-foreground-rgb, 34 34 34) / 0.75);
+    }
+
+    .acct-tip__close {
+      position: absolute;
+      top: 4px;
+      right: 8px;
+      border: 0;
+      background: none;
+      padding: 2px;
+      font-size: 17px;
+      line-height: 1;
+      cursor: pointer;
+      color: inherit;
+      opacity: 0.55;
+    }
+
+    .acct-tip__close:hover {
+      opacity: 1;
+    }
+  {% endstyle %}
+
+  <script>
+    (function () {
+      if (window.__acctTipInit) return;
+      window.__acctTipInit = true;
+      var KEY = 'mc-acct-tip-dismissed';
+
+      function init() {
+        try { if (localStorage.getItem(KEY)) return; } catch (e) {}
+        var tip = document.querySelector('[data-acct-tip]');
+        if (!tip) return;
+        var hideTimer;
+
+        function dismiss(persist) {
+          tip.removeAttribute('data-show');
+          setTimeout(function () { tip.hidden = true; }, 300);
+          if (persist !== false) { try { localStorage.setItem(KEY, '1'); } catch (e) {} }
+        }
+
+        setTimeout(function () {
+          tip.hidden = false;
+          requestAnimationFrame(function () { tip.setAttribute('data-show', ''); });
+          hideTimer = setTimeout(function () { dismiss(false); }, 8000);
+        }, 2500);
+
+        var closeBtn = tip.querySelector('[data-acct-tip-close]');
+        if (closeBtn) closeBtn.addEventListener('click', function (e) {
+          e.preventDefault(); e.stopPropagation();
+          clearTimeout(hideTimer); dismiss(true);
+        });
+
+        var body = tip.querySelector('.acct-tip__body');
+        if (body) body.addEventListener('click', function () {
+          try { localStorage.setItem(KEY, '1'); } catch (e) {}
+        });
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+      } else {
+        init();
+      }
+    })();
+  </script>
+{%- endunless -%}
