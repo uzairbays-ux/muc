@@ -1,9 +1,13 @@
 {%- comment -%}
   Encourages account creation: a one-time, dismissable tooltip near the account
   icon. Shows only for logged-out visitors, ~2.5s after load, once per browser.
+
+  Visibility is driven by a class on <html> (which the theme never morphs), so a
+  freshly re-rendered header tooltip still picks it up. All interaction is
+  delegated at the document level for the same reason.
 {%- endcomment -%}
 {%- unless customer -%}
-  <div class="acct-tip" data-acct-tip hidden>
+  <div class="acct-tip" data-acct-tip>
     <button type="button" class="acct-tip__close" aria-label="Dismiss" data-acct-tip-close>&times;</button>
     <a href="{{ routes.account_register_url }}" class="acct-tip__body">
       <span class="acct-tip__title">New here?</span>
@@ -33,7 +37,7 @@
       pointer-events: none;
     }
 
-    .acct-tip[data-show] {
+    html.acct-tip-show .acct-tip {
       opacity: 1;
       transform: translateY(0);
       pointer-events: auto;
@@ -87,8 +91,6 @@
 
   <script>
     (function () {
-      /* Everything re-queries the tooltip live and is delegated at document level, so
-         it survives the theme morphing/re-rendering the header after load. */
       if (window.__acctTipInit) return;
       window.__acctTipInit = true;
       var KEY = 'mc-acct-tip-dismissed';
@@ -96,36 +98,27 @@
       try { dismissed = !!localStorage.getItem(KEY); } catch (e) {}
       var hideTimer;
 
-      function dismiss(persist) {
-        var tip = document.querySelector('[data-acct-tip]');
-        if (tip) {
-          tip.removeAttribute('data-show');
-          setTimeout(function () { var t = document.querySelector('[data-acct-tip]'); if (t) t.hidden = true; }, 300);
-        }
-        if (persist) { dismissed = true; try { localStorage.setItem(KEY, '1'); } catch (e) {} }
+      function hide(persist) {
+        document.documentElement.classList.remove('acct-tip-show');
+        if (persist) { try { localStorage.setItem(KEY, '1'); } catch (e) {} }
       }
 
       document.addEventListener('click', function (e) {
         if (e.target.closest('[data-acct-tip-close]')) {
           e.preventDefault(); e.stopPropagation();
-          clearTimeout(hideTimer); dismiss(true); return;
+          clearTimeout(hideTimer); hide(true); return;
         }
         if (e.target.closest('.acct-tip__body')) {
           try { localStorage.setItem(KEY, '1'); } catch (e) {}
         }
       });
 
-      setTimeout(function show() {
-        if (dismissed) return;
-        var tip = document.querySelector('[data-acct-tip]');
-        if (!tip) return;
-        tip.hidden = false;
-        requestAnimationFrame(function () {
-          var t = document.querySelector('[data-acct-tip]');
-          if (t) t.setAttribute('data-show', '');
-        });
-        hideTimer = setTimeout(function () { dismiss(false); }, 8000);
-      }, 2500);
+      if (!dismissed) {
+        setTimeout(function () {
+          document.documentElement.classList.add('acct-tip-show');
+          hideTimer = setTimeout(function () { hide(false); }, 8000);
+        }, 2500);
+      }
     })();
   </script>
 {%- endunless -%}
