@@ -225,6 +225,17 @@
     margin-block-end: 14px;
   }
 
+  /* Smaller price */
+  [id^='ProductInformation'] .price-item--sale.price,
+  [id^='ProductInformation'] .price-item--regular.price {
+    font-size: 1.25rem;
+  }
+
+  /* Hide the sale badge in the product-page gallery only (kept on cards). */
+  [id^='ProductInformation'] .product-information__media .product-badges {
+    display: none;
+  }
+
   /* Make the About Product accordion stand out as a bordered card. */
   [id^='ProductInformation'] .accordion {
     border: 1px solid rgb(var(--color-foreground-rgb) / 0.14);
