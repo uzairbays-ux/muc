@@ -192,11 +192,18 @@
     background-image: linear-gradient(to right, rgb(233, 227, 252), rgb(255, 255, 255));
   }
 
-  /* Hide the image overlay discount badge on cards + in the quick-add modal. */
-  .collection-page-grid .product-badges,
+  /* Sale badge: show on the card top-right (tag badge sits top-left);
+     keep it hidden in the quick-add modal. */
   #quick-add-dialog .product-badges,
   quick-add-dialog .product-badges {
     display: none;
+  }
+
+  .collection-page-grid .card-gallery .product-badges {
+    inset: 6px 6px auto auto;
+    left: auto;
+    right: 6px;
+    top: 6px;
   }
 
   /* Quick-add modal price: match the card style — cut -> sale -> green discount,
