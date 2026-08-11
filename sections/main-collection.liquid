@@ -99,6 +99,17 @@
   @media screen and (min-width: 750px) {
     #MainContent { background: #f3f3f3; }
     .facets--horizontal.facets-controls-wrapper { background: #f3f3f3; }
+
+    /* Keep the vertical filters sidebar in view while scrolling products.
+       It pins just under the 60px horizontal bar; if the filter list grows
+       taller than the viewport it scrolls internally instead of clipping. */
+    .facets.facets--vertical {
+      position: sticky;
+      top: 60px;
+      align-self: start;
+      max-height: calc(100vh - 72px);
+      overflow-y: auto;
+    }
   }
 {% endstyle %}
 
