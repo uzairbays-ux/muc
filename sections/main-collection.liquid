@@ -96,6 +96,26 @@
     margin-bottom: 0.85rem;
   }
 
+  /* Pin the action buttons to the bottom of every card so they align across
+     the grid no matter how long the product name/description is. */
+  #MainContent .collection-page-grid .product-grid__item {
+    display: flex;
+  }
+
+  #MainContent .collection-page-grid .product-grid__item > product-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  #MainContent .collection-page-grid .product-card__content {
+    flex: 1 1 auto;
+  }
+
+  #MainContent .kj-card-actions {
+    margin-top: auto;
+  }
+
   /* Price row: cut-price -> sale-price -> discount on one line. */
   #MainContent .product-card .price__sale {
     display: flex;
@@ -129,6 +149,15 @@
     margin-right: 6px;
     color: rgba(0, 19, 37, 0.25);
     font-weight: 400;
+  }
+
+  /* BNPL "Pay only" row — purple version of the You-save pill. */
+  #MainContent .baadmay-para {
+    width: fit-content;
+    margin-top: 6px;
+    padding: 0.25rem 0.5rem;
+    border-radius: 40px;
+    background-image: linear-gradient(to right, rgb(233, 227, 252), rgb(255, 255, 255));
   }
 
   /* Hide the image overlay discount badge on cards + in the quick-add modal. */
