@@ -193,6 +193,26 @@
     display: none;
   }
 
+  /* Quick-add modal price: match the card style — cut -> sale -> green discount,
+     properly spaced, no red pill. */
+  #quick-add-dialog .price__sale {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 8px;
+  }
+
+  #quick-add-dialog .price__sale > *:nth-child(1) { order: 2; } /* sale */
+  #quick-add-dialog .price__sale > *:nth-child(2) { order: 1; } /* cut */
+  #quick-add-dialog .price__sale > *:nth-child(3) { order: 3; } /* discount */
+
+  #quick-add-dialog .sale-badge__pill {
+    color: #068743;
+    background: transparent;
+    font-weight: 600;
+    padding-inline: 0;
+  }
+
   /* Card rating: black + small. */
   .collection-page-grid .rating-wrapper {
     --star-fill-color: #001325;
