@@ -76,6 +76,23 @@
   </div>
 </results-list>
 
+{% comment %} Inline (collection-page only): white background + sticky filters bar. {% endcomment %}
+{% style %}
+  #MainContent { background: #ffffff; }
+
+  #MainContent .shopify-section:not(.header-section):not(.footer-section) .section-background {
+    background: transparent;
+  }
+
+  /* Keep the filters/sort bar pinned while scrolling the products. */
+  .facets--horizontal.facets-controls-wrapper {
+    position: sticky;
+    top: var(--header-height, 0px);
+    z-index: 5;
+    background: #ffffff;
+  }
+{% endstyle %}
+
 {% stylesheet %}
   /* Sale badge on the collection page grid only: plain black text, no pill fill.
      Scoped to .collection-page-grid so search results keep the red pill. */
