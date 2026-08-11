@@ -99,9 +99,11 @@
   /* Price row: cut-price -> sale-price -> discount on one line. */
   #MainContent .product-card .price__sale {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: 0.125rem;
     width: fit-content;
+    max-width: 100%;
     padding: 0.25rem 0.5rem;
     border-top-left-radius: 1.5rem;
     border-bottom-left-radius: 1.5rem;
