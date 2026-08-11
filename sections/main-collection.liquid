@@ -120,7 +120,10 @@
     min-width: 0;
   }
 
-  #MainContent .kj-card-actions {
+  /* The custom-liquid block wraps .kj-card-actions in an unclassed <div>, which
+     is the actual flex child — so margin-top:auto must go on the wrapper, not on
+     .kj-card-actions, to pin the buttons to the bottom of every card. */
+  #MainContent .collection-page-grid .product-card__content > div:has(.kj-card-actions) {
     margin-top: auto;
   }
 
