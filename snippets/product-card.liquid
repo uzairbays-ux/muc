@@ -108,6 +108,11 @@
     "
   >
     {{ children }}
+    {%- unless onboarding -%}
+      {% render 'kj-save-pill', product: product %}
+      {% render 'kj-card-actions', product: product %}
+      {% render 'kj-card-badge', product: product %}
+    {%- endunless -%}
   </div>
 </product-card>
 
@@ -163,4 +168,100 @@
   product-card [class*="product-card-gallery"] {
     border: none !important;
   }
+
+  /* ===== KJ card design — applies to every product card (collection,
+     home carousels, recommendations, search). Collection-only rules
+     (grid dividers, sticky filters, page bg) stay in main-collection. ===== */
+
+  .product-card__content { position: relative; }
+
+  /* Pin the wishlist + CTA row to the bottom so buttons align across a row. */
+  .product-card { display: flex; flex-direction: column; height: 100%; min-width: 0; }
+  .product-card__content { flex: 1 1 auto; min-width: 0; }
+  .product-card__content > .kj-card-actions { margin-top: auto; }
+
+  /* Price row: cut-price -> sale-price -> green discount on one line. */
+  .product-card .price__sale {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: baseline;
+    gap: 0.25rem;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 1.1;
+    margin: 6px 0;
+    min-width: 0;
+  }
+  .product-card .price__sale > *:nth-child(1) { order: 2; }
+  .product-card .price__sale > *:nth-child(2) { order: 1; }
+  .product-card .price__sale > *:nth-child(3) { order: 3; }
+  .product-card .price-item--sale.price { font-size: 14px; font-weight: 400; }
+  .product-card .price-item--regular.compare-at-price { font-size: 12px; }
+  .product-card .sale-badge__pill {
+    color: #068743;
+    background: transparent;
+    font-size: 12px;
+    font-weight: 400;
+  }
+  .product-card .price__sale .sale-badge__pill--inline::before {
+    content: "|";
+    margin-right: 6px;
+    color: rgba(0, 19, 37, 0.25);
+    font-weight: 400;
+  }
+
+  /* Value pills. */
+  .product-card .kj-shades { margin-block: 3px; }
+  .product-card .kj-save { margin-top: 3px; }
+  .product-card .baadmay-para {
+    width: fit-content;
+    margin-top: 3px;
+    padding: 0.25rem 0.5rem;
+    border-radius: 40px;
+    background-image: linear-gradient(to right, rgb(233, 227, 252), rgb(255, 255, 255));
+  }
+
+  /* Sale badge top-right, small. */
+  .product-card .card-gallery .product-badges {
+    inset: 6px 6px auto auto;
+    left: auto;
+    right: 6px;
+    top: 6px;
+  }
+  .product-card .card-gallery .product-badges__badge {
+    font-size: 10px;
+    border-radius: 4px;
+    padding: 2px 6px;
+  }
+
+  /* Rating: tiny black stars + grey (n) count. */
+  .product-card .rating-wrapper {
+    --star-fill-color: #001325;
+    --star-fill-color-rgb: 0 19 37;
+    color: #001325;
+    font-size: 11px;
+  }
+  .product-card .rating { --star-size: 9px !important; }
+  .product-card .rating-count { color: #8a8a8a; font-size: 10px; margin-top: -7px; }
+  .product-card .rating-count-number { color: #8a8a8a !important; font-size: 10px !important; }
+  .product-card .rating-count-label { display: none; }
+  .product-card .rating-count-number::before { content: "("; }
+  .product-card .rating-count-number::after { content: ")"; }
+  .product-card .filled-star { fill: #001325; }
+
+  @media screen and (max-width: 749px) {
+    .product-card .price-item--sale.price { font-size: 11px; }
+    .product-card .price-item--regular.compare-at-price,
+    .product-card .sale-badge__pill { font-size: 10px; }
+    .product-card .price__sale { gap: 0.2rem; }
+    .product-card .price__sale .sale-badge__pill--inline::before { margin-right: 3px; }
+  }
+
+  /* Quick-add modal price (matches card) + hide the image badge in the modal. */
+  #quick-add-dialog .product-badges { display: none; }
+  #quick-add-dialog .price__sale { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px; }
+  #quick-add-dialog .price__sale > *:nth-child(1) { order: 2; }
+  #quick-add-dialog .price__sale > *:nth-child(2) { order: 1; }
+  #quick-add-dialog .price__sale > *:nth-child(3) { order: 3; }
+  #quick-add-dialog .sale-badge__pill { color: #068743; background: transparent; font-weight: 600; padding-inline: 0; }
 {% endstylesheet %}

@@ -4,7 +4,7 @@
   custom-liquid block right under the price.
 {%- endcomment -%}
 {%- liquid
-  assign p = closest.product
+  assign p = product | default: closest.product
   assign v = p.selected_or_first_available_variant
   assign cur = v.price
   assign cmp = v.compare_at_price
