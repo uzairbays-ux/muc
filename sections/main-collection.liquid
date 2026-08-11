@@ -91,6 +91,12 @@
     z-index: 5;
     background: #ffffff;
   }
+
+  /* Desktop: light-grey page background (mobile stays white). */
+  @media screen and (min-width: 750px) {
+    #MainContent { background: #f3f3f3; }
+    .facets--horizontal.facets-controls-wrapper { background: #f3f3f3; }
+  }
 {% endstyle %}
 
 {% stylesheet %}
