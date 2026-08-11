@@ -1,0 +1,76 @@
+{%- comment -%}
+  Collection page header — breadcrumb, left-aligned title, product count.
+  Replaces the old centered <h2> heading. Rendered via a custom-liquid block
+  in templates/collection.json. Uses the global `collection` object (present
+  on collection templates).
+{%- endcomment -%}
+<div class="kj-collection-header">
+  <nav class="kj-collection-header__crumbs" aria-label="breadcrumb">
+    <a href="{{ routes.root_url }}">Home</a>
+    <span class="kj-collection-header__sep" aria-hidden="true">&rsaquo;</span>
+    <span class="kj-collection-header__current" aria-current="page">{{ collection.title }}</span>
+  </nav>
+
+  <h1 class="kj-collection-header__title">{{ collection.title }}</h1>
+
+  <p class="kj-collection-header__count">
+    {{ collection.products_count }} {% if collection.products_count == 1 %}product{% else %}products{% endif %}
+  </p>
+</div>
+
+{% stylesheet %}
+  .kj-collection-header {
+    width: 100%;
+    text-align: left;
+  }
+
+  .kj-collection-header__crumbs {
+    font-size: 0.8125rem;
+    color: #8a8a8a;
+    margin-block-end: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+
+  .kj-collection-header__crumbs a {
+    color: #8a8a8a;
+    text-decoration: none;
+  }
+
+  .kj-collection-header__crumbs a:hover {
+    color: #111;
+    text-decoration: underline;
+  }
+
+  .kj-collection-header__sep {
+    color: #c4c4c4;
+  }
+
+  .kj-collection-header__current {
+    color: #111;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .kj-collection-header__title {
+    margin: 0;
+    font-size: 2rem;
+    line-height: 1.1;
+    font-weight: 700;
+    color: #111;
+  }
+
+  .kj-collection-header__count {
+    margin: 4px 0 0;
+    font-size: 0.9375rem;
+    color: #8a8a8a;
+  }
+
+  @media screen and (max-width: 749px) {
+    .kj-collection-header__title {
+      font-size: 1.625rem;
+    }
+  }
+{% endstylesheet %}

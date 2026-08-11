@@ -84,6 +84,13 @@
     background: transparent;
   }
 
+  /* Mobile: remove product grid padding so cards run edge-to-edge. */
+  @media screen and (max-width: 749px) {
+    .product-grid {
+      padding: 0;
+    }
+  }
+
   /* Keep the filters/sort bar pinned to the very top while scrolling the
      products. The header is position:static here (it scrolls away), so we
      pin at 0 rather than under the header height. */
