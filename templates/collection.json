@@ -250,10 +250,19 @@
                 "custom_liquid": "{% render 'kj-save-pill' %}"
               },
               "blocks": {}
+            },
+            "kj_tag_badge": {
+              "type": "custom-liquid",
+              "name": "Tag badge",
+              "settings": {
+                "custom_liquid": "{% render 'kj-card-badge' %}"
+              },
+              "blocks": {}
             }
           },
           "block_order": [
             "card-gallery",
+            "kj_tag_badge",
             "text_eYAazA",
             "product_title_4nY4eT",
             "swatches_4YbbXV",
