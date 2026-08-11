@@ -249,7 +249,7 @@
 
     /* Shrink the price so the one-line row fits the 2-column card (no overflow). */
     #MainContent .product-card .price-item--sale.price {
-      font-size: 12px;
+      font-size: 11px;
     }
 
     #MainContent .product-card .price-item--regular.compare-at-price,
@@ -259,6 +259,11 @@
 
     #MainContent .product-card .price__sale {
       gap: 0.2rem;
+      min-width: 0;
+    }
+
+    #MainContent .product-card .price__sale .sale-badge__pill--inline::before {
+      margin-right: 3px;
     }
 
     /* Left-column cards (odd card in the 2-col grid) carry the divider borders:
