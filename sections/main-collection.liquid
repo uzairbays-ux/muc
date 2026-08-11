@@ -128,6 +128,11 @@
     --star-size: 12px;
   }
 
+  /* Star fill is hardcoded red in blocks/review.liquid; force black on cards. */
+  .collection-page-grid .filled-star {
+    fill: #001325;
+  }
+
   /* Mobile: remove product grid padding so cards run edge-to-edge. */
   @media screen and (max-width: 749px) {
     .product-grid {

@@ -36,22 +36,25 @@
     </svg>
   </button>
 
-  {%- if has_shades -%}
-    <a class="kj-card-cta" href="{{ p.url }}" aria-label="View shades of {{ p.title | escape }}">
-      View Shades
-      <svg class="kj-card-cta__caret" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <path d="M11 5.5 7 9.5 3 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-      </svg>
-    </a>
-  {%- elsif p.has_only_default_variant and p.available -%}
-    <form method="post" action="{{ routes.cart_add_url }}" class="kj-card-cta-form">
-      <input type="hidden" name="id" value="{{ p.selected_or_first_available_variant.id }}">
-      <button type="submit" class="kj-card-cta">Add to Bag</button>
-    </form>
+  {%- if p.available -%}
+    <button
+      type="button"
+      class="kj-card-cta"
+      data-kj-cta
+      data-kj-url="{{ p.url }}"
+      aria-label="{% if has_shades %}View shades of {{ p.title | escape }}{% else %}Add {{ p.title | escape }} to bag{% endif %}"
+    >
+      {%- if has_shades -%}
+        View Shades
+        <svg class="kj-card-cta__caret" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M11 5.5 7 9.5 3 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      {%- else -%}
+        Add to Bag
+      {%- endif -%}
+    </button>
   {%- else -%}
-    <a class="kj-card-cta" href="{{ p.url }}">
-      {%- if p.available -%}View Product{%- else -%}Sold Out{%- endif -%}
-    </a>
+    <a class="kj-card-cta kj-card-cta--sold" href="{{ p.url }}">Sold Out</a>
   {%- endif -%}
 </div>
 
@@ -164,6 +167,20 @@
       if (i === -1) { list.push(id); btn.setAttribute('aria-pressed', 'true'); }
       else { list.splice(i, 1); btn.setAttribute('aria-pressed', 'false'); }
       write(list);
+    });
+
+    // Wire the CTA to the card's native quick-add: multi-variant products open
+    // the shade chooser, single-variant products add straight to the cart.
+    document.addEventListener('click', function (e) {
+      var cta = e.target.closest && e.target.closest('.kj-card-cta[data-kj-cta]');
+      if (!cta) return;
+      var card = cta.closest('product-card');
+      var qa = card && card.querySelector(
+        'quick-add-component button, .quick-add__product-form-component button, [class*="quick-add"] button'
+      );
+      e.preventDefault();
+      if (qa) { qa.click(); }
+      else if (cta.dataset.kjUrl) { window.location.href = cta.dataset.kjUrl; }
     });
 
     document.addEventListener('DOMContentLoaded', function () { mark(); });
