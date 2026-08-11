@@ -80,6 +80,21 @@
   </div>
 </div>
 
+{% stylesheet %}
+  /* "View all" header link: no button fill, plain text link. */
+  .section-resource-list__header .button {
+    background: transparent;
+    border: none;
+    color: #111;
+    padding-inline: 0;
+  }
+
+  .section-resource-list__header .button:hover {
+    background: transparent;
+    text-decoration: underline;
+  }
+{% endstylesheet %}
+
 {% schema %}
 {
   "name": "t:names.product_list",
