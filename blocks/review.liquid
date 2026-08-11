@@ -96,8 +96,8 @@
           <span class="rating-count-separator">|</span>
         {%- endif -%}
         {%- if block_settings.show_number -%}
-          {{- rating_count }}
-          {{ 'content.reviews' | t }}
+          <span class="rating-count-number">{{- rating_count -}}</span>
+          <span class="rating-count-label">{{ 'content.reviews' | t }}</span>
         {%- endif -%}
       </p>
     {%- endif -%}

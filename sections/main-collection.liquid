@@ -99,9 +99,13 @@
   /* Price row: cut-price -> sale-price -> discount on one line. */
   #MainContent .product-card .price__sale {
     display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    gap: 6px;
+    align-items: center;
+    gap: 0.125rem;
+    width: fit-content;
+    padding: 0.25rem 0.5rem;
+    border-top-left-radius: 1.5rem;
+    border-bottom-left-radius: 1.5rem;
+    background: linear-gradient(to right, rgba(236, 249, 238, 1), rgba(255, 255, 255, 1));
   }
 
   #MainContent .product-card .price__sale > *:nth-child(1) { order: 2; } /* sale price */
@@ -125,8 +129,10 @@
     font-weight: 400;
   }
 
-  /* Hide the image overlay discount badge on cards (for now). */
-  .collection-page-grid .product-badges {
+  /* Hide the image overlay discount badge on cards + in the quick-add modal. */
+  .collection-page-grid .product-badges,
+  #quick-add-dialog .product-badges,
+  quick-add-dialog .product-badges {
     display: none;
   }
 
@@ -139,7 +145,20 @@
   }
 
   .collection-page-grid .rating {
-    --star-size: 12px;
+    --star-size: 11px;
+  }
+
+  /* Card review count: drop the word "reviews", show just "(45)". */
+  .collection-page-grid .rating-count-label {
+    display: none;
+  }
+
+  .collection-page-grid .rating-count-number::before {
+    content: "(";
+  }
+
+  .collection-page-grid .rating-count-number::after {
+    content: ")";
   }
 
   /* Star fill is hardcoded red in blocks/review.liquid; force black on cards. */
