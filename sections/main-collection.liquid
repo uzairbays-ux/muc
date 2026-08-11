@@ -108,8 +108,21 @@
   #MainContent .product-card .price__sale > *:nth-child(2) { order: 1; } /* cut price  */
   #MainContent .product-card .price__sale > *:nth-child(3) { order: 3; } /* discount   */
 
+  #MainContent .product-card .price-item--sale.price {
+    font-size: 12px;
+    font-weight: 400;
+  }
+
   #MainContent .product-card .price-item--regular.compare-at-price {
     font-size: 12px;
+  }
+
+  /* Separator between the price and the discount. */
+  #MainContent .product-card .price__sale .sale-badge__pill--inline::before {
+    content: "|";
+    margin-right: 6px;
+    color: rgba(0, 19, 37, 0.25);
+    font-weight: 400;
   }
 
   /* Hide the image overlay discount badge on cards (for now). */
@@ -190,7 +203,7 @@
     color: #068743;
     background: transparent;
     font-size: 12px;
-    font-weight: 600;
+    font-weight: 400;
   }
 {% endstylesheet %}
 
