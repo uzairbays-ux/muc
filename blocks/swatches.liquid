@@ -4,6 +4,7 @@
   assign block_settings = block.settings
   assign product_has_swatches = false
   assign variant_option = nil
+  assign shade_option = nil
 
   for product_option in closest.product.options_with_values
     assign swatch_count = product_option.values | map: 'swatch' | compact | size
@@ -17,12 +18,21 @@
     if swatch_count > 0 or is_color_name
       assign product_has_swatches = true
     endif
+    # Capture the shade/colour option so cards can show a "N Shades" count.
+    if is_color_name and shade_option == nil
+      assign shade_option = product_option
+    endif
     if variant_option == nil and product_option.values.size > 1
       if is_color_name or option_name_lower == 'size'
         assign variant_option = product_option
       endif
     endif
   endfor
+
+  assign shade_count = 0
+  if shade_option != nil
+    assign shade_count = shade_option.values.size
+  endif
 -%}
 
 {% stylesheet %}
@@ -99,6 +109,30 @@
       height: 32px;
     }
   }
+
+  /* "N Shades" count label — replaces the swatch row on cards. */
+  .kj-shades {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin: 6px 0;
+    padding: 0;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0;
+    color: #001325;
+    text-transform: capitalize;
+    text-decoration: none;
+    width: fit-content;
+  }
+
+  .kj-shades__icon {
+    height: 12px;
+    width: auto;
+    flex-shrink: 0;
+    display: block;
+  }
 {% endstylesheet %}
 
 {%- liquid
@@ -114,7 +148,21 @@
   endif
 -%}
 
-{% if product_has_swatches or use_variant_images %}
+{% if shade_option != nil and shade_count > 0 %}
+  <a
+    class="kj-shades"
+    href="{{ closest.product.url }}"
+    aria-label="{{ shade_count }} shades"
+    {{ block.shopify_attributes }}
+  >
+    <svg class="kj-shades__icon" viewBox="0 0 20 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="6" cy="6" r="5.5" fill="#E9B79E"></circle>
+      <circle cx="10" cy="6" r="5.5" fill="#C88A6A"></circle>
+      <circle cx="14" cy="6" r="5.5" fill="#8B4A38"></circle>
+    </svg>
+    {{ shade_count }} {% if shade_count == 1 %}Shade{% else %}Shades{% endif %}
+  </a>
+{% elsif product_has_swatches or use_variant_images %}
   <product-swatches
     data-product-id="{{ closest.product.id }}"
     data-product-url="{{ closest.product.url }}"
