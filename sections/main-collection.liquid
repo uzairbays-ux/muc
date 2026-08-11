@@ -289,12 +289,15 @@
       margin-right: 3px;
     }
 
-    /* Left-column cards (odd card in the 2-col grid) carry the divider borders:
-       a right border forms the centre line, a bottom border the row line.
+    /* Every card gets a bottom border so horizontal lines span both columns;
+       only left-column (odd) cards get the right border for the centre line.
        nth-of-type (not nth-child) so the leading <script> doesn't flip parity. */
+    .product-grid__item {
+      border-bottom: 1px solid rgba(0, 19, 37, 0.04);
+    }
+
     .product-grid__item:nth-of-type(odd) {
       border-right: 1px solid rgba(0, 19, 37, 0.08);
-      border-bottom: 1px solid rgba(0, 19, 37, 0.04);
     }
   }
 
