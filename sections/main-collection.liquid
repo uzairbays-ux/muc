@@ -89,6 +89,13 @@
     .product-grid {
       padding: 0;
     }
+
+    /* Left-column cards (odd position in the 2-col grid) carry the divider
+       borders: a right border forms the centre line, a bottom border the row line. */
+    .product-grid__item:nth-child(odd) {
+      border-right: 1px solid rgba(0, 19, 37, 0.08);
+      border-bottom: 1px solid rgba(0, 19, 37, 0.04);
+    }
   }
 
   /* Keep the filters/sort bar pinned to the very top while scrolling the
