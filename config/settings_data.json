@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "current": {
     "logo": "shopify://shop_images/makeupcity-logo_f2f73b66-4f31-419c-a917-2c199575f2fd.png",
@@ -59,9 +68,9 @@
     "inputs_border_radius": 4,
     "popover_border_radius": 14,
     "popover_border": "none",
-    "currency_code_enabled_product_pages": true,
-    "currency_code_enabled_product_cards": true,
-    "currency_code_enabled_cart_items": true,
+    "currency_code_enabled_product_pages": false,
+    "currency_code_enabled_product_cards": false,
+    "currency_code_enabled_cart_items": false,
     "quick_add": true,
     "mobile_quick_add": true,
     "empty_state_collection": "bestsellers",

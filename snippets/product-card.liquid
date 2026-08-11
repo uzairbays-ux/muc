@@ -125,4 +125,42 @@
       display: none;
     }
   }
+
+  /* Product card title — clamp to 2 lines with ellipsis. */
+  product-card p[role="heading"] {
+    display: -webkit-box;
+    overflow: hidden;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    margin-bottom: 0.125rem;
+    color: #001325;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    word-break: break-all;
+  }
+
+  /* Product card brand/vendor — single line with ellipsis. */
+  product-card [class*="__text_eYAazA"] p {
+    color: rgba(0, 19, 37, 0.92);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.1px;
+    line-height: 16px;
+    margin-bottom: 0.125rem;
+    margin-top: 0.25rem;
+    overflow: hidden;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  /* Remove the border around product card images. */
+  product-card .product-media,
+  product-card .product-media-container,
+  product-card [class*="product-card-gallery"] {
+    border: none !important;
+  }
 {% endstylesheet %}

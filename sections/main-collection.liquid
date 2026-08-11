@@ -84,28 +84,273 @@
     background: transparent;
   }
 
-  /* Keep the filters/sort bar pinned while scrolling the products. */
+  /* Inset the card text content, but keep the image full-bleed (negative margin
+     on the gallery cancels the padding). */
+  #MainContent .product-card__content {
+    padding-inline: 0.625rem;
+    padding-bottom: 0.625rem;
+    background: #ffffff;
+    position: relative;
+  }
+
+  #MainContent .product-card__content > [class*="card-gallery"] {
+    margin-inline: -0.625rem;
+    margin-bottom: 0.85rem;
+  }
+
+  /* Pin the action buttons to the bottom of every card so they align across
+     the grid no matter how long the product name/description is. */
+  #MainContent .collection-page-grid .product-grid__item {
+    display: flex;
+  }
+
+  #MainContent .collection-page-grid .product-grid__item > product-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  #MainContent .collection-page-grid .product-card__content {
+    flex: 1 1 auto;
+  }
+
+  /* Let grid columns stay equal instead of growing to the price's min-content. */
+  #MainContent .collection-page-grid .product-grid__item,
+  #MainContent .collection-page-grid .product-grid__item > product-card,
+  #MainContent .collection-page-grid .product-card__content {
+    min-width: 0;
+  }
+
+  /* The custom-liquid block wraps .kj-card-actions in an unclassed <div>, which
+     is the actual flex child — so margin-top:auto must go on the wrapper, not on
+     .kj-card-actions, to pin the buttons to the bottom of every card. */
+  #MainContent .collection-page-grid .product-card__content > div:has(.kj-card-actions) {
+    margin-top: auto;
+  }
+
+  /* Price row: cut-price -> sale-price -> discount on one line. */
+  #MainContent .product-card .price__sale {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: baseline;
+    gap: 0.25rem;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 1.1;
+    margin: 6px 0;
+  }
+
+  /* Tighter vertical rhythm around the price row. */
+  #MainContent .collection-page-grid .kj-shades {
+    margin-block: 3px;
+  }
+
+  #MainContent .collection-page-grid .kj-save {
+    margin-top: 3px;
+  }
+
+  #MainContent .collection-page-grid .baadmay-para {
+    margin-top: 3px;
+  }
+
+  #MainContent .product-card .price__sale > *:nth-child(1) { order: 2; } /* sale price */
+  #MainContent .product-card .price__sale > *:nth-child(2) { order: 1; } /* cut price  */
+  #MainContent .product-card .price__sale > *:nth-child(3) { order: 3; } /* discount   */
+
+  #MainContent .product-card .price-item--sale.price {
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  #MainContent .product-card .price-item--regular.compare-at-price {
+    font-size: 12px;
+  }
+
+  /* Discount badge: green text, no pill fill. Inline (not bundled) so the
+     theme's default red pill doesn't flash on load. */
+  #MainContent .collection-page-grid .sale-badge__pill {
+    color: #068743;
+    background: transparent;
+    font-size: 12px;
+    font-weight: 400;
+  }
+
+  /* Separator between the price and the discount. */
+  #MainContent .product-card .price__sale .sale-badge__pill--inline::before {
+    content: "|";
+    margin-right: 6px;
+    color: rgba(0, 19, 37, 0.25);
+    font-weight: 400;
+  }
+
+  /* BNPL "Pay only" row — purple version of the You-save pill. */
+  #MainContent .baadmay-para {
+    width: fit-content;
+    margin-top: 6px;
+    padding: 0.25rem 0.5rem;
+    border-radius: 40px;
+    background-image: linear-gradient(to right, rgb(233, 227, 252), rgb(255, 255, 255));
+  }
+
+  /* Hide the image overlay discount badge on cards + in the quick-add modal. */
+  .collection-page-grid .product-badges,
+  #quick-add-dialog .product-badges,
+  quick-add-dialog .product-badges {
+    display: none;
+  }
+
+  /* Quick-add modal price: match the card style — cut -> sale -> green discount,
+     properly spaced, no red pill. */
+  #quick-add-dialog .price__sale {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 8px;
+  }
+
+  #quick-add-dialog .price__sale > *:nth-child(1) { order: 2; } /* sale */
+  #quick-add-dialog .price__sale > *:nth-child(2) { order: 1; } /* cut */
+  #quick-add-dialog .price__sale > *:nth-child(3) { order: 3; } /* discount */
+
+  #quick-add-dialog .sale-badge__pill {
+    color: #068743;
+    background: transparent;
+    font-weight: 600;
+    padding-inline: 0;
+  }
+
+  /* Card rating: black + small. */
+  .collection-page-grid .rating-wrapper {
+    --star-fill-color: #001325;
+    --star-fill-color-rgb: 0 19 37;
+    color: #001325;
+    font-size: 11px;
+  }
+
+  /* The theme sets --star-size inline on .rating, so !important is required
+     to shrink the stars. */
+  .collection-page-grid .rating {
+    --star-size: 9px !important;
+  }
+
+  .collection-page-grid .rating-count {
+    color: #8a8a8a;
+    font-size: 10px;
+    margin-top: -7px;
+  }
+
+  /* The number span is styled red/large by a stubborn rule; force grey + small. */
+  #MainContent .collection-page-grid .rating-count-number {
+    color: #8a8a8a !important;
+    font-size: 10px !important;
+  }
+
+  /* Card review count: drop the word "reviews", show just "(45)". */
+  .collection-page-grid .rating-count-label {
+    display: none;
+  }
+
+  .collection-page-grid .rating-count-number::before {
+    content: "(";
+  }
+
+  .collection-page-grid .rating-count-number::after {
+    content: ")";
+  }
+
+  /* Star fill is hardcoded red in blocks/review.liquid; force black on cards. */
+  .collection-page-grid .filled-star {
+    fill: #001325;
+  }
+
+  /* Mobile: remove product grid padding so cards run edge-to-edge. */
+  @media screen and (max-width: 749px) {
+    .product-grid {
+      padding: 0;
+    }
+
+    /* Divider under the mobile Filter / Column-grid bar, above the product grid. */
+    .facets-toggle {
+      border-bottom: 1px solid rgba(0, 19, 37, 0.08);
+    }
+
+    /* Shrink the price so the one-line row fits the 2-column card (no overflow). */
+    #MainContent .product-card .price-item--sale.price {
+      font-size: 11px;
+    }
+
+    #MainContent .product-card .price-item--regular.compare-at-price,
+    #MainContent .collection-page-grid .sale-badge__pill {
+      font-size: 10px;
+    }
+
+    #MainContent .product-card .price__sale {
+      gap: 0.2rem;
+      min-width: 0;
+    }
+
+    #MainContent .product-card .price__sale .sale-badge__pill--inline::before {
+      margin-right: 3px;
+    }
+
+    /* Every card gets a bottom border so horizontal lines span both columns;
+       only left-column (odd) cards get the right border for the centre line.
+       nth-of-type (not nth-child) so the leading <script> doesn't flip parity. */
+    .product-grid__item {
+      border-bottom: 1px solid rgba(0, 19, 37, 0.04);
+    }
+
+    .product-grid__item:nth-of-type(odd) {
+      border-right: 1px solid rgba(0, 19, 37, 0.08);
+    }
+  }
+
+  /* Keep the filters/sort bar pinned to the very top while scrolling the
+     products. The header is position:static here (it scrolls away), so we
+     pin at 0 rather than under the header height. */
   .facets--horizontal.facets-controls-wrapper {
     position: sticky;
-    top: var(--header-height, 0px);
+    top: 0;
     z-index: 5;
     background: #ffffff;
+    padding-block: 8px;
+  }
+
+  /* The custom mega-menu is position:relative with z-index:auto, so the sticky
+     filters bar (z-index 5) covers it on hover. Lift the menu above the bar. */
+  .mega-menu,
+  .menu-list__submenu {
+    z-index: 20;
   }
 
   /* Desktop: light-grey page background (mobile stays white). */
   @media screen and (min-width: 750px) {
     #MainContent { background: #f3f3f3; }
     .facets--horizontal.facets-controls-wrapper { background: #f3f3f3; }
+
+    /* Keep the vertical filters sidebar in view while scrolling products.
+       It pins just under the 60px horizontal bar; if the filter list grows
+       taller than the viewport it scrolls internally instead of clipping. */
+    .facets.facets--vertical {
+      position: sticky;
+      top: 60px;
+      align-self: start;
+      max-height: calc(100vh - 72px);
+      overflow-y: auto;
+    }
+
+    /* Grid divider lines (desktop). Right + bottom only, on every card, so each
+       internal line comes from a single card and never doubles up. */
+    #MainContent .collection-page-grid .product-grid__item {
+      border-right: 1px solid rgba(0, 19, 37, 0.08);
+      border-bottom: 1px solid rgba(0, 19, 37, 0.04);
+    }
   }
 {% endstyle %}
 
 {% stylesheet %}
-  /* Sale badge on the collection page grid only: plain black text, no pill fill.
-     Scoped to .collection-page-grid so search results keep the red pill. */
-  .collection-page-grid .sale-badge__pill {
-    color: #000;
-    background: transparent;
-  }
+  /* (Sale-badge styling moved to the inline style block above to avoid a
+     flash of the theme's default pill on load.) */
 {% endstylesheet %}
 
 {% schema %}

@@ -12,65 +12,17 @@
     "section": {
       "type": "section",
       "blocks": {
-        "text_tqQTNE": {
-          "type": "text",
-          "name": "Title",
+        "collection_header": {
+          "type": "custom-liquid",
+          "name": "Collection header",
           "settings": {
-            "mobile_order": 0,
-            "text": "<h2>{{ closest.collection.title }}</h2>",
-            "width": "100%",
-            "max_width": "narrow",
-            "alignment": "center",
-            "type_preset": "rte",
-            "font": "var(--font-primary--family)",
-            "font_size": "",
-            "line_height": "normal",
-            "letter_spacing": "normal",
-            "case": "none",
-            "wrap": "pretty",
-            "color": "",
-            "background": false,
-            "background_color": "#00000026",
-            "corner_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
-        },
-        "text_twGGkJ": {
-          "type": "text",
-          "name": "Description",
-          "disabled": true,
-          "settings": {
-            "mobile_order": 0,
-            "text": "{{ closest.collection.description }}",
-            "width": "100%",
-            "max_width": "none",
-            "alignment": "center",
-            "type_preset": "rte",
-            "font": "var(--font-primary--family)",
-            "font_size": "",
-            "line_height": "normal",
-            "letter_spacing": "normal",
-            "case": "none",
-            "wrap": "pretty",
-            "color": "",
-            "background": false,
-            "background_color": "#00000026",
-            "corner_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
+            "custom_liquid": "{% render 'kj-collection-header' %}"
           },
           "blocks": {}
         }
       },
       "block_order": [
-        "text_tqQTNE",
-        "text_twGGkJ"
+        "collection_header"
       ],
       "name": "Collection heading",
       "settings": {
@@ -79,7 +31,7 @@
         "horizontal_alignment": "flex-start",
         "vertical_alignment": "center",
         "align_baseline": false,
-        "horizontal_alignment_flex_direction_column": "center",
+        "horizontal_alignment_flex_direction_column": "flex-start",
         "vertical_alignment_flex_direction_column": "center",
         "gap": 12,
         "section_width": "page-width",
@@ -131,7 +83,7 @@
           "type": "_product-card",
           "static": true,
           "settings": {
-            "product_card_gap": 10,
+            "product_card_gap": 0,
             "inherit_color_scheme": true,
             "color_scheme": "",
             "border": "none",
@@ -148,10 +100,10 @@
               "type": "_product-card-gallery",
               "settings": {
                 "image_ratio": "square",
-                "border": "solid",
+                "border": "none",
                 "border_width": 1,
                 "border_opacity": 100,
-                "border_radius": 10,
+                "border_radius": 0,
                 "padding-block-start": 0,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
@@ -176,7 +128,7 @@
                 "case": "none",
                 "wrap": "pretty",
                 "color": "var(--color-primary)",
-                "background": true,
+                "background": false,
                 "background_color": "#00000026",
                 "corner_radius": 10,
                 "padding-block-start": 0,
@@ -219,6 +171,11 @@
                 "padding-inline-end": 0
               },
               "blocks": {}
+            },
+            "judge_me_reviews_preview_badge_FKgjVz": {
+              "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+              "disabled": true,
+              "settings": {}
             },
             "review_QhafGF": {
               "type": "review",
@@ -277,16 +234,44 @@
                 "custom_liquid": "{% render 'baadmay-product-grid-item',product:  %}"
               },
               "blocks": {}
+            },
+            "kj_card_actions": {
+              "type": "custom-liquid",
+              "name": "Card actions",
+              "settings": {
+                "custom_liquid": "{% render 'kj-card-actions' %}"
+              },
+              "blocks": {}
+            },
+            "kj_save_pill": {
+              "type": "custom-liquid",
+              "name": "Save pill",
+              "settings": {
+                "custom_liquid": "{% render 'kj-save-pill' %}"
+              },
+              "blocks": {}
+            },
+            "kj_tag_badge": {
+              "type": "custom-liquid",
+              "name": "Tag badge",
+              "settings": {
+                "custom_liquid": "{% render 'kj-card-badge' %}"
+              },
+              "blocks": {}
             }
           },
           "block_order": [
             "card-gallery",
+            "kj_tag_badge",
             "text_eYAazA",
             "product_title_4nY4eT",
-            "review_QhafGF",
-            "price_EzJzMm",
             "swatches_4YbbXV",
-            "custom_liquid_yL6BdP"
+            "price_EzJzMm",
+            "kj_save_pill",
+            "custom_liquid_yL6BdP",
+            "review_QhafGF",
+            "kj_card_actions",
+            "judge_me_reviews_preview_badge_FKgjVz"
           ]
         }
       },
@@ -298,8 +283,8 @@
         "products_per_page": 24,
         "product_grid_width": "centered",
         "full_width_on_mobile": true,
-        "columns_gap_horizontal": 16,
-        "columns_gap_vertical": 24,
+        "columns_gap_horizontal": 0,
+        "columns_gap_vertical": 0,
         "padding-inline-start": 0,
         "padding-inline-end": 0,
         "color_scheme": "scheme-58084d4c-a86e-4d0a-855e-a0966e5043f7",

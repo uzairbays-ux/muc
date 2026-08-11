@@ -1,0 +1,49 @@
+{%- comment -%}
+  Top-left product-card badge based on product tags.
+    tag "Bestsellers" -> Bestseller badge
+    tag "Mostly"      -> Editor's Pick badge
+    tag "Featured"    -> Featured badge
+  Rendered via a custom-liquid block; absolutely positioned over the image
+  (its ancestor .product-card__content is position:relative).
+
+  NOTE: images are hotlinked from Nykaa's CDN as provided. Prefer re-hosting
+  your own copies in Shopify Files and swapping these URLs.
+{%- endcomment -%}
+{%- liquid
+  assign p = closest.product
+  assign tl = p.tags | join: '|' | downcase | prepend: '|' | append: '|'
+  assign badge_url = ''
+  assign badge_alt = ''
+  if tl contains '|bestsellers|'
+    assign badge_url = 'https://images-static.nykaa.com/media/BestsellerPLP.png'
+    assign badge_alt = 'Bestseller'
+  elsif tl contains '|mostly|'
+    assign badge_url = 'https://images-static.nykaa.com/media/Editor_Pickv2.png'
+    assign badge_alt = "Editor's pick"
+  elsif tl contains '|featured|'
+    assign badge_url = 'https://images-static.nykaa.com/fashion-images/media/Featured_v3.png'
+    assign badge_alt = 'Featured'
+  endif
+-%}
+{%- if badge_url != '' -%}
+  <div class="kj-tag-badge">
+    <img src="{{ badge_url }}" alt="{{ badge_alt }}" width="64" loading="lazy">
+  </div>
+{%- endif -%}
+
+{% stylesheet %}
+  .kj-tag-badge {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    z-index: 3;
+    pointer-events: none;
+    line-height: 0;
+  }
+
+  .kj-tag-badge img {
+    display: block;
+    width: 64px;
+    height: auto;
+  }
+{% endstylesheet %}
