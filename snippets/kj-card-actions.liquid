@@ -1,0 +1,173 @@
+{%- comment -%}
+  Product-card action row — wishlist heart + primary CTA.
+  Rendered via a custom-liquid block at the bottom of the card.
+
+  CTA logic:
+    - product has a colour/shade option -> "View Shades" (link to PDP)
+    - single available variant          -> "Add to Bag" (native /cart/add form)
+    - otherwise (multi-variant / sold out) -> "View Product" (link to PDP)
+
+  Wishlist is client-side (localStorage key 'kj-wishlist'); the heart state
+  persists per browser. A full wishlist page/app would be a further step.
+{%- endcomment -%}
+{%- liquid
+  assign p = closest.product
+  assign has_shades = false
+  for opt in p.options_with_values
+    assign on = opt.name | downcase
+    if on == 'color' or on == 'colour' or on == 'shade' or on == 'shades'
+      assign has_shades = true
+      break
+    endif
+  endfor
+-%}
+
+<div class="kj-card-actions">
+  <button
+    type="button"
+    class="kj-wish"
+    data-product-id="{{ p.id }}"
+    aria-label="Save to wishlist"
+    aria-pressed="false"
+  >
+    <svg class="kj-wish__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M12 20.5s-7.5-4.6-7.5-9.7A4.3 4.3 0 0 1 12 7a4.3 4.3 0 0 1 7.5 3.8c0 5.1-7.5 9.7-7.5 9.7Z"
+        stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"></path>
+    </svg>
+  </button>
+
+  {%- if has_shades -%}
+    <a class="kj-card-cta" href="{{ p.url }}" aria-label="View shades of {{ p.title | escape }}">
+      View Shades
+      <svg class="kj-card-cta__caret" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M11 5.5 7 9.5 3 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+      </svg>
+    </a>
+  {%- elsif p.has_only_default_variant and p.available -%}
+    <form method="post" action="{{ routes.cart_add_url }}" class="kj-card-cta-form">
+      <input type="hidden" name="id" value="{{ p.selected_or_first_available_variant.id }}">
+      <button type="submit" class="kj-card-cta">Add to Bag</button>
+    </form>
+  {%- else -%}
+    <a class="kj-card-cta" href="{{ p.url }}">
+      {%- if p.available -%}View Product{%- else -%}Sold Out{%- endif -%}
+    </a>
+  {%- endif -%}
+</div>
+
+{% stylesheet %}
+  .kj-card-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+    width: 100%;
+  }
+
+  .kj-card-actions .kj-card-cta-form {
+    flex: 1 1 auto;
+    display: flex;
+  }
+
+  .kj-wish {
+    flex: 0 0 auto;
+    width: 38px;
+    height: 38px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    background: #fff;
+    border: 1px solid rgba(0, 19, 37, 0.15);
+    border-radius: 999px;
+    color: #001325;
+    cursor: pointer;
+    transition: border-color 0.15s, color 0.15s;
+  }
+
+  .kj-wish__icon {
+    width: 19px;
+    height: 19px;
+    display: block;
+  }
+
+  .kj-wish[aria-pressed="true"] {
+    color: #e11b5c;
+    border-color: #e11b5c;
+  }
+
+  .kj-wish[aria-pressed="true"] .kj-wish__icon {
+    fill: #e11b5c;
+  }
+
+  .kj-card-cta {
+    flex: 1 1 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    width: 100%;
+    min-height: 38px;
+    padding: 8px 14px;
+    background: #e11b5c;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1;
+    text-decoration: none;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+
+  .kj-card-cta:hover {
+    background: #c4154e;
+  }
+
+  .kj-card-cta__caret {
+    width: 13px;
+    height: 13px;
+  }
+{% endstylesheet %}
+
+<script>
+  (function () {
+    if (window.__kjWishInit) return;
+    window.__kjWishInit = true;
+
+    var KEY = 'kj-wishlist';
+
+    function read() {
+      try { return JSON.parse(localStorage.getItem(KEY)) || []; }
+      catch (e) { return []; }
+    }
+    function write(list) {
+      try { localStorage.setItem(KEY, JSON.stringify(list)); } catch (e) {}
+    }
+    function mark(root) {
+      var list = read();
+      (root || document).querySelectorAll('.kj-wish').forEach(function (btn) {
+        var id = btn.getAttribute('data-product-id');
+        btn.setAttribute('aria-pressed', list.indexOf(id) !== -1 ? 'true' : 'false');
+      });
+    }
+
+    document.addEventListener('click', function (e) {
+      var btn = e.target.closest && e.target.closest('.kj-wish');
+      if (!btn) return;
+      e.preventDefault();
+      var id = btn.getAttribute('data-product-id');
+      var list = read();
+      var i = list.indexOf(id);
+      if (i === -1) { list.push(id); btn.setAttribute('aria-pressed', 'true'); }
+      else { list.splice(i, 1); btn.setAttribute('aria-pressed', 'false'); }
+      write(list);
+    });
+
+    document.addEventListener('DOMContentLoaded', function () { mark(); });
+    mark();
+    // Re-mark after the grid morphs (filtering / infinite scroll).
+    document.addEventListener('shopify:section:load', function () { mark(); });
+  })();
+</script>

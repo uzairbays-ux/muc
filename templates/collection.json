@@ -234,6 +234,14 @@
                 "custom_liquid": "{% render 'baadmay-product-grid-item',product:  %}"
               },
               "blocks": {}
+            },
+            "kj_card_actions": {
+              "type": "custom-liquid",
+              "name": "Card actions",
+              "settings": {
+                "custom_liquid": "{% render 'kj-card-actions' %}"
+              },
+              "blocks": {}
             }
           },
           "block_order": [
@@ -244,6 +252,7 @@
             "price_EzJzMm",
             "custom_liquid_yL6BdP",
             "review_QhafGF",
+            "kj_card_actions",
             "judge_me_reviews_preview_badge_FKgjVz"
           ]
         }
