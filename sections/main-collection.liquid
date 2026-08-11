@@ -184,8 +184,10 @@
     font-size: 11px;
   }
 
+  /* The theme sets --star-size inline on .rating, so !important is required
+     to shrink the stars. */
   .collection-page-grid .rating {
-    --star-size: 9px;
+    --star-size: 9px !important;
   }
 
   .collection-page-grid .rating-count {
