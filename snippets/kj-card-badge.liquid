@@ -6,8 +6,7 @@
   Rendered via a custom-liquid block; absolutely positioned over the image
   (its ancestor .product-card__content is position:relative).
 
-  NOTE: images are hotlinked from Nykaa's CDN as provided. Prefer re-hosting
-  your own copies in Shopify Files and swapping these URLs.
+  Images are self-hosted in Shopify Files.
 {%- endcomment -%}
 {%- liquid
   assign p = closest.product
@@ -15,13 +14,13 @@
   assign badge_url = ''
   assign badge_alt = ''
   if tl contains '|bestsellers|'
-    assign badge_url = 'https://images-static.nykaa.com/media/BestsellerPLP.png'
+    assign badge_url = 'https://cdn.shopify.com/s/files/1/0561/4259/4241/files/BestsellerPLP.webp?v=1786449505'
     assign badge_alt = 'Bestseller'
   elsif tl contains '|mostly|'
-    assign badge_url = 'https://images-static.nykaa.com/media/Editor_Pickv2.png'
+    assign badge_url = 'https://cdn.shopify.com/s/files/1/0561/4259/4241/files/Editor_Pickv2.webp?v=1786449504'
     assign badge_alt = "Editor's pick"
   elsif tl contains '|featured|'
-    assign badge_url = 'https://images-static.nykaa.com/fashion-images/media/Featured_v3.png'
+    assign badge_url = 'https://cdn.shopify.com/s/files/1/0561/4259/4241/files/Featured_v3.webp?v=1786449504'
     assign badge_alt = 'Featured'
   endif
 -%}
