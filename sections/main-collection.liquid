@@ -89,6 +89,7 @@
   #MainContent .product-card__content {
     padding-inline: 0.625rem;
     padding-bottom: 0.625rem;
+    background: #ffffff;
   }
 
   #MainContent .product-card__content > [class*="card-gallery"] {
@@ -132,6 +133,7 @@
     width: 100%;
     white-space: nowrap;
     line-height: 1.1;
+    margin: 6px 0;
   }
 
   /* Tighter vertical rhythm around the price row. */
@@ -230,6 +232,7 @@
   .collection-page-grid .rating-count {
     color: #8a8a8a;
     font-size: 10px;
+    margin-top: -7px;
   }
 
   /* The number span is styled red/large by a stubborn rule; force grey + small. */
@@ -306,6 +309,13 @@
     padding-block: 8px;
   }
 
+  /* The custom mega-menu is position:relative with z-index:auto, so the sticky
+     filters bar (z-index 5) covers it on hover. Lift the menu above the bar. */
+  .mega-menu,
+  .menu-list__submenu {
+    z-index: 20;
+  }
+
   /* Desktop: light-grey page background (mobile stays white). */
   @media screen and (min-width: 750px) {
     #MainContent { background: #f3f3f3; }
@@ -320,6 +330,13 @@
       align-self: start;
       max-height: calc(100vh - 72px);
       overflow-y: auto;
+    }
+
+    /* Grid divider lines (desktop). Right + bottom only, on every card, so each
+       internal line comes from a single card and never doubles up. */
+    #MainContent .collection-page-grid .product-grid__item {
+      border-right: 1px solid rgba(0, 19, 37, 0.08);
+      border-bottom: 1px solid rgba(0, 19, 37, 0.04);
     }
   }
 {% endstyle %}
