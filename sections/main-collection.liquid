@@ -84,12 +84,15 @@
     background: transparent;
   }
 
-  /* Keep the filters/sort bar pinned while scrolling the products. */
+  /* Keep the filters/sort bar pinned to the very top while scrolling the
+     products. The header is position:static here (it scrolls away), so we
+     pin at 0 rather than under the header height. */
   .facets--horizontal.facets-controls-wrapper {
     position: sticky;
-    top: var(--header-height, 0px);
+    top: 0;
     z-index: 5;
     background: #ffffff;
+    padding-block: 8px;
   }
 
   /* Desktop: light-grey page background (mobile stays white). */
