@@ -84,6 +84,50 @@
     background: transparent;
   }
 
+  /* Inset the card text content, but keep the image full-bleed (negative margin
+     on the gallery cancels the padding). */
+  #MainContent .product-card__content {
+    padding-inline: 0.625rem;
+    padding-bottom: 0.625rem;
+  }
+
+  #MainContent .product-card__content > [class*="card-gallery"] {
+    margin-inline: -0.625rem;
+  }
+
+  /* Price row: cut-price -> sale-price -> discount on one line. */
+  #MainContent .product-card .price__sale {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 6px;
+  }
+
+  #MainContent .product-card .price__sale > *:nth-child(1) { order: 2; } /* sale price */
+  #MainContent .product-card .price__sale > *:nth-child(2) { order: 1; } /* cut price  */
+  #MainContent .product-card .price__sale > *:nth-child(3) { order: 3; } /* discount   */
+
+  #MainContent .product-card .price-item--regular.compare-at-price {
+    font-size: 12px;
+  }
+
+  /* Hide the image overlay discount badge on cards (for now). */
+  .collection-page-grid .product-badges {
+    display: none;
+  }
+
+  /* Card rating: black + small. */
+  .collection-page-grid .rating-wrapper {
+    --star-fill-color: #001325;
+    --star-fill-color-rgb: 0 19 37;
+    color: #001325;
+    font-size: 12px;
+  }
+
+  .collection-page-grid .rating {
+    --star-size: 12px;
+  }
+
   /* Mobile: remove product grid padding so cards run edge-to-edge. */
   @media screen and (max-width: 749px) {
     .product-grid {
@@ -134,11 +178,13 @@
 {% endstyle %}
 
 {% stylesheet %}
-  /* Sale badge on the collection page grid only: plain black text, no pill fill.
+  /* Sale badge on the collection page grid only: green discount text, no pill fill.
      Scoped to .collection-page-grid so search results keep the red pill. */
   .collection-page-grid .sale-badge__pill {
-    color: #000;
+    color: #068743;
     background: transparent;
+    font-size: 12px;
+    font-weight: 600;
   }
 {% endstylesheet %}
 

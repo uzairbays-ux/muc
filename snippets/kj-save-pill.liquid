@@ -1,0 +1,50 @@
+{%- comment -%}
+  Green "save money" pill for product cards — shows the amount saved when the
+  product is on sale (compare-at price minus current price). Rendered via a
+  custom-liquid block right under the price.
+{%- endcomment -%}
+{%- liquid
+  assign p = closest.product
+  assign v = p.selected_or_first_available_variant
+  assign cur = v.price
+  assign cmp = v.compare_at_price
+-%}
+{%- if cmp and cmp > cur -%}
+  {%- assign saved = cmp | minus: cur -%}
+  <div class="kj-save">
+    <svg class="kj-save__icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+      <path d="M6.8014 2.09838C7.33126 1.17076 8.66874 1.17076 9.1986 2.09838C9.53325 2.68424 10.2424 2.94233 10.8753 2.70865C11.8775 2.33864 12.902 3.19836 12.7117 4.24954C12.5914 4.91344 12.9688 5.56697 13.6038 5.7948C14.6094 6.15553 14.8416 7.4727 14.0201 8.15559C13.5013 8.58688 13.3702 9.33005 13.7103 9.91279C14.2487 10.8355 13.5799 11.9938 12.5117 11.9888C11.837 11.9857 11.2589 12.4708 11.1448 13.1358C10.9642 14.1887 9.70732 14.6461 8.89216 13.9557C8.37731 13.5196 7.62269 13.5196 7.10784 13.9557C6.29268 14.6461 5.03585 14.1887 4.85521 13.1358C4.74112 12.4708 4.16304 11.9857 3.48835 11.9888C2.42008 11.9938 1.75133 10.8355 2.28974 9.91279C2.62979 9.33005 2.49875 8.58688 1.9799 8.15559C1.15839 7.4727 1.39064 6.15553 2.39617 5.7948C3.03124 5.56697 3.40855 4.91344 3.28833 4.24954C3.09796 3.19836 4.12254 2.33864 5.12469 2.70865C5.75763 2.94233 6.46675 2.68424 6.8014 2.09838Z" fill="#61D797"></path>
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M10.1592 5.8398C10.3544 6.03506 10.3544 6.35164 10.1592 6.54691L6.54692 10.1592C6.35166 10.3545 6.03507 10.3545 5.83981 10.1592C5.64455 9.96398 5.64454 9.6474 5.8398 9.45214L9.45205 5.83981C9.64731 5.64455 9.96389 5.64454 10.1592 5.8398Z" fill="white"></path>
+      <circle cx="6.47852" cy="6.41504" r="0.75" fill="white"></circle>
+      <circle cx="9.4707" cy="9.50391" r="0.75" fill="white"></circle>
+    </svg>
+    <div class="kj-save__text">You save {{ saved | money }}</div>
+  </div>
+{%- endif -%}
+
+{% stylesheet %}
+  .kj-save {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    padding: 0.25rem;
+    margin-top: 6px;
+    border-radius: 40px;
+    background-image: linear-gradient(to right, rgb(216, 246, 232), rgb(255, 255, 255));
+  }
+
+  .kj-save__icon {
+    flex-shrink: 0;
+    display: block;
+  }
+
+  .kj-save__text {
+    padding-left: 0.25rem;
+    color: rgb(6, 135, 67);
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0;
+    white-space: nowrap;
+  }
+{% endstylesheet %}
