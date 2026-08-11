@@ -135,12 +135,21 @@
   #MainContent .product-card .price__sale > *:nth-child(3) { order: 3; } /* discount   */
 
   #MainContent .product-card .price-item--sale.price {
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 400;
   }
 
   #MainContent .product-card .price-item--regular.compare-at-price {
     font-size: 12px;
+  }
+
+  /* Discount badge: green text, no pill fill. Inline (not bundled) so the
+     theme's default red pill doesn't flash on load. */
+  #MainContent .collection-page-grid .sale-badge__pill {
+    color: #068743;
+    background: transparent;
+    font-size: 12px;
+    font-weight: 400;
   }
 
   /* Separator between the price and the discount. */
@@ -252,14 +261,8 @@
 {% endstyle %}
 
 {% stylesheet %}
-  /* Sale badge on the collection page grid only: green discount text, no pill fill.
-     Scoped to .collection-page-grid so search results keep the red pill. */
-  .collection-page-grid .sale-badge__pill {
-    color: #068743;
-    background: transparent;
-    font-size: 12px;
-    font-weight: 400;
-  }
+  /* (Sale-badge styling moved to the inline style block above to avoid a
+     flash of the theme's default pill on load.) */
 {% endstylesheet %}
 
 {% schema %}
