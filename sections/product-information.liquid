@@ -281,12 +281,13 @@
   }
 
   /* ===== PDP info styled to match the reference ===== */
-  /* Brand: bold + underlined, no grey pill. */
-  [id^='ProductInformation'] .group-block:has(.rating-wrapper) .text-block {
+  /* Brand: bold + underlined, no grey pill. The vendor renders as an <a> inside
+     a pill .text-block in .block-mobile-order. */
+  [id^='ProductInformation'] .block-mobile-order .text-block:has(a) {
     background: transparent !important;
     padding: 0 !important;
   }
-  [id^='ProductInformation'] .group-block:has(.rating-wrapper) .text-block p {
+  [id^='ProductInformation'] .block-mobile-order .text-block:has(a) a {
     font-weight: 700;
     text-decoration: underline;
     text-underline-offset: 2px;
