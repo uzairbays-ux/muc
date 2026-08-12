@@ -146,8 +146,16 @@
     word-break: break-all;
   }
 
-  /* Product card brand/vendor — single line with ellipsis. */
-  product-card [class*="__text_eYAazA"] p {
+  /* Product card brand/vendor — single line with ellipsis. Generalized to the
+     brand text-block (in .block-mobile-order) so it matches on every card type,
+     not just the collection's block id. Also strips any pill background. */
+  product-card .block-mobile-order .text-block {
+    background: transparent !important;
+    padding: 0 !important;
+    width: fit-content;
+  }
+
+  product-card .block-mobile-order .text-block p {
     color: rgba(0, 19, 37, 0.92);
     font-size: 14px;
     font-weight: 600;
@@ -184,7 +192,7 @@
   }
   .product-card .product-card__content > .card-gallery {
     margin-inline: -0.625rem;
-    margin-bottom: 0.85rem;
+    margin-bottom: 0.4rem;
   }
   /* Square, borderless image (match the collection cards). */
   .product-card .card-gallery {
