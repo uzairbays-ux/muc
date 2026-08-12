@@ -1,12 +1,12 @@
 {%- comment -%}
   PDP eyebrow label above the brand — "MOST REORDERED" (purple) when the
-  product has the "Mostly" tag; "BESTSELLER" fallback handled separately.
+  product has the "Top Pick" tag; "BESTSELLER" fallback handled separately.
 {%- endcomment -%}
 {%- liquid
   assign p = product | default: closest.product
   assign tl = p.tags | join: '|' | downcase | prepend: '|' | append: '|'
 -%}
-{%- if tl contains '|mostly|' -%}
+{%- if tl contains '|top pick|' -%}
   <p class="kj-pdp-label">Most Reordered</p>
 {%- endif -%}
 
