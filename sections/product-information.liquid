@@ -600,12 +600,14 @@
       order: 99;
     }
 
-    /* Gallery: full-bleed (negates the 16px container padding on each side) */
+    /* Gallery: full-bleed (negates the 16px container padding on each side).
+       order:-1 puts the image FIRST on mobile (image-first PDP layout).
+       Desktop is unaffected (this rule is inside the mobile media query). */
     [data-product-grid-content] > .product-information__media {
       margin-inline: -16px;
       width: calc(100% + 32px) !important;
       max-width: none !important;
-      order: 40 !important;
+      order: -1 !important;
     }
 
     /* Named block wrappers: --mobile-order is set as inline style on each element.
