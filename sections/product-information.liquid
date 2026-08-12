@@ -218,8 +218,11 @@
       order: var(--mobile-order, 5);
     }
 
-    /* Image-first PDP on phones: pull the gallery to the very top. */
-    [id^='ProductInformation'] .product-information__grid > .product-information__media {
+    /* Image-first PDP on phones: pull the gallery to the very top.
+       (The section wrapper id is shopify-section-…, not ProductInformation, so
+       we target the grid via its data attribute; #MainContent adds specificity
+       to beat the theme's order:3.) */
+    #MainContent [data-product-grid-content] > .product-information__media {
       order: -1 !important;
     }
   }
