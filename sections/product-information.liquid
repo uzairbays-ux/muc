@@ -116,6 +116,7 @@
         {% render 'price', product_resource: product, show_sale_price_first: true %}
       </div>
 
+      <div class="sticky-add-to-cart__actions">
       <button
         type="button"
         class="sticky-add-to-cart__wish kj-wish"
@@ -175,6 +176,7 @@
           </span>
         </span>
       </button>
+      </div>
     </div>
   </sticky-add-to-cart>
 
@@ -296,6 +298,18 @@
     font-weight: 600;
   }
 
+  /* Wishlist heart + Add-to-cart share the "button" grid area as a flex row. */
+  .sticky-add-to-cart__actions {
+    grid-area: button;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .sticky-add-to-cart__actions .sticky-add-to-cart__button {
+    flex: 1 1 auto;
+  }
+
   /* Wishlist heart in the sticky add-to-cart bar. */
   .sticky-add-to-cart__wish {
     flex: 0 0 auto;
@@ -305,7 +319,6 @@
     align-items: center;
     justify-content: center;
     padding: 0;
-    margin-inline-end: 8px;
     background: #fff;
     border: 1px solid rgba(0, 19, 37, 0.15);
     border-radius: 999px;
