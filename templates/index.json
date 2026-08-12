@@ -912,7 +912,7 @@
               "settings": {
                 "desktop_image": "shopify://shop_images/new-arrival-desktop.webp",
                 "mobile_image": "shopify://shop_images/new-arrival-phone.webp",
-                "link_url": "",
+                "link_url": "shopify://collections/new-arrival",
                 "open_in_new_tab": false,
                 "hover_opacity": 85
               },
