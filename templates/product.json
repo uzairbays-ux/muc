@@ -110,6 +110,14 @@
                 "padding-inline-end": 0
               },
               "blocks": {
+                "kj_pdp_label": {
+                  "type": "custom-liquid",
+                  "name": "Most Reordered label",
+                  "settings": {
+                    "custom_liquid": "{% render 'kj-pdp-label', product: product %}"
+                  },
+                  "blocks": {}
+                },
                 "text_6AanU6": {
                   "type": "text",
                   "name": "Product Vendor",
@@ -162,6 +170,7 @@
                 }
               },
               "block_order": [
+                "kj_pdp_label",
                 "text_6AanU6",
                 "judge_me_reviews_preview_badge_7g9LNP",
                 "judge_me_reviews_all_reviews_text_VpHBgR",
