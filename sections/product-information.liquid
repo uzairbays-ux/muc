@@ -433,12 +433,13 @@
     if (window.__kjJdgmFmt) return;
     window.__kjJdgmFmt = true;
     function fmt(badge) {
-      if (badge.dataset.kjFmt) return;
       var avg = parseFloat(badge.getAttribute('data-average-rating') || '0');
       var cnt = badge.getAttribute('data-number-of-reviews') || '0';
       if (!avg) return;
       var txt = badge.querySelector('.jdgm-prev-badge__text');
       if (!txt) return;
+      // Re-apply whenever Judge.me has overwritten our formatted text.
+      if (txt.querySelector('.kj-jdgm-value')) return;
       badge.dataset.kjFmt = '1';
       txt.textContent = '';
       var v = document.createElement('span'); v.className = 'kj-jdgm-value'; v.textContent = avg.toFixed(1) + '/5';
