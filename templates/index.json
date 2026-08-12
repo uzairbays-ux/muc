@@ -275,9 +275,9 @@
             "horizontal_alignment_flex_direction_column": "flex-start",
             "vertical_alignment_flex_direction_column": "center",
             "gap": 12,
-            "width": "fit-content",
+            "width": "fill",
             "custom_width": 100,
-            "width_mobile": "fit-content",
+            "width_mobile": "fill",
             "custom_width_mobile": 100,
             "height": "fit",
             "custom_height": 100,
@@ -296,15 +296,15 @@
             "padding-inline-end": 0
           },
           "blocks": {
-            "ai_gen_block_4420fcf_7943p9": {
+            "ai_gen_block_4420fcf_xdn7CQ": {
               "type": "ai_gen_block_4420fcf",
               "name": "Banner announcement",
               "settings": {
-                "desktop_image": "shopify://shop_images/best-seller-desktop.webp",
+                "desktop_image": "shopify://shop_images/best-seller-desktop_6c1bf320-9ce3-4cb9-a1d0-8ecba17b768b.webp",
                 "mobile_image": "shopify://shop_images/best-seller-mobile.webp",
-                "link_url": "shopify://collections/bestsellers",
+                "link_url": "",
                 "open_in_new_tab": false,
-                "hover_opacity": 100
+                "hover_opacity": 85
               },
               "blocks": {}
             },
@@ -352,7 +352,7 @@
             }
           },
           "block_order": [
-            "ai_gen_block_4420fcf_7943p9",
+            "ai_gen_block_4420fcf_xdn7CQ",
             "product_list_text_YFtzcL",
             "product_list_button_MWeP9V"
           ]
@@ -906,13 +906,13 @@
             "padding-inline-end": 0
           },
           "blocks": {
-            "ai_gen_block_4420fcf_aM6UHJ": {
+            "ai_gen_block_4420fcf_MRKif8": {
               "type": "ai_gen_block_4420fcf",
               "name": "Banner announcement",
               "settings": {
                 "desktop_image": "shopify://shop_images/new-arrival-desktop.webp",
                 "mobile_image": "shopify://shop_images/new-arrival-phone.webp",
-                "link_url": "shopify://collections/new-arrival",
+                "link_url": "",
                 "open_in_new_tab": false,
                 "hover_opacity": 85
               },
@@ -962,7 +962,7 @@
             }
           },
           "block_order": [
-            "ai_gen_block_4420fcf_aM6UHJ",
+            "ai_gen_block_4420fcf_MRKif8",
             "product_list_text_GjDMrr",
             "product_list_button_Q8QHYb"
           ]
