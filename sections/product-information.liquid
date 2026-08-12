@@ -217,6 +217,11 @@
     [id^='ProductInformation'] notify-me-availability {
       order: var(--mobile-order, 5);
     }
+
+    /* Image-first PDP on phones: pull the gallery to the very top. */
+    [id^='ProductInformation'] .product-information__grid > .product-information__media {
+      order: -1 !important;
+    }
   }
 
   /* Extra breathing room below the price. */
