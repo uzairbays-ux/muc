@@ -207,7 +207,7 @@
           "type": "card",
           "name": "Ordinary",
           "settings": {
-            "image": "shopify://shop_images/The-Ordinary_6841b8ee-f2ea-46b1-b8f2-f9f2dbaf4930.jpg",
+            "image": "shopify://shop_images/OT.webp",
             "link": "shopify://collections/to",
             "open_new_tab": false
           }
@@ -437,16 +437,17 @@
               },
               "blocks": {}
             },
-            "review_LCLnXa": {
-              "type": "review",
-              "name": "t:names.product_review_stars",
+            "swatches_bpac49": {
+              "type": "swatches",
+              "name": "t:names.swatches",
               "settings": {
-                "stars_style": "shaded",
-                "show_number": true,
-                "rating_color": "primary",
-                "type_preset": "paragraph",
-                "width": "100%",
-                "alignment": "left"
+                "product_swatches_alignment": "flex-start",
+                "product_swatches_alignment_mobile": "flex-start",
+                "hide_padding": false,
+                "product_swatches_padding_top": 4,
+                "product_swatches_padding_bottom": 0,
+                "product_swatches_padding_left": 0,
+                "product_swatches_padding_right": 0
               },
               "blocks": {}
             },
@@ -482,17 +483,16 @@
               },
               "blocks": {}
             },
-            "swatches_bpac49": {
-              "type": "swatches",
-              "name": "t:names.swatches",
+            "review_LCLnXa": {
+              "type": "review",
+              "name": "t:names.product_review_stars",
               "settings": {
-                "product_swatches_alignment": "flex-start",
-                "product_swatches_alignment_mobile": "flex-start",
-                "hide_padding": false,
-                "product_swatches_padding_top": 4,
-                "product_swatches_padding_bottom": 0,
-                "product_swatches_padding_left": 0,
-                "product_swatches_padding_right": 0
+                "stars_style": "shaded",
+                "show_number": true,
+                "rating_color": "primary",
+                "type_preset": "paragraph",
+                "width": "100%",
+                "alignment": "left"
               },
               "blocks": {}
             }
@@ -1032,16 +1032,17 @@
               },
               "blocks": {}
             },
-            "review_hDcVD3": {
-              "type": "review",
-              "name": "t:names.product_review_stars",
+            "swatches_Tb6R6r": {
+              "type": "swatches",
+              "name": "t:names.swatches",
               "settings": {
-                "stars_style": "shaded",
-                "show_number": true,
-                "rating_color": "primary",
-                "type_preset": "paragraph",
-                "width": "100%",
-                "alignment": "left"
+                "product_swatches_alignment": "flex-start",
+                "product_swatches_alignment_mobile": "flex-start",
+                "hide_padding": false,
+                "product_swatches_padding_top": 4,
+                "product_swatches_padding_bottom": 0,
+                "product_swatches_padding_left": 0,
+                "product_swatches_padding_right": 0
               },
               "blocks": {}
             },
@@ -1077,17 +1078,16 @@
               },
               "blocks": {}
             },
-            "swatches_Tb6R6r": {
-              "type": "swatches",
-              "name": "t:names.swatches",
+            "review_hDcVD3": {
+              "type": "review",
+              "name": "t:names.product_review_stars",
               "settings": {
-                "product_swatches_alignment": "flex-start",
-                "product_swatches_alignment_mobile": "flex-start",
-                "hide_padding": false,
-                "product_swatches_padding_top": 4,
-                "product_swatches_padding_bottom": 0,
-                "product_swatches_padding_left": 0,
-                "product_swatches_padding_right": 0
+                "stars_style": "shaded",
+                "show_number": true,
+                "rating_color": "primary",
+                "type_preset": "paragraph",
+                "width": "100%",
+                "alignment": "left"
               },
               "blocks": {}
             }
