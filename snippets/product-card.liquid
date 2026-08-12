@@ -173,7 +173,22 @@
      home carousels, recommendations, search). Collection-only rules
      (grid dividers, sticky filters, page bg) stay in main-collection. ===== */
 
-  .product-card__content { position: relative; }
+  /* Inset text content + white card, keep the image full-bleed. */
+  .product-card__content {
+    position: relative;
+    padding-inline: 0.625rem;
+    padding-bottom: 0.625rem;
+    background: #ffffff;
+  }
+  .product-card__content > .card-gallery {
+    margin-inline: -0.625rem;
+    margin-bottom: 0.85rem;
+  }
+  /* Square, borderless image (match the collection cards). */
+  .product-card .card-gallery {
+    border: none !important;
+    border-radius: 0 !important;
+  }
 
   /* Pin the wishlist + CTA row to the bottom so buttons align across a row. */
   .product-card { display: flex; flex-direction: column; height: 100%; min-width: 0; }
