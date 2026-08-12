@@ -301,7 +301,7 @@
               "name": "Banner announcement",
               "settings": {
                 "desktop_image": "shopify://shop_images/best-seller-desktop.webp",
-                "mobile_image": "shopify://shop_images/best-seller-desktop_6c1bf320-9ce3-4cb9-a1d0-8ecba17b768b.webp",
+                "mobile_image": "shopify://shop_images/best-seller-mobile.webp",
                 "link_url": "shopify://collections/bestsellers",
                 "open_in_new_tab": false,
                 "hover_opacity": 100
