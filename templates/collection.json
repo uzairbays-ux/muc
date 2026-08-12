@@ -234,43 +234,16 @@
                 "custom_liquid": "{% render 'baadmay-product-grid-item',product:  %}"
               },
               "blocks": {}
-            },
-            "kj_card_actions": {
-              "type": "custom-liquid",
-              "name": "Card actions",
-              "settings": {
-                "custom_liquid": "{% render 'kj-card-actions' %}"
-              },
-              "blocks": {}
-            },
-            "kj_save_pill": {
-              "type": "custom-liquid",
-              "name": "Save pill",
-              "settings": {
-                "custom_liquid": "{% render 'kj-save-pill' %}"
-              },
-              "blocks": {}
-            },
-            "kj_tag_badge": {
-              "type": "custom-liquid",
-              "name": "Tag badge",
-              "settings": {
-                "custom_liquid": "{% render 'kj-card-badge' %}"
-              },
-              "blocks": {}
             }
           },
           "block_order": [
             "card-gallery",
-            "kj_tag_badge",
             "text_eYAazA",
             "product_title_4nY4eT",
             "swatches_4YbbXV",
             "price_EzJzMm",
-            "kj_save_pill",
             "custom_liquid_yL6BdP",
             "review_QhafGF",
-            "kj_card_actions",
             "judge_me_reviews_preview_badge_FKgjVz"
           ]
         }

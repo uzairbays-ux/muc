@@ -80,6 +80,32 @@
   </div>
 </div>
 
+{% stylesheet %}
+  /* "View all" header link: no button fill, plain text link. */
+  .section-resource-list__header .button {
+    background: transparent;
+    border: none;
+    color: #111;
+    padding-inline: 0;
+  }
+
+  .section-resource-list__header .button:hover {
+    background: transparent;
+    text-decoration: underline;
+  }
+
+  /* Carousel product cards: flush (no left/right gap) with a vertical divider
+     between them, matching the collection grid. */
+  .resource-list__carousel slideshow-slides {
+    column-gap: 0 !important;
+    gap: 0 !important;
+  }
+
+  .resource-list__slide {
+    border-right: 1px solid rgba(0, 19, 37, 0.08);
+  }
+{% endstylesheet %}
+
 {% schema %}
 {
   "name": "t:names.product_list",

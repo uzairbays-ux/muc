@@ -120,6 +120,14 @@
     color: rgb(var(--color-foreground-heading));
   }
 
+  @media screen and (max-width: 749px) {
+    /* .h3 typography class sets 2rem and ties on specificity, so target both
+       classes to win. */
+    .card-grid__heading.h3 {
+      font-size: 1.15rem;
+    }
+  }
+
   .card-grid__subheading {
     margin: var(--gap-2xs, 4px) 0 0;
     color: rgb(var(--color-foreground));

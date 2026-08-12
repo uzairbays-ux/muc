@@ -9,7 +9,7 @@
   Images are self-hosted in Shopify Files.
 {%- endcomment -%}
 {%- liquid
-  assign p = closest.product
+  assign p = product | default: closest.product
   assign tl = p.tags | join: '|' | downcase | prepend: '|' | append: '|'
   assign badge_url = ''
   assign badge_alt = ''

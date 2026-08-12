@@ -11,7 +11,7 @@
   persists per browser. A full wishlist page/app would be a further step.
 {%- endcomment -%}
 {%- liquid
-  assign p = closest.product
+  assign p = product | default: closest.product
   assign has_shades = false
   for opt in p.options_with_values
     assign on = opt.name | downcase

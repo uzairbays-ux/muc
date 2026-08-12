@@ -347,7 +347,7 @@
           "name": "t:names.product_card",
           "static": true,
           "settings": {
-            "product_card_gap": 4,
+            "product_card_gap": 0,
             "inherit_color_scheme": true,
             "color_scheme": "",
             "border": "none",
@@ -455,7 +455,7 @@
               "name": "t:names.product_price",
               "settings": {
                 "show_sale_price_first": true,
-                "show_sale_badge": false,
+                "show_sale_badge": true,
                 "show_installments": false,
                 "show_tax_info": false,
                 "type_preset": "h6",
@@ -501,10 +501,10 @@
             "product_card_gallery_677WP3",
             "text_xpq4pB",
             "product_title_YXxMTj",
-            "review_LCLnXa",
+            "swatches_bpac49",
             "price_JQzVV4",
             "custom_liquid_Ct6iwn",
-            "swatches_bpac49"
+            "review_LCLnXa"
           ]
         }
       },
@@ -942,7 +942,7 @@
           "name": "t:names.product_card",
           "static": true,
           "settings": {
-            "product_card_gap": 4,
+            "product_card_gap": 0,
             "inherit_color_scheme": true,
             "color_scheme": "",
             "border": "none",
@@ -1096,10 +1096,10 @@
             "product_card_gallery_6QCNJz",
             "text_HrXRDT",
             "product_title_mctczp",
-            "review_hDcVD3",
+            "swatches_Tb6R6r",
             "price_j9XwYp",
             "custom_liquid_GMXHWY",
-            "swatches_Tb6R6r"
+            "review_hDcVD3"
           ]
         }
       },
