@@ -266,6 +266,12 @@
     #MainContent [data-product-grid-content] > .product-information__media {
       order: -1 !important;
     }
+
+    /* Move the trust badges below the price group so brand/rating/title/price
+       stay contiguous (mobile only). */
+    #MainContent [data-product-grid-content] div:has(> .trust-badges) {
+      order: 2 !important;
+    }
   }
 
   /* Extra breathing room below the price. */
