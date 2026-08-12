@@ -266,11 +266,20 @@
                     "custom_liquid": "{% render 'baadmay' %}"
                   },
                   "blocks": {}
+                },
+                "kj_save_pill_pdp": {
+                  "type": "custom-liquid",
+                  "name": "Save pill",
+                  "settings": {
+                    "custom_liquid": "{% render 'kj-save-pill', product: product %}"
+                  },
+                  "blocks": {}
                 }
               },
               "block_order": [
                 "text_LabgbW",
                 "price_tVjtKg",
+                "kj_save_pill_pdp",
                 "custom_liquid_7MEE6g"
               ]
             },
