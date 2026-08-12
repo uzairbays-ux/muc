@@ -345,6 +345,27 @@
     font-weight: 600;
   }
 
+  /* Judge.me preview badge -> "4.7/5 (41) ›" with dark stars (reformatted by JS). */
+  .jdgm-prev-badge {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 6px;
+  }
+  .jdgm-prev-badge .jdgm-star.jdgm--on,
+  .jdgm-prev-badge .jdgm-star.jdgm--half {
+    color: #001325 !important;
+  }
+  .jdgm-prev-badge__text {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 13px;
+    color: #001325;
+  }
+  .kj-jdgm-value { font-weight: 700; color: #001325; }
+  .kj-jdgm-count { color: #8a8a8a; }
+  .kj-jdgm-chev { color: #8a8a8a; font-weight: 600; }
+
   /* Hide the sale badge in the product-page gallery only (this inline style renders
      on the product page only; cards on other pages keep their badges). */
   .product-information__media .product-badges {
@@ -406,6 +427,35 @@
     fill: #ff0f0f;
   }
 {% endstyle %}
+
+<script>
+  (function () {
+    if (window.__kjJdgmFmt) return;
+    window.__kjJdgmFmt = true;
+    function fmt(badge) {
+      if (badge.dataset.kjFmt) return;
+      var avg = parseFloat(badge.getAttribute('data-average-rating') || '0');
+      var cnt = badge.getAttribute('data-number-of-reviews') || '0';
+      if (!avg) return;
+      var txt = badge.querySelector('.jdgm-prev-badge__text');
+      if (!txt) return;
+      badge.dataset.kjFmt = '1';
+      txt.textContent = '';
+      var v = document.createElement('span'); v.className = 'kj-jdgm-value'; v.textContent = avg.toFixed(1) + '/5';
+      var c = document.createElement('span'); c.className = 'kj-jdgm-count'; c.textContent = '(' + cnt + ')';
+      var ch = document.createElement('span'); ch.className = 'kj-jdgm-chev'; ch.textContent = '›';
+      txt.appendChild(v); txt.appendChild(c); txt.appendChild(ch);
+    }
+    function run() { document.querySelectorAll('.jdgm-prev-badge').forEach(fmt); }
+    run();
+    document.addEventListener('DOMContentLoaded', run);
+    var tries = 0;
+    var iv = setInterval(function () { run(); if (++tries > 12) clearInterval(iv); }, 500);
+    var obs = new MutationObserver(run);
+    obs.observe(document.documentElement, { childList: true, subtree: true });
+    setTimeout(function () { obs.disconnect(); }, 8000);
+  })();
+</script>
 
 {% stylesheet %}
   .sticky-add-to-cart__bar {
