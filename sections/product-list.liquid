@@ -93,6 +93,16 @@
     background: transparent;
     text-decoration: underline;
   }
+
+  /* Carousel product cards: flush (no left/right gap) with a vertical divider
+     between them, matching the collection grid. */
+  .resource-list__carousel slideshow-slides {
+    column-gap: 0;
+  }
+
+  .resource-list__slide {
+    border-right: 1px solid rgba(0, 19, 37, 0.08);
+  }
 {% endstylesheet %}
 
 {% schema %}
