@@ -317,8 +317,9 @@
   }
 
   /* Empty custom-liquid wrappers (e.g. label block on untagged products) must
-     not eat flex gap and indent the row. */
-  [id^='ProductInformation'] .group-block-content > div:empty {
+     not eat flex gap and indent the row. They contain whitespace, so :empty
+     fails — match unclassed divs with no element children instead. */
+  [id^='ProductInformation'] .group-block-content > div:not([class]):not(:has(*)) {
     display: none;
   }
 
