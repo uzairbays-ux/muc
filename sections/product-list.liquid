@@ -2,9 +2,16 @@
 
 {% liquid
   assign max_items = section.settings.max_products
+
+  assign bg_styles = ''
+  if section.settings.gradient_color_1 != blank and section.settings.gradient_color_2 != blank
+    assign grad_opacity = section.settings.gradient_opacity | default: 100 | divided_by: 100.0
+    assign grad_dir = section.settings.gradient_direction | default: 'to bottom'
+    assign bg_styles = 'background-image: linear-gradient(' | append: grad_dir | append: ', rgba(' | append: section.settings.gradient_color_1.red | append: ',' | append: section.settings.gradient_color_1.green | append: ',' | append: section.settings.gradient_color_1.blue | append: ',' | append: grad_opacity | append: '), rgba(' | append: section.settings.gradient_color_2.red | append: ',' | append: section.settings.gradient_color_2.green | append: ',' | append: section.settings.gradient_color_2.blue | append: ',' | append: grad_opacity | append: '));'
+  endif
 %}
 
-<div class="section-background color-{{ section.settings.color_scheme }}"></div>
+<div class="section-background color-{{ section.settings.color_scheme }}"{% if bg_styles != '' %} style="{{ bg_styles }}"{% endif %}></div>
 <div
   data-testid="product-list"
   class="
@@ -20,6 +27,33 @@
     {% render 'gap-style', value: section.settings.gap %}
   "
 >
+  {%- liquid
+    assign has_banner_d = false
+    assign has_banner_m = false
+    if section.settings.banner_image_desktop != blank
+      assign has_banner_d = true
+    endif
+    if section.settings.banner_image_mobile != blank
+      assign has_banner_m = true
+    endif
+  -%}
+  {%- if has_banner_d or has_banner_m -%}
+    {%- capture banner_inner -%}
+      {%- if has_banner_d and has_banner_m -%}
+        {{ section.settings.banner_image_desktop | image_url: width: 2200 | image_tag: class: 'resource-list__banner-img rlb--desktop', loading: 'lazy', sizes: '100vw', widths: '800,1200,1600,2200', alt: section.settings.banner_image_desktop.alt | default: '' }}
+        {{ section.settings.banner_image_mobile | image_url: width: 1200 | image_tag: class: 'resource-list__banner-img rlb--mobile', loading: 'lazy', sizes: '100vw', widths: '400,600,800,1200', alt: section.settings.banner_image_mobile.alt | default: '' }}
+      {%- else -%}
+        {%- assign single_banner = section.settings.banner_image_desktop | default: section.settings.banner_image_mobile -%}
+        {{ single_banner | image_url: width: 2200 | image_tag: class: 'resource-list__banner-img', loading: 'lazy', sizes: '100vw', widths: '400,800,1200,1600,2200', alt: single_banner.alt | default: '' }}
+      {%- endif -%}
+    {%- endcapture -%}
+    {%- if section.settings.banner_link != blank -%}
+      <a class="resource-list__banner" href="{{ section.settings.banner_link }}">{{ banner_inner }}</a>
+    {%- else -%}
+      <div class="resource-list__banner">{{ banner_inner }}</div>
+    {%- endif -%}
+  {%- endif -%}
+
   <div class="section-resource-list__header">
     {%- content_for 'block', type: '_product-list-content', id: 'static-header' -%}
   </div>
@@ -104,6 +138,31 @@
   .resource-list__slide {
     border-right: 1px solid rgba(0, 19, 37, 0.08);
   }
+
+  /* Optional banner above the carousel (separate mobile/desktop images). */
+  .resource-list__banner {
+    display: block;
+    margin-bottom: 16px;
+  }
+
+  .resource-list__banner-img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .rlb--mobile {
+    display: none;
+  }
+
+  @media screen and (max-width: 749px) {
+    .rlb--desktop {
+      display: none;
+    }
+    .rlb--mobile {
+      display: block;
+    }
+  }
 {% endstylesheet %}
 
 {% schema %}
@@ -129,6 +188,62 @@
       "type": "collection",
       "id": "collection",
       "label": "t:settings.collection"
+    },
+    {
+      "type": "header",
+      "content": "Banner"
+    },
+    {
+      "type": "image_picker",
+      "id": "banner_image_desktop",
+      "label": "Banner image (desktop)"
+    },
+    {
+      "type": "image_picker",
+      "id": "banner_image_mobile",
+      "label": "Banner image (mobile)"
+    },
+    {
+      "type": "url",
+      "id": "banner_link",
+      "label": "Banner link"
+    },
+    {
+      "type": "header",
+      "content": "Gradient background"
+    },
+    {
+      "type": "color",
+      "id": "gradient_color_1",
+      "label": "Gradient color 1"
+    },
+    {
+      "type": "color",
+      "id": "gradient_color_2",
+      "label": "Gradient color 2"
+    },
+    {
+      "type": "select",
+      "id": "gradient_direction",
+      "label": "Gradient direction",
+      "options": [
+        { "value": "to bottom", "label": "Top to bottom" },
+        { "value": "to top", "label": "Bottom to top" },
+        { "value": "to right", "label": "Left to right" },
+        { "value": "to left", "label": "Right to left" },
+        { "value": "135deg", "label": "Diagonal" }
+      ],
+      "default": "to bottom"
+    },
+    {
+      "type": "range",
+      "id": "gradient_opacity",
+      "label": "Gradient opacity",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
     },
     {
       "type": "select",

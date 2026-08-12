@@ -116,6 +116,19 @@
         {% render 'price', product_resource: product, show_sale_price_first: true %}
       </div>
 
+      <div class="sticky-add-to-cart__actions">
+      <button
+        type="button"
+        class="sticky-add-to-cart__wish kj-wish"
+        data-product-id="{{ product.id }}"
+        aria-label="{{ 'products.product.add_to_wishlist' | t | default: 'Save to wishlist' }}"
+        aria-pressed="false"
+      >
+        <svg class="kj-wish__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M12 20.5s-7.5-4.6-7.5-9.7A4.3 4.3 0 0 1 12 7a4.3 4.3 0 0 1 7.5 3.8c0 5.1-7.5 9.7-7.5 9.7Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+
       <button
         type="button"
         class="sticky-add-to-cart__button add-to-cart-button button"
@@ -163,8 +176,36 @@
           </span>
         </span>
       </button>
+      </div>
     </div>
   </sticky-add-to-cart>
+
+  <script>
+    (function () {
+      if (window.__kjWishInit) return;
+      window.__kjWishInit = true;
+      var KEY = 'kj-wishlist';
+      function read() { try { return JSON.parse(localStorage.getItem(KEY)) || []; } catch (e) { return []; } }
+      function write(l) { try { localStorage.setItem(KEY, JSON.stringify(l)); } catch (e) {} }
+      function mark() {
+        var l = read();
+        document.querySelectorAll('.kj-wish').forEach(function (b) {
+          b.setAttribute('aria-pressed', l.indexOf(b.getAttribute('data-product-id')) !== -1 ? 'true' : 'false');
+        });
+      }
+      document.addEventListener('click', function (e) {
+        var b = e.target.closest && e.target.closest('.kj-wish');
+        if (!b) return;
+        e.preventDefault();
+        var id = b.getAttribute('data-product-id'), l = read(), i = l.indexOf(id);
+        if (i === -1) { l.push(id); b.setAttribute('aria-pressed', 'true'); }
+        else { l.splice(i, 1); b.setAttribute('aria-pressed', 'false'); }
+        write(l);
+      });
+      document.addEventListener('DOMContentLoaded', mark);
+      mark();
+    })();
+  </script>
 {% endif %}
 
 {% render 'product-information-content',
@@ -217,6 +258,20 @@
     [id^='ProductInformation'] notify-me-availability {
       order: var(--mobile-order, 5);
     }
+
+    /* Image-first PDP on phones: pull the gallery to the very top.
+       (The section wrapper id is shopify-section-…, not ProductInformation, so
+       we target the grid via its data attribute; #MainContent adds specificity
+       to beat the theme's order:3.) */
+    #MainContent [data-product-grid-content] > .product-information__media {
+      order: -1 !important;
+    }
+
+    /* Move the trust badges below the price group so brand/rating/title/price
+       stay contiguous (mobile only). */
+    #MainContent [data-product-grid-content] div:has(> .trust-badges) {
+      order: 2 !important;
+    }
   }
 
   /* Extra breathing room below the price. */
@@ -230,6 +285,103 @@
   [id^='ProductInformation'] .price-item--regular.price {
     font-size: 1.25rem;
   }
+
+  /* ===== PDP info styled to match the reference ===== */
+  /* Brand: bold + underlined, no grey pill. The vendor renders as an <a> inside
+     a pill .text-block in .block-mobile-order. */
+  [id^='ProductInformation'] .block-mobile-order .text-block:has(a) {
+    background: transparent !important;
+    padding: 0 !important;
+  }
+  [id^='ProductInformation'] .block-mobile-order .text-block:has(a) a {
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    color: #001325;
+  }
+
+  /* Price: bold sale price, grey cut price, GREEN discount (no red pill). */
+  [id^='ProductInformation'] .price-item--sale.price {
+    font-weight: 700;
+    color: #001325;
+  }
+  [id^='ProductInformation'] .compare-at-price {
+    color: rgba(0, 19, 37, 0.45);
+    font-weight: 400;
+  }
+  [id^='ProductInformation'] .sale-badge__pill--inline {
+    color: #068743 !important;
+    background: transparent !important;
+    padding-inline: 0 !important;
+    font-weight: 600;
+  }
+
+  /* Empty custom-liquid wrappers (e.g. label block on untagged products) must
+     not eat flex gap and indent the row. They contain whitespace, so :empty
+     fails — match unclassed divs with no element children instead. */
+  [id^='ProductInformation'] .group-block-content > div:not([class]):not(:has(*)) {
+    display: none;
+  }
+
+  /* Tax note after the price (reference: "Incl. of all taxes"). */
+  [id^='ProductInformation'] product-price .price__sale::after,
+  [id^='ProductInformation'] product-price .price__regular::after {
+    content: 'Incl. of all taxes';
+    font-size: 11px;
+    font-weight: 400;
+    color: #8a8a8a;
+    margin-inline-start: 6px;
+  }
+
+  /* Rating: dark stars + "4.9/5 (n) ›" format (match reference). */
+  [id^='ProductInformation'] .rating-wrapper {
+    --star-fill-color: #001325;
+    --star-fill-color-rgb: 0 19 37;
+  }
+  [id^='ProductInformation'] .filled-star {
+    fill: #001325;
+  }
+  [id^='ProductInformation'] .rating-value {
+    font-weight: 700;
+    color: #001325;
+    margin-inline-start: 6px;
+  }
+  [id^='ProductInformation'] .rating-count-label {
+    display: none;
+  }
+  [id^='ProductInformation'] .rating-count-number {
+    color: #8a8a8a;
+    margin-inline-start: 4px;
+  }
+  [id^='ProductInformation'] .rating-count-number::before { content: '('; }
+  [id^='ProductInformation'] .rating-count-number::after { content: ')'; }
+  [id^='ProductInformation'] .rating-count::after {
+    content: '›';
+    margin-inline-start: 6px;
+    color: #8a8a8a;
+    font-weight: 600;
+  }
+
+  /* Judge.me preview badge -> "4.7/5 (41) ›" with dark stars (reformatted by JS). */
+  .jdgm-prev-badge {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 6px;
+  }
+  .jdgm-prev-badge .jdgm-star.jdgm--on,
+  .jdgm-prev-badge .jdgm-star.jdgm--half {
+    color: #001325 !important;
+  }
+  .jdgm-prev-badge__text {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 13px;
+    color: #001325;
+  }
+  .kj-jdgm-value { font-weight: 700; color: #001325; }
+  .kj-jdgm-count { color: #8a8a8a; }
+  .kj-jdgm-chev { color: #8a8a8a; font-weight: 600; }
 
   /* Hide the sale badge in the product-page gallery only (this inline style renders
      on the product page only; cards on other pages keep their badges). */
@@ -249,6 +401,81 @@
     font-weight: 600;
   }
 {% endstyle %}
+
+
+  /* Wishlist heart + Add-to-cart share the "button" grid area as a flex row. */
+  .sticky-add-to-cart__actions {
+    grid-area: button;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .sticky-add-to-cart__actions .sticky-add-to-cart__button {
+    flex: 1 1 auto;
+  }
+
+  /* Wishlist heart in the sticky add-to-cart bar. */
+  .sticky-add-to-cart__wish {
+    flex: 0 0 auto;
+    width: 44px;
+    height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    background: #fff;
+    border: 1px solid rgba(0, 19, 37, 0.15);
+    border-radius: 999px;
+    color: #001325;
+    cursor: pointer;
+  }
+
+  .sticky-add-to-cart__wish .kj-wish__icon {
+    width: 22px;
+    height: 22px;
+    display: block;
+  }
+
+  .sticky-add-to-cart__wish[aria-pressed='true'] {
+    color: #ff0f0f;
+    border-color: #ff0f0f;
+  }
+
+  .sticky-add-to-cart__wish[aria-pressed='true'] .kj-wish__icon {
+    fill: #ff0f0f;
+  }
+{% endstyle %}
+
+<script>
+  (function () {
+    if (window.__kjJdgmFmt) return;
+    window.__kjJdgmFmt = true;
+    function fmt(badge) {
+      var avg = parseFloat(badge.getAttribute('data-average-rating') || '0');
+      var cnt = badge.getAttribute('data-number-of-reviews') || '0';
+      if (!avg) return;
+      var txt = badge.querySelector('.jdgm-prev-badge__text');
+      if (!txt) return;
+      // Re-apply whenever Judge.me has overwritten our formatted text.
+      if (txt.querySelector('.kj-jdgm-value')) return;
+      badge.dataset.kjFmt = '1';
+      txt.textContent = '';
+      var v = document.createElement('span'); v.className = 'kj-jdgm-value'; v.textContent = avg.toFixed(1) + '/5';
+      var c = document.createElement('span'); c.className = 'kj-jdgm-count'; c.textContent = '(' + cnt + ')';
+      var ch = document.createElement('span'); ch.className = 'kj-jdgm-chev'; ch.textContent = '›';
+      txt.appendChild(v); txt.appendChild(c); txt.appendChild(ch);
+    }
+    function run() { document.querySelectorAll('.jdgm-prev-badge').forEach(fmt); }
+    run();
+    document.addEventListener('DOMContentLoaded', run);
+    var tries = 0;
+    var iv = setInterval(function () { run(); if (++tries > 12) clearInterval(iv); }, 500);
+    var obs = new MutationObserver(run);
+    obs.observe(document.documentElement, { childList: true, subtree: true });
+    setTimeout(function () { obs.disconnect(); }, 8000);
+  })();
+</script>
 
 {% stylesheet %}
   .sticky-add-to-cart__bar {
@@ -600,12 +827,14 @@
       order: 99;
     }
 
-    /* Gallery: full-bleed (negates the 16px container padding on each side) */
+    /* Gallery: full-bleed (negates the 16px container padding on each side).
+       order:-1 puts the image FIRST on mobile (image-first PDP layout).
+       Desktop is unaffected (this rule is inside the mobile media query). */
     [data-product-grid-content] > .product-information__media {
       margin-inline: -16px;
       width: calc(100% + 32px) !important;
       max-width: none !important;
-      order: 40 !important;
+      order: -1 !important;
     }
 
     /* Named block wrappers: --mobile-order is set as inline style on each element.

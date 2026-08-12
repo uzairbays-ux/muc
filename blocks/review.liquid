@@ -96,6 +96,10 @@
           <span class="rating-count-separator">|</span>
         {%- endif -%}
         {%- if block_settings.show_number -%}
+<<<<<<< HEAD
+=======
+          <span class="rating-value">{{ rating | round: 1 }}/{{ scale_max | default: 5 | round: 0 }}</span>
+>>>>>>> origin/perf-test
           <span class="rating-count-number">{{- rating_count -}}</span>
           <span class="rating-count-label">{{ 'content.reviews' | t }}</span>
         {%- endif -%}
