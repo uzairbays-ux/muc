@@ -275,9 +275,9 @@
             "horizontal_alignment_flex_direction_column": "flex-start",
             "vertical_alignment_flex_direction_column": "center",
             "gap": 12,
-            "width": "custom",
+            "width": "fit-content",
             "custom_width": 100,
-            "width_mobile": "custom",
+            "width_mobile": "fit-content",
             "custom_width_mobile": 100,
             "height": "fit",
             "custom_height": 100,
@@ -304,7 +304,7 @@
                 "mobile_image": "shopify://shop_images/best-seller-desktop_6c1bf320-9ce3-4cb9-a1d0-8ecba17b768b.webp",
                 "link_url": "shopify://collections/bestsellers",
                 "open_in_new_tab": false,
-                "hover_opacity": 85
+                "hover_opacity": 100
               },
               "blocks": {}
             },
