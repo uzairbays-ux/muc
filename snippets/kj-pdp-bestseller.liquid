@@ -1,0 +1,48 @@
+{%- comment -%}
+  PDP "BESTSELLER" pill — shows when the product has the "Bestsellers" tag,
+  followed by its product type. Rendered via a custom-liquid block.
+{%- endcomment -%}
+{%- liquid
+  assign p = product | default: closest.product
+  assign tl = p.tags | join: '|' | downcase | prepend: '|' | append: '|'
+-%}
+{%- if tl contains '|bestsellers|' -%}
+  <div class="kj-pdp-bestseller">
+    <span class="kj-pdp-bestseller__pill">
+      <svg viewBox="0 0 12 12" width="11" height="11" fill="currentColor" aria-hidden="true"><path d="M6 .8l1.6 3.2 3.5.5-2.5 2.5.6 3.5L6 9.3 2.8 11l.6-3.5L1 5l3.5-.5z"/></svg>
+      Bestseller
+    </span>
+    {%- if p.type != blank -%}
+      <span class="kj-pdp-bestseller__type">{{ p.type }}</span>
+    {%- endif -%}
+  </div>
+{%- endif -%}
+
+{% stylesheet %}
+  .kj-pdp-bestseller {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-block: 6px;
+  }
+
+  .kj-pdp-bestseller__pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: #ff5a5f;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    line-height: 1;
+    padding: 4px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+
+  .kj-pdp-bestseller__type {
+    font-size: 13px;
+    color: #001325;
+  }
+{% endstylesheet %}
