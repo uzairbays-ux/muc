@@ -280,6 +280,35 @@
     font-size: 1.25rem;
   }
 
+  /* ===== PDP info styled to match the reference ===== */
+  /* Brand: bold + underlined, no grey pill. */
+  [id^='ProductInformation'] .group-block:has(.rating-wrapper) .text-block {
+    background: transparent !important;
+    padding: 0 !important;
+  }
+  [id^='ProductInformation'] .group-block:has(.rating-wrapper) .text-block p {
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    color: #001325;
+  }
+
+  /* Price: bold sale price, grey cut price, GREEN discount (no red pill). */
+  [id^='ProductInformation'] .price-item--sale.price {
+    font-weight: 700;
+    color: #001325;
+  }
+  [id^='ProductInformation'] .compare-at-price {
+    color: rgba(0, 19, 37, 0.45);
+    font-weight: 400;
+  }
+  [id^='ProductInformation'] .sale-badge__pill--inline {
+    color: #068743 !important;
+    background: transparent !important;
+    padding-inline: 0 !important;
+    font-weight: 600;
+  }
+
   /* Hide the sale badge in the product-page gallery only (this inline style renders
      on the product page only; cards on other pages keep their badges). */
   .product-information__media .product-badges {
