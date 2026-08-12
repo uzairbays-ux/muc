@@ -316,6 +316,12 @@
     font-weight: 600;
   }
 
+  /* Empty custom-liquid wrappers (e.g. label block on untagged products) must
+     not eat flex gap and indent the row. */
+  [id^='ProductInformation'] .group-block-content > div:empty {
+    display: none;
+  }
+
   /* Tax note after the price (reference: "Incl. of all taxes"). */
   [id^='ProductInformation'] product-price .price__sale::after,
   [id^='ProductInformation'] product-price .price__regular::after {
