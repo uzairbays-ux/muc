@@ -173,14 +173,16 @@
      home carousels, recommendations, search). Collection-only rules
      (grid dividers, sticky filters, page bg) stay in main-collection. ===== */
 
-  /* Inset text content + white card, keep the image full-bleed. */
-  .product-card__content {
+  /* Inset text content + white card, keep the image full-bleed.
+     Scoped to .product-card .product-card__content so it beats the theme's
+     spacing rule (which zeroes the inline padding). */
+  .product-card .product-card__content {
     position: relative;
     padding-inline: 0.625rem;
     padding-bottom: 0.625rem;
     background: #ffffff;
   }
-  .product-card__content > .card-gallery {
+  .product-card .product-card__content > .card-gallery {
     margin-inline: -0.625rem;
     margin-bottom: 0.85rem;
   }
