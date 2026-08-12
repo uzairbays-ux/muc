@@ -72,7 +72,8 @@
     margin-bottom: var(--gap-md, 16px);
   }
 
-  .brand-ticker__heading {
+  /* .h3 typography class ties on specificity, so double up the class. */
+  .brand-ticker__heading.h3 {
     margin: 0;
     font-family: var(--font-heading--family);
     color: rgb(var(--color-foreground-heading));
@@ -87,8 +88,8 @@
   }
 
   @media screen and (max-width: 749px) {
-    .brand-ticker__heading {
-      font-size: var(--bt-heading-mobile, 18px);
+    .brand-ticker__heading.h3 {
+      font-size: var(--bt-heading-mobile, 16px);
     }
     .brand-ticker__subheading {
       font-size: var(--bt-subheading-mobile, 12px);
