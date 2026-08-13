@@ -273,9 +273,15 @@
       order: 5 !important;
     }
 
-    /* Tighter gap under the price (the save pill adds its own top margin). */
-    [id^='ProductInformation'] product-price {
-      margin-block-end: 4px;
+    /* Tighter gap under the price (the save pill adds its own top margin).
+       #MainContent adds specificity to beat the later global 14px rule. */
+    #MainContent [id^='ProductInformation'] product-price {
+      margin-block-end: 2px;
+    }
+
+    /* The save pill sits right under the price — no extra top gap needed. */
+    #MainContent [id^='ProductInformation'] .kj-save {
+      margin-top: 0;
     }
   }
 
