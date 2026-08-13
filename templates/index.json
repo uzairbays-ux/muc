@@ -284,6 +284,147 @@
         "show_dots": false,
         "color_scheme": "scheme-1",
         "padding-block-start": 12,
+        "padding-block-end": 12
+      }
+    },
+    "card_banner_nxjYYw": {
+      "type": "card-banner",
+      "blocks": {
+        "card_wT4WEe": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/K_beauty_750_x_750_copy.webp",
+            "link": "shopify://collections/korean-brands",
+            "open_new_tab": false
+          }
+        },
+        "card_pEmaig": {
+          "type": "card",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/premium_brand_750_x_750_copy.webp",
+            "link": "shopify://collections/chinese-brands",
+            "open_new_tab": false
+          }
+        },
+        "card_ArA9aN": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/Medicube_75ba1a60-1c0d-4093-9ef0-c7b74c98bf56.webp",
+            "link": "shopify://collections/medicube",
+            "open_new_tab": false
+          }
+        },
+        "card_c3HEeM": {
+          "type": "card",
+          "name": "ST London",
+          "settings": {
+            "image": "shopify://shop_images/ST-London_445dc7f2-e4e0-4538-a9c3-d32191e76ee6.jpg",
+            "link": "shopify://collections/st-london",
+            "open_new_tab": false
+          }
+        },
+        "card_fHkLFt": {
+          "type": "card",
+          "name": "Maybelline",
+          "settings": {
+            "image": "shopify://shop_images/maybelline_750_x_750_copy_c568da4e-ae7c-4e30-b861-965e54567e4a.webp",
+            "link": "shopify://collections/maybelline",
+            "open_new_tab": false
+          }
+        },
+        "card_mKTLLP": {
+          "type": "card",
+          "name": "Revolution",
+          "settings": {
+            "image": "shopify://shop_images/Revolution_a8b4b25e-8187-4227-a83e-ae25c318f998.jpg",
+            "link": "shopify://collections/revolution",
+            "open_new_tab": false
+          }
+        },
+        "card_kJRjeJ": {
+          "type": "card",
+          "name": "ELF",
+          "settings": {
+            "image": "shopify://shop_images/Elf_bea269b9-e3dd-4abc-8186-9fc11a467f7c.webp",
+            "link": "shopify://collections/elf",
+            "open_new_tab": false
+          }
+        },
+        "card_rGDGUb": {
+          "type": "card",
+          "name": "Framesi",
+          "settings": {
+            "image": "shopify://shop_images/framesi_df4258f7-bf5e-4618-8f7b-e402cc115907.jpg",
+            "link": "shopify://collections/framesi",
+            "open_new_tab": false
+          }
+        },
+        "card_Nz3YMm": {
+          "type": "card",
+          "name": "Kryolan",
+          "settings": {
+            "image": "shopify://shop_images/Kryolan_e78ce55b-fef2-4b43-8251-21e7080bfdc6.webp",
+            "link": "shopify://collections/kryolan",
+            "open_new_tab": false
+          }
+        },
+        "card_4ztLBB": {
+          "type": "card",
+          "name": "Ordinary",
+          "settings": {
+            "image": "shopify://shop_images/The_ordinary_1.webp",
+            "link": "shopify://collections/to",
+            "open_new_tab": false
+          }
+        },
+        "card_P3rCeH": {
+          "type": "card",
+          "name": "CeraVe",
+          "settings": {
+            "image": "shopify://shop_images/Cerave_6796a457-83aa-4eff-ac8e-57b4ec69463b.jpg",
+            "link": "shopify://collections/cerave",
+            "open_new_tab": false
+          }
+        },
+        "card_YwKP6m": {
+          "type": "card",
+          "name": "Bioaqua",
+          "settings": {
+            "image": "shopify://shop_images/Bioaqua_46d50632-e011-4b6d-8a51-7a0fdbf97c6c.jpg",
+            "link": "shopify://collections/bioaqua",
+            "open_new_tab": false
+          }
+        }
+      },
+      "block_order": [
+        "card_wT4WEe",
+        "card_pEmaig",
+        "card_ArA9aN",
+        "card_c3HEeM",
+        "card_fHkLFt",
+        "card_mKTLLP",
+        "card_kJRjeJ",
+        "card_rGDGUb",
+        "card_Nz3YMm",
+        "card_4ztLBB",
+        "card_P3rCeH",
+        "card_YwKP6m"
+      ],
+      "name": "Card banner",
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "heading_alignment": "left",
+        "desktop_per_view": "3.5",
+        "mobile_per_view": "1.5",
+        "gap": 16,
+        "autoplay": true,
+        "autoplay_interval": 5,
+        "show_arrows": true,
+        "show_dots": false,
+        "color_scheme": "scheme-1",
+        "padding-block-start": 0,
         "padding-block-end": 24
       }
     },
@@ -2739,6 +2880,7 @@
     "thumbnail_scroll_PbDt4b",
     "featured_banner_yeQJGh",
     "card_banner_8zTGy8",
+    "card_banner_nxjYYw",
     "product_list_fa6P9H",
     "brand_ticker_fdyAia",
     "card_grid_HA8C7w",
