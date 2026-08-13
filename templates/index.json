@@ -149,6 +149,30 @@
     "card_banner_8zTGy8": {
       "type": "card-banner",
       "blocks": {
+        "card_F7WUnC": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/K_beauty_750_x_750_copy.webp",
+            "link": "",
+            "open_new_tab": false
+          }
+        },
+        "card_CEmTbc": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/premium_brand_750_x_750_copy.webp",
+            "link": "",
+            "open_new_tab": false
+          }
+        },
+        "card_qV7j66": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/chinese_750_x750_copy.webp",
+            "link": "",
+            "open_new_tab": false
+          }
+        },
         "card_x4i8pi": {
           "type": "card",
           "name": "ST London",
@@ -232,6 +256,9 @@
         }
       },
       "block_order": [
+        "card_F7WUnC",
+        "card_CEmTbc",
+        "card_qV7j66",
         "card_x4i8pi",
         "card_G4PiLa",
         "card_YUtaR6",
@@ -2372,7 +2399,7 @@
         "image_fit": "contain",
         "card_ratio": "adapt",
         "image_border_radius": 19,
-        "background_color": "#E3EDF7",
+        "background_color": "#e3edf7",
         "padding-block-start": 24,
         "padding-block-end": 24
       }
