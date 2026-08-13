@@ -1425,7 +1425,7 @@
           "type": "card",
           "name": "Huda Beauty",
           "settings": {
-            "image": "shopify://shop_images/Huda_beauty.webp",
+            "image": "shopify://shop_images/Huda-Beauty.webp",
             "link": "shopify://collections/huda-beauty",
             "open_new_tab": false,
             "discount_code": ""
