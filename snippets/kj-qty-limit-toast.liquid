@@ -104,12 +104,20 @@
         delete input.dataset.kjTyped;
       }, true);
 
-      // Pressed "+" while already at the cap.
+      // Pressed "+" while already at the cap. A disabled button fires no click,
+      // so CSS gives it pointer-events:none and the wrapper catches it instead.
       document.addEventListener('click', function (e) {
-        var btn = e.target.closest && e.target.closest('button[name="plus"]');
-        if (!btn) return;
-        var wrap = btn.closest('quantity-selector-component, cart-quantity-selector-component');
-        var input = wrap && wrap.querySelector('input[type="number"]');
+        var target = e.target.closest
+          ? e.target.closest('button[name="plus"], quantity-selector-component, cart-quantity-selector-component')
+          : null;
+        if (!target) return;
+        var wrap = target.closest('quantity-selector-component, cart-quantity-selector-component');
+        if (!wrap) return;
+        var plus = wrap.querySelector('button[name="plus"]');
+        // If the click came from the wrapper, only treat it as a "+" press when
+        // that button is disabled (i.e. the shopper tapped a capped control).
+        if (target === wrap && !(plus && plus.disabled)) return;
+        var input = wrap.querySelector('input[type="number"]');
         if (!input) return;
         var max = maxOf(input);
         if (max === null) return;
@@ -158,6 +166,13 @@
   .kj-qty-toast svg {
     flex-shrink: 0;
     color: #f3c96b;
+  }
+
+  /* Let clicks on a capped "+" reach the wrapper so we can explain the limit
+     (disabled buttons swallow click events). */
+  quantity-selector-component button[name='plus']:disabled,
+  cart-quantity-selector-component button[name='plus']:disabled {
+    pointer-events: none;
   }
 
   /* Clear the sticky add-to-cart bar on phones. */
