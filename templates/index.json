@@ -438,7 +438,8 @@
           "settings": {
             "image": "shopify://shop_images/ChatGPT_Image_Aug_13_2026_11_37_49_PM.webp",
             "link": "",
-            "open_new_tab": false
+            "open_new_tab": false,
+            "discount_code": "Azadi500"
           }
         },
         "card_9d7T67": {
@@ -447,7 +448,8 @@
           "settings": {
             "image": "shopify://shop_images/ChatGPT_Image_Aug_13_2026_11_39_53_PM.webp",
             "link": "",
-            "open_new_tab": false
+            "open_new_tab": false,
+            "discount_code": "Azadi1000"
           }
         },
         "card_DfKtjp": {
@@ -456,7 +458,8 @@
           "settings": {
             "image": "shopify://shop_images/ChatGPT_Image_Aug_13_2026_11_42_01_PM.webp",
             "link": "",
-            "open_new_tab": false
+            "open_new_tab": false,
+            "discount_code": "Azadi2000"
           }
         }
       },
