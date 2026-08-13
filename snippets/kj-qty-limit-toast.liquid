@@ -1,0 +1,120 @@
+{%- comment -%}
+  Purchase-limit toast. Fires whenever a shopper tries to go past a quantity
+  input's max — by typing a number, or by pressing "+" when already at the cap.
+  Covers the product form, cart drawer, cart page and quick-add modal.
+  Note: {% raw %}{% stylesheet %}{% endraw %} must stay at the top level of the
+  file, so it sits outside the settings check below.
+{%- endcomment -%}
+{%- if settings.max_quantity_per_product > 0 -%}
+  <div class="kj-qty-toast" role="status" aria-live="polite" hidden>
+    <svg viewBox="0 0 16 16" width="15" height="15" fill="none" aria-hidden="true">
+      <circle cx="8" cy="8" r="6.4" stroke="currentColor" stroke-width="1.4"></circle>
+      <path d="M8 4.9v3.6M8 11.1h.01" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+    </svg>
+    <span class="kj-qty-toast__text"></span>
+  </div>
+
+  <script>
+    (function () {
+      if (window.__kjQtyToast) return;
+      window.__kjQtyToast = true;
+
+      var hideTimer = null;
+
+      function toast(msg) {
+        var el = document.querySelector('.kj-qty-toast');
+        if (!el) return;
+        var text = el.querySelector('.kj-qty-toast__text');
+        if (text) text.textContent = msg;
+        el.hidden = false;
+        void el.offsetWidth; // reflow so the transition replays
+        el.classList.add('is-visible');
+        if (hideTimer) clearTimeout(hideTimer);
+        hideTimer = setTimeout(function () {
+          el.classList.remove('is-visible');
+          setTimeout(function () { el.hidden = true; }, 250);
+        }, 2800);
+      }
+
+      function maxOf(input) {
+        var m = parseInt(input.getAttribute('max') || '', 10);
+        return isNaN(m) ? null : m;
+      }
+
+      function message(max) {
+        return 'You can order up to ' + max + ' of this item.';
+      }
+
+      // Remember what was typed before the theme clamps the value.
+      document.addEventListener('input', function (e) {
+        var input = e.target;
+        if (input && input.type === 'number') input.dataset.kjTyped = input.value;
+      }, true);
+
+      // Typed a number above the cap.
+      document.addEventListener('change', function (e) {
+        var input = e.target;
+        if (!input || input.type !== 'number') return;
+        var max = maxOf(input);
+        if (max === null) return;
+        var typed = parseInt(input.dataset.kjTyped || input.value, 10);
+        if (!isNaN(typed) && typed > max) toast(message(max));
+        delete input.dataset.kjTyped;
+      }, true);
+
+      // Pressed "+" while already at the cap.
+      document.addEventListener('click', function (e) {
+        var btn = e.target.closest && e.target.closest('button[name="plus"]');
+        if (!btn) return;
+        var wrap = btn.closest('quantity-selector-component, cart-quantity-selector-component');
+        var input = wrap && wrap.querySelector('input[type="number"]');
+        if (!input) return;
+        var max = maxOf(input);
+        if (max === null) return;
+        var cartQty = parseInt(input.getAttribute('data-cart-quantity') || '0', 10) || 0;
+        var current = parseInt(input.value, 10) || 0;
+        // On the product form the cap also counts what's already in the cart.
+        var effective = wrap.tagName === 'CART-QUANTITY-SELECTOR-COMPONENT' ? current : current + cartQty;
+        if (effective >= max) toast(message(max));
+      }, true);
+    })();
+  </script>
+{%- endif -%}
+
+{% stylesheet %}
+  .kj-qty-toast {
+    position: fixed;
+    left: 50%;
+    bottom: 24px;
+    transform: translate(-50%, 12px);
+    z-index: 30;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    max-width: min(92vw, 380px);
+    padding: 10px 16px;
+    border-radius: 999px;
+    background: #1c1c22;
+    color: #fff;
+    font-size: 13px;
+    line-height: 18px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.28);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.22s ease, transform 0.22s ease;
+  }
+
+  .kj-qty-toast[hidden] {
+    display: none;
+  }
+
+  .kj-qty-toast.is-visible {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+
+  .kj-qty-toast svg {
+    flex-shrink: 0;
+    color: #f3c96b;
+  }
+{% endstylesheet %}
