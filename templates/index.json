@@ -121,8 +121,8 @@
         "slide_WR6nXe": {
           "type": "slide",
           "settings": {
-            "desktop_image": "shopify://shop_images/main_banner_1920_x_750_copy_37a4eaef-d9da-455e-b78b-951e93286d0f.webp",
-            "mobile_image": "shopify://shop_images/main_banner_1920_x_750_copy_4d8af23d-305b-4758-9faf-a2839a33dc74.webp",
+            "desktop_image": "shopify://shop_images/main_banner_1920_x_750_copy_d342a0a2-9454-4a2a-9637-a0b4eb310ea7.webp",
+            "mobile_image": "shopify://shop_images/main_banner_1920_x_750_copy_a8b314bc-0238-484a-82b9-031eac8b0c57.webp",
             "link": "shopify://collections/sale",
             "open_new_tab": false,
             "alt": ""
@@ -159,6 +159,7 @@
         },
         "card_CEmTbc": {
           "type": "card",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/premium_brand_750_x_750_copy.webp",
             "link": "shopify://collections/chinese-brands",
@@ -186,7 +187,7 @@
           "type": "card",
           "name": "Maybelline",
           "settings": {
-            "image": "shopify://shop_images/maybelline_750_x_750_copy_95852ab2-c293-4d96-92a4-255fd54f2145.webp",
+            "image": "shopify://shop_images/maybelline_750_x_750_copy_c568da4e-ae7c-4e30-b861-965e54567e4a.webp",
             "link": "shopify://collections/maybelline",
             "open_new_tab": false
           }
@@ -231,7 +232,7 @@
           "type": "card",
           "name": "Ordinary",
           "settings": {
-            "image": "shopify://shop_images/The_ordinary.webp",
+            "image": "shopify://shop_images/The_ordinary_1.webp",
             "link": "shopify://collections/to",
             "open_new_tab": false
           }
@@ -1198,7 +1199,7 @@
           "type": "card",
           "name": "Huda Beauty",
           "settings": {
-            "image": "shopify://shop_images/Huda-Beauty_9daaf477-c84a-48f9-963b-bbe473f2376f.webp",
+            "image": "shopify://shop_images/Huda-Beauty_e79adc92-227c-4727-99ce-cc621a9fb87e.webp",
             "link": "shopify://collections/huda-beauty",
             "open_new_tab": false
           }
