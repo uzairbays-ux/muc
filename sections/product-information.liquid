@@ -267,10 +267,15 @@
       order: -1 !important;
     }
 
-    /* Move the trust badges below the price group so brand/rating/title/price
-       stay contiguous (mobile only). */
+    /* Move the trust badges after the Add-to-cart button (buy-buttons is
+       --mobile-order 4, so 4.5 via 5 puts badges just below it). */
     #MainContent [data-product-grid-content] div:has(> .trust-badges) {
-      order: 2 !important;
+      order: 5 !important;
+    }
+
+    /* Tighter gap under the price (the save pill adds its own top margin). */
+    [id^='ProductInformation'] product-price {
+      margin-block-end: 4px;
     }
   }
 
