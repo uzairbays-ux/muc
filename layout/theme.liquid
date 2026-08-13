@@ -180,6 +180,8 @@
     {% if settings.quick_add or settings.mobile_quick_add %}
       {% render 'quick-add-modal' %}
     {% endif %}
+
+    {% render 'kj-qty-limit-toast' %}
     <script src="{{ 'foc-auto-add.js' | asset_url }}" defer></script>
   </body>
 </html>
