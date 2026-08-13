@@ -472,7 +472,7 @@
               "settings": {
                 "desktop_image": "shopify://shop_images/best-seller-desktop_6c1bf320-9ce3-4cb9-a1d0-8ecba17b768b.webp",
                 "mobile_image": "shopify://shop_images/best-seller-mobile.webp",
-                "link_url": "",
+                "link_url": "shopify://collections/bestsellers",
                 "open_in_new_tab": false,
                 "hover_opacity": 85
               },
@@ -757,11 +757,11 @@
         "heading": "",
         "subheading": "",
         "heading_alignment": "left",
-        "desktop_layout": "grid",
-        "mobile_layout": "grid",
+        "desktop_layout": "slider",
+        "mobile_layout": "slider",
         "desktop_columns": "3",
         "mobile_columns": "2",
-        "desktop_slider_per_view": "4",
+        "desktop_slider_per_view": "3",
         "mobile_slider_per_view": "1.5",
         "show_arrows": false,
         "auto_rotate": false,
