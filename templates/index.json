@@ -153,7 +153,7 @@
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/K_beauty_750_x_750_copy.webp",
-            "link": "",
+            "link": "shopify://collections/korean-brands",
             "open_new_tab": false
           }
         },
@@ -161,7 +161,7 @@
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/premium_brand_750_x_750_copy.webp",
-            "link": "",
+            "link": "shopify://collections/chinese-brands",
             "open_new_tab": false
           }
         },
@@ -169,7 +169,7 @@
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/chinese_750_x750_copy.webp",
-            "link": "",
+            "link": "shopify://collections/chinese-brands",
             "open_new_tab": false
           }
         },
