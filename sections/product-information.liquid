@@ -206,6 +206,33 @@
       mark();
     })();
   </script>
+
+  <script>
+    (function () {
+      if (window.__kjBsMove) return;
+      window.__kjBsMove = true;
+      var mq = window.matchMedia('(max-width: 749px)');
+      function place() {
+        var badge = document.querySelector('.kj-pdp-bestseller');
+        var media = document.querySelector('.product-information__media');
+        if (!badge || !media) return;
+        if (mq.matches) {
+          if (badge.parentElement !== media) {
+            if (!badge.dataset.kjHome) badge.dataset.kjHome = '1';
+            media.appendChild(badge);
+          }
+        } else if (badge.parentElement === media) {
+          // Restore into the details flow on desktop.
+          var host = document.querySelector('[id^="ProductInformation"] .kj-save');
+          if (host && host.parentElement) host.parentElement.appendChild(badge);
+        }
+      }
+      place();
+      document.addEventListener('DOMContentLoaded', place);
+      mq.addEventListener('change', place);
+      setTimeout(place, 600);
+    })();
+  </script>
 {% endif %}
 
 {% render 'product-information-content',
@@ -267,10 +294,63 @@
       order: -1 !important;
     }
 
-    /* Move the trust badges below the price group so brand/rating/title/price
-       stay contiguous (mobile only). */
+    /* Move the trust badges after the Add-to-cart button (buy-buttons is
+       --mobile-order 4, so 4.5 via 5 puts badges just below it). */
     #MainContent [data-product-grid-content] div:has(> .trust-badges) {
-      order: 2 !important;
+      order: 5 !important;
+    }
+
+    /* Tighter gap under the price (the save pill adds its own top margin).
+       #MainContent adds specificity to beat the later global 14px rule. */
+    #MainContent [id^='ProductInformation'] product-price {
+      margin-block-end: 2px;
+    }
+
+    /* The save pill sits right under the price — no extra top gap needed. */
+    #MainContent [id^='ProductInformation'] .kj-save {
+      margin-top: 0;
+    }
+
+    /* Bestseller badge overlays the gallery top-left as a premium pill.
+       JS relocates it into .product-information__media (which is position:
+       relative on mobile), so it anchors to the image, not a details block. */
+    #MainContent .product-information__media {
+      position: relative;
+    }
+
+    #MainContent .product-information__media > .kj-pdp-bestseller {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      z-index: 4;
+      pointer-events: none;
+    }
+
+    #MainContent .kj-pdp-bestseller {
+      margin: 0;
+      gap: 6px;
+      padding: 5px 12px 5px 9px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #1c1c22 0%, #33333d 100%);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.22);
+      backdrop-filter: blur(4px);
+    }
+
+    #MainContent .kj-pdp-bestseller__pill {
+      background: none;
+      padding: 0;
+      border-radius: 0;
+      color: #f3c96b;
+      font-size: 10px;
+      letter-spacing: 0.8px;
+    }
+
+    #MainContent .kj-pdp-bestseller__type {
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.92);
+      padding-inline-start: 6px;
+      border-inline-start: 1px solid rgba(255, 255, 255, 0.22);
     }
   }
 
