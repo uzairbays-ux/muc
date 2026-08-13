@@ -60,7 +60,16 @@
     >
       {%- for block in section.blocks -%}
         {%- assign b = block.settings -%}
-        <div class="card-grid__item" {{ block.shopify_attributes }}>
+        <div
+          class="card-grid__item{% if b.discount_code != blank %} card-grid__item--code{% endif %}"
+          {% if b.discount_code != blank %}
+            data-discount-code="{{ b.discount_code | strip | escape }}"
+            role="button"
+            tabindex="0"
+            aria-label="Copy discount code {{ b.discount_code | strip | escape }}"
+          {% endif %}
+          {{ block.shopify_attributes }}
+        >
           {%- if b.link != blank -%}
             <a href="{{ b.link }}" class="card-grid__link" {% if b.open_new_tab %}target="_blank" rel="noopener"{% endif %}>
           {%- endif -%}
@@ -132,6 +141,118 @@
     margin: var(--gap-2xs, 4px) 0 0;
     color: rgb(var(--color-foreground));
     opacity: 0.7;
+  }
+
+  /* Discount-code cards are tappable. */
+  .card-grid__item--code {
+    cursor: pointer;
+  }
+
+  .card-grid__item--code:active {
+    transform: scale(0.985);
+  }
+
+  /* "Code copied" confirmation. */
+  .kj-code-pop {
+    position: fixed;
+    inset: 0;
+    z-index: 40;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(0, 19, 37, 0.45);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.18s ease;
+  }
+
+  .kj-code-pop[hidden] {
+    display: none;
+  }
+
+  .kj-code-pop.is-open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .kj-code-pop__card {
+    width: min(92vw, 340px);
+    padding: 24px 22px 20px;
+    border-radius: 16px;
+    background: #fff;
+    text-align: center;
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.3);
+    transform: translateY(10px) scale(0.98);
+    transition: transform 0.2s ease;
+  }
+
+  .kj-code-pop.is-open .kj-code-pop__card {
+    transform: none;
+  }
+
+  .kj-code-pop__tick {
+    width: 44px;
+    height: 44px;
+    margin: 0 auto 12px;
+    border-radius: 999px;
+    background: #e8f7ee;
+    color: #068743;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .kj-code-pop__title {
+    margin: 0 0 4px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #001325;
+  }
+
+  .kj-code-pop__code {
+    display: inline-block;
+    margin: 8px 0 10px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: 1px dashed rgba(0, 19, 37, 0.28);
+    background: rgba(0, 19, 37, 0.04);
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    color: #001325;
+  }
+
+  .kj-code-pop__hint {
+    margin: 0 0 16px;
+    font-size: 13px;
+    line-height: 18px;
+    color: rgba(0, 19, 37, 0.66);
+  }
+
+  .kj-code-pop__btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 999px;
+    background: #ff0f0f;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .kj-code-pop__dismiss {
+    display: block;
+    width: 100%;
+    margin-top: 8px;
+    padding: 8px;
+    border: none;
+    background: none;
+    color: rgba(0, 19, 37, 0.6);
+    font-size: 13px;
+    cursor: pointer;
   }
 
   .card-grid__grid {
@@ -427,6 +548,93 @@
   })();
 </script>
 
+<div class="kj-code-pop" hidden role="dialog" aria-modal="true" aria-labelledby="kj-code-pop-title">
+  <div class="kj-code-pop__card">
+    <div class="kj-code-pop__tick">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" aria-hidden="true">
+        <path d="m5 12.5 4.5 4.5L19 7.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path>
+      </svg>
+    </div>
+    <p class="kj-code-pop__title" id="kj-code-pop-title">Discount code copied</p>
+    <div class="kj-code-pop__code" data-kj-code-value></div>
+    <p class="kj-code-pop__hint">Paste it in the <strong>Discount</strong> box in your cart to apply the offer.</p>
+    <button type="button" class="kj-code-pop__btn" data-kj-code-cart>Go to cart</button>
+    <button type="button" class="kj-code-pop__dismiss" data-kj-code-close>Keep shopping</button>
+  </div>
+</div>
+
+<script>
+  (function () {
+    if (window.__kjCodePop) return;
+    window.__kjCodePop = true;
+
+    function pop() { return document.querySelector('.kj-code-pop'); }
+
+    function open(code) {
+      var el = pop();
+      if (!el) return;
+      var value = el.querySelector('[data-kj-code-value]');
+      if (value) value.textContent = code;
+      el.hidden = false;
+      void el.offsetWidth;
+      el.classList.add('is-open');
+    }
+
+    function close() {
+      var el = pop();
+      if (!el) return;
+      el.classList.remove('is-open');
+      setTimeout(function () { el.hidden = true; }, 200);
+    }
+
+    function copy(text) {
+      if (navigator.clipboard && window.isSecureContext) {
+        return navigator.clipboard.writeText(text).catch(fallback);
+      }
+      return Promise.resolve(fallback());
+
+      // Older/blocked clipboard API: use a hidden textarea.
+      function fallback() {
+        var ta = document.createElement('textarea');
+        ta.value = text;
+        ta.setAttribute('readonly', '');
+        ta.style.cssText = 'position:absolute;left:-9999px;opacity:0;';
+        document.body.appendChild(ta);
+        ta.select();
+        try { document.execCommand('copy'); } catch (e) {}
+        document.body.removeChild(ta);
+      }
+    }
+
+    function handle(card, e) {
+      var code = card.getAttribute('data-discount-code');
+      if (!code) return;
+      e.preventDefault();
+      copy(code).then(function () { open(code); });
+    }
+
+    document.addEventListener('click', function (e) {
+      var el = e.target.closest && e.target.closest('[data-discount-code]');
+      if (el) return handle(el, e);
+
+      if (e.target.closest && e.target.closest('[data-kj-code-close]')) return close();
+      if (e.target.closest && e.target.closest('[data-kj-code-cart]')) {
+        window.location.href = '{{ routes.cart_url }}';
+        return;
+      }
+      // Click on the backdrop closes.
+      if (e.target.classList && e.target.classList.contains('kj-code-pop')) close();
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') return close();
+      if ((e.key === 'Enter' || e.key === ' ') && e.target.hasAttribute && e.target.hasAttribute('data-discount-code')) {
+        handle(e.target, e);
+      }
+    });
+  })();
+</script>
+
 {% schema %}
 {
   "name": "Card grid",
@@ -710,6 +918,12 @@
           "id": "open_new_tab",
           "label": "Open link in new tab",
           "default": false
+        },
+        {
+          "type": "text",
+          "id": "discount_code",
+          "label": "Discount code",
+          "info": "If set, tapping the card copies this code and shows a confirmation. Enter it exactly as created, e.g. Azadi500."
         }
       ]
     }
