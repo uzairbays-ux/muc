@@ -13,12 +13,11 @@
   "sections": {
     "campaign_popup_WwBhLG": {
       "type": "campaign-popup",
-      "disabled": true,
       "name": "Campaign popup",
       "settings": {
         "enabled": true,
-        "image": "shopify://shop_images/pop-up-may.jpg",
-        "link": "shopify://products/maybelline-lifter-glaze-tinted-lip-oil-balm",
+        "image": "shopify://shop_images/Pop-UP.webp",
+        "link": "shopify://collections/all",
         "open_new_tab": false,
         "delay_seconds": 3,
         "interval_hours": 24
