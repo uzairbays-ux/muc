@@ -1385,7 +1385,7 @@
           "type": "card",
           "name": "Charlotte Tilbury",
           "settings": {
-            "image": "shopify://shop_images/charlotte-tilbury.jpg",
+            "image": "shopify://shop_images/charlotte-tilbury_6db5b186-193b-45cd-bb23-b7a71b28cdb7.webp",
             "link": "shopify://collections/charlotte-tilbury",
             "open_new_tab": false
           }
@@ -2221,8 +2221,8 @@
         "banner_Kt9k6X": {
           "type": "banner",
           "settings": {
-            "desktop_image": "shopify://shop_images/Chinese-Beauty-Main-Banner-2746-x-572.jpg",
-            "mobile_image": "shopify://shop_images/Chinese-Beauty-Main-Banner.jpg",
+            "desktop_image": "shopify://shop_images/chinese_main_banner_copy_aeb398dc-6adc-4bea-97ec-060e2e16bcd9.webp",
+            "mobile_image": "shopify://shop_images/chinese_mobile_banner_copy_4ed7100b-8e4a-40e0-940d-9bcf8aa224bb.webp",
             "link": "shopify://collections/chinese-brands",
             "open_new_tab": false
           }
@@ -2372,7 +2372,7 @@
         "image_fit": "contain",
         "card_ratio": "adapt",
         "image_border_radius": 19,
-        "background_color": "#fdd6d6",
+        "background_color": "#E3EDF7",
         "padding-block-start": 24,
         "padding-block-end": 24
       }
