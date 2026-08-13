@@ -169,9 +169,10 @@
         },
         "card_F7WUnC": {
           "type": "card",
+          "name": "huda",
           "settings": {
-            "image": "shopify://shop_images/K_beauty_750_x_750_copy.webp",
-            "link": "shopify://collections/korean-brands",
+            "image": "shopify://shop_images/Huda_beauty_110e739c-84f2-4323-a2c4-e13e81afbe08.webp",
+            "link": "shopify://collections/huda-beauty",
             "open_new_tab": false
           }
         },
@@ -186,6 +187,7 @@
         },
         "card_qV7j66": {
           "type": "card",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/chinese_750_x750_copy.webp",
             "link": "shopify://collections/chinese-brands",
