@@ -883,7 +883,8 @@
           "settings": {
             "image": "shopify://shop_images/Kryolan_56e2854c-dab9-498f-a43e-077689ffd226.jpg",
             "link": "shopify://collections/kryolan",
-            "open_new_tab": false
+            "open_new_tab": false,
+            "discount_code": ""
           }
         },
         "card_QQLjCx": {
@@ -891,7 +892,8 @@
           "settings": {
             "image": "shopify://shop_images/Framesi_78424700-c3e5-4453-9b0c-51c66d857fa9.jpg",
             "link": "shopify://collections/framesi",
-            "open_new_tab": false
+            "open_new_tab": false,
+            "discount_code": ""
           }
         },
         "card_p9kYBe": {
@@ -899,7 +901,8 @@
           "settings": {
             "image": "shopify://shop_images/luscious_a2fad681-5614-44e5-bed5-4add2eab5bfa.jpg",
             "link": "shopify://collections/luscious-cosmetics",
-            "open_new_tab": false
+            "open_new_tab": false,
+            "discount_code": ""
           }
         },
         "card_L4QwKh": {
@@ -907,7 +910,8 @@
           "settings": {
             "image": "shopify://shop_images/Estelin_93b713f5-b7ed-4abd-bfa4-f37c1f79ae7f.jpg",
             "link": "shopify://collections/estelin",
-            "open_new_tab": false
+            "open_new_tab": false,
+            "discount_code": ""
           }
         },
         "card_zHjYpW": {
@@ -915,7 +919,8 @@
           "settings": {
             "image": "shopify://shop_images/Fresh-labs_jpg.jpg",
             "link": "shopify://collections/freshlabs",
-            "open_new_tab": false
+            "open_new_tab": false,
+            "discount_code": ""
           }
         },
         "card_pfpRwk": {
@@ -924,7 +929,8 @@
           "settings": {
             "image": "shopify://shop_images/Loreal_514ef853-d406-44f8-8d9b-e5e9ef4594b3.jpg",
             "link": "shopify://collections/loreal-paris",
-            "open_new_tab": false
+            "open_new_tab": false,
+            "discount_code": ""
           }
         },
         "card_NFeL6V": {
@@ -933,7 +939,8 @@
           "settings": {
             "image": "shopify://shop_images/Max-Factor_16a87abf-8c8d-4453-b393-7b01f602ca88.jpg",
             "link": "shopify://collections/max-factor",
-            "open_new_tab": false
+            "open_new_tab": false,
+            "discount_code": ""
           }
         },
         "card_RBgUMP": {
@@ -942,7 +949,8 @@
           "settings": {
             "image": "shopify://shop_images/Gosh_5862b35b-cdfe-4496-addb-0666b519e45f.jpg",
             "link": "shopify://collections/gosh",
-            "open_new_tab": false
+            "open_new_tab": false,
+            "discount_code": ""
           }
         }
       },
@@ -992,7 +1000,8 @@
           "settings": {
             "image": "shopify://shop_images/B_BW.jpg",
             "link": "shopify://collections/bath-body-works",
-            "open_new_tab": false
+            "open_new_tab": false,
+            "discount_code": ""
           }
         },
         "card_fMqg9Q": {
@@ -1001,7 +1010,8 @@
           "settings": {
             "image": "shopify://shop_images/Estelin.jpg",
             "link": "shopify://collections/estelin",
-            "open_new_tab": false
+            "open_new_tab": false,
+            "discount_code": ""
           }
         },
         "card_k9wJqh": {
@@ -1010,7 +1020,8 @@
           "settings": {
             "image": "shopify://shop_images/Framesi_9e368024-42a5-4675-8a1a-b3cb1e3a22d5.jpg",
             "link": "shopify://collections/framesi",
-            "open_new_tab": false
+            "open_new_tab": false,
+            "discount_code": ""
           }
         },
         "card_nkVxPj": {
@@ -1019,7 +1030,8 @@
           "settings": {
             "image": "shopify://shop_images/luscious.jpg",
             "link": "shopify://collections/luscious-cosmetics",
-            "open_new_tab": false
+            "open_new_tab": false,
+            "discount_code": ""
           }
         },
         "card_J3czmk": {
@@ -1027,7 +1039,8 @@
           "settings": {
             "image": "shopify://shop_images/Lamel_2fd4e6f6-9788-474a-bb7f-f7a4b5ec0f4a.jpg",
             "link": "shopify://collections/lamel",
-            "open_new_tab": false
+            "open_new_tab": false,
+            "discount_code": ""
           }
         },
         "card_gBiw68": {
@@ -1035,7 +1048,8 @@
           "settings": {
             "image": "shopify://shop_images/Loreal_b5a8a277-4753-47a3-a3d7-63f232288cbd.jpg",
             "link": "shopify://collections/loreal-paris",
-            "open_new_tab": false
+            "open_new_tab": false,
+            "discount_code": ""
           }
         },
         "card_ceiizR": {
@@ -1043,7 +1057,8 @@
           "settings": {
             "image": "shopify://shop_images/Gosh_jpg.jpg",
             "link": "shopify://collections/gosh",
-            "open_new_tab": false
+            "open_new_tab": false,
+            "discount_code": ""
           }
         },
         "card_dnezUz": {
@@ -1051,7 +1066,8 @@
           "settings": {
             "image": "shopify://shop_images/One-Skin.jpg",
             "link": "shopify://collections/oneskin",
-            "open_new_tab": false
+            "open_new_tab": false,
+            "discount_code": ""
           }
         },
         "card_c49pAk": {
@@ -1059,7 +1075,8 @@
           "settings": {
             "image": "shopify://shop_images/Bath-_-body_488d70c6-3f4b-492d-a2fd-72e440469fb7.jpg",
             "link": "shopify://collections/bath-body-works",
-            "open_new_tab": false
+            "open_new_tab": false,
+            "discount_code": ""
           }
         },
         "card_AHQBXy": {
@@ -1067,7 +1084,8 @@
           "settings": {
             "image": "shopify://shop_images/la-roche-posay.jpg",
             "link": "shopify://collections/la-roche-posay",
-            "open_new_tab": false
+            "open_new_tab": false,
+            "discount_code": ""
           }
         }
       },
@@ -1409,7 +1427,8 @@
           "settings": {
             "image": "shopify://shop_images/Huda_beauty.webp",
             "link": "shopify://collections/huda-beauty",
-            "open_new_tab": false
+            "open_new_tab": false,
+            "discount_code": ""
           }
         },
         "card_iJgEgf": {
@@ -1418,7 +1437,8 @@
           "settings": {
             "image": "shopify://shop_images/NYX_6884ea3d-919d-46de-8df8-c88dad666620.webp",
             "link": "shopify://collections/nyx",
-            "open_new_tab": false
+            "open_new_tab": false,
+            "discount_code": ""
           }
         },
         "card_whDK6f": {
@@ -1427,7 +1447,8 @@
           "settings": {
             "image": "shopify://shop_images/Morphe_caff335b-bb57-4c6b-9887-238a6345cd8d.webp",
             "link": "shopify://collections/morphe",
-            "open_new_tab": false
+            "open_new_tab": false,
+            "discount_code": ""
           }
         },
         "card_mcFcz9": {
@@ -1436,7 +1457,8 @@
           "settings": {
             "image": "shopify://shop_images/OneSize_c6a4fe54-3cfe-48bb-aa76-86efe814c5b7.webp",
             "link": "shopify://collections/o-s",
-            "open_new_tab": false
+            "open_new_tab": false,
+            "discount_code": ""
           }
         },
         "card_tBr3yf": {
@@ -1445,7 +1467,8 @@
           "settings": {
             "image": "shopify://shop_images/Milk-Makeup_270036f7-e521-4813-8715-23b8faca4652.webp",
             "link": "shopify://collections/milk",
-            "open_new_tab": false
+            "open_new_tab": false,
+            "discount_code": ""
           }
         },
         "card_djrWXM": {
@@ -1455,7 +1478,8 @@
           "settings": {
             "image": "shopify://shop_images/tarte_logo_flat_20_off_500x500_v2.png",
             "link": "shopify://collections/tarte",
-            "open_new_tab": false
+            "open_new_tab": false,
+            "discount_code": ""
           }
         },
         "card_wkmjxd": {
@@ -1465,7 +1489,8 @@
           "settings": {
             "image": "shopify://shop_images/charlotte_tilbury_logo_enhanced_500x500_0f33ca02-cd18-4743-b2dd-ee0f456ee583.webp",
             "link": "shopify://collections/charlotte-tilbury",
-            "open_new_tab": false
+            "open_new_tab": false,
+            "discount_code": ""
           }
         },
         "card_TrfdaU": {
@@ -1475,7 +1500,8 @@
           "settings": {
             "image": "shopify://shop_images/dior_replaced_logo_500x500_db799f39-b2fa-4106-b973-64884358351f.webp",
             "link": "shopify://collections/dior",
-            "open_new_tab": false
+            "open_new_tab": false,
+            "discount_code": ""
           }
         },
         "card_JFEeE9": {
@@ -1485,7 +1511,8 @@
           "settings": {
             "image": "shopify://shop_images/OLAPLEX_Image_Jul_7_2026_11_30_41_AM.webp",
             "link": "shopify://collections/olaplex",
-            "open_new_tab": false
+            "open_new_tab": false,
+            "discount_code": ""
           }
         },
         "card_kzxKcf": {
@@ -1495,7 +1522,8 @@
           "settings": {
             "image": "shopify://shop_images/Rare_beauty_e_Jul_2_2026_11_02_19_AM.webp",
             "link": "shopify://collections/rare-beauty",
-            "open_new_tab": false
+            "open_new_tab": false,
+            "discount_code": ""
           }
         },
         "card_xxU9nH": {
@@ -1505,7 +1533,8 @@
           "settings": {
             "image": "shopify://shop_images/rhode_Image_Jul_8_2026_09_44_41_AM_ec288664-790e-455f-b8ca-6165ca1f6425.webp",
             "link": "shopify://collections/rhode",
-            "open_new_tab": false
+            "open_new_tab": false,
+            "discount_code": ""
           }
         }
       },
@@ -1558,7 +1587,8 @@
           "settings": {
             "image": "shopify://shop_images/Rhode_fb6a3843-a903-491e-851e-2064365d48c6.webp",
             "link": "shopify://collections/rhode",
-            "open_new_tab": false
+            "open_new_tab": false,
+            "discount_code": ""
           }
         },
         "card_GfdFFC": {
@@ -1567,7 +1597,8 @@
           "settings": {
             "image": "shopify://shop_images/wishful_1639a3e7-41df-4d6f-9228-ca8be4a9cb2f.webp",
             "link": "shopify://collections/wishful",
-            "open_new_tab": false
+            "open_new_tab": false,
+            "discount_code": ""
           }
         },
         "card_HP6WDU": {
@@ -1576,7 +1607,8 @@
           "settings": {
             "image": "shopify://shop_images/Glow-recipe_b776955a-3726-4527-8d2a-443bfb09115b.webp",
             "link": "shopify://collections/glow-recipe",
-            "open_new_tab": false
+            "open_new_tab": false,
+            "discount_code": ""
           }
         },
         "card_WEPLyT": {
@@ -1586,7 +1618,8 @@
           "settings": {
             "image": "shopify://shop_images/nyx_logo_aligned_white_box_500x500_393b5a2b-c03b-43df-a57d-5d8eaa54d5a9.png",
             "link": "shopify://collections/nyx",
-            "open_new_tab": false
+            "open_new_tab": false,
+            "discount_code": ""
           }
         },
         "card_RfbTim": {
@@ -1596,7 +1629,8 @@
           "settings": {
             "image": "shopify://shop_images/one_size_logo_flat_20_off_500x500_42994c4e-e45a-4cdf-b761-1d09f07bb440.png",
             "link": "shopify://collections/o-s",
-            "open_new_tab": false
+            "open_new_tab": false,
+            "discount_code": ""
           }
         },
         "card_wKRFBX": {
@@ -1605,7 +1639,8 @@
           "settings": {
             "image": "shopify://shop_images/Sheglam_820176ff-812f-4557-84e8-f095fe21b939.webp",
             "link": "shopify://collections/sheglam",
-            "open_new_tab": false
+            "open_new_tab": false,
+            "discount_code": ""
           }
         },
         "card_7y6cCp": {
@@ -1614,7 +1649,8 @@
           "settings": {
             "image": "shopify://shop_images/tarte_cee6cccd-7433-4dfb-a587-049142934015.webp",
             "link": "shopify://collections/tarte",
-            "open_new_tab": false
+            "open_new_tab": false,
+            "discount_code": ""
           }
         },
         "card_fP7BL6": {
@@ -1623,7 +1659,8 @@
           "settings": {
             "image": "shopify://shop_images/charlotte-tilbury_6db5b186-193b-45cd-bb23-b7a71b28cdb7.webp",
             "link": "shopify://collections/charlotte-tilbury",
-            "open_new_tab": false
+            "open_new_tab": false,
+            "discount_code": ""
           }
         },
         "card_hAch3i": {
@@ -1632,7 +1669,8 @@
           "settings": {
             "image": "shopify://shop_images/Dior_81ee55bf-4f6f-4163-b2fd-9211ad066293.webp",
             "link": "shopify://collections/dior",
-            "open_new_tab": false
+            "open_new_tab": false,
+            "discount_code": ""
           }
         },
         "card_pDmnkE": {
@@ -1641,7 +1679,8 @@
           "settings": {
             "image": "shopify://shop_images/Olaplex_68cf8416-cf1b-4d3b-8156-48e9e0a21bd9.webp",
             "link": "shopify://collections/olaplex",
-            "open_new_tab": false
+            "open_new_tab": false,
+            "discount_code": ""
           }
         },
         "card_hhYxMp": {
@@ -1650,7 +1689,8 @@
           "settings": {
             "image": "shopify://shop_images/Rare-Beauty_b2432891-cf23-4b63-95df-ddf5dfa196a1.webp",
             "link": "shopify://collections/rare-beauty",
-            "open_new_tab": false
+            "open_new_tab": false,
+            "discount_code": ""
           }
         }
       },
@@ -1703,7 +1743,8 @@
           "settings": {
             "image": "shopify://shop_images/Janssen_72288a1f-2fbc-4284-9d95-28d0d1e3b3be.jpg",
             "link": "shopify://collections/janssen",
-            "open_new_tab": false
+            "open_new_tab": false,
+            "discount_code": ""
           }
         },
         "card_q7xRrJ": {
@@ -1712,7 +1753,8 @@
           "settings": {
             "image": "shopify://shop_images/Fara-London.jpg",
             "link": "shopify://collections/fara",
-            "open_new_tab": false
+            "open_new_tab": false,
+            "discount_code": ""
           }
         },
         "card_4rqnJx": {
@@ -1721,7 +1763,8 @@
           "settings": {
             "image": "shopify://shop_images/BLS-azadi.jpg",
             "link": "shopify://collections/bls",
-            "open_new_tab": false
+            "open_new_tab": false,
+            "discount_code": ""
           }
         },
         "card_9H67GY": {
@@ -1730,7 +1773,8 @@
           "settings": {
             "image": "shopify://shop_images/Essence_e909ee23-ee3d-4d07-ab73-eb7519e5b730.jpg",
             "link": "shopify://collections/essence",
-            "open_new_tab": false
+            "open_new_tab": false,
+            "discount_code": ""
           }
         },
         "card_3iUqF9": {
@@ -1739,7 +1783,8 @@
           "settings": {
             "image": "shopify://shop_images/Garnier_97c38524-b146-4786-9f42-b4484aa719ac.jpg",
             "link": "shopify://collections/garnier",
-            "open_new_tab": false
+            "open_new_tab": false,
+            "discount_code": ""
           }
         },
         "card_Fzb4HD": {
@@ -1748,7 +1793,8 @@
           "settings": {
             "image": "shopify://shop_images/Trouble-Maker.jpg",
             "link": "shopify://collections/trouble-maker",
-            "open_new_tab": false
+            "open_new_tab": false,
+            "discount_code": ""
           }
         },
         "card_tB7XAh": {
@@ -1757,7 +1803,8 @@
           "settings": {
             "image": "shopify://shop_images/Rimmel_98cb731d-285c-4da4-aa35-4f4bbc66bb0e.jpg",
             "link": "shopify://collections/rimmel-london",
-            "open_new_tab": false
+            "open_new_tab": false,
+            "discount_code": ""
           }
         }
       },
@@ -1806,7 +1853,8 @@
           "settings": {
             "image": "shopify://shop_images/BLS.webp",
             "link": "shopify://collections/bls",
-            "open_new_tab": false
+            "open_new_tab": false,
+            "discount_code": ""
           }
         },
         "card_VN8C4L": {
@@ -1815,7 +1863,8 @@
           "settings": {
             "image": "shopify://shop_images/Bourjois_b6062386-147a-46b5-b9b1-cb6b0ca950c3.jpg",
             "link": "shopify://collections/bourjois",
-            "open_new_tab": false
+            "open_new_tab": false,
+            "discount_code": ""
           }
         },
         "card_7bXfx8": {
@@ -1824,7 +1873,8 @@
           "settings": {
             "image": "shopify://shop_images/Janssen_61d6e9be-4942-43f9-b3f9-45eac8eedf0f.jpg",
             "link": "shopify://collections/janssen",
-            "open_new_tab": false
+            "open_new_tab": false,
+            "discount_code": ""
           }
         },
         "card_wKbPRz": {
@@ -1833,7 +1883,8 @@
           "settings": {
             "image": "shopify://shop_images/Essence_291c4ff6-54a7-4dda-8242-8a99484643d0.jpg",
             "link": "shopify://collections/essence",
-            "open_new_tab": false
+            "open_new_tab": false,
+            "discount_code": ""
           }
         },
         "card_Dj4Jhk": {
@@ -1842,7 +1893,8 @@
           "settings": {
             "image": "shopify://shop_images/Garnier_f52c9d92-dcf6-44ab-a055-a772754dd6a5.jpg",
             "link": "shopify://collections/garnier",
-            "open_new_tab": false
+            "open_new_tab": false,
+            "discount_code": ""
           }
         },
         "card_VaLrJE": {
@@ -1851,7 +1903,8 @@
           "settings": {
             "image": "shopify://shop_images/Trouble-Maker_d3344d27-0e5e-434f-81ca-1f31ecfc18e6.jpg",
             "link": "shopify://collections/trouble-maker",
-            "open_new_tab": false
+            "open_new_tab": false,
+            "discount_code": ""
           }
         },
         "card_hVQxRA": {
@@ -1860,7 +1913,8 @@
           "settings": {
             "image": "shopify://shop_images/Rimmel_cfd0d25e-b1f5-4841-b6b2-491c692f1777.jpg",
             "link": "shopify://collections/rimmel-london",
-            "open_new_tab": false
+            "open_new_tab": false,
+            "discount_code": ""
           }
         },
         "card_rhG3VD": {
@@ -1869,7 +1923,8 @@
           "settings": {
             "image": "shopify://shop_images/Elvawn_80070dac-5416-4e66-9de8-ad7883fef2a8.jpg",
             "link": "shopify://collections/elvawn",
-            "open_new_tab": false
+            "open_new_tab": false,
+            "discount_code": ""
           }
         },
         "card_8xFcVE": {
@@ -1878,7 +1933,8 @@
           "settings": {
             "image": "shopify://shop_images/Bourjois_5a7203ca-b451-41e9-bf53-908f3cbd1168.jpg",
             "link": "shopify://collections/bourjois",
-            "open_new_tab": false
+            "open_new_tab": false,
+            "discount_code": ""
           }
         }
       },
@@ -1926,8 +1982,8 @@
         "banner_nrAdDN": {
           "type": "banner",
           "settings": {
-            "desktop_image": "shopify://shop_images/korean_main_banner_copy_deb3fd6d-9ee6-424c-9893-65cd7e99d16d.webp",
-            "mobile_image": "shopify://shop_images/korean_mobile_banner_copy_2_082b8bd4-4108-4d35-a1f3-c105575bcc04.webp",
+            "desktop_image": "shopify://shop_images/Korean-Brand-Main-Banner-2746-x-572.jpg",
+            "mobile_image": "shopify://shop_images/Korean-Brand-Main-Banner_8b9377ca-800f-403f-bc34-010652a3b09d.jpg",
             "link": "shopify://pages/korean-brand-k-beauty",
             "open_new_tab": false
           }
@@ -2457,8 +2513,8 @@
         "banner_Kt9k6X": {
           "type": "banner",
           "settings": {
-            "desktop_image": "shopify://shop_images/chinese_main_banner_copy_aeb398dc-6adc-4bea-97ec-060e2e16bcd9.webp",
-            "mobile_image": "shopify://shop_images/chinese_mobile_banner_copy_4ed7100b-8e4a-40e0-940d-9bcf8aa224bb.webp",
+            "desktop_image": "shopify://shop_images/Chinese-Beauty-Main-Banner-2746-x-572.jpg",
+            "mobile_image": "shopify://shop_images/Chinese-Beauty-Main-Banner.jpg",
             "link": "shopify://collections/chinese-brands",
             "open_new_tab": false
           }
@@ -2608,7 +2664,7 @@
         "image_fit": "contain",
         "card_ratio": "adapt",
         "image_border_radius": 19,
-        "background_color": "#e3edf7",
+        "background_color": "#FFD3CD",
         "padding-block-start": 24,
         "padding-block-end": 24
       }
