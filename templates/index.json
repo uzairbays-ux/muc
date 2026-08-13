@@ -121,8 +121,8 @@
         "slide_WR6nXe": {
           "type": "slide",
           "settings": {
-            "desktop_image": "shopify://shop_images/main-banner-1920-x-750.jpg",
-            "mobile_image": "shopify://shop_images/main-banner-1920-x-750.jpg",
+            "desktop_image": "shopify://shop_images/main_banner_1920_x_750_copy_37a4eaef-d9da-455e-b78b-951e93286d0f.webp",
+            "mobile_image": "shopify://shop_images/main_banner_1920_x_750_copy_4d8af23d-305b-4758-9faf-a2839a33dc74.webp",
             "link": "shopify://collections/sale",
             "open_new_tab": false,
             "alt": ""
@@ -162,7 +162,7 @@
           "type": "card",
           "name": "Maybelline",
           "settings": {
-            "image": "shopify://shop_images/Maybilline.jpg",
+            "image": "shopify://shop_images/maybelline_750_x_750_copy_95852ab2-c293-4d96-92a4-255fd54f2145.webp",
             "link": "shopify://collections/maybelline",
             "open_new_tab": false
           }
@@ -1171,7 +1171,7 @@
           "type": "card",
           "name": "Huda Beauty",
           "settings": {
-            "image": "shopify://shop_images/Huda-Beauty.jpg",
+            "image": "shopify://shop_images/Huda-Beauty_9daaf477-c84a-48f9-963b-bbe473f2376f.webp",
             "link": "shopify://collections/huda-beauty",
             "open_new_tab": false
           }
@@ -1180,7 +1180,7 @@
           "type": "card",
           "name": "NYX",
           "settings": {
-            "image": "shopify://shop_images/NYX_b72c2bd9-a91d-4f66-b7aa-7a8b63473b3c.jpg",
+            "image": "shopify://shop_images/NYX_6884ea3d-919d-46de-8df8-c88dad666620.webp",
             "link": "shopify://collections/nyx",
             "open_new_tab": false
           }
@@ -1189,7 +1189,7 @@
           "type": "card",
           "name": "Morphe",
           "settings": {
-            "image": "shopify://shop_images/Morphe.jpg",
+            "image": "shopify://shop_images/Morphe_caff335b-bb57-4c6b-9887-238a6345cd8d.webp",
             "link": "shopify://collections/morphe",
             "open_new_tab": false
           }
@@ -1198,7 +1198,7 @@
           "type": "card",
           "name": "O/S",
           "settings": {
-            "image": "shopify://shop_images/OneSize.jpg",
+            "image": "shopify://shop_images/OneSize_c6a4fe54-3cfe-48bb-aa76-86efe814c5b7.webp",
             "link": "shopify://collections/o-s",
             "open_new_tab": false
           }
@@ -1207,7 +1207,7 @@
           "type": "card",
           "name": "Milk",
           "settings": {
-            "image": "shopify://shop_images/Milk-Makeup.jpg",
+            "image": "shopify://shop_images/Milk-Makeup_270036f7-e521-4813-8715-23b8faca4652.webp",
             "link": "shopify://collections/milk",
             "open_new_tab": false
           }
@@ -1320,7 +1320,7 @@
           "type": "card",
           "name": "Rhode",
           "settings": {
-            "image": "shopify://shop_images/Rhode.jpg",
+            "image": "shopify://shop_images/Rhode_fb6a3843-a903-491e-851e-2064365d48c6.webp",
             "link": "shopify://collections/rhode",
             "open_new_tab": false
           }
@@ -1329,7 +1329,7 @@
           "type": "card",
           "name": "Wishful",
           "settings": {
-            "image": "shopify://shop_images/wishful.jpg",
+            "image": "shopify://shop_images/wishful_1639a3e7-41df-4d6f-9228-ca8be4a9cb2f.webp",
             "link": "shopify://collections/wishful",
             "open_new_tab": false
           }
@@ -1338,7 +1338,7 @@
           "type": "card",
           "name": "Glow Recipe",
           "settings": {
-            "image": "shopify://shop_images/Glow-recipe.jpg",
+            "image": "shopify://shop_images/Glow-recipe_b776955a-3726-4527-8d2a-443bfb09115b.webp",
             "link": "shopify://collections/glow-recipe",
             "open_new_tab": false
           }
@@ -1367,7 +1367,7 @@
           "type": "card",
           "name": "Sheglam",
           "settings": {
-            "image": "shopify://shop_images/Sheglam.jpg",
+            "image": "shopify://shop_images/Sheglam_820176ff-812f-4557-84e8-f095fe21b939.webp",
             "link": "shopify://collections/sheglam",
             "open_new_tab": false
           }
@@ -1376,7 +1376,7 @@
           "type": "card",
           "name": "Tarte",
           "settings": {
-            "image": "shopify://shop_images/tarte.jpg",
+            "image": "shopify://shop_images/tarte_cee6cccd-7433-4dfb-a587-049142934015.webp",
             "link": "shopify://collections/tarte",
             "open_new_tab": false
           }
@@ -1394,7 +1394,7 @@
           "type": "card",
           "name": "Dior",
           "settings": {
-            "image": "shopify://shop_images/Dior.jpg",
+            "image": "shopify://shop_images/Dior_81ee55bf-4f6f-4163-b2fd-9211ad066293.webp",
             "link": "shopify://collections/dior",
             "open_new_tab": false
           }
@@ -1403,7 +1403,7 @@
           "type": "card",
           "name": "Olaplex",
           "settings": {
-            "image": "shopify://shop_images/Olaplex.jpg",
+            "image": "shopify://shop_images/Olaplex_68cf8416-cf1b-4d3b-8156-48e9e0a21bd9.webp",
             "link": "shopify://collections/olaplex",
             "open_new_tab": false
           }
@@ -1412,7 +1412,7 @@
           "type": "card",
           "name": "Rare Beauty",
           "settings": {
-            "image": "shopify://shop_images/Rare-Beauty.jpg",
+            "image": "shopify://shop_images/Rare-Beauty_b2432891-cf23-4b63-95df-ddf5dfa196a1.webp",
             "link": "shopify://collections/rare-beauty",
             "open_new_tab": false
           }
@@ -1690,8 +1690,8 @@
         "banner_nrAdDN": {
           "type": "banner",
           "settings": {
-            "desktop_image": "shopify://shop_images/Korean-Brand-Main-Banner-2746-x-572.jpg",
-            "mobile_image": "shopify://shop_images/Korean-Brand-Main-Banner_8b9377ca-800f-403f-bc34-010652a3b09d.jpg",
+            "desktop_image": "shopify://shop_images/korean_main_banner_copy_deb3fd6d-9ee6-424c-9893-65cd7e99d16d.webp",
+            "mobile_image": "shopify://shop_images/korean_mobile_banner_copy_2_082b8bd4-4108-4d35-a1f3-c105575bcc04.webp",
             "link": "shopify://pages/korean-brand-k-beauty",
             "open_new_tab": false
           }
