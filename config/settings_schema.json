@@ -2069,6 +2069,27 @@
     "name": "t:names.product_cards",
     "settings": [
       {
+        "type": "header",
+        "content": "Purchase limit"
+      },
+      {
+        "type": "range",
+        "id": "max_quantity_per_product",
+        "label": "Max quantity per product (0 = no limit)",
+        "info": "Applies when a product has no Shopify quantity rule of its own. Shows a limit note and blocks adding more.",
+        "min": 0,
+        "max": 20,
+        "step": 1,
+        "default": 3
+      },
+      {
+        "type": "checkbox",
+        "id": "show_quantity_limit_note",
+        "label": "Show the limit note on product pages",
+        "default": true,
+        "visible_if": "{{ settings.max_quantity_per_product > 0 }}"
+      },
+      {
         "type": "checkbox",
         "id": "quick_add",
         "label": "t:settings.quick_add",

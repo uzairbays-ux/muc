@@ -28,6 +28,13 @@
   else
     assign min_quantity = variant.quantity_rule.min | default: 1
   endif
+
+  # Purchase limit: use Shopify's own quantity rule when present (Plus/B2B),
+  # otherwise fall back to the theme-wide limit setting. 0 = no limit.
+  assign max_quantity = variant.quantity_rule.max
+  if max_quantity == blank and settings.max_quantity_per_product > 0
+    assign max_quantity = settings.max_quantity_per_product
+  endif
 %}
 
 <div
@@ -74,8 +81,8 @@
       {% if line_index %}
         data-cart-line="{{ line_index | plus: 1 }}"
       {% endif %}
-      {% if variant.quantity_rule.max %}
-        max="{{ variant.quantity_rule.max }}"
+      {% if max_quantity != blank %}
+        max="{{ max_quantity }}"
       {% endif %}
       step="{{ variant.quantity_rule.increment | default: 1 }}"
       {% if can_update_quantity == false or variant.available == false %}
@@ -98,6 +105,20 @@
       </span>
     </button>
   </{{ component_name }}>
+
+  {%- comment -%}
+    Purchase-limit note. Shown on the product form (not on cart lines) so the
+    shopper knows the cap before they hit it.
+  {%- endcomment -%}
+  {%- if line_index == null and max_quantity != blank and settings.show_quantity_limit_note -%}
+    <p class="kj-qty-limit-note">
+      <svg viewBox="0 0 16 16" width="13" height="13" fill="none" aria-hidden="true">
+        <circle cx="8" cy="8" r="6.4" stroke="currentColor" stroke-width="1.4"></circle>
+        <path d="M8 4.9v3.6M8 11.1h.01" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+      </svg>
+      Limit {{ max_quantity }} per order
+    </p>
+  {%- endif -%}
 
   {%- if line_index == null -%}
     {%- liquid
@@ -164,6 +185,21 @@
 </div>
 
 {% stylesheet %}
+  /* Purchase-limit note next to the quantity picker. */
+  .kj-qty-limit-note {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    margin: 0;
+    padding: 3px 9px;
+    border-radius: 999px;
+    background: rgba(0, 19, 37, 0.05);
+    color: rgba(0, 19, 37, 0.72);
+    font-size: 11px;
+    line-height: 16px;
+    white-space: nowrap;
+  }
+
   .quantity-selector-wrapper {
     display: flex;
     align-items: center;
