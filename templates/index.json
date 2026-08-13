@@ -223,7 +223,7 @@
           "type": "card",
           "name": "Kryolan",
           "settings": {
-            "image": "shopify://shop_images/kryolan_630a4a6b-46b4-4b1a-bd3b-9ee016588e18.jpg",
+            "image": "shopify://shop_images/Kryolan_e78ce55b-fef2-4b43-8251-21e7080bfdc6.webp",
             "link": "shopify://collections/kryolan",
             "open_new_tab": false
           }
@@ -1199,7 +1199,7 @@
           "type": "card",
           "name": "Huda Beauty",
           "settings": {
-            "image": "shopify://shop_images/Huda-Beauty_e79adc92-227c-4727-99ce-cc621a9fb87e.webp",
+            "image": "shopify://shop_images/Huda_beauty.webp",
             "link": "shopify://collections/huda-beauty",
             "open_new_tab": false
           }
