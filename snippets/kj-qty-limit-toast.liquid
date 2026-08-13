@@ -24,24 +24,40 @@
 
       // Inside the cart (drawer or page) show the inline banner instead of a
       // floating toast — it reads as part of the cart rather than an overlay.
-      function cartNotice(msg) {
+      // Keep the notice up briefly even though the cart re-renders (morphs)
+      // after each quantity update, which would otherwise wipe it instantly.
+      var showUntil = 0;
+
+      function paintCartNotice(msg) {
         var notes = document.querySelectorAll('.kj-cart-limit-note');
-        if (!notes.length) return false;
         var shown = false;
         notes.forEach(function (note) {
-          if (!note.offsetParent && note.hidden === false) return;
-          var text = note.querySelector('.kj-cart-limit-note__text');
-          if (text) text.textContent = msg;
+          if (msg) {
+            var text = note.querySelector('.kj-cart-limit-note__text');
+            if (text) text.textContent = msg;
+          }
           note.hidden = false;
           shown = true;
         });
-        if (!shown) return false;
+        return shown;
+      }
+
+      function cartNotice(msg) {
+        if (!document.querySelector('.kj-cart-limit-note')) return false;
+        showUntil = Date.now() + 5000;
+        if (!paintCartNotice(msg)) return false;
         if (cartTimer) clearTimeout(cartTimer);
         cartTimer = setTimeout(function () {
-          notes.forEach(function (note) { note.hidden = true; });
+          showUntil = 0;
+          document.querySelectorAll('.kj-cart-limit-note').forEach(function (n) { n.hidden = true; });
         }, 5000);
         return true;
       }
+
+      // Re-apply after the cart section is replaced.
+      new MutationObserver(function () {
+        if (Date.now() < showUntil) paintCartNotice(null);
+      }).observe(document.documentElement, { childList: true, subtree: true });
 
       function toast(msg) {
         // Prefer the in-cart banner when the shopper is looking at the cart.
