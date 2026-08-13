@@ -1435,7 +1435,7 @@
           "type": "card",
           "name": "NYX",
           "settings": {
-            "image": "shopify://shop_images/NYX_6884ea3d-919d-46de-8df8-c88dad666620.webp",
+            "image": "shopify://shop_images/NYX_b72c2bd9-a91d-4f66-b7aa-7a8b63473b3c.jpg",
             "link": "shopify://collections/nyx",
             "open_new_tab": false,
             "discount_code": ""
@@ -1445,7 +1445,7 @@
           "type": "card",
           "name": "Morphe",
           "settings": {
-            "image": "shopify://shop_images/Morphe_caff335b-bb57-4c6b-9887-238a6345cd8d.webp",
+            "image": "shopify://shop_images/Morphe.jpg",
             "link": "shopify://collections/morphe",
             "open_new_tab": false,
             "discount_code": ""
@@ -1455,7 +1455,7 @@
           "type": "card",
           "name": "O/S",
           "settings": {
-            "image": "shopify://shop_images/OneSize_c6a4fe54-3cfe-48bb-aa76-86efe814c5b7.webp",
+            "image": "shopify://shop_images/OneSize.jpg",
             "link": "shopify://collections/o-s",
             "open_new_tab": false,
             "discount_code": ""
@@ -1465,7 +1465,7 @@
           "type": "card",
           "name": "Milk",
           "settings": {
-            "image": "shopify://shop_images/Milk-Makeup_270036f7-e521-4813-8715-23b8faca4652.webp",
+            "image": "shopify://shop_images/Milk-Makeup.jpg",
             "link": "shopify://collections/milk",
             "open_new_tab": false,
             "discount_code": ""
@@ -1585,7 +1585,7 @@
           "type": "card",
           "name": "Rhode",
           "settings": {
-            "image": "shopify://shop_images/Rhode_fb6a3843-a903-491e-851e-2064365d48c6.webp",
+            "image": "shopify://shop_images/Rhode.jpg",
             "link": "shopify://collections/rhode",
             "open_new_tab": false,
             "discount_code": ""
@@ -1595,7 +1595,7 @@
           "type": "card",
           "name": "Wishful",
           "settings": {
-            "image": "shopify://shop_images/wishful_1639a3e7-41df-4d6f-9228-ca8be4a9cb2f.webp",
+            "image": "shopify://shop_images/wishful.jpg",
             "link": "shopify://collections/wishful",
             "open_new_tab": false,
             "discount_code": ""
@@ -1605,7 +1605,7 @@
           "type": "card",
           "name": "Glow Recipe",
           "settings": {
-            "image": "shopify://shop_images/Glow-recipe_b776955a-3726-4527-8d2a-443bfb09115b.webp",
+            "image": "shopify://shop_images/Glow-recipe.jpg",
             "link": "shopify://collections/glow-recipe",
             "open_new_tab": false,
             "discount_code": ""
@@ -1637,7 +1637,7 @@
           "type": "card",
           "name": "Sheglam",
           "settings": {
-            "image": "shopify://shop_images/Sheglam_820176ff-812f-4557-84e8-f095fe21b939.webp",
+            "image": "shopify://shop_images/Sheglam.jpg",
             "link": "shopify://collections/sheglam",
             "open_new_tab": false,
             "discount_code": ""
@@ -1647,7 +1647,7 @@
           "type": "card",
           "name": "Tarte",
           "settings": {
-            "image": "shopify://shop_images/tarte_cee6cccd-7433-4dfb-a587-049142934015.webp",
+            "image": "shopify://shop_images/tarte.jpg",
             "link": "shopify://collections/tarte",
             "open_new_tab": false,
             "discount_code": ""
@@ -1657,7 +1657,7 @@
           "type": "card",
           "name": "Charlotte Tilbury",
           "settings": {
-            "image": "shopify://shop_images/charlotte-tilbury_6db5b186-193b-45cd-bb23-b7a71b28cdb7.webp",
+            "image": "shopify://shop_images/charlotte-tilbury.jpg",
             "link": "shopify://collections/charlotte-tilbury",
             "open_new_tab": false,
             "discount_code": ""
@@ -1667,7 +1667,7 @@
           "type": "card",
           "name": "Dior",
           "settings": {
-            "image": "shopify://shop_images/Dior_81ee55bf-4f6f-4163-b2fd-9211ad066293.webp",
+            "image": "shopify://shop_images/Dior.jpg",
             "link": "shopify://collections/dior",
             "open_new_tab": false,
             "discount_code": ""
