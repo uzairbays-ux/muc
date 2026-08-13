@@ -296,12 +296,11 @@
     "card_banner_nxjYYw": {
       "type": "card-banner",
       "blocks": {
-        "card_Nz3YMm": {
+        "card_ArA9aN": {
           "type": "card",
-          "name": "Kryolan",
           "settings": {
-            "image": "shopify://shop_images/Kryolan_e78ce55b-fef2-4b43-8251-21e7080bfdc6.webp",
-            "link": "shopify://collections/kryolan",
+            "image": "shopify://shop_images/Medicube_75ba1a60-1c0d-4093-9ef0-c7b74c98bf56.webp",
+            "link": "shopify://collections/medicube",
             "open_new_tab": false
           }
         },
@@ -331,14 +330,6 @@
             "open_new_tab": false
           }
         },
-        "card_ArA9aN": {
-          "type": "card",
-          "settings": {
-            "image": "shopify://shop_images/Medicube_75ba1a60-1c0d-4093-9ef0-c7b74c98bf56.webp",
-            "link": "shopify://collections/medicube",
-            "open_new_tab": false
-          }
-        },
         "card_fHkLFt": {
           "type": "card",
           "name": "Maybelline",
@@ -346,6 +337,15 @@
           "settings": {
             "image": "shopify://shop_images/maybelline_750_x_750_copy_c568da4e-ae7c-4e30-b861-965e54567e4a.webp",
             "link": "shopify://collections/maybelline",
+            "open_new_tab": false
+          }
+        },
+        "card_Nz3YMm": {
+          "type": "card",
+          "name": "Kryolan",
+          "settings": {
+            "image": "shopify://shop_images/Kryolan_e78ce55b-fef2-4b43-8251-21e7080bfdc6.webp",
+            "link": "shopify://collections/kryolan",
             "open_new_tab": false
           }
         },
@@ -400,12 +400,12 @@
         }
       },
       "block_order": [
-        "card_Nz3YMm",
+        "card_ArA9aN",
         "card_4ztLBB",
         "card_wT4WEe",
         "card_pEmaig",
-        "card_ArA9aN",
         "card_fHkLFt",
+        "card_Nz3YMm",
         "card_mKTLLP",
         "card_kJRjeJ",
         "card_rGDGUb",
