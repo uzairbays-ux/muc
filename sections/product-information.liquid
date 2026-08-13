@@ -283,6 +283,49 @@
     #MainContent [id^='ProductInformation'] .kj-save {
       margin-top: 0;
     }
+
+    /* Bestseller badge overlays the gallery top-left as a premium pill.
+       The grid is the containing block; the gallery is the first item, so
+       top/left of the grid == top-left of the image. */
+    #MainContent [data-product-grid-content] {
+      position: relative;
+    }
+
+    #MainContent [data-product-grid-content] div:has(> .kj-pdp-bestseller) {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      z-index: 4;
+      margin: 0;
+      pointer-events: none;
+    }
+
+    #MainContent .kj-pdp-bestseller {
+      margin: 0;
+      gap: 6px;
+      padding: 5px 12px 5px 9px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #1c1c22 0%, #33333d 100%);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.22);
+      backdrop-filter: blur(4px);
+    }
+
+    #MainContent .kj-pdp-bestseller__pill {
+      background: none;
+      padding: 0;
+      border-radius: 0;
+      color: #f3c96b;
+      font-size: 10px;
+      letter-spacing: 0.8px;
+    }
+
+    #MainContent .kj-pdp-bestseller__type {
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.92);
+      padding-inline-start: 6px;
+      border-inline-start: 1px solid rgba(255, 255, 255, 0.22);
+    }
   }
 
   /* Extra breathing room below the price. */
