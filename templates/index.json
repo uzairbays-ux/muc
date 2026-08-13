@@ -180,7 +180,7 @@
           "type": "card",
           "name": "ELF",
           "settings": {
-            "image": "shopify://shop_images/ELF_a43cf89f-6d4e-4d8b-a4ce-a8bd8c1003b7.jpg",
+            "image": "shopify://shop_images/Elf_bea269b9-e3dd-4abc-8186-9fc11a467f7c.webp",
             "link": "shopify://collections/elf",
             "open_new_tab": false
           }
@@ -207,7 +207,7 @@
           "type": "card",
           "name": "Ordinary",
           "settings": {
-            "image": "shopify://shop_images/OT.webp",
+            "image": "shopify://shop_images/The_ordinary.webp",
             "link": "shopify://collections/to",
             "open_new_tab": false
           }
@@ -526,6 +526,11 @@
       "name": "Featured collection",
       "settings": {
         "collection": "bestsellers",
+        "banner_link": "",
+        "gradient_color_1": "",
+        "gradient_color_2": "",
+        "gradient_direction": "to bottom",
+        "gradient_opacity": 100,
         "layout_type": "carousel",
         "carousel_on_mobile": false,
         "max_products": 16,
@@ -1136,6 +1141,11 @@
       "name": "Featured collection",
       "settings": {
         "collection": "new-arrival",
+        "banner_link": "",
+        "gradient_color_1": "",
+        "gradient_color_2": "",
+        "gradient_direction": "to bottom",
+        "gradient_opacity": 100,
         "layout_type": "carousel",
         "carousel_on_mobile": false,
         "max_products": 16,
