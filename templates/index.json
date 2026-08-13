@@ -149,6 +149,24 @@
     "card_banner_8zTGy8": {
       "type": "card-banner",
       "blocks": {
+        "card_G4PiLa": {
+          "type": "card",
+          "name": "Maybelline",
+          "settings": {
+            "image": "shopify://shop_images/maybelline_750_x_750_copy_c568da4e-ae7c-4e30-b861-965e54567e4a.webp",
+            "link": "shopify://collections/maybelline",
+            "open_new_tab": false
+          }
+        },
+        "card_x4i8pi": {
+          "type": "card",
+          "name": "ST London",
+          "settings": {
+            "image": "shopify://shop_images/ST_London_81093677-f382-4785-9744-ce8d46a93137.webp",
+            "link": "shopify://collections/st-london",
+            "open_new_tab": false
+          }
+        },
         "card_F7WUnC": {
           "type": "card",
           "settings": {
@@ -171,24 +189,6 @@
           "settings": {
             "image": "shopify://shop_images/chinese_750_x750_copy.webp",
             "link": "shopify://collections/chinese-brands",
-            "open_new_tab": false
-          }
-        },
-        "card_x4i8pi": {
-          "type": "card",
-          "name": "ST London",
-          "settings": {
-            "image": "shopify://shop_images/ST_London_81093677-f382-4785-9744-ce8d46a93137.webp",
-            "link": "shopify://collections/st-london",
-            "open_new_tab": false
-          }
-        },
-        "card_G4PiLa": {
-          "type": "card",
-          "name": "Maybelline",
-          "settings": {
-            "image": "shopify://shop_images/maybelline_750_x_750_copy_c568da4e-ae7c-4e30-b861-965e54567e4a.webp",
-            "link": "shopify://collections/maybelline",
             "open_new_tab": false
           }
         },
@@ -257,11 +257,11 @@
         }
       },
       "block_order": [
+        "card_G4PiLa",
+        "card_x4i8pi",
         "card_F7WUnC",
         "card_CEmTbc",
         "card_qV7j66",
-        "card_x4i8pi",
-        "card_G4PiLa",
         "card_YUtaR6",
         "card_7Rimtd",
         "card_LJWfzX",
