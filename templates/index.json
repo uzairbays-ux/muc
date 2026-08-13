@@ -1677,7 +1677,7 @@
           "type": "card",
           "name": "Olaplex",
           "settings": {
-            "image": "shopify://shop_images/Olaplex_68cf8416-cf1b-4d3b-8156-48e9e0a21bd9.webp",
+            "image": "shopify://shop_images/Olaplex.jpg",
             "link": "shopify://collections/olaplex",
             "open_new_tab": false,
             "discount_code": ""
@@ -1687,7 +1687,7 @@
           "type": "card",
           "name": "Rare Beauty",
           "settings": {
-            "image": "shopify://shop_images/Rare-Beauty_b2432891-cf23-4b63-95df-ddf5dfa196a1.webp",
+            "image": "shopify://shop_images/Rare-Beauty.jpg",
             "link": "shopify://collections/rare-beauty",
             "open_new_tab": false,
             "discount_code": ""
