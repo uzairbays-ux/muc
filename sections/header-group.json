@@ -16,11 +16,10 @@
       "blocks": {
         "ai_gen_block_4420fcf_xzdLjt": {
           "type": "ai_gen_block_4420fcf",
-          "disabled": true,
           "settings": {
-            "desktop_image": "shopify://shop_images/Eid_Notification_Bannersheader.webp",
-            "mobile_image": "shopify://shop_images/Eid_Notification_Bannersheader.webp",
-            "link_url": "",
+            "desktop_image": "shopify://shop_images/Header.gif",
+            "mobile_image": "shopify://shop_images/Header.gif",
+            "link_url": "shopify://collections/all",
             "open_in_new_tab": false,
             "hover_opacity": 85
           },
@@ -28,6 +27,7 @@
         },
         "ai_gen_block_29398aa_jHajjF": {
           "type": "ai_gen_block_29398aa",
+          "disabled": true,
           "settings": {
             "desktop_width_percent": 100,
             "section_padding": 0,
