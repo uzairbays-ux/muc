@@ -66,6 +66,20 @@
       id="cart-form"
       method="post"
     >
+      {%- comment -%}
+        Purchase-limit notice. Hidden until a shopper hits the cap while editing
+        quantities in the cart; kj-qty-limit-toast.liquid reveals it.
+      {%- endcomment -%}
+      {%- if settings.max_quantity_per_product > 0 -%}
+        <div class="kj-cart-limit-note" role="status" aria-live="polite" hidden>
+          <svg viewBox="0 0 16 16" width="15" height="15" fill="none" aria-hidden="true">
+            <circle cx="8" cy="8" r="6.4" stroke="currentColor" stroke-width="1.4"></circle>
+            <path d="M8 4.9v3.6M8 11.1h.01" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+          </svg>
+          <span class="kj-cart-limit-note__text"></span>
+        </div>
+      {%- endif -%}
+
       <div
         class="cart-items spacing-style{% if block_settings.dividers %} cart-items--dividers{% endif %}"
         style="{%  render 'spacing-style', settings: block_settings %} --cart-items-gap:{{ block_settings.gap | append: "px" }};"
@@ -384,6 +398,30 @@
 </div>
 
 {% stylesheet %}
+  /* Purchase-limit notice inside the cart (drawer + cart page). */
+  .kj-cart-limit-note {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 0 12px;
+    padding: 10px 12px;
+    border-radius: 10px;
+    background: #fff6e5;
+    border: 1px solid #f0d9a8;
+    color: #7a5606;
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  .kj-cart-limit-note[hidden] {
+    display: none;
+  }
+
+  .kj-cart-limit-note svg {
+    flex-shrink: 0;
+    color: #c8901a;
+  }
+
   .cart-items {
     --cart-item-media-width-min: 2.5rem;
     --cart-item-media-width-max: 7.5rem;

@@ -20,8 +20,34 @@
       window.__kjQtyToast = true;
 
       var hideTimer = null;
+      var cartTimer = null;
+
+      // Inside the cart (drawer or page) show the inline banner instead of a
+      // floating toast — it reads as part of the cart rather than an overlay.
+      function cartNotice(msg) {
+        var notes = document.querySelectorAll('.kj-cart-limit-note');
+        if (!notes.length) return false;
+        var shown = false;
+        notes.forEach(function (note) {
+          if (!note.offsetParent && note.hidden === false) return;
+          var text = note.querySelector('.kj-cart-limit-note__text');
+          if (text) text.textContent = msg;
+          note.hidden = false;
+          shown = true;
+        });
+        if (!shown) return false;
+        if (cartTimer) clearTimeout(cartTimer);
+        cartTimer = setTimeout(function () {
+          notes.forEach(function (note) { note.hidden = true; });
+        }, 5000);
+        return true;
+      }
 
       function toast(msg) {
+        // Prefer the in-cart banner when the shopper is looking at the cart.
+        var inCart = document.querySelector('cart-drawer[open], dialog[open] .kj-cart-limit-note, .cart-form');
+        if (inCart && cartNotice(msg)) return;
+
         var el = document.querySelector('.kj-qty-toast');
         if (!el) return;
         var text = el.querySelector('.kj-qty-toast__text');
