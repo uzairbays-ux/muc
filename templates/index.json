@@ -178,7 +178,7 @@
           "type": "card",
           "name": "ST London",
           "settings": {
-            "image": "shopify://shop_images/ST-London_445dc7f2-e4e0-4538-a9c3-d32191e76ee6.jpg",
+            "image": "shopify://shop_images/ST_London_81093677-f382-4785-9744-ce8d46a93137.webp",
             "link": "shopify://collections/st-london",
             "open_new_tab": false
           }
@@ -205,7 +205,7 @@
           "type": "card",
           "name": "ELF",
           "settings": {
-            "image": "shopify://shop_images/Elf_bea269b9-e3dd-4abc-8186-9fc11a467f7c.webp",
+            "image": "shopify://shop_images/ELF_1_9d298162-db46-4de0-9249-53e341604b86.webp",
             "link": "shopify://collections/elf",
             "open_new_tab": false
           }
@@ -293,8 +293,8 @@
         "card_wT4WEe": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/K_beauty_750_x_750_copy.webp",
-            "link": "shopify://collections/korean-brands",
+            "image": "shopify://shop_images/Axis-y_1.webp",
+            "link": "shopify://collections/axis-y",
             "open_new_tab": false
           }
         },
@@ -319,8 +319,8 @@
           "type": "card",
           "name": "ST London",
           "settings": {
-            "image": "shopify://shop_images/ST-London_445dc7f2-e4e0-4538-a9c3-d32191e76ee6.jpg",
-            "link": "shopify://collections/st-london",
+            "image": "shopify://shop_images/Dr_Althea.webp",
+            "link": "shopify://collections/dr-althea",
             "open_new_tab": false
           }
         },
