@@ -194,12 +194,12 @@
             "open_new_tab": false
           }
         },
-        "card_YUtaR6": {
+        "card_WDtRjF": {
           "type": "card",
-          "name": "Revolution",
+          "name": "ST London",
           "settings": {
-            "image": "shopify://shop_images/Revolution_a8b4b25e-8187-4227-a83e-ae25c318f998.jpg",
-            "link": "shopify://collections/revolution",
+            "image": "shopify://shop_images/Dr_Althea.webp",
+            "link": "shopify://collections/dr-althea",
             "open_new_tab": false
           }
         },
@@ -212,9 +212,20 @@
             "open_new_tab": false
           }
         },
+        "card_YUtaR6": {
+          "type": "card",
+          "name": "Revolution",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/Revolution_a8b4b25e-8187-4227-a83e-ae25c318f998.jpg",
+            "link": "shopify://collections/revolution",
+            "open_new_tab": false
+          }
+        },
         "card_LJWfzX": {
           "type": "card",
           "name": "Framesi",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/framesi_df4258f7-bf5e-4618-8f7b-e402cc115907.jpg",
             "link": "shopify://collections/framesi",
@@ -224,6 +235,7 @@
         "card_ftKGeC": {
           "type": "card",
           "name": "Kryolan",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Kryolan_e78ce55b-fef2-4b43-8251-21e7080bfdc6.webp",
             "link": "shopify://collections/kryolan",
@@ -233,6 +245,7 @@
         "card_nbr3cj": {
           "type": "card",
           "name": "Ordinary",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/The_ordinary_1.webp",
             "link": "shopify://collections/to",
@@ -247,15 +260,6 @@
             "link": "shopify://collections/cerave",
             "open_new_tab": false
           }
-        },
-        "card_b9F39r": {
-          "type": "card",
-          "name": "Bioaqua",
-          "settings": {
-            "image": "shopify://shop_images/Bioaqua_46d50632-e011-4b6d-8a51-7a0fdbf97c6c.jpg",
-            "link": "shopify://collections/bioaqua",
-            "open_new_tab": false
-          }
         }
       },
       "block_order": [
@@ -264,13 +268,13 @@
         "card_F7WUnC",
         "card_CEmTbc",
         "card_qV7j66",
-        "card_YUtaR6",
+        "card_WDtRjF",
         "card_7Rimtd",
+        "card_YUtaR6",
         "card_LJWfzX",
         "card_ftKGeC",
         "card_nbr3cj",
-        "card_hxUFFx",
-        "card_b9F39r"
+        "card_hxUFFx"
       ],
       "name": "Card banner",
       "settings": {
@@ -292,6 +296,24 @@
     "card_banner_nxjYYw": {
       "type": "card-banner",
       "blocks": {
+        "card_Nz3YMm": {
+          "type": "card",
+          "name": "Kryolan",
+          "settings": {
+            "image": "shopify://shop_images/Kryolan_e78ce55b-fef2-4b43-8251-21e7080bfdc6.webp",
+            "link": "shopify://collections/kryolan",
+            "open_new_tab": false
+          }
+        },
+        "card_4ztLBB": {
+          "type": "card",
+          "name": "Ordinary",
+          "settings": {
+            "image": "shopify://shop_images/The_ordinary_1.webp",
+            "link": "shopify://collections/to",
+            "open_new_tab": false
+          }
+        },
         "card_wT4WEe": {
           "type": "card",
           "settings": {
@@ -317,18 +339,10 @@
             "open_new_tab": false
           }
         },
-        "card_c3HEeM": {
-          "type": "card",
-          "name": "ST London",
-          "settings": {
-            "image": "shopify://shop_images/Dr_Althea.webp",
-            "link": "shopify://collections/dr-althea",
-            "open_new_tab": false
-          }
-        },
         "card_fHkLFt": {
           "type": "card",
           "name": "Maybelline",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/maybelline_750_x_750_copy_c568da4e-ae7c-4e30-b861-965e54567e4a.webp",
             "link": "shopify://collections/maybelline",
@@ -347,6 +361,7 @@
         "card_kJRjeJ": {
           "type": "card",
           "name": "ELF",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Elf_bea269b9-e3dd-4abc-8186-9fc11a467f7c.webp",
             "link": "shopify://collections/elf",
@@ -356,33 +371,17 @@
         "card_rGDGUb": {
           "type": "card",
           "name": "Framesi",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/framesi_df4258f7-bf5e-4618-8f7b-e402cc115907.jpg",
             "link": "shopify://collections/framesi",
             "open_new_tab": false
           }
         },
-        "card_Nz3YMm": {
-          "type": "card",
-          "name": "Kryolan",
-          "settings": {
-            "image": "shopify://shop_images/Kryolan_e78ce55b-fef2-4b43-8251-21e7080bfdc6.webp",
-            "link": "shopify://collections/kryolan",
-            "open_new_tab": false
-          }
-        },
-        "card_4ztLBB": {
-          "type": "card",
-          "name": "Ordinary",
-          "settings": {
-            "image": "shopify://shop_images/The_ordinary_1.webp",
-            "link": "shopify://collections/to",
-            "open_new_tab": false
-          }
-        },
         "card_P3rCeH": {
           "type": "card",
           "name": "CeraVe",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Cerave_6796a457-83aa-4eff-ac8e-57b4ec69463b.jpg",
             "link": "shopify://collections/cerave",
@@ -392,6 +391,7 @@
         "card_YwKP6m": {
           "type": "card",
           "name": "Bioaqua",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Bioaqua_46d50632-e011-4b6d-8a51-7a0fdbf97c6c.jpg",
             "link": "shopify://collections/bioaqua",
@@ -400,16 +400,15 @@
         }
       },
       "block_order": [
+        "card_Nz3YMm",
+        "card_4ztLBB",
         "card_wT4WEe",
         "card_pEmaig",
         "card_ArA9aN",
-        "card_c3HEeM",
         "card_fHkLFt",
         "card_mKTLLP",
         "card_kJRjeJ",
         "card_rGDGUb",
-        "card_Nz3YMm",
-        "card_4ztLBB",
         "card_P3rCeH",
         "card_YwKP6m"
       ],
