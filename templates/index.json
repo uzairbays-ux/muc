@@ -429,6 +429,66 @@
         "padding-block-end": 24
       }
     },
+    "card_grid_zyzeXH": {
+      "type": "card-grid",
+      "blocks": {
+        "card_xL4KNQ": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_Aug_13_2026_11_37_49_PM.webp",
+            "link": "",
+            "open_new_tab": false
+          }
+        },
+        "card_9d7T67": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_Aug_13_2026_11_39_53_PM.webp",
+            "link": "",
+            "open_new_tab": false
+          }
+        },
+        "card_DfKtjp": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_Aug_13_2026_11_42_01_PM.webp",
+            "link": "",
+            "open_new_tab": false
+          }
+        }
+      },
+      "block_order": [
+        "card_xL4KNQ",
+        "card_9d7T67",
+        "card_DfKtjp"
+      ],
+      "name": "Card grid",
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "heading_alignment": "left",
+        "desktop_layout": "slider",
+        "mobile_layout": "slider",
+        "desktop_columns": "3",
+        "mobile_columns": "2",
+        "desktop_slider_per_view": "3",
+        "mobile_slider_per_view": "1.5",
+        "show_arrows": false,
+        "auto_rotate": false,
+        "rotate_interval": 4,
+        "gap": 16,
+        "desktop_side_padding": 48,
+        "mobile_side_padding": 0,
+        "gradient_color_1": "#F6F9FD",
+        "gradient_color_2": "#959954",
+        "gradient_opacity": 50,
+        "gradient_direction": "to bottom",
+        "section_width": "full-width",
+        "color_scheme": "",
+        "padding-block-start": 24,
+        "padding-block-end": 24
+      }
+    },
     "product_list_fa6P9H": {
       "type": "product-list",
       "blocks": {
@@ -717,66 +777,6 @@
         "color_scheme": "scheme-1",
         "padding-block-start": 20,
         "padding-block-end": 20
-      }
-    },
-    "card_grid_zyzeXH": {
-      "type": "card-grid",
-      "blocks": {
-        "card_xL4KNQ": {
-          "type": "card",
-          "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_Aug_13_2026_11_37_49_PM.webp",
-            "link": "",
-            "open_new_tab": false
-          }
-        },
-        "card_9d7T67": {
-          "type": "card",
-          "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_Aug_13_2026_11_39_53_PM.webp",
-            "link": "",
-            "open_new_tab": false
-          }
-        },
-        "card_DfKtjp": {
-          "type": "card",
-          "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_Aug_13_2026_11_42_01_PM.webp",
-            "link": "",
-            "open_new_tab": false
-          }
-        }
-      },
-      "block_order": [
-        "card_xL4KNQ",
-        "card_9d7T67",
-        "card_DfKtjp"
-      ],
-      "name": "Card grid",
-      "settings": {
-        "heading": "",
-        "subheading": "",
-        "heading_alignment": "left",
-        "desktop_layout": "slider",
-        "mobile_layout": "slider",
-        "desktop_columns": "3",
-        "mobile_columns": "2",
-        "desktop_slider_per_view": "3",
-        "mobile_slider_per_view": "1.5",
-        "show_arrows": false,
-        "auto_rotate": false,
-        "rotate_interval": 4,
-        "gap": 16,
-        "desktop_side_padding": 48,
-        "mobile_side_padding": 0,
-        "gradient_color_1": "",
-        "gradient_color_2": "",
-        "gradient_opacity": 50,
-        "gradient_direction": "to bottom",
-        "section_width": "full-width",
-        "color_scheme": "",
-        "padding-block-start": 24,
-        "padding-block-end": 24
       }
     },
     "brand_ticker_fdyAia": {
@@ -2942,8 +2942,8 @@
     "featured_banner_yeQJGh",
     "card_banner_8zTGy8",
     "card_banner_nxjYYw",
-    "product_list_fa6P9H",
     "card_grid_zyzeXH",
+    "product_list_fa6P9H",
     "brand_ticker_fdyAia",
     "card_grid_HA8C7w",
     "card_grid_TBdpWJ",
