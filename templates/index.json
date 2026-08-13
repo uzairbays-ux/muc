@@ -434,6 +434,7 @@
       "blocks": {
         "card_xL4KNQ": {
           "type": "card",
+          "name": "Azadi500",
           "settings": {
             "image": "shopify://shop_images/ChatGPT_Image_Aug_13_2026_11_37_49_PM.webp",
             "link": "",
@@ -442,6 +443,7 @@
         },
         "card_9d7T67": {
           "type": "card",
+          "name": "Azadi1000",
           "settings": {
             "image": "shopify://shop_images/ChatGPT_Image_Aug_13_2026_11_39_53_PM.webp",
             "link": "",
@@ -450,6 +452,7 @@
         },
         "card_DfKtjp": {
           "type": "card",
+          "name": "Azadi2000",
           "settings": {
             "image": "shopify://shop_images/ChatGPT_Image_Aug_13_2026_11_42_01_PM.webp",
             "link": "",
