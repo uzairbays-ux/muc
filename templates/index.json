@@ -149,12 +149,12 @@
     "card_banner_8zTGy8": {
       "type": "card-banner",
       "blocks": {
-        "card_G4PiLa": {
+        "card_F7WUnC": {
           "type": "card",
-          "name": "Maybelline",
+          "name": "huda",
           "settings": {
-            "image": "shopify://shop_images/maybeline.webp",
-            "link": "shopify://collections/maybelline",
+            "image": "shopify://shop_images/Huda_beauty_110e739c-84f2-4323-a2c4-e13e81afbe08.webp",
+            "link": "shopify://collections/huda-beauty",
             "open_new_tab": false
           }
         },
@@ -167,12 +167,12 @@
             "open_new_tab": false
           }
         },
-        "card_F7WUnC": {
+        "card_7Rimtd": {
           "type": "card",
-          "name": "huda",
+          "name": "ELF",
           "settings": {
-            "image": "shopify://shop_images/Huda_beauty_110e739c-84f2-4323-a2c4-e13e81afbe08.webp",
-            "link": "shopify://collections/huda-beauty",
+            "image": "shopify://shop_images/ELF_1_9d298162-db46-4de0-9249-53e341604b86.webp",
+            "link": "shopify://collections/elf",
             "open_new_tab": false
           }
         },
@@ -194,21 +194,21 @@
             "open_new_tab": false
           }
         },
+        "card_G4PiLa": {
+          "type": "card",
+          "name": "Maybelline",
+          "settings": {
+            "image": "shopify://shop_images/maybeline.webp",
+            "link": "shopify://collections/maybelline",
+            "open_new_tab": false
+          }
+        },
         "card_WDtRjF": {
           "type": "card",
           "name": "ST London",
           "settings": {
             "image": "shopify://shop_images/Dr_Althea.webp",
             "link": "shopify://collections/dr-althea",
-            "open_new_tab": false
-          }
-        },
-        "card_7Rimtd": {
-          "type": "card",
-          "name": "ELF",
-          "settings": {
-            "image": "shopify://shop_images/ELF_1_9d298162-db46-4de0-9249-53e341604b86.webp",
-            "link": "shopify://collections/elf",
             "open_new_tab": false
           }
         },
@@ -263,13 +263,13 @@
         }
       },
       "block_order": [
-        "card_G4PiLa",
-        "card_x4i8pi",
         "card_F7WUnC",
+        "card_x4i8pi",
+        "card_7Rimtd",
         "card_CEmTbc",
         "card_qV7j66",
+        "card_G4PiLa",
         "card_WDtRjF",
-        "card_7Rimtd",
         "card_YUtaR6",
         "card_LJWfzX",
         "card_ftKGeC",
@@ -2664,7 +2664,7 @@
         "image_fit": "contain",
         "card_ratio": "adapt",
         "image_border_radius": 19,
-        "background_color": "#FFD3CD",
+        "background_color": "#ffd3cd",
         "padding-block-start": 24,
         "padding-block-end": 24
       }
