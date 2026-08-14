@@ -194,21 +194,21 @@
             "open_new_tab": false
           }
         },
-        "card_G4PiLa": {
-          "type": "card",
-          "name": "Maybelline",
-          "settings": {
-            "image": "shopify://shop_images/maybeline.webp",
-            "link": "shopify://collections/maybelline",
-            "open_new_tab": false
-          }
-        },
         "card_WDtRjF": {
           "type": "card",
           "name": "ST London",
           "settings": {
             "image": "shopify://shop_images/Dr_Althea.webp",
             "link": "shopify://collections/dr-althea",
+            "open_new_tab": false
+          }
+        },
+        "card_G4PiLa": {
+          "type": "card",
+          "name": "Maybelline",
+          "settings": {
+            "image": "shopify://shop_images/maybeline.webp",
+            "link": "shopify://collections/maybelline",
             "open_new_tab": false
           }
         },
@@ -268,8 +268,8 @@
         "card_7Rimtd",
         "card_CEmTbc",
         "card_qV7j66",
-        "card_G4PiLa",
         "card_WDtRjF",
+        "card_G4PiLa",
         "card_YUtaR6",
         "card_LJWfzX",
         "card_ftKGeC",
