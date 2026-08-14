@@ -162,7 +162,7 @@
           "type": "card",
           "name": "Maybelline",
           "settings": {
-            "image": "shopify://shop_images/Maybilline.jpg",
+            "image": "shopify://shop_images/ChatGPT_Image_Aug_14_2026_05_18_56_PM.png",
             "link": "shopify://collections/maybelline",
             "open_new_tab": false
           }
@@ -526,6 +526,11 @@
       "name": "Featured collection",
       "settings": {
         "collection": "bestsellers",
+        "banner_link": "",
+        "gradient_color_1": "",
+        "gradient_color_2": "",
+        "gradient_direction": "to bottom",
+        "gradient_opacity": 100,
         "layout_type": "carousel",
         "carousel_on_mobile": false,
         "max_products": 16,
@@ -1136,6 +1141,11 @@
       "name": "Featured collection",
       "settings": {
         "collection": "new-arrival",
+        "banner_link": "",
+        "gradient_color_1": "",
+        "gradient_color_2": "",
+        "gradient_direction": "to bottom",
+        "gradient_opacity": 100,
         "layout_type": "carousel",
         "carousel_on_mobile": false,
         "max_products": 16,
