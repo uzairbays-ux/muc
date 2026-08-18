@@ -1173,7 +1173,7 @@
           "type": "card",
           "name": "Huda Beauty",
           "settings": {
-            "image": "shopify://shop_images/Huda-Beauty.jpg",
+            "image": "shopify://shop_images/huda_beauty_flat_20_off_500x500_v2_beb52ede-69f0-40e6-982d-64bedfc77ad0.webp",
             "link": "shopify://collections/huda-beauty",
             "open_new_tab": false
           }
@@ -1182,7 +1182,7 @@
           "type": "card",
           "name": "NYX",
           "settings": {
-            "image": "shopify://shop_images/NYX_b72c2bd9-a91d-4f66-b7aa-7a8b63473b3c.jpg",
+            "image": "shopify://shop_images/nyx_logo_aligned_white_box_500x500_b40728cc-8de3-407a-aac9-df83a09d061a.webp",
             "link": "shopify://collections/nyx",
             "open_new_tab": false
           }
@@ -1191,7 +1191,7 @@
           "type": "card",
           "name": "Morphe",
           "settings": {
-            "image": "shopify://shop_images/Morphe.jpg",
+            "image": "shopify://shop_images/morphe_logo_flat_20_off_500x500_6647c1b4-f607-493d-a790-85fd74d3439b.webp",
             "link": "shopify://collections/morphe",
             "open_new_tab": false
           }
@@ -1200,7 +1200,7 @@
           "type": "card",
           "name": "O/S",
           "settings": {
-            "image": "shopify://shop_images/OneSize.jpg",
+            "image": "shopify://shop_images/one_size_logo_flat_20_off_500x500_394dbf39-00c7-487c-87aa-887c79555521.webp",
             "link": "shopify://collections/o-s",
             "open_new_tab": false
           }
@@ -1209,7 +1209,7 @@
           "type": "card",
           "name": "Milk",
           "settings": {
-            "image": "shopify://shop_images/Milk-Makeup.jpg",
+            "image": "shopify://shop_images/milk_logo_aligned_final_500x500_110203c2-59d8-4824-a8d0-21fa4d6c7395.webp",
             "link": "shopify://collections/milk",
             "open_new_tab": false
           }
