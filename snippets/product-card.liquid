@@ -206,7 +206,7 @@
   .product-card__content > .kj-card-actions { margin-top: auto; }
 
   /* Price row: cut-price -> sale-price -> green discount on one line. */
-  .product-card .price__sale {
+  .product-card .price__sale:not(.price__hidden) {
     display: flex;
     flex-wrap: nowrap;
     align-items: baseline;
@@ -290,7 +290,7 @@
 
   /* Quick-add modal price (matches card) + hide the image badge in the modal. */
   #quick-add-dialog .product-badges { display: none; }
-  #quick-add-dialog .price__sale { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px; }
+  #quick-add-dialog .price__sale:not(.price__hidden) { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px; }
   #quick-add-dialog .price__sale > *:nth-child(1) { order: 2; }
   #quick-add-dialog .price__sale > *:nth-child(2) { order: 1; }
   #quick-add-dialog .price__sale > *:nth-child(3) { order: 3; }

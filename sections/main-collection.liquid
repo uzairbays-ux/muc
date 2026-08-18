@@ -217,7 +217,7 @@
 
   /* Quick-add modal price: match the card style — cut -> sale -> green discount,
      properly spaced, no red pill. */
-  #quick-add-dialog .price__sale {
+  #quick-add-dialog .price__sale:not(.price__hidden) {
     display: flex;
     flex-wrap: wrap;
     align-items: baseline;
