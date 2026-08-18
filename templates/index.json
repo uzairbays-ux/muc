@@ -1692,8 +1692,8 @@
         "banner_nrAdDN": {
           "type": "banner",
           "settings": {
-            "desktop_image": "shopify://shop_images/Korean-Brand-Main-Banner-2746-x-572.jpg",
-            "mobile_image": "shopify://shop_images/Korean-Brand-Main-Banner_8b9377ca-800f-403f-bc34-010652a3b09d.jpg",
+            "desktop_image": "shopify://shop_images/Korean-Brand-Main-Banner_desktop.png",
+            "mobile_image": "shopify://shop_images/Korean-Brand-Main-Banner_f965266a-4a71-4cf4-ab83-876b364efe14.jpg",
             "link": "shopify://pages/korean-brand-k-beauty",
             "open_new_tab": false
           }
