@@ -120,40 +120,7 @@
     background: rgb(var(--color-foreground-heading));
     color: rgb(var(--color-background));
   }
-.all-vendors__index-link--active {
-  background: rgb(var(--color-foreground-heading));
-  color: rgb(var(--color-background));
-}
 
-/* Mobile: A-Z index moves off the top row (where it overlapped the grid)
-   and becomes a slim vertical strip pinned to the left edge, like a
-   contacts-list jump index. Active letter highlights as you scroll. */
-@media screen and (max-width: 749px) {
-  .all-vendors__index {
-    position: fixed;
-    top: 50%;
-    left: 6px;
-    transform: translateY(-50%);
-    flex-direction: column;
-    flex-wrap: nowrap;
-    gap: 1px;
-    max-height: 78vh;
-    overflow-y: auto;
-    padding: 6px 3px;
-    margin-bottom: 0;
-    background: rgba(var(--color-background), 0.92);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-  .all-vendors__index::-webkit-scrollbar { display: none; }
-  .all-vendors__index-link {
-    min-width: 18px;
-    padding: 1px 2px;
-    font-size: 10px;
-    line-height: 1.4;
-  }
-}
   /* Mobile: A-Z index moves off the top row (where it overlapped the grid)
      and becomes a slim vertical strip pinned to the left edge, like a
      contacts-list jump index. Active letter highlights as you scroll. */
@@ -170,7 +137,12 @@
       overflow-y: auto;
       padding: 6px 3px;
       margin-bottom: 0;
-      background: rgba(var(--color-background), 0.92);
+      /* --color-background is a full color function, e.g. rgb(255 255 255 / 1.0),
+         so wrapping it in rgba() produced invalid CSS and the strip rendered
+         fully transparent. Literal first as a fallback for browsers without
+         color-mix (Safari < 16.2), which this theme still supports. */
+      background: rgba(255, 255, 255, 0.92);
+      background: color-mix(in srgb, var(--color-background) 92%, transparent);
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
       -ms-overflow-style: none;
       scrollbar-width: none;
