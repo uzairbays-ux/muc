@@ -405,16 +405,6 @@
     display: none;
   }
 
-  /* Tax note after the price (reference: "Incl. of all taxes"). */
-  [id^='ProductInformation'] product-price .price__sale::after,
-  [id^='ProductInformation'] product-price .price__regular::after {
-    content: 'Incl. of all taxes';
-    font-size: 11px;
-    font-weight: 400;
-    color: #8a8a8a;
-    margin-inline-start: 6px;
-  }
-
   /* Rating: dark stars + "4.9/5 (n) ›" format (match reference). */
   [id^='ProductInformation'] .rating-wrapper {
     --star-fill-color: #001325;
