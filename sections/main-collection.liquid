@@ -129,7 +129,10 @@
   }
 
   /* Price row: cut-price -> sale-price -> discount on one line. */
-  #MainContent .product-card .price__sale {
+  /* :not(.price__hidden) is required -- this selector outweighs
+     .price__hidden{display:none}, so without it the sale block is forced
+     visible on products that are NOT on sale and the price renders twice. */
+  #MainContent .product-card .price__sale:not(.price__hidden) {
     display: flex;
     flex-wrap: nowrap;
     align-items: baseline;
