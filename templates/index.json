@@ -2224,7 +2224,7 @@
           "type": "banner",
           "settings": {
             "desktop_image": "shopify://shop_images/Chinesse_banner_desktop.png",
-            "mobile_image": "shopify://shop_images/Chinese-Beauty-Main-Banner.jpg",
+            "mobile_image": "shopify://shop_images/Chinesse_Banner.png",
             "link": "shopify://collections/chinese-brands",
             "open_new_tab": false
           }
