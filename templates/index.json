@@ -182,7 +182,7 @@
           "type": "card",
           "name": "ELF",
           "settings": {
-            "image": "shopify://shop_images/ELF_a43cf89f-6d4e-4d8b-a4ce-a8bd8c1003b7.jpg",
+            "image": "shopify://shop_images/ELF_26244392-3775-4a00-99b2-da2c3935a0b5.png",
             "link": "shopify://collections/elf",
             "open_new_tab": false
           }
@@ -220,7 +220,7 @@
           "type": "card",
           "name": "CeraVe",
           "settings": {
-            "image": "shopify://shop_images/Cerave_6796a457-83aa-4eff-ac8e-57b4ec69463b.jpg",
+            "image": "shopify://shop_images/CeraVe_4423d5b8-442e-4038-b998-2ad269625dc3.jpg",
             "link": "shopify://collections/cerave",
             "open_new_tab": false
           }
@@ -229,7 +229,7 @@
           "type": "card",
           "name": "Bioaqua",
           "settings": {
-            "image": "shopify://shop_images/Bioaqua_46d50632-e011-4b6d-8a51-7a0fdbf97c6c.jpg",
+            "image": "shopify://shop_images/Bioaqua_d38424d7-bf2e-4ca2-a188-c06122ce27e7.jpg",
             "link": "shopify://collections/bioaqua",
             "open_new_tab": false
           }
