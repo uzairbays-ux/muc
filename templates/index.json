@@ -824,14 +824,16 @@
         },
         "card_c49pAk": {
           "type": "card",
+          "name": "Bath & Body",
           "settings": {
-            "image": "shopify://shop_images/B_BW_894e2260-d55b-42ec-a43c-39bc5ea58a4c.jpg",
+            "image": "shopify://shop_images/B_BW_a234e248-e364-4e49-95a9-484876ccf43f.jpg",
             "link": "shopify://collections/bath-body-works",
             "open_new_tab": false
           }
         },
         "card_AHQBXy": {
           "type": "card",
+          "name": "La Roche Posay",
           "settings": {
             "image": "shopify://shop_images/la-roche-posay.jpg",
             "link": "shopify://collections/la-roche-posay",
