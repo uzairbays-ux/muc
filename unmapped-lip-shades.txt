@@ -1,0 +1,347 @@
+# Unmapped lip shade names — add a hex for each, format:  Shade: #RRGGBB
+# (sizes/volumes excluded; 344 names)
+
+05 antwerp: 
+19 cannes: 
+65 seductress: 
+660 infinite ruby: 
+70 amazonian: 
+pillow talk: 
+pink lolita: 
+relove glam balm lip balm fresh burst watermelon: 
+rose addict: 
+006 always delicate: 
+01 amsterdam: 
+01 crystal clear: 
+01 mauve love: 
+01 pink affair: 
+01 sand: 
+01 the mvp: 
+01 to the fullest: 
+010 whisper: 
+02 big softie: 
+02 glossy star: 
+02 goal crusher: 
+02 peach crystalline: 
+02 rush: 
+02 smile sparkle: 
+02 stockholm: 
+03 ambition statement: 
+03 as de pink: 
+03 down to earth: 
+03 dusty rose: 
+03 florence supremacy: 
+03 mood: 
+04 juicy orange: 
+04 london: 
+04 rosy nude: 
+04 ruffle trim: 
+04 starry dance: 
+05 coral pink: 
+05 magic maker: 
+05 orange presse: 
+05 pink panther: 
+06 boundary pusher: 
+06 caton rouge: 
+06 push-up: 
+07 lets chill: 
+08 bedtime flirt: 
+08 dare you: 
+08 san paulo: 
+08 soul: 
+09 abu dhabi: 
+09 bite me if you can: 
+09 jelly jammin': 
+09 morticia: 
+10 hot coral: 
+10 monte carlo: 
+100 coco suga: 
+100 pink bliss: 
+105 rule: 
+108 frivolous: 
+11 burnt wine: 
+11 kitten heels: 
+110 passionate: 
+113 don't: 
+114 represent: 
+115 best undresed: 
+116 explore: 
+12 exotic: 
+12 skin: 
+13 taupe: 
+14 dark hole: 
+14 zurich: 
+15 world shaper: 
+150 pink candy: 
+155 savant: 
+16 pink love: 
+160 mover: 
+165 successful: 
+17 brilliant: 
+175 ringle: 
+175 ringleader: 
+18 holiday: 
+18 on a mission: 
+18 prague: 
+180 revolutionary: 
+19 sweet heart: 
+20 copenhagen: 
+20 pioneer: 
+2000 calorie lip glaze 050 guava flair: 
+2000 calorie lip glaze 075 pink fizz: 
+2000 calorie lip glaze 105 berry sorbet: 
+210 flirty fling: 
+22 flesh: 
+220 come up roses: 
+27 madrid: 
+310 pouting pink: 
+32 rome: 
+350 pink to the berry: 
+420 le rouge paris: 
+500 fire starter: 
+500 pine to the apple: 
+500 shimmering pink: 
+510 radiant rose: 
+530 luminous petal: 
+550 cuff me: 
+550 refl ruby: 
+560 radiant red: 
+570 fire cracker: 
+570 gleaming coral: 
+590 glazed caramel: 
+6 colors: 
+6 sand nude: 
+600 berry glace: 
+600 coral sass: 
+610 hot spot: 
+617 velvet teddy: 
+648 you wouldn't get it: 
+660: 
+661: 
+662: 
+663: 
+664: 
+664 get the hint?: 
+665: 
+666: 
+667: 
+668: 
+669: 
+669 warm teddy: 
+670: 
+671: 
+690 twig twist: 
+7 buff pink: 
+710 kiss-off: 
+725 love bite: 
+75 fighter: 
+780 shore thing: 
+8 flesh nude: 
+820 praline de paris: 
+822 mon caramel: 
+828 framboise frenzy: 
+834 infinite spice: 
+838 berry cherie: 
+844 sweet tooth: 
+848 dose of cocoa: 
+852 box of chocolates: 
+864 tasty ruby: 
+8h matte liquid lipstick 01: 
+8h matte liquid lipstick 02: 
+8h matte liquid lipstick 04: 
+8h matte liquid lipstick 16: 
+8h matte liquid lipstick dark berry 08: 
+8h matte liquid lipstick deep rust 10: 
+8h matte liquid lipstick golden rose 12: 
+8h matte liquid lipstick misty rose 11: 
+9 coffee brown: 
+940 rock me: 
+aloe vera: 
+anti-oxidant berry: 
+barely legal: 
+beige sunny: 
+berrilicious trio lipstick set: 
+berry bliss trio lipstick set: 
+berry crush: 
+birthday bomb shiny lipgloss 01: 
+born to hustle: 
+budapest: 
+charmed: 
+cheeky: 
+cheerful 24: 
+cherry kiss: 
+chili bomb shiny lipgloss 01: 
+choco bomb shiny lip gloss 01: 
+cocoa 040: 
+color elixir lip liner restage 60 red ruby: 
+coy: 
+cramel crush 050: 
+cranberry lip oil 01: 
+creme brulee mauve: 
+devi berry: 
+electric orange: 
+emily in paris plumping lip oil 01: 
+endlessly mesmerising 210: 
+exotic nude 030: 
+extreme shine volume lip gloss 102: 
+extreme shine volume lipgloss 101: 
+extreme shine volume lipgloss 11: 
+extreme shine volume lipgloss 13: 
+extreme shine volume lipgloss 16: 
+fenty's finest 3-piece face, eye + lip kit: 
+get the glaze! lip cream 01: 
+gloss fabuleux lip gloss rose charismatic # 03: 
+gloss fabuleux lip gloss taupe of world: 
+glossy glaze lipstick 02: 
+harley quinn lip gloss 01 harlay glow: 
+heart core fruity lip balm 05: 
+hello kitty glowing lipgloss 01: 
+hello kitty glowing lipgloss 02: 
+high key: 
+honey and shea butter nourishing lip balm repairing and soothe lips: 
+hydra bomb lip gloss hydr8 deep nude: 
+hydra bomb versus: 
+hydra kiss lip oil 05: 
+hydra kiss lip oil 06: 
+hydra kiss lip tint 01: 
+hydra kiss lip tint 02: 
+hydra kiss lip tint 03: 
+hydra kiss lip tint 06: 
+hydra kiss lip tint 07: 
+i'll call you: 
+irl whipped lip crème burnt cinnamon: 
+irl whipped lip crème chai nude: 
+irl whipped lip crème frappuccino nude: 
+irresistible: 
+juicy bomb glossy butter balm 01: 
+juicy bomb glossy butter balm 02: 
+juicy bomb glossy butter balm 03: 
+juicy bomb party lip oil 02: 
+juicy bomb party lip oil 03: 
+juicy bomb party shiny lipgloss 01: 
+juicy bomb party shiny lipgloss 03: 
+juicy bomb party shiny lipgloss 04: 
+juicy bomb party shiny lipgloss 05: 
+juicy bomb shiny lip gloss 04: 
+juicy bomb shiny lip gloss 101: 
+juicy bomb shiny lip gloss 102: 
+juicy bomb shiny lip gloss 103: 
+juicy bomb shiny lipgloss 104: 
+kind & free tinted lip balm - 02 apricot beauty: 
+kind & free tinted lip balm - 04 hibiscus blaze: 
+kind & free tinted lip balm - 05 turbo red: 
+kind & free tinted lip balm - 06 berry twist: 
+kiss me you fool: 
+lasting mega matte liquid lip color 110-blush: 
+lasting provo 400 grin bare it: 
+life in coral bi-phase lip oil 01: 
+life in coral lipgloss 01: 
+lip & cheek oil electric glow color changing: 
+lip care booster lip butter: 
+lip care booster lip peeling: 
+lip care booster lip serum: 
+lip rouge set 18 colors: 
+lipfinity velvet matte 035 pink punch: 
+lipfinity velvet matte 045 posh pink: 
+lippy: 
+lips rouge edition velvet -t23 black brown: 
+love it a choco lot! lip oil 01: 
+low cut: 
+magnetic: 
+main character: 
+make your move: 
+matte trio lipstick set: 
+mauvie: 
+maxout: 
+meet matt hughes long lasting liquid lipstick vacay 3s: 
+meet matt hughes mini long lasting liquid lipstick miami 6s: 
+meet matt hughes mini long lasting liquid lipstick nude 6s: 
+meet matt hughes mini long lasting liquid lipstick san franciso 6s: 
+meet matt hughes mini long lasting liquid lipstick volume.13 6s: 
+meet matt hughes mini long lasting liquid lipstick volume.14 6s: 
+meet matt hughes mini long lasting liquid lipstick volume.2 6s: 
+meet matt hughes mini long lasting liquid lipstick volume.3 6s: 
+meet matt hughes mini long lasting liquid lipstick volume.4 6s: 
+meet matt hughes mini long lasting liquid lipstick volume.5 6s: 
+meet matt hughes mini long lasting liquid lipstick volume.6 6s: 
+meet matt hughes mini long lasting liquid lipstick volume.9 6s: 
+mellow mocha: 
+meta glow multi-reflective lip gloss 01: 
+montreal: 
+moon light: 
+nude shot: 
+pack of 7: 
+peach flirt: 
+peachy coral: 
+peachy pearl: 
+peanut butter: 
+peek show: 
+pink berry: 
+pink grape fruit: 
+play with fire: 
+polly pocket lip glaze 01: 
+polly pocket lip glaze 02: 
+pout bomb maxi plump lip gloss divine: 
+pucker up tinted lip oil: 
+punchy: 
+red hot: 
+relove baby gloss lip gloss babe: 
+rimmel red: 
+rosy nude 020: 
+rouge edition velvet t01 personne ne rouge: 
+roxxsaurus ride or die lip collection: 
+ruby shimmer: 
+salmon pink: 
+shine shine shine lipgloss 01: 
+shine shine shine lipgloss 03: 
+so peachy: 
+soft brown 010: 
+soft matte lip cream liquid lipstick- 06 istanbul: 
+spooky bomb shiny lipgloss 01: 
+starlight: 
+stay 8h matte liquid lipstick 02: 
+stay 8h matte liquid lipstick 04: 
+stay 8h matte liquid lipstick 05: 
+stay 8h matte liquid lipstick 06: 
+stay matte liquid lip colour 220 urban affair: 
+stay matte liquid lip colour 703 vanilla lovin: 
+stay matte liquid lip colour 705 stripped: 
+stay matte liquid lip colour 706 raw embrace: 
+stay matte liquid lip colour 731 scandalous: 
+stay matte liquid lip colour 733 plunge: 
+stay matte liquid lip colour 860 trust you: 
+stay matte liquid lip colour 870 devotion: 
+stay matte liquied lip color 710 latte to go: 
+stay matte liquied lip color 840 pitch black: 
+stay matte liquied lip color 850 shadow: 
+strawberry milk: 
+strip it off: 
+sugar plum mauve: 
+superstay liquid lipstick twin pack: 
+sweet peach: 
+sweet rose: 
+t04 peach club: 
+t07 nude-ist: 
+t09 happy nude: 
+t11 so hap pink: 
+t12 beau brun: 
+t29 trendy violine: 
+tinted kiss hydrating lip tint 03: 
+tinted kiss hydrating lip tint 102: 
+tinted kiss hydrating lip tint 106: 
+tinted kiss hydrating lip tint 107: 
+toffee nude: 
+touch of taupe 060: 
+undressed: 
+unrivaled: 
+vanila mint: 
+vaseline moisturize & repair lip balm: 
+vinyl ink liquid lipstick twin pack: 
+vitamin c: 
+volumizing collagen vegan lip balm: 
+what the fake! extreme pluming lip filler: 
+what the fake! extreme plumping lip filler 02: 
+what the fake! extreme plumping lip filler 03: 
+wine: 
+witty: 
+xxpose me: 

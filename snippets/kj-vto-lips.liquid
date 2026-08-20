@@ -12,23 +12,11 @@
 {%- liquid
   assign current_variant = product.selected_or_first_available_variant
 
-  # Which products get the try-on. Tag-driven so it can be controlled from the
-  # admin, with the old type/title heuristic kept as a fallback:
-  #   tag "vto"    -> force on  (use for anything the rules below miss)
-  #   tag "no-vto" -> force off (opt a product out)
-  #   tag "Lips" / "Lipstick" / "Lip Gloss" / "Lips_*" -> on
+  # Which products get the try-on -- explicitly tag-driven:
+  #   tag "vto"    -> on
+  #   tag "no-vto" -> off (wins over everything)
   assign is_lip = false
-  assign type_l = product.type | downcase
-  assign title_l = product.title | downcase
   assign tags_l = product.tags | join: '|' | downcase | prepend: '|' | append: '|'
-
-  if tags_l contains '|lips|' or tags_l contains '|lipstick|' or tags_l contains '|lip gloss|' or tags_l contains '|lip liner|' or tags_l contains '|lips_'
-    assign is_lip = true
-  endif
-
-  if type_l contains 'lip' or title_l contains 'lipstick' or title_l contains 'lip gloss' or title_l contains 'lip liner' or title_l contains 'lip crayon'
-    assign is_lip = true
-  endif
 
   if tags_l contains '|vto|'
     assign is_lip = true
