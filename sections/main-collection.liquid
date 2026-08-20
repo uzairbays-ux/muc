@@ -332,8 +332,17 @@
     padding-block: 8px;
   }
 
-  /* The custom mega-menu is position:relative with z-index:auto, so the sticky
-     filters bar (z-index 5) covers it on hover. Lift the menu above the bar. */
+  /* The header section is its own stacking context at z-index 4, so the menu
+     and its submenus are capped below that no matter how high their own
+     z-index is -- the sticky filters bar (z-index 5) sits at the root and wins.
+     Raise the header's context above the bar; the inner values then apply
+     within it. */
+  .header-section,
+  .shopify-section-group-header-group {
+    z-index: 10;
+    position: relative;
+  }
+
   .mega-menu,
   .menu-list__submenu {
     z-index: 20;
