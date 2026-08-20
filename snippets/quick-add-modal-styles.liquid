@@ -419,6 +419,13 @@
     *:not(
       .group-block,
       .group-block-content,
+      /* Wrappers the theme adds around blocks for mobile ordering: allow the
+         ones holding allowlisted content, otherwise the wrapper is hidden and
+         takes the variant picker (shade swatches) down with it. */
+      .block-mobile-order:has(variant-picker),
+      .block-mobile-order:has(product-price),
+      .block-mobile-order:has(.buy-buttons-block),
+      .block-mobile-order:has(.view-product-title),
       .buy-buttons-block,
       .buy-buttons-block *,
       .view-product-title,
