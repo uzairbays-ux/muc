@@ -1,42 +1,28 @@
 {%- comment -%}
-  Collection page header — responsive collection image, breadcrumb,
-  left-aligned title and product count.
+  Collection page header — collection image from custom.collection_image,
+  breadcrumb, left-aligned title and product count.
 {%- endcomment -%}
 
 <div class="kj-collection-header">
 
-  {%- if collection.image != blank -%}
+  {%- if collection.metafields.custom.collection_image != blank -%}
     <div class="kj-collection-header__image">
-      <picture>
-        <source
-          media="(max-width: 749px)"
-          srcset="
-            {{ collection.image | image_url: width: 750 }} 1x,
-            {{ collection.image | image_url: width: 1500 }} 2x
-          "
-        >
-        <img
-          src="{{ collection.image | image_url: width: 1600 }}"
-          srcset="
-            {{ collection.image | image_url: width: 1600 }} 1x,
-            {{ collection.image | image_url: width: 2400 }} 1.5x
-          "
-          alt="{{ collection.image.alt | default: collection.title | escape }}"
-          width="{{ collection.image.width }}"
-          height="{{ collection.image.height }}"
-          loading="eager"
-        >
-      </picture>
+      {{
+        collection.metafields.custom.collection_image
+        | image_url: width: 2000
+        | image_tag:
+          loading: 'eager',
+          widths: '375, 550, 750, 1100, 1500, 2000',
+          sizes: '100vw',
+          alt: collection.title
+      }}
     </div>
   {%- endif -%}
 
   <nav class="kj-collection-header__crumbs" aria-label="breadcrumb">
     <a href="{{ routes.root_url }}">Home</a>
     <span class="kj-collection-header__sep" aria-hidden="true">&rsaquo;</span>
-    <span
-      class="kj-collection-header__current"
-      aria-current="page"
-    >
+    <span class="kj-collection-header__current" aria-current="page">
       {{ collection.title }}
     </span>
   </nav>
@@ -47,11 +33,7 @@
 
   <p class="kj-collection-header__count">
     {{ collection.products_count }}
-    {% if collection.products_count == 1 %}
-      product
-    {% else %}
-      products
-    {% endif %}
+    {% if collection.products_count == 1 %}product{% else %}products{% endif %}
   </p>
 
 </div>
@@ -62,24 +44,17 @@
     text-align: left;
   }
 
-  /* Collection image */
   .kj-collection-header__image {
     width: 100%;
     margin-bottom: 20px;
     overflow: hidden;
-    border-radius: 0;
   }
 
-  .kj-collection-header__image picture,
   .kj-collection-header__image img {
     display: block;
     width: 100%;
-  }
-
-  .kj-collection-header__image img {
     height: auto;
     max-width: 100%;
-    object-fit: cover;
   }
 
   .kj-collection-header__crumbs {
@@ -129,12 +104,6 @@
   @media screen and (max-width: 749px) {
     .kj-collection-header__image {
       margin-bottom: 16px;
-    }
-
-    .kj-collection-header__image img {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
     }
 
     .kj-collection-header__title {
