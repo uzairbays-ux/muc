@@ -1,52 +1,71 @@
-{%- comment -%}
-  Collection page header — collection image from custom.collection_image,
-  breadcrumb, left-aligned title and product count.
-{%- endcomment -%}
-
 <div class="kj-collection-header">
 
-  {%- if collection.metafields.custom.collection_image != blank -%}
-    <div class="kj-collection-header__image">
-      {{
-        collection.metafields.custom.collection_image
-        | image_url: width: 2000
-        | image_tag:
-          loading: 'eager',
-          widths: '375, 550, 750, 1100, 1500, 2000',
-          sizes: '100vw',
-          alt: collection.title
-      }}
+  <div class="kj-collection-header__content">
+
+    <div class="kj-collection-header__text">
+
+      <nav class="kj-collection-header__crumbs" aria-label="breadcrumb">
+        <a href="{{ routes.root_url }}">Home</a>
+        <span class="kj-collection-header__sep" aria-hidden="true">&rsaquo;</span>
+        <span class="kj-collection-header__current" aria-current="page">
+          {{ collection.title }}
+        </span>
+      </nav>
+
+      <h1 class="kj-collection-header__title">
+        {{ collection.title }}
+      </h1>
+
+      <p class="kj-collection-header__count">
+        {{ collection.products_count }}
+        {% if collection.products_count == 1 %}product{% else %}products{% endif %}
+      </p>
+
     </div>
-  {%- endif -%}
 
-  <nav class="kj-collection-header__crumbs" aria-label="breadcrumb">
-    <a href="{{ routes.root_url }}">Home</a>
-    <span class="kj-collection-header__sep" aria-hidden="true">&rsaquo;</span>
-    <span class="kj-collection-header__current" aria-current="page">
-      {{ collection.title }}
-    </span>
-  </nav>
+    {%- if collection.metafields.custom.collection_image != blank -%}
+      <div class="kj-collection-header__image">
+        {{
+          collection.metafields.custom.collection_image
+          | image_url: width: 2000
+          | image_tag:
+            loading: 'eager',
+            widths: '375, 550, 750, 1100, 1500, 2000',
+            sizes: '(max-width: 749px) 100vw, 50vw',
+            alt: collection.title
+        }}
+      </div>
+    {%- endif -%}
 
-  <h1 class="kj-collection-header__title">
-    {{ collection.title }}
-  </h1>
-
-  <p class="kj-collection-header__count">
-    {{ collection.products_count }}
-    {% if collection.products_count == 1 %}product{% else %}products{% endif %}
-  </p>
+  </div>
 
 </div>
 
 {% stylesheet %}
   .kj-collection-header {
     width: 100%;
+  }
+
+  /* Two groups */
+  .kj-collection-header__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    width: 100%;
+  }
+
+  /* Group 1: Breadcrumb + title + count */
+  .kj-collection-header__text {
+    flex: 1 1 50%;
+    min-width: 0;
     text-align: left;
   }
 
+  /* Group 2: Collection image */
   .kj-collection-header__image {
-    width: 100%;
-    margin-bottom: 20px;
+    flex: 1 1 50%;
+    min-width: 0;
     overflow: hidden;
   }
 
@@ -101,9 +120,18 @@
     color: #8a8a8a;
   }
 
+  /* Mobile: text on top, image below */
   @media screen and (max-width: 749px) {
+    .kj-collection-header__content {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 20px;
+    }
+
+    .kj-collection-header__text,
     .kj-collection-header__image {
-      margin-bottom: 16px;
+      flex: none;
+      width: 100%;
     }
 
     .kj-collection-header__title {
