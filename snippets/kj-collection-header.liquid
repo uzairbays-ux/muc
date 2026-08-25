@@ -1,27 +1,85 @@
 {%- comment -%}
-  Collection page header — breadcrumb, left-aligned title, product count.
-  Replaces the old centered <h2> heading. Rendered via a custom-liquid block
-  in templates/collection.json. Uses the global `collection` object (present
-  on collection templates).
+  Collection page header — responsive collection image, breadcrumb,
+  left-aligned title and product count.
 {%- endcomment -%}
+
 <div class="kj-collection-header">
+
+  {%- if collection.image != blank -%}
+    <div class="kj-collection-header__image">
+      <picture>
+        <source
+          media="(max-width: 749px)"
+          srcset="
+            {{ collection.image | image_url: width: 750 }} 1x,
+            {{ collection.image | image_url: width: 1500 }} 2x
+          "
+        >
+        <img
+          src="{{ collection.image | image_url: width: 1600 }}"
+          srcset="
+            {{ collection.image | image_url: width: 1600 }} 1x,
+            {{ collection.image | image_url: width: 2400 }} 1.5x
+          "
+          alt="{{ collection.image.alt | default: collection.title | escape }}"
+          width="{{ collection.image.width }}"
+          height="{{ collection.image.height }}"
+          loading="eager"
+        >
+      </picture>
+    </div>
+  {%- endif -%}
+
   <nav class="kj-collection-header__crumbs" aria-label="breadcrumb">
     <a href="{{ routes.root_url }}">Home</a>
     <span class="kj-collection-header__sep" aria-hidden="true">&rsaquo;</span>
-    <span class="kj-collection-header__current" aria-current="page">{{ collection.title }}</span>
+    <span
+      class="kj-collection-header__current"
+      aria-current="page"
+    >
+      {{ collection.title }}
+    </span>
   </nav>
 
-  <h1 class="kj-collection-header__title">{{ collection.title }}</h1>
+  <h1 class="kj-collection-header__title">
+    {{ collection.title }}
+  </h1>
 
   <p class="kj-collection-header__count">
-    {{ collection.products_count }} {% if collection.products_count == 1 %}product{% else %}products{% endif %}
+    {{ collection.products_count }}
+    {% if collection.products_count == 1 %}
+      product
+    {% else %}
+      products
+    {% endif %}
   </p>
+
 </div>
 
 {% stylesheet %}
   .kj-collection-header {
     width: 100%;
     text-align: left;
+  }
+
+  /* Collection image */
+  .kj-collection-header__image {
+    width: 100%;
+    margin-bottom: 20px;
+    overflow: hidden;
+    border-radius: 0;
+  }
+
+  .kj-collection-header__image picture,
+  .kj-collection-header__image img {
+    display: block;
+    width: 100%;
+  }
+
+  .kj-collection-header__image img {
+    height: auto;
+    max-width: 100%;
+    object-fit: cover;
   }
 
   .kj-collection-header__crumbs {
@@ -69,8 +127,26 @@
   }
 
   @media screen and (max-width: 749px) {
+    .kj-collection-header__image {
+      margin-bottom: 16px;
+    }
+
+    .kj-collection-header__image img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
     .kj-collection-header__title {
       font-size: 1.625rem;
+    }
+
+    .kj-collection-header__crumbs {
+      font-size: 0.75rem;
+    }
+
+    .kj-collection-header__count {
+      font-size: 0.875rem;
     }
   }
 {% endstylesheet %}
