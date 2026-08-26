@@ -155,8 +155,26 @@
           "type": "card",
           "name": "ST London",
           "settings": {
-            "image": "shopify://shop_images/500-x-500_6_99f042fc-9677-4e7d-911b-89a3399aa28b.png",
+            "image": "shopify://shop_images/ST_London_Voucher.webp",
             "link": "shopify://collections/st-london",
+            "open_new_tab": false
+          }
+        },
+        "card_ftKGeC": {
+          "type": "card",
+          "name": "Kryolan",
+          "settings": {
+            "image": "shopify://shop_images/Kryolan_Voucher.webp",
+            "link": "shopify://collections/kryolan",
+            "open_new_tab": false
+          }
+        },
+        "card_LJWfzX": {
+          "type": "card",
+          "name": "Framesi",
+          "settings": {
+            "image": "shopify://shop_images/Janssen_Voucher.webp",
+            "link": "shopify://collections/janssen",
             "open_new_tab": false
           }
         },
@@ -184,26 +202,6 @@
           "settings": {
             "image": "shopify://shop_images/ELF_26244392-3775-4a00-99b2-da2c3935a0b5.png",
             "link": "shopify://collections/elf",
-            "open_new_tab": false
-          }
-        },
-        "card_LJWfzX": {
-          "type": "card",
-          "name": "Framesi",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/Framesi-New-Banner-02a_jpg.jpg",
-            "link": "shopify://collections/framesi",
-            "open_new_tab": false
-          }
-        },
-        "card_ftKGeC": {
-          "type": "card",
-          "name": "Kryolan",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/Kryolan_9851d2b3-d068-4989-8669-d160851dbd19.jpg",
-            "link": "shopify://collections/kryolan",
             "open_new_tab": false
           }
         },
@@ -237,11 +235,11 @@
       },
       "block_order": [
         "card_x4i8pi",
+        "card_ftKGeC",
+        "card_LJWfzX",
         "card_G4PiLa",
         "card_YUtaR6",
         "card_7Rimtd",
-        "card_LJWfzX",
-        "card_ftKGeC",
         "card_nbr3cj",
         "card_hxUFFx",
         "card_b9F39r"
@@ -649,7 +647,7 @@
         "card_CaecqX": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/Kryolan_9851d2b3-d068-4989-8669-d160851dbd19.jpg",
+            "image": "shopify://shop_images/Kryolan_Voucher.webp",
             "link": "shopify://collections/kryolan",
             "open_new_tab": false
           }
@@ -657,7 +655,7 @@
         "card_QQLjCx": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/Framesi_abe05acc-8669-4c35-b030-419f0d6e48a2.jpg",
+            "image": "shopify://shop_images/Framesi-New-Banner-02_jpg.jpg",
             "link": "shopify://collections/framesi",
             "open_new_tab": false
           }
