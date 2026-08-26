@@ -1,0 +1,109 @@
+{%- comment -%}
+  Brand promo milestones for the cart (drawer + cart page).
+
+  Each promo is "collection_handle|threshold|code|amount_off|label". Membership
+  is checked by COLLECTION because that is what the discount targets, and the
+  running total uses original_line_price because Shopify measures the minimum
+  against the pre-discount subtotal (verified against /cart.js).
+
+  Only one code applies per order (all promos are non-combinable), so when more
+  than one is unlocked we point at the highest-value one.
+{%- endcomment -%}
+
+{%- liquid
+  assign promos = 'st-london|9999|stlondon2000|2000|ST London,kryolan|9999|kryolan1500|1500|Kryolan,janssen|14999|janssen1500|1500|Janssen' | split: ','
+
+  assign applied = ''
+  for d in cart.discount_applications
+    assign applied = applied | append: '|' | append: d.title | downcase
+  endfor
+  assign applied = applied | append: '|'
+
+  assign unlocked_count = 0
+  assign best_value = 0
+  assign best_code = ''
+-%}
+
+{%- unless cart.empty? -%}
+  {%- capture rows -%}
+    {%- for promo in promos -%}
+      {%- assign p = promo | split: '|' -%}
+      {%- assign handle = p[0] -%}
+      {%- assign threshold = p[1] | times: 100 -%}
+      {%- assign code = p[2] -%}
+      {%- assign amount = p[3] | times: 100 -%}
+      {%- assign label = p[4] -%}
+
+      {%- assign brand_total = 0 -%}
+      {%- for item in cart.items -%}
+        {%- for c in item.product.collections -%}
+          {%- if c.handle == handle -%}
+            {%- assign brand_total = brand_total | plus: item.original_line_price -%}
+            {%- break -%}
+          {%- endif -%}
+        {%- endfor -%}
+      {%- endfor -%}
+
+      {%- comment -%} Only surface a promo once its brand is actually in the cart. {%- endcomment -%}
+      {%- if brand_total > 0 -%}
+        {%- assign pct = brand_total | times: 100 | divided_by: threshold -%}
+        {%- if pct > 100 -%}{%- assign pct = 100 -%}{%- endif -%}
+        {%- assign remaining = threshold | minus: brand_total -%}
+        {%- assign code_probe = '|' | append: code | append: '|' -%}
+        {%- assign is_applied = false -%}
+        {%- if applied contains code -%}{%- assign is_applied = true -%}{%- endif -%}
+
+        <div class="kj-ms{% if remaining <= 0 %} kj-ms--won{% endif %}" data-kj-ms-code="{{ code }}">
+          <div class="kj-ms__top">
+            <span class="kj-ms__label">{{ label }}</span>
+            {%- if remaining <= 0 -%}
+              {%- if is_applied -%}
+                <span class="kj-ms__state kj-ms__state--on">{{ amount | money }} off applied</span>
+              {%- else -%}
+                <button type="button" class="kj-ms__apply" data-kj-ms-apply="{{ code }}">Apply {{ amount | money }} off</button>
+              {%- endif -%}
+            {%- else -%}
+              <span class="kj-ms__state">Save {{ amount | money }}</span>
+            {%- endif -%}
+          </div>
+          <div class="kj-ms__bar"><span style="width: {{ pct }}%;"></span></div>
+          <p class="kj-ms__note">
+            {%- if remaining <= 0 -%}
+              Unlocked — {{ amount | money }} off {{ label }}
+            {%- else -%}
+              Add {{ remaining | money }} more of {{ label }} to save {{ amount | money }}
+            {%- endif -%}
+          </p>
+        </div>
+      {%- endif -%}
+    {%- endfor -%}
+  {%- endcapture -%}
+
+  {%- if rows contains 'kj-ms' -%}
+    <div class="kj-ms-wrap">
+      {{ rows }}
+      {%- comment -%} Non-combinable: warn only when two or more are unlocked. {%- endcomment -%}
+      {%- assign won_count = rows | split: 'kj-ms--won' | size | minus: 1 -%}
+      {%- if won_count > 1 -%}
+        <p class="kj-ms__single">Only one promo code can be used per order — pick the best one.</p>
+      {%- endif -%}
+    </div>
+  {%- endif -%}
+{%- endunless -%}
+
+<script>
+  (function () {
+    if (window.__kjMs) return;
+    window.__kjMs = true;
+    document.addEventListener('click', function (e) {
+      var b = e.target.closest && e.target.closest('[data-kj-ms-apply]');
+      if (!b) return;
+      e.preventDefault();
+      b.disabled = true;
+      b.textContent = 'Applying…';
+      // Shopify has no Ajax endpoint for discount codes; /discount/<code>
+      // attaches it to the session and carries through to checkout.
+      window.location.href = '/discount/' + encodeURIComponent(b.getAttribute('data-kj-ms-apply')) + '?redirect=/cart';
+    });
+  })();
+</script>

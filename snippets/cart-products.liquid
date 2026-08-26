@@ -66,6 +66,8 @@
       id="cart-form"
       method="post"
     >
+      {% render 'kj-cart-milestones' %}
+
       <div
         class="cart-items spacing-style{% if block_settings.dividers %} cart-items--dividers{% endif %}"
         style="{%  render 'spacing-style', settings: block_settings %} --cart-items-gap:{{ block_settings.gap | append: "px" }};"
@@ -384,6 +386,70 @@
 </div>
 
 {% stylesheet %}
+  /* Brand promo milestones (drawer + cart page). */
+  .kj-ms-wrap { display: flex; flex-direction: column; gap: 10px; margin: 0 0 14px; }
+
+  .kj-ms {
+    padding: 10px 12px;
+    border: 1px solid rgba(0, 19, 37, 0.12);
+    border-radius: 10px;
+    background: #fff;
+  }
+
+  .kj-ms--won { border-color: #bfe6cd; background: #f2fbf6; }
+
+  .kj-ms__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 7px;
+  }
+
+  .kj-ms__label { font-size: 12px; font-weight: 700; color: #001325; }
+  .kj-ms__state { font-size: 11px; color: rgba(0, 19, 37, 0.6); }
+  .kj-ms__state--on { color: #068743; font-weight: 600; }
+
+  .kj-ms__apply {
+    padding: 5px 12px;
+    border: none;
+    border-radius: 999px;
+    background: #068743;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .kj-ms__apply[disabled] { opacity: 0.65; cursor: default; }
+
+  .kj-ms__bar {
+    height: 6px;
+    border-radius: 999px;
+    background: rgba(0, 19, 37, 0.09);
+    overflow: hidden;
+  }
+
+  .kj-ms__bar > span {
+    display: block;
+    height: 100%;
+    border-radius: 999px;
+    background: #068743;
+    transition: width 0.35s ease;
+  }
+
+  .kj-ms__note { margin: 7px 0 0; font-size: 11px; line-height: 15px; color: rgba(0, 19, 37, 0.7); }
+
+  .kj-ms__single {
+    margin: 0;
+    font-size: 11px;
+    color: #7a5606;
+    background: #fff6e5;
+    border: 1px solid #f0d9a8;
+    border-radius: 8px;
+    padding: 7px 10px;
+  }
+
   .cart-items {
     --cart-item-media-width-min: 2.5rem;
     --cart-item-media-width-max: 7.5rem;
