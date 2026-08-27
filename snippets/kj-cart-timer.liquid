@@ -1,0 +1,84 @@
+{%- comment -%}
+  "Cart reserved" countdown for the cart drawer / cart page.
+
+  Note: Shopify does not hold stock until checkout completes, so this is a
+  nudge, not a guarantee -- the copy says "held" rather than promising the
+  items cannot sell out. The deadline is stored per cart token in
+  localStorage so it survives re-renders and page loads instead of restarting
+  every time the drawer opens, and it resets when the cart changes.
+{%- endcomment -%}
+
+{%- unless cart.empty? -%}
+  <div class="kj-timer" data-kj-timer data-cart-token="{{ cart.token }}" data-minutes="15" hidden>
+    <svg viewBox="0 0 24 24" width="15" height="15" fill="none" aria-hidden="true">
+      <circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.6"></circle>
+      <path d="M12 7.6V12l2.8 1.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+    </svg>
+    <span class="kj-timer__text">
+      Your cart is held for <strong data-kj-timer-clock>15:00</strong>
+    </span>
+  </div>
+
+  <script>
+    (function () {
+      if (window.__kjCartTimer) return;
+      window.__kjCartTimer = true;
+
+      var MS = 60 * 1000;
+      var tick = null;
+
+      function key(token) { return 'kj-cart-deadline:' + token; }
+
+      function deadlineFor(el) {
+        var token = el.getAttribute('data-cart-token') || 'cart';
+        var mins = parseInt(el.getAttribute('data-minutes'), 10) || 15;
+        var k = key(token);
+        var saved;
+        try { saved = parseInt(localStorage.getItem(k), 10); } catch (e) { saved = null; }
+        // A new cart token (contents changed) starts a fresh window.
+        if (!saved || isNaN(saved) || saved < Date.now()) {
+          saved = Date.now() + mins * MS;
+          try {
+            localStorage.setItem(k, String(saved));
+            // Drop deadlines for older carts so the key does not accumulate.
+            for (var i = localStorage.length - 1; i >= 0; i--) {
+              var kk = localStorage.key(i);
+              if (kk && kk.indexOf('kj-cart-deadline:') === 0 && kk !== k) localStorage.removeItem(kk);
+            }
+          } catch (e) {}
+        }
+        return saved;
+      }
+
+      function paint() {
+        var el = document.querySelector('[data-kj-timer]');
+        if (!el) { if (tick) { clearInterval(tick); tick = null; } return; }
+        var clock = el.querySelector('[data-kj-timer-clock]');
+        var left = deadlineFor(el) - Date.now();
+        el.hidden = false;
+        if (left <= 0) {
+          el.classList.add('kj-timer--out');
+          if (clock) clock.textContent = '0:00';
+          el.querySelector('.kj-timer__text').innerHTML = 'Checkout soon — items in your cart are in high demand';
+          return;
+        }
+        var total = Math.round(left / 1000);
+        var m = Math.floor(total / 60);
+        var s = total % 60;
+        if (clock) clock.textContent = m + ':' + (s < 10 ? '0' : '') + s;
+      }
+
+      function start() {
+        paint();
+        if (!tick) tick = setInterval(paint, 1000);
+      }
+
+      start();
+      document.addEventListener('DOMContentLoaded', start);
+      // The cart drawer replaces its markup on every update; re-attach then.
+      new MutationObserver(function () {
+        if (document.querySelector('[data-kj-timer]')) start();
+      }).observe(document.documentElement, { childList: true, subtree: true });
+    })();
+  </script>
+{%- endunless -%}

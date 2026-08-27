@@ -7,24 +7,63 @@
   against the pre-discount subtotal (verified against /cart.js).
 
   Only one code applies per order (all promos are non-combinable), so when more
-  than one is unlocked we point at the highest-value one.
+  than one is unlocked we name the highest-value one.
 {%- endcomment -%}
 
 {%- liquid
   assign promos = 'st-london|9999|stlondon2000|2000|ST London,kryolan|9999|kryolan1500|1500|Kryolan,janssen|14999|janssen1500|1500|Janssen' | split: ','
+  assign promo_handles = '|st-london|kryolan|janssen|'
 
-  assign applied = ''
+  # Applied codes, pipe-delimited so a probe cannot match a substring of a
+  # longer discount title.
+  assign applied = '|'
   for d in cart.discount_applications
-    assign applied = applied | append: '|' | append: d.title | downcase
+    assign applied = applied | append: d.title | downcase | append: '|'
   endfor
-  assign applied = applied | append: '|'
 
-  assign unlocked_count = 0
-  assign best_value = 0
-  assign best_code = ''
+  # One scan of the cart. Only promo collections are recorded, so `hits` stays
+  # at most one short entry per line item instead of every collection a product
+  # belongs to.
+  assign hits = ''
+  for item in cart.items
+    for c in item.product.collections
+      assign c_probe = '|' | append: c.handle | append: '|'
+      if promo_handles contains c_probe
+        assign hits = hits | append: c.handle | append: ':' | append: item.original_line_price | append: ';'
+      endif
+    endfor
+  endfor
+  assign hit_list = hits | split: ';'
 -%}
 
 {%- unless cart.empty? -%}
+  {%- liquid
+    # First pass: find the most valuable unlocked promo, so the "one code only"
+    # note can name it.
+    assign best_label = ''
+    assign best_amount = 0
+    assign won_count = 0
+    for promo in promos
+      assign p = promo | split: '|'
+      assign total = 0
+      for hit in hit_list
+        assign hp = hit | split: ':'
+        if hp[0] == p[0]
+          assign total = total | plus: hp[1]
+        endif
+      endfor
+      assign threshold = p[1] | times: 100
+      if total >= threshold
+        assign won_count = won_count | plus: 1
+        assign amount = p[3] | times: 100
+        if amount > best_amount
+          assign best_amount = amount
+          assign best_label = p[4]
+        endif
+      endif
+    endfor
+  -%}
+
   {%- capture rows -%}
     {%- for promo in promos -%}
       {%- assign p = promo | split: '|' -%}
@@ -35,13 +74,11 @@
       {%- assign label = p[4] -%}
 
       {%- assign brand_total = 0 -%}
-      {%- for item in cart.items -%}
-        {%- for c in item.product.collections -%}
-          {%- if c.handle == handle -%}
-            {%- assign brand_total = brand_total | plus: item.original_line_price -%}
-            {%- break -%}
-          {%- endif -%}
-        {%- endfor -%}
+      {%- for hit in hit_list -%}
+        {%- assign hp = hit | split: ':' -%}
+        {%- if hp[0] == handle -%}
+          {%- assign brand_total = brand_total | plus: hp[1] -%}
+        {%- endif -%}
       {%- endfor -%}
 
       {%- comment -%} Only surface a promo once its brand is actually in the cart. {%- endcomment -%}
@@ -51,7 +88,7 @@
         {%- assign remaining = threshold | minus: brand_total -%}
         {%- assign code_probe = '|' | append: code | append: '|' -%}
         {%- assign is_applied = false -%}
-        {%- if applied contains code -%}{%- assign is_applied = true -%}{%- endif -%}
+        {%- if applied contains code_probe -%}{%- assign is_applied = true -%}{%- endif -%}
 
         <div class="kj-ms{% if remaining <= 0 %} kj-ms--won{% endif %}" data-kj-ms-code="{{ code }}">
           <div class="kj-ms__top">
@@ -82,10 +119,8 @@
   {%- if rows contains 'kj-ms' -%}
     <div class="kj-ms-wrap">
       {{ rows }}
-      {%- comment -%} Non-combinable: warn only when two or more are unlocked. {%- endcomment -%}
-      {%- assign won_count = rows | split: 'kj-ms--won' | size | minus: 1 -%}
       {%- if won_count > 1 -%}
-        <p class="kj-ms__single">Only one promo code can be used per order — pick the best one.</p>
+        <p class="kj-ms__single">Only one promo code can be used per order — {{ best_label }} saves you the most ({{ best_amount | money }}).</p>
       {%- endif -%}
     </div>
   {%- endif -%}
@@ -95,10 +130,23 @@
   (function () {
     if (window.__kjMs) return;
     window.__kjMs = true;
+
+    function reset() {
+      document.querySelectorAll('[data-kj-ms-apply]').forEach(function (b) {
+        if (!b.dataset.kjLabel) return;
+        b.disabled = false;
+        b.textContent = b.dataset.kjLabel;
+      });
+    }
+    // Restore the button if the shopper comes back via bfcache/back button,
+    // otherwise it stays stuck on "Applying…".
+    window.addEventListener('pageshow', reset);
+
     document.addEventListener('click', function (e) {
       var b = e.target.closest && e.target.closest('[data-kj-ms-apply]');
       if (!b) return;
       e.preventDefault();
+      b.dataset.kjLabel = b.textContent.trim();
       b.disabled = true;
       b.textContent = 'Applying…';
       // Shopify has no Ajax endpoint for discount codes; /discount/<code>

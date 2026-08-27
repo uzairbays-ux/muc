@@ -66,6 +66,7 @@
       id="cart-form"
       method="post"
     >
+      {% render 'kj-cart-timer' %}
       {% render 'kj-cart-milestones' %}
 
       <div
@@ -386,6 +387,31 @@
 </div>
 
 {% stylesheet %}
+  /* "Cart held" countdown. */
+  .kj-timer {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin: 0 0 10px;
+    padding: 8px 11px;
+    border-radius: 8px;
+    background: rgba(0, 19, 37, 0.045);
+    color: rgba(0, 19, 37, 0.78);
+    font-size: 11.5px;
+    line-height: 16px;
+  }
+
+  .kj-timer[hidden] { display: none; }
+  .kj-timer svg { flex-shrink: 0; color: #068743; }
+  .kj-timer strong { font-variant-numeric: tabular-nums; color: #001325; }
+
+  .kj-timer--out {
+    background: #fff6e5;
+    color: #7a5606;
+  }
+
+  .kj-timer--out svg { color: #c8901a; }
+
   /* Brand promo milestones (drawer + cart page). */
   .kj-ms-wrap { display: flex; flex-direction: column; gap: 10px; margin: 0 0 14px; }
 
