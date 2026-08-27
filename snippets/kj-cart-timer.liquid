@@ -52,33 +52,34 @@
 
       function paint() {
         var el = document.querySelector('[data-kj-timer]');
-        if (!el) { if (tick) { clearInterval(tick); tick = null; } return; }
+        if (!el) return;   // cart emptied or markup swapped out; keep ticking
         var clock = el.querySelector('[data-kj-timer-clock]');
+        var text = el.querySelector('.kj-timer__text');
         var left = deadlineFor(el) - Date.now();
-        el.hidden = false;
+        if (el.hidden) el.hidden = false;
+
         if (left <= 0) {
-          el.classList.add('kj-timer--out');
-          if (clock) clock.textContent = '0:00';
-          el.querySelector('.kj-timer__text').innerHTML = 'Checkout soon — items in your cart are in high demand';
+          if (!el.classList.contains('kj-timer--out')) {
+            el.classList.add('kj-timer--out');
+            if (text) text.textContent = 'Checkout soon — items in your cart are in high demand';
+          }
           return;
         }
+
         var total = Math.round(left / 1000);
-        var m = Math.floor(total / 60);
-        var s = total % 60;
-        if (clock) clock.textContent = m + ':' + (s < 10 ? '0' : '') + s;
+        var label = Math.floor(total / 60) + ':' + (total % 60 < 10 ? '0' : '') + (total % 60);
+        // Only write when the value actually changes: this element is inside the
+        // cart drawer, and a needless write on every tick causes pointless work.
+        if (clock && clock.textContent !== label) clock.textContent = label;
       }
 
-      function start() {
-        paint();
-        if (!tick) tick = setInterval(paint, 1000);
-      }
-
-      start();
-      document.addEventListener('DOMContentLoaded', start);
-      // The cart drawer replaces its markup on every update; re-attach then.
-      new MutationObserver(function () {
-        if (document.querySelector('[data-kj-timer]')) start();
-      }).observe(document.documentElement, { childList: true, subtree: true });
+      // A single interval re-queries the element each tick, so it survives the
+      // drawer replacing its markup. Deliberately NOT a MutationObserver:
+      // paint() writes to the DOM, so observing document mutations made it
+      // re-enter itself and lock up the page.
+      paint();
+      setInterval(paint, 1000);
+      document.addEventListener('DOMContentLoaded', paint);
     })();
   </script>
 {%- endunless -%}
