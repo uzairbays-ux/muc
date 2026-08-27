@@ -9,7 +9,7 @@
 {%- endcomment -%}
 
 {%- unless cart.empty? -%}
-  <div class="kj-timer" data-kj-timer data-cart-token="{{ cart.token }}" data-minutes="15" hidden>
+  <div class="kj-timer" data-kj-timer data-cart-token="{{ cart.token }}" data-minutes="15">
     <svg viewBox="0 0 24 24" width="15" height="15" fill="none" aria-hidden="true">
       <circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.6"></circle>
       <path d="M12 7.6V12l2.8 1.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
@@ -19,67 +19,4 @@
     </span>
   </div>
 
-  <script>
-    (function () {
-      if (window.__kjCartTimer) return;
-      window.__kjCartTimer = true;
-
-      var MS = 60 * 1000;
-      var tick = null;
-
-      function key(token) { return 'kj-cart-deadline:' + token; }
-
-      function deadlineFor(el) {
-        var token = el.getAttribute('data-cart-token') || 'cart';
-        var mins = parseInt(el.getAttribute('data-minutes'), 10) || 15;
-        var k = key(token);
-        var saved;
-        try { saved = parseInt(localStorage.getItem(k), 10); } catch (e) { saved = null; }
-        // A new cart token (contents changed) starts a fresh window.
-        if (!saved || isNaN(saved) || saved < Date.now()) {
-          saved = Date.now() + mins * MS;
-          try {
-            localStorage.setItem(k, String(saved));
-            // Drop deadlines for older carts so the key does not accumulate.
-            for (var i = localStorage.length - 1; i >= 0; i--) {
-              var kk = localStorage.key(i);
-              if (kk && kk.indexOf('kj-cart-deadline:') === 0 && kk !== k) localStorage.removeItem(kk);
-            }
-          } catch (e) {}
-        }
-        return saved;
-      }
-
-      function paint() {
-        var el = document.querySelector('[data-kj-timer]');
-        if (!el) return;   // cart emptied or markup swapped out; keep ticking
-        var clock = el.querySelector('[data-kj-timer-clock]');
-        var text = el.querySelector('.kj-timer__text');
-        var left = deadlineFor(el) - Date.now();
-        if (el.hidden) el.hidden = false;
-
-        if (left <= 0) {
-          if (!el.classList.contains('kj-timer--out')) {
-            el.classList.add('kj-timer--out');
-            if (text) text.textContent = 'Checkout soon — items in your cart are in high demand';
-          }
-          return;
-        }
-
-        var total = Math.round(left / 1000);
-        var label = Math.floor(total / 60) + ':' + (total % 60 < 10 ? '0' : '') + (total % 60);
-        // Only write when the value actually changes: this element is inside the
-        // cart drawer, and a needless write on every tick causes pointless work.
-        if (clock && clock.textContent !== label) clock.textContent = label;
-      }
-
-      // A single interval re-queries the element each tick, so it survives the
-      // drawer replacing its markup. Deliberately NOT a MutationObserver:
-      // paint() writes to the DOM, so observing document mutations made it
-      // re-enter itself and lock up the page.
-      paint();
-      setInterval(paint, 1000);
-      document.addEventListener('DOMContentLoaded', paint);
-    })();
-  </script>
 {%- endunless -%}
