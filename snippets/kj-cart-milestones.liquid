@@ -21,17 +21,22 @@
     assign applied = applied | append: d.title | downcase | append: '|'
   endfor
 
-  # One scan of the cart. Only promo collections are recorded, so `hits` stays
-  # at most one short entry per line item instead of every collection a product
-  # belongs to.
+  # One scan of the cart. product.collections is an expensive lookup, so it is
+  # only consulted for items whose vendor is one of the promo brands -- for a
+  # typical mixed cart that skips it entirely. Collection membership still
+  # decides eligibility, because that is what the discount targets.
+  assign promo_vendors = '|st london|kryolan|janssen|'
   assign hits = ''
   for item in cart.items
-    for c in item.product.collections
-      assign c_probe = '|' | append: c.handle | append: '|'
-      if promo_handles contains c_probe
-        assign hits = hits | append: c.handle | append: ':' | append: item.original_line_price | append: ';'
-      endif
-    endfor
+    assign v_probe = '|' | append: item.vendor | downcase | append: '|'
+    if promo_vendors contains v_probe
+      for c in item.product.collections
+        assign c_probe = '|' | append: c.handle | append: '|'
+        if promo_handles contains c_probe
+          assign hits = hits | append: c.handle | append: ':' | append: item.original_line_price | append: ';'
+        endif
+      endfor
+    endif
   endfor
   assign hit_list = hits | split: ';'
 -%}
