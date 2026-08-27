@@ -152,6 +152,20 @@
             continue
           endif
 
+          # muc: the cap above only skips *visible* slides -- variant images are
+          # flagged hidden after the first, so they slipped past it and a product
+          # with many shades rendered one slide per shade into every card (a
+          # 25-shade product produced ~50KB of unused markup per card). Card
+          # swatches were replaced with a "N Shades" label, so hidden variant
+          # images are never swapped in here. Cap the total instead.
+          if forloop.first
+            assign rendered_slide_count = 0
+          endif
+          if rendered_slide_count >= max_visible_slide_count
+            break
+          endif
+          assign rendered_slide_count = rendered_slide_count | plus: 1
+
           if forloop.first and section.index == null or section.index < 5
             assign loading = 'eager'
             assign sizes = image_sizes
