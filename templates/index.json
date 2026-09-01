@@ -834,7 +834,7 @@
           "type": "card",
           "name": "La Roche Posay",
           "settings": {
-            "image": "shopify://shop_images/la-roche-posay.jpg",
+            "image": "shopify://shop_images/lapoch.webp",
             "link": "shopify://collections/la-roche-posay",
             "open_new_tab": false
           }
