@@ -155,7 +155,7 @@
           "type": "card",
           "name": "ST London",
           "settings": {
-            "image": "shopify://shop_images/ST_London_Voucher.webp",
+            "image": "shopify://shop_images/500-x-500_6_99f042fc-9677-4e7d-911b-89a3399aa28b.png",
             "link": "shopify://collections/st-london",
             "open_new_tab": false
           }
@@ -648,7 +648,7 @@
         "card_CaecqX": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/Kryolan_Voucher.webp",
+            "image": "shopify://shop_images/Kryolan_9851d2b3-d068-4989-8669-d160851dbd19.jpg",
             "link": "shopify://collections/kryolan",
             "open_new_tab": false
           }
