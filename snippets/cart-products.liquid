@@ -67,7 +67,10 @@
       method="post"
     >
       {% render 'kj-cart-timer' %}
-      {% render 'kj-cart-milestones' %}
+      {%- comment -%}
+        Brand promo milestones are disabled. The snippet is still in
+        snippets/kj-cart-milestones.liquid -- to re-enable, render it here.
+      {%- endcomment -%}
 
       <div
         class="cart-items spacing-style{% if block_settings.dividers %} cart-items--dividers{% endif %}"
