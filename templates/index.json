@@ -826,10 +826,9 @@
         "card_AHQBXy": {
           "type": "card",
           "name": "La Roche Posay",
-          "disabled": true,
           "settings": {
-            "image": "shopify://shop_images/lapoch.webp",
-            "link": "shopify://collections/la-roche-posay",
+            "image": "shopify://shop_images/redrem.webp",
+            "link": "shopify://collections/rederm",
             "open_new_tab": false
           }
         },
