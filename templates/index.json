@@ -814,6 +814,15 @@
             "open_new_tab": false
           }
         },
+        "card_AHQBXy": {
+          "type": "card",
+          "name": "La Roche Posay",
+          "settings": {
+            "image": "shopify://shop_images/lapoch.webp",
+            "link": "shopify://collections/la-roche-posay",
+            "open_new_tab": false
+          }
+        },
         "card_dnezUz": {
           "type": "card",
           "settings": {
@@ -830,15 +839,6 @@
             "link": "shopify://collections/bath-body-works",
             "open_new_tab": false
           }
-        },
-        "card_AHQBXy": {
-          "type": "card",
-          "name": "La Roche Posay",
-          "settings": {
-            "image": "shopify://shop_images/lapoch.webp",
-            "link": "shopify://collections/la-roche-posay",
-            "open_new_tab": false
-          }
         }
       },
       "block_order": [
@@ -849,9 +849,9 @@
         "card_J3czmk",
         "card_gBiw68",
         "card_ceiizR",
+        "card_AHQBXy",
         "card_dnezUz",
-        "card_c49pAk",
-        "card_AHQBXy"
+        "card_c49pAk"
       ],
       "name": "Card grid",
       "settings": {
