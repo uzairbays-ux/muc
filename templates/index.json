@@ -198,6 +198,14 @@
             "open_new_tab": false
           }
         },
+        "card_7AwV3r": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/lapoch.webp",
+            "link": "shopify://collections/la-roche-posay",
+            "open_new_tab": false
+          }
+        },
         "card_YUtaR6": {
           "type": "card",
           "name": "Revolution",
@@ -241,6 +249,7 @@
         "card_LJWfzX",
         "card_G4PiLa",
         "card_hxUFFx",
+        "card_7AwV3r",
         "card_YUtaR6",
         "card_7Rimtd",
         "card_nbr3cj",
@@ -817,6 +826,7 @@
         "card_AHQBXy": {
           "type": "card",
           "name": "La Roche Posay",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/lapoch.webp",
             "link": "shopify://collections/la-roche-posay",
@@ -827,6 +837,15 @@
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/Oneskin_85aad774-9bc2-4aad-ab86-4f5bf0595328.jpg",
+            "link": "shopify://collections/oneskin",
+            "open_new_tab": false
+          }
+        },
+        "card_XXe7yi": {
+          "type": "card",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/redrem.webp",
             "link": "shopify://collections/oneskin",
             "open_new_tab": false
           }
@@ -851,6 +870,7 @@
         "card_ceiizR",
         "card_AHQBXy",
         "card_dnezUz",
+        "card_XXe7yi",
         "card_c49pAk"
       ],
       "name": "Card grid",
