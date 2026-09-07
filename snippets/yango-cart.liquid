@@ -1,0 +1,75 @@
+{% assign yango_app_id = 'b339afd3-9015-59d3-8c9b-6454080f5ded' %}
+{% assign extension_type = 'CheckoutBadgeCommon' %}
+{% assign extension_asset = 'CheckoutBadgeCommonExtension' %}
+{% assign adapter_slug = 'merchant_noosh' %}
+{% assign color_theme = 'light' %}
+
+{% assign yango_pay_origin = 'https://pay.yango.com' %}
+{% assign yango_shop_origin = 'https://shop.yango.com' %}
+{% assign extensions_origin =  'https://localhost:5175' %}
+{% assign extensions_base_url = extensions_origin | append: '/shopify/extensions/assets/' %}
+{% assign bootstrap_script_url = extensions_base_url | append: extension_asset | append: '/js/bootstrap' %}
+{% assign styles_url = extensions_base_url | append: extension_asset | append: '/css/styles' %}
+
+{% assign extension_id = extension_type | append: '-cart' %}
+
+{% comment %} Building map of variant ids to quantities {% endcomment %}
+{%- assign variant_ids = cart.items | map: 'variant_id' | uniq -%}
+{%- capture selected_items -%}
+{
+  {%- for variant_id in variant_ids -%}
+    "{{ variant_id }}": {{ cart | item_count_for_variant: variant_id }}{% unless forloop.last %},{% endunless %}
+  {%- endfor -%}
+}
+{%- endcapture -%}
+{% assign current_price = cart.total_price %}
+
+  <style>
+    .yango-cart-wrapper {
+      margin-bottom: 16px;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .yango-cart-wrapper > div {
+        width: 320px;
+    }
+
+    @media (max-width: 768px) {
+      .yango-cart-wrapper {
+        margin-top: 16px;
+      }
+
+      .yango-cart-wrapper > div {
+        width: 100%;
+      }
+    }
+  </style>
+
+  <div class="yango-cart-wrapper">
+    <link rel="preload" href="{{ styles_url }}" as="style">
+
+    <div>
+      <div data-yango-extension-type="{{ extension_type }}"
+        data-yango-extension-id="{{ extension_id }}"
+        data-yango-widget-rendered="false"
+        data-yango-adapter="{{ adapter_slug }}"
+        data-yango-app-id="{{ yango_app_id }}"
+        data-yango-pay-origin="{{ yango_pay_origin }}"
+        data-yango-shop-origin="{{ yango_shop_origin }}"
+        data-yango-color-theme="{{ color_theme }}"
+        data-yango-styles-href="{{ styles_url }}"
+        data-yango-selected-items="{{ selected_items | escape }}"
+        data-yango-current-price="{{ current_price }}"
+      >
+        <template shadowrootmode="open">
+          <div class="yango-mount-container"></div>
+        </template>
+      </div>
+      <script data-yango-extension-type="{{ extension_type }}"
+        data-yango-extension-id="{{ extension_id }}"
+        type="module" async src="{{ bootstrap_script_url }}"
+        onload="window[Symbol.for('YPL')].bootstrapExtensionAfterLoadingScript(this)"
+      ></script>
+    </div>
+  </div>
