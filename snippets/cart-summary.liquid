@@ -244,8 +244,8 @@
         {{ total_price }}
       </text-component>
     </span>
-    {% render 'baadmay-drawer' %}
     {% render 'yango-cart' %}
+    {% render 'baadmay-drawer' %}
     {% if settings.show_installments %}
       <span class="cart-totals__item cart-totals__installments">
         {% form 'cart', cart %}
