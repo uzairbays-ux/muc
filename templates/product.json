@@ -282,7 +282,7 @@
                     "margin_top": 0,
                     "margin_bottom": 0,
                     "width": "100%",
-                    "extension_origin": "",
+                    "extension_origin": "https://localhost:5175",
                     "adapter_slug": "merchant_makeupcity"
                   }
                 },
