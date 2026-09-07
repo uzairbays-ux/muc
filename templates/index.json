@@ -1184,6 +1184,59 @@
               },
               "blocks": {}
             },
+            "product_card_group_VGHE8j": {
+              "type": "_product-card-group",
+              "name": "Yango Badge",
+              "settings": {
+                "content_direction": "column",
+                "vertical_on_mobile": true,
+                "horizontal_alignment": "flex-start",
+                "vertical_alignment": "center",
+                "align_baseline": false,
+                "horizontal_alignment_flex_direction_column": "flex-start",
+                "vertical_alignment_flex_direction_column": "center",
+                "gap": 12,
+                "width": "fill",
+                "custom_width": 100,
+                "width_mobile": "fill",
+                "custom_width_mobile": 100,
+                "height": "fit",
+                "custom_height": 100,
+                "inherit_color_scheme": true,
+                "color_scheme": "",
+                "background_media": "none",
+                "video_position": "cover",
+                "background_image_position": "cover",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "toggle_overlay": false,
+                "overlay_color": "#00000026",
+                "overlay_style": "solid",
+                "gradient_direction": "to top",
+                "link": "",
+                "open_in_new_tab": false,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "makeupcity_yango_app_catalog_card_badge_basic_extension_NR6eEm": {
+                  "type": "shopify://apps/makeupcity-yango-app/blocks/catalog-card-badge-basic-extension/01a0623d-7d61-77fd-b864-93434b959c3e",
+                  "settings": {
+                    "margin_top": 4,
+                    "margin_bottom": 0,
+                    "extension_origin": "",
+                    "adapter_slug": ""
+                  }
+                }
+              },
+              "block_order": [
+                "makeupcity_yango_app_catalog_card_badge_basic_extension_NR6eEm"
+              ]
+            },
             "custom_liquid_GMXHWY": {
               "type": "custom-liquid",
               "name": "t:names.custom_liquid",
@@ -1212,6 +1265,7 @@
             "product_title_mctczp",
             "swatches_Tb6R6r",
             "price_j9XwYp",
+            "product_card_group_VGHE8j",
             "custom_liquid_GMXHWY",
             "review_hDcVD3"
           ]

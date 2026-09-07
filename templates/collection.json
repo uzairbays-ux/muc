@@ -172,21 +172,17 @@
               },
               "blocks": {}
             },
-            "judge_me_reviews_preview_badge_FKgjVz": {
-              "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-              "disabled": true,
-              "settings": {}
-            },
-            "review_QhafGF": {
-              "type": "review",
-              "name": "t:names.product_review_stars",
+            "swatches_4YbbXV": {
+              "type": "swatches",
+              "name": "t:names.swatches",
               "settings": {
-                "stars_style": "shaded",
-                "show_number": true,
-                "rating_color": "primary",
-                "type_preset": "paragraph",
-                "width": "100%",
-                "alignment": "left"
+                "product_swatches_alignment": "flex-start",
+                "product_swatches_alignment_mobile": "flex-start",
+                "hide_padding": false,
+                "product_swatches_padding_top": 4,
+                "product_swatches_padding_bottom": 0,
+                "product_swatches_padding_left": 0,
+                "product_swatches_padding_right": 0
               },
               "blocks": {}
             },
@@ -213,19 +209,58 @@
               },
               "blocks": {}
             },
-            "swatches_4YbbXV": {
-              "type": "swatches",
-              "name": "t:names.swatches",
+            "product_card_group_NxJhMX": {
+              "type": "_product-card-group",
+              "name": "Yango",
               "settings": {
-                "product_swatches_alignment": "flex-start",
-                "product_swatches_alignment_mobile": "flex-start",
-                "hide_padding": false,
-                "product_swatches_padding_top": 4,
-                "product_swatches_padding_bottom": 0,
-                "product_swatches_padding_left": 0,
-                "product_swatches_padding_right": 0
+                "content_direction": "column",
+                "vertical_on_mobile": true,
+                "horizontal_alignment": "flex-start",
+                "vertical_alignment": "center",
+                "align_baseline": false,
+                "horizontal_alignment_flex_direction_column": "flex-start",
+                "vertical_alignment_flex_direction_column": "center",
+                "gap": 12,
+                "width": "fill",
+                "custom_width": 100,
+                "width_mobile": "fill",
+                "custom_width_mobile": 100,
+                "height": "fit",
+                "custom_height": 100,
+                "inherit_color_scheme": true,
+                "color_scheme": "",
+                "background_media": "none",
+                "video_position": "cover",
+                "background_image_position": "cover",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "toggle_overlay": false,
+                "overlay_color": "#00000026",
+                "overlay_style": "solid",
+                "gradient_direction": "to top",
+                "link": "",
+                "open_in_new_tab": false,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
               },
-              "blocks": {}
+              "blocks": {
+                "makeupcity_yango_app_catalog_card_badge_basic_extension_mdqhPM": {
+                  "type": "shopify://apps/makeupcity-yango-app/blocks/catalog-card-badge-basic-extension/01a0623d-7d61-77fd-b864-93434b959c3e",
+                  "settings": {
+                    "margin_top": 4,
+                    "margin_bottom": 0,
+                    "extension_origin": "",
+                    "adapter_slug": ""
+                  }
+                }
+              },
+              "block_order": [
+                "makeupcity_yango_app_catalog_card_badge_basic_extension_mdqhPM"
+              ]
             },
             "custom_liquid_yL6BdP": {
               "type": "custom-liquid",
@@ -234,6 +269,24 @@
                 "custom_liquid": "{% render 'baadmay-product-grid-item',product:  %}"
               },
               "blocks": {}
+            },
+            "review_QhafGF": {
+              "type": "review",
+              "name": "t:names.product_review_stars",
+              "settings": {
+                "stars_style": "shaded",
+                "show_number": true,
+                "rating_color": "primary",
+                "type_preset": "paragraph",
+                "width": "100%",
+                "alignment": "left"
+              },
+              "blocks": {}
+            },
+            "judge_me_reviews_preview_badge_FKgjVz": {
+              "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+              "disabled": true,
+              "settings": {}
             }
           },
           "block_order": [
@@ -242,6 +295,7 @@
             "product_title_4nY4eT",
             "swatches_4YbbXV",
             "price_EzJzMm",
+            "product_card_group_NxJhMX",
             "custom_liquid_yL6BdP",
             "review_QhafGF",
             "judge_me_reviews_preview_badge_FKgjVz"
