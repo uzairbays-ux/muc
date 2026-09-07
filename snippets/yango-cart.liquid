@@ -24,28 +24,6 @@
 {%- endcapture -%}
 {% assign current_price = cart.total_price %}
 
-  <style>
-    .yango-cart-wrapper {
-      margin-bottom: 16px;
-      display: flex;
-      justify-content: flex-end;
-    }
-
-    .yango-cart-wrapper > div {
-        width: 320px;
-    }
-
-    @media (max-width: 768px) {
-      .yango-cart-wrapper {
-        margin-top: 16px;
-      }
-
-      .yango-cart-wrapper > div {
-        width: 100%;
-      }
-    }
-  </style>
-
   <div class="yango-cart-wrapper">
     <link rel="preload" href="{{ styles_url }}" as="style">
 
