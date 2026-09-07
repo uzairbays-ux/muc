@@ -1,12 +1,12 @@
 {% assign yango_app_id = 'b339afd3-9015-59d3-8c9b-6454080f5ded' %}
 {% assign extension_type = 'CheckoutBadgeCommon' %}
 {% assign extension_asset = 'CheckoutBadgeCommonExtension' %}
-{% assign adapter_slug = 'merchant_noosh' %}
+{% assign adapter_slug = 'merchant_makeupcity' %}
 {% assign color_theme = 'light' %}
 
 {% assign yango_pay_origin = 'https://pay.yango.com' %}
 {% assign yango_shop_origin = 'https://shop.yango.com' %}
-{% assign extensions_origin =  'https://localhost:5175' %}
+{% assign extensions_origin = yango_pay_origin %}
 {% assign extensions_base_url = extensions_origin | append: '/shopify/extensions/assets/' %}
 {% assign bootstrap_script_url = extensions_base_url | append: extension_asset | append: '/js/bootstrap' %}
 {% assign styles_url = extensions_base_url | append: extension_asset | append: '/css/styles' %}
