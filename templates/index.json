@@ -370,6 +370,7 @@
         "card_jfgkyk": {
           "type": "card",
           "name": "Revolution",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Revolution_95258492-30a6-41a6-bcbd-62e07d01efbd.jpg",
             "link": "shopify://collections/revolution",
@@ -378,7 +379,7 @@
         },
         "card_eqTYVW": {
           "type": "card",
-          "name": "Ordinary",
+          "name": "FreshLabs",
           "settings": {
             "image": "shopify://shop_images/FreshLabs_1.webp",
             "link": "shopify://collections/freshlabs",
