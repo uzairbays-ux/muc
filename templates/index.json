@@ -279,7 +279,8 @@
           "type": "banner",
           "settings": {
             "desktop_image": "shopify://shop_images/new-launch-banner-2048x221.png",
-            "link": "",
+            "mobile_image": "shopify://shop_images/new-launch-mobile-2048x512.png",
+            "link": "shopify://collections/new-launch-1",
             "open_new_tab": false
           }
         }
@@ -287,7 +288,6 @@
       "block_order": [
         "banner_AYkDgf"
       ],
-      "disabled": true,
       "name": "Stacked banners",
       "settings": {
         "gap": 0,
@@ -303,6 +303,7 @@
         "card_Rqd7UJ": {
           "type": "card",
           "name": "ST London",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/500-x-500_6_99f042fc-9677-4e7d-911b-89a3399aa28b.png",
             "link": "shopify://collections/st-london",
@@ -404,7 +405,6 @@
         "card_eqTYVW",
         "card_6AeFyg"
       ],
-      "disabled": true,
       "name": "Card banner",
       "settings": {
         "heading": "",
