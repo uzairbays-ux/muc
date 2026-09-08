@@ -332,10 +332,19 @@
         },
         "card_ta6w88": {
           "type": "card",
-          "name": "Maybelline",
+          "name": "Philips",
           "settings": {
             "image": "shopify://shop_images/philips_1.webp",
             "link": "shopify://collections/philips",
+            "open_new_tab": false
+          }
+        },
+        "card_aeBNAE": {
+          "type": "card",
+          "name": "Rederm",
+          "settings": {
+            "image": "shopify://shop_images/redrem.webp",
+            "link": "shopify://collections/rederm",
             "open_new_tab": false
           }
         },
@@ -365,15 +374,6 @@
             "open_new_tab": false
           }
         },
-        "card_aeBNAE": {
-          "type": "card",
-          "name": "ELF",
-          "settings": {
-            "image": "shopify://shop_images/ELF_26244392-3775-4a00-99b2-da2c3935a0b5.png",
-            "link": "shopify://collections/elf",
-            "open_new_tab": false
-          }
-        },
         "card_eqTYVW": {
           "type": "card",
           "name": "Ordinary",
@@ -399,10 +399,10 @@
         "card_VdpdNy",
         "card_8dxtQP",
         "card_ta6w88",
+        "card_aeBNAE",
         "card_LBiUFw",
         "card_LWJXKE",
         "card_jfgkyk",
-        "card_aeBNAE",
         "card_eqTYVW",
         "card_6AeFyg"
       ],
