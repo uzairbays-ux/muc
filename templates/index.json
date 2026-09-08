@@ -378,14 +378,15 @@
           "type": "card",
           "name": "Ordinary",
           "settings": {
-            "image": "shopify://shop_images/The-Ordinary_7042e294-c16f-427b-a807-0be9716b371d.jpg",
-            "link": "shopify://collections/to",
+            "image": "shopify://shop_images/FreshLabs_1.webp",
+            "link": "shopify://collections/freshlabs",
             "open_new_tab": false
           }
         },
         "card_6AeFyg": {
           "type": "card",
           "name": "Bioaqua",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Bioaqua_d38424d7-bf2e-4ca2-a188-c06122ce27e7.jpg",
             "link": "shopify://collections/bioaqua",
