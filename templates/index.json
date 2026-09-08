@@ -278,6 +278,7 @@
         "banner_AYkDgf": {
           "type": "banner",
           "settings": {
+            "desktop_image": "shopify://shop_images/new-launch-banner-2048x221.png",
             "link": "",
             "open_new_tab": false
           }
