@@ -131,6 +131,9 @@ function plan(cart, detectDecline) {
   for (const rule of rules) {
     const qualifies = triggerQty[rule.id] >= rule.requiredQty;
     const have = giftQty[rule.giftVariantId] || 0;
+    // The shopper put the gift back (e.g. the cart banner button): forget the
+    // earlier decline, or the next sync would take it straight out again.
+    if (detectDecline && qualifies && have > 0) store.set(key('declined', token, rule), null);
     if (detectDecline && qualifies && store.get(key('had', token, rule)) === '1' && have === 0) {
       store.set(key('declined', token, rule), triggerQty[rule.id]);
     }
@@ -244,6 +247,44 @@ function refreshCartUI(cart) {
     if (typeof icon.renderCartBubble === 'function') icon.renderCartBubble(cart.item_count, false, false);
   }
 }
+
+// "Add free pouch" in the cart banner (snippets/kj-cart-promo.liquid), shown
+// when the cart qualifies but the shopper removed the gift earlier.
+document.addEventListener('click', async (event) => {
+  const button = event.target.closest?.('[data-kj-gift-add]');
+  if (!button) return;
+  event.preventDefault();
+
+  const variantId = Number(button.dataset.kjGiftAdd);
+  const label = button.textContent;
+  button.disabled = true;
+  button.textContent = 'Adding…';
+
+  // Clear the decline first so a sync running meanwhile doesn't remove it.
+  for (const rule of rules) {
+    if (rule.giftVariantId !== variantId) continue;
+    try {
+      for (const k of Object.keys(sessionStorage)) {
+        if (k.startsWith('kj-gift-declined:') && k.endsWith(`:${rule.id}`)) sessionStorage.removeItem(k);
+      }
+    } catch (e) {}
+  }
+
+  try {
+    const added = await requestJSON('/cart/add.js', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ items: [{ id: variantId, quantity: 1 }] }),
+    });
+    if (!added.ok) throw new Error(added.data?.description || `HTTP ${added.status}`);
+    const { data: cart } = await requestJSON('/cart.js');
+    refreshCartUI(cart);
+  } catch (error) {
+    console.error('[kj-gift]', error);
+    button.disabled = false;
+    button.textContent = label;
+  }
+});
 
 document.addEventListener('cart:update', (event) => {
   const resource = event.detail?.resource;

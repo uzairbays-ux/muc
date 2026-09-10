@@ -6,7 +6,8 @@
 
   A rule is emitted only when its gift can actually be bought (published and
   in stock), so a promo whose gift is drafted or sold out stays dormant
-  instead of putting a line in the cart that the discount can't cover.
+  instead of putting a line in the cart that the discount can't cover. The
+  pouch rule also needs Theme settings > Gift with purchase switched on.
 
   Triggers are the exact product scope of the discount:
   - "Maybelline Pouch": buy 2 from collection `maybelline`, get Makeup Pouch.
@@ -27,7 +28,7 @@
 <script type="application/json" id="kj-gift-rules">
 {
   "rules": [
-    {%- if pouch != blank and pouch_variant.available -%}
+    {%- if settings.kj_gwp_maybelline_enabled and pouch != blank and pouch_variant.available -%}
       {%- assign first_rule = false -%}
       {
         "id": "maybelline-pouch",
