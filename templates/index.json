@@ -184,7 +184,7 @@
           "type": "card",
           "name": "Maybelline",
           "settings": {
-            "image": "shopify://shop_images/maybelline_5a657710-63e0-41a1-9241-38d892888fd9.jpg",
+            "image": "shopify://shop_images/backto.webp",
             "link": "shopify://collections/maybelline",
             "open_new_tab": false
           }
@@ -345,7 +345,7 @@
           "type": "card",
           "name": "Rederm",
           "settings": {
-            "image": "shopify://shop_images/redrem.webp",
+            "image": "shopify://shop_images/redrem_1.webp",
             "link": "shopify://collections/rederm",
             "open_new_tab": false
           }
@@ -981,7 +981,7 @@
           "type": "card",
           "name": "La Roche Posay",
           "settings": {
-            "image": "shopify://shop_images/redrem.webp",
+            "image": "shopify://shop_images/redrem_1.webp",
             "link": "shopify://collections/rederm",
             "open_new_tab": false
           }
@@ -1783,7 +1783,7 @@
           "type": "card",
           "name": "Garnier",
           "settings": {
-            "image": "shopify://shop_images/Garnier_34460e24-be49-4252-8460-8269437f360c.jpg",
+            "image": "shopify://shop_images/garneri.webp",
             "link": "shopify://collections/garnier",
             "open_new_tab": false
           }
