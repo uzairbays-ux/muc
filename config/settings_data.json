@@ -124,7 +124,7 @@
         "type": "shopify://apps/mergn/blocks/index/52d5f725-db4d-4931-bef3-895243f3807b",
         "disabled": false,
         "settings": {
-          "enable_notify_in_stock": true,
+          "enable_notify_in_stock": false,
           "nis_button_radius": 4,
           "nis_button_margin_top": 5,
           "nis_button_full_width": false,
