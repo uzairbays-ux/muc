@@ -129,7 +129,7 @@
           "nis_button_margin_top": 5,
           "nis_button_full_width": true,
           "nis_button_width": 20,
-          "nis_button_height": 30,
+          "nis_button_height": 50,
           "nis_button_padding_y": 12,
           "nis_button_padding_x": 20,
           "nis_button_text": "Notify when Available",
