@@ -122,7 +122,7 @@
       },
       "6399541321894134091": {
         "type": "shopify://apps/mergn/blocks/index/52d5f725-db4d-4931-bef3-895243f3807b",
-        "disabled": false,
+        "disabled": true,
         "settings": {
           "enable_notify_in_stock": true,
           "nis_button_radius": 4,
