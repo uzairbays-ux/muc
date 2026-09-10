@@ -192,6 +192,7 @@
         "card_hxUFFx": {
           "type": "card",
           "name": "CeraVe",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Cerave_00b74cf9-a8cc-47ec-87a6-6340a13b80db.webp",
             "link": "shopify://collections/cerave-official",
@@ -200,6 +201,7 @@
         },
         "card_7AwV3r": {
           "type": "card",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/lapoch.webp",
             "link": "shopify://collections/la-roche-posay",
@@ -254,6 +256,158 @@
         "card_7Rimtd",
         "card_nbr3cj",
         "card_b9F39r"
+      ],
+      "name": "Card banner",
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "heading_alignment": "left",
+        "desktop_per_view": "3.5",
+        "mobile_per_view": "1.5",
+        "gap": 16,
+        "autoplay": true,
+        "autoplay_interval": 5,
+        "show_arrows": true,
+        "show_dots": false,
+        "color_scheme": "scheme-1",
+        "padding-block-start": 12,
+        "padding-block-end": 24
+      }
+    },
+    "stacked_banners_NcczDp": {
+      "type": "stacked-banners",
+      "blocks": {
+        "banner_AYkDgf": {
+          "type": "banner",
+          "settings": {
+            "desktop_image": "shopify://shop_images/new-launch-banner-2048x221.png",
+            "mobile_image": "shopify://shop_images/new-launch-mobile-2048x512.png",
+            "link": "shopify://collections/new-launch-1",
+            "open_new_tab": false
+          }
+        }
+      },
+      "block_order": [
+        "banner_AYkDgf"
+      ],
+      "name": "Stacked banners",
+      "settings": {
+        "gap": 0,
+        "background_color": "#ffffff",
+        "color_scheme": "",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
+    },
+    "card_banner_bD4yrP": {
+      "type": "card-banner",
+      "blocks": {
+        "card_Rqd7UJ": {
+          "type": "card",
+          "name": "ST London",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/500-x-500_6_99f042fc-9677-4e7d-911b-89a3399aa28b.png",
+            "link": "shopify://collections/st-london",
+            "open_new_tab": false
+          }
+        },
+        "card_VdpdNy": {
+          "type": "card",
+          "name": "Kryolan",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/Kryolan_9851d2b3-d068-4989-8669-d160851dbd19.jpg",
+            "link": "shopify://collections/kryolan",
+            "open_new_tab": false
+          }
+        },
+        "card_8dxtQP": {
+          "type": "card",
+          "name": "Framesi",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/Janssen_Voucher.webp",
+            "link": "shopify://collections/janssen",
+            "open_new_tab": false
+          }
+        },
+        "card_ta6w88": {
+          "type": "card",
+          "name": "Philips",
+          "settings": {
+            "image": "shopify://shop_images/philips_1.webp",
+            "link": "shopify://collections/philips",
+            "open_new_tab": false
+          }
+        },
+        "card_aeBNAE": {
+          "type": "card",
+          "name": "Rederm",
+          "settings": {
+            "image": "shopify://shop_images/redrem.webp",
+            "link": "shopify://collections/rederm",
+            "open_new_tab": false
+          }
+        },
+        "card_LBiUFw": {
+          "type": "card",
+          "name": "CeraVe",
+          "settings": {
+            "image": "shopify://shop_images/Cerave_00b74cf9-a8cc-47ec-87a6-6340a13b80db.webp",
+            "link": "shopify://collections/cerave-official",
+            "open_new_tab": false
+          }
+        },
+        "card_LWJXKE": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/lapoch.webp",
+            "link": "shopify://collections/la-roche-posay",
+            "open_new_tab": false
+          }
+        },
+        "card_jfgkyk": {
+          "type": "card",
+          "name": "Revolution",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/Revolution_95258492-30a6-41a6-bcbd-62e07d01efbd.jpg",
+            "link": "shopify://collections/revolution",
+            "open_new_tab": false
+          }
+        },
+        "card_eqTYVW": {
+          "type": "card",
+          "name": "FreshLabs",
+          "settings": {
+            "image": "shopify://shop_images/FreshLabs_1.webp",
+            "link": "shopify://collections/freshlabs",
+            "open_new_tab": false
+          }
+        },
+        "card_6AeFyg": {
+          "type": "card",
+          "name": "Bioaqua",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/Bioaqua_d38424d7-bf2e-4ca2-a188-c06122ce27e7.jpg",
+            "link": "shopify://collections/bioaqua",
+            "open_new_tab": false
+          }
+        }
+      },
+      "block_order": [
+        "card_Rqd7UJ",
+        "card_VdpdNy",
+        "card_8dxtQP",
+        "card_ta6w88",
+        "card_aeBNAE",
+        "card_LBiUFw",
+        "card_LWJXKE",
+        "card_jfgkyk",
+        "card_eqTYVW",
+        "card_6AeFyg"
       ],
       "name": "Card banner",
       "settings": {
@@ -744,7 +898,7 @@
         "card_zHjYpW": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/Fresh-labs_jpg.jpg",
+            "image": "shopify://shop_images/FreshLabs_1.webp",
             "link": "shopify://collections/freshlabs",
             "open_new_tab": false
           }
@@ -2158,6 +2312,7 @@
       "blocks": {
         "category_Cwy3f6": {
           "type": "category",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Babimild_52acef81-e665-4ec9-962b-a9beb82ad917.jpg",
             "label": "",
@@ -2334,7 +2489,7 @@
         "heading_alignment": "left",
         "desktop_layout": "grid",
         "mobile_layout": "carousel",
-        "desktop_per_row": "8",
+        "desktop_per_row": "7",
         "mobile_per_row": "2.5",
         "gap": 10,
         "row_gap": 10,
@@ -2844,6 +2999,8 @@
     "thumbnail_scroll_PbDt4b",
     "featured_banner_yeQJGh",
     "card_banner_8zTGy8",
+    "stacked_banners_NcczDp",
+    "card_banner_bD4yrP",
     "product_list_fa6P9H",
     "brand_ticker_fdyAia",
     "card_grid_HA8C7w",

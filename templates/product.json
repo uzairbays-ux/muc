@@ -418,6 +418,7 @@
             "notify_me_Y3EYbm": {
               "type": "notify-me",
               "name": "Notify me",
+              "disabled": true,
               "settings": {
                 "form_source": "theme",
                 "tag_prefix": "notify-me",
