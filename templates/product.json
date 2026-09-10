@@ -404,16 +404,6 @@
               },
               "blocks": {}
             },
-            "makeupcity_yango_app_checkout_badge_cart_drawer_extension_dXVyUb": {
-              "type": "shopify://apps/makeupcity-yango-app/blocks/checkout-badge-cart-drawer-extension/01a0623d-7d61-77fd-b864-93434b959c3e",
-              "disabled": true,
-              "settings": {
-                "margin_top": 0,
-                "margin_bottom": 0,
-                "extension_origin": "",
-                "adapter_slug": ""
-              }
-            },
             "notify_me_Y3EYbm": {
               "type": "notify-me",
               "name": "Notify me",
@@ -807,7 +797,6 @@
             "variant_picker_R3rGDr",
             "buy_buttons_eYQEYi",
             "kj_vto_lips",
-            "makeupcity_yango_app_checkout_badge_cart_drawer_extension_dXVyUb",
             "notify_me_Y3EYbm",
             "barcode_6exrQt",
             "sku_fiiUqj",
