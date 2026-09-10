@@ -180,7 +180,9 @@
     {% if settings.quick_add or settings.mobile_quick_add %}
       {% render 'quick-add-modal' %}
     {% endif %}
-    <script src="{{ 'foc-auto-add.js' | asset_url }}" defer></script>
+    {%- comment -%} Gift-with-purchase auto-add (rules mirror automatic BXGY discounts). {%- endcomment -%}
+    {% render 'kj-gift-rules' %}
+    <script type="module" src="{{ 'kj-gift-auto-add.js' | asset_url }}"></script>
   {%- comment -%}
     Cart countdown driver. Lives here rather than in the cart snippet because
     the drawer re-renders via innerHTML, and scripts inserted that way never

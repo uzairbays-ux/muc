@@ -1,0 +1,59 @@
+{%- comment -%}
+  Gift-with-purchase rules for assets/kj-gift-auto-add.js.
+
+  Each rule mirrors an automatic BXGY discount in Shopify admin. The discount
+  makes the gift free; the script only adds/removes the gift line.
+
+  A rule is emitted only when its gift can actually be bought (published and
+  in stock), so a promo whose gift is drafted or sold out stays dormant
+  instead of putting a line in the cart that the discount can't cover. The
+  pouch rule also needs Theme settings > Gift with purchase switched on.
+
+  Triggers are the exact product scope of the discount:
+  - "Maybelline Pouch": buy 2 from collection `maybelline`, get Makeup Pouch.
+  - "Lifter Glaze": buy 2 Lifter Glaze Tinted Lip Oil Balm, get the Charm.
+{%- endcomment -%}
+
+{%- liquid
+  assign pouch = all_products['17765']
+  assign pouch_variant = pouch.selected_or_first_available_variant
+
+  assign charm = all_products['foc-lifter-glaze-charm']
+  assign charm_variant = charm.selected_or_first_available_variant
+  assign lifter = all_products['maybelline-lifter-glaze-tinted-lip-oil-balm']
+
+  assign first_rule = true
+-%}
+
+<script type="application/json" id="kj-gift-rules">
+{
+  "rules": [
+    {%- if settings.kj_gwp_maybelline_enabled and pouch != blank and pouch_variant.available -%}
+      {%- assign first_rule = false -%}
+      {
+        "id": "maybelline-pouch",
+        "requiredQty": 2,
+        "giftVariantId": {{ pouch_variant.id }},
+        "giftValue": {{ pouch_variant.price }},
+        "triggerProductIds": [
+          {%- paginate collections['maybelline'].products by 250 -%}
+            {%- for p in collections['maybelline'].products -%}
+              {%- unless forloop.first -%},{%- endunless -%}{{ p.id }}
+            {%- endfor -%}
+          {%- endpaginate -%}
+        ]
+      }
+    {%- endif -%}
+    {%- if charm != blank and charm_variant.available and lifter != blank -%}
+      {%- unless first_rule -%},{%- endunless -%}
+      {
+        "id": "lifter-glaze-charm",
+        "requiredQty": 2,
+        "giftVariantId": {{ charm_variant.id }},
+        "giftValue": {{ charm_variant.price }},
+        "triggerProductIds": [{{ lifter.id }}]
+      }
+    {%- endif -%}
+  ]
+}
+</script>

@@ -2294,5 +2294,21 @@
         "default": "equal-width-buttons"
       }
     ]
+  },
+  {
+    "name": "Gift with purchase",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Controls the cart gift auto-add and the cart banner. Keep these in step with the automatic discounts in Shopify admin."
+      },
+      {
+        "type": "checkbox",
+        "id": "kj_gwp_maybelline_enabled",
+        "label": "Maybelline: free Makeup Pouch with any 2 Maybelline products",
+        "info": "Turn this off when the \"Maybelline Pouch\" discount ends. Otherwise the pouch keeps being added to carts, now at full price, and the cart banner keeps showing.",
+        "default": true
+      }
+    ]
   }
 ]

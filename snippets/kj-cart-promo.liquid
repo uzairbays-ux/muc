@@ -1,0 +1,173 @@
+{%- comment -%}
+  Cart announcement for the "Maybelline Pouch" gift-with-purchase promo
+  (buy any 2 from the maybelline collection, get the Makeup Pouch free).
+
+  Rendered inside the cart section, so it re-renders with every cart change.
+  No script tag here on purpose: the drawer is re-rendered via innerHTML,
+  where scripts never run. The "add it" button is handled by kj-gift-auto-add.js.
+
+  Counts the same way the discount and the auto-add do: items in the
+  maybelline collection, excluding the pouch itself.
+
+  Hidden when Theme settings > Gift with purchase is switched off, or when the
+  pouch can't be bought.
+{%- endcomment -%}
+
+{%- liquid
+  assign gwp_gift = all_products['17765']
+  assign gwp_variant = gwp_gift.selected_or_first_available_variant
+-%}
+
+{%- if settings.kj_gwp_maybelline_enabled and gwp_gift != blank and gwp_variant.available -%}
+  {%- liquid
+    assign gwp_required = 2
+    assign gwp_count = 0
+    assign gwp_in_cart = false
+
+    for item in cart.items
+      if item.variant_id == gwp_variant.id
+        assign gwp_in_cart = true
+        continue
+      endif
+      for c in item.product.collections
+        if c.handle == 'maybelline'
+          assign gwp_count = gwp_count | plus: item.quantity
+          break
+        endif
+      endfor
+    endfor
+
+    assign gwp_remaining = gwp_required | minus: gwp_count
+    assign gwp_pct = gwp_count | times: 100 | divided_by: gwp_required
+    if gwp_pct > 100
+      assign gwp_pct = 100
+    endif
+    assign gwp_worth = gwp_variant.price | money
+    assign gwp_collection = collections['maybelline']
+  -%}
+
+  <div class="kj-gwp{% if gwp_count >= gwp_required %} kj-gwp--won{% endif %}" role="status">
+    <span class="kj-gwp__icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none">
+        <rect x="3.5" y="9" width="17" height="11.5" rx="1.5" stroke="currentColor" stroke-width="1.6"></rect>
+        <path d="M2.5 9h19v-2.5a1 1 0 0 0-1-1h-17a1 1 0 0 0-1 1V9ZM12 5.5v15" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"></path>
+        <path d="M12 5.5C10.5 2.5 7 2.5 7 4.3 7 5.5 9.5 5.5 12 5.5ZM12 5.5c1.5-3 5-3 5-1.2 0 1.2-2.5 1.2-5 1.2Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"></path>
+      </svg>
+    </span>
+
+    <div class="kj-gwp__body">
+      {%- if gwp_count >= gwp_required and gwp_in_cart -%}
+        <p class="kj-gwp__title">Your FREE Maybelline Makeup Pouch is in your bag</p>
+        <p class="kj-gwp__text">Worth {{ gwp_worth }} — applied automatically at checkout.</p>
+      {%- elsif gwp_count >= gwp_required -%}
+        <p class="kj-gwp__title">You've unlocked a FREE Makeup Pouch</p>
+        <p class="kj-gwp__text">Worth {{ gwp_worth }} with your Maybelline products.</p>
+      {%- elsif gwp_count > 0 -%}
+        <p class="kj-gwp__title">
+          Add {{ gwp_remaining }} more Maybelline product{% if gwp_remaining > 1 %}s{% endif %} to get a FREE Makeup Pouch
+        </p>
+        <p class="kj-gwp__text">Worth {{ gwp_worth }}.</p>
+        <div class="kj-gwp__bar" aria-hidden="true"><span style="width: {{ gwp_pct }}%;"></span></div>
+      {%- else -%}
+        <p class="kj-gwp__title">Buy any 2 Maybelline products, get a FREE Makeup Pouch</p>
+        <p class="kj-gwp__text">
+          Worth {{ gwp_worth }}.
+          {%- if gwp_collection != blank %}
+            <a class="kj-gwp__link" href="{{ gwp_collection.url }}">Shop Maybelline</a>
+          {%- endif -%}
+        </p>
+      {%- endif -%}
+    </div>
+
+    {%- if gwp_count >= gwp_required and gwp_in_cart == false -%}
+      <button type="button" class="kj-gwp__add" data-kj-gift-add="{{ gwp_variant.id }}">Add free pouch</button>
+    {%- endif -%}
+  </div>
+{%- endif -%}
+
+{% stylesheet %}
+  .kj-gwp {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 0 12px;
+    padding: 10px 12px;
+    border: 1px solid #f3c5d8;
+    border-radius: 10px;
+    background: #fdf0f5;
+    color: #001325;
+  }
+
+  .kj-gwp--won {
+    border-color: #bfe6cd;
+    background: #f2fbf6;
+  }
+
+  .kj-gwp__icon {
+    flex: 0 0 auto;
+    display: inline-flex;
+    color: #c2185b;
+  }
+
+  .kj-gwp--won .kj-gwp__icon {
+    color: #068743;
+  }
+
+  .kj-gwp__body {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .kj-gwp__title {
+    margin: 0;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 16px;
+  }
+
+  .kj-gwp__text {
+    margin: 2px 0 0;
+    font-size: 11px;
+    line-height: 15px;
+    color: rgba(0, 19, 37, 0.7);
+  }
+
+  .kj-gwp__link {
+    margin-inline-start: 4px;
+    color: #c2185b;
+    font-weight: 600;
+    text-decoration: underline;
+  }
+
+  .kj-gwp__bar {
+    height: 5px;
+    margin-top: 7px;
+    border-radius: 999px;
+    background: rgba(0, 19, 37, 0.09);
+    overflow: hidden;
+  }
+
+  .kj-gwp__bar > span {
+    display: block;
+    height: 100%;
+    border-radius: 999px;
+    background: #c2185b;
+  }
+
+  .kj-gwp__add {
+    flex: 0 0 auto;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 999px;
+    background: #068743;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .kj-gwp__add[disabled] {
+    opacity: 0.65;
+    cursor: default;
+  }
+{% endstylesheet %}
