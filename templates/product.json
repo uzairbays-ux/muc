@@ -268,19 +268,19 @@
                   },
                   "blocks": {}
                 },
-                "custom_liquid_7MEE6g": {
-                  "type": "custom-liquid",
-                  "name": "t:names.custom_liquid",
-                  "settings": {
-                    "custom_liquid": "{% render 'baadmay' %}"
-                  },
-                  "blocks": {}
-                },
                 "kj_save_pill_pdp": {
                   "type": "custom-liquid",
                   "name": "Save pill",
                   "settings": {
                     "custom_liquid": "{% render 'kj-save-pill', product: product %}"
+                  },
+                  "blocks": {}
+                },
+                "custom_liquid_7MEE6g": {
+                  "type": "custom-liquid",
+                  "name": "t:names.custom_liquid",
+                  "settings": {
+                    "custom_liquid": "{% render 'baadmay' %}"
                   },
                   "blocks": {}
                 },
@@ -403,6 +403,16 @@
                 "custom_liquid": "{% render 'kj-vto-lips' %}"
               },
               "blocks": {}
+            },
+            "makeupcity_yango_app_checkout_badge_cart_drawer_extension_dXVyUb": {
+              "type": "shopify://apps/makeupcity-yango-app/blocks/checkout-badge-cart-drawer-extension/01a0623d-7d61-77fd-b864-93434b959c3e",
+              "disabled": true,
+              "settings": {
+                "margin_top": 0,
+                "margin_bottom": 0,
+                "extension_origin": "",
+                "adapter_slug": ""
+              }
             },
             "notify_me_Y3EYbm": {
               "type": "notify-me",
@@ -797,6 +807,7 @@
             "variant_picker_R3rGDr",
             "buy_buttons_eYQEYi",
             "kj_vto_lips",
+            "makeupcity_yango_app_checkout_badge_cart_drawer_extension_dXVyUb",
             "notify_me_Y3EYbm",
             "barcode_6exrQt",
             "sku_fiiUqj",
