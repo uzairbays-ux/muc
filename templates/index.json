@@ -153,7 +153,7 @@
           "type": "card",
           "name": "ST London",
           "settings": {
-            "image": "shopify://shop_images/500-x-500_6_99f042fc-9677-4e7d-911b-89a3399aa28b.png",
+            "image": "shopify://shop_images/ST.webp",
             "link": "shopify://collections/st-london",
             "open_new_tab": false
           }
@@ -182,7 +182,7 @@
           "type": "card",
           "name": "Maybelline",
           "settings": {
-            "image": "shopify://shop_images/backto.webp",
+            "image": "shopify://shop_images/maybilline.webp",
             "link": "shopify://collections/maybelline",
             "open_new_tab": false
           }
@@ -210,7 +210,7 @@
           "type": "card",
           "name": "Revolution",
           "settings": {
-            "image": "shopify://shop_images/Revolution_95258492-30a6-41a6-bcbd-62e07d01efbd.jpg",
+            "image": "shopify://shop_images/revolution_00a64481-c997-4f46-b404-3a9dced6875f.webp",
             "link": "shopify://collections/revolution",
             "open_new_tab": false
           }
@@ -219,7 +219,7 @@
           "type": "card",
           "name": "ELF",
           "settings": {
-            "image": "shopify://shop_images/ELF_26244392-3775-4a00-99b2-da2c3935a0b5.png",
+            "image": "shopify://shop_images/Elf_11650f11-c263-4705-b028-4122aa479b26.webp",
             "link": "shopify://collections/elf",
             "open_new_tab": false
           }
@@ -228,7 +228,7 @@
           "type": "card",
           "name": "Ordinary",
           "settings": {
-            "image": "shopify://shop_images/The-Ordinary_7042e294-c16f-427b-a807-0be9716b371d.jpg",
+            "image": "shopify://shop_images/the_ordinary_0fc784b6-3e6d-459c-aa0e-0769abffe01e.webp",
             "link": "shopify://collections/to",
             "open_new_tab": false
           }
@@ -237,7 +237,7 @@
           "type": "card",
           "name": "Bioaqua",
           "settings": {
-            "image": "shopify://shop_images/Bioaqua_d38424d7-bf2e-4ca2-a188-c06122ce27e7.jpg",
+            "image": "shopify://shop_images/bioaqua_39f95b17-0b33-405d-af32-0e6e32c38fdb.webp",
             "link": "shopify://collections/bioaqua",
             "open_new_tab": false
           }
