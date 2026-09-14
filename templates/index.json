@@ -1642,7 +1642,7 @@
           "type": "card",
           "name": "Janssen",
           "settings": {
-            "image": "shopify://shop_images/Janssen_662d8b60-73f8-45a8-8ab9-fe2c086d45ad.jpg",
+            "image": "shopify://shop_images/janssen_c4a03be2-63c1-4d02-8e7c-185508707fd3.jpg",
             "link": "shopify://collections/janssen",
             "open_new_tab": false
           }
@@ -1790,7 +1790,7 @@
           "type": "card",
           "name": "Trouble Maker",
           "settings": {
-            "image": "shopify://shop_images/Trouble-Maker_45e5e593-9345-4fab-8c1e-8c6999641a18.jpg",
+            "image": "shopify://shop_images/trouble_maker.jpg",
             "link": "shopify://collections/trouble-maker",
             "open_new_tab": false
           }
