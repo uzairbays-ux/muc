@@ -109,10 +109,9 @@
       "blocks": {
         "slide_4mM8cj": {
           "type": "slide",
-          "disabled": true,
           "settings": {
-            "desktop_image": "shopify://shop_images/sale-banner.webp",
-            "mobile_image": "shopify://shop_images/sale-banner.webp",
+            "desktop_image": "shopify://shop_images/main_banner_1920_x_750_copy_865bd9c3-759e-46fc-a846-ac63edd2db05.webp",
+            "mobile_image": "shopify://shop_images/main_banner_1920_x_750_copy_af7ff3c5-1e5f-4087-8af0-bda34c6a993d.webp",
             "link": "shopify://collections/sale",
             "open_new_tab": false,
             "alt": ""
@@ -134,7 +133,6 @@
         "slide_4mM8cj",
         "slide_WR6nXe"
       ],
-      "disabled": true,
       "name": "Featured banner",
       "settings": {
         "autoplay": true,
