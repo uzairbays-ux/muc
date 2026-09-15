@@ -810,7 +810,7 @@
         "card_CaecqX": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/Kryolan_9851d2b3-d068-4989-8669-d160851dbd19.jpg",
+            "image": "shopify://shop_images/september_sale_500_x_500.webp",
             "link": "shopify://collections/kryolan",
             "open_new_tab": false
           }
@@ -1799,7 +1799,7 @@
           "type": "card",
           "name": "Rimmel London",
           "settings": {
-            "image": "shopify://shop_images/Rimmel_5aefc2bf-e36e-438b-abac-648198eb77cd.jpg",
+            "image": "shopify://shop_images/Rimmel.webp",
             "link": "shopify://collections/rimmel-london",
             "open_new_tab": false
           }
