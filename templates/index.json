@@ -977,10 +977,10 @@
         },
         "card_AHQBXy": {
           "type": "card",
-          "name": "La Roche Posay",
+          "name": "Bleuface",
           "settings": {
-            "image": "shopify://shop_images/redrem_1.webp",
-            "link": "shopify://collections/rederm",
+            "image": "shopify://shop_images/SEP_MADNESS_COLORSHOW.webp",
+            "link": "shopify://collections/bleuface",
             "open_new_tab": false
           }
         },
