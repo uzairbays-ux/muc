@@ -970,7 +970,7 @@
         "card_ceiizR": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/gosh_729ce8d3-42a5-4c3b-ba62-21bf5be3d916.webp",
+            "image": "shopify://shop_images/500_x_500_2.webp",
             "link": "shopify://collections/gosh",
             "open_new_tab": false
           }
@@ -1772,7 +1772,7 @@
           "type": "card",
           "name": "Essence",
           "settings": {
-            "image": "shopify://shop_images/Essence_6da3862c-5d8c-42e5-baab-235ff7b144f3.jpg",
+            "image": "shopify://shop_images/Essence_662e2acd-ce69-4b22-9fac-d3e263793e54.webp",
             "link": "shopify://collections/essence",
             "open_new_tab": false
           }
@@ -1781,7 +1781,7 @@
           "type": "card",
           "name": "Garnier",
           "settings": {
-            "image": "shopify://shop_images/garneri.webp",
+            "image": "shopify://shop_images/Garnier_739963d7-e236-4152-affc-f9b0baea296f.webp",
             "link": "shopify://collections/garnier",
             "open_new_tab": false
           }
@@ -1817,7 +1817,7 @@
           "type": "card",
           "name": "Bourjois",
           "settings": {
-            "image": "shopify://shop_images/Bourjois_74021c12-0621-4462-9d1c-a7a0c5f7c48e.jpg",
+            "image": "shopify://shop_images/Bourjois_5d822994-f6f3-4a24-8162-de32e67afa2b.webp",
             "link": "shopify://collections/bourjois",
             "open_new_tab": false
           }
@@ -2240,7 +2240,7 @@
         "category_TkjWqQ": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/maxfactor_4dd80f1d-dd64-4e6b-9503-44683da15b25.jpg",
+            "image": "shopify://shop_images/Max-Factore.webp",
             "label": "",
             "link": "shopify://collections/max-factor",
             "card_background": "rgba(0,0,0,0)"
