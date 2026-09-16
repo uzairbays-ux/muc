@@ -334,7 +334,7 @@
           "type": "card",
           "name": "Philips",
           "settings": {
-            "image": "shopify://shop_images/philips_1.webp",
+            "image": "shopify://shop_images/philips_jpg.webp",
             "link": "shopify://collections/philips",
             "open_new_tab": false
           }
