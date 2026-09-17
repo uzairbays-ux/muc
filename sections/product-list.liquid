@@ -163,6 +163,10 @@
       display: block;
     }
   }
+
+  @media screen and (max-width: 749px) {
+    .product-card__content .group-block:has(.yango-pay-later-block) { --mobile-order: 0; }
+  }
 {% endstylesheet %}
 
 {% schema %}

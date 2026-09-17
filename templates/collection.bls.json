@@ -16,6 +16,7 @@
           "type": "text",
           "name": "Title",
           "settings": {
+            "mobile_order": 0,
             "text": "<h1>{{ closest.collection.title }}</h1>",
             "width": "100%",
             "max_width": "normal",
@@ -43,6 +44,7 @@
           "name": "Description",
           "disabled": true,
           "settings": {
+            "mobile_order": 0,
             "text": "{{ closest.collection.description }}",
             "width": "100%",
             "max_width": "none",
@@ -161,6 +163,7 @@
               "type": "text",
               "name": "Brand",
               "settings": {
+                "mobile_order": 0,
                 "text": "<p>{{ closest.product.vendor }}</p>",
                 "width": "fit-content",
                 "max_width": "normal",
@@ -192,15 +195,24 @@
                 "alignment": "left",
                 "type_preset": "rte",
                 "font": "var(--font-body--family)",
+                "weight": "",
                 "font_size": "1rem",
                 "line_height": "normal",
                 "letter_spacing": "tight",
                 "case": "none",
                 "wrap": "pretty",
                 "color": "var(--color-foreground)",
+                "mobile_font": "",
+                "mobile_font_size": "",
+                "mobile_line_height": "",
+                "mobile_letter_spacing": "",
+                "mobile_case": "",
+                "mobile_weight": "",
                 "background": false,
                 "background_color": "#00000026",
                 "corner_radius": 0,
+                "custom_class_desktop": "",
+                "custom_class_mobile": "",
                 "padding-block-start": 4,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
@@ -225,6 +237,7 @@
               "type": "price",
               "settings": {
                 "show_sale_price_first": true,
+                "show_sale_badge": true,
                 "show_installments": false,
                 "show_tax_info": false,
                 "type_preset": "h6",
@@ -242,6 +255,59 @@
                 "padding-inline-end": 0
               },
               "blocks": {}
+            },
+            "product_card_group_Ug9Jqf": {
+              "type": "_product-card-group",
+              "name": "Yango",
+              "settings": {
+                "content_direction": "column",
+                "vertical_on_mobile": true,
+                "horizontal_alignment": "flex-start",
+                "vertical_alignment": "center",
+                "align_baseline": false,
+                "horizontal_alignment_flex_direction_column": "flex-start",
+                "vertical_alignment_flex_direction_column": "center",
+                "gap": 12,
+                "width": "fill",
+                "custom_width": 100,
+                "width_mobile": "fill",
+                "custom_width_mobile": 100,
+                "height": "fit",
+                "custom_height": 100,
+                "inherit_color_scheme": true,
+                "color_scheme": "",
+                "background_media": "none",
+                "video_position": "cover",
+                "background_image_position": "cover",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "toggle_overlay": false,
+                "overlay_color": "#00000026",
+                "overlay_style": "solid",
+                "gradient_direction": "to top",
+                "link": "",
+                "open_in_new_tab": false,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "makeupcity_yango_app_catalog_card_badge_basic_extension_YaknFw": {
+                  "type": "shopify://apps/makeupcity-yango-app/blocks/catalog-card-badge-basic-extension/01a0623d-7d61-77fd-b864-93434b959c3e",
+                  "settings": {
+                    "margin_top": 4,
+                    "margin_bottom": 0,
+                    "extension_origin": "",
+                    "adapter_slug": "merchant_makeupcity"
+                  }
+                }
+              },
+              "block_order": [
+                "makeupcity_yango_app_catalog_card_badge_basic_extension_YaknFw"
+              ]
             }
           },
           "block_order": [
@@ -249,7 +315,8 @@
             "text_eYAazA",
             "product_title_4nY4eT",
             "review_QhafGF",
-            "price_EzJzMm"
+            "price_EzJzMm",
+            "product_card_group_Ug9Jqf"
           ]
         }
       },
