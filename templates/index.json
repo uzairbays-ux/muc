@@ -655,27 +655,6 @@
               },
               "blocks": {}
             },
-            "custom_liquid_Ct6iwn": {
-              "type": "custom-liquid",
-              "name": "t:names.custom_liquid",
-              "settings": {
-                "custom_liquid": "{% render 'baadmay-product-grid-item',product:  %}"
-              },
-              "blocks": {}
-            },
-            "review_LCLnXa": {
-              "type": "review",
-              "name": "t:names.product_review_stars",
-              "settings": {
-                "stars_style": "shaded",
-                "show_number": true,
-                "rating_color": "primary",
-                "type_preset": "paragraph",
-                "width": "100%",
-                "alignment": "left"
-              },
-              "blocks": {}
-            },
             "product_card_group_7rJygJ": {
               "type": "_product-card-group",
               "name": "Yango Badge",
@@ -728,6 +707,27 @@
               "block_order": [
                 "makeupcity_yango_app_catalog_card_badge_basic_extension_AAVfPG"
               ]
+            },
+            "custom_liquid_Ct6iwn": {
+              "type": "custom-liquid",
+              "name": "t:names.custom_liquid",
+              "settings": {
+                "custom_liquid": "{% render 'baadmay-product-grid-item',product:  %}"
+              },
+              "blocks": {}
+            },
+            "review_LCLnXa": {
+              "type": "review",
+              "name": "t:names.product_review_stars",
+              "settings": {
+                "stars_style": "shaded",
+                "show_number": true,
+                "rating_color": "primary",
+                "type_preset": "paragraph",
+                "width": "100%",
+                "alignment": "left"
+              },
+              "blocks": {}
             }
           },
           "block_order": [
@@ -1016,7 +1016,7 @@
         "card_gBiw68": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/elvive10.jpg",
+            "image": "shopify://shop_images/square_exo_oil_2_jpg.jpg",
             "link": "shopify://collections/loreal-paris",
             "open_new_tab": false
           }
@@ -1336,27 +1336,6 @@
               },
               "blocks": {}
             },
-            "custom_liquid_GMXHWY": {
-              "type": "custom-liquid",
-              "name": "t:names.custom_liquid",
-              "settings": {
-                "custom_liquid": "{% render 'baadmay-product-grid-item',product:  %}"
-              },
-              "blocks": {}
-            },
-            "review_hDcVD3": {
-              "type": "review",
-              "name": "t:names.product_review_stars",
-              "settings": {
-                "stars_style": "shaded",
-                "show_number": true,
-                "rating_color": "primary",
-                "type_preset": "paragraph",
-                "width": "100%",
-                "alignment": "left"
-              },
-              "blocks": {}
-            },
             "product_card_group_VGHE8j": {
               "type": "_product-card-group",
               "name": "Yango Badge",
@@ -1409,6 +1388,27 @@
               "block_order": [
                 "makeupcity_yango_app_catalog_card_badge_basic_extension_NR6eEm"
               ]
+            },
+            "custom_liquid_GMXHWY": {
+              "type": "custom-liquid",
+              "name": "t:names.custom_liquid",
+              "settings": {
+                "custom_liquid": "{% render 'baadmay-product-grid-item',product:  %}"
+              },
+              "blocks": {}
+            },
+            "review_hDcVD3": {
+              "type": "review",
+              "name": "t:names.product_review_stars",
+              "settings": {
+                "stars_style": "shaded",
+                "show_number": true,
+                "rating_color": "primary",
+                "type_preset": "paragraph",
+                "width": "100%",
+                "alignment": "left"
+              },
+              "blocks": {}
             }
           },
           "block_order": [
