@@ -2,24 +2,48 @@
   Product-card action row — wishlist heart + primary CTA.
   Rendered via a custom-liquid block at the bottom of the card.
 
-  CTA logic:
-    - product has a colour/shade option -> "View Shades" (link to PDP)
-    - single available variant          -> "Add to Bag" (native /cart/add form)
-    - otherwise (multi-variant / sold out) -> "View Product" (link to PDP)
+  CTA logic (label follows the product's own option names, so sized products
+  don't get cosmetics wording):
+    - a size option              -> "View Sizes"
+    - a colour/shade option      -> "View Shades"
+    - both, or any other option  -> "View Options"
+    - single available variant   -> "Add to Bag" (native /cart/add form)
 
   Wishlist is client-side (localStorage key 'kj-wishlist'); the heart state
   persists per browser. A full wishlist page/app would be a further step.
 {%- endcomment -%}
 {%- liquid
   assign p = product | default: closest.product
+  # Catalogue uses: Size/Sizes/size (182 products), Shades/shade/Color/
+  # "Makeup color/shade" (185), plus a few Variants/Flavors/SPF.
+  assign has_size = false
   assign has_shades = false
   for opt in p.options_with_values
     assign on = opt.name | downcase
-    if on == 'color' or on == 'colour' or on == 'shade' or on == 'shades'
+    if on contains 'size'
+      assign has_size = true
+    endif
+    if on contains 'color' or on contains 'colour' or on contains 'shade'
       assign has_shades = true
-      break
     endif
   endfor
+
+  assign cta_label = 'Add to Bag'
+  assign cta_action = 'add'
+  if has_size and has_shades
+    assign cta_label = 'View Options'
+    assign cta_action = 'choose'
+  elsif has_size
+    assign cta_label = 'View Sizes'
+    assign cta_action = 'choose'
+  elsif has_shades
+    assign cta_label = 'View Shades'
+    assign cta_action = 'choose'
+  elsif p.variants.size > 1
+    assign cta_label = 'View Options'
+    assign cta_action = 'choose'
+  endif
+
 -%}
 
 <div class="kj-card-actions">
@@ -46,10 +70,10 @@
       class="kj-card-cta"
       data-kj-cta
       data-kj-url="{{ p.url }}"
-      aria-label="{% if has_shades or p.variants.size > 1 %}View shades of {{ p.title | escape }}{% else %}Add {{ p.title | escape }} to bag{% endif %}"
+      aria-label="{% if cta_action == 'choose' %}{{ cta_label }} of {{ p.title | escape }}{% else %}Add {{ p.title | escape }} to bag{% endif %}"
     >
-      {%- if has_shades or p.variants.size > 1 -%}
-        View Shades
+      {%- if cta_action == 'choose' -%}
+        {{ cta_label }}
         <svg class="kj-card-cta__caret" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path d="M11 5.5 7 9.5 3 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
         </svg>
