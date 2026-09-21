@@ -284,7 +284,8 @@
                     "width": "100%",
                     "extension_origin": "",
                     "adapter_slug": "merchant_makeupcity"
-                  }
+                  },
+                  "disabled": true
                 },
                 "custom_liquid_7MEE6g": {
                   "type": "custom-liquid",
@@ -1134,7 +1135,8 @@
               },
               "block_order": [
                 "makeupcity_yango_app_catalog_card_badge_basic_extension_edmzWL"
-              ]
+              ],
+              "disabled": true
             },
             "price_gLWgA6": {
               "type": "price",
