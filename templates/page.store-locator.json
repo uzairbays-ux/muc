@@ -152,6 +152,20 @@
             "map_embed_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d861.9398978971037!2d71.47126223173831!3d30.215408300000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x393b33f1f1f4c261%3A0x91e24451eb7a19eb!2sMakeUpCity%20Gulgasht%20-%20Sharif%20Complex!5e0!3m2!1sen!2s!4v1662441408902!5m2!1sen!2s"
           }
         },
+        "mul_3": {
+          "type": "store",
+          "name": "Mall of Multan",
+          "settings": {
+            "name": "Mall of Multan",
+            "address": "2nd Floor, Mall of Multan, Bosan Road, Near Toyota Showroom",
+            "city": "Multan",
+            "postal_code": "",
+            "phone": "0319-1361103",
+            "hours": "",
+            "directions_url": "",
+            "map_embed_url": "https://maps.google.com/maps?q=Makeup%20City%20Mall%20of%20Multan%20Bosan%20Road&output=embed"
+          }
+        },
         "lhr_1": {
           "type": "store",
           "name": "Packages Mall",
@@ -164,6 +178,20 @@
             "hours": "",
             "directions_url": "",
             "map_embed_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3402.893341496787!2d74.35404751462963!3d31.472120056673067!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39190680fb42f241%3A0x93bac39cb25cfcdb!2sMakeup%20City%20Packages%20Mall!5e0!3m2!1sen!2s!4v1662439691015!5m2!1sen!2s"
+          }
+        },
+        "lhr_7": {
+          "type": "store",
+          "name": "Dolmen Mall Lahore",
+          "settings": {
+            "name": "Dolmen Mall Lahore",
+            "address": "Shop # F-26, First Floor, Dolmen Mall, DHA Phase 6",
+            "city": "Lahore",
+            "postal_code": "",
+            "phone": "042-37263016",
+            "hours": "",
+            "directions_url": "",
+            "map_embed_url": "https://maps.google.com/maps?q=Makeup%20City%20Dolmen%20Mall%20Lahore%20DHA%20Phase%206&output=embed"
           }
         },
         "lhr_2": {
@@ -182,8 +210,8 @@
         },
         "lhr_3": {
           "type": "store",
-          "disabled": true,
           "name": "Hyper Star, Fortress Stadium",
+          "disabled": true,
           "settings": {
             "name": "Hyper Star, Fortress Stadium",
             "address": "Ground Floor, Opposite Counter No. 23, Fortress Stadium",
@@ -198,6 +226,7 @@
         "lhr_4": {
           "type": "store",
           "name": "City Tower, Gulberg II",
+          "disabled": true,
           "settings": {
             "name": "City Tower, Gulberg II",
             "address": "Shop # 28, Ground Floor, City Tower, Main Boulevard, Gulberg II",
@@ -239,8 +268,8 @@
         },
         "mul_1": {
           "type": "store",
-          "disabled": true,
           "name": "Saddar Bazaar",
+          "disabled": true,
           "settings": {
             "name": "Saddar Bazaar",
             "address": "Shop # 39 & 40, Ghani Bukhari Road, Saddar Bazaar, Cantt",
@@ -282,8 +311,8 @@
         },
         "rwp_1": {
           "type": "store",
-          "disabled": true,
           "name": "Rose Arcade",
+          "disabled": true,
           "settings": {
             "name": "Rose Arcade",
             "address": "1st Floor, Rose Arcade, Rehmanabad Chowk",
@@ -298,6 +327,7 @@
         "grw_1": {
           "type": "store",
           "name": "Malik Tower",
+          "disabled": true,
           "settings": {
             "name": "Malik Tower",
             "address": "405-C, Ground Floor, Malik Tower, Main Market, Satellite Town",
@@ -312,6 +342,7 @@
         "fsd_1": {
           "type": "store",
           "name": "Kohinoor City",
+          "disabled": true,
           "settings": {
             "name": "Kohinoor City",
             "address": "Mezzanine Floor, Centre Point Plaza, Kohinoor City",
@@ -337,37 +368,10 @@
             "map_embed_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d851.0308284809851!2d73.13134332918504!3d31.43827194307152!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3922699d8cd7e9cb%3A0x8d6ff3a6fec7865f!2sMakeup%20City%20Lyallupur!5e0!3m2!1sen!2s!4v1662443016288!5m2!1sen!2s"
           }
         },
-        "lhr_7": {
-          "type": "store",
-          "name": "Dolmen Mall Lahore",
-          "settings": {
-            "name": "Dolmen Mall Lahore",
-            "address": "Shop # F-26, First Floor, Dolmen Mall, DHA Phase 6",
-            "city": "Lahore",
-            "postal_code": "",
-            "phone": "042-37263016",
-            "hours": "",
-            "directions_url": "",
-            "map_embed_url": "https://maps.google.com/maps?q=Makeup%20City%20Dolmen%20Mall%20Lahore%20DHA%20Phase%206&output=embed"
-          }
-        },
-        "mul_3": {
-          "type": "store",
-          "name": "Mall of Multan",
-          "settings": {
-            "name": "Mall of Multan",
-            "address": "2nd Floor, Mall of Multan, Bosan Road, Near Toyota Showroom",
-            "city": "Multan",
-            "postal_code": "",
-            "phone": "0319-1361103",
-            "hours": "",
-            "directions_url": "",
-            "map_embed_url": "https://maps.google.com/maps?q=Makeup%20City%20Mall%20of%20Multan%20Bosan%20Road&output=embed"
-          }
-        },
         "gjt_1": {
           "type": "store",
           "name": "Kacheri Road",
+          "disabled": true,
           "settings": {
             "name": "Kacheri Road",
             "address": "Makeup City, Kacheri Road, Opp. Eden Rode",
