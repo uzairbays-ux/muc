@@ -438,6 +438,8 @@
       }
     },
     "kj_pm_enabled": true,
+    "kj_pm_redirect": true,
+    "kj_pm_enforce_one": true,
     "kj_pm_collection_1": "test-collection-1",
     "kj_pm_collection_2": "test-collection-2"
   },

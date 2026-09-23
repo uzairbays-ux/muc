@@ -29,6 +29,12 @@
   {
     "collection1": {{ c1.handle | json }},
     "collection2": {{ c2.handle | json }},
+    "collection1Url": {{ c1.url | json }},
+    "collection2Url": {{ c2.url | json }},
+    "collection1Title": {{ c1.title | json }},
+    "collection2Title": {{ c2.title | json }},
+    "redirectToC2": {{ settings.kj_pm_redirect | json }},
+    "enforceOnePerCollection": {{ settings.kj_pm_enforce_one | json }},
     "c1ProductIds": [
       {%- paginate c1.products by 250 -%}
         {%- for p in c1.products -%}{%- unless forloop.first -%},{%- endunless -%}{{ p.id }}{%- endfor -%}

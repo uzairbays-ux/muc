@@ -2348,6 +2348,20 @@
         "type": "collection",
         "id": "kj_pm_collection_2",
         "label": "Collection 2 (Perfect Match SKUs \u2014 the unlocking product)"
+      },
+      {
+        "type": "checkbox",
+        "id": "kj_pm_redirect",
+        "label": "Send shoppers to Collection 2 after they add a Collection 1 product",
+        "info": "Only when their cart has no Collection 2 product yet.",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "kj_pm_enforce_one",
+        "label": "Remove extra campaign products (keep 1 from each collection)",
+        "info": "Stricter than L'Oreal's written conditions, which allow extra qualifying SKUs in the cart but only one deal. With this on, the extra item is removed from the cart.",
+        "default": true
       }
     ]
   }
