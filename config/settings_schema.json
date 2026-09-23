@@ -2322,7 +2322,7 @@
         "type": "checkbox",
         "id": "kj_yango_enabled",
         "label": "Show the Yango Pay badge in the cart",
-        "default": false
+        "default": true
       }
     ]
   }
