@@ -2310,5 +2310,20 @@
         "default": true
       }
     ]
+  },
+  {
+    "name": "Yango",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Yango Pay badges. The card and product-page badges are app blocks: switch them on per section in the theme editor (the \"Yango Badge\" blocks). This toggle controls the cart badge."
+      },
+      {
+        "type": "checkbox",
+        "id": "kj_yango_enabled",
+        "label": "Show the Yango Pay badge in the cart",
+        "default": false
+      }
+    ]
   }
 ]

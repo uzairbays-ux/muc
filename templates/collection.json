@@ -260,7 +260,8 @@
               },
               "block_order": [
                 "makeupcity_yango_app_catalog_card_badge_basic_extension_mdqhPM"
-              ]
+              ],
+              "disabled": true
             },
             "custom_liquid_yL6BdP": {
               "type": "custom-liquid",

@@ -244,7 +244,10 @@
         {{ total_price }}
       </text-component>
     </span>
-    {% render 'yango-cart' %}
+    {%- comment -%} Yango Pay cart badge: Theme settings > Yango. {%- endcomment -%}
+    {%- if settings.kj_yango_enabled -%}
+      {% render 'yango-cart' %}
+    {%- endif -%}
     {% render 'baadmay-drawer' %}
     {% if settings.show_installments %}
       <span class="cart-totals__item cart-totals__installments">
