@@ -78,21 +78,29 @@ async function requestJSON(url, options = {}, attempts = 3) {
 const groupOf = (item) => (c1.has(item.product_id) ? 'c1' : c2.has(item.product_id) ? 'c2' : null);
 
 /**
- * Lines to drop so only the earliest C1 and earliest C2 line survive, each at
- * quantity 1. Cart order is add order, so the extra is the newer one.
+ * Lines to drop so one C1 and one C2 line survive, each at quantity 1.
+ *
+ * The line that survives is the one that was in the cart first, so what gets
+ * removed is the extra the shopper just added. /cart.js lists items
+ * newest-first, so the oldest line is at the end - hence the reverse walk.
+ * The just-added product (when the event names one) is dropped outright if its
+ * collection is already filled, which does not depend on cart order at all.
  */
-function extraLines(items) {
+function extraLines(items, addedId) {
   const seen = {};
   const updates = {};
-  for (const item of items) {
+  for (let i = items.length - 1; i >= 0; i--) {
+    const item = items[i];
     const group = groupOf(item);
     if (!group) continue;
-    if (seen[group]) {
+    const isAdded = addedId != null && item.product_id === addedId;
+    if (seen[group] || (isAdded && seen[group + ':added'])) {
       updates[item.key] = 0;
-    } else {
-      seen[group] = true;
-      if (item.quantity > 1) updates[item.key] = 1;
+      continue;
     }
+    seen[group] = true;
+    if (!isAdded) seen[group + ':added'] = true;
+    if (item.quantity > 1) updates[item.key] = 1;
   }
   return updates;
 }
@@ -122,8 +130,10 @@ async function run() {
   try {
     let cart = detail?.resource && Array.isArray(detail.resource.items) ? detail.resource : (await requestJSON('/cart.js')).data;
 
+    const addedId = Number(detail?.data?.productId) || null;
+
     if (config.enforceOnePerCollection) {
-      const updates = extraLines(cart.items);
+      const updates = extraLines(cart.items, addedId);
       if (Object.keys(updates).length) {
         const result = await requestJSON('/cart/update.js', {
           method: 'POST',
@@ -139,7 +149,6 @@ async function run() {
 
     // Redirect only for a real add of a Collection 1 product.
     if (!config.redirectToC2 || !config.collection2Url) return;
-    const addedId = Number(detail?.data?.productId);
     if (!addedId || !c1.has(addedId)) return;
     if (cart.items.some((item) => c2.has(item.product_id))) return;
     if (window.location.pathname.startsWith(config.collection2Url)) return;
