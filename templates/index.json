@@ -332,6 +332,15 @@
         },
         "card_ta6w88": {
           "type": "card",
+          "name": "L.A. Girl",
+          "settings": {
+            "image": "shopify://shop_images/lagirl.webp",
+            "link": "shopify://collections/l-a-girl",
+            "open_new_tab": false
+          }
+        },
+        "card_mitMU8": {
+          "type": "card",
           "name": "Philips",
           "settings": {
             "image": "shopify://shop_images/philips_jpg.webp",
@@ -400,6 +409,7 @@
         "card_VdpdNy",
         "card_8dxtQP",
         "card_ta6w88",
+        "card_mitMU8",
         "card_aeBNAE",
         "card_LBiUFw",
         "card_LWJXKE",
