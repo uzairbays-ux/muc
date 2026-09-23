@@ -1,0 +1,45 @@
+{%- comment -%}
+  L'Oreal "Perfect Match" Mega Deal — configuration.
+
+  Campaign mechanic (per L'Oreal Commercial & Technical Conditions):
+    1 SKU from Collection 1 (Mega Deal SKUs) + 1 SKU from Collection 2
+    (Perfect Match SKUs) in the same order unlocks a Mega Deal discount,
+    applied to the Collection 1 SKU only. Max one deal per order, one per
+    customer, and it must not stack with other discounts.
+
+  Shopify enforces the money side: each tier below is a CODE-based Buy X Get Y
+  discount (buy 1 from C2 -> 1 from C1 at N% off) with "one use per customer"
+  and "does not combine". The theme only:
+    - shows cart progress / unlocked state (kj-perfect-match.liquid)
+    - applies the right tier code when the pair is present
+      (assets/kj-perfect-match.js), so the shopper never types a code
+
+  Tiers are per-percentage, because the approved C1 list prices SKUs at
+  different discounts. Each tier lists the C1 product ids it covers.
+  While `tiers` is empty the theme shows progress but applies nothing.
+{%- endcomment -%}
+
+{%- liquid
+  assign c1 = settings.kj_pm_collection_1
+  assign c2 = settings.kj_pm_collection_2
+-%}
+
+{%- if settings.kj_pm_enabled and c1 != blank and c2 != blank -%}
+  <script type="application/json" id="kj-perfect-match-rules">
+  {
+    "collection1": {{ c1.handle | json }},
+    "collection2": {{ c2.handle | json }},
+    "c1ProductIds": [
+      {%- paginate c1.products by 250 -%}
+        {%- for p in c1.products -%}{%- unless forloop.first -%},{%- endunless -%}{{ p.id }}{%- endfor -%}
+      {%- endpaginate -%}
+    ],
+    "c2ProductIds": [
+      {%- paginate c2.products by 250 -%}
+        {%- for p in c2.products -%}{%- unless forloop.first -%},{%- endunless -%}{{ p.id }}{%- endfor -%}
+      {%- endpaginate -%}
+    ],
+    "tiers": []
+  }
+  </script>
+{%- endif -%}

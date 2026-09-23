@@ -182,6 +182,7 @@
     {% endif %}
     {%- comment -%} Gift-with-purchase auto-add (rules mirror automatic BXGY discounts). {%- endcomment -%}
     {% render 'kj-gift-rules' %}
+    {% render 'kj-perfect-match-rules' %}
     <script type="module" src="{{ 'kj-gift-auto-add.js' | asset_url }}"></script>
   {%- comment -%}
     Cart countdown driver. Lives here rather than in the cart snippet because

@@ -2325,5 +2325,30 @@
         "default": false
       }
     ]
+  },
+  {
+    "name": "Perfect Match",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "L'Oreal Perfect Match Mega Deal: 1 product from Collection 1 + 1 from Collection 2 unlocks a discount on the Collection 1 product. Shopify applies the money side via code-based Buy X Get Y discounts (one per percentage tier, one use per customer, does not combine); the theme shows cart progress and applies the code automatically."
+      },
+      {
+        "type": "checkbox",
+        "id": "kj_pm_enabled",
+        "label": "Enable the Perfect Match campaign",
+        "default": false
+      },
+      {
+        "type": "collection",
+        "id": "kj_pm_collection_1",
+        "label": "Collection 1 (Mega Deal SKUs \u2014 the discounted product)"
+      },
+      {
+        "type": "collection",
+        "id": "kj_pm_collection_2",
+        "label": "Collection 2 (Perfect Match SKUs \u2014 the unlocking product)"
+      }
+    ]
   }
 ]
