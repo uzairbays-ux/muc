@@ -105,11 +105,6 @@
           "position": "right"
         }
       },
-      "5149645339031002760": {
-        "type": "shopify://apps/minmaxify-order-limits/blocks/app-embed-block/3acfba32-89f3-4377-ae20-cbb9abc48475",
-        "disabled": true,
-        "settings": {}
-      },
       "6023461868751542726": {
         "type": "shopify://apps/bsure-checkout-rules/blocks/embed/01dc9f18-0935-422b-a3f7-3d2458585368",
         "disabled": false,
@@ -160,6 +155,11 @@
           "db_button_radius": 6,
           "db_use_stub": false
         }
+      },
+      "5149645339031002760": {
+        "type": "shopify://apps/minmaxify-order-limits/blocks/app-embed-block/3acfba32-89f3-4377-ae20-cbb9abc48475",
+        "disabled": false,
+        "settings": {}
       }
     },
     "color_schemes": {
