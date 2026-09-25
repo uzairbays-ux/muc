@@ -278,7 +278,6 @@
                 },
                 "makeupcity_yango_app_product_page_badge_basic_extension_cVethx": {
                   "type": "shopify://apps/makeupcity-yango-app/blocks/product-page-badge-basic-extension/01a0623d-7d61-77fd-b864-93434b959c3e",
-                  "disabled": true,
                   "settings": {
                     "margin_top": 0,
                     "margin_bottom": 0,
@@ -1080,6 +1079,7 @@
                   "settings": {
                     "margin_top": 4,
                     "margin_bottom": 0,
+                    "justify_content": "center",
                     "extension_origin": "",
                     "adapter_slug": "merchant_makeupcity"
                   }
