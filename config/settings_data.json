@@ -86,6 +86,12 @@
     "variant_button_border_width": 1,
     "variant_button_radius": 14,
     "variant_button_width": "equal-width-buttons",
+    "kj_yango_enabled": true,
+    "kj_pm_enabled": true,
+    "kj_pm_collection_1": "test-collection-1",
+    "kj_pm_collection_2": "test-collection-2",
+    "kj_pm_redirect": true,
+    "kj_pm_enforce_one": true,
     "content_for_index": [],
     "blocks": {
       "14060646107696862457": {
@@ -139,7 +145,7 @@
           "nis_button_hover_bg_color": "#000000",
           "nis_modal_radius": 16,
           "nis_modal_bg_color": "#ffffff",
-          "nis_emoji_text": "\ud83e\udd29",
+          "nis_emoji_text": "🤩",
           "nis_emoji_size": 96,
           "nis_emoji_color": "#000000",
           "nis_description_text": "Notify me when this product is back in Stock!",
@@ -436,12 +442,7 @@
           "selected_variant_hover_border_color": "#1a1a1a"
         }
       }
-    },
-    "kj_pm_enabled": true,
-    "kj_pm_redirect": true,
-    "kj_pm_enforce_one": true,
-    "kj_pm_collection_1": "test-collection-1",
-    "kj_pm_collection_2": "test-collection-2"
+    }
   },
   "presets": {
     "Horizon": {
