@@ -1,6 +1,187 @@
+{% doc %}
+  @prompt
+    size chart popup - conditions based
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-size-chart-{{ ai_gen_id }} {
+    display: block;
+    width: {{ block.settings.desktop_width_percent }}%;
+    max-width: 100%;
+    color: #000000;
+    font-family: inherit;
+  }
+  .ai-size-chart-{{ ai_gen_id }}__trigger {
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: #000000;
+    font: inherit;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    cursor: pointer;
+  }
+  .ai-size-chart-{{ ai_gen_id }}__trigger:focus-visible,
+  .ai-size-chart-{{ ai_gen_id }}__close:focus-visible {
+    outline: 2px solid #000f9f;
+    outline-offset: 3px;
+  }
+  .ai-size-chart-{{ ai_gen_id }}__dialog {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.55);
+  }
+  .ai-size-chart-{{ ai_gen_id }}__dialog[open] { display: flex; }
+  .ai-size-chart-{{ ai_gen_id }}__panel {
+    position: relative;
+    width: min(100%, {{ block.settings.dialog_width }}px);
+    max-height: min(85vh, 800px);
+    overflow: auto;
+    padding: 28px;
+    background: #ffffff;
+    color: #000000;
+    border-radius: 14px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+  }
+  .ai-size-chart-{{ ai_gen_id }}__heading { margin: 0 42px 16px 0; font-size: 24px; line-height: 1.25; }
+  .ai-size-chart-{{ ai_gen_id }}__content { font-size: 14px; line-height: 1.6; }
+  .ai-size-chart-{{ ai_gen_id }}__content table { width: 100%; border-collapse: collapse; }
+  .ai-size-chart-{{ ai_gen_id }}__content th,
+  .ai-size-chart-{{ ai_gen_id }}__content td { padding: 10px; border: 1px solid #d8d8d8; text-align: left; }
+  .ai-size-chart-{{ ai_gen_id }}__content th { background: #f5f5f5; font-weight: 600; }
+  .ai-size-chart-{{ ai_gen_id }}__close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    display: grid;
+    width: 36px;
+    height: 36px;
+    place-items: center;
+    border: 1px solid #767676;
+    border-radius: 50%;
+    background: #ffffff;
+    color: #000000;
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+  }
+  @media (max-width: 749px) {
+    .ai-size-chart-{{ ai_gen_id }}__panel { padding: 22px 18px; }
+    .ai-size-chart-{{ ai_gen_id }}__content { overflow-x: auto; }
+  }
+{% endstyle %}
+
+<product-size-chart-{{ ai_gen_id }} class="ai-size-chart-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  {% assign show_chart = true %}
+  {% if block.settings.condition_mode == 'tag' %}
+    {% assign show_chart = false %}
+    {% if product.tags contains block.settings.required_tag %}{% assign show_chart = true %}{% endif %}
+  {% elsif block.settings.condition_mode == 'type' %}
+    {% assign show_chart = false %}
+    {% if product.type == block.settings.required_type %}{% assign show_chart = true %}{% endif %}
+  {% endif %}
+  {% if show_chart %}
+    <button class="ai-size-chart-{{ ai_gen_id }}__trigger" type="button" aria-haspopup="dialog" aria-controls="ai-size-chart-dialog-{{ ai_gen_id }}">{{ block.settings.link_label | escape }}</button>
+    <div class="ai-size-chart-{{ ai_gen_id }}__dialog" id="ai-size-chart-dialog-{{ ai_gen_id }}" role="dialog" aria-modal="true" aria-labelledby="ai-size-chart-heading-{{ ai_gen_id }}" tabindex="-1">
+      <div class="ai-size-chart-{{ ai_gen_id }}__panel">
+        <button class="ai-size-chart-{{ ai_gen_id }}__close" type="button" aria-label="Close size chart">&times;</button>
+        <h2 class="ai-size-chart-{{ ai_gen_id }}__heading" id="ai-size-chart-heading-{{ ai_gen_id }}">{{ block.settings.heading | escape }}</h2>
+        <div class="ai-size-chart-{{ ai_gen_id }}__content">{{ block.settings.chart_content }}</div>
+      </div>
+    </div>
+  {% endif %}
+</product-size-chart-{{ ai_gen_id }}>
+
+<script>
+  (() => {
+    const elementName = 'product-size-chart-{{ ai_gen_id }}';
+    if (customElements.get(elementName)) return;
+    class ProductSizeChart extends HTMLElement {
+      connectedCallback() {
+        this.trigger = this.querySelector('.ai-size-chart-{{ ai_gen_id }}__trigger');
+        this.dialog = this.querySelector('.ai-size-chart-{{ ai_gen_id }}__dialog');
+        this.closeButton = this.querySelector('.ai-size-chart-{{ ai_gen_id }}__close');
+        if (!this.trigger || !this.dialog) return;
+        this.openDialog = () => {
+          this.dialog.setAttribute('open', '');
+          document.body.style.overflow = 'hidden';
+          this.closeButton.focus();
+        };
+        this.closeDialog = () => {
+          this.dialog.removeAttribute('open');
+          document.body.style.overflow = '';
+          this.trigger.focus();
+        };
+        this.trigger.addEventListener('click', this.openDialog);
+        this.closeButton.addEventListener('click', this.closeDialog);
+        this.dialog.addEventListener('click', (event) => {
+          if (event.target === this.dialog) this.closeDialog();
+        });
+        this.dialog.addEventListener('keydown', (event) => {
+          if (event.key === 'Escape') this.closeDialog();
+        });
+      }
+      disconnectedCallback() {
+        if (this.trigger && this.openDialog) this.trigger.removeEventListener('click', this.openDialog);
+        if (this.closeButton && this.closeDialog) this.closeButton.removeEventListener('click', this.closeDialog);
+        if (this.dialog && this.dialog.hasAttribute('open')) document.body.style.overflow = '';
+      }
+    }
+    customElements.define(elementName, ProductSizeChart);
+  })();
+</script>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Size chart popup",
+  "settings": [
+    { "type": "header", "content": "Display conditions" },
+    {
+      "type": "select",
+      "id": "condition_mode",
+      "label": "Show chart based on",
+      "options": [
+        { "value": "all", "label": "All products" },
+        { "value": "tag", "label": "Product tag" },
+        { "value": "type", "label": "Product type" }
+      ],
+      "default": "all"
+    },
+    { "type": "text", "id": "required_tag", "label": "Required product tag" },
+    { "type": "text", "id": "required_type", "label": "Required product type" },
+    { "type": "header", "content": "Size chart" },
+    { "type": "text", "id": "link_label", "label": "Link label", "default": "Size chart" },
+    { "type": "text", "id": "heading", "label": "Popup heading", "default": "Size chart" },
+    { "type": "richtext", "id": "chart_content", "label": "Chart content", "default": "<p>Add your sizing guidance or a size chart table here.</p>" },
+    {
+      "type": "range",
+      "id": "dialog_width",
+      "label": "Popup width",
+      "min": 320,
+      "max": 800,
+      "step": 40,
+      "unit": "px",
+      "default": 560
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    }
+  ],
+  "presets": [{ "name": "Size chart popup" }],
+  "tag": null,
+  "class": "size-chart-popup-block"
+}
 {% endschema %}
