@@ -357,6 +357,20 @@
               },
               "blocks": {}
             },
+            "ai_gen_block_e195552_7pHmRW": {
+              "type": "ai_gen_block_e195552",
+              "settings": {
+                "title_match": "Bandeau",
+                "link_label": "Size chart",
+                "popup_title": "Size chart",
+                "image_alt": "",
+                "desktop_width_percent": 100,
+                "popup_background": "#FFFFFF",
+                "text_color": "#000000",
+                "corner_radius": 8
+              },
+              "blocks": {}
+            },
             "variant_picker_R3rGDr": {
               "type": "variant-picker",
               "settings": {
@@ -758,6 +772,7 @@
             "trust_badges_row",
             "divider_VJhene",
             "sku_CbFtQN",
+            "ai_gen_block_e195552_7pHmRW",
             "variant_picker_R3rGDr",
             "buy_buttons_eYQEYi",
             "kj_vto_lips",
