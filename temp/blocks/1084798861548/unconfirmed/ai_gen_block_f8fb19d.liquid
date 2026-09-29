@@ -1,6 +1,152 @@
+{% doc %}
+  @prompt
+    size chart popup - conditions based, Image options based on the title , image popup
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-image-popup-{{ ai_gen_id }} {
+    display: block;
+    width: {{ block.settings.desktop_width_percent }}%;
+    max-width: 100%;
+  }
+  .ai-image-popup-{{ ai_gen_id }}__trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0;
+    color: {{ block.settings.text_color }};
+    background: transparent;
+    border: 0;
+    font: inherit;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    cursor: pointer;
+  }
+  .ai-image-popup-{{ ai_gen_id }}__trigger:focus-visible,
+  .ai-image-popup-{{ ai_gen_id }}__close:focus-visible {
+    outline: 2px solid {{ block.settings.text_color }};
+    outline-offset: 4px;
+  }
+  .ai-image-popup-{{ ai_gen_id }}__overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: rgba(0, 0, 0, 0.72);
+  }
+  .ai-image-popup-{{ ai_gen_id }}__overlay[aria-hidden="false"] { display: flex; }
+  .ai-image-popup-{{ ai_gen_id }}__dialog {
+    position: relative;
+    width: min(900px, 100%);
+    max-height: calc(100vh - 48px);
+    overflow: auto;
+    padding: 20px;
+    background: {{ block.settings.popup_background }};
+    color: {{ block.settings.text_color }};
+    border-radius: {{ block.settings.corner_radius }}px;
+  }
+  .ai-image-popup-{{ ai_gen_id }}__close {
+    position: sticky;
+    top: 0;
+    float: right;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    margin: -10px -10px 8px 8px;
+    border: 1px solid currentColor;
+    border-radius: 50%;
+    background: {{ block.settings.popup_background }};
+    color: {{ block.settings.text_color }};
+    font-size: 24px;
+    cursor: pointer;
+  }
+  .ai-image-popup-{{ ai_gen_id }}__heading { margin: 0 0 16px; font-size: 22px; }
+  .ai-image-popup-{{ ai_gen_id }}__image { display: block; width: 100%; height: auto; }
+  .ai-image-popup-{{ ai_gen_id }}__placeholder { width: 100%; aspect-ratio: 4 / 3; background: #f2f2f2; }
+  .ai-image-popup-{{ ai_gen_id }}__placeholder svg { display: block; width: 100%; height: 100%; }
+  .ai-image-popup-{{ ai_gen_id }}__empty { padding: 12px; color: #333333; text-align: center; font-size: 14px; }
+  @media (max-width: 749px) {
+    .ai-image-popup-{{ ai_gen_id }}__overlay { padding: 12px; }
+    .ai-image-popup-{{ ai_gen_id }}__dialog { max-height: calc(100vh - 24px); padding: 16px; }
+  }
+{% endstyle %}
+
+<image-popup-{{ ai_gen_id }} class="ai-image-popup-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <button class="ai-image-popup-{{ ai_gen_id }}__trigger" type="button" aria-haspopup="dialog" aria-expanded="false">
+    {{ block.settings.link_label | escape }}
+  </button>
+  <div class="ai-image-popup-{{ ai_gen_id }}__overlay" aria-hidden="true">
+    <div class="ai-image-popup-{{ ai_gen_id }}__dialog" role="dialog" aria-modal="true" aria-label="{{ block.settings.popup_title | escape }}" tabindex="-1">
+      <button class="ai-image-popup-{{ ai_gen_id }}__close" type="button" aria-label="Close dialog">&times;</button>
+      {% if block.settings.popup_title != blank %}<h2 class="ai-image-popup-{{ ai_gen_id }}__heading">{{ block.settings.popup_title | escape }}</h2>{% endif %}
+      {% if block.settings.popup_image != blank %}
+        <img class="ai-image-popup-{{ ai_gen_id }}__image" src="{{ block.settings.popup_image | image_url: width: 1800 }}" alt="{{ block.settings.image_alt | default: block.settings.popup_image.alt | escape }}" loading="lazy" width="{{ block.settings.popup_image.width }}" height="{{ block.settings.popup_image.height }}">
+      {% else %}
+        <div class="ai-image-popup-{{ ai_gen_id }}__placeholder">
+          {{ 'image' | placeholder_svg_tag }}
+          <div class="ai-image-popup-{{ ai_gen_id }}__empty">Add an image in the block settings.</div>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</image-popup-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    const tagName = 'image-popup-{{ ai_gen_id }}';
+    if (customElements.get(tagName)) return;
+    class ImagePopup extends HTMLElement {
+      connectedCallback() {
+        this.trigger = this.querySelector('.ai-image-popup-{{ ai_gen_id }}__trigger');
+        this.overlay = this.querySelector('.ai-image-popup-{{ ai_gen_id }}__overlay');
+        this.dialog = this.querySelector('.ai-image-popup-{{ ai_gen_id }}__dialog');
+        this.closeButton = this.querySelector('.ai-image-popup-{{ ai_gen_id }}__close');
+        this.trigger.addEventListener('click', () => this.open());
+        this.closeButton.addEventListener('click', () => this.close());
+        this.overlay.addEventListener('click', (event) => { if (event.target === this.overlay) this.close(); });
+        this.onKeydown = (event) => { if (event.key === 'Escape' && this.overlay.getAttribute('aria-hidden') === 'false') this.close(); };
+        document.addEventListener('keydown', this.onKeydown);
+      }
+      disconnectedCallback() { document.removeEventListener('keydown', this.onKeydown); }
+      open() {
+        this.overlay.setAttribute('aria-hidden', 'false');
+        this.trigger.setAttribute('aria-expanded', 'true');
+        document.documentElement.style.overflow = 'hidden';
+        this.closeButton.focus();
+      }
+      close() {
+        this.overlay.setAttribute('aria-hidden', 'true');
+        this.trigger.setAttribute('aria-expanded', 'false');
+        document.documentElement.style.overflow = '';
+        this.trigger.focus();
+      }
+    }
+    customElements.define(tagName, ImagePopup);
+  })();
+</script>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Image popup",
+  "settings": [
+    { "type": "text", "id": "link_label", "label": "Trigger label", "default": "View image" },
+    { "type": "text", "id": "popup_title", "label": "Popup title", "default": "Image details" },
+    { "type": "image_picker", "id": "popup_image", "label": "Popup image" },
+    { "type": "text", "id": "image_alt", "label": "Image alt text" },
+    { "type": "range", "id": "desktop_width_percent", "label": "Desktop width", "min": 50, "max": 100, "step": 5, "unit": "%", "default": 100 },
+    { "type": "color", "id": "popup_background", "label": "Popup background", "default": "#FFFFFF" },
+    { "type": "color", "id": "text_color", "label": "Text", "default": "#000000" },
+    { "type": "range", "id": "corner_radius", "label": "Corner radius", "min": 0, "max": 40, "step": 2, "unit": "px", "default": 8 }
+  ],
+  "presets": [{ "name": "Image popup" }],
+  "tag": null,
+  "class": "image-popup-block"
+}
 {% endschema %}
