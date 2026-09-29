@@ -12,6 +12,15 @@
     "thumbnail_scroll_PbDt4b": {
       "type": "thumbnail-scroll",
       "blocks": {
+        "thumbnail_CtggmW": {
+          "type": "thumbnail",
+          "settings": {
+            "image": "shopify://shop_images/Beauty-Products_jpg.jpg",
+            "background_color": "#f1ecfb",
+            "label": "Electronics",
+            "link": "shopify://collections/hair-care-electronics"
+          }
+        },
         "thumbnail_Qbx4az": {
           "type": "thumbnail",
           "settings": {
@@ -78,6 +87,7 @@
         }
       },
       "block_order": [
+        "thumbnail_CtggmW",
         "thumbnail_Qbx4az",
         "thumbnail_9mj9UL",
         "thumbnail_Jq84qh",
