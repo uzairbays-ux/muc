@@ -12,15 +12,6 @@
     "thumbnail_scroll_PbDt4b": {
       "type": "thumbnail-scroll",
       "blocks": {
-        "thumbnail_CtggmW": {
-          "type": "thumbnail",
-          "settings": {
-            "image": "shopify://shop_images/Beauty-Products_jpg.jpg",
-            "background_color": "#f1ecfb",
-            "label": "Electronics",
-            "link": "shopify://collections/hair-care-electronics"
-          }
-        },
         "thumbnail_Qbx4az": {
           "type": "thumbnail",
           "settings": {
@@ -75,6 +66,15 @@
             "link": "shopify://collections/perfumes"
           }
         },
+        "thumbnail_CtggmW": {
+          "type": "thumbnail",
+          "settings": {
+            "image": "shopify://shop_images/Beauty-Products_jpg.jpg",
+            "background_color": "#f1ecfb",
+            "label": "Beauty Tools",
+            "link": "shopify://collections/beauty-tools"
+          }
+        },
         "thumbnail_qkgXkh": {
           "type": "thumbnail",
           "disabled": true,
@@ -87,13 +87,13 @@
         }
       },
       "block_order": [
-        "thumbnail_CtggmW",
         "thumbnail_Qbx4az",
         "thumbnail_9mj9UL",
         "thumbnail_Jq84qh",
         "thumbnail_TA8KHE",
         "thumbnail_h7Dj6p",
         "thumbnail_gBqUph",
+        "thumbnail_CtggmW",
         "thumbnail_qkgXkh"
       ],
       "name": "Thumbnail scroll",
