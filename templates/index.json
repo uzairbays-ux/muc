@@ -1549,7 +1549,7 @@
           "type": "card",
           "name": "Wishful",
           "settings": {
-            "image": "shopify://shop_images/wishfull.webp",
+            "image": "shopify://shop_images/Wishful_Image_Jul_20_2026_03_09_49_PM.webp",
             "link": "shopify://collections/wishful",
             "open_new_tab": false
           }
@@ -1685,7 +1685,7 @@
           "type": "card",
           "name": "Janssen",
           "settings": {
-            "image": "shopify://shop_images/janssen_c4a03be2-63c1-4d02-8e7c-185508707fd3.jpg",
+            "image": "shopify://shop_images/Janssen_662d8b60-73f8-45a8-8ab9-fe2c086d45ad.jpg",
             "link": "shopify://collections/janssen",
             "open_new_tab": false
           }
@@ -1815,7 +1815,7 @@
           "type": "card",
           "name": "Essence",
           "settings": {
-            "image": "shopify://shop_images/Essence_662e2acd-ce69-4b22-9fac-d3e263793e54.webp",
+            "image": "shopify://shop_images/Essence_fb10a70f-e3fd-4156-8358-5ec04752043b.jpg",
             "link": "shopify://collections/essence",
             "open_new_tab": false
           }
@@ -1824,7 +1824,7 @@
           "type": "card",
           "name": "Garnier",
           "settings": {
-            "image": "shopify://shop_images/Garnier_739963d7-e236-4152-affc-f9b0baea296f.webp",
+            "image": "shopify://shop_images/garneri.webp",
             "link": "shopify://collections/garnier",
             "open_new_tab": false
           }
@@ -1833,7 +1833,7 @@
           "type": "card",
           "name": "Trouble Maker",
           "settings": {
-            "image": "shopify://shop_images/trouble_maker.jpg",
+            "image": "shopify://shop_images/non-sale-Trouble-Maker.webp",
             "link": "shopify://collections/trouble-maker",
             "open_new_tab": false
           }
@@ -1842,7 +1842,7 @@
           "type": "card",
           "name": "Rimmel London",
           "settings": {
-            "image": "shopify://shop_images/Rimmel.webp",
+            "image": "shopify://shop_images/Rimmel_5aefc2bf-e36e-438b-abac-648198eb77cd.jpg",
             "link": "shopify://collections/rimmel-london",
             "open_new_tab": false
           }
@@ -1910,8 +1910,8 @@
         "banner_nrAdDN": {
           "type": "banner",
           "settings": {
-            "desktop_image": "shopify://shop_images/Korean_Brand_Main_Banner_2746_x_572_copy.webp",
-            "mobile_image": "shopify://shop_images/Korean_Brand_Main_Banner_copy.webp",
+            "desktop_image": "shopify://shop_images/Korean-Brand-Main-Banner_desktop.png",
+            "mobile_image": "shopify://shop_images/k-banner-mobile.avif",
             "link": "shopify://pages/korean-brand-k-beauty",
             "open_new_tab": false
           }
