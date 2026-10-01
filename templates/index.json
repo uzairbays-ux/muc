@@ -1391,7 +1391,7 @@
           "type": "card",
           "name": "Huda Beauty",
           "settings": {
-            "image": "shopify://shop_images/huda_beauty_859679ce-2ff9-4ef0-afab-10c3c603dfee.webp",
+            "image": "shopify://shop_images/huda_beauty_flat_20_off_500x500_v2.webp",
             "link": "shopify://collections/huda-beauty",
             "open_new_tab": false
           }
@@ -1400,7 +1400,7 @@
           "type": "card",
           "name": "NYX",
           "settings": {
-            "image": "shopify://shop_images/NYX_a86b34df-ff0c-47e2-b034-4e26277294d2.webp",
+            "image": "shopify://shop_images/nyx_logo_aligned_white_box_500x500_b40728cc-8de3-407a-aac9-df83a09d061a.webp",
             "link": "shopify://collections/nyx",
             "open_new_tab": false
           }
@@ -1409,7 +1409,7 @@
           "type": "card",
           "name": "Morphe",
           "settings": {
-            "image": "shopify://shop_images/Mophe.webp",
+            "image": "shopify://shop_images/morphe_logo_flat_20_off_500x500_6647c1b4-f607-493d-a790-85fd74d3439b.webp",
             "link": "shopify://collections/morphe",
             "open_new_tab": false
           }
@@ -1418,7 +1418,7 @@
           "type": "card",
           "name": "O/S",
           "settings": {
-            "image": "shopify://shop_images/one_size.webp",
+            "image": "shopify://shop_images/one_size_logo_flat_20_off_500x500_394dbf39-00c7-487c-87aa-887c79555521.webp",
             "link": "shopify://collections/o-s",
             "open_new_tab": false
           }
@@ -1427,7 +1427,7 @@
           "type": "card",
           "name": "Milk",
           "settings": {
-            "image": "shopify://shop_images/milk_makeup.webp",
+            "image": "shopify://shop_images/milk_logo_aligned_final_500x500_110203c2-59d8-4824-a8d0-21fa4d6c7395.webp",
             "link": "shopify://collections/milk",
             "open_new_tab": false
           }
@@ -1605,7 +1605,7 @@
           "type": "card",
           "name": "Charlotte Tilbury",
           "settings": {
-            "image": "shopify://shop_images/Charlotte.webp",
+            "image": "shopify://shop_images/charlotte_tilbury_logo_enhanced_500x500_07d77159-1154-41be-94ea-9ef5a65d3e02.webp",
             "link": "shopify://collections/charlotte-tilbury",
             "open_new_tab": false
           }
