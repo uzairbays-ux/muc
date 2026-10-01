@@ -363,7 +363,7 @@
           "type": "card",
           "name": "Rederm",
           "settings": {
-            "image": "shopify://shop_images/rederm_copy.webp",
+            "image": "shopify://shop_images/redrem.webp",
             "link": "shopify://collections/rederm",
             "open_new_tab": false
           }
