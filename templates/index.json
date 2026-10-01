@@ -164,7 +164,7 @@
           "type": "card",
           "name": "ST London",
           "settings": {
-            "image": "shopify://shop_images/ST.webp",
+            "image": "shopify://shop_images/500-x-500_6.webp",
             "link": "shopify://collections/st-london",
             "open_new_tab": false
           }
@@ -230,7 +230,7 @@
           "type": "card",
           "name": "ELF",
           "settings": {
-            "image": "shopify://shop_images/Elf_11650f11-c263-4705-b028-4122aa479b26.webp",
+            "image": "shopify://shop_images/ELF_1_9387191c-16fe-4278-b8c5-0b2659fa6730.webp",
             "link": "shopify://collections/elf",
             "open_new_tab": false
           }
@@ -354,7 +354,7 @@
           "type": "card",
           "name": "Philips",
           "settings": {
-            "image": "shopify://shop_images/philips_jpg.webp",
+            "image": "shopify://shop_images/philips.webp",
             "link": "shopify://collections/philips",
             "open_new_tab": false
           }
@@ -1011,7 +1011,7 @@
           "type": "card",
           "name": "Bleuface",
           "settings": {
-            "image": "shopify://shop_images/SEP_MADNESS_COLORSHOW.webp",
+            "image": "shopify://shop_images/Bleuface_20bfd0a7-71b2-415a-8f63-2e7b19636615.webp",
             "link": "shopify://collections/bleuface",
             "open_new_tab": false
           }
@@ -1037,7 +1037,7 @@
           "type": "card",
           "name": "Bath & Body",
           "settings": {
-            "image": "shopify://shop_images/Bath_body.webp",
+            "image": "shopify://shop_images/B_BW.webp",
             "link": "shopify://collections/bath-body-works",
             "open_new_tab": false
           }
