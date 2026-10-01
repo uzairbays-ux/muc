@@ -2283,7 +2283,7 @@
         "category_TkjWqQ": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/Max-Factore.webp",
+            "image": "shopify://shop_images/maxfactor_4dd80f1d-dd64-4e6b-9503-44683da15b25.jpg",
             "label": "",
             "link": "shopify://collections/max-factor",
             "card_background": "rgba(0,0,0,0)"
@@ -2442,8 +2442,8 @@
         "banner_Kt9k6X": {
           "type": "banner",
           "settings": {
-            "desktop_image": "shopify://shop_images/Chinese_Beauty_Main_Banner_2746_x_572_copy.webp",
-            "mobile_image": "shopify://shop_images/Chinese_Beauty_Main_Banner_copy.webp",
+            "desktop_image": "shopify://shop_images/chinese-desktop.webp",
+            "mobile_image": "shopify://shop_images/Chinesse_Banner.webp",
             "link": "shopify://collections/chinese-brands",
             "open_new_tab": false
           }
