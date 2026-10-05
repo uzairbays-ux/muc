@@ -284,6 +284,16 @@
                   },
                   "blocks": {}
                 },
+                "makeupcity_yango_app_product_page_badge_basic_extension_cVethx": {
+                  "type": "shopify://apps/makeupcity-yango-app/blocks/product-page-badge-basic-extension/01a0623d-7d61-77fd-b864-93434b959c3e",
+                  "settings": {
+                    "margin_top": 0,
+                    "margin_bottom": 0,
+                    "width": "100%",
+                    "extension_origin": "",
+                    "adapter_slug": "merchant_makeupcity"
+                  }
+                },
                 "custom_liquid_7MEE6g": {
                   "type": "custom-liquid",
                   "name": "t:names.custom_liquid",
@@ -297,6 +307,7 @@
                 "text_LabgbW",
                 "price_tVjtKg",
                 "kj_save_pill_pdp",
+                "makeupcity_yango_app_product_page_badge_basic_extension_cVethx",
                 "custom_liquid_7MEE6g"
               ]
             },
