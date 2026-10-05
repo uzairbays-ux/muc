@@ -1049,16 +1049,6 @@
               },
               "blocks": {}
             },
-            "makeupcity_yango_app_catalog_card_badge_basic_extension_edmzWL": {
-              "type": "shopify://apps/makeupcity-yango-app/blocks/catalog-card-badge-basic-extension/01a0623d-7d61-77fd-b864-93434b959c3e",
-              "settings": {
-                "margin_top": 4,
-                "margin_bottom": 0,
-                "justify_content": "flex-start",
-                "extension_origin": "",
-                "adapter_slug": "merchant_makeupcity"
-              }
-            },
             "price_gLWgA6": {
               "type": "price",
               "settings": {
@@ -1088,7 +1078,6 @@
             "swatches_block",
             "text_zHM4jV",
             "product_title_M7MJkb",
-            "makeupcity_yango_app_catalog_card_badge_basic_extension_edmzWL",
             "price_gLWgA6"
           ]
         }
