@@ -27,13 +27,14 @@
     {%- render 'meta-tags' -%}
     {%- render 'stylesheets' -%}
     {%- render 'fonts' -%}
-    {%- comment -%} Site-wide font stack: Inter, Roboto, Arial, sans-serif. {%- endcomment -%}
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap"
-      rel="stylesheet"
-    >
+    {%- comment -%}
+      Site-wide font stack: Inter, Roboto, Arial, sans-serif.
+
+      Inter is served by Shopify from the theme's own font settings
+      (see 'fonts' above), so the Google Fonts copy was a second, render-blocking
+      download of a font the page already had, plus two preconnects for it.
+      Roboto only ever acted as a fallback behind Inter, which Arial covers.
+    {%- endcomment -%}
     {%- render 'scripts' -%}
     {%- render 'theme-styles-variables' -%}
     {%- render 'color-schemes' -%}
