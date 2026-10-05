@@ -1683,7 +1683,7 @@
           "type": "card",
           "name": "British Lingerie Studio",
           "settings": {
-            "image": "shopify://shop_images/BLS_0e789a94-c7bc-4e23-a14f-264ad79da801.jpg",
+            "image": "shopify://shop_images/BLS_e5b17073-4424-4437-b2be-3d88520c0163.webp",
             "link": "shopify://collections/bls",
             "open_new_tab": false
           }
@@ -2272,7 +2272,7 @@
         "category_EAWHGr": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/Schwarzkopf_dbf9216a-5f01-45d1-922a-49d5ffc3812e.jpg",
+            "image": "shopify://shop_images/Schwarzkopf_940b1057-ad07-419a-a97f-97d51b7e1b0e.webp",
             "label": "",
             "link": "shopify://collections/schwarzkopf",
             "card_background": "rgba(0,0,0,0)"
