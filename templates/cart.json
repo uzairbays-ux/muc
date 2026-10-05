@@ -260,7 +260,7 @@
       },
       "name": "Featured collection",
       "settings": {
-        "collection": "all",
+        "collection": "bestsellers",
         "banner_link": "",
         "gradient_color_1": "",
         "gradient_color_2": "",
