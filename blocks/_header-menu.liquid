@@ -19,7 +19,12 @@
   assign highlight_radius = block_settings.highlight_radius | default: 4
   assign has_highlight = false
   assign highlight_handles_list = ''
-  if highlight_raw != blank and highlight_animation != 'none'
+  comment
+    The "None (just color)" animation option must still paint the pill, so the
+    highlight applies whenever handles are set; only the animation property
+    below is conditional.
+  endcomment
+  if highlight_raw != blank
     assign has_highlight = true
     assign highlight_handles_list = highlight_raw | replace: ' ', '' | downcase | split: ','
   endif
@@ -39,7 +44,9 @@
         border-radius: {{ highlight_radius }}px;
         padding-inline: 10px;
         padding-block: 4px;
-        animation: menu-highlight-{{ highlight_animation }} 1.8s ease-in-out infinite;
+        {% if highlight_animation != 'none' %}
+          animation: menu-highlight-{{ highlight_animation }} 1.8s ease-in-out infinite;
+        {% endif %}
         position: relative;
         z-index: 1;
         display: inline-flex;
