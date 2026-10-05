@@ -1,0 +1,242 @@
+{%- doc -%}
+  One size chart and the condition for showing it. Child of the Size guide block.
+
+  Matches when the product has one of the listed tags (whole tag, case ignored)
+  or its title contains one of the listed phrases (case ignored). Renders a
+  Size Guide link and a popup with this chart's image, plus a Sister Size link
+  and popup when that switch is on. Renders nothing when it does not match, or
+  when a chart above it has already matched.
+{%- enddoc -%}
+
+{%- liquid
+  assign sc_product = closest.product
+  assign sc_image = block.settings.image
+  assign sc_matches = false
+
+  if sc_product != blank and sc_image != blank
+    # contains on an array is case sensitive, so lower-case both sides.
+    assign sc_product_tags = sc_product.tags | join: ',' | downcase | split: ','
+    assign sc_product_title = sc_product.title | downcase
+
+    assign sc_chart_tags = block.settings.tags | downcase | split: ','
+    for sc_chart_tag in sc_chart_tags
+      assign sc_needle = sc_chart_tag | strip
+      # An empty string is "contained" in everything, so skip empty entries.
+      if sc_needle != '' and sc_product_tags contains sc_needle
+        assign sc_matches = true
+        break
+      endif
+    endfor
+
+    unless sc_matches
+      assign sc_phrases = block.settings.title_contains | downcase | split: ','
+      for sc_phrase in sc_phrases
+        assign sc_needle = sc_phrase | strip
+        if sc_needle != '' and sc_product_title contains sc_needle
+          assign sc_matches = true
+          break
+        endif
+      endfor
+    endunless
+  endif
+
+  # First match wins: count the matches so far and only render the first.
+  if sc_matches
+    capture sc_position
+      increment kj_size_chart_matches
+    endcapture
+    assign sc_position = sc_position | strip
+    if sc_position != '0'
+      assign sc_matches = false
+    endif
+  endif
+
+  assign sc_label = settings.kj_size_guide_label | default: 'Size Guide'
+  assign sc_sister_label = settings.kj_sister_size_label | default: 'Sister Size'
+  assign sc_sister_image = settings.kj_sister_size_image
+-%}
+
+{%- if sc_matches -%}
+  <script src="{{ 'dialog.js' | asset_url }}" type="module"></script>
+
+  <div class="kj-size-chart" {{ block.shopify_attributes }}>
+    <dialog-component class="kj-size-chart__item">
+      <button on:click="/showDialog" class="button button-unstyled kj-size-chart__link" type="button">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" aria-hidden="true">
+          <rect x="1.5" y="7.5" width="21" height="9" rx="1.5" stroke="currentColor" stroke-width="1.5"></rect>
+          <path d="M6 7.5v3.5M10 7.5v5M14 7.5v3.5M18 7.5v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+        </svg>
+        {{- sc_label | escape -}}
+      </button>
+
+      <dialog
+        ref="dialog"
+        class="kj-size-chart__dialog dialog-modal color-{{ settings.popover_color_scheme }}"
+        scroll-lock
+        aria-label="{{ sc_label | escape }}"
+      >
+        <div class="kj-size-chart__inner">
+          {{
+            sc_image
+            | image_url: width: 1600
+            | image_tag:
+              loading: 'lazy',
+              widths: '480, 750, 1100, 1600',
+              sizes: '(min-width: 750px) 680px, 92vw',
+              class: 'kj-size-chart__image',
+              alt: sc_image.alt | default: sc_label
+          }}
+        </div>
+        <button
+          ref="closeButton"
+          on:click="/closeDialog"
+          class="button button-unstyled close-button kj-size-chart__close"
+          aria-label="{{ 'accessibility.close_dialog' | t }}"
+          type="button"
+        >
+          {{- 'icon-close.svg' | inline_asset_content -}}
+        </button>
+      </dialog>
+    </dialog-component>
+
+    {%- if block.settings.show_sister_size and sc_sister_image != blank -%}
+      <dialog-component class="kj-size-chart__item kj-size-chart__item--sister">
+        <button on:click="/showDialog" class="button button-unstyled kj-size-chart__link" type="button">
+          {{- sc_sister_label | escape -}}
+        </button>
+
+        <dialog
+          ref="dialog"
+          class="kj-size-chart__dialog dialog-modal color-{{ settings.popover_color_scheme }}"
+          scroll-lock
+          aria-label="{{ sc_sister_label | escape }}"
+        >
+          <div class="kj-size-chart__inner">
+            {{
+              sc_sister_image
+              | image_url: width: 1600
+              | image_tag:
+                loading: 'lazy',
+                widths: '480, 750, 1100, 1600',
+                sizes: '(min-width: 750px) 680px, 92vw',
+                class: 'kj-size-chart__image',
+                alt: sc_sister_image.alt | default: sc_sister_label
+            }}
+          </div>
+          <button
+            ref="closeButton"
+            on:click="/closeDialog"
+            class="button button-unstyled close-button kj-size-chart__close"
+            aria-label="{{ 'accessibility.close_dialog' | t }}"
+            type="button"
+          >
+            {{- 'icon-close.svg' | inline_asset_content -}}
+          </button>
+        </dialog>
+      </dialog-component>
+    {%- endif -%}
+  </div>
+{%- endif -%}
+
+{% stylesheet %}
+  .kj-size-chart {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px 18px;
+  }
+
+  .kj-size-chart__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 0;
+    font-size: 13px;
+    font-weight: 500;
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    cursor: pointer;
+  }
+
+  .kj-size-chart__link svg {
+    flex: 0 0 auto;
+  }
+
+  /* Same shell as the theme's popup link dialog. */
+  .kj-size-chart__dialog {
+    box-shadow: var(--shadow-popover);
+    border: var(--style-border-popover);
+    border-radius: var(--style-border-radius-popover);
+    background-color: var(--color-background);
+    padding: var(--padding-4xl) var(--padding-md) var(--padding-md);
+    width: min(720px, 94vw);
+    max-width: 94vw;
+    max-height: var(--modal-max-height);
+    overflow: auto;
+  }
+
+  .kj-size-chart__dialog[open] {
+    animation: modalSlideInTop var(--animation-speed) var(--animation-easing) forwards;
+  }
+
+  .kj-size-chart__dialog.dialog-closing {
+    animation: modalSlideOutTop var(--animation-speed) var(--animation-easing) forwards;
+  }
+
+  .kj-size-chart__image {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .kj-size-chart__close {
+    top: var(--margin-2xs);
+    right: var(--margin-2xs);
+    opacity: 0.8;
+    animation: none;
+  }
+
+  @media screen and (min-width: 750px) {
+    .kj-size-chart__dialog {
+      padding: var(--padding-4xl) var(--padding-xl) var(--padding-xl);
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Size chart",
+  "tag": null,
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Chart image"
+    },
+    {
+      "type": "text",
+      "id": "tags",
+      "label": "Product tags",
+      "info": "Comma-separated. The chart shows when the product has any one of these tags. Capital letters do not matter."
+    },
+    {
+      "type": "text",
+      "id": "title_contains",
+      "label": "Title contains",
+      "info": "Comma-separated phrases. The chart shows when the product title contains any one of them."
+    },
+    {
+      "type": "checkbox",
+      "id": "show_sister_size",
+      "label": "Show Sister Size link",
+      "default": false
+    }
+  ],
+  "presets": [
+    {
+      "name": "Size chart"
+    }
+  ]
+}
+{% endschema %}

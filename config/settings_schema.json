@@ -2327,6 +2327,40 @@
     ]
   },
   {
+    "name": "Size guide",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Shared by every chart in the Size guide block on the product page."
+      },
+      {
+        "type": "text",
+        "id": "kj_size_guide_vendor",
+        "label": "Vendor",
+        "info": "Only products of this vendor show a size guide.",
+        "default": "British Lingerie Studio"
+      },
+      {
+        "type": "text",
+        "id": "kj_size_guide_label",
+        "label": "Size guide link text",
+        "default": "Size Guide"
+      },
+      {
+        "type": "image_picker",
+        "id": "kj_sister_size_image",
+        "label": "Sister Size chart",
+        "info": "Shown by charts that have \"Show Sister Size link\" switched on."
+      },
+      {
+        "type": "text",
+        "id": "kj_sister_size_label",
+        "label": "Sister Size link text",
+        "default": "Sister Size"
+      }
+    ]
+  },
+  {
     "name": "Perfect Match",
     "settings": [
       {

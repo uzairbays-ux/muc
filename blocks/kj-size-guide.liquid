@@ -1,0 +1,67 @@
+{%- doc -%}
+  Size guide for one vendor's products (British Lingerie Studio).
+
+  Holds one "Size chart" child block per chart. The children are checked from
+  top to bottom and the first one that matches the product - by tag or by a
+  phrase in its title - renders a Size Guide link and its popup. Products of
+  any other vendor, and products that match no chart, render nothing.
+
+  The vendor, the link labels and the Sister Size image are shared by every
+  chart, so they live in Theme settings > Size guide.
+{%- enddoc -%}
+
+{%- liquid
+  assign sg_product = closest.product
+  assign sg_vendor = settings.kj_size_guide_vendor | default: 'British Lingerie Studio' | strip | downcase
+  assign sg_product_vendor = sg_product.vendor | strip | downcase
+-%}
+
+{%- if sg_product != blank and sg_vendor != '' and sg_product_vendor == sg_vendor -%}
+  <div class="kj-size-guide" {{ block.shopify_attributes }}>
+    {%- content_for 'blocks' -%}
+  </div>
+{%- endif -%}
+
+{% stylesheet %}
+  .kj-size-guide {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px 18px;
+  }
+
+  /* No chart matched: take no room in the details column. */
+  .kj-size-guide:not(:has(*)) {
+    display: none;
+  }
+
+  /* The first matching chart wins. Charts further down that also match are
+     normally not rendered at all; this covers the case where they are. */
+  .kj-size-guide > .kj-size-chart ~ .kj-size-chart {
+    display: none;
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Size guide",
+  "tag": null,
+  "blocks": [
+    {
+      "type": "_kj-size-chart"
+    }
+  ],
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "Add one Size chart block per chart. They are checked from top to bottom and the first one that matches the product is shown, so put the more specific charts first. The vendor, link labels and Sister Size image are in Theme settings > Size guide."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Size guide",
+      "category": "t:categories.product"
+    }
+  ]
+}
+{% endschema %}
