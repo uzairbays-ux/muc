@@ -18,7 +18,7 @@
 
 {%- if sg_product != blank and sg_vendor != '' and sg_product_vendor == sg_vendor -%}
   <div class="kj-size-guide" {{ block.shopify_attributes }}>
-    <!-- kjdbg block.blocks.size=[{{ block.blocks.size }}] section.blocks.size=[{{ section.blocks.size }}] first=[{{ block.blocks.first.type }}|{{ block.blocks.first.settings.tags }}] sect=[{% for b in section.blocks %}{{ b.type }}:{{ b.blocks.size }},{% endfor %}] -->
+    <!-- kjdbg2 {% for b in block.blocks %}[{{ b.id }}|{{ b.type }}|{{ b.settings.tags }}|{{ b.settings.title_contains }}|{{ b.settings.show_sister_size }}|{{ b.settings.image }}|{{ b.settings | json }}] {% endfor %} -->
     {%- content_for 'blocks' -%}
   </div>
 {%- endif -%}
