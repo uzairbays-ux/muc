@@ -86,6 +86,8 @@
     "variant_button_border_width": 1,
     "variant_button_radius": 14,
     "variant_button_width": "equal-width-buttons",
+    "product_card_carousel": false,
+    "show_second_image_on_hover": true,
     "kj_yango_enabled": true,
     "content_for_index": [],
     "blocks": {
