@@ -17,10 +17,20 @@
 -%}
 
 {%- if sg_product != blank and sg_vendor != '' and sg_product_vendor == sg_vendor -%}
-  <div class="kj-size-guide" {{ block.shopify_attributes }}>
-    <!-- kjdbg2 {% for b in block.blocks %}[{{ b.id }}|{{ b.type }}|{{ b.settings.tags }}|{{ b.settings.title_contains }}|{{ b.settings.show_sister_size }}|{{ b.settings.image }}|{{ b.settings | json }}] {% endfor %} -->
-    {%- content_for 'blocks' -%}
-  </div>
+  {%- liquid
+    # Each chart that matches renders itself behind a marker. Keep only the
+    # first one, so a product that matches several charts outputs exactly one.
+    capture sg_charts
+      content_for 'blocks'
+    endcapture
+    assign sg_matches = sg_charts | split: '<!--kj-size-chart-->'
+  -%}
+  {%- if sg_matches.size > 1 -%}
+    <script src="{{ 'dialog.js' | asset_url }}" type="module"></script>
+    <div class="kj-size-guide" {{ block.shopify_attributes }}>
+      {{- sg_matches[1] -}}
+    </div>
+  {%- endif -%}
 {%- endif -%}
 
 {% stylesheet %}
@@ -31,16 +41,6 @@
     gap: 6px 18px;
   }
 
-  /* No chart matched: take no room in the details column. */
-  .kj-size-guide:not(:has(*)) {
-    display: none;
-  }
-
-  /* The first matching chart wins. Charts further down that also match are
-     normally not rendered at all; this covers the case where they are. */
-  .kj-size-guide > .kj-size-chart ~ .kj-size-chart {
-    display: none;
-  }
 {% endstylesheet %}
 
 {% schema %}

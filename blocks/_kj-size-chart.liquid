@@ -4,8 +4,8 @@
   Matches when the product has one of the listed tags (whole tag, case ignored)
   or its title contains one of the listed phrases (case ignored). Renders a
   Size Guide link and a popup with this chart's image, plus a Sister Size link
-  and popup when that switch is on. Renders nothing when it does not match, or
-  when a chart above it has already matched.
+  and popup when that switch is on. Renders nothing when it does not match. When
+  several charts match, the Size guide block outputs only the first.
 {%- enddoc -%}
 
 {%- liquid
@@ -40,25 +40,14 @@
     endunless
   endif
 
-  # First match wins: count the matches so far and only render the first.
-  if sc_matches
-    capture sc_position
-      increment kj_size_chart_matches
-    endcapture
-    assign sc_position = sc_position | strip
-    if sc_position != '0'
-      assign sc_matches = false
-    endif
-  endif
-
   assign sc_label = settings.kj_size_guide_label | default: 'Size Guide'
   assign sc_sister_label = settings.kj_sister_size_label | default: 'Sister Size'
   assign sc_sister_image = settings.kj_sister_size_image
 -%}
 
 {%- if sc_matches -%}
-  <script src="{{ 'dialog.js' | asset_url }}" type="module"></script>
-
+  {%- comment -%} The Size guide block splits on this marker and keeps the first match. {%- endcomment -%}
+  <!--kj-size-chart-->
   <div class="kj-size-chart" {{ block.shopify_attributes }}>
     <dialog-component class="kj-size-chart__item">
       <button on:click="/showDialog" class="button button-unstyled kj-size-chart__link" type="button">
@@ -184,10 +173,13 @@
     animation: modalSlideOutTop var(--animation-speed) var(--animation-easing) forwards;
   }
 
+  /* Whole chart visible without scrolling where the screen allows it. */
   .kj-size-chart__image {
     display: block;
     width: 100%;
     height: auto;
+    max-height: calc(100dvh - 180px);
+    object-fit: contain;
   }
 
   .kj-size-chart__close {
