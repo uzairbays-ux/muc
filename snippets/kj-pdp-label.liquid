@@ -18,5 +18,18 @@
     letter-spacing: 0.6px;
     text-transform: uppercase;
     color: #8f00ff;
+    white-space: nowrap;
+  }
+
+  /* The label shares a row group with the brand and rating. Let that row wrap
+     and give the label the full first line, so it reads as an eyebrow above
+     them instead of being squeezed in beside them. */
+  .group-block-content:has(> div > .kj-pdp-label) {
+    flex-wrap: wrap;
+    row-gap: 4px;
+  }
+
+  .group-block-content > div:has(> .kj-pdp-label) {
+    flex: 0 0 100%;
   }
 {% endstylesheet %}
