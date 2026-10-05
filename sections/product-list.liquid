@@ -60,8 +60,31 @@
 
   {% capture list_items %}
     {% if section.settings.collection != blank and shop.products_count != 0 %}
-      {% paginate section.settings.collection.products by max_items %}
-        {% for product in section.settings.collection.products limit: max_items %}
+      {%- comment -%}
+        Fetch a few pages' worth so sold-out products can be skipped and the row
+        still fills to max_items. The split marker goes before every item except
+        the first rendered one, so skipped products don't leave empty slots.
+      {%- endcomment -%}
+      {% liquid
+        assign fetch_count = max_items | times: 4
+        if fetch_count > 50
+          assign fetch_count = 50
+        endif
+        assign rendered_count = 0
+      %}
+      {% paginate section.settings.collection.products by fetch_count %}
+        {% for product in section.settings.collection.products %}
+          {% if rendered_count >= max_items %}
+            {% break %}
+          {% endif %}
+          {% if section.settings.hide_sold_out and product.available == false %}
+            {% continue %}
+          {% endif %}
+
+          {% unless rendered_count == 0 %}
+            <!--@list/split-->
+          {% endunless %}
+
           <div
             class="resource-list__item"
           >
@@ -70,9 +93,7 @@
             {% # theme-check-enable UniqueStaticBlockId %}
           </div>
 
-          {% unless forloop.last %}
-            <!--@list/split-->
-          {% endunless %}
+          {% assign rendered_count = rendered_count | plus: 1 %}
         {% endfor %}
       {% endpaginate %}
     {% else %}
@@ -284,6 +305,13 @@
       "max": 16,
       "step": 1,
       "default": 4
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_sold_out",
+      "label": "Hide sold-out products",
+      "info": "Skips unavailable products and fills the row with the next available ones.",
+      "default": true
     },
     {
       "type": "range",
