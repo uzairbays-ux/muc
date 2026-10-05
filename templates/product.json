@@ -357,6 +357,20 @@
               },
               "blocks": {}
             },
+            "ai_gen_block_e195552_7pHmRW": {
+              "type": "ai_gen_block_e195552",
+              "settings": {
+                "title_match": "Bandeau",
+                "link_label": "Size chart",
+                "popup_title": "Size chart",
+                "image_alt": "",
+                "desktop_width_percent": 100,
+                "popup_background": "#FFFFFF",
+                "text_color": "#000000",
+                "corner_radius": 8
+              },
+              "blocks": {}
+            },
             "variant_picker_R3rGDr": {
               "type": "variant-picker",
               "settings": {
@@ -758,6 +772,7 @@
             "trust_badges_row",
             "divider_VJhene",
             "sku_CbFtQN",
+            "ai_gen_block_e195552_7pHmRW",
             "variant_picker_R3rGDr",
             "buy_buttons_eYQEYi",
             "kj_vto_lips",
@@ -1034,14 +1049,14 @@
               },
               "blocks": {}
             },
-            "makeupcity_yango_app_catalog_card_badge_basic_extension_gY9Mtk": {
+            "makeupcity_yango_app_catalog_card_badge_basic_extension_edmzWL": {
               "type": "shopify://apps/makeupcity-yango-app/blocks/catalog-card-badge-basic-extension/01a0623d-7d61-77fd-b864-93434b959c3e",
               "settings": {
                 "margin_top": 4,
                 "margin_bottom": 0,
                 "justify_content": "flex-start",
                 "extension_origin": "",
-                "adapter_slug": ""
+                "adapter_slug": "merchant_makeupcity"
               }
             },
             "price_gLWgA6": {
@@ -1073,7 +1088,7 @@
             "swatches_block",
             "text_zHM4jV",
             "product_title_M7MJkb",
-            "makeupcity_yango_app_catalog_card_badge_basic_extension_gY9Mtk",
+            "makeupcity_yango_app_catalog_card_badge_basic_extension_edmzWL",
             "price_gLWgA6"
           ]
         }
