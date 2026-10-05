@@ -69,6 +69,14 @@
             "padding-inline-end": 0
           },
           "blocks": {
+            "kj_bestseller_pdp": {
+              "type": "custom-liquid",
+              "name": "Bestseller badge",
+              "settings": {
+                "custom_liquid": "{% render 'kj-pdp-bestseller', product: product %}"
+              },
+              "blocks": {}
+            },
             "group_38ENnf": {
               "type": "group",
               "name": "Vendor & Rating",
@@ -293,14 +301,6 @@
                     "custom_liquid": "{% render 'baadmay' %}"
                   },
                   "blocks": {}
-                },
-                "kj_bestseller_pdp": {
-                  "type": "custom-liquid",
-                  "name": "Bestseller badge",
-                  "settings": {
-                    "custom_liquid": "{% render 'kj-pdp-bestseller', product: product %}"
-                  },
-                  "blocks": {}
                 }
               },
               "block_order": [
@@ -308,8 +308,7 @@
                 "price_tVjtKg",
                 "kj_save_pill_pdp",
                 "makeupcity_yango_app_product_page_badge_basic_extension_cVethx",
-                "custom_liquid_7MEE6g",
-                "kj_bestseller_pdp"
+                "custom_liquid_7MEE6g"
               ]
             },
             "trust_badges_row": {
@@ -767,6 +766,7 @@
             }
           },
           "block_order": [
+            "kj_bestseller_pdp",
             "group_38ENnf",
             "group_icgrde",
             "trust_badges_row",

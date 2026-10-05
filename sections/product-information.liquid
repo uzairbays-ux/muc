@@ -212,19 +212,20 @@
       if (window.__kjBsMove) return;
       window.__kjBsMove = true;
       var mq = window.matchMedia('(max-width: 749px)');
+      var home = null;
       function place() {
         var badge = document.querySelector('.kj-pdp-bestseller');
         var media = document.querySelector('.product-information__media');
         if (!badge || !media) return;
         if (mq.matches) {
           if (badge.parentElement !== media) {
-            if (!badge.dataset.kjHome) badge.dataset.kjHome = '1';
+            // Remember where it lives in the details column.
+            home = { parent: badge.parentElement, next: badge.nextSibling };
             media.appendChild(badge);
           }
-        } else if (badge.parentElement === media) {
-          // Restore into the details flow on desktop.
-          var host = document.querySelector('[id^="ProductInformation"] .kj-save');
-          if (host && host.parentElement) host.parentElement.appendChild(badge);
+        } else if (badge.parentElement === media && home && home.parent) {
+          // Back to its own slot on desktop (top of the details column).
+          home.parent.insertBefore(badge, home.next && home.next.parentNode === home.parent ? home.next : home.parent.firstChild);
         }
       }
       place();
