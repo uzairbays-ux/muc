@@ -2582,6 +2582,7 @@
       "blocks": {
         "category_nxUzzz": {
           "type": "category",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Baby_Cream_Lotion.webp",
             "label": "Baby Cream & Lotion",
@@ -2591,6 +2592,7 @@
         },
         "category_XkWdpc": {
           "type": "category",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Baby_Shampoo.webp",
             "label": "Baby Shampoo",
