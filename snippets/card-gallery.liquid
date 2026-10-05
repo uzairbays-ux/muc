@@ -166,7 +166,13 @@
           endif
           assign rendered_slide_count = rendered_slide_count | plus: 1
 
-          if forloop.first and section.index == null or section.index < 5
+          # muc: eager-load the card's first image only in sections near the top
+          # of the page. Liquid evaluates and/or right to left, so the original
+          # read as "first image and (index is null or index < 5)" - and section
+          # was never passed in, so index was always null and every card on every
+          # page loaded eagerly (96 per carousel on the homepage). Pass section in
+          # from the block, and when it is still unknown prefer lazy.
+          if forloop.first and section.index != null and section.index < 5
             assign loading = 'eager'
             assign sizes = image_sizes
           endif
