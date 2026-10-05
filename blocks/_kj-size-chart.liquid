@@ -75,7 +75,6 @@
               class: 'kj-size-chart__image',
               alt: sc_image.alt | default: sc_label
           }}
-        </div>
         <button
           ref="closeButton"
           on:click="/closeDialog"
@@ -85,6 +84,7 @@
         >
           {{- 'icon-close.svg' | inline_asset_content -}}
         </button>
+        </div>
       </dialog>
     </dialog-component>
 
@@ -111,7 +111,6 @@
                 class: 'kj-size-chart__image',
                 alt: sc_sister_image.alt | default: sc_sister_label
             }}
-          </div>
           <button
             ref="closeButton"
             on:click="/closeDialog"
@@ -121,6 +120,7 @@
           >
             {{- 'icon-close.svg' | inline_asset_content -}}
           </button>
+          </div>
         </dialog>
       </dialog-component>
     {%- endif -%}
@@ -152,17 +152,18 @@
     flex: 0 0 auto;
   }
 
-  /* Same shell as the theme's popup link dialog. */
+  /* The popup is just the chart: no panel around it, nothing to scroll. The
+     image is sized to fit the screen and the close button sits on its
+     top-right corner. Open and close still use the theme's dialog animation. */
   .kj-size-chart__dialog {
-    box-shadow: var(--shadow-popover);
-    border: var(--style-border-popover);
-    border-radius: var(--style-border-radius-popover);
-    background-color: var(--color-background);
-    padding: var(--padding-4xl) var(--padding-md) var(--padding-md);
-    width: min(720px, 94vw);
-    max-width: 94vw;
-    max-height: var(--modal-max-height);
-    overflow: auto;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    width: fit-content;
+    max-width: none;
+    max-height: none;
+    overflow: visible;
   }
 
   .kj-size-chart__dialog[open] {
@@ -173,26 +174,44 @@
     animation: modalSlideOutTop var(--animation-speed) var(--animation-easing) forwards;
   }
 
-  /* Whole chart visible without scrolling where the screen allows it. */
+  .kj-size-chart__inner {
+    position: relative;
+    line-height: 0;
+  }
+
   .kj-size-chart__image {
     display: block;
-    width: 100%;
+    width: auto;
     height: auto;
-    max-height: calc(100dvh - 180px);
-    object-fit: contain;
+    max-width: min(720px, 94vw);
+    max-height: 88dvh;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
   }
 
   .kj-size-chart__close {
-    top: var(--margin-2xs);
-    right: var(--margin-2xs);
-    opacity: 0.8;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    padding: 0;
+    border-radius: 50%;
+    background: #fff;
+    color: #111;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    opacity: 1;
     animation: none;
+    cursor: pointer;
   }
 
-  @media screen and (min-width: 750px) {
-    .kj-size-chart__dialog {
-      padding: var(--padding-4xl) var(--padding-xl) var(--padding-xl);
-    }
+  .kj-size-chart__close svg {
+    width: 16px;
+    height: 16px;
   }
 {% endstylesheet %}
 
