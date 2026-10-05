@@ -188,6 +188,49 @@ if (!customElements.get('add-to-cart-component')) {
  *
  * @extends Component<ProductFormRefs>
  */
+/**
+ * Shared /cart.js read for every product form on the page.
+ *
+ * Each card owns a product form, and each one used to fetch /cart.js on
+ * connect and again on every cart:update. A collection page has 24+ cards, so
+ * that is 24+ identical requests which Shopify serialises against the session
+ * - the read that normally takes ~0.6s ends up taking many seconds and blocks
+ * the main thread while every response is parsed.
+ *
+ * Instead the first caller performs the request and the rest await the same
+ * promise. The result is cached briefly so a burst of callers in the same tick
+ * shares one response; any cart mutation clears it immediately, so nothing
+ * reads a stale cart.
+ */
+const CART_CACHE_MS = 1000;
+
+/** @type {Promise<Cart | null> | null} */
+let cartRequest = null;
+let cartRequestAt = 0;
+
+function fetchCartShared() {
+  const now = Date.now();
+  if (cartRequest && now - cartRequestAt < CART_CACHE_MS) return cartRequest;
+
+  cartRequestAt = now;
+  cartRequest = fetch('/cart.js')
+    .then((response) => response.json())
+    .catch((error) => {
+      cartRequest = null;
+      throw error;
+    });
+
+  return cartRequest;
+}
+
+// Any cart change invalidates the cached read.
+for (const name of [ThemeEvents.cartUpdate, ThemeEvents.cartError]) {
+  document.addEventListener(name, () => {
+    cartRequest = null;
+    cartRequestAt = 0;
+  });
+}
+
 class ProductFormComponent extends Component {
   requiredRefs = ['variantId', 'liveRegion'];
   #abortController = new AbortController();
@@ -252,8 +295,8 @@ class ProductFormComponent extends Component {
     if (!variantIdInput?.value) return null;
 
     try {
-      const response = await fetch('/cart.js');
-      const cart = await response.json();
+      const cart = await fetchCartShared();
+      if (!cart) return null;
 
       this.#updateCartQuantityFromData(cart);
       return cart;
