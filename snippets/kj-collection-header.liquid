@@ -1,23 +1,23 @@
 {%- comment -%}
-  Collection page header — collection image from custom.collection_image,
-  breadcrumb, left-aligned title and product count.
+  Collection page header — breadcrumb, left-aligned title and product count,
+  with the brand logo on the right when the collection has an image.
+
+  The image is the collection's own image, falling back to the
+  custom.collection_image metafield. (The metafield condition used to carry a
+  stray hyphen - collection_image- - so it looked up a key that never exists
+  and the image never rendered.)
 {%- endcomment -%}
 
-<div class="kj-collection-header">
+{%- liquid
+  assign kj_ch_logo = collection.image
+  if kj_ch_logo == blank
+    assign kj_ch_logo = collection.metafields.custom.collection_image
+  endif
+-%}
 
-  {%- if collection.metafields.custom.collection_image- != blank -%}
-    <div class="kj-collection-header__image">
-      {{
-        collection.metafields.custom.collection_image
-        | image_url: width: 2000
-        | image_tag:
-          loading: 'eager',
-          widths: '375, 550, 750, 1100, 1500, 2000',
-          sizes: '100vw',
-          alt: collection.title
-      }}
-    </div>
-  {%- endif -%}
+<div class="kj-collection-header{% if kj_ch_logo != blank %} kj-collection-header--has-logo{% endif %}">
+
+  <div class="kj-collection-header__text">
 
   <nav class="kj-collection-header__crumbs" aria-label="breadcrumb">
     <a href="{{ routes.root_url }}">Home</a>
@@ -36,6 +36,22 @@
     {% if collection.products_count == 1 %}product{% else %}products{% endif %}
   </p>
 
+  </div>
+
+  {%- if kj_ch_logo != blank -%}
+    <div class="kj-collection-header__logo">
+      {{
+        kj_ch_logo
+        | image_url: width: 480
+        | image_tag:
+          loading: 'eager',
+          widths: '120, 180, 240, 360, 480',
+          sizes: '(min-width: 750px) 180px, 96px',
+          alt: collection.title
+      }}
+    </div>
+  {%- endif -%}
+
 </div>
 
 {% stylesheet %}
@@ -44,17 +60,29 @@
     text-align: left;
   }
 
-  .kj-collection-header__image {
-    width: 100%;
-    margin-bottom: 20px;
-    overflow: hidden;
+  /* Text left, brand logo right. */
+  .kj-collection-header--has-logo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
   }
 
-  .kj-collection-header__image img {
+  .kj-collection-header__text {
+    min-width: 0;
+  }
+
+  .kj-collection-header__logo {
+    flex: 0 0 auto;
+    width: 180px;
+    max-width: 35%;
+  }
+
+  .kj-collection-header__logo img {
     display: block;
     width: 100%;
     height: auto;
-    max-width: 100%;
+    object-fit: contain;
   }
 
   .kj-collection-header__crumbs {
@@ -102,8 +130,12 @@
   }
 
   @media screen and (max-width: 749px) {
-    .kj-collection-header__image {
-      margin-bottom: 16px;
+    .kj-collection-header__logo {
+      width: 96px;
+    }
+
+    .kj-collection-header--has-logo {
+      gap: 12px;
     }
 
     .kj-collection-header__title {
