@@ -244,8 +244,11 @@
         {{ total_price }}
       </text-component>
     </span>
-    {%- comment -%} Yango Pay cart badge: Theme settings > Yango. {%- endcomment -%}
-    {%- if settings.kj_yango_enabled -%}
+    {%- comment -%}
+      Yango Pay cart badge: Theme settings > Yango. Drawer only - this snippet
+      also renders the cart page summary, which must not show it.
+    {%- endcomment -%}
+    {%- if settings.kj_yango_enabled and is_drawer -%}
       {% render 'yango-cart' %}
     {%- endif -%}
     {% render 'baadmay-drawer' %}
