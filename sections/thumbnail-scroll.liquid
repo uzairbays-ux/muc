@@ -42,13 +42,21 @@
             <span class="thumbnail-scroll__media-bg" style="background-color: {{ b.background_color }};"></span>
           {%- endif -%}
           {%- if b.image != blank -%}
+            {%- liquid
+              # The first few thumbnails are on screen at first paint when this
+              # strip sits at the top of the page, so they should not be lazy.
+              assign ts_loading = 'lazy'
+              if section.index != blank and section.index <= 2 and forloop.index <= 6
+                assign ts_loading = 'eager'
+              endif
+            -%}
             {{
               b.image
               | image_url: width: 600
               | image_tag:
-                loading: 'lazy',
+                loading: ts_loading,
                 widths: '160,240,320,480,600',
-                sizes: '(max-width: 749px) 33vw, 20vw',
+                sizes: '(max-width: 749px) 80px, 20vw',
                 class: 'thumbnail-scroll__image',
                 alt: b.image.alt | default: b.label
             }}
