@@ -28,7 +28,40 @@
     assign has_highlight = true
     assign highlight_handles_list = highlight_raw | replace: ' ', '' | downcase | split: ','
   endif
+
+  assign badge_raw = block_settings.badge_handles
+  assign badge_text = block_settings.badge_text | default: 'NEW'
+  assign badge_bg = block_settings.badge_bg_color | default: '#eb1d23'
+  assign badge_fg = block_settings.badge_text_color | default: '#ffffff'
+  assign badge_handles_list = ''
+  assign has_badge = false
+  if badge_raw != blank and badge_text != blank
+    assign has_badge = true
+    assign badge_handles_list = badge_raw | replace: ' ', '' | downcase | split: ','
+  endif
 -%}
+
+{%- if has_badge -%}
+  <style>
+    .menu-list__link { flex-direction: row; gap: 6px; }
+
+    .menu-badge {
+      display: inline-flex;
+      align-items: center;
+      flex: 0 0 auto;
+      padding: 1px 6px;
+      border-radius: 999px;
+      background-color: {{ badge_bg }};
+      color: {{ badge_fg }};
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.4px;
+      line-height: 14px;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+  </style>
+{%- endif -%}
 
 {%- if has_highlight -%}
   <style>
@@ -167,6 +200,12 @@
             ref="menuitem"
           >
             <span class="menu-list__link-title">{{- link.title -}}</span>
+            {%- if has_badge -%}
+              {%- assign this_handle = link.handle | downcase -%}
+              {%- if badge_handles_list contains this_handle -%}
+                <span class="menu-badge">{{ badge_text | escape }}</span>
+              {%- endif -%}
+            {%- endif -%}
           </a>
           {%- if link.links != blank -%}
             <div class="menu-list__submenu{{ color_scheme_classes }}" ref="submenu[]">
@@ -806,6 +845,35 @@
       "id": "color_scheme",
       "label": "t:settings.color_scheme",
       "default": "primary"
+    },
+    {
+      "type": "header",
+      "content": "Menu badges"
+    },
+    {
+      "type": "text",
+      "id": "badge_handles",
+      "label": "Menu link handles to badge",
+      "info": "Comma-separated. Adds a small pill next to the link, e.g. sale, new-arrivals.",
+      "default": ""
+    },
+    {
+      "type": "text",
+      "id": "badge_text",
+      "label": "Badge text",
+      "default": "NEW"
+    },
+    {
+      "type": "color",
+      "id": "badge_bg_color",
+      "label": "Badge background",
+      "default": "#eb1d23"
+    },
+    {
+      "type": "color",
+      "id": "badge_text_color",
+      "label": "Badge text",
+      "default": "#ffffff"
     },
     {
       "type": "header",
