@@ -1665,7 +1665,7 @@
           "type": "card",
           "name": "Janssen",
           "settings": {
-            "image": "shopify://shop_images/Janssen_662d8b60-73f8-45a8-8ab9-fe2c086d45ad.jpg",
+            "image": "shopify://shop_images/Janssen.webp",
             "link": "shopify://collections/janssen",
             "open_new_tab": false
           }
@@ -1674,7 +1674,7 @@
           "type": "card",
           "name": "FA'RA London",
           "settings": {
-            "image": "shopify://shop_images/600_x_375_Banners_copy_fara_11b592a2-43fd-4939-983c-ee7aa478bdb3.jpg",
+            "image": "shopify://shop_images/Fara_168ddf94-d0c8-4c0b-a872-51faae87de67.webp",
             "link": "shopify://collections/fara",
             "open_new_tab": false
           }
@@ -1804,7 +1804,7 @@
           "type": "card",
           "name": "Garnier",
           "settings": {
-            "image": "shopify://shop_images/garneri.webp",
+            "image": "shopify://shop_images/Garnier_31851acc-f576-4f76-bfd5-02b3d7e5608a.webp",
             "link": "shopify://collections/garnier",
             "open_new_tab": false
           }
