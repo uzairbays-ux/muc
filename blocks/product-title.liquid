@@ -17,28 +17,24 @@
   {%- liquid
     # Display-only: drop a leading vendor name from the title, since the card
     # already shows the brand on its own line ("IKT" above "IKT - Hair Wax
-    # Stick 75gm"). The product in Shopify is untouched - this only changes
-    # what is printed here. A separator must follow the vendor, so a title like
-    # "Laneige Lip Sleeping Mask" is left alone.
+    # Stick 75gm"). The product in Shopify is untouched.
+    #
+    # The vendor and the title often punctuate the brand differently - vendor
+    # "L.A. Girl" against title "LA Girl - Pro HD Concealer" - so compare them
+    # with dots, spaces, hyphens and ampersands stripped out. Only the part
+    # before the first " - " is considered, so a title with no brand prefix is
+    # left exactly as it is.
     assign kj_title = closest.product.title
     assign kj_vendor = closest.product.vendor | strip
+    assign kj_parts = kj_title | split: ' - '
 
-    if kj_vendor != blank
-      assign kj_vendor_down = kj_vendor | downcase
-      assign kj_vendor_size = kj_vendor | size
-      assign kj_head = kj_title | slice: 0, kj_vendor_size | downcase
+    if kj_vendor != blank and kj_parts.size > 1
+      assign kj_lead = kj_parts[0] | downcase | remove: '.' | remove: ' ' | remove: '-' | remove: '&' | remove: "'"
+      assign kj_brand = kj_vendor | downcase | remove: '.' | remove: ' ' | remove: '-' | remove: '&' | remove: "'"
 
-      if kj_head == kj_vendor_down
-        assign kj_rest = kj_title | slice: kj_vendor_size, 255 | strip
-        assign kj_sep = kj_rest | slice: 0, 1
-        assign kj_has_sep = false
-
-        if kj_sep == '-' or kj_sep == '–' or kj_sep == '—' or kj_sep == '|' or kj_sep == ':'
-          assign kj_has_sep = true
-          assign kj_rest = kj_rest | slice: 1, 255 | strip
-        endif
-
-        if kj_has_sep and kj_rest != blank
+      if kj_lead == kj_brand
+        assign kj_rest = kj_parts | slice: 1, 20 | join: ' - ' | strip
+        if kj_rest != blank
           assign kj_title = kj_rest
         endif
       endif
