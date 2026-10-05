@@ -145,7 +145,7 @@
             "menu": "menu-new",
             "color_scheme": "",
             "highlight_handles": "Sale",
-            "highlight_animation": "pulse",
+            "highlight_animation": "none",
             "highlight_bg_color": "#eb1d23",
             "highlight_text_color": "#ffffff",
             "highlight_radius": 4,
