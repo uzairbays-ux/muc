@@ -1813,7 +1813,7 @@
           "type": "card",
           "name": "Trouble Maker",
           "settings": {
-            "image": "shopify://shop_images/non-sale-Trouble-Maker.webp",
+            "image": "shopify://shop_images/trouble-maker.webp",
             "link": "shopify://collections/trouble-maker",
             "open_new_tab": false
           }
