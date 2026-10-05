@@ -163,7 +163,7 @@
           "type": "card",
           "name": "ST London",
           "settings": {
-            "image": "shopify://shop_images/500-x-500_6.webp",
+            "image": "shopify://shop_images/ST-london.webp",
             "link": "shopify://collections/st-london",
             "open_new_tab": false
           }
@@ -192,7 +192,7 @@
           "type": "card",
           "name": "Maybelline",
           "settings": {
-            "image": "shopify://shop_images/Maybillne-750-x-750.jpg",
+            "image": "shopify://shop_images/maybilline_ca19e88d-09c5-4964-b6a1-9ac94ab889d1.webp",
             "link": "shopify://collections/maybelline",
             "open_new_tab": false
           }
@@ -220,7 +220,7 @@
           "type": "card",
           "name": "Revolution",
           "settings": {
-            "image": "shopify://shop_images/Revolution_0493ff4a-0d4e-4f1f-974d-26948d538857.jpg",
+            "image": "shopify://shop_images/Revolution_b5a78785-2c0b-4bb0-abe7-108c7f688074.webp",
             "link": "shopify://collections/revolution",
             "open_new_tab": false
           }
@@ -229,7 +229,7 @@
           "type": "card",
           "name": "ELF",
           "settings": {
-            "image": "shopify://shop_images/ELF_1_9387191c-16fe-4278-b8c5-0b2659fa6730.webp",
+            "image": "shopify://shop_images/ELF_7c931243-3046-4c19-9a5e-741518d643fc.webp",
             "link": "shopify://collections/elf",
             "open_new_tab": false
           }
@@ -238,7 +238,7 @@
           "type": "card",
           "name": "Ordinary",
           "settings": {
-            "image": "shopify://shop_images/The-Ordinary_7042e294-c16f-427b-a807-0be9716b371d.jpg",
+            "image": "shopify://shop_images/The-Ordinary.webp",
             "link": "shopify://collections/to",
             "open_new_tab": false
           }
