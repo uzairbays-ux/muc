@@ -14,7 +14,37 @@
   {% assign product_title = '<p role="heading" aria-level="3">' | append: text | append: '</p>' %}
   {% render 'text', fallback_text: product_title, block: block, class: extra_classes %}
 {% else %}
-  {% assign product_title = '<p role="heading" aria-level="3">' | append: closest.product.title | append: '</p>' %}
+  {%- liquid
+    # Display-only: drop a leading vendor name from the title, since the card
+    # already shows the brand on its own line ("IKT" above "IKT - Hair Wax
+    # Stick 75gm"). The product in Shopify is untouched - this only changes
+    # what is printed here. A separator must follow the vendor, so a title like
+    # "Laneige Lip Sleeping Mask" is left alone.
+    assign kj_title = closest.product.title
+    assign kj_vendor = closest.product.vendor | strip
+
+    if kj_vendor != blank
+      assign kj_vendor_down = kj_vendor | downcase
+      assign kj_vendor_size = kj_vendor | size
+      assign kj_head = kj_title | slice: 0, kj_vendor_size | downcase
+
+      if kj_head == kj_vendor_down
+        assign kj_rest = kj_title | slice: kj_vendor_size, 255 | strip
+        assign kj_sep = kj_rest | slice: 0, 1
+        assign kj_has_sep = false
+
+        if kj_sep == '-' or kj_sep == '–' or kj_sep == '—' or kj_sep == '|' or kj_sep == ':'
+          assign kj_has_sep = true
+          assign kj_rest = kj_rest | slice: 1, 255 | strip
+        endif
+
+        if kj_has_sep and kj_rest != blank
+          assign kj_title = kj_rest
+        endif
+      endif
+    endif
+  -%}
+  {% assign product_title = '<p role="heading" aria-level="3">' | append: kj_title | append: '</p>' %}
   <a
     class="contents user-select-text"
     ref="productTitleLink"
