@@ -32,7 +32,17 @@
       assign kj_lead = kj_parts[0] | downcase | remove: '.' | remove: ' ' | remove: '-' | remove: '&' | remove: "'"
       assign kj_brand = kj_vendor | downcase | remove: '.' | remove: ' ' | remove: '-' | remove: '&' | remove: "'"
 
-      if kj_lead == kj_brand
+      # Some brands prefix titles with their initials - vendor "British
+      # Lingerie Studio" against title "BLS - Carole ... Bra". Build the
+      # vendor's initials and accept those as a match too.
+      assign kj_initials = ''
+      assign kj_words = kj_vendor | downcase | split: ' '
+      for kj_word in kj_words
+        assign kj_first = kj_word | slice: 0, 1
+        assign kj_initials = kj_initials | append: kj_first
+      endfor
+
+      if kj_lead == kj_brand or kj_words.size > 1 and kj_lead == kj_initials
         assign kj_rest = kj_parts | slice: 1, 20 | join: ' - ' | strip
         if kj_rest != blank
           assign kj_title = kj_rest
