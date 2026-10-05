@@ -32,4 +32,11 @@
   .group-block-content > div:has(> .kj-pdp-label) {
     flex: 0 0 100%;
   }
+
+  /* The review widget is a full-width block, so once the row can wrap it would
+     drop under the brand. Let it share the brand's line and take what is left. */
+  .group-block-content:has(> div > .kj-pdp-label) > .shopify-app-block {
+    flex: 1 1 0;
+    min-width: 0;
+  }
 {% endstylesheet %}
