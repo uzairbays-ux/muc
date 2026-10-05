@@ -43,11 +43,18 @@
 
 {%- if has_badge -%}
   <style>
-    .menu-list__link { flex-direction: row; gap: 6px; }
+    /* Only links that carry a badge switch to a row, and the badge keeps its
+       own height instead of stretching to the link's. */
+    .menu-list__link:has(.menu-badge) {
+      flex-direction: row;
+      align-items: center;
+      gap: 6px;
+    }
 
     .menu-badge {
       display: inline-flex;
       align-items: center;
+      align-self: center;
       flex: 0 0 auto;
       padding: 1px 6px;
       border-radius: 999px;
