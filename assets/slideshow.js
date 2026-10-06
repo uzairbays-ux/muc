@@ -27,6 +27,23 @@ function setSlideHidden(slide, hidden, fullyOut = true) {
   } else {
     slide.removeAttribute('inert');
   }
+
+  // A hidden slide that is still partly on screen keeps its controls clickable,
+  // but they leave the tab order so nothing focusable sits inside aria-hidden.
+  const untab = hidden && !fullyOut;
+  for (const el of slide.querySelectorAll('a[href], button, input, select, textarea, [tabindex]')) {
+    if (untab) {
+      if (!el.hasAttribute('data-kj-tabindex')) {
+        el.setAttribute('data-kj-tabindex', el.getAttribute('tabindex') ?? '');
+      }
+      el.setAttribute('tabindex', '-1');
+    } else if (el.hasAttribute('data-kj-tabindex')) {
+      const prev = el.getAttribute('data-kj-tabindex');
+      if (prev === '') el.removeAttribute('tabindex');
+      else el.setAttribute('tabindex', prev);
+      el.removeAttribute('data-kj-tabindex');
+    }
+  }
 }
 
 // The threshold for determining visibility of slides.
