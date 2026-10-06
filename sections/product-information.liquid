@@ -867,9 +867,16 @@
       display: flex !important;
       flex-direction: column !important;
       padding-inline: 16px;
-      padding-top: 15px;
+      padding-top: 0;
       overflow-x: clip;
       gap: 12px;
+    }
+
+    /* The brand row wraps on phones and the reviews widget lands on a second,
+       empty line, so the row gap (23px) stacked on the column gap (24px) and
+       left a 48px hole under the brand. Collapse the row gap. */
+    [id^='ProductInformation'] .group-block-content:has(> .block-mobile-order a[href*='collections/vendors']) {
+      row-gap: 0;
     }
 
     /* Unwrap three container levels so every inner block becomes a direct flex child.
