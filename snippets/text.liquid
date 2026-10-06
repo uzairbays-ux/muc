@@ -89,6 +89,19 @@
   # text, in both its raw and HTML-escaped forms.
   assign kj_text = block.settings.text
   assign kj_title = closest.product.title
+
+  # muc: the brand link is "/collections/vendors?q={{ closest.product.vendor }}"
+  # and the dynamic source is pasted in raw, so a vendor with an ampersand
+  # ("Bath & Body Works") breaks the query. Swap in the URL-encoded vendor.
+  assign kj_vendor_raw = closest.product.vendor
+  if kj_vendor_raw != blank and kj_text contains 'vendors?q='
+    assign kj_vendor_escaped = kj_vendor_raw | escape
+    assign kj_vendor_encoded = kj_vendor_raw | url_encode
+    assign kj_from_escaped = 'vendors?q=' | append: kj_vendor_escaped
+    assign kj_from_raw = 'vendors?q=' | append: kj_vendor_raw
+    assign kj_to = 'vendors?q=' | append: kj_vendor_encoded
+    assign kj_text = kj_text | replace: kj_from_escaped, kj_to | replace: kj_from_raw, kj_to
+  endif
   if kj_title != blank and kj_title contains 'BLS - '
     assign kj_vendors = settings.kj_size_guide_vendor | default: 'British Lingerie Studio' | downcase | split: ','
     assign kj_product_vendor = closest.product.vendor | strip | downcase
