@@ -231,7 +231,7 @@
                   "name": "Product title",
                   "settings": {
                     "mobile_order": 0,
-                    "text": "<h1>{{ closest.product.title }}</h1>",
+                    "text": "<h1>{{ closest.product.title | remove_first: 'BLS - ' }}</h1>",
                     "width": "100%",
                     "max_width": "none",
                     "alignment": "left",

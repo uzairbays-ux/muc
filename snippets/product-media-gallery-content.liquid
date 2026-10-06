@@ -18,6 +18,23 @@
     block_shopify_attributes: block.shopify_attributes,
   %}
 {% enddoc %}
+
+{%- liquid
+  # muc: lingerie photos are 2:3 portraits and the gallery box is square, so
+  # the model's head was cropped. Products of the size-guide vendors (Theme
+  # settings > Size guide) get a 2:3 box; everything else keeps the block's
+  # aspect ratio setting.
+  assign kj_gallery_ratio = block_settings.aspect_ratio
+  assign kj_vendors = settings.kj_size_guide_vendor | default: 'British Lingerie Studio' | downcase | split: ','
+  assign kj_product_vendor = product.vendor | strip | downcase
+  for kj_vendor in kj_vendors
+    assign kj_needle = kj_vendor | strip
+    if kj_needle != '' and kj_needle == kj_product_vendor
+      assign kj_gallery_ratio = '0.6667'
+      break
+    endif
+  endfor
+-%}
 {%- if block_settings.zoom -%}
   <script
     src="{{ 'zoom-dialog.js' | asset_url }}"
@@ -151,7 +168,7 @@
   if block_settings.constrain_to_viewport
     assign product_media_container_class = product_media_container_class | append: ' constrain-height'
   endif
-  if block_settings.aspect_ratio != 'adapt'
+  if kj_gallery_ratio != 'adapt'
     assign product_media_container_class = product_media_container_class | append: ' media-fit-cover'
   elsif block_settings.constrain_to_viewport
     assign product_media_container_class = product_media_container_class | append: ' media-fit-' | append: block_settings.media_fit
@@ -159,7 +176,7 @@
     assign product_media_container_class = product_media_container_class | append: ' media-fit-contain'
   endif
 
-  if block_settings.aspect_ratio == 'adapt'
+  if kj_gallery_ratio == 'adapt'
     assign lowest_aspect_ratio = 50
     assign lowest_aspect_ratio_index = 0
 
@@ -183,9 +200,9 @@
 {%- endif -%}
 
 {% style %}
-  {% unless block_settings.aspect_ratio == 'adapt' %}
+  {% unless kj_gallery_ratio == 'adapt' %}
     .product-media-container {
-      --media-preview-ratio: {{ block_settings.aspect_ratio }};
+      --media-preview-ratio: {{ kj_gallery_ratio }};
     }
 
     {% if block_settings.constrain_to_viewport %}
@@ -209,7 +226,7 @@
       /* Desktop constraint wrapper sizing */
       @media screen and (min-width: 750px) {
         .product-media-constraint-wrapper {
-          width: min(100%, calc(var(--constrained-height) * {{ block_settings.aspect_ratio }}));
+          width: min(100%, calc(var(--constrained-height) * {{ kj_gallery_ratio }}));
         }
       }
     {% endif %}
@@ -243,7 +260,7 @@
     }
   {% endunless %}
 
-  {% if block_settings.aspect_ratio == 'adapt' and block_settings.constrain_to_viewport %}
+  {% if kj_gallery_ratio == 'adapt' and block_settings.constrain_to_viewport %}
     .media-fit-{{ block_settings.media_fit }} {
       --product-media-fit: {{ block_settings.media_fit }};
     }
@@ -262,7 +279,7 @@
     }
   {% endif %}
 
-  {% unless block_settings.aspect_ratio == 'adapt' and block_settings.constrain_to_viewport %}
+  {% unless kj_gallery_ratio == 'adapt' and block_settings.constrain_to_viewport %}
     .media-fit-cover {
       --product-media-fit: cover;
     }
@@ -311,9 +328,9 @@
       object-position: var(--gallery-media-focal-point, center);
     }
   {% endcapture %}
-  {% if block_settings.aspect_ratio == 'adapt' and block_settings.constrain_to_viewport == false %}
+  {% if kj_gallery_ratio == 'adapt' and block_settings.constrain_to_viewport == false %}
     {{ view_transition_styles_contain }}
-  {% elsif block_settings.aspect_ratio == 'adapt' and block_settings.constrain_to_viewport == true and block_settings.media_fit == 'contain' %}
+  {% elsif kj_gallery_ratio == 'adapt' and block_settings.constrain_to_viewport == true and block_settings.media_fit == 'contain' %}
     {{ view_transition_styles_contain }}
   {% else %}
     {{ view_transition_styles_cover }}
@@ -350,7 +367,7 @@
         media-gallery--extend
       {% endif %}
     "
-    style="{% render 'spacing-style', settings: block_settings %} --thumbnail-width: {{ block_settings.thumbnail_width }}px; --media-radius: {{ block_settings.media_radius }}px;{% if block_settings.icons_style contains 'large' %} --slideshow-icon-padding: 0px;{% endif %}--image-gap: {{ block_settings.image_gap }}px;{% unless block_settings.aspect_ratio == 'adapt' %} --gallery-aspect-ratio: {{ block_settings.aspect_ratio }};{% endunless %} position: relative;"
+    style="{% render 'spacing-style', settings: block_settings %} --thumbnail-width: {{ block_settings.thumbnail_width }}px; --media-radius: {{ block_settings.media_radius }}px;{% if block_settings.icons_style contains 'large' %} --slideshow-icon-padding: 0px;{% endif %}--image-gap: {{ block_settings.image_gap }}px;{% unless kj_gallery_ratio == 'adapt' %} --gallery-aspect-ratio: {{ kj_gallery_ratio }};{% endunless %} position: relative;"
     data-presentation="{{ media_presentation }}"
     {{ block_shopify_attributes }}
   >
@@ -396,7 +413,7 @@
                 assign media_sizes = sizes
               endif
           -%}
-          {% if block_settings.aspect_ratio != 'adapt' and block_settings.constrain_to_viewport %}
+          {% if kj_gallery_ratio != 'adapt' and block_settings.constrain_to_viewport %}
             <div
               class="product-media-constraint-wrapper">
               {%- render 'product-media', media: media, sizes: media_sizes, is_main_product_media: forloop.first -%}
@@ -406,9 +423,9 @@
           {% endif %}
         {% endcapture %}
         {% capture class %}
-          {{ product_media_container_class }} product-media-container--{{ media.media_type }}{% if block_settings.zoom %} product-media-container--zoomable{% endif %}{% if forloop.index0 == lowest_aspect_ratio_index and block_settings.aspect_ratio == 'adapt' %} product-media-container--tallest{% endif %}
+          {{ product_media_container_class }} product-media-container--{{ media.media_type }}{% if block_settings.zoom %} product-media-container--zoomable{% endif %}{% if forloop.index0 == lowest_aspect_ratio_index and kj_gallery_ratio == 'adapt' %} product-media-container--tallest{% endif %}
         {% endcapture %}
-        {% if block_settings.aspect_ratio == 'adapt' %}
+        {% if kj_gallery_ratio == 'adapt' %}
           {% capture style %}
             --media-preview-ratio: {{ media.preview_image.aspect_ratio | default: 1.0 }};
           {% endcapture %}
@@ -441,7 +458,7 @@
             thumbnails: sorted_media,
             controls_on_media: controls_on_media,
             pagination_position: pagination_position,
-            aspect_ratio: block_settings.aspect_ratio,
+            aspect_ratio: kj_gallery_ratio,
             thumbnail_radius: block_settings.thumbnail_radius
           -%}
         {% endif %}
@@ -454,7 +471,7 @@
             thumbnails: sorted_media,
             controls_on_media: mobile_controls_on_media,
             pagination_position: 'center',
-            aspect_ratio: block_settings.aspect_ratio,
+            aspect_ratio: kj_gallery_ratio,
             thumbnail_radius: block_settings.thumbnail_radius
           -%}
         {% endif %}
@@ -485,8 +502,8 @@
         {% for media in sorted_media %}
           <li
             ref="media[]"
-            class="{{ product_media_container_class }} product-media-container--{{ media.media_type }} {% unless block_settings.aspect_ratio == 'adapt' %}product-media-container--force-aspect{% endunless %}"
-            style="{% if block_settings.aspect_ratio == 'adapt' %} --media-preview-ratio: {{ media.preview_image.aspect_ratio | default: 1.0 }};{% endif %} --media-radius: {{ block_settings.media_radius }}px;"
+            class="{{ product_media_container_class }} product-media-container--{{ media.media_type }} {% unless kj_gallery_ratio == 'adapt' %}product-media-container--force-aspect{% endunless %}"
+            style="{% if kj_gallery_ratio == 'adapt' %} --media-preview-ratio: {{ media.preview_image.aspect_ratio | default: 1.0 }};{% endif %} --media-radius: {{ block_settings.media_radius }}px;"
             {% if settings.transition_to_main_product and forloop.first %}
               data-view-transition-type="product-image-transition"
             {% endif %}
@@ -513,7 +530,7 @@
                 assign media_sizes = sizes
               endif
             -%}
-            {% if block_settings.aspect_ratio != 'adapt' and block_settings.constrain_to_viewport %}
+            {% if kj_gallery_ratio != 'adapt' and block_settings.constrain_to_viewport %}
               <div class="product-media-constraint-wrapper">
                 {%- render 'product-media', media: media, sizes: media_sizes, is_main_product_media: forloop.first -%}
               </div>
@@ -553,8 +570,8 @@
               {% if sorted_media.size > 1 %}
                 {%- for media in sorted_media -%}
                   {% liquid
-                    assign aspect_ratio = block_settings.aspect_ratio
-                    if block_settings.aspect_ratio == 'adapt'
+                    assign aspect_ratio = kj_gallery_ratio
+                    if kj_gallery_ratio == 'adapt'
                       assign aspect_ratio = media.preview_image.aspect_ratio | default: 1.0
                     endif
                   %}
@@ -598,7 +615,7 @@
               <li
                 id="product-{{ media.id}}-{{ forloop.index }}"
                 class="{{ product_media_container_class | remove: 'media-fit-cover' }} product-media-container--{{ media.media_type }}{% if media.media_type == 'image' %} product-media-container--zoomable{% endif %}"
-                style="{% if block_settings.aspect_ratio == 'adapt' %} --media-preview-ratio: {{ media.preview_image.aspect_ratio | default: 1.0 }};{% endif %}"
+                style="{% if kj_gallery_ratio == 'adapt' %} --media-preview-ratio: {{ media.preview_image.aspect_ratio | default: 1.0 }};{% endif %}"
                 ref="media[]"
                 {% if media.media_type == 'image' %}
                   on:click="/close"
