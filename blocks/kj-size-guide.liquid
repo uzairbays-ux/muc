@@ -38,8 +38,14 @@
   -%}
   {%- if sg_matches.size > 1 -%}
     <script src="{{ 'dialog.js' | asset_url }}" type="module"></script>
-    <div class="kj-size-guide" {{ block.shopify_attributes }}>
-      {{- sg_matches[1] -}}
+    {%- comment -%}
+      Same mobile ordering as the theme's own blocks, so on phones the links
+      can sit next to the size picker (give both the same Mobile order).
+    {%- endcomment -%}
+    <div class="block-mobile-order" style="--mobile-order: {{ block.settings.mobile_order | default: 0 }};">
+      <div class="kj-size-guide" {{ block.shopify_attributes }}>
+        {{- sg_matches[1] -}}
+      </div>
     </div>
   {%- endif -%}
 {%- endif -%}
@@ -64,6 +70,13 @@
     }
   ],
   "settings": [
+    {
+      "type": "number",
+      "id": "mobile_order",
+      "label": "Mobile order",
+      "info": "Position on mobile. Lower = earlier. Match the size picker's Mobile order to keep the links next to it.",
+      "default": 0
+    },
     {
       "type": "paragraph",
       "content": "Add one Size chart block per chart. They are checked from top to bottom and the first one that matches the product is shown, so put the more specific charts first. The vendor, link labels and Sister Size image are in Theme settings > Size guide."

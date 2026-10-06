@@ -373,7 +373,9 @@
             "kj_size_guide": {
               "type": "kj-size-guide",
               "name": "Size guide",
-              "settings": {},
+              "settings": {
+                "mobile_order": 3
+              },
               "blocks": {
                 "size_chart_sml_bras": {
                   "type": "_kj-size-chart",
