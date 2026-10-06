@@ -21,20 +21,21 @@
     cursor: pointer;
   }
 
+  /* The logo file is the full wordmark badge (116x36), so show it whole. */
   .baadmay-product-wrapper .baadmay-card__icon {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex: 0 0 40px;
-    width: 40px;
+    flex: 0 0 auto;
     height: 40px;
+    padding: 0 4px 0 2px;
   }
 
   .baadmay-product-wrapper .baadmay-card__icon img {
-    width: 32px;
-    height: 32px;
-    border-radius: 8px;
-    object-fit: cover;
+    width: auto;
+    height: 26px;
+    border-radius: 0;
+    object-fit: contain;
   }
 
   .baadmay-product-wrapper .baadmay-card__text {
@@ -81,7 +82,7 @@
       aria-label="Pay in 3 installments with Baadmay"
     >
       <span class="baadmay-card__icon">
-        <img src="{{ 'baadmay-logo-icon.svg' | asset_url }}" alt="BaadMay" width="32" height="32" loading="lazy">
+        <img src="{{ 'baadmay-logo-icon.svg' | asset_url }}" alt="BaadMay" width="116" height="36" loading="lazy">
       </span>
       <span class="baadmay-card__text baadmay-price" data-product-id="{{ product.id }}">
         <span class="baadmay-card__title">
