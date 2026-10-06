@@ -26,7 +26,7 @@
   # aspect ratio setting.
   assign kj_gallery_ratio = block_settings.aspect_ratio
   assign kj_vendors = settings.kj_size_guide_vendor | default: 'British Lingerie Studio' | downcase | split: ','
-  assign kj_product_vendor = product.vendor | strip | downcase
+  assign kj_product_vendor = closest.product.vendor | strip | downcase
   for kj_vendor in kj_vendors
     assign kj_needle = kj_vendor | strip
     if kj_needle != '' and kj_needle == kj_product_vendor
