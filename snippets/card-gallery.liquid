@@ -48,7 +48,26 @@
   # iOS < 16.4 aspect-ratio fallback in product-grid.liquid.
   assign ratio_padding = 100
   assign ratio_number = 1
-  case block_settings.image_ratio
+
+  # muc: lingerie photos are 2:3 portraits, so a square card crops the model's
+  # head. Products of the size-guide vendors (Theme settings > Size guide) get
+  # a 2:3 box instead of the block's ratio, wherever the card appears.
+  assign kj_image_ratio = block_settings.image_ratio
+  assign kj_vendors = settings.kj_size_guide_vendor | default: 'British Lingerie Studio' | downcase | split: ','
+  assign kj_product_vendor = product.vendor | strip | downcase
+  for kj_vendor in kj_vendors
+    assign kj_needle = kj_vendor | strip
+    if kj_needle != '' and kj_needle == kj_product_vendor
+      assign kj_image_ratio = 'tall'
+      break
+    endif
+  endfor
+
+  case kj_image_ratio
+    when 'tall'
+      assign ratio = '2 / 3'
+      assign ratio_padding = 150
+      assign ratio_number = '0.6667'
     when 'landscape'
       assign ratio = '16 / 9'
       assign ratio_padding = 56.25
@@ -97,7 +116,7 @@
   {% if settings.transition_to_main_product %}
     data-view-transition-to-main-product
   {% endif %}
-  data-image-ratio="{{ block_settings.image_ratio }}"
+  data-image-ratio="{{ kj_image_ratio }}"
   {{ block.shopify_attributes }}
 >
   {%- if product.media.size > 0 -%}
