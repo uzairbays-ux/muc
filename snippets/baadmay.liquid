@@ -1,108 +1,105 @@
 {% assign productPageWidget = product.selected_or_first_available_variant.price | divided_by: 100 %}
 {% if productPageWidget <= 20000 %}
 <style>
-  
-  .baadmay-product-wrapper{
-    margin-bottom: 0px;
-    margin-top: 0px;
-  }
-  .baadmay-price-split{
-    padding-left: 0px;
-  }
-    .baadmay-product-wrapper .baadmay-para {
-      display: flex;
-      gap: 5px;
-      justify-content: flex-start;
-      align-items: center;
-    }
+  /* Same card as the Yango block above it: grey rounded panel, icon tile,
+     bold line with a quiet subline, chevron on the right. */
+  .baadmay-product-wrapper { margin: 0; }
 
-    .baadmay-product-wrapper .baadmay-para .baadmay-price p{
-      margin: 0;
-      line-height: 1;
-      font-size: 14px;
-      letter-spacing: 0px;
-      color: #000;
-      font-weight: 400;
-    }
-    .baadmay-product-wrapper .baadmay-para .baadmay-price .baadmay-price-split .price-divide{
-      padding-left: 2px;
-    }
-    .baadmay-product-wrapper .baadmay-price{
-      display: flex;
-      align-items: center;
-      gap: 4px;
-    }
-    .baadmay-product-wrapper .baadmay-price .baadmay-modal {
-      display: flex;
-      align-items: center;
-    }
-    .baadmay-gateway-wrapper .baadmay-para .baadmay-modal p,  .baadmay-gateway-wrapper .baadmay-para .baadmay-modal p span{
-      font-weight: 600;
-      color: #6016eb;
-    }
-    .baadmay-product-wrapper .baadmay-para .logo-wrapper .baadmay-modal img{
-      width: 60px;
-    }
-    @media  (max-width: 750px) {
-    .baadmay-product-wrapper{
-      margin-bottom: 0px;
-      margin-top: 0px;
-    }
-  }
-   
-   @media  (max-width: 440px) {
-   .baadmay-product-wrapper .baadmay-para .baadmay-price p{
-      font-size: 14px;
-    }
-    .baadmay-product-wrapper .baadmay-para .logo-wrapper .baadmay-modal img{
-      width: 60px;
-    }
-    
+  .baadmay-product-wrapper .baadmay-card {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    width: 100%;
+    padding: 12px 20px 12px 12px;
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.05);
+    color: rgba(0, 0, 0, 0.86);
+    text-decoration: none;
+    cursor: pointer;
   }
 
+  .baadmay-product-wrapper .baadmay-card__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 40px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .baadmay-product-wrapper .baadmay-card__icon img {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+
+  .baadmay-product-wrapper .baadmay-card__text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .baadmay-product-wrapper .baadmay-card__title {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16px;
+    color: rgba(0, 0, 0, 0.86);
+  }
+
+  .baadmay-product-wrapper .baadmay-card__title .price-divide { font-weight: 500; }
+
+  .baadmay-product-wrapper .baadmay-card__sub {
+    margin: 0;
+    font-size: 13px;
+    line-height: 16px;
+    color: rgba(0, 0, 0, 0.5);
+  }
+
+  .baadmay-product-wrapper .baadmay-card__chevron {
+    flex: 0 0 24px;
+    width: 24px;
+    height: 24px;
+    color: rgba(0, 0, 0, 0.86);
+  }
 </style>
 
 <div class="baadmay-gateway-wrapper baadmay baadmay-product-wrapper  {% if class %}{{ class }}{% endif %}">
   <div class="baadmay-para">
-    <div class="logo-wrapper">
-      <a
-        class="baadmay-modal"
-        data-vbtype="inline"
-        data-overlayclose="false"
-        data-maxwidth="620px"
-        href="#baadmay-content"
-      >
-        <img src="{{ 'baadmay-logo-icon.svg' | asset_url }}" alt="BaadMay Logo" width="90" height="auto" loading="lazy">
-      </a>
-    </div>
-   <div class="baadmay-price" data-product-id="{{ product.id }}">
-      <p>Pay in 3 Installments of</p>
-      <a
-        class="baadmay-modal"
-        data-vbtype="inline"
-        data-overlayclose="false"
-        data-maxwidth="620px"
-        href="#baadmay-content"
-      >
-        <p class="baadmay-currency">
-          {% for currency in shop.enabled_currencies %}
-            {% if currency.iso_code == shop.currency -%}
-              Rs.{% break %}
-            {% endif %}
-          {% endfor %}
-        </p> 
-        <p class="baadmay-price-split">
+    <a
+      class="baadmay-modal baadmay-card"
+      data-vbtype="inline"
+      data-overlayclose="false"
+      data-maxwidth="620px"
+      href="#baadmay-content"
+      aria-label="Pay in 3 installments with Baadmay"
+    >
+      <span class="baadmay-card__icon">
+        <img src="{{ 'baadmay-logo-icon.svg' | asset_url }}" alt="BaadMay" width="32" height="32" loading="lazy">
+      </span>
+      <span class="baadmay-card__text baadmay-price" data-product-id="{{ product.id }}">
+        <span class="baadmay-card__title">
+          Pay in 3 installments of
+          <span class="baadmay-currency">
+            {%- for currency in shop.enabled_currencies -%}
+              {%- if currency.iso_code == shop.currency -%}Rs.{% break %}{%- endif -%}
+            {%- endfor -%}
+          </span>
           <span
             class="price-divide"
             total-prod-price="{{ current_variant.price }}"
             id="baadmay-installment"
-          >
-            {{ product.selected_or_first_available_variant.price | times: 1.15 | divided_by: 3 | divided_by: 100 | floor }}
-
-          </span>
-        </p>
-      </a>
-    </div>
+          >{{ product.selected_or_first_available_variant.price | times: 1.15 | divided_by: 3 | divided_by: 100 | floor }}</span>
+        </span>
+        <span class="baadmay-card__sub">Pay later with Baadmay</span>
+      </span>
+      <svg class="baadmay-card__chevron" viewBox="0 0 24 24" width="24" height="24" fill="none" aria-hidden="true">
+        <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+      </svg>
+    </a>
     <div id="baadmay-content" style="display:none;">
       <a href="#" class="baadmay-popup-close">
         <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
