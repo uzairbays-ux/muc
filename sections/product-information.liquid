@@ -375,11 +375,16 @@
   [id^='ProductInformation'] .block-mobile-order .text-block:has(a) {
     background: transparent !important;
     padding: 0 !important;
-    /* The pill width and balanced wrapping split "British Lingerie Studio"
-       over two lines; keep the brand on one. */
-    --text-wrap: nowrap;
-    white-space: nowrap;
     max-width: none;
+  }
+  /* The brand shares a row with the reviews widget, which shrank its wrapper
+     until "British Lingerie Studio" broke over two lines. Keep it on one. */
+  [id^='ProductInformation'] .block-mobile-order:has(.text-block a[href*='collections/vendors']) {
+    flex: 0 0 auto;
+  }
+  [id^='ProductInformation'] .block-mobile-order .text-block:has(a) p {
+    white-space: nowrap;
+    text-wrap: nowrap;
   }
   [id^='ProductInformation'] .block-mobile-order .text-block:has(a) a {
     font-weight: 700;
