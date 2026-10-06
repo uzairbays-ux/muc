@@ -11,7 +11,7 @@
 
 {% if closest.product == blank %}
   {% assign text = 'placeholders.product_title' | t %}
-  {% assign product_title = '<p role="heading" aria-level="3">' | append: text | append: '</p>' %}
+  {% assign product_title = '<p role="heading" aria-level="2">' | append: text | append: '</p>' %}
   {% render 'text', fallback_text: product_title, block: block, class: extra_classes %}
 {% else %}
   {%- liquid
@@ -50,7 +50,7 @@
       endif
     endif
   -%}
-  {% assign product_title = '<p role="heading" aria-level="3">' | append: kj_title | append: '</p>' %}
+  {% assign product_title = '<p role="heading" aria-level="2">' | append: kj_title | append: '</p>' %}
   <a
     class="contents user-select-text"
     ref="productTitleLink"

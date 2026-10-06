@@ -35,8 +35,10 @@
         {%- for block in section.blocks -%}
           {%- assign b = block.settings -%}
           <div class="card-banner__card" data-index="{{ forloop.index0 }}" {{ block.shopify_attributes }}>
+            {%- capture cb_name -%}{% render 'kj-link-name', image: b.image, link: b.link, fallback: 'Shop now' %}{%- endcapture -%}
+            {%- assign cb_name = cb_name | strip -%}
             {%- if b.link != blank -%}
-              <a href="{{ b.link }}" class="card-banner__link" {% if b.open_new_tab %}target="_blank" rel="noopener"{% endif %}>
+              <a href="{{ b.link }}" class="card-banner__link" aria-label="{{ cb_name | escape }}" {% if b.open_new_tab %}target="_blank" rel="noopener"{% endif %}>
             {%- endif -%}
               <div class="card-banner__image-wrapper">
                 {%- if b.image != blank -%}
@@ -63,7 +65,7 @@
                       widths: '400,600,750,900',
                       sizes: '(max-width: 749px) 70vw, 42vw',
                       class: 'card-banner__image',
-                      alt: b.image.alt | default: ''
+                      alt: cb_name
                   }}
                 {%- else -%}
                   <div class="card-banner__placeholder">
