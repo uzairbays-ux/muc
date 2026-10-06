@@ -353,7 +353,7 @@
           "type": "card",
           "name": "Philips",
           "settings": {
-            "image": "shopify://shop_images/philips.webp",
+            "image": "shopify://shop_images/Philips.jpg",
             "link": "shopify://collections/philips",
             "open_new_tab": false
           }
@@ -362,7 +362,7 @@
           "type": "card",
           "name": "Rederm",
           "settings": {
-            "image": "shopify://shop_images/redrem.webp",
+            "image": "shopify://shop_images/rederm.jpg",
             "link": "shopify://collections/rederm",
             "open_new_tab": false
           }
