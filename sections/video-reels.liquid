@@ -33,6 +33,7 @@
                 preload="metadata"
               ></video>
             {%- elsif b.cover_image != blank -%}
+              {%- assign kj_alt_1 = b.cover_image.alt | default: '' -%}
               {{
                 b.cover_image
                 | image_url: width: 600
@@ -41,7 +42,7 @@
                   widths: '300,400,600',
                   sizes: '(max-width: 749px) 40vw, 20vw',
                   class: 'video-reels__cover',
-                  alt: b.cover_image.alt | default: ''
+                  alt: kj_alt_1
               }}
             {%- else -%}
               <div class="video-reels__placeholder">

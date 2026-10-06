@@ -46,6 +46,7 @@
                   {% if b.cover_image != blank %}poster="{{ b.cover_image | image_url: width: 600 }}"{% endif %}
                 ></video>
               {%- elsif b.cover_image != blank -%}
+                {%- assign kj_alt_1 = b.cover_image.alt | default: b.caption | default: '' -%}
                 {{
                   b.cover_image
                   | image_url: width: 800
@@ -54,7 +55,7 @@
                     widths: '300,500,800',
                     sizes: '(max-width: 749px) 45vw, 17vw',
                     class: 'story-cards__image',
-                    alt: b.cover_image.alt | default: b.caption | default: ''
+                    alt: kj_alt_1
                 }}
               {%- else -%}
                 <div class="story-cards__placeholder">
@@ -64,13 +65,14 @@
 
               {%- if b.brand_logo != blank -%}
                 <div class="story-cards__logo">
+                  {%- assign kj_alt_2 = b.brand_logo.alt | default: '' -%}
                   {{
                     b.brand_logo
                     | image_url: width: 120
                     | image_tag:
                       loading: 'lazy',
                       class: 'story-cards__logo-image',
-                      alt: b.brand_logo.alt | default: ''
+                      alt: kj_alt_2
                   }}
                 </div>
               {%- endif -%}

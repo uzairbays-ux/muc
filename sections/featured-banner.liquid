@@ -62,6 +62,7 @@
           -%}
           {%- capture fb_name -%}{% render 'kj-link-name', image: b.mobile_image, link: b.link, fallback: 'Shop now' %}{%- endcapture -%}
           {%- assign fb_name = fb_name | strip -%}
+          {%- assign fb_alt = b.desktop_image.alt | default: b.alt | default: fb_name -%}
           {%- capture slide_inner -%}
             {%- if b.desktop_image != blank -%}
               <picture>
@@ -83,7 +84,7 @@
                     widths: '750,1100,1500,1800,2200,2400',
                     sizes: '100vw',
                     class: 'featured-banner__image',
-                    alt: b.desktop_image.alt | default: b.alt | default: fb_name
+                    alt: fb_alt
                 }}
               </picture>
             {%- else -%}

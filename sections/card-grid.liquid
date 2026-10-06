@@ -62,7 +62,9 @@
         {%- assign b = block.settings -%}
         <div class="card-grid__item" {{ block.shopify_attributes }}>
           {%- if b.link != blank -%}
-            <a href="{{ b.link }}" class="card-grid__link" {% if b.open_new_tab %}target="_blank" rel="noopener"{% endif %}>
+            {%- capture cgr_name -%}{% render 'kj-link-name', image: b.image, link: b.link, fallback: 'Shop now' %}{%- endcapture -%}
+            {%- assign cgr_name = cgr_name | strip -%}
+            <a href="{{ b.link }}" class="card-grid__link" aria-label="{{ cgr_name | escape }}" {% if b.open_new_tab %}target="_blank" rel="noopener"{% endif %}>
           {%- endif -%}
             <div class="card-grid__image-wrapper">
               {%- if b.image != blank -%}
@@ -74,7 +76,7 @@
                     widths: '400,600,750,900',
                     sizes: '(max-width: 749px) 50vw, 25vw',
                     class: 'card-grid__image',
-                    alt: b.image.alt | default: ''
+                    alt: cgr_name
                 }}
               {%- else -%}
                 <div class="card-grid__placeholder">
