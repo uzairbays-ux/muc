@@ -12,6 +12,23 @@ import {
 import { Scroller, scrollIntoView } from '@theme/scrolling';
 import { SlideshowSelectEvent } from '@theme/events';
 
+/**
+ * Hides or shows a slide for assistive tech. A hidden slide is also made
+ * inert so its links and buttons drop out of the tab order; a slide that is
+ * only partly scrolled out of view keeps its controls usable.
+ * @param {Element} slide
+ * @param {boolean} hidden
+ * @param {boolean} [fullyOut=true]
+ */
+function setSlideHidden(slide, hidden, fullyOut = true) {
+  slide.setAttribute('aria-hidden', `${hidden}`);
+  if (hidden && fullyOut) {
+    slide.setAttribute('inert', '');
+  } else {
+    slide.removeAttribute('inert');
+  }
+}
+
 // The threshold for determining visibility of slides.
 const SLIDE_VISIBLITY_THRESHOLD = 0.7;
 
@@ -196,7 +213,7 @@ export class Slideshow extends Component {
     for (const slide of this.refs.slides) {
       if (slide.hasAttribute('reveal')) {
         slide.removeAttribute('reveal');
-        slide.setAttribute('aria-hidden', 'true');
+        setSlideHidden(slide, true);
       }
     }
 
@@ -212,7 +229,7 @@ export class Slideshow extends Component {
         // Force the slide to be revealed if it is hidden
         if (requestedSlide.hasAttribute('hidden')) {
           requestedSlide.setAttribute('reveal', '');
-          requestedSlide.setAttribute('aria-hidden', 'false');
+          setSlideHidden(requestedSlide, false);
         }
 
         return this.slides.indexOf(requestedSlide);
@@ -292,7 +309,7 @@ export class Slideshow extends Component {
 
     const previousIndex = this.current;
 
-    slide.setAttribute('aria-hidden', 'false');
+    setSlideHidden(slide, false);
 
     if (this.#scroll) {
       this.#scroll.to(slide, { instant });
@@ -532,7 +549,7 @@ export class Slideshow extends Component {
     }
 
     if (this.refs.slides?.[0]) {
-      this.refs.slides[0].setAttribute('aria-hidden', 'false');
+      setSlideHidden(this.refs.slides[0], false);
     }
   }
 
@@ -928,9 +945,12 @@ export class Slideshow extends Component {
     // Batch writes to the DOM
     scheduler.schedule(() => {
       // Update aria-hidden based on visibility
+      const box = this.getBoundingClientRect();
       slides.forEach((slide) => {
         const isVisible = visibleSlides.includes(slide);
-        slide.setAttribute('aria-hidden', `${!isVisible}`);
+        const rect = slide.getBoundingClientRect();
+        const fullyOut = rect.right <= box.left + 1 || rect.left >= box.right - 1;
+        setSlideHidden(slide, !isVisible, fullyOut);
       });
     });
 

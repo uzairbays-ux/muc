@@ -15,7 +15,9 @@
       {%- assign b = block.settings -%}
       <div class="stacked-banners__item" {{ block.shopify_attributes }}>
         {%- if b.link != blank -%}
-          <a href="{{ b.link }}" class="stacked-banners__link" {% if b.open_new_tab %}target="_blank" rel="noopener"{% endif %}>
+          {%- capture sb_name -%}{% render 'kj-link-name', image: b.desktop_image, link: b.link, fallback: 'Shop now' %}{%- endcapture -%}
+          {%- assign sb_name = sb_name | strip -%}
+          <a href="{{ b.link }}" class="stacked-banners__link" aria-label="{{ sb_name | escape }}" {% if b.open_new_tab %}target="_blank" rel="noopener"{% endif %}>
         {%- endif -%}
 
           <picture class="stacked-banners__picture">
@@ -44,7 +46,7 @@
                   widths: '750,1100,1500,1800,2200,2400',
                   sizes: '100vw',
                   class: 'stacked-banners__image',
-                  alt: b.desktop_image.alt | default: ''
+                  alt: sb_name
               }}
             {%- else -%}
               <div class="stacked-banners__placeholder">
@@ -75,6 +77,13 @@
     flex-direction: column;
     gap: var(--sb-gap, 0px);
     width: 100%;
+  }
+
+  /* Stacked links need breathing room between tap targets on phones. */
+  @media screen and (max-width: 749px) {
+    .stacked-banners {
+      gap: max(var(--sb-gap, 0px), 8px);
+    }
   }
 
   .stacked-banners__item {

@@ -60,6 +60,8 @@
               assign img_priority = 'auto'
             endif
           -%}
+          {%- capture fb_name -%}{% render 'kj-link-name', image: b.mobile_image, link: b.link, fallback: 'Shop now' %}{%- endcapture -%}
+          {%- assign fb_name = fb_name | strip -%}
           {%- capture slide_inner -%}
             {%- if b.desktop_image != blank -%}
               <picture>
@@ -81,7 +83,7 @@
                     widths: '750,1100,1500,1800,2200,2400',
                     sizes: '100vw',
                     class: 'featured-banner__image',
-                    alt: b.desktop_image.alt | default: b.alt | default: ''
+                    alt: b.desktop_image.alt | default: b.alt | default: fb_name
                 }}
               </picture>
             {%- else -%}
@@ -105,6 +107,7 @@
               <a
                 href="{{ b.link }}"
                 class="featured-banner__link"
+                aria-label="{{ b.alt | default: fb_name | escape }}"
                 {% if b.open_new_tab %}target="_blank" rel="noopener"{% endif %}
                 aria-label="{{ b.alt | default: b.desktop_image.alt | default: 'Banner slide' | escape }}"
               >{{ slide_inner }}</a>

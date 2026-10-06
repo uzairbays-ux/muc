@@ -1,0 +1,23 @@
+{%- doc -%}
+  Best-effort accessible name for an image link: the image's alt text, else the
+  title of the collection or page the link points to, else the fallback.
+
+  @param {object} [image] - image whose alt text is tried first
+  @param {string} [link] - the link URL
+  @param {string} [fallback] - used when nothing better is known
+{%- enddoc -%}
+{%- liquid
+  assign kj_name = image.alt | strip
+  if kj_name == blank and link != blank
+    if link contains '/collections/'
+      assign kj_handle = link | split: '/collections/' | last | split: '?' | first | split: '/' | first | split: '#' | first
+      assign kj_name = collections[kj_handle].title
+    elsif link contains '/pages/'
+      assign kj_handle = link | split: '/pages/' | last | split: '?' | first | split: '/' | first | split: '#' | first
+      assign kj_name = pages[kj_handle].title
+    endif
+  endif
+  if kj_name == blank
+    assign kj_name = fallback | default: 'Shop now'
+  endif
+-%}{{- kj_name -}}
