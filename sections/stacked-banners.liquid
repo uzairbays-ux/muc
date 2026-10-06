@@ -17,7 +17,22 @@
         {%- if b.link != blank -%}
           {%- capture sb_name -%}{% render 'kj-link-name', image: b.desktop_image, link: b.link, fallback: 'Shop now' %}{%- endcapture -%}
           {%- assign sb_name = sb_name | strip -%}
+          {%- comment -%}
+            A very wide, thin strip (a spacer or divider image, under ~10px tall on
+            a phone) is not a usable tap target, so it renders as decoration
+            without the link.
+          {%- endcomment -%}
+          {%- assign sb_ratio = b.mobile_image.aspect_ratio | default: b.desktop_image.aspect_ratio | default: 1 -%}
+          {%- if sb_ratio > 12 -%}
+            {%- assign sb_decorative = true -%}
+          {%- else -%}
+            {%- assign sb_decorative = false -%}
+          {%- endif -%}
+          {%- if sb_decorative -%}
+          <div class="stacked-banners__link stacked-banners__link--static" aria-hidden="true">
+          {%- else -%}
           <a href="{{ b.link }}" class="stacked-banners__link" aria-label="{{ sb_name | escape }}" {% if b.open_new_tab %}target="_blank" rel="noopener"{% endif %}>
+          {%- endif -%}
         {%- endif -%}
 
           <picture class="stacked-banners__picture">
@@ -56,7 +71,7 @@
           </picture>
 
         {%- if b.link != blank -%}
-          </a>
+          {%- if sb_decorative -%}</div>{%- else -%}</a>{%- endif -%}
         {%- endif -%}
       </div>
     {%- else -%}
