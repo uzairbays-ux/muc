@@ -81,6 +81,28 @@
   if is_rte
     assign element = 'rte-formatter'
   endif
+
+  # muc: on product pages of the size-guide vendors (Theme settings > Size
+  # guide), drop the "BLS - " prefix from the product title where this block
+  # shows it. Display only - the product title in Shopify is untouched. The
+  # dynamic source is resolved before Liquid runs, so the title is matched as
+  # text, in both its raw and HTML-escaped forms.
+  assign kj_text = block.settings.text
+  assign kj_title = closest.product.title
+  if kj_title != blank and kj_title contains 'BLS - '
+    assign kj_vendors = settings.kj_size_guide_vendor | default: 'British Lingerie Studio' | downcase | split: ','
+    assign kj_product_vendor = closest.product.vendor | strip | downcase
+    for kj_vendor in kj_vendors
+      assign kj_needle = kj_vendor | strip
+      if kj_needle != '' and kj_needle == kj_product_vendor
+        assign kj_trimmed = kj_title | remove_first: 'BLS - '
+        assign kj_title_escaped = kj_title | escape
+        assign kj_trimmed_escaped = kj_trimmed | escape
+        assign kj_text = kj_text | replace: kj_title_escaped, kj_trimmed_escaped | replace: kj_title, kj_trimmed
+        break
+      endif
+    endfor
+  endif
 %}
 
 {% if fallback_text != blank and visible_text == blank %}
@@ -89,7 +111,7 @@
   </div>
 {% elsif plain_text != blank %}
   <{{ element }} {{ attributes | strip_newlines | strip }}>
-    {{ block.settings.text }}
+    {{ kj_text }}
   </{{ element }}>
 {% endif %}
 
