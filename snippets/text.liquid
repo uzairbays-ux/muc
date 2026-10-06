@@ -90,16 +90,18 @@
   assign kj_text = block.settings.text
   assign kj_title = closest.product.title
 
-  # muc: the brand link is "/collections/vendors?q={{ closest.product.vendor }}"
-  # and the dynamic source is pasted in raw, so a vendor with an ampersand
-  # ("Bath & Body Works") breaks the query. Swap in the URL-encoded vendor.
+  # muc: the brand link is "/collections/vendors?q={{ closest.product.vendor }}".
+  # Shopify's vendor listing shows every product in catalogue order, sold-out
+  # ones included, and ignores the availability filter. Send the link to a
+  # vendor search instead, which lists in-stock products first. The vendor is
+  # URL-encoded on the way, so names with an ampersand survive.
   assign kj_vendor_raw = closest.product.vendor
-  if kj_vendor_raw != blank and kj_text contains 'vendors?q='
+  if kj_vendor_raw != blank and kj_text contains '/collections/vendors?q='
     assign kj_vendor_escaped = kj_vendor_raw | escape
     assign kj_vendor_encoded = kj_vendor_raw | url_encode
-    assign kj_from_escaped = 'vendors?q=' | append: kj_vendor_escaped
-    assign kj_from_raw = 'vendors?q=' | append: kj_vendor_raw
-    assign kj_to = 'vendors?q=' | append: kj_vendor_encoded
+    assign kj_from_escaped = '/collections/vendors?q=' | append: kj_vendor_escaped
+    assign kj_from_raw = '/collections/vendors?q=' | append: kj_vendor_raw
+    assign kj_to = '/search?type=product&amp;q=vendor%3A%22' | append: kj_vendor_encoded | append: '%22'
     assign kj_text = kj_text | replace: kj_from_escaped, kj_to | replace: kj_from_raw, kj_to
   endif
   if kj_title != blank and kj_title contains 'BLS - '
