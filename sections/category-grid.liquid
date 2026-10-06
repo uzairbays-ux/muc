@@ -49,6 +49,9 @@
             {%- endif -%}
               <div class="category-grid__image-wrapper" style="--cg-padding: {{ image_padding }}%; --cg-image-fit: {{ image_fit }}; --cg-ratio: {{ card_ratio }}; background-color: {{ card_bg }};">
                 {%- if b.image != blank -%}
+                  {%- comment -%} A filter inside a filter argument applies to the tag, not the alt, so build it first. {%- endcomment -%}
+                  {%- capture cg_alt -%}{% render 'kj-link-name', image: b.image, link: b.link, fallback: b.label %}{%- endcapture -%}
+                  {%- assign cg_alt = cg_alt | strip -%}
                   {{
                     b.image
                     | image_url: width: 400
@@ -57,7 +60,7 @@
                       widths: '200,300,400',
                       sizes: '(max-width: 749px) 28vw, 12vw',
                       class: 'category-grid__image',
-                      alt: b.image.alt | default: b.label | default: ''
+                      alt: cg_alt
                   }}
                 {%- else -%}
                   <div class="category-grid__placeholder">

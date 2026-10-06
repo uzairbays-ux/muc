@@ -45,6 +45,7 @@
             {%- liquid
               # The first few thumbnails are on screen at first paint when this
               # strip sits at the top of the page, so they should not be lazy.
+              assign ts_alt = b.image.alt | default: b.label | default: 'Category'
               assign ts_loading = 'lazy'
               if section.index != blank and section.index <= 2 and forloop.index <= 6
                 assign ts_loading = 'eager'
@@ -58,7 +59,7 @@
                 widths: '160,240,320,480,600',
                 sizes: '(max-width: 749px) 80px, 20vw',
                 class: 'thumbnail-scroll__image',
-                alt: b.image.alt | default: b.label
+                alt: ts_alt
             }}
           {%- else -%}
             {{ 'product-' | append: forloop.index | placeholder_svg_tag: 'thumbnail-scroll__image thumbnail-scroll__image--placeholder' }}

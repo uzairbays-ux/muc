@@ -19,6 +19,7 @@
 
           <div class="promo-grid__banner">
             {%- if b.image != blank -%}
+              {%- assign kj_alt_1 = b.image.alt | default: b.heading | default: '' -%}
               {{
                 b.image
                 | image_url: width: 1200
@@ -27,7 +28,7 @@
                   widths: '400,600,800,1000,1200',
                   sizes: '(max-width: 749px) 100vw, 50vw',
                   class: 'promo-grid__image',
-                  alt: b.image.alt | default: b.heading | default: ''
+                  alt: kj_alt_1
               }}
             {%- else -%}
               <div class="promo-grid__placeholder">

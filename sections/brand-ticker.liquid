@@ -41,13 +41,14 @@
             <a href="{{ b.link }}" class="brand-ticker__link" aria-label="{{ b.image.alt | default: b.label | default: 'Brand' | escape }}">
           {%- endif -%}
             {%- if b.image != blank -%}
+              {%- assign kj_alt_1 = b.image.alt | default: b.label | default: '' -%}
               {{
                 b.image
                 | image_url: height: logo_height
                 | image_tag:
                   loading: 'lazy',
                   class: 'brand-ticker__logo',
-                  alt: b.image.alt | default: b.label | default: ''
+                  alt: kj_alt_1
               }}
             {%- else -%}
               <span class="brand-ticker__placeholder">{{ b.label | default: 'Brand' }}</span>
