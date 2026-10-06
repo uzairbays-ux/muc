@@ -140,12 +140,15 @@
     .kj-logo-badge, .kj-logo-badge::after { animation: none; }
   }
 
+  /* Phones: the logo sits at the very top of the header, so the tag overlaps
+     the logo's corner instead of floating above it (where it left the screen). */
   @media screen and (max-width: 749px) {
     .kj-logo-badge {
-      top: -8px;
-      right: -12px;
+      top: -2px;
+      right: -10px;
       font-size: 8px;
       padding: 1px 6px;
+      line-height: 13px;
     }
   }
 
