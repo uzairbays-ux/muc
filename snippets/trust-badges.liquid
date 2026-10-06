@@ -45,34 +45,39 @@
     margin-block: 10px 4px;
   }
 
+  /* Green-tinted pills with a soft border, so the promises read as a
+     reassurance strip rather than grey labels. */
   .trust-badge {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    padding: 6px 12px;
+    gap: 7px;
+    padding: 7px 13px;
     border-radius: 999px;
-    background: rgb(var(--color-foreground-rgb, 34 34 34) / 0.05);
-    color: var(--color-foreground);
+    background: #eefbf3;
+    border: 1px solid #bfe8cd;
+    color: #0b3d22;
     font-size: 0.8125rem;
     line-height: 1;
     white-space: nowrap;
+    box-shadow: 0 1px 2px rgba(6, 135, 67, 0.12);
   }
 
   .trust-badge__icon {
-    width: 16px;
-    height: 16px;
+    width: 17px;
+    height: 17px;
     flex: none;
-    color: var(--color-primary, var(--color-foreground));
+    color: #068743;
   }
 
   .trust-badge__text {
-    font-weight: 500;
+    font-weight: 700;
+    letter-spacing: 0.1px;
   }
 
   @media screen and (max-width: 749px) {
     .trust-badges {
       flex-wrap: nowrap;
-      gap: 5px;
+      gap: 6px;
       overflow-x: auto;
       scrollbar-width: none;
       -webkit-overflow-scrolling: touch;
@@ -83,16 +88,16 @@
     }
 
     .trust-badge {
-      padding: 4px 7px;
-      gap: 4px;
-      font-size: 0.625rem;
+      padding: 5px 9px;
+      gap: 5px;
+      font-size: 0.6875rem;
       flex: 0 0 auto;
       white-space: nowrap;
     }
 
     .trust-badge__icon {
-      width: 12px;
-      height: 12px;
+      width: 13px;
+      height: 13px;
     }
   }
 {% endstylesheet %}
