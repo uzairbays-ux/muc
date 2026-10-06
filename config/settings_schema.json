@@ -2325,5 +2325,34 @@
         "default": true
       }
     ]
+  },
+  {
+    "name": "Logo badge",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "kj_logo_badge_enabled",
+        "label": "Show a promo tag on the logo",
+        "default": false
+      },
+      {
+        "type": "text",
+        "id": "kj_logo_badge_text",
+        "label": "Tag text",
+        "default": "50% OFF"
+      },
+      {
+        "type": "color",
+        "id": "kj_logo_badge_bg",
+        "label": "Tag background",
+        "default": "#ffd60a"
+      },
+      {
+        "type": "color",
+        "id": "kj_logo_badge_fg",
+        "label": "Tag text colour",
+        "default": "#111111"
+      }
+    ]
   }
 ]
