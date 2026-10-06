@@ -3,7 +3,10 @@
 <style>
   /* Same card as the Yango block above it: grey rounded panel, icon tile,
      bold line with a quiet subline, chevron on the right. */
-  .baadmay-product-wrapper { margin: 0; }
+  .baadmay-product-wrapper { margin: 0; width: 100%; }
+
+  /* The custom-liquid wrapper shrinks to its text; span the column like Yango. */
+  div:has(> .baadmay-product-wrapper) { width: 100%; align-self: stretch; }
 
   .baadmay-product-wrapper .baadmay-card {
     display: flex;
