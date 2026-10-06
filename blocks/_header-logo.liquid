@@ -63,11 +63,10 @@
       text_fallback: shop.name,
       style: logo_style
     %}
+    {%- if settings.kj_logo_badge_enabled and settings.kj_logo_badge_text != blank -%}
+      <span class="kj-logo-badge" style="--kj-logo-badge-bg: {{ settings.kj_logo_badge_bg | default: '#ffd60a' }}; --kj-logo-badge-fg: {{ settings.kj_logo_badge_fg | default: '#111111' }};" aria-hidden="true">{{ settings.kj_logo_badge_text | escape }}</span>
+    {%- endif -%}
   </span>
-
-  {%- if settings.kj_logo_badge_enabled and settings.kj_logo_badge_text != blank -%}
-    <span class="kj-logo-badge" style="--kj-logo-badge-bg: {{ settings.kj_logo_badge_bg | default: '#ffd60a' }}; --kj-logo-badge-fg: {{ settings.kj_logo_badge_fg | default: '#111111' }};" aria-hidden="true">{{ settings.kj_logo_badge_text | escape }}</span>
-  {%- endif -%}
 
   {% if use_inverse_logo %}
     <span
@@ -89,8 +88,9 @@
 {% stylesheet %}
   /* Promo tag pinned to the logo's top-right corner, with a gentle swing and a
      light sweep. Theme settings > Logo badge. */
-  .header-logo {
+  .header-logo__image-container--original {
     position: relative;
+    display: inline-block;
   }
 
   .kj-logo-badge {
@@ -144,8 +144,8 @@
      the logo's corner instead of floating above it (where it left the screen). */
   @media screen and (max-width: 749px) {
     .kj-logo-badge {
-      top: -2px;
-      right: -10px;
+      top: -7px;
+      right: -12px;
       font-size: 8px;
       padding: 1px 6px;
       line-height: 13px;
