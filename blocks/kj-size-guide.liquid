@@ -6,17 +6,28 @@
   phrase in its title - renders a Size Guide link and its popup. Products of
   any other vendor, and products that match no chart, render nothing.
 
-  The vendor, the link labels and the Sister Size image are shared by every
-  chart, so they live in Theme settings > Size guide.
+  The vendors (a comma-separated list), the link labels and the Sister Size
+  image are shared by every chart, so they live in Theme settings > Size guide.
 {%- enddoc -%}
 
 {%- liquid
   assign sg_product = closest.product
-  assign sg_vendor = settings.kj_size_guide_vendor | default: 'British Lingerie Studio' | strip | downcase
   assign sg_product_vendor = sg_product.vendor | strip | downcase
+
+  # The vendor setting is a comma-separated list: some BLS products carry a
+  # category as their vendor ("Slips & Camis", "Teens") instead of the brand.
+  assign sg_vendor_ok = false
+  assign sg_vendors = settings.kj_size_guide_vendor | default: 'British Lingerie Studio' | downcase | split: ','
+  for sg_vendor in sg_vendors
+    assign sg_needle = sg_vendor | strip
+    if sg_needle != '' and sg_needle == sg_product_vendor
+      assign sg_vendor_ok = true
+      break
+    endif
+  endfor
 -%}
 
-{%- if sg_product != blank and sg_vendor != '' and sg_product_vendor == sg_vendor -%}
+{%- if sg_product != blank and sg_vendor_ok -%}
   {%- liquid
     # Each chart that matches renders itself behind a marker. Keep only the
     # first one, so a product that matches several charts outputs exactly one.

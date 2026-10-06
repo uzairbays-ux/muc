@@ -2336,8 +2336,8 @@
       {
         "type": "text",
         "id": "kj_size_guide_vendor",
-        "label": "Vendor",
-        "info": "Only products of this vendor show a size guide.",
+        "label": "Vendors",
+        "info": "Comma-separated. Only products whose vendor is one of these show a size guide.",
         "default": "British Lingerie Studio"
       },
       {
