@@ -375,6 +375,11 @@
   [id^='ProductInformation'] .block-mobile-order .text-block:has(a) {
     background: transparent !important;
     padding: 0 !important;
+    /* The pill width and balanced wrapping split "British Lingerie Studio"
+       over two lines; keep the brand on one. */
+    --text-wrap: nowrap;
+    white-space: nowrap;
+    max-width: none;
   }
   [id^='ProductInformation'] .block-mobile-order .text-block:has(a) a {
     font-weight: 700;
