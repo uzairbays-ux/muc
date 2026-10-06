@@ -91,6 +91,10 @@
     "kj_yango_enabled": true,
     "kj_logo_badge_enabled": true,
     "kj_logo_badge_text": "50% OFF",
+    "kj_size_guide_vendor": "British Lingerie Studio, Slips & Camis, Teens",
+    "kj_size_guide_label": "Size Guide",
+    "kj_sister_size_image": "shopify://shop_images/bls-sister-size-bra.jpg",
+    "kj_sister_size_label": "Sister Size",
     "content_for_index": [],
     "blocks": {
       "14060646107696862457": {

@@ -1,0 +1,92 @@
+{%- doc -%}
+  Size guide for one vendor's products (British Lingerie Studio).
+
+  Holds one "Size chart" child block per chart. The children are checked from
+  top to bottom and the first one that matches the product - by tag or by a
+  phrase in its title - renders a Size Guide link and its popup. Products of
+  any other vendor, and products that match no chart, render nothing.
+
+  The vendors (a comma-separated list), the link labels and the Sister Size
+  image are shared by every chart, so they live in Theme settings > Size guide.
+{%- enddoc -%}
+
+{%- liquid
+  assign sg_product = closest.product
+  assign sg_product_vendor = sg_product.vendor | strip | downcase
+
+  # The vendor setting is a comma-separated list: some BLS products carry a
+  # category as their vendor ("Slips & Camis", "Teens") instead of the brand.
+  assign sg_vendor_ok = false
+  assign sg_vendors = settings.kj_size_guide_vendor | default: 'British Lingerie Studio' | downcase | split: ','
+  for sg_vendor in sg_vendors
+    assign sg_needle = sg_vendor | strip
+    if sg_needle != '' and sg_needle == sg_product_vendor
+      assign sg_vendor_ok = true
+      break
+    endif
+  endfor
+-%}
+
+{%- if sg_product != blank and sg_vendor_ok -%}
+  {%- liquid
+    # Each chart that matches renders itself behind a marker. Keep only the
+    # first one, so a product that matches several charts outputs exactly one.
+    capture sg_charts
+      content_for 'blocks'
+    endcapture
+    assign sg_matches = sg_charts | split: '<!--kj-size-chart-->'
+  -%}
+  {%- if sg_matches.size > 1 -%}
+    <script src="{{ 'dialog.js' | asset_url }}" type="module"></script>
+    {%- comment -%}
+      Same mobile ordering as the theme's own blocks, so on phones the links
+      can sit next to the size picker (give both the same Mobile order).
+    {%- endcomment -%}
+    <div class="block-mobile-order" style="--mobile-order: {{ block.settings.mobile_order | default: 0 }};">
+      <div class="kj-size-guide" {{ block.shopify_attributes }}>
+        {{- sg_matches[1] -}}
+      </div>
+    </div>
+  {%- endif -%}
+{%- endif -%}
+
+{% stylesheet %}
+  .kj-size-guide {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px 18px;
+  }
+
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Size guide",
+  "tag": null,
+  "blocks": [
+    {
+      "type": "_kj-size-chart"
+    }
+  ],
+  "settings": [
+    {
+      "type": "number",
+      "id": "mobile_order",
+      "label": "Mobile order",
+      "info": "Position on mobile. Lower = earlier. Match the size picker's Mobile order to keep the links next to it.",
+      "default": 0
+    },
+    {
+      "type": "paragraph",
+      "content": "Add one Size chart block per chart. They are checked from top to bottom and the first one that matches the product is shown, so put the more specific charts first. The vendor, link labels and Sister Size image are in Theme settings > Size guide."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Size guide",
+      "category": "t:categories.product"
+    }
+  ]
+}
+{% endschema %}

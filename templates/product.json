@@ -370,6 +370,185 @@
               },
               "blocks": {}
             },
+            "kj_size_guide": {
+              "type": "kj-size-guide",
+              "name": "Size guide",
+              "settings": {
+                "mobile_order": 3
+              },
+              "blocks": {
+                "size_chart_sml_bras": {
+                  "type": "_kj-size-chart",
+                  "name": "S/M/L bras (SizeChart-1)",
+                  "settings": {
+                    "image": "shopify://shop_images/hix.ai-download-1790917858783.webp",
+                    "tags": "SizeChart-1, Seamless crop top",
+                    "title_contains": "Nursing Comfort Bra, Seamless Bonded, Seamless Bra -, Seamless Boned Bra, Belle Non Padded Lace Bralette, Eula Non Padded Lace Bralette, Dahlia Non Padded Bralette, Non Wired And Non Padded Cotton Crop Top, Big Girl Non Wired And Padded",
+                    "show_sister_size": false
+                  },
+                  "blocks": {}
+                },
+                "size_chart_teen_panty": {
+                  "type": "_kj-size-chart",
+                  "name": "Teens panties",
+                  "settings": {
+                    "image": "shopify://shop_images/Teen_Panty_chart_size_-new.webp",
+                    "tags": "",
+                    "title_contains": "Teen Panty",
+                    "show_sister_size": false
+                  },
+                  "blocks": {}
+                },
+                "size_chart_teen_bra": {
+                  "type": "_kj-size-chart",
+                  "name": "Teens bras",
+                  "settings": {
+                    "image": "shopify://shop_images/Teen_Bra_size_chart-new.webp",
+                    "tags": "Teens",
+                    "title_contains": "",
+                    "show_sister_size": false
+                  },
+                  "blocks": {}
+                },
+                "size_chart_sleepwear": {
+                  "type": "_kj-size-chart",
+                  "name": "Sleepwear",
+                  "settings": {
+                    "image": "shopify://shop_images/Sleep_Wear.webp",
+                    "tags": "Sleep Wear, Pajama Sets, Pajama Set, Short Sets, Short Set, Nightgown, PJS, Lounge Wear",
+                    "title_contains": "",
+                    "show_sister_size": false
+                  },
+                  "blocks": {}
+                },
+                "size_chart_hena": {
+                  "type": "_kj-size-chart",
+                  "name": "Hena thong",
+                  "settings": {
+                    "image": "shopify://shop_images/BLS1447_Hena.webp",
+                    "tags": "",
+                    "title_contains": "Hena Thong, Hena Lace Thong",
+                    "show_sister_size": false
+                  },
+                  "blocks": {}
+                },
+                "size_chart_soraya": {
+                  "type": "_kj-size-chart",
+                  "name": "Soraya boyshort",
+                  "settings": {
+                    "image": "shopify://shop_images/BLS1455_Soraya.webp",
+                    "tags": "",
+                    "title_contains": "Soraya Lace Boyshort",
+                    "show_sister_size": false
+                  },
+                  "blocks": {}
+                },
+                "size_chart_lenore": {
+                  "type": "_kj-size-chart",
+                  "name": "Lenore thong",
+                  "settings": {
+                    "image": "shopify://shop_images/BLS10361_Lenore.webp",
+                    "tags": "",
+                    "title_contains": "Lenore Lace Thong",
+                    "show_sister_size": false
+                  },
+                  "blocks": {}
+                },
+                "size_chart_liza": {
+                  "type": "_kj-size-chart",
+                  "name": "Liza boyshort",
+                  "settings": {
+                    "image": "shopify://shop_images/BLS20101_Liza.webp",
+                    "tags": "",
+                    "title_contains": "Liza Lace Boyshort",
+                    "show_sister_size": false
+                  },
+                  "blocks": {}
+                },
+                "size_chart_haut": {
+                  "type": "_kj-size-chart",
+                  "name": "Haut thong",
+                  "settings": {
+                    "image": "shopify://shop_images/BLSDK1439_Haut.webp",
+                    "tags": "",
+                    "title_contains": "Haut Lace Thong",
+                    "show_sister_size": false
+                  },
+                  "blocks": {}
+                },
+                "size_chart_camis": {
+                  "type": "_kj-size-chart",
+                  "name": "Slips & Camis",
+                  "settings": {
+                    "image": "shopify://shop_images/camisole_size.webp",
+                    "tags": "Slips & Camis, Camisole",
+                    "title_contains": "",
+                    "show_sister_size": false
+                  },
+                  "blocks": {}
+                },
+                "size_chart_sports_bra": {
+                  "type": "_kj-size-chart",
+                  "name": "Sports bras",
+                  "settings": {
+                    "image": "shopify://shop_images/sports_bra_size-new.jpg",
+                    "tags": "Sports Bra",
+                    "title_contains": "",
+                    "show_sister_size": false
+                  },
+                  "blocks": {}
+                },
+                "size_chart_shapewear": {
+                  "type": "_kj-size-chart",
+                  "name": "Shapewear",
+                  "settings": {
+                    "image": "shopify://shop_images/shapewear_size.webp",
+                    "tags": "Shaper, Active & Shape Wear, Sports & Shape Wear",
+                    "title_contains": "",
+                    "show_sister_size": false
+                  },
+                  "blocks": {}
+                },
+                "size_chart_bras": {
+                  "type": "_kj-size-chart",
+                  "name": "Bras (band/cup)",
+                  "settings": {
+                    "image": "shopify://shop_images/bra_size.webp",
+                    "tags": "Bras, Bra",
+                    "title_contains": "Front Open Bra",
+                    "show_sister_size": true
+                  },
+                  "blocks": {}
+                },
+                "size_chart_panties": {
+                  "type": "_kj-size-chart",
+                  "name": "Panties",
+                  "settings": {
+                    "image": "shopify://shop_images/panties-size-chart.webp",
+                    "tags": "Panties",
+                    "title_contains": "",
+                    "show_sister_size": false
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "size_chart_sml_bras",
+                "size_chart_teen_panty",
+                "size_chart_teen_bra",
+                "size_chart_sleepwear",
+                "size_chart_hena",
+                "size_chart_soraya",
+                "size_chart_lenore",
+                "size_chart_liza",
+                "size_chart_haut",
+                "size_chart_camis",
+                "size_chart_sports_bra",
+                "size_chart_shapewear",
+                "size_chart_bras",
+                "size_chart_panties"
+              ]
+            },
             "variant_picker_R3rGDr": {
               "type": "variant-picker",
               "settings": {
@@ -773,6 +952,7 @@
             "divider_VJhene",
             "sku_CbFtQN",
             "ai_gen_block_e195552_7pHmRW",
+            "kj_size_guide",
             "variant_picker_R3rGDr",
             "buy_buttons_eYQEYi",
             "kj_vto_lips",
