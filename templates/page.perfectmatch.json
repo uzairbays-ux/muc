@@ -55,15 +55,15 @@
           "name": "t:names.header",
           "static": true,
           "settings": {
-            "content_direction": "row",
-            "vertical_on_mobile": false,
+            "content_direction": "column",
+            "vertical_on_mobile": true,
             "horizontal_alignment": "space-between",
             "vertical_alignment": "center",
             "align_baseline": true,
             "horizontal_alignment_flex_direction_column": "flex-start",
             "vertical_alignment_flex_direction_column": "center",
-            "gap": 12,
-            "width": "fit-content",
+            "gap": 6,
+            "width": "fill",
             "custom_width": 100,
             "width_mobile": "fit-content",
             "custom_width_mobile": 100,
@@ -84,65 +84,22 @@
             "padding-inline-end": 0
           },
           "blocks": {
-            "ai_gen_block_4420fcf_xdn7CQ": {
-              "type": "ai_gen_block_4420fcf",
-              "name": "Banner announcement",
+            "heading": {
+              "type": "text",
               "settings": {
-                "desktop_image": "shopify://shop_images/best-seller-desktop_6c1bf320-9ce3-4cb9-a1d0-8ecba17b768b.webp",
-                "mobile_image": "shopify://shop_images/best-seller-mobile.webp",
-                "link_url": "",
-                "open_in_new_tab": false,
-                "hover_opacity": 85
-              },
-              "blocks": {}
+                "text": "<h2>Step 1: add one Mega Deal product</h2>"
+              }
             },
-            "product_list_text_YFtzcL": {
-              "type": "_product-list-text",
-              "name": "t:names.collection_title",
-              "disabled": true,
+            "sub": {
+              "type": "text",
               "settings": {
-                "text": "<h5>{{ closest.collection.title }}</h5>",
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "custom",
-                "font": "var(--font-heading--family)",
-                "font_size": "",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground-heading)",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "product_list_button_MWeP9V": {
-              "type": "_product-list-button",
-              "name": "t:names.product_list_button",
-              "disabled": true,
-              "settings": {
-                "label": "View all",
-                "open_in_new_tab": false,
-                "style_class": "button",
-                "width": "fit-content",
-                "custom_width": 100,
-                "width_mobile": "custom",
-                "custom_width_mobile": 100
-              },
-              "blocks": {}
+                "text": "<p>Add any product below, then pick one Perfect Match product on the next page. One deal per order.</p>"
+              }
             }
           },
           "block_order": [
-            "ai_gen_block_4420fcf_xdn7CQ",
-            "product_list_text_YFtzcL",
-            "product_list_button_MWeP9V"
+            "heading",
+            "sub"
           ]
         },
         "static-product-card": {
