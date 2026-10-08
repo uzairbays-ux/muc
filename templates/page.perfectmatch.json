@@ -407,6 +407,7 @@
       "name": "Perfect Match products",
       "settings": {
         "collection": "perfect-match-collection-1",
+        "banner_image_desktop": "shopify://shop_images/WhatsApp_Image_2026-10-08_at_14.11.17.jpg",
         "banner_link": "",
         "gradient_color_1": "",
         "gradient_color_2": "",
