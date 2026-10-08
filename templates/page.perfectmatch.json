@@ -185,7 +185,7 @@
               "type": "text",
               "settings": {
                 "mobile_order": 0,
-                "text": "<h2>Step 1: add one Mega Deal product</h2>",
+                "text": "<h2>Step 1: Pick your Mega Deal 🔥</h2>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -211,7 +211,7 @@
               "type": "text",
               "settings": {
                 "mobile_order": 0,
-                "text": "<p>Add any product below, then pick one Perfect Match product on the next page. One deal per order.</p>",
+                "text": "<p>Grab any one of these at its Mega Deal price. One deal per order.</p>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -474,7 +474,7 @@
               "type": "text",
               "settings": {
                 "mobile_order": 0,
-                "text": "<h2>Step 2: add one Perfect Match product</h2>",
+                "text": "<h2>Step 2: Find its #PerfectMatch 💞</h2>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -500,7 +500,7 @@
               "type": "text",
               "settings": {
                 "mobile_order": 0,
-                "text": "<p>Pick any one product below to complete your Mega Deal. The deal applies to the Collection 1 product.</p>",
+                "text": "<p>Pair it with any one of these and the deal unlocks at checkout.</p>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
