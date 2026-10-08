@@ -26,6 +26,7 @@
       "block_order": [
         "ai_gen_block_4420fcf_mtW39n"
       ],
+      "disabled": true,
       "name": "Banner announcement",
       "settings": {
         "content_direction": "column",
@@ -156,7 +157,7 @@
             "horizontal_alignment": "space-between",
             "vertical_alignment": "center",
             "align_baseline": true,
-            "horizontal_alignment_flex_direction_column": "flex-start",
+            "horizontal_alignment_flex_direction_column": "center",
             "vertical_alignment_flex_direction_column": "center",
             "gap": 6,
             "width": "fill",
@@ -184,7 +185,7 @@
               "type": "text",
               "settings": {
                 "mobile_order": 0,
-                "text": "<h2>Step 1: add one Mega Deal product</h2>",
+                "text": "<h2>Step 1: Pick your Mega Deal 🔥</h2>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -210,7 +211,7 @@
               "type": "text",
               "settings": {
                 "mobile_order": 0,
-                "text": "<p>Add any product below, then pick one Perfect Match product on the next page. One deal per order.</p>",
+                "text": "<p>Grab any one of these at its Mega Deal price. One deal per order.</p>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -445,7 +446,7 @@
             "horizontal_alignment": "space-between",
             "vertical_alignment": "center",
             "align_baseline": true,
-            "horizontal_alignment_flex_direction_column": "flex-start",
+            "horizontal_alignment_flex_direction_column": "center",
             "vertical_alignment_flex_direction_column": "center",
             "gap": 6,
             "width": "fill",
@@ -473,7 +474,7 @@
               "type": "text",
               "settings": {
                 "mobile_order": 0,
-                "text": "<h2>Step 2: add one Perfect Match product</h2>",
+                "text": "<h2>Step 2: Find its #PerfectMatch 💞</h2>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -499,7 +500,7 @@
               "type": "text",
               "settings": {
                 "mobile_order": 0,
-                "text": "<p>Pick any one product below to complete your Mega Deal. The deal applies to the Collection 1 product.</p>",
+                "text": "<p>Pair it with any one of these and the deal unlocks at checkout.</p>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -696,6 +697,7 @@
       "name": "Perfect Match products (Collection 2)",
       "settings": {
         "collection": "perfect-match-collection-2",
+        "banner_image_desktop": "shopify://shop_images/WhatsApp_Image_2026-10-08_at_14.14.44.jpg",
         "banner_link": "",
         "gradient_color_1": "",
         "gradient_color_2": "",
