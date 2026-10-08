@@ -109,6 +109,7 @@
   >
     {{ children }}
     {%- unless onboarding -%}
+      {% render 'kj-pm-card', product: product %}
       {% render 'kj-save-pill', product: product %}
       {% render 'kj-card-actions', product: product %}
       {% render 'kj-card-badge', product: product %}

@@ -1,0 +1,148 @@
+{%- comment -%}
+  L'Oreal "Perfect Match" cart banner.
+
+  Mirrors the campaign rule so the shopper always knows where they stand:
+    C1 only            -> add a Perfect Match SKU to unlock
+    C2 only            -> add a Mega Deal SKU to unlock
+    C1 + C2            -> unlocked (Shopify applies the discount to the C1 SKU)
+    neither            -> nothing shown
+
+  Counting matches the discount: membership by collection, quantity ignored,
+  because only one deal is possible per order.
+
+  Pure Liquid: it re-renders with the cart section. The drawer is re-rendered
+  via innerHTML, where script tags never run.
+
+  Config + gating: snippets/kj-perfect-match-rules.liquid and
+  Theme settings > Perfect Match.
+{%- endcomment -%}
+
+{%- liquid
+  assign pm_c1 = settings.kj_pm_collection_1
+  assign pm_c2 = settings.kj_pm_collection_2
+-%}
+
+{%- if settings.kj_pm_enabled and pm_c1 != blank and pm_c2 != blank -%}
+  {%- liquid
+    assign pm_has_c1 = false
+    assign pm_has_c2 = false
+    assign pm_c1_title = ''
+
+    for item in cart.items
+      for c in item.product.collections
+        if c.handle == pm_c1.handle and pm_has_c1 == false
+          assign pm_has_c1 = true
+          assign pm_c1_title = item.product.title
+        endif
+        if c.handle == pm_c2.handle
+          assign pm_has_c2 = true
+        endif
+      endfor
+    endfor
+
+    assign pm_unlocked = false
+    if pm_has_c1 and pm_has_c2
+      assign pm_unlocked = true
+    endif
+  -%}
+
+  {%- if pm_has_c1 or pm_has_c2 -%}
+    <div class="kj-pm{% if pm_unlocked %} kj-pm--won{% endif %}" role="status" data-kj-pm>
+      <span class="kj-pm__icon" aria-hidden="true">
+        {%- if pm_unlocked -%}
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+            <path d="m5 12.5 4.5 4.5L19 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        {%- else -%}
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+            <rect x="4" y="10.5" width="16" height="9.5" rx="1.5" stroke="currentColor" stroke-width="1.6"></rect>
+            <path d="M8 10.5V8a4 4 0 0 1 8 0v2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+          </svg>
+        {%- endif -%}
+      </span>
+
+      <div class="kj-pm__body">
+        {%- if pm_unlocked -%}
+          <p class="kj-pm__title">Mega Deal unlocked</p>
+          <p class="kj-pm__text">
+            Your discount applies to {{ pm_c1_title | escape }} at checkout.
+            One deal per order, and it can't be combined with other discount codes.
+          </p>
+        {%- elsif pm_has_c1 -%}
+          <p class="kj-pm__title">Add 1 Perfect Match product to unlock your Mega Deal</p>
+          <p class="kj-pm__text">
+            Pair it with any product from
+            <a class="kj-pm__link" href="{{ pm_c2.url }}">{{ pm_c2.title | escape }}</a>
+            to get the Mega Deal on {{ pm_c1_title | escape }}.
+          </p>
+        {%- else -%}
+          <p class="kj-pm__title">Add 1 Mega Deal product to unlock your Mega Deal</p>
+          <p class="kj-pm__text">
+            Choose any product from
+            <a class="kj-pm__link" href="{{ pm_c1.url }}">{{ pm_c1.title | escape }}</a>
+            and the discount applies to it automatically.
+          </p>
+        {%- endif -%}
+      </div>
+    </div>
+  {%- endif -%}
+{%- endif -%}
+
+{% stylesheet %}
+  .kj-pm {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin: 0 0 12px;
+    padding: 10px 12px;
+    border: 1px solid rgba(0, 19, 37, 0.14);
+    border-radius: 10px;
+    background: #f7f4ff;
+    color: #001325;
+  }
+
+  .kj-pm--won {
+    border-color: #bfe6cd;
+    background: #f2fbf6;
+  }
+
+  .kj-pm__icon {
+    flex: 0 0 auto;
+    display: inline-flex;
+    margin-top: 1px;
+    color: #5b3df5;
+  }
+
+  .kj-pm--won .kj-pm__icon {
+    color: #068743;
+  }
+
+  .kj-pm__body {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .kj-pm__title {
+    margin: 0;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 16px;
+  }
+
+  .kj-pm__text {
+    margin: 2px 0 0;
+    font-size: 11px;
+    line-height: 15px;
+    color: rgba(0, 19, 37, 0.7);
+  }
+
+  .kj-pm__link {
+    color: #5b3df5;
+    font-weight: 600;
+    text-decoration: underline;
+  }
+
+  .kj-pm--won .kj-pm__link {
+    color: #068743;
+  }
+{% endstylesheet %}

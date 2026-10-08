@@ -1,0 +1,116 @@
+{%- comment -%}
+  Perfect Match "Unlock this deal with 3 easy steps" panel on product cards.
+
+  Shows on cards for products in either campaign collection, so the shopper
+  sees how the deal works before reaching the cart:
+    Collection 1 (Mega Deal SKU)     -> pair it with a Perfect Match product
+    Collection 2 (Perfect Match SKU) -> pair it with a Mega Deal product
+
+  Rendered from snippets/product-card.liquid; gated on
+  Theme settings > Perfect Match.
+{%- endcomment -%}
+
+{%- liquid
+  assign pm_p = product | default: closest.product
+  assign pm_c1 = settings.kj_pm_collection_1
+  assign pm_c2 = settings.kj_pm_collection_2
+-%}
+
+{%- if settings.kj_pm_enabled and pm_p != blank and pm_c1 != blank and pm_c2 != blank -%}
+  {%- liquid
+    assign pm_in_c1 = false
+    assign pm_in_c2 = false
+    for c in pm_p.collections
+      if c.handle == pm_c1.handle
+        assign pm_in_c1 = true
+      endif
+      if c.handle == pm_c2.handle
+        assign pm_in_c2 = true
+      endif
+    endfor
+
+    assign pm_partner = pm_c2.title
+    if pm_in_c1 == false
+      assign pm_partner = pm_c1.title
+    endif
+  -%}
+
+  {%- if pm_in_c1 or pm_in_c2 -%}
+    <div class="kj-pmc">
+      <p class="kj-pmc__head">
+        <svg class="kj-pmc__gift" viewBox="0 0 24 24" width="14" height="14" fill="none" aria-hidden="true">
+          <rect x="3.5" y="9.5" width="17" height="11" rx="1.4" stroke="currentColor" stroke-width="1.6"></rect>
+          <path d="M2.5 9.5h19V7.2a1 1 0 0 0-1-1h-17a1 1 0 0 0-1 1v2.3ZM12 6.2v14.3" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"></path>
+          <path d="M12 6.2C10.6 3.4 7.3 3.4 7.3 5.1c0 1.1 2.3 1.1 4.7 1.1ZM12 6.2c1.4-2.8 4.7-2.8 4.7-1.1 0 1.1-2.3 1.1-4.7 1.1Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"></path>
+        </svg>
+        Unlock this deal with 3 easy steps
+      </p>
+      <ul class="kj-pmc__steps">
+        <li>{% render 'kj-pm-tick' %}Add to cart this product</li>
+        <li>{% render 'kj-pm-tick' %}Add any 1 product from {{ pm_partner | escape }}</li>
+        <li>{% render 'kj-pm-tick' %}Checkout</li>
+      </ul>
+    </div>
+  {%- endif -%}
+{%- endif -%}
+
+{% stylesheet %}
+  .kj-pmc {
+    margin: 6px 0 2px;
+    padding: 7px 8px;
+    border-radius: 8px;
+    background: #fdeef6;
+    color: #e6007e;
+  }
+
+  .kj-pmc__head {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin: 0 0 4px;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 14px;
+  }
+
+  .kj-pmc__gift {
+    flex: 0 0 auto;
+  }
+
+  .kj-pmc__steps {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .kj-pmc__steps li {
+    display: flex;
+    align-items: flex-start;
+    gap: 5px;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+    color: rgba(0, 19, 37, 0.78);
+  }
+
+  .kj-pmc__steps li + li {
+    margin-top: 2px;
+  }
+
+  .kj-pmc__tick {
+    flex: 0 0 auto;
+    margin-top: 1px;
+    color: #e6007e;
+  }
+
+  @media screen and (max-width: 749px) {
+    .kj-pmc__head {
+      font-size: 10px;
+    }
+
+    .kj-pmc__steps li {
+      font-size: 9px;
+      line-height: 13px;
+    }
+  }
+{% endstylesheet %}

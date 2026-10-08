@@ -95,6 +95,11 @@
     "kj_size_guide_label": "Size Guide",
     "kj_sister_size_image": "shopify://shop_images/bls-sister-size-bra.jpg",
     "kj_sister_size_label": "Sister Size",
+    "kj_pm_enabled": true,
+    "kj_pm_collection_1": "perfect-match-collection-1",
+    "kj_pm_collection_2": "perfect-match-collection-2",
+    "kj_pm_redirect": true,
+    "kj_pm_enforce_one": false,
     "content_for_index": [],
     "blocks": {
       "14060646107696862457": {

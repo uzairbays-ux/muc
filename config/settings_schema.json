@@ -2388,5 +2388,44 @@
         "default": "Sister Size"
       }
     ]
+  },
+  {
+    "name": "Perfect Match",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "L'Oreal Perfect Match Mega Deal: 1 product from Collection 1 + 1 from Collection 2 unlocks a discount on the Collection 1 product. Shopify applies the money side via code-based Buy X Get Y discounts (one per percentage tier, one use per customer, does not combine); the theme shows cart progress and applies the code automatically."
+      },
+      {
+        "type": "checkbox",
+        "id": "kj_pm_enabled",
+        "label": "Enable the Perfect Match campaign",
+        "default": false
+      },
+      {
+        "type": "collection",
+        "id": "kj_pm_collection_1",
+        "label": "Collection 1 (Mega Deal SKUs \u2014 the discounted product)"
+      },
+      {
+        "type": "collection",
+        "id": "kj_pm_collection_2",
+        "label": "Collection 2 (Perfect Match SKUs \u2014 the unlocking product)"
+      },
+      {
+        "type": "checkbox",
+        "id": "kj_pm_redirect",
+        "label": "Send shoppers to Collection 2 after they add a Collection 1 product",
+        "info": "Only when their cart has no Collection 2 product yet.",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "kj_pm_enforce_one",
+        "label": "Remove extra campaign products (keep 1 from each collection)",
+        "info": "Stricter than L'Oreal's written conditions, which allow extra qualifying SKUs in the cart but only one deal. With this on, the extra item is removed from the cart.",
+        "default": true
+      }
+    ]
   }
 ]
