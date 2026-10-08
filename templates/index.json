@@ -353,7 +353,7 @@
           "type": "card",
           "name": "Philips",
           "settings": {
-            "image": "shopify://shop_images/philips.webp",
+            "image": "shopify://shop_images/Philips.jpg",
             "link": "shopify://collections/philips",
             "open_new_tab": false
           }
@@ -362,7 +362,16 @@
           "type": "card",
           "name": "Rederm",
           "settings": {
-            "image": "shopify://shop_images/redrem.webp",
+            "image": "shopify://shop_images/rederm.jpg",
+            "link": "shopify://collections/rederm",
+            "open_new_tab": false
+          }
+        },
+        "card_YVAMRk": {
+          "type": "card",
+          "name": "Rederm",
+          "settings": {
+            "image": "shopify://shop_images/Makeup_City_Banner_1080x1080_px.webp",
             "link": "shopify://collections/rederm",
             "open_new_tab": false
           }
@@ -421,6 +430,7 @@
         "card_ta6w88",
         "card_mitMU8",
         "card_aeBNAE",
+        "card_YVAMRk",
         "card_LBiUFw",
         "card_LWJXKE",
         "card_jfgkyk",
@@ -1008,7 +1018,7 @@
         "card_dnezUz": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/one-skin.webp",
+            "image": "shopify://shop_images/one-skin_9e0381af-27c9-4cbb-b7cb-cc8450cf3717.jpg",
             "link": "shopify://collections/oneskin",
             "open_new_tab": false
           }
@@ -1794,7 +1804,7 @@
           "type": "card",
           "name": "Essence",
           "settings": {
-            "image": "shopify://shop_images/Essence_ede1eea9-7f07-43b1-a10d-416f72f2356b.webp",
+            "image": "shopify://shop_images/Essence_1.jpg",
             "link": "shopify://collections/essence",
             "open_new_tab": false
           }
@@ -1821,7 +1831,7 @@
           "type": "card",
           "name": "Rimmel London",
           "settings": {
-            "image": "shopify://shop_images/Rimmel_5aefc2bf-e36e-438b-abac-648198eb77cd.jpg",
+            "image": "shopify://shop_images/Rimmel_1_5d9e9343-6a60-4c2d-8098-c8ad5527bcff.jpg",
             "link": "shopify://collections/rimmel-london",
             "open_new_tab": false
           }
@@ -1839,7 +1849,7 @@
           "type": "card",
           "name": "Bourjois",
           "settings": {
-            "image": "shopify://shop_images/Bourjois_25bf066c-da9e-48e0-b7c7-3c1b9a530656.webp",
+            "image": "shopify://shop_images/Bourjois_1_280dbec7-5160-4f82-ad2e-6de83d412dc2.jpg",
             "link": "shopify://collections/bourjois",
             "open_new_tab": false
           }
