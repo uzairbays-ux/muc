@@ -26,6 +26,7 @@
       "block_order": [
         "ai_gen_block_4420fcf_mtW39n"
       ],
+      "disabled": true,
       "name": "Banner announcement",
       "settings": {
         "content_direction": "column",
