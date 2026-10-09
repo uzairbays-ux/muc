@@ -50,6 +50,7 @@
         },
         "thumbnail_h7Dj6p": {
           "type": "thumbnail",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Baby-Care_jpg.webp",
             "background_color": "#f1ecfb",
