@@ -361,7 +361,7 @@
           "type": "card",
           "name": "Rederm",
           "settings": {
-            "image": "shopify://shop_images/rederm.jpg",
+            "image": "shopify://shop_images/Makeup_City_Banner_1080x1080_px.webp",
             "link": "shopify://collections/rederm",
             "open_new_tab": false
           }
@@ -369,6 +369,7 @@
         "card_YVAMRk": {
           "type": "card",
           "name": "Rederm",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/WhatsApp_Image_2026-10-08_at_13.38.20.jpg",
             "link": "shopify://pages/perfectmatch",
