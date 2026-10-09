@@ -171,10 +171,9 @@
         "card_ftKGeC": {
           "type": "card",
           "name": "Kryolan",
-          "disabled": true,
           "settings": {
-            "image": "shopify://shop_images/Kryolan_9851d2b3-d068-4989-8669-d160851dbd19.jpg",
-            "link": "shopify://collections/kryolan",
+            "image": "shopify://shop_images/WhatsApp_Image_2026-10-08_at_13.38.20.jpg",
+            "link": "shopify://pages/perfectmatch",
             "open_new_tab": false
           }
         },

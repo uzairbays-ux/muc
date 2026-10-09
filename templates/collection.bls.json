@@ -263,7 +263,8 @@
               "settings": {
                 "custom_liquid": "{% render 'baadmay-product-grid-item',product:  %}"
               },
-              "blocks": {}
+              "blocks": {},
+              "disabled": true
             },
             "review_QhafGF": {
               "type": "review",
