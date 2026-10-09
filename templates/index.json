@@ -332,11 +332,10 @@
         },
         "card_8dxtQP": {
           "type": "card",
-          "name": "Framesi",
-          "disabled": true,
+          "name": "Vaseline",
           "settings": {
-            "image": "shopify://shop_images/Janssen_Voucher.webp",
-            "link": "shopify://collections/janssen",
+            "image": "shopify://shop_images/Vaseline_jpg.webp",
+            "link": "shopify://collections/vaseline",
             "open_new_tab": false
           }
         },
