@@ -246,9 +246,19 @@
         "card_b9F39r": {
           "type": "card",
           "name": "Bioaqua",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Bioaqua_812d61bd-09c7-431e-bcc2-3acb5dcd9e42.webp",
             "link": "shopify://collections/bioaqua",
+            "open_new_tab": false
+          }
+        },
+        "card_h9nh8W": {
+          "type": "card",
+          "name": "Miss Rose",
+          "settings": {
+            "image": "shopify://shop_images/Miss-Rose_jpg.webp",
+            "link": "shopify://collections/miss-rose",
             "open_new_tab": false
           }
         }
@@ -263,7 +273,8 @@
         "card_YUtaR6",
         "card_7Rimtd",
         "card_nbr3cj",
-        "card_b9F39r"
+        "card_b9F39r",
+        "card_h9nh8W"
       ],
       "name": "Card banner",
       "settings": {
@@ -317,16 +328,6 @@
           "settings": {
             "image": "shopify://shop_images/500-x-500_6_99f042fc-9677-4e7d-911b-89a3399aa28b.png",
             "link": "shopify://collections/st-london",
-            "open_new_tab": false
-          }
-        },
-        "card_VdpdNy": {
-          "type": "card",
-          "name": "Kryolan",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/Kryolan_9851d2b3-d068-4989-8669-d160851dbd19.jpg",
-            "link": "shopify://collections/kryolan",
             "open_new_tab": false
           }
         },
@@ -424,7 +425,6 @@
       },
       "block_order": [
         "card_Rqd7UJ",
-        "card_VdpdNy",
         "card_8dxtQP",
         "card_ta6w88",
         "card_jfgkyk",
