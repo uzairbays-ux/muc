@@ -348,6 +348,15 @@
             "open_new_tab": false
           }
         },
+        "card_jfgkyk": {
+          "type": "card",
+          "name": "Revolution",
+          "settings": {
+            "image": "shopify://shop_images/Pastel-Pinkflash-Cosmetics-Display_jpg.webp",
+            "link": "shopify://collections/pinkflash",
+            "open_new_tab": false
+          }
+        },
         "card_mitMU8": {
           "type": "card",
           "name": "Philips",
@@ -393,16 +402,6 @@
             "open_new_tab": false
           }
         },
-        "card_jfgkyk": {
-          "type": "card",
-          "name": "Revolution",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/Revolution_95258492-30a6-41a6-bcbd-62e07d01efbd.jpg",
-            "link": "shopify://collections/revolution",
-            "open_new_tab": false
-          }
-        },
         "card_eqTYVW": {
           "type": "card",
           "name": "FreshLabs",
@@ -428,12 +427,12 @@
         "card_VdpdNy",
         "card_8dxtQP",
         "card_ta6w88",
+        "card_jfgkyk",
         "card_mitMU8",
         "card_aeBNAE",
         "card_YVAMRk",
         "card_LBiUFw",
         "card_LWJXKE",
-        "card_jfgkyk",
         "card_eqTYVW",
         "card_6AeFyg"
       ],
