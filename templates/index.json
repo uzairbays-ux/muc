@@ -861,6 +861,14 @@
             "open_new_tab": false
           }
         },
+        "card_pfpRwk": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/Luxe-Basics_jpg.jpg",
+            "link": "shopify://collections/luxe-basics",
+            "open_new_tab": false
+          }
+        },
         "card_L4QwKh": {
           "type": "card",
           "settings": {
@@ -874,15 +882,6 @@
           "settings": {
             "image": "shopify://shop_images/FreshLabs_1.webp",
             "link": "shopify://collections/freshlabs",
-            "open_new_tab": false
-          }
-        },
-        "card_pfpRwk": {
-          "type": "card",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/Loreal_514ef853-d406-44f8-8d9b-e5e9ef4594b3.jpg",
-            "link": "shopify://collections/loreal-paris",
             "open_new_tab": false
           }
         },
@@ -909,9 +908,9 @@
         "card_CaecqX",
         "card_QQLjCx",
         "card_p9kYBe",
+        "card_pfpRwk",
         "card_L4QwKh",
         "card_zHjYpW",
-        "card_pfpRwk",
         "card_NFeL6V",
         "card_RBgUMP"
       ],
