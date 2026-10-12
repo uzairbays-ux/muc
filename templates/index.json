@@ -879,6 +879,7 @@
         },
         "card_zHjYpW": {
           "type": "card",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/FreshLabs_1.webp",
             "link": "shopify://collections/freshlabs",
