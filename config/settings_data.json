@@ -88,7 +88,7 @@
     "variant_button_width": "equal-width-buttons",
     "product_card_carousel": false,
     "show_second_image_on_hover": true,
-    "kj_yango_enabled": true,
+    "kj_yango_enabled": false,
     "kj_logo_badge_enabled": true,
     "kj_logo_badge_text": "50% OFF",
     "kj_size_guide_vendor": "British Lingerie Studio, Slips & Camis, Teens",
