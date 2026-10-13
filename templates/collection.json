@@ -212,8 +212,8 @@
             "makeupcity_yango_app_catalog_card_badge_basic_extension_W9yLjm": {
               "type": "shopify://apps/makeupcity-yango-app/blocks/catalog-card-badge-basic-extension/01a0623d-7d61-77fd-b864-93434b959c3e",
               "settings": {
-                "margin_top": 4,
-                "margin_bottom": 0,
+                "margin_top": 0,
+                "margin_bottom": 8,
                 "justify_content": "flex-start",
                 "extension_origin": "",
                 "adapter_slug": "merchant_makeupcity"
