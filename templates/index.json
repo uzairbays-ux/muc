@@ -128,6 +128,16 @@
             "alt": ""
           }
         },
+        "slide_zV38Yx": {
+          "type": "slide",
+          "settings": {
+            "desktop_image": "shopify://shop_images/BFXMAKEUPCITY_HOME_BANNER.webp",
+            "mobile_image": "shopify://shop_images/BFXMAKEUPCITY_HOME_BANNER.webp",
+            "link": "shopify://collections/bleuface",
+            "open_new_tab": false,
+            "alt": ""
+          }
+        },
         "slide_WR6nXe": {
           "type": "slide",
           "disabled": true,
@@ -142,6 +152,7 @@
       },
       "block_order": [
         "slide_4mM8cj",
+        "slide_zV38Yx",
         "slide_WR6nXe"
       ],
       "name": "Featured banner",
