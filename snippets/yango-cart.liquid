@@ -69,6 +69,7 @@
       </div>
       <script data-yango-extension-type="{{ extension_type }}"
         data-yango-extension-id="{{ extension_id }}"
+        data-yango-extension-executed="false"
         type="module" async src="{{ bootstrap_script_url }}"
         onload="window[Symbol.for('YPL')].bootstrapExtensionAfterLoadingScript(this)"
       ></script>
