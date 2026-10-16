@@ -280,7 +280,7 @@
                   "type": "custom-liquid",
                   "name": "Save pill",
                   "settings": {
-                    "custom_liquid": "{% render 'kj-save-pill', product: product %}"
+                    "custom_liquid": "{% render 'kj-save-pill', product: product %}{% render 'kj-gwp-offer', product: product, context: 'pdp' %}"
                   },
                   "blocks": {}
                 },
