@@ -459,13 +459,16 @@
     ],
     "kj_gwp1_qty": 2,
     "kj_gwp1_priority": 6,
-    "kj_gwp2_enabled": false,
+    "kj_gwp2_enabled": true,
     "kj_gwp2_label": "L'Oreal - Pink Pouch",
     "kj_gwp2_gift": "loreal-pink-pouch",
-    "kj_gwp2_buy_products": [],
+    "kj_gwp2_buy_products": [
+      "4992944111576",
+      "6923700970449",
+      "maybelline-lifter-gel-oil-in-gel-lip-gloss-infused-with-hyaluronic-acid"
+    ],
     "kj_gwp2_qty": 2,
-    "kj_gwp2_priority": 5,
-    "kj_gwp2_buy_collection": "loreal-all-products-promo"
+    "kj_gwp2_priority": 5
   },
   "presets": {
     "Horizon": {
