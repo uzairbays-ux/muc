@@ -9,7 +9,8 @@
  * - Gift lines never count toward a trigger, otherwise a gift that sits in its
  *   own trigger collection would keep itself in the cart.
  * - The promos are non-combinable, so Shopify discounts only one gift per
- *   order. When several rules qualify, only the most valuable gift is kept.
+ *   order. When several rules qualify, only one gift is kept: the highest
+ *   priority (Theme settings), then the most valuable.
  * - It never dispatches cart:update. The drawer opens on that event, and this
  *   script listens to it, so dispatching would both pop the drawer on page
  *   load and risk re-entering itself. The cart section is re-rendered directly.
@@ -58,6 +59,9 @@ const store = {
     } catch (e) {}
   },
 };
+
+// Explicit priority first (theme setting), then the more valuable gift.
+const rank = (rule) => (rule.priority ?? 0) * 1e12 + (rule.giftValue || 0);
 
 const key = (kind, token, rule) => `kj-gift-${kind}:${token}:${rule.id}`;
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
@@ -147,7 +151,7 @@ function plan(cart, detectDecline) {
     const declined = store.get(key('declined', token, rule));
     if (declined !== null && triggerQty[rule.id] <= Number(declined)) continue;
     if (store.get(key('failed', token, rule))) continue;
-    if (!winner || rule.giftValue > winner.giftValue) winner = rule;
+    if (!winner || rank(rule) > rank(winner)) winner = rule;
   }
 
   const updates = {};

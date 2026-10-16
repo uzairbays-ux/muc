@@ -10,6 +10,8 @@
   pouch rule also needs Theme settings > Gift with purchase switched on.
 
   Triggers are the exact product scope of the discount:
+  - Promotion slots 1-2: set in Theme settings > Gift with purchase
+    (2026-10-16: "Maybelline - Pink Mirror" and "L'Oreal - Pink Pouch").
   - "Maybelline Pouch": buy 2 from collection `maybelline`, get Makeup Pouch.
   - "Lifter Glaze": buy 2 Lifter Glaze Tinted Lip Oil Balm, get the Charm.
 {%- endcomment -%}
@@ -46,6 +48,7 @@
     {%- endif -%}
     {%- if charm != blank and charm_variant.available and lifter != blank -%}
       {%- unless first_rule -%},{%- endunless -%}
+      {%- assign first_rule = false -%}
       {
         "id": "lifter-glaze-charm",
         "requiredQty": 2,
@@ -54,6 +57,55 @@
         "triggerProductIds": [{{ lifter.id }}]
       }
     {%- endif -%}
+    {%- comment -%}
+      Promotion slots 1-2, configured in Theme settings > Gift with purchase.
+      Triggers are the discount's "customer buys" scope: listed products, or a
+      collection. The gift itself never counts toward its own trigger.
+    {%- endcomment -%}
+    {%- for n in (1..2) -%}
+      {%- liquid
+        assign k_on = 'kj_gwp' | append: n | append: '_enabled'
+        assign k_gift = 'kj_gwp' | append: n | append: '_gift'
+        assign k_prods = 'kj_gwp' | append: n | append: '_buy_products'
+        assign k_coll = 'kj_gwp' | append: n | append: '_buy_collection'
+        assign k_qty = 'kj_gwp' | append: n | append: '_qty'
+        assign k_pri = 'kj_gwp' | append: n | append: '_priority'
+        assign slot_gift = settings[k_gift]
+        assign slot_variant = slot_gift.selected_or_first_available_variant
+        assign slot_prods = settings[k_prods]
+        assign slot_coll = settings[k_coll]
+      -%}
+      {%- if settings[k_on] and slot_gift != blank and slot_variant.available -%}
+        {%- if slot_prods.size > 0 or slot_coll != blank -%}
+          {%- unless first_rule -%},{%- endunless -%}
+          {%- assign first_rule = false -%}
+          {
+            "id": "gwp-slot-{{ n }}",
+            "requiredQty": {{ settings[k_qty] | default: 2 }},
+            "priority": {{ settings[k_pri] | default: 5 }},
+            "giftVariantId": {{ slot_variant.id }},
+            "giftValue": {{ slot_variant.price }},
+            "triggerProductIds": [
+              {%- assign t_first = true -%}
+              {%- for p in slot_prods -%}
+                {%- if p.id != slot_gift.id -%}
+                  {%- unless t_first -%},{%- endunless -%}{{ p.id }}{%- assign t_first = false -%}
+                {%- endif -%}
+              {%- endfor -%}
+              {%- if slot_coll != blank -%}
+                {%- paginate slot_coll.products by 250 -%}
+                  {%- for p in slot_coll.products -%}
+                    {%- if p.id != slot_gift.id -%}
+                      {%- unless t_first -%},{%- endunless -%}{{ p.id }}{%- assign t_first = false -%}
+                    {%- endif -%}
+                  {%- endfor -%}
+                {%- endpaginate -%}
+              {%- endif -%}
+            ]
+          }
+        {%- endif -%}
+      {%- endif -%}
+    {%- endfor -%}
   ]
 }
 </script>
