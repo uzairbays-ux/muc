@@ -130,6 +130,7 @@
         },
         "slide_zV38Yx": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "desktop_image": "shopify://shop_images/BFXMAKEUPCITY_HOME_BANNER.webp",
             "mobile_image": "shopify://shop_images/BFXMAKEUPCITY_HOME_BANNER.webp",
