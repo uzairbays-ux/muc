@@ -176,7 +176,7 @@
           "type": "card",
           "name": "ST London",
           "settings": {
-            "image": "shopify://shop_images/ST-london.webp",
+            "image": "shopify://shop_images/ST_London_6cc0e9ac-b5f5-44bb-b55b-bddf544475e8.webp",
             "link": "shopify://collections/st-london",
             "open_new_tab": false
           }
@@ -853,7 +853,7 @@
         "card_CaecqX": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/Kryolan_04f4c915-fe30-475f-95ee-cb990c90705a.webp",
+            "image": "shopify://shop_images/Kryolan_08212d1d-318d-483d-9394-c82aea322f03.webp",
             "link": "shopify://collections/kryolan",
             "open_new_tab": false
           }
@@ -1704,7 +1704,7 @@
           "type": "card",
           "name": "British Lingerie Studio",
           "settings": {
-            "image": "shopify://shop_images/BLS_e5b17073-4424-4437-b2be-3d88520c0163.webp",
+            "image": "shopify://shop_images/BLS_f6ff6024-2f2f-40c7-bc09-79fc9fdff0e9.webp",
             "link": "shopify://collections/bls",
             "open_new_tab": false
           }
