@@ -861,7 +861,7 @@
         "card_QQLjCx": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/Framesi_db9d1aa3-62ac-48d9-ba35-4b87d87bee18.webp",
+            "image": "shopify://shop_images/framesi_0b397ba1-effa-407a-bdf8-da064631d275.webp",
             "link": "shopify://collections/framesi",
             "open_new_tab": false
           }
@@ -1013,7 +1013,7 @@
         "card_ceiizR": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/Gosh_4aa19f2d-99cc-4150-9364-22a1ef5878a5.webp",
+            "image": "shopify://shop_images/Gosh_e4e3f51b-31dc-490b-ac8e-6faeda398d3f.webp",
             "link": "shopify://collections/gosh",
             "open_new_tab": false
           }
@@ -1048,7 +1048,7 @@
           "type": "card",
           "name": "Bath & Body",
           "settings": {
-            "image": "shopify://shop_images/Bath-_-body.webp",
+            "image": "shopify://shop_images/B_BW_9b7f67f6-baa0-4b24-b9e9-9c9f7aa297af.webp",
             "link": "shopify://collections/bath-body-works",
             "open_new_tab": false
           }
@@ -2274,7 +2274,7 @@
         "category_W3MDAj": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/Femina_5937034c-bd53-401a-b281-10657d68febe.webp",
+            "image": "shopify://shop_images/Femina_3f42255a-ed9a-4c70-aa6c-f9bc347723e6.webp",
             "label": "",
             "link": "shopify://collections/femina",
             "card_background": "rgba(0,0,0,0)"
