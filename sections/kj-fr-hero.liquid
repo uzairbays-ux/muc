@@ -1,0 +1,50 @@
+{%- comment -%} Brand product story: split hero (image left, title panel right). {%- endcomment -%}
+{%- render 'kj-fr-base' -%}
+<div class="kj-fr kj-fr-hero">
+  <div class="kj-fr-hero__media">
+    {%- render 'kj-fr-base', image_slot: true, image: section.settings.image, ratio: '4/3', label: 'Hero image', sizes: '(min-width: 990px) 58vw, 100vw' -%}
+  </div>
+  <div class="kj-fr-hero__panel">
+    {%- if section.settings.crumb != blank -%}
+      <p class="kj-fr-hero__crumb"><strong>{{ section.settings.crumb_parent | escape }}</strong><br>{{ section.settings.crumb | escape }}</p>
+    {%- endif -%}
+    <h1 class="kj-fr-hero__title">{{ section.settings.title | escape | newline_to_br }}</h1>
+    {%- if section.settings.subtitle != blank -%}<p class="kj-fr-hero__sub">{{ section.settings.subtitle | escape }}</p>{%- endif -%}
+    {%- if section.settings.text != blank -%}<div class="kj-fr-hero__text">{{ section.settings.text }}</div>{%- endif -%}
+  </div>
+</div>
+
+{% stylesheet %}
+  .kj-fr-hero { display: grid; grid-template-columns: 58% 42%; background: var(--fr-hero-panel); }
+  .kj-fr-hero__media .kj-fr-img { height: 100%; min-height: 420px; aspect-ratio: auto !important; }
+  .kj-fr-hero__panel { position: relative; display: flex; flex-direction: column; justify-content: flex-start; padding: 88px 7% 56px; }
+  .kj-fr-hero__crumb { position: absolute; top: 24px; right: 7%; margin: 0; text-align: right; color: #fff; font-size: 11px; line-height: 1.35; text-transform: uppercase; }
+  .kj-fr-hero__crumb strong { font-weight: 800; }
+  .kj-fr-hero__title { margin: 0; color: var(--fr-pink); font-size: clamp(32px, 4vw, 52px); font-weight: 800; line-height: 1.02; text-transform: uppercase; }
+  .kj-fr-hero__sub { margin: 4px 0 0; color: var(--fr-pink); font-size: 18px; text-transform: uppercase; }
+  .kj-fr-hero__text { margin-top: 34px; max-width: 420px; color: var(--fr-pink); font-size: 16px; line-height: 1.4; }
+  .kj-fr-hero__text p { margin: 0; }
+  @media screen and (max-width: 749px) {
+    .kj-fr-hero { grid-template-columns: 1fr; }
+    .kj-fr-hero__media .kj-fr-img { min-height: 0; aspect-ratio: 4/3 !important; }
+    .kj-fr-hero__panel { padding: 40px 20px 36px; }
+    .kj-fr-hero__crumb { display: none; }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Brand story: hero",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    { "type": "image_picker", "id": "image", "label": "Hero image", "info": "Landscape, at least 1600px wide. The space is kept until an image is added." },
+    { "type": "text", "id": "crumb_parent", "label": "Breadcrumb (top line)", "default": "Products" },
+    { "type": "text", "id": "crumb", "label": "Breadcrumb (second line)", "default": "Framcolor Glamour" },
+    { "type": "textarea", "id": "title", "label": "Title", "default": "Framcolor\nGlamour" },
+    { "type": "text", "id": "subtitle", "label": "Subtitle", "default": "Ready to wear" },
+    { "type": "richtext", "id": "text", "label": "Intro", "default": "<p>Pre-mixed permanent cream colour that lasts, with rich results and a simple, fast application.</p>" }
+  ],
+  "presets": [{ "name": "Brand story: hero" }]
+}
+{% endschema %}

@@ -1,0 +1,28 @@
+{%- comment -%} Brand product story: centred closing line with a link. {%- endcomment -%}
+{%- render 'kj-fr-base' -%}
+<div class="kj-fr kj-fr-cta">
+  <h2 class="kj-fr-cta__title">{{ section.settings.title_light | escape }} <strong>{{ section.settings.title_bold | escape }}</strong></h2>
+  {%- if section.settings.link_label != blank -%}<a class="kj-fr-link kj-fr-cta__link" href="{{ section.settings.link_url | default: '#' }}">{{ section.settings.link_label | escape }}</a>{%- endif -%}
+</div>
+
+{% stylesheet %}
+  .kj-fr-cta { background: var(--fr-band); padding: 40px 20px 72px; text-align: center; }
+  .kj-fr-cta__title { margin: 0 0 16px; color: var(--fr-plum); font-size: clamp(22px, 2.8vw, 34px); font-weight: 400; text-transform: uppercase; line-height: 1.2; }
+  .kj-fr-cta__title strong { font-weight: 800; }
+  .kj-fr-cta__link { color: #7b6d82; }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Brand story: closing line",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    { "type": "text", "id": "title_light", "label": "Heading (light part)", "default": "See every shade" },
+    { "type": "text", "id": "title_bold", "label": "Heading (bold part)", "default": "available now" },
+    { "type": "text", "id": "link_label", "label": "Link label", "default": "Shop the shades" },
+    { "type": "url", "id": "link_url", "label": "Link" }
+  ],
+  "presets": [{ "name": "Brand story: closing line" }]
+}
+{% endschema %}

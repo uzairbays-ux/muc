@@ -1,0 +1,84 @@
+{%- comment -%}
+  Brand product story: white card on a grey band, half image / half text.
+  Repeat the section for each card; flip the image side per card.
+  Blocks: "Group" = heading + optional text + bullet list (one item per line).
+{%- endcomment -%}
+{%- render 'kj-fr-base' -%}
+<div class="kj-fr kj-fr-card-band{% if section.settings.first %} is-first{% endif %}{% if section.settings.last %} is-last{% endif %}"{% if section.settings.anchor != blank %} id="{{ section.settings.anchor | handleize }}"{% endif %}>
+  <div class="kj-fr-card kj-fr-card--img-{{ section.settings.image_side }}">
+    <div class="kj-fr-card__media">
+      {%- render 'kj-fr-base', image_slot: true, image: section.settings.image, ratio: '5/4', label: 'Image', sizes: '(min-width: 990px) 450px, 100vw' -%}
+    </div>
+    <div class="kj-fr-card__copy">
+      {%- for block in section.blocks -%}
+        <div class="kj-fr-card__group" {{ block.shopify_attributes }}>
+          {%- if block.settings.heading != blank -%}<h3 class="kj-fr-card__h">{{ block.settings.heading | escape }}</h3>{%- endif -%}
+          {%- if block.settings.text != blank -%}<div class="kj-fr-card__text{% if block.settings.italic %} is-italic{% endif %}">{{ block.settings.text }}</div>{%- endif -%}
+          {%- assign items = block.settings.items | newline_to_br | split: '<br />' -%}
+          {%- if block.settings.items != blank -%}
+            <ul class="kj-fr-list">
+              {%- for it in items -%}{%- assign t = it | strip -%}{%- if t != blank -%}<li>{{ t | escape }}</li>{%- endif -%}{%- endfor -%}
+            </ul>
+          {%- endif -%}
+          {%- if block.settings.note != blank -%}<p class="kj-fr-card__note">{{ block.settings.note | escape }}</p>{%- endif -%}
+          {%- if block.settings.link_label != blank -%}<a class="kj-fr-link kj-fr-card__link" href="{{ block.settings.link_url | default: '#' }}">{{ block.settings.link_label | escape }}</a>{%- endif -%}
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% stylesheet %}
+  .kj-fr-card-band { background: var(--fr-band); padding: 12px 20px; }
+  .kj-fr-card-band.is-first { padding-top: 44px; }
+  .kj-fr-card-band.is-last { padding-bottom: 44px; }
+  .kj-fr-card { display: grid; grid-template-columns: 1fr 1fr; max-width: 900px; margin: 0 auto; background: #fff; }
+  .kj-fr-card--img-left .kj-fr-card__media { order: 0; }
+  .kj-fr-card--img-right .kj-fr-card__media { order: 2; }
+  .kj-fr-card__media .kj-fr-img { height: 100%; min-height: 360px; aspect-ratio: auto !important; }
+  .kj-fr-card__copy { order: 1; padding: 54px 40px; align-self: center; }
+  .kj-fr-card__group + .kj-fr-card__group { margin-top: 22px; }
+  .kj-fr-card__h { margin: 0 0 10px; font-size: 14px; font-weight: 700; line-height: 1.2; text-transform: uppercase; color: var(--fr-ink); }
+  .kj-fr-card__text { margin: -6px 0 10px; font-size: 14px; line-height: 1.35; }
+  .kj-fr-card__text p { margin: 0; }
+  .kj-fr-card__text.is-italic { margin-top: 0; font-style: italic; }
+  .kj-fr-card__note { margin: 4px 0 0; font-size: 12px; line-height: 1.35; }
+  .kj-fr-card__link { margin-top: 12px; }
+  @media screen and (max-width: 749px) {
+    .kj-fr-card { grid-template-columns: 1fr; }
+    .kj-fr-card__media { order: 0 !important; }
+    .kj-fr-card__media .kj-fr-img { min-height: 0; aspect-ratio: 5/4 !important; }
+    .kj-fr-card__copy { padding: 28px 22px 32px; }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Brand story: image + text card",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    { "type": "image_picker", "id": "image", "label": "Image", "info": "About 900x720. The space is kept until an image is added." },
+    { "type": "select", "id": "image_side", "label": "Image side", "default": "right", "options": [{ "value": "left", "label": "Left" }, { "value": "right", "label": "Right" }] },
+    { "type": "text", "id": "anchor", "label": "Anchor id", "info": "Optional, e.g. natural-origin, so other links can jump here." },
+    { "type": "checkbox", "id": "first", "label": "First card (extra space above)", "default": false },
+    { "type": "checkbox", "id": "last", "label": "Last card (extra space below)", "default": false }
+  ],
+  "blocks": [
+    {
+      "type": "group",
+      "name": "Group",
+      "settings": [
+        { "type": "text", "id": "heading", "label": "Heading" },
+        { "type": "richtext", "id": "text", "label": "Text" },
+        { "type": "checkbox", "id": "italic", "label": "Italic text", "default": false },
+        { "type": "textarea", "id": "items", "label": "Bullet points", "info": "One per line." },
+        { "type": "text", "id": "note", "label": "Small note" },
+        { "type": "text", "id": "link_label", "label": "Link label" },
+        { "type": "url", "id": "link_url", "label": "Link" }
+      ]
+    }
+  ],
+  "presets": [{ "name": "Brand story: image + text card", "blocks": [{ "type": "group" }] }]
+}
+{% endschema %}

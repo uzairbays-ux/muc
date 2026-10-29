@@ -1,0 +1,71 @@
+{%- comment -%} Brand product story: product shot left, heading + copy + links right. {%- endcomment -%}
+{%- render 'kj-fr-base' -%}
+<div class="kj-fr kj-fr-intro">
+  <div class="kj-fr-intro__inner">
+    <div class="kj-fr-intro__media">
+      {%- render 'kj-fr-base', image_slot: true, image: section.settings.image, ratio: '3/4', label: 'Product image', sizes: '(min-width: 990px) 30vw, 70vw' -%}
+    </div>
+    <div class="kj-fr-intro__copy">
+      <h2 class="kj-fr-intro__title">{{ section.settings.title | escape | newline_to_br }}</h2>
+      <div class="kj-fr-rte kj-fr-intro__text">{{ section.settings.text }}</div>
+      {%- if section.settings.size != blank -%}<p class="kj-fr-intro__size">{{ section.settings.size | escape }}</p>{%- endif -%}
+      {%- if section.settings.link_label != blank -%}<a class="kj-fr-link" href="{{ section.settings.link_url | default: '#natural-origin' }}">{{ section.settings.link_label | escape }}</a>{%- endif -%}
+      {%- if section.settings.badge_top != blank or section.settings.badge_bottom != blank -%}
+        <p class="kj-fr-intro__badge"><span>{{ section.settings.badge_top | escape }}</span><strong>{{ section.settings.badge_bottom | escape }}</strong></p>
+      {%- endif -%}
+      {%- if section.settings.buy_label != blank -%}
+        {%- liquid
+          assign buy_url = section.settings.buy_url
+          if section.settings.buy_product != blank
+            assign buy_url = section.settings.buy_product.url
+          endif
+        -%}
+        <a class="kj-fr-link kj-fr-intro__buy" href="{{ buy_url | default: '#' }}">{{ section.settings.buy_label | escape }}</a>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% stylesheet %}
+  .kj-fr-intro { background: #fff; padding: 56px 20px 80px; }
+  .kj-fr-intro__inner { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 6%; max-width: 1000px; margin: 0 auto; align-items: start; }
+  .kj-fr-intro__media { max-width: 300px; justify-self: center; width: 100%; }
+  .kj-fr-intro__media .kj-fr-img { background: #fff; }
+  .kj-fr-intro__media .kj-fr-img--empty { background: repeating-linear-gradient(135deg, #f1f1f3 0 14px, #f8f8f9 14px 28px); }
+  .kj-fr-intro__copy { max-width: 360px; padding-top: 64px; }
+  .kj-fr-intro__title { margin: 0 0 18px; font-size: clamp(26px, 2.6vw, 34px); font-weight: 800; line-height: 1.3; text-transform: uppercase; color: var(--fr-ink); }
+  .kj-fr-intro__text { font-size: 15px; line-height: 1.4; }
+  .kj-fr-intro__size { margin: 0 0 16px; font-size: 15px; font-weight: 700; color: #1e1e1e; }
+  .kj-fr-intro__badge { display: flex; flex-direction: column; margin: 48px 0 50px; text-transform: uppercase; line-height: 1.05; }
+  .kj-fr-intro__badge span { color: var(--fr-pink); font-size: 12px; }
+  .kj-fr-intro__badge strong { color: #8a8a8a; font-size: 15px; font-weight: 800; }
+  .kj-fr-intro__buy { margin-top: 4px; }
+  @media screen and (max-width: 749px) {
+    .kj-fr-intro { padding: 36px 20px 48px; }
+    .kj-fr-intro__inner { grid-template-columns: 1fr; gap: 24px; }
+    .kj-fr-intro__media { max-width: 220px; }
+    .kj-fr-intro__copy { max-width: none; padding-top: 0; }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Brand story: product intro",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    { "type": "image_picker", "id": "image", "label": "Product image", "info": "Portrait (3:4), product on white." },
+    { "type": "textarea", "id": "title", "label": "Heading", "default": "Framcolor\nGlamour" },
+    { "type": "richtext", "id": "text", "label": "Text", "default": "<p>A new formula and <strong>next-generation colour technology</strong>: high performance for the stylist, and results that live up to what clients expect.</p><p>A true <strong>ready-to-use colour</strong>, simple enough for every stylist and for younger clients who want an easy product.</p>" },
+    { "type": "text", "id": "size", "label": "Size line", "default": "100 ml tube" },
+    { "type": "text", "id": "link_label", "label": "Link label", "default": "Discover the natural origin index" },
+    { "type": "url", "id": "link_url", "label": "Link", "info": "Leave empty to jump to the Natural origin card on this page." },
+    { "type": "text", "id": "badge_top", "label": "Badge (top)", "default": "Exclusively" },
+    { "type": "text", "id": "badge_bottom", "label": "Badge (bottom)", "default": "Professional" },
+    { "type": "text", "id": "buy_label", "label": "Buy button label", "default": "Buy now" },
+    { "type": "product", "id": "buy_product", "label": "Buy button: product", "info": "Links to this product on Makeup City." },
+    { "type": "url", "id": "buy_url", "label": "Buy button: other link", "info": "Used when no product is picked, e.g. the Framesi collection." }
+  ],
+  "presets": [{ "name": "Brand story: product intro" }]
+}
+{% endschema %}

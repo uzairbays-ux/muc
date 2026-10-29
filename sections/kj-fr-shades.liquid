@@ -1,0 +1,31 @@
+{%- comment -%} Brand product story: "Shade families" card with one wide swatch image. {%- endcomment -%}
+{%- render 'kj-fr-base' -%}
+<div class="kj-fr kj-fr-shades">
+  <div class="kj-fr-shades__card">
+    <h2 class="kj-fr-shades__title"><strong>{{ section.settings.title_bold | escape }}</strong> {{ section.settings.title_light | escape }}</h2>
+    {%- render 'kj-fr-base', image_slot: true, image: section.settings.image, ratio: '1020/440', label: 'Shade families image', sizes: '(min-width: 990px) 820px, 100vw' -%}
+  </div>
+</div>
+
+{% stylesheet %}
+  .kj-fr-shades { background: var(--fr-band); padding: 12px 20px 44px; }
+  .kj-fr-shades__card { max-width: 900px; margin: 0 auto; padding: 40px 40px 48px; background: #fff; }
+  .kj-fr-shades__title { margin: 0 0 22px; text-align: center; font-size: 18px; letter-spacing: 0.04em; text-transform: uppercase; color: #333; font-weight: 400; }
+  .kj-fr-shades__title strong { font-weight: 800; }
+  .kj-fr-shades .kj-fr-img--empty { background: repeating-linear-gradient(135deg, #f1f1f3 0 14px, #f8f8f9 14px 28px); }
+  @media screen and (max-width: 749px) { .kj-fr-shades__card { padding: 24px 16px 28px; } }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Brand story: shade families",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    { "type": "text", "id": "title_bold", "label": "Heading (bold part)", "default": "Shade" },
+    { "type": "text", "id": "title_light", "label": "Heading (light part)", "default": "families" },
+    { "type": "image_picker", "id": "image", "label": "Shade families image", "info": "Wide image, about 1640x700." }
+  ],
+  "presets": [{ "name": "Brand story: shade families" }]
+}
+{% endschema %}
