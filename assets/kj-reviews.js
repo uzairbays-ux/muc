@@ -221,10 +221,15 @@ class KjReviews extends HTMLElement {
         document.querySelector('.jdgm-review-widget')?.scrollIntoView({ behavior: 'smooth' });
         return;
       }
+      // Judge.me only builds its form while the widget is visible: unhide it
+      // for the click, then move the form into our slot and hide it again.
+      const widget = link.closest('.jdgm-review-widget');
+      widget?.classList.remove('kj-rv-host');
       link.click();
       for (let i = 0; i < 30 && !(form = document.querySelector('.jdgm-review-widget .jdgm-form-wrapper')); i++) {
         await new Promise((r) => setTimeout(r, 100));
       }
+      widget?.classList.add('kj-rv-host');
       if (!form) return;
       this.slot.append(form);
     }
