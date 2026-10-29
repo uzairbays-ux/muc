@@ -131,7 +131,7 @@ class KjReviews extends HTMLElement {
     this.moreBtn = this.querySelector('[data-more]');
     this.sortSel = this.querySelector('[data-sort]');
     this.clearBtn = this.querySelector('[data-clear]');
-    this.slot = this.querySelector('[data-form-slot]');
+    this.formSlot = this.querySelector('[data-form-slot]');
     this.total = Number(this.dataset.count) || 0;
     this.productTitle = (this.dataset.productTitle || '').trim().toLowerCase();
     this.page = 1;
@@ -324,7 +324,7 @@ class KjReviews extends HTMLElement {
   }
 
   async openForm() {
-    let form = this.slot.querySelector('.jdgm-form-wrapper');
+    let form = this.formSlot.querySelector('.jdgm-form-wrapper');
     if (!form) {
       const link = document.querySelector('.jdgm-review-widget .jdgm-write-rev-link');
       if (!link) {
@@ -342,11 +342,11 @@ class KjReviews extends HTMLElement {
       }
       widget?.classList.add('kj-rv-host');
       if (!form) return;
-      this.slot.append(form);
+      this.formSlot.append(form);
     }
-    this.slot.hidden = false;
+    this.formSlot.hidden = false;
     if (this.pick) form.querySelector(`.jdgm-form__rating [data-alt="${this.pick}"]`)?.click();
-    this.slot.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    this.formSlot.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 }
 
