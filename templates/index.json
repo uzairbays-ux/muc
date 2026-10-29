@@ -50,6 +50,7 @@
         },
         "thumbnail_h7Dj6p": {
           "type": "thumbnail",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Baby-Care_jpg.webp",
             "background_color": "#f1ecfb",
@@ -127,6 +128,17 @@
             "alt": ""
           }
         },
+        "slide_zV38Yx": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "desktop_image": "shopify://shop_images/BFXMAKEUPCITY_HOME_BANNER.webp",
+            "mobile_image": "shopify://shop_images/BFXMAKEUPCITY_HOME_BANNER.webp",
+            "link": "shopify://collections/bleuface",
+            "open_new_tab": false,
+            "alt": ""
+          }
+        },
         "slide_WR6nXe": {
           "type": "slide",
           "disabled": true,
@@ -141,6 +153,7 @@
       },
       "block_order": [
         "slide_4mM8cj",
+        "slide_zV38Yx",
         "slide_WR6nXe"
       ],
       "name": "Featured banner",
@@ -163,7 +176,7 @@
           "type": "card",
           "name": "ST London",
           "settings": {
-            "image": "shopify://shop_images/ST-london.webp",
+            "image": "shopify://shop_images/ST_London_6cc0e9ac-b5f5-44bb-b55b-bddf544475e8.webp",
             "link": "shopify://collections/st-london",
             "open_new_tab": false
           }
@@ -171,6 +184,7 @@
         "card_ftKGeC": {
           "type": "card",
           "name": "Kryolan",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/WhatsApp_Image_2026-10-08_at_13.38.20.jpg",
             "link": "shopify://pages/perfectmatch",
@@ -191,7 +205,7 @@
           "type": "card",
           "name": "Maybelline",
           "settings": {
-            "image": "shopify://shop_images/maybilline_ca19e88d-09c5-4964-b6a1-9ac94ab889d1.webp",
+            "image": "shopify://shop_images/WhatsApp_Image_2026-10-16_at_17.19.22.jpg",
             "link": "shopify://collections/maybelline",
             "open_new_tab": false
           }
@@ -245,9 +259,19 @@
         "card_b9F39r": {
           "type": "card",
           "name": "Bioaqua",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Bioaqua_812d61bd-09c7-431e-bcc2-3acb5dcd9e42.webp",
             "link": "shopify://collections/bioaqua",
+            "open_new_tab": false
+          }
+        },
+        "card_h9nh8W": {
+          "type": "card",
+          "name": "Miss Rose",
+          "settings": {
+            "image": "shopify://shop_images/Miss-Rose_jpg.webp",
+            "link": "shopify://collections/miss-rose",
             "open_new_tab": false
           }
         }
@@ -262,7 +286,8 @@
         "card_YUtaR6",
         "card_7Rimtd",
         "card_nbr3cj",
-        "card_b9F39r"
+        "card_b9F39r",
+        "card_h9nh8W"
       ],
       "name": "Card banner",
       "settings": {
@@ -319,23 +344,12 @@
             "open_new_tab": false
           }
         },
-        "card_VdpdNy": {
-          "type": "card",
-          "name": "Kryolan",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/Kryolan_9851d2b3-d068-4989-8669-d160851dbd19.jpg",
-            "link": "shopify://collections/kryolan",
-            "open_new_tab": false
-          }
-        },
         "card_8dxtQP": {
           "type": "card",
-          "name": "Framesi",
-          "disabled": true,
+          "name": "Vaseline",
           "settings": {
-            "image": "shopify://shop_images/Janssen_Voucher.webp",
-            "link": "shopify://collections/janssen",
+            "image": "shopify://shop_images/Vaseline_jpg.webp",
+            "link": "shopify://collections/vaseline",
             "open_new_tab": false
           }
         },
@@ -345,6 +359,15 @@
           "settings": {
             "image": "shopify://shop_images/lagirl.webp",
             "link": "shopify://collections/l-a-girl",
+            "open_new_tab": false
+          }
+        },
+        "card_jfgkyk": {
+          "type": "card",
+          "name": "PinkFlash",
+          "settings": {
+            "image": "shopify://shop_images/Pastel-Pinkflash-Cosmetics-Display_jpg.webp",
+            "link": "shopify://collections/pinkflash",
             "open_new_tab": false
           }
         },
@@ -361,7 +384,7 @@
           "type": "card",
           "name": "Rederm",
           "settings": {
-            "image": "shopify://shop_images/rederm.jpg",
+            "image": "shopify://shop_images/Makeup_City_Banner_1080x1080_px.webp",
             "link": "shopify://collections/rederm",
             "open_new_tab": false
           }
@@ -369,6 +392,7 @@
         "card_YVAMRk": {
           "type": "card",
           "name": "Rederm",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/WhatsApp_Image_2026-10-08_at_13.38.20.jpg",
             "link": "shopify://pages/perfectmatch",
@@ -389,16 +413,6 @@
           "settings": {
             "image": "shopify://shop_images/la-roche-posay.webp",
             "link": "shopify://collections/la-roche-posay",
-            "open_new_tab": false
-          }
-        },
-        "card_jfgkyk": {
-          "type": "card",
-          "name": "Revolution",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/Revolution_95258492-30a6-41a6-bcbd-62e07d01efbd.jpg",
-            "link": "shopify://collections/revolution",
             "open_new_tab": false
           }
         },
@@ -424,15 +438,14 @@
       },
       "block_order": [
         "card_Rqd7UJ",
-        "card_VdpdNy",
         "card_8dxtQP",
         "card_ta6w88",
+        "card_jfgkyk",
         "card_mitMU8",
         "card_aeBNAE",
         "card_YVAMRk",
         "card_LBiUFw",
         "card_LWJXKE",
-        "card_jfgkyk",
         "card_eqTYVW",
         "card_6AeFyg"
       ],
@@ -684,16 +697,6 @@
               },
               "blocks": {}
             },
-            "makeupcity_yango_app_catalog_card_badge_basic_extension_fCxTMF": {
-              "type": "shopify://apps/makeupcity-yango-app/blocks/catalog-card-badge-basic-extension/01a0623d-7d61-77fd-b864-93434b959c3e",
-              "settings": {
-                "margin_top": 0,
-                "margin_bottom": 0,
-                "justify_content": "flex-start",
-                "extension_origin": "",
-                "adapter_slug": "merchant_makeupcity"
-              }
-            },
             "custom_liquid_Ct6iwn": {
               "type": "custom-liquid",
               "name": "t:names.custom_liquid",
@@ -722,7 +725,6 @@
             "product_title_YXxMTj",
             "swatches_bpac49",
             "price_JQzVV4",
-            "makeupcity_yango_app_catalog_card_badge_basic_extension_fCxTMF",
             "custom_liquid_Ct6iwn",
             "review_LCLnXa"
           ]
@@ -851,7 +853,7 @@
         "card_CaecqX": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/Kryolan_04f4c915-fe30-475f-95ee-cb990c90705a.webp",
+            "image": "shopify://shop_images/Kryolan_08212d1d-318d-483d-9394-c82aea322f03.webp",
             "link": "shopify://collections/kryolan",
             "open_new_tab": false
           }
@@ -859,7 +861,7 @@
         "card_QQLjCx": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/Framesi_db9d1aa3-62ac-48d9-ba35-4b87d87bee18.webp",
+            "image": "shopify://shop_images/framesi_0b397ba1-effa-407a-bdf8-da064631d275.webp",
             "link": "shopify://collections/framesi",
             "open_new_tab": false
           }
@@ -869,6 +871,14 @@
           "settings": {
             "image": "shopify://shop_images/luscious_2f76b72e-bc5a-45f3-b0b8-cca5cfa9cb06.webp",
             "link": "shopify://collections/luscious-cosmetics",
+            "open_new_tab": false
+          }
+        },
+        "card_pfpRwk": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/Luxe-Basics_jpg.jpg",
+            "link": "shopify://collections/luxe-basics",
             "open_new_tab": false
           }
         },
@@ -882,18 +892,10 @@
         },
         "card_zHjYpW": {
           "type": "card",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/FreshLabs_1.webp",
             "link": "shopify://collections/freshlabs",
-            "open_new_tab": false
-          }
-        },
-        "card_pfpRwk": {
-          "type": "card",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/Loreal_514ef853-d406-44f8-8d9b-e5e9ef4594b3.jpg",
-            "link": "shopify://collections/loreal-paris",
             "open_new_tab": false
           }
         },
@@ -920,9 +922,9 @@
         "card_CaecqX",
         "card_QQLjCx",
         "card_p9kYBe",
+        "card_pfpRwk",
         "card_L4QwKh",
         "card_zHjYpW",
-        "card_pfpRwk",
         "card_NFeL6V",
         "card_RBgUMP"
       ],
@@ -1003,7 +1005,7 @@
         "card_gBiw68": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/loreal_4deb3262-9aa0-43ab-b08a-6b2a69e5d26e.webp",
+            "image": "shopify://shop_images/WhatsApp_Image_2026-10-16_at_17.27.07.jpg",
             "link": "shopify://collections/loreal-paris",
             "open_new_tab": false
           }
@@ -1011,7 +1013,7 @@
         "card_ceiizR": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/Gosh_4aa19f2d-99cc-4150-9364-22a1ef5878a5.webp",
+            "image": "shopify://shop_images/Gosh_e4e3f51b-31dc-490b-ac8e-6faeda398d3f.webp",
             "link": "shopify://collections/gosh",
             "open_new_tab": false
           }
@@ -1046,7 +1048,7 @@
           "type": "card",
           "name": "Bath & Body",
           "settings": {
-            "image": "shopify://shop_images/Bath-_-body.webp",
+            "image": "shopify://shop_images/B_BW_9b7f67f6-baa0-4b24-b9e9-9c9f7aa297af.webp",
             "link": "shopify://collections/bath-body-works",
             "open_new_tab": false
           }
@@ -1323,16 +1325,6 @@
               },
               "blocks": {}
             },
-            "makeupcity_yango_app_catalog_card_badge_basic_extension_w9cTMh": {
-              "type": "shopify://apps/makeupcity-yango-app/blocks/catalog-card-badge-basic-extension/01a0623d-7d61-77fd-b864-93434b959c3e",
-              "settings": {
-                "margin_top": 4,
-                "margin_bottom": 0,
-                "justify_content": "flex-start",
-                "extension_origin": "",
-                "adapter_slug": "merchant_makeupcity"
-              }
-            },
             "custom_liquid_GMXHWY": {
               "type": "custom-liquid",
               "name": "t:names.custom_liquid",
@@ -1361,7 +1353,6 @@
             "product_title_mctczp",
             "swatches_Tb6R6r",
             "price_j9XwYp",
-            "makeupcity_yango_app_catalog_card_badge_basic_extension_w9cTMh",
             "custom_liquid_GMXHWY",
             "review_hDcVD3"
           ]
@@ -1713,7 +1704,7 @@
           "type": "card",
           "name": "British Lingerie Studio",
           "settings": {
-            "image": "shopify://shop_images/BLS_e5b17073-4424-4437-b2be-3d88520c0163.webp",
+            "image": "shopify://shop_images/BLS_f6ff6024-2f2f-40c7-bc09-79fc9fdff0e9.webp",
             "link": "shopify://collections/bls",
             "open_new_tab": false
           }
@@ -1814,7 +1805,6 @@
         },
         "card_7bXfx8": {
           "type": "card",
-          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Janssen_61d6e9be-4942-43f9-b3f9-45eac8eedf0f.jpg",
             "link": "shopify://collections/janssen",
@@ -2284,7 +2274,7 @@
         "category_W3MDAj": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/Femina_5937034c-bd53-401a-b281-10657d68febe.webp",
+            "image": "shopify://shop_images/Femina_3f42255a-ed9a-4c70-aa6c-f9bc347723e6.webp",
             "label": "",
             "link": "shopify://collections/femina",
             "card_background": "rgba(0,0,0,0)"
@@ -2320,7 +2310,7 @@
         "category_KWk6xF": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/Just-For-men_c799328f-f7fe-49a6-8595-7cc7a09e7799.webp",
+            "image": "shopify://shop_images/Just-For-men_be8f6012-1775-4a61-97ed-ee8a9ebea741.webp",
             "label": "",
             "link": "shopify://collections/just-for-men",
             "card_background": "rgba(0,0,0,0)"

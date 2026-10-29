@@ -75,8 +75,6 @@
     "currency_code_enabled_cart_items": false,
     "quick_add": true,
     "mobile_quick_add": true,
-    "show_second_image_on_hover": true,
-    "product_card_carousel": false,
     "empty_state_collection": "bestsellers",
     "product_corner_radius": 0,
     "card_corner_radius": 4,
@@ -88,14 +86,16 @@
     "variant_button_border_width": 1,
     "variant_button_radius": 14,
     "variant_button_width": "equal-width-buttons",
-    "kj_yango_enabled": true,
+    "product_card_carousel": false,
+    "show_second_image_on_hover": true,
+    "kj_yango_enabled": false,
     "kj_logo_badge_enabled": true,
     "kj_logo_badge_text": "50% OFF",
     "kj_size_guide_vendor": "British Lingerie Studio, Slips & Camis, Teens",
     "kj_size_guide_label": "Size Guide",
     "kj_sister_size_image": "shopify://shop_images/bls-sister-size-bra.jpg",
     "kj_sister_size_label": "Sister Size",
-    "kj_pm_enabled": true,
+    "kj_pm_enabled": false,
     "kj_pm_collection_1": "perfect-match-collection-1",
     "kj_pm_collection_2": "perfect-match-collection-2",
     "kj_pm_redirect": true,
@@ -450,7 +450,25 @@
           "selected_variant_hover_border_color": "#1a1a1a"
         }
       }
-    }
+    },
+    "kj_gwp1_enabled": true,
+    "kj_gwp1_label": "Maybelline - Pink Mirror",
+    "kj_gwp1_gift": "maybelline-mirror",
+    "kj_gwp1_buy_products": [
+      "maybelline-lifter-gel-oil-in-gel-lip-gloss-infused-with-hyaluronic-acid"
+    ],
+    "kj_gwp1_qty": 2,
+    "kj_gwp1_priority": 6,
+    "kj_gwp2_enabled": true,
+    "kj_gwp2_label": "L'Oreal - Pink Pouch",
+    "kj_gwp2_gift": "loreal-pink-pouch",
+    "kj_gwp2_buy_products": [
+      "4992944111576",
+      "6923700970449",
+      "maybelline-lifter-gel-oil-in-gel-lip-gloss-infused-with-hyaluronic-acid"
+    ],
+    "kj_gwp2_qty": 1,
+    "kj_gwp2_priority": 5
   },
   "presets": {
     "Horizon": {

@@ -2308,6 +2308,112 @@
         "label": "Maybelline: free Makeup Pouch with any 2 Maybelline products",
         "info": "Turn this off when the \"Maybelline Pouch\" discount ends. Otherwise the pouch keeps being added to carts, now at full price, and the cart banner keeps showing.",
         "default": true
+      },
+      {
+        "type": "header",
+        "content": "Promotion 1"
+      },
+      {
+        "type": "checkbox",
+        "id": "kj_gwp1_enabled",
+        "label": "Auto-add this gift",
+        "info": "Switch off the day the matching automatic discount ends, or the gift is added at full price.",
+        "default": false
+      },
+      {
+        "type": "text",
+        "id": "kj_gwp1_label",
+        "label": "Name (as in Shopify Discounts)",
+        "default": "Maybelline - Pink Mirror"
+      },
+      {
+        "type": "product",
+        "id": "kj_gwp1_gift",
+        "label": "Free gift product"
+      },
+      {
+        "type": "product_list",
+        "id": "kj_gwp1_buy_products",
+        "label": "Customer buys any of these products",
+        "limit": 50
+      },
+      {
+        "type": "collection",
+        "id": "kj_gwp1_buy_collection",
+        "label": "…or any product in this collection",
+        "info": "Use either the products above or a collection, exactly as the discount is set up."
+      },
+      {
+        "type": "range",
+        "id": "kj_gwp1_qty",
+        "label": "Minimum quantity",
+        "min": 1,
+        "max": 10,
+        "step": 1,
+        "default": 2
+      },
+      {
+        "type": "range",
+        "id": "kj_gwp1_priority",
+        "label": "Priority when several promotions qualify",
+        "info": "Only one gift is added, because the discounts don't combine. Higher wins.",
+        "min": 1,
+        "max": 10,
+        "step": 1,
+        "default": 5
+      },
+      {
+        "type": "header",
+        "content": "Promotion 2"
+      },
+      {
+        "type": "checkbox",
+        "id": "kj_gwp2_enabled",
+        "label": "Auto-add this gift",
+        "info": "Switch off the day the matching automatic discount ends, or the gift is added at full price.",
+        "default": false
+      },
+      {
+        "type": "text",
+        "id": "kj_gwp2_label",
+        "label": "Name (as in Shopify Discounts)",
+        "default": "L'Oreal - Pink Pouch"
+      },
+      {
+        "type": "product",
+        "id": "kj_gwp2_gift",
+        "label": "Free gift product"
+      },
+      {
+        "type": "product_list",
+        "id": "kj_gwp2_buy_products",
+        "label": "Customer buys any of these products",
+        "limit": 50
+      },
+      {
+        "type": "collection",
+        "id": "kj_gwp2_buy_collection",
+        "label": "…or any product in this collection",
+        "info": "Use either the products above or a collection, exactly as the discount is set up."
+      },
+      {
+        "type": "range",
+        "id": "kj_gwp2_qty",
+        "label": "Minimum quantity",
+        "min": 1,
+        "max": 10,
+        "step": 1,
+        "default": 2
+      },
+      {
+        "type": "range",
+        "id": "kj_gwp2_priority",
+        "label": "Priority when several promotions qualify",
+        "info": "Only one gift is added, because the discounts don't combine. Higher wins.",
+        "min": 1,
+        "max": 10,
+        "step": 1,
+        "default": 5
       }
     ]
   },

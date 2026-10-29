@@ -280,20 +280,19 @@
                   "type": "custom-liquid",
                   "name": "Save pill",
                   "settings": {
-                    "custom_liquid": "{% render 'kj-save-pill', product: product %}"
+                    "custom_liquid": "{% render 'kj-save-pill', product: product %}{% render 'kj-gwp-offer', product: product, context: 'pdp' %}"
                   },
                   "blocks": {}
                 },
                 "makeupcity_yango_app_product_page_badge_basic_extension_cVethx": {
+                  "disabled": true,
                   "type": "shopify://apps/makeupcity-yango-app/blocks/product-page-badge-basic-extension/01a0623d-7d61-77fd-b864-93434b959c3e",
                   "settings": {
                     "margin_top": 0,
                     "margin_bottom": 0,
                     "width": "100%",
-                    "shop_disabled": false,
                     "extension_origin": "",
-                    "adapter_slug": "merchant_makeupcity",
-                    "additional_params": ""
+                    "adapter_slug": "merchant_makeupcity"
                   }
                 },
                 "custom_liquid_7MEE6g": {
@@ -366,7 +365,7 @@
                 "popup_title": "Size chart",
                 "image_alt": "",
                 "desktop_width_percent": 100,
-                "popup_background": "#ffffff",
+                "popup_background": "#FFFFFF",
                 "text_color": "#000000",
                 "corner_radius": 8
               },
