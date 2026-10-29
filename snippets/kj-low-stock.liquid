@@ -1,0 +1,92 @@
+{%- comment -%}
+  "Last few pieces left" FOMO tag next to Add to cart.
+
+  Shows when the selected variant tracks inventory, can't be oversold, and has
+  1-5 units left. Rendered inside blocks/buy-buttons.liquid; on a variant
+  change the theme re-fetches the section, and the small script below swaps
+  this element from that response (same approach as pickup availability).
+
+  Params: variant (defaults to the product's selected or first available).
+{%- endcomment -%}
+
+{%- liquid
+  assign ls_variant = variant | default: closest.product.selected_or_first_available_variant
+  assign ls_qty = ls_variant.inventory_quantity | default: 0
+  assign ls_show = false
+  if ls_variant.inventory_management == 'shopify' and ls_variant.inventory_policy == 'deny' and ls_qty > 0 and ls_qty <= 5
+    assign ls_show = true
+  endif
+-%}
+
+<div class="kj-lowstock{% unless ls_show %} kj-lowstock--hidden{% endunless %}" data-kj-lowstock data-qty="{{ ls_qty }}" role="status">
+  {%- if ls_show -%}
+    <span class="kj-lowstock__dot" aria-hidden="true"></span>
+    <span class="kj-lowstock__text">Last few pieces left</span>
+  {%- endif -%}
+</div>
+
+{%- unless kj_lowstock_script_done -%}
+  <script type="module">
+    if (!window.__kjLowStock) {
+      window.__kjLowStock = true;
+      document.addEventListener('variant:update', (event) => {
+        const html = event.detail?.data?.html;
+        if (!html) return;
+        const fresh = html.querySelector('[data-kj-lowstock]');
+        const scope = event.target?.closest?.('product-information, [data-product-grid-content], .shopify-section') || document;
+        const current = scope.querySelector('[data-kj-lowstock]') || document.querySelector('[data-kj-lowstock]');
+        if (fresh && current) current.replaceWith(fresh.cloneNode(true));
+      });
+    }
+  </script>
+{%- endunless -%}
+
+{% stylesheet %}
+  .kj-lowstock {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    align-self: flex-start;
+    margin: 0 0 10px;
+    padding: 5px 12px 5px 10px;
+    border-radius: 999px;
+    background: #fff0f0;
+    border: 1px solid #ffd2d3;
+    color: #c8161d;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .kj-lowstock--hidden {
+    display: none;
+  }
+
+  .kj-lowstock__dot {
+    position: relative;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #eb1d23;
+    flex: 0 0 auto;
+  }
+
+  .kj-lowstock__dot::after {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    background: #eb1d23;
+    opacity: 0.35;
+    animation: kj-lowstock-pulse 1.4s ease-out infinite;
+  }
+
+  @keyframes kj-lowstock-pulse {
+    from { transform: scale(0.6); opacity: 0.45; }
+    to { transform: scale(1.8); opacity: 0; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .kj-lowstock__dot::after { animation: none; }
+  }
+{% endstylesheet %}

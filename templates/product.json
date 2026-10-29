@@ -1307,11 +1307,19 @@
         "padding-block-start": 48,
         "padding-block-end": 48
       }
+    },
+    "kj_reviews": {
+      "type": "kj-reviews",
+      "settings": {
+        "heading": "Reviews",
+        "accent": "#dac9b8"
+      }
     }
   },
   "order": [
     "main",
     "177641296487beb02d",
+    "kj_reviews",
     "177847968827a634d1",
     "product_recommendations_qggXJq"
   ]

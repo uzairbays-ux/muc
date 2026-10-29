@@ -1,0 +1,186 @@
+{%- comment -%}
+  Reviews in the Makeup City design, fed by Judge.me.
+
+  - Summary (average, count, 5..1 star bars) is rendered here in Liquid from
+    the product metafields Judge.me keeps in sync: reviews.rating,
+    reviews.rating_count and judgeme.widget (histogram + first page).
+  - The review list starts from that first page and loads more / re-sorts
+    from Judge.me's public widget endpoint (assets/kj-reviews.js).
+  - "Write a review" opens Judge.me's own form from the Judge.me review
+    widget block further down the page, so submission, photos, email
+    verification and the Verified badge all stay Judge.me's. Keep that block
+    on the template; this section hides everything in it except the form.
+{%- endcomment -%}
+
+{%- liquid
+  assign p = product
+  assign jm = p.metafields.judgeme.widget.value | default: ''
+  assign avg = p.metafields.reviews.rating.value.rating | default: 0
+  assign count = p.metafields.reviews.rating_count.value | default: 0
+  if count == 0 and jm != ''
+    assign count = jm | split: "data-number-of-reviews='" | last | split: "'" | first | plus: 0
+    assign avg = jm | split: "data-average-rating='" | last | split: "'" | first | plus: 0
+  endif
+  assign avg_rounded = avg | times: 1.0 | round: 1
+  assign avg_full = avg | plus: 0.25 | floor
+-%}
+
+<kj-reviews
+  class="kj-rv page-width"
+  id="kj-reviews"
+  data-product-id="{{ p.id }}"
+  data-product-title="{{ p.title | escape }}"
+  data-shop="{{ shop.permanent_domain }}"
+  data-count="{{ count }}"
+  style="--kj-rv-accent: {{ section.settings.accent }};"
+>
+  <h2 class="kj-rv__heading">{{ section.settings.heading | escape }}</h2>
+
+  <div class="kj-rv__top">
+    <div class="kj-rv__snapshot">
+      <p class="kj-rv__label">Rating snapshot</p>
+      {%- for r in (1..5) reversed -%}
+        {%- liquid
+          assign needle = "data-rating='" | append: r | append: "' data-frequency='"
+          assign freq = 0
+          if jm contains needle
+            assign freq = jm | split: needle | last | split: "'" | first | plus: 0
+          endif
+          assign pct = 0
+          if count > 0
+            assign pct = freq | times: 100.0 | divided_by: count
+          endif
+        -%}
+        <button type="button" class="kj-rv__bar-row" data-filter="{{ r }}" {% if freq == 0 %}disabled{% endif %} aria-label="{{ freq }} reviews with {{ r }} stars">
+          <span class="kj-rv__bar-label">{{ r }} star{% if r > 1 %}s{% endif %}</span>
+          <span class="kj-rv__bar"><span style="width: {{ pct }}%;"></span></span>
+          <span class="kj-rv__bar-count">{{ freq }}</span>
+        </button>
+      {%- endfor -%}
+    </div>
+
+    <div class="kj-rv__overall">
+      <p class="kj-rv__label">Overall rating</p>
+      <div class="kj-rv__overall-row">
+        <span class="kj-rv__score">{% if count > 0 %}{{ avg_rounded }}{% else %}–{% endif %}</span>
+        <span>
+          <span class="kj-rv__stars kj-rv__stars--lg" aria-label="{{ avg_rounded }} out of 5 stars" role="img">
+            {%- for i in (1..5) -%}<span class="kj-rv__star{% if i <= avg_full %} is-on{% endif %}"></span>{%- endfor -%}
+          </span>
+          <span class="kj-rv__count">{{ count }} review{% if count != 1 %}s{% endif %}</span>
+        </span>
+      </div>
+    </div>
+
+    <div class="kj-rv__write">
+      <p class="kj-rv__label">Review this product</p>
+      <div class="kj-rv__pick" role="radiogroup" aria-label="Your rating">
+        {%- for i in (1..5) -%}
+          <button type="button" class="kj-rv__pick-star" data-pick="{{ i }}" role="radio" aria-checked="false" aria-label="{{ i }} star{% if i > 1 %}s{% endif %}">
+            <span class="kj-rv__star"></span>
+          </button>
+        {%- endfor -%}
+      </div>
+      <button type="button" class="kj-rv__write-btn" data-write>Write a review</button>
+    </div>
+  </div>
+
+  <div class="kj-rv__form-slot" data-form-slot hidden></div>
+
+  <div class="kj-rv__toolbar">
+    <label class="visually-hidden" for="kj-rv-sort">Sort reviews</label>
+    <select id="kj-rv-sort" class="kj-rv__sort" data-sort>
+      <option value="created_at:desc">Most Recent</option>
+      <option value="rating:desc">Highest Rating</option>
+      <option value="rating:asc">Lowest Rating</option>
+      <option value="pictures:desc">With Photos</option>
+    </select>
+    <button type="button" class="kj-rv__clear" data-clear hidden>Show all reviews</button>
+  </div>
+
+  <ol class="kj-rv__list" data-list aria-live="polite">
+    {%- if count == 0 -%}
+      <li class="kj-rv__empty">No reviews yet. Be the first to review this product.</li>
+    {%- endif -%}
+  </ol>
+  <div class="kj-rv__more-wrap"><button type="button" class="kj-rv__more" data-more hidden>Load more reviews</button></div>
+
+  <template data-first-page>{{ jm }}</template>
+</kj-reviews>
+
+<script src="{{ 'kj-reviews.js' | asset_url }}" type="module"></script>
+
+{% stylesheet %}
+  .kj-rv { padding-block: 40px; --kj-rv-ink: #111; --kj-rv-line: #e6e6e6; color: var(--kj-rv-ink); }
+  .kj-rv__heading { margin: 0 0 24px; font-family: var(--font-heading--family); font-weight: 700; font-size: clamp(26px, 3vw, 34px); letter-spacing: 0.01em; text-transform: uppercase; }
+  .kj-rv__label { margin: 0 0 12px; font-size: 14px; font-weight: 700; }
+  .kj-rv__top { display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 32px; padding-bottom: 32px; border-bottom: 1px solid var(--kj-rv-ink); }
+  .kj-rv__bar-row { display: grid; grid-template-columns: 60px 1fr 24px; align-items: center; gap: 12px; width: 100%; padding: 4px 0; background: none; border: 0; color: inherit; font: inherit; font-size: 14px; text-align: left; cursor: pointer; }
+  .kj-rv__bar-row[disabled] { cursor: default; }
+  .kj-rv__bar-row.is-active .kj-rv__bar-label { font-weight: 700; }
+  .kj-rv__bar { position: relative; height: 9px; border: 1px solid #d9d9d9; border-radius: 99px; overflow: hidden; }
+  .kj-rv__bar > span { position: absolute; inset: 0 auto 0 0; background: var(--kj-rv-accent); border-radius: 99px; }
+  .kj-rv__bar-count { text-align: right; color: #555; }
+  .kj-rv__overall-row { display: flex; align-items: center; gap: 16px; }
+  .kj-rv__score { font-size: 48px; line-height: 1; font-weight: 400; }
+  .kj-rv__count { display: block; margin-top: 4px; font-size: 13px; font-weight: 700; }
+  .kj-rv__stars { display: inline-flex; gap: 2px; }
+  .kj-rv__star { display: inline-block; width: 15px; height: 15px; background: currentColor; -webkit-mask: var(--kj-rv-star) center / contain no-repeat; mask: var(--kj-rv-star) center / contain no-repeat; --kj-rv-star: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2.5l2.9 6.2 6.6.7-5 4.5 1.4 6.6L12 17.2l-5.9 3.3 1.4-6.6-5-4.5 6.6-.7z' fill='none' stroke='black' stroke-width='1.6' stroke-linejoin='round'/%3E%3C/svg%3E"); }
+  .kj-rv__star.is-on { --kj-rv-star: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2.5l2.9 6.2 6.6.7-5 4.5 1.4 6.6L12 17.2l-5.9 3.3 1.4-6.6-5-4.5 6.6-.7z'/%3E%3C/svg%3E"); }
+  .kj-rv__stars--lg .kj-rv__star { width: 18px; height: 18px; }
+  .kj-rv__pick { display: flex; gap: 8px; margin-bottom: 14px; }
+  .kj-rv__pick-star { display: grid; place-items: center; width: 44px; height: 44px; background: #fff; border: 1px solid #cfcfcf; color: #444; cursor: pointer; }
+  .kj-rv__pick-star .kj-rv__star { width: 16px; height: 16px; }
+  .kj-rv__pick-star.is-on { border-color: var(--kj-rv-ink); color: var(--kj-rv-ink); }
+  .kj-rv__write-btn { padding: 12px 26px; border: 1.5px solid var(--kj-rv-ink); border-radius: 10px; background: #fff; color: var(--kj-rv-ink); font: inherit; font-size: 14px; font-weight: 700; cursor: pointer; }
+  .kj-rv__write-btn:hover { background: var(--kj-rv-ink); color: #fff; }
+  .kj-rv__form-slot { padding: 24px 0; border-bottom: 1px solid var(--kj-rv-line); }
+  .kj-rv__toolbar { display: flex; align-items: center; gap: 16px; padding: 22px 0 8px; border-top: 1px solid var(--kj-rv-line); margin-top: 1px; }
+  .kj-rv__sort { padding: 8px 32px 8px 14px; border: 1px solid #d6d6d6; border-radius: 99px; background: #fff; color: #444; font: inherit; font-size: 14px; }
+  .kj-rv__clear { padding: 0; background: none; border: 0; color: var(--kj-rv-ink); font: inherit; font-size: 13px; text-decoration: underline; cursor: pointer; }
+  .kj-rv__list { list-style: none; margin: 0; padding: 0; }
+  .kj-rv__item { padding: 22px 0; border-bottom: 1px solid var(--kj-rv-line); }
+  .kj-rv__item-top { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+  .kj-rv__date { color: #555; font-size: 13px; }
+  .kj-rv__author { display: flex; align-items: flex-start; gap: 10px; margin: 10px 0 12px; font-size: 13px; color: #555; }
+  .kj-rv__avatar { position: relative; display: grid; place-items: center; width: 36px; height: 36px; background: var(--kj-rv-accent); color: #fff; font-weight: 700; font-size: 14px; }
+  .kj-rv__avatar.is-verified::after { content: ''; position: absolute; right: 2px; bottom: 2px; width: 10px; height: 10px; background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2.5 6.2l2.2 2.2 4.8-4.8' fill='none' stroke='%23b9a48f' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E") center / 9px no-repeat; }
+  .kj-rv__verified { display: inline-block; margin-left: 8px; padding: 1px 6px; background: var(--kj-rv-accent); color: #fff; font-size: 11px; }
+  .kj-rv__title { margin: 0 0 6px; font-size: 16px; font-weight: 700; }
+  .kj-rv__body { margin: 0; font-size: 14px; line-height: 1.6; white-space: pre-line; }
+  .kj-rv__pics { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+  .kj-rv__pics img { width: 84px; height: 84px; object-fit: cover; border-radius: 6px; }
+  .kj-rv__reply { margin: 12px 0 0; padding: 10px 14px; background: #f7f4f1; border-left: 3px solid var(--kj-rv-accent); font-size: 13px; line-height: 1.5; }
+  .kj-rv__reply strong { display: block; margin-bottom: 2px; }
+  .kj-rv__empty { padding: 24px 0; color: #555; }
+  .kj-rv__more-wrap { padding-top: 22px; text-align: center; }
+  .kj-rv__more { padding: 12px 28px; border: 1.5px solid var(--kj-rv-ink); border-radius: 10px; background: #fff; font: inherit; font-weight: 700; cursor: pointer; }
+  .kj-rv__more[aria-busy='true'] { opacity: 0.6; }
+
+  /* Judge.me widget: everything hidden; only its form shows, moved into our slot. */
+  .jdgm-review-widget.kj-rv-host { display: none !important; }
+  .kj-rv__form-slot .jdgm-form-wrapper { display: block !important; }
+
+  @media screen and (max-width: 989px) {
+    .kj-rv__top { grid-template-columns: 1fr; gap: 28px; }
+  }
+  @media screen and (max-width: 749px) {
+    .kj-rv { padding-block: 28px; }
+    .kj-rv__pick-star { width: 40px; height: 40px; }
+    .kj-rv__score { font-size: 42px; }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Reviews (Judge.me)",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Reviews" },
+    { "type": "color", "id": "accent", "label": "Bar and badge colour", "default": "#dac9b8" }
+  ],
+  "presets": [{ "name": "Reviews (Judge.me)" }],
+  "enabled_on": { "templates": ["product"] }
+}
+{% endschema %}

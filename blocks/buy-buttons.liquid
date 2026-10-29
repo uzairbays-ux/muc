@@ -41,6 +41,7 @@
   {{ block.shopify_attributes }}
 >
   {%- if product != blank -%}
+    {%- render 'kj-low-stock', variant: variant -%}
     {%- assign product_form_id = 'BuyButtons-ProductForm-' | append: section.id -%}
     <product-form-component
       data-section-id="{{ section.id }}"
