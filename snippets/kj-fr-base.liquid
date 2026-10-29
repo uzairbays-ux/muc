@@ -1,7 +1,6 @@
 {%- comment -%}
-  Shared base for the brand product-story sections (kj-fr-*): Montserrat from
-  Shopify's font library (scoped to .kj-fr, the rest of the site keeps its
-  fonts), colour tokens, and the image slot that keeps its exact space empty
+  Shared base for the brand product-story sections (kj-fr-*): Montserrat
+  (scoped to .kj-fr, the rest of the site keeps its fonts), colour tokens, and the image slot that keeps its exact space empty
   until an image is picked.
 
   Params (image slot mode): image, ratio (e.g. '4/3'), label, sizes
@@ -15,17 +14,13 @@
     {%- endif -%}
   </div>
 {%- else -%}
-  {%- liquid
-    assign fr_400 = 'montserrat_n4' | font
-    assign fr_700 = 'montserrat_n7' | font
-    assign fr_800 = 'montserrat_n8' | font
-  -%}
+  {%- comment -%} Montserrat isn't in the theme's font settings, so it comes from Google Fonts (only on pages using these sections). {%- endcomment -%}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap">
   <style>
-    {{ fr_400 | font_face: font_display: 'swap' }}
-    {{ fr_700 | font_face: font_display: 'swap' }}
-    {{ fr_800 | font_face: font_display: 'swap' }}
     .kj-fr {
-      --fr-font: {{ fr_400.family }}, {{ fr_400.fallback_families }};
+      --fr-font: 'Montserrat', Arial, sans-serif;
       --fr-ink: #3f3f3f;
       --fr-pink: #dd5696;
       --fr-plum: #543c5e;
