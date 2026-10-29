@@ -16,7 +16,7 @@
 
 {% stylesheet %}
   .kj-fr-hero { display: grid; grid-template-columns: 58% 42%; background: var(--fr-hero-panel); }
-  .kj-fr-hero__media .kj-fr-img { height: 100%; min-height: 420px; aspect-ratio: auto !important; }
+  .kj-fr-hero__media .kj-fr-img { height: 100%; min-height: clamp(420px, 43vw, 620px); aspect-ratio: auto !important; }
   .kj-fr-hero__panel { position: relative; display: flex; flex-direction: column; justify-content: flex-start; padding: 88px 7% 56px; }
   .kj-fr-hero__crumb { position: absolute; top: 24px; right: 7%; margin: 0; text-align: right; color: #fff; font-size: 11px; line-height: 1.35; text-transform: uppercase; }
   .kj-fr-hero__crumb strong { font-weight: 800; }
