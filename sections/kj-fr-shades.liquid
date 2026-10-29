@@ -1,19 +1,133 @@
-{%- comment -%} Brand product story: "Shade families" card with one wide swatch image. {%- endcomment -%}
+{%- comment -%}
+  Brand product story: "Shade families" card with a product grid
+  (5 x 2 on desktop, 2 columns on phones).
+
+  Products: the picked list, else the first products of the picked
+  collection. Card titles drop a common prefix (e.g. "Framesi - FramColor
+  Glamour - ") so they read as shade names. Add to Bag posts to the cart and
+  fires the theme's cart:update event with the cart section HTML, so the
+  drawer opens and refreshes exactly like a normal add.
+{%- endcomment -%}
 {%- render 'kj-fr-base' -%}
+{%- liquid
+  assign limit = section.settings.columns | times: section.settings.rows
+  assign list = section.settings.products
+  if list == blank or list.size == 0
+    assign list = section.settings.collection.products
+  endif
+  assign prefix = section.settings.strip_prefix | strip
+-%}
 <div class="kj-fr kj-fr-shades">
   <div class="kj-fr-shades__card">
     <h2 class="kj-fr-shades__title"><strong>{{ section.settings.title_bold | escape }}</strong> {{ section.settings.title_light | escape }}</h2>
-    {%- render 'kj-fr-base', image_slot: true, image: section.settings.image, ratio: '1020/440', label: 'Shade families image', sizes: '(min-width: 990px) 820px, 100vw' -%}
+
+    <ul class="kj-fr-grid" style="--fr-cols: {{ section.settings.columns }};" role="list">
+      {%- for p in list limit: limit -%}
+        {%- liquid
+          assign v = p.selected_or_first_available_variant
+          assign name = p.title
+          if prefix != blank and name contains prefix
+            assign name = name | remove_first: prefix | strip
+          endif
+          assign on_sale = false
+          if v.compare_at_price > v.price
+            assign on_sale = true
+          endif
+        -%}
+        <li class="kj-fr-pc{% unless p.available %} is-soldout{% endunless %}">
+          <a class="kj-fr-pc__link" href="{{ p.url }}">
+            <span class="kj-fr-pc__img">
+              {%- if p.featured_image -%}
+                {{ p.featured_image | image_url: width: 400 | image_tag: loading: 'lazy', widths: '200, 300, 400', sizes: '(min-width: 990px) 160px, 45vw', alt: p.featured_image.alt | default: name }}
+              {%- endif -%}
+              {%- if on_sale -%}<span class="kj-fr-pc__off">{{ v.compare_at_price | minus: v.price | times: 100 | divided_by: v.compare_at_price }}% off</span>{%- endif -%}
+            </span>
+            <span class="kj-fr-pc__name">{{ name | escape }}</span>
+            <span class="kj-fr-pc__price">
+              {%- if on_sale -%}<s>{{ v.compare_at_price | money_without_trailing_zeros }}</s> {% endif -%}
+              {{ v.price | money_without_trailing_zeros }}
+            </span>
+          </a>
+          {%- if section.settings.show_add -%}
+            {%- if p.available -%}
+              <button type="button" class="kj-fr-pc__add" data-kj-fr-add="{{ v.id }}" data-product-id="{{ p.id }}">Add to Bag</button>
+            {%- else -%}
+              <button type="button" class="kj-fr-pc__add" disabled>Sold out</button>
+            {%- endif -%}
+          {%- endif -%}
+        </li>
+      {%- else -%}
+        <li class="kj-fr-grid__empty">Pick products (or a collection) for this grid in the theme editor.</li>
+      {%- endfor -%}
+    </ul>
+
+    {%- if section.settings.link_label != blank -%}
+      <p class="kj-fr-shades__more"><a class="kj-fr-link" href="{{ section.settings.link_url | default: '#' }}">{{ section.settings.link_label | escape }}</a></p>
+    {%- endif -%}
   </div>
 </div>
 
+<script type="module">
+  if (!window.__kjFrAdd) {
+    window.__kjFrAdd = true;
+    document.addEventListener('click', async (e) => {
+      const btn = e.target.closest('[data-kj-fr-add]');
+      if (!btn || btn.disabled) return;
+      e.preventDefault();
+      const label = btn.textContent;
+      btn.disabled = true;
+      btn.textContent = 'Adding…';
+      // Same cart sections the theme's own add-to-cart refreshes (drawer + cart page).
+      const sections = [...document.querySelectorAll('cart-items-component[data-section-id]')].map((el) => el.dataset.sectionId);
+      try {
+        const res = await fetch('/cart/add.js', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify({ items: [{ id: Number(btn.dataset.kjFrAdd), quantity: 1 }], sections: sections.join(',') }),
+        });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.description || data.message || 'Could not add');
+        const cart = await fetch('/cart.js').then((r) => r.json());
+        const ev = new Event('cart:update', { bubbles: true });
+        ev.detail = { resource: cart, sourceId: btn.dataset.kjFrAdd, data: { source: 'kj-fr-shades', itemCount: 1, productId: btn.dataset.productId, variantId: btn.dataset.kjFrAdd, sections: data.sections } };
+        btn.dispatchEvent(ev);
+        btn.textContent = 'Added';
+        setTimeout(() => { btn.textContent = label; btn.disabled = false; }, 1500);
+      } catch (err) {
+        console.error('[kj-fr-shades]', err);
+        btn.textContent = err.message.length < 40 ? err.message : 'Sold out';
+        setTimeout(() => { btn.textContent = label; btn.disabled = false; }, 2500);
+      }
+    });
+  }
+</script>
+
 {% stylesheet %}
   .kj-fr-shades { background: var(--fr-band); padding: 12px 20px 44px; }
-  .kj-fr-shades__card { max-width: 900px; margin: 0 auto; padding: 40px 40px 48px; background: #fff; }
-  .kj-fr-shades__title { margin: 0 0 22px; text-align: center; font-size: 18px; letter-spacing: 0.04em; text-transform: uppercase; color: #333; font-weight: 400; }
+  .kj-fr-shades__card { max-width: 900px; margin: 0 auto; padding: 40px 40px 44px; background: #fff; }
+  .kj-fr-shades__title { margin: 0 0 26px; text-align: center; font-size: 18px; letter-spacing: 0.04em; text-transform: uppercase; color: #333; font-weight: 400; }
   .kj-fr-shades__title strong { font-weight: 800; }
-  .kj-fr-shades .kj-fr-img--empty { background: repeating-linear-gradient(135deg, #f1f1f3 0 14px, #f8f8f9 14px 28px); }
-  @media screen and (max-width: 749px) { .kj-fr-shades__card { padding: 24px 16px 28px; } }
+  .kj-fr-grid { display: grid; grid-template-columns: repeat(var(--fr-cols, 5), minmax(0, 1fr)); gap: 26px 16px; list-style: none; margin: 0; padding: 0; }
+  .kj-fr-grid__empty { grid-column: 1 / -1; padding: 40px 0; text-align: center; color: var(--fr-muted); font-size: 13px; }
+  .kj-fr-pc { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+  .kj-fr-pc__link { display: flex; flex-direction: column; gap: 6px; color: inherit; text-decoration: none; flex: 1; }
+  .kj-fr-pc__img { position: relative; display: block; aspect-ratio: 1; background: #f7f7f7; overflow: hidden; }
+  .kj-fr-pc__img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; transition: transform 0.3s ease; }
+  .kj-fr-pc__link:hover .kj-fr-pc__img img { transform: scale(1.04); }
+  .kj-fr-pc__off { position: absolute; top: 6px; left: 6px; padding: 2px 6px; background: var(--fr-pink); color: #fff; font-size: 10px; font-weight: 700; text-transform: uppercase; }
+  .kj-fr-pc__name { font-size: 12px; font-weight: 700; line-height: 1.3; text-transform: uppercase; color: var(--fr-ink); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; min-height: 2.6em; }
+  .kj-fr-pc__price { font-size: 13px; color: #1e1e1e; }
+  .kj-fr-pc__price s { color: var(--fr-muted); margin-right: 2px; }
+  .kj-fr-pc__add { width: 100%; padding: 9px 8px; border: 0; border-radius: 50px; background: var(--color-primary-button-background, #eb1d23); color: #fff; font: inherit; font-size: 12px; font-weight: 700; cursor: pointer; }
+  .kj-fr-pc__add:hover { filter: brightness(0.92); }
+  .kj-fr-pc__add[disabled] { background: #d9d9d9; color: #fff; cursor: default; filter: none; }
+  .kj-fr-pc.is-soldout .kj-fr-pc__img img { opacity: 0.5; }
+  .kj-fr-shades__more { margin: 28px 0 0; text-align: center; }
+  @media screen and (max-width: 989px) { .kj-fr-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  @media screen and (max-width: 749px) {
+    .kj-fr-shades__card { padding: 24px 16px 28px; }
+    .kj-fr-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 12px; }
+  }
 {% endstylesheet %}
 
 {% schema %}
@@ -24,7 +138,14 @@
   "settings": [
     { "type": "text", "id": "title_bold", "label": "Heading (bold part)", "default": "Shade" },
     { "type": "text", "id": "title_light", "label": "Heading (light part)", "default": "families" },
-    { "type": "image_picker", "id": "image", "label": "Shade families image", "info": "Wide image, about 1640x700." }
+    { "type": "product_list", "id": "products", "label": "Products", "limit": 20, "info": "Shown in this order. Leave empty to use the collection below." },
+    { "type": "collection", "id": "collection", "label": "Or a collection" },
+    { "type": "range", "id": "columns", "label": "Columns (desktop)", "min": 3, "max": 6, "step": 1, "default": 5 },
+    { "type": "range", "id": "rows", "label": "Rows", "min": 1, "max": 4, "step": 1, "default": 2 },
+    { "type": "text", "id": "strip_prefix", "label": "Remove from product titles", "default": "Framesi - FramColor Glamour - ", "info": "So cards show just the shade, e.g. \"7 Medium Blonde\"." },
+    { "type": "checkbox", "id": "show_add", "label": "Show Add to Bag", "default": true },
+    { "type": "text", "id": "link_label", "label": "Link under the grid", "default": "See all shades" },
+    { "type": "url", "id": "link_url", "label": "Link" }
   ],
   "presets": [{ "name": "Story: shade families" }]
 }

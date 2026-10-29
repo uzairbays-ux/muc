@@ -197,7 +197,25 @@
       "type": "kj-fr-shades",
       "settings": {
         "title_bold": "Shade",
-        "title_light": "families"
+        "title_light": "families",
+        "products": [
+          "1001420830016",
+          "1001420830023",
+          "1001420830047",
+          "1001420830351",
+          "8032505878701",
+          "1001420830207",
+          "1001420830290",
+          "8059606681719",
+          "1001420830078",
+          "1001420830375"
+        ],
+        "columns": 5,
+        "rows": 2,
+        "strip_prefix": "Framesi - FramColor Glamour - ",
+        "show_add": true,
+        "link_label": "See all shades",
+        "link_url": "/search?q=framcolor+glamour&type=product"
       }
     },
     "cta": {
