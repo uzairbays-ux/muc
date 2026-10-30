@@ -23,7 +23,7 @@
     "intro": {
       "type": "kj-fr-intro",
       "settings": {
-        "image": "shopify://shop_images/2_desktop_430_x_500_copy.png",
+        "image": "shopify://shop_images/2_desktop_430_x_500_copy_72.png",
         "title": "Framcolor\nGlamour",
         "text": "<p>A <strong>new formula</strong> built on <strong>next-generation colour technology</strong>: serious performance for the stylist, and results that meet even the most demanding clients.</p><p>A genuinely <strong>ready-to-use colour</strong>, made for every stylist and for younger clients who want something simple to apply.</p>",
         "size": "100 ml tube",
@@ -96,7 +96,7 @@
         "c2"
       ],
       "settings": {
-        "image": "shopify://shop_images/4_mobile_515_x_500_1_copy.jpg",
+        "image": "shopify://shop_images/4_mobile_515_x_500_1_copy_75.jpg",
         "image_side": "left",
         "anchor": "",
         "first": false,
@@ -202,7 +202,7 @@
         "n1"
       ],
       "settings": {
-        "image": "shopify://shop_images/5_desktop_515_x_500_2_copy.jpg",
+        "image": "shopify://shop_images/5_desktop_515_x_500_2_copy_64.jpg",
         "image_side": "left",
         "anchor": "natural-origin",
         "first": false,
