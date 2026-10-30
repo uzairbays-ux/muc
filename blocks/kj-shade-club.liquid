@@ -33,11 +33,13 @@
   {%- paginate block.settings.collection.products by 250 -%}
     {%- liquid
       assign sc_count = 0
+      assign sc_has_current = false
       assign sc_current = sc_product.title | remove_first: sc_prefix | strip
       assign sc_dash = sc_current | slice: 0, 1
       if sc_dash == '-'
         assign sc_current = sc_current | remove_first: '-' | strip
       endif
+      assign sc_current_attr = sc_current | escape
       capture sc_items
         for p in block.settings.collection.products
           assign p_head = p.title | slice: 0, sc_prefix.size
@@ -65,6 +67,7 @@
           assign p_is_current = false
           if p.id == sc_product.id
             assign p_is_current = true
+            assign sc_has_current = true
           endif
           echo '<li class="kj-sc__item'
           if p_is_current
@@ -92,6 +95,20 @@
           echo '</a></li>'
         endfor
       endcapture
+
+      # The collection may hold only in-stock products: a sold-out shade's own
+      # page still shows itself, first and crossed out.
+      unless sc_has_current
+        assign sc_count = sc_count | plus: 1
+        capture sc_self
+          echo '<li class="kj-sc__item is-current is-soldout"><a class="kj-sc__swatch" href="' | append: sc_product.url | append: '" title="' | append: sc_current_attr | append: '" aria-label="' | append: sc_current_attr | append: ' (sold out)" aria-current="true">'
+          if sc_product.featured_image
+            echo sc_product.featured_image | image_url: width: 120 | image_tag: loading: 'lazy', alt: '', width: 60, height: 60
+          endif
+          echo '</a></li>'
+        endcapture
+        assign sc_items = sc_self | append: sc_items
+      endunless
     -%}
   {%- endpaginate -%}
 
