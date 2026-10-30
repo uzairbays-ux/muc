@@ -29,9 +29,9 @@
         "size": "100 ml tube",
         "link_label": "Discover the natural origin index",
         "link_url": "#natural-origin",
-        "badge_top": "Exclusively",
-        "badge_bottom": "Professional",
-        "buy_label": "Buy now",
+        "badge_top": "",
+        "badge_bottom": "",
+        "buy_label": "",
         "buy_product": "",
         "buy_url": "/search?q=framcolor+glamour&type=product"
       }
