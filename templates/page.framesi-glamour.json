@@ -13,8 +13,8 @@
       "type": "kj-fr-hero",
       "settings": {
         "image": "shopify://shop_images/1_desktop_1280_x_600_copy.jpg",
-        "crumb_parent": "Products",
-        "crumb": "Framcolor Glamour",
+        "crumb_parent": "",
+        "crumb": "",
         "title": "Framcolor\nGlamour",
         "subtitle": "Ready to wear",
         "text": "<p>Pre-mixed permanent cream colour.<br/>Long-lasting, rich and remarkably easy to use.</p>"
