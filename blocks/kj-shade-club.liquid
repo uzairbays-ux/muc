@@ -1,0 +1,200 @@
+{%- doc -%}
+  Shade club: one shade picker for a range that is listed as one product per
+  shade (e.g. ST London Velvet Ultra Matt Lipstick). The products stay separate
+  in Shopify; this block only links them on the product page.
+
+  A product joins a range when its title starts with one of the "Ranges" lines
+  (e.g. "ST London - Colorist Nail Paint - "). Its siblings are the products of
+  the picked collection whose titles start with the same line; the rest of the
+  title is the shade name. Each swatch is the shade's colour from the store's
+  shade map (snippets/kj-shade-hex.liquid), else the product photo. Picking a
+  swatch opens that shade's own product page. Products in no range render
+  nothing.
+{%- enddoc -%}
+
+{%- liquid
+  assign sc_product = closest.product
+  assign sc_prefix = ''
+  assign sc_ranges = block.settings.ranges | newline_to_br | split: '<br />'
+  for sc_line in sc_ranges
+    assign sc_needle = sc_line | strip_newlines | strip
+    if sc_needle == ''
+      continue
+    endif
+    assign sc_head = sc_product.title | slice: 0, sc_needle.size
+    if sc_head == sc_needle
+      assign sc_prefix = sc_needle
+      break
+    endif
+  endfor
+-%}
+
+{%- if sc_product != blank and sc_prefix != '' and block.settings.collection != blank -%}
+  {%- paginate block.settings.collection.products by 250 -%}
+    {%- liquid
+      assign sc_count = 0
+      assign sc_current = sc_product.title | remove_first: sc_prefix | strip
+      assign sc_dash = sc_current | slice: 0, 1
+      if sc_dash == '-'
+        assign sc_current = sc_current | remove_first: '-' | strip
+      endif
+      capture sc_items
+        for p in block.settings.collection.products
+          assign p_head = p.title | slice: 0, sc_prefix.size
+          if p_head != sc_prefix
+            continue
+          endif
+          assign sc_count = sc_count | plus: 1
+          assign p_name = p.title | remove_first: sc_prefix | strip
+          assign p_dash = p_name | slice: 0, 1
+          if p_dash == '-'
+            assign p_name = p_name | remove_first: '-' | strip
+          endif
+          assign p_name_attr = p_name | escape
+          assign p_last = p_name | split: ' - ' | last | strip
+          capture p_hex
+            render 'kj-shade-hex', shade: p_name
+          endcapture
+          assign p_hex = p_hex | strip
+          if p_hex == blank
+            capture p_hex
+              render 'kj-shade-hex', shade: p_last
+            endcapture
+            assign p_hex = p_hex | strip
+          endif
+          assign p_is_current = false
+          if p.id == sc_product.id
+            assign p_is_current = true
+          endif
+          echo '<li class="kj-sc__item'
+          if p_is_current
+            echo ' is-current'
+          endif
+          unless p.available
+            echo ' is-soldout'
+          endunless
+          echo '">'
+          echo '<a class="kj-sc__swatch" href="' | append: p.url | append: '" title="' | append: p_name_attr | append: '" aria-label="' | append: p_name_attr
+          unless p.available
+            echo ' (sold out)'
+          endunless
+          echo '"'
+          if p_is_current
+            echo ' aria-current="true"'
+          endif
+          if p_hex != blank
+            echo ' style="--sc-hex: ' | append: p_hex | append: ';"'
+          endif
+          echo '>'
+          if p_hex == blank and p.featured_image
+            echo p.featured_image | image_url: width: 120 | image_tag: loading: 'lazy', alt: '', width: 60, height: 60
+          endif
+          echo '</a></li>'
+        endfor
+      endcapture
+    -%}
+  {%- endpaginate -%}
+
+  {%- if sc_count > 1 -%}
+    <div class="kj-sc" data-kj-sc style="--sc-size: {{ block.settings.size }}px;">
+      <p class="kj-sc__label">
+        <span class="kj-sc__label-key">{{ block.settings.label | escape }}:</span>
+        <span class="kj-sc__label-name" data-kj-sc-name>{{ sc_current | escape }}</span>
+        <span class="kj-sc__label-count">{{ sc_count }} shades</span>
+      </p>
+      <ul class="kj-sc__list{% if sc_count > block.settings.collapse_after %} is-collapsible is-collapsed{% endif %}" role="list" data-kj-sc-list>
+        {{ sc_items }}
+      </ul>
+      {%- if sc_count > block.settings.collapse_after -%}
+        <button type="button" class="kj-sc__more" data-kj-sc-more aria-expanded="false">
+          <span data-kj-sc-more-open>Show all {{ sc_count }} shades</span>
+          <span data-kj-sc-more-close hidden>Show fewer</span>
+        </button>
+      {%- endif -%}
+    </div>
+
+    <script type="module">
+      if (!window.__kjShadeClub) {
+        window.__kjShadeClub = true;
+        // The label previews the hovered shade, then goes back to the current one.
+        const nameOf = (a) => a.getAttribute('title');
+        document.addEventListener('pointerover', (e) => {
+          const a = e.target.closest('.kj-sc__swatch');
+          if (!a) return;
+          const label = a.closest('[data-kj-sc]')?.querySelector('[data-kj-sc-name]');
+          if (label) label.textContent = nameOf(a);
+        });
+        document.addEventListener('pointerout', (e) => {
+          const a = e.target.closest('.kj-sc__swatch');
+          if (!a || a.contains(e.relatedTarget)) return;
+          const root = a.closest('[data-kj-sc]');
+          const current = root?.querySelector('.kj-sc__item.is-current .kj-sc__swatch');
+          const label = root?.querySelector('[data-kj-sc-name]');
+          if (label && current) label.textContent = nameOf(current);
+        });
+        document.addEventListener('click', (e) => {
+          const btn = e.target.closest('[data-kj-sc-more]');
+          if (!btn) return;
+          const list = btn.closest('[data-kj-sc]').querySelector('[data-kj-sc-list]');
+          const open = list.classList.toggle('is-collapsed') === false;
+          btn.setAttribute('aria-expanded', String(open));
+          btn.querySelector('[data-kj-sc-more-open]').hidden = open;
+          btn.querySelector('[data-kj-sc-more-close]').hidden = !open;
+        });
+      }
+    </script>
+  {%- endif -%}
+{%- endif -%}
+
+{% stylesheet %}
+  .kj-sc { display: flex; flex-direction: column; gap: 10px; width: 100%; }
+  .kj-sc__label { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px; margin: 0; font-size: 14px; line-height: 1.4; }
+  .kj-sc__label-key { font-weight: 600; }
+  .kj-sc__label-count { margin-left: auto; color: rgb(var(--color-foreground-rgb, 0 0 0) / 0.6); font-size: 13px; }
+  .kj-sc__list { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 2px; list-style: none; }
+  /* Collapsed: about two rows of swatches; the button opens the rest. */
+  .kj-sc__list.is-collapsed { max-height: calc(var(--sc-size) * 2 + 8px + 4px); overflow: hidden; }
+  .kj-sc__item { position: relative; }
+  .kj-sc__swatch {
+    display: block; width: var(--sc-size); height: var(--sc-size); border-radius: 50%; overflow: hidden;
+    background: var(--sc-hex, #f3f3f3); box-shadow: inset 0 0 0 1px rgb(0 0 0 / 0.12);
+    outline: 1px solid transparent; outline-offset: 2px; transition: outline-color 0.15s ease, transform 0.15s ease;
+  }
+  .kj-sc__swatch img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .kj-sc__swatch:hover { transform: scale(1.06); outline-color: rgb(0 0 0 / 0.35); }
+  .kj-sc__item.is-current .kj-sc__swatch { outline: 2px solid var(--color-foreground, #001325); }
+  .kj-sc__item.is-soldout .kj-sc__swatch { opacity: 0.45; }
+  .kj-sc__item.is-soldout::after {
+    content: ''; position: absolute; left: 50%; top: 50%; width: 120%; height: 1.5px; background: rgb(0 0 0 / 0.55);
+    transform: translate(-50%, -50%) rotate(-45deg); pointer-events: none;
+  }
+  .kj-sc__more {
+    align-self: flex-start; padding: 0; border: 0; background: none; font: inherit; font-size: 13px; font-weight: 600;
+    text-decoration: underline; text-underline-offset: 3px; cursor: pointer; color: inherit;
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Shade club",
+  "tag": null,
+  "settings": [
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection holding the shades",
+      "info": "Must contain every shade product of the ranges below (up to 250 products)."
+    },
+    {
+      "type": "textarea",
+      "id": "ranges",
+      "label": "Ranges",
+      "info": "One per line: the start of the title shared by every shade, e.g. \"ST London - Colorist Nail Paint - \". The rest of the title is the shade name."
+    },
+    { "type": "text", "id": "label", "label": "Label", "default": "Shade" },
+    { "type": "range", "id": "size", "label": "Swatch size", "min": 28, "max": 60, "step": 2, "unit": "px", "default": 36 },
+    { "type": "range", "id": "collapse_after", "label": "Show all button after", "min": 6, "max": 60, "step": 1, "default": 20, "info": "Ranges with more shades than this start folded to two rows." }
+  ],
+  "presets": [{ "name": "Shade club" }]
+}
+{% endschema %}

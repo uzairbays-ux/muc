@@ -943,6 +943,17 @@
                 "padding-inline-end": 0
               },
               "blocks": {}
+            },
+            "kj_shade_club": {
+              "type": "kj-shade-club",
+              "settings": {
+                "collection": "st-london",
+                "ranges": "ST London - Velvet Ultra Matt Lipstick - \nST London - Matt Moist Long-Lasting Lipstick - \nST London - Colorist Nail Paint - ",
+                "label": "Shade",
+                "size": 36,
+                "collapse_after": 20
+              },
+              "blocks": {}
             }
           },
           "block_order": [
@@ -954,6 +965,7 @@
             "sku_CbFtQN",
             "ai_gen_block_e195552_7pHmRW",
             "kj_size_guide",
+            "kj_shade_club",
             "variant_picker_R3rGDr",
             "buy_buttons_eYQEYi",
             "kj_vto_lips",
