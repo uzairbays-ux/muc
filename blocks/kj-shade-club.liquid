@@ -7,7 +7,9 @@
   (e.g. "ST London - Colorist Nail Paint - "). Its siblings are the products of
   the picked collection whose titles start with the same line; the rest of the
   title is the shade name. Each swatch is the shade's colour from the store's
-  shade map (snippets/kj-shade-hex.liquid), else the product photo. Picking a
+  shade map (snippets/kj-shade-hex.liquid, keyed by the full shade name, e.g.
+  "st005 - cherry", since bare words like "cherry" belong to other brands),
+  else the product photo. Picking a
   swatch opens that shade's own product page. Products in no range render
   nothing.
 {%- enddoc -%}
@@ -53,17 +55,10 @@
             assign p_name = p_name | remove_first: '-' | strip
           endif
           assign p_name_attr = p_name | escape
-          assign p_last = p_name | split: ' - ' | last | strip
           capture p_hex
             render 'kj-shade-hex', shade: p_name
           endcapture
           assign p_hex = p_hex | strip
-          if p_hex == blank
-            capture p_hex
-              render 'kj-shade-hex', shade: p_last
-            endcapture
-            assign p_hex = p_hex | strip
-          endif
           assign p_is_current = false
           if p.id == sc_product.id
             assign p_is_current = true
