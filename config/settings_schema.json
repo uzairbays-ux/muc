@@ -2418,6 +2418,27 @@
     ]
   },
   {
+    "name": "Shade club",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Links ranges listed as one product per shade: a shade picker on the product page and an N Shades label on product cards. Products are not changed."
+      },
+      {
+        "type": "collection",
+        "id": "kj_sc_collection",
+        "label": "Collection holding the shades",
+        "info": "Up to 250 products."
+      },
+      {
+        "type": "textarea",
+        "id": "kj_sc_ranges",
+        "label": "Ranges",
+        "info": "One per line: the start of the title shared by every shade, e.g. \"ST London - Colorist Nail Paint - \"."
+      }
+    ]
+  },
+  {
     "name": "Yango",
     "settings": [
       {

@@ -947,8 +947,6 @@
             "kj_shade_club": {
               "type": "kj-shade-club",
               "settings": {
-                "collection": "st-london",
-                "ranges": "ST London - Velvet Ultra Matt Lipstick - \nST London - Matt Moist Long-Lasting Lipstick - \nST London - Colorist Nail Paint - ",
                 "label": "Shade",
                 "size": 36,
                 "collapse_after": 20

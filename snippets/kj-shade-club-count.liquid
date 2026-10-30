@@ -1,0 +1,27 @@
+{%- comment -%}
+  Outputs how many shades a range shows in its picker on the product page, for
+  the "N Shades" label on product cards. The shade collection holds in-stock
+  products, so this follows stock; a sold-out product counts itself, as its
+  picker does.
+
+  Params: product, prefix (from kj-shade-range)
+{%- endcomment -%}
+{%- paginate settings.kj_sc_collection.products by 250 -%}
+  {%- liquid
+    assign cc_count = 0
+    assign cc_self = false
+    for p in settings.kj_sc_collection.products
+      assign p_head = p.title | slice: 0, prefix.size
+      if p_head == prefix
+        assign cc_count = cc_count | plus: 1
+        if p.id == product.id
+          assign cc_self = true
+        endif
+      endif
+    endfor
+    unless cc_self
+      assign cc_count = cc_count | plus: 1
+    endunless
+    echo cc_count
+  -%}
+{%- endpaginate -%}

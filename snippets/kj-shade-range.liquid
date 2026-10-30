@@ -1,0 +1,21 @@
+{%- comment -%}
+  Outputs the range line a product title starts with, from Theme settings >
+  Shade club, or nothing when the product is in no range.
+
+  Usage:
+  {%- capture prefix -%}{% render 'kj-shade-range', title: product.title %}{%- endcapture -%}
+{%- endcomment -%}
+{%- liquid
+  assign sr_ranges = settings.kj_sc_ranges | newline_to_br | split: '<br />'
+  for sr_line in sr_ranges
+    assign sr_needle = sr_line | strip_newlines | strip
+    if sr_needle == ''
+      continue
+    endif
+    assign sr_head = title | slice: 0, sr_needle.size
+    if sr_head == sr_needle
+      echo sr_needle
+      break
+    endif
+  endfor
+-%}

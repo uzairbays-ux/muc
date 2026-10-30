@@ -3,10 +3,10 @@
   shade (e.g. ST London Velvet Ultra Matt Lipstick). The products stay separate
   in Shopify; this block only links them on the product page.
 
-  A product joins a range when its title starts with one of the "Ranges" lines
-  (e.g. "ST London - Colorist Nail Paint - "). Its siblings are the products of
-  the picked collection whose titles start with the same line; the rest of the
-  title is the shade name. Each swatch is the shade's colour from the store's
+  A product joins a range when its title starts with one of the lines in Theme
+  settings > Shade club (e.g. "ST London - Colorist Nail Paint - "). Its siblings
+  are the products of the collection set there whose titles start with the same
+  line; the rest of the title is the shade name. Each swatch is the shade's colour from the store's
   shade map (snippets/kj-shade-hex.liquid, keyed by the full shade name, e.g.
   "st005 - cherry", since bare words like "cherry" belong to other brands),
   else the product photo. Picking a
@@ -16,23 +16,14 @@
 
 {%- liquid
   assign sc_product = closest.product
-  assign sc_prefix = ''
-  assign sc_ranges = block.settings.ranges | newline_to_br | split: '<br />'
-  for sc_line in sc_ranges
-    assign sc_needle = sc_line | strip_newlines | strip
-    if sc_needle == ''
-      continue
-    endif
-    assign sc_head = sc_product.title | slice: 0, sc_needle.size
-    if sc_head == sc_needle
-      assign sc_prefix = sc_needle
-      break
-    endif
-  endfor
+  capture sc_prefix
+    render 'kj-shade-range', title: sc_product.title
+  endcapture
+  assign sc_collection = settings.kj_sc_collection
 -%}
 
-{%- if sc_product != blank and sc_prefix != '' and block.settings.collection != blank -%}
-  {%- paginate block.settings.collection.products by 250 -%}
+{%- if sc_product != blank and sc_prefix != '' and sc_collection != blank -%}
+  {%- paginate sc_collection.products by 250 -%}
     {%- liquid
       assign sc_count = 0
       assign sc_has_current = false
@@ -43,7 +34,7 @@
       endif
       assign sc_current_attr = sc_current | escape
       capture sc_items
-        for p in block.settings.collection.products
+        for p in sc_collection.products
           assign p_head = p.title | slice: 0, sc_prefix.size
           if p_head != sc_prefix
             continue
@@ -191,18 +182,6 @@
   "name": "Shade club",
   "tag": null,
   "settings": [
-    {
-      "type": "collection",
-      "id": "collection",
-      "label": "Collection holding the shades",
-      "info": "Must contain every shade product of the ranges below (up to 250 products)."
-    },
-    {
-      "type": "textarea",
-      "id": "ranges",
-      "label": "Ranges",
-      "info": "One per line: the start of the title shared by every shade, e.g. \"ST London - Colorist Nail Paint - \". The rest of the title is the shade name."
-    },
     { "type": "text", "id": "label", "label": "Label", "default": "Shade" },
     { "type": "range", "id": "size", "label": "Swatch size", "min": 28, "max": 60, "step": 2, "unit": "px", "default": 36 },
     { "type": "range", "id": "collapse_after", "label": "Show all button after", "min": 6, "max": 60, "step": 1, "default": 20, "info": "Ranges with more shades than this start folded to two rows." }

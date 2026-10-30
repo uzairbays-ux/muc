@@ -148,7 +148,22 @@
   endif
 -%}
 
-{% if shade_option != nil and shade_count > 0 %}
+{%- liquid
+  # Clubbed ranges are one product per shade, so the count comes from the range.
+  if shade_option == nil and closest.product.has_only_default_variant
+    capture sc_prefix
+      render 'kj-shade-range', title: closest.product.title
+    endcapture
+    if sc_prefix != '' and settings.kj_sc_collection != blank
+      capture sc_count_text
+        render 'kj-shade-club-count', product: closest.product, prefix: sc_prefix
+      endcapture
+      assign shade_count = sc_count_text | strip | plus: 0
+    endif
+  endif
+-%}
+
+{% if shade_count > 0 %}
   <a
     class="kj-shades"
     href="{{ closest.product.url }}"
