@@ -12,16 +12,18 @@
     "hero": {
       "type": "kj-fr-hero",
       "settings": {
+        "image": "shopify://shop_images/1_desktop_1280_x_600_copy.jpg",
         "crumb_parent": "Products",
         "crumb": "Framcolor Glamour",
         "title": "Framcolor\nGlamour",
         "subtitle": "Ready to wear",
-        "text": "<p>Pre-mixed permanent cream colour.<br>Long-lasting, rich and remarkably easy to use.</p>"
+        "text": "<p>Pre-mixed permanent cream colour.<br/>Long-lasting, rich and remarkably easy to use.</p>"
       }
     },
     "intro": {
       "type": "kj-fr-intro",
       "settings": {
+        "image": "shopify://shop_images/2_desktop_430_x_500_copy.png",
         "title": "Framcolor\nGlamour",
         "text": "<p>A <strong>new formula</strong> built on <strong>next-generation colour technology</strong>: serious performance for the stylist, and results that meet even the most demanding clients.</p><p>A genuinely <strong>ready-to-use colour</strong>, made for every stylist and for younger clients who want something simple to apply.</p>",
         "size": "100 ml tube",
@@ -30,49 +32,50 @@
         "badge_top": "Exclusively",
         "badge_bottom": "Professional",
         "buy_label": "Buy now",
+        "buy_product": "",
         "buy_url": "/search?q=framcolor+glamour&type=product"
       }
     },
     "formula": {
       "type": "kj-fr-card",
-      "settings": {
-        "image_side": "right",
-        "first": true
-      },
       "blocks": {
         "f1": {
           "type": "group",
           "settings": {
             "heading": "The formula at a glance",
             "text": "",
+            "italic": false,
             "items": "Vegan formula, free from ingredients of animal origin\nSilicone-free\nPetrolatum-free",
             "note": "",
             "link_label": "",
-            "link_url": "",
-            "italic": false
+            "link_url": ""
           }
         }
       },
       "block_order": [
         "f1"
-      ]
+      ],
+      "settings": {
+        "image": "shopify://shop_images/3_desktop_908_x_507_copy.jpg",
+        "image_side": "right",
+        "anchor": "",
+        "first": true,
+        "last": false
+      }
     },
     "characteristics": {
       "type": "kj-fr-card",
-      "settings": {
-        "image_side": "left"
-      },
       "blocks": {
         "c1": {
           "type": "group",
           "settings": {
             "heading": "Characteristics",
             "text": "",
+            "italic": false,
             "items": "Covers up to 100% of grey hair\nPermanent colour, already mixed\nShiny, well-hydrated hair\nA soft, pleasant fragrance\nColour holds 100% after 10 washes*\nDoesn't stain the skin, even with the darkest shades\nRinses out easily",
             "note": "*Instrumental tests on shade 7.56",
             "link_label": "",
-            "link_url": "",
-            "italic": false
+            "link_url": ""
           }
         },
         "c2": {
@@ -80,35 +83,39 @@
           "settings": {
             "heading": "Service",
             "text": "",
+            "italic": false,
             "items": "Maximum-coverage colour\nQuick to prepare for every member of the salon team",
             "note": "",
             "link_label": "",
-            "link_url": "",
-            "italic": false
+            "link_url": ""
           }
         }
       },
       "block_order": [
         "c1",
         "c2"
-      ]
+      ],
+      "settings": {
+        "image": "shopify://shop_images/4_mobile_515_x_500_1_copy.jpg",
+        "image_side": "left",
+        "anchor": "",
+        "first": false,
+        "last": false
+      }
     },
     "technology": {
       "type": "kj-fr-card",
-      "settings": {
-        "image_side": "right"
-      },
       "blocks": {
         "t1": {
           "type": "group",
           "settings": {
             "heading": "Innovative technology",
             "text": "<p>Deep, long-lasting colour, boosted by ingredients that work together.</p>",
+            "italic": false,
             "items": "",
             "note": "",
             "link_label": "",
-            "link_url": "",
-            "italic": false
+            "link_url": ""
           }
         },
         "t2": {
@@ -116,11 +123,11 @@
           "settings": {
             "heading": "Sodium PCA",
             "text": "<p>Part of the skin's own Natural Moisturising Factor. Supports hydration and elasticity of hair and scalp.</p>",
+            "italic": false,
             "items": "",
             "note": "",
             "link_label": "",
-            "link_url": "",
-            "italic": false
+            "link_url": ""
           }
         },
         "t3": {
@@ -128,11 +135,11 @@
           "settings": {
             "heading": "Arginine",
             "text": "<p>A key amino acid in hair keratin. Its alkaline pH gently opens the cuticle so colour penetrates better, without harming the hair.</p>",
+            "italic": false,
             "items": "",
             "note": "",
             "link_label": "",
-            "link_url": "",
-            "italic": false
+            "link_url": ""
           }
         },
         "t4": {
@@ -140,11 +147,11 @@
           "settings": {
             "heading": "Rice, jojoba and sunflower bio-esters",
             "text": "<p>Close in structure to the hair fibre, they carry pigment deep inside and lock it in, for colour that resists fading and stays glossy wash after wash.</p>",
+            "italic": false,
             "items": "",
             "note": "",
             "link_label": "",
-            "link_url": "",
-            "italic": false
+            "link_url": ""
           }
         },
         "t5": {
@@ -152,11 +159,11 @@
           "settings": {
             "heading": "Biodegradable chelating agent",
             "text": "<p>Binds metal ions to stop unwanted colour shifts and keep hair healthy.</p>",
+            "italic": false,
             "items": "",
             "note": "",
             "link_label": "",
-            "link_url": "",
-            "italic": false
+            "link_url": ""
           }
         }
       },
@@ -166,32 +173,41 @@
         "t3",
         "t4",
         "t5"
-      ]
+      ],
+      "settings": {
+        "image": "shopify://shop_images/5_desktop_515_x_500_1_copy.jpg",
+        "image_side": "right",
+        "anchor": "",
+        "first": false,
+        "last": false
+      }
     },
     "natural_origin": {
       "type": "kj-fr-card",
-      "settings": {
-        "image_side": "left",
-        "anchor": "natural-origin",
-        "last": true
-      },
       "blocks": {
         "n1": {
           "type": "group",
           "settings": {
             "heading": "Natural origin index",
             "text": "<p>Framcolor Glamour is made with 84.15% to 87.76% ingredients of natural origin, water included*.</p>",
+            "italic": true,
             "items": "",
             "note": "*Natural origin index calculated according to ISO 16128",
             "link_label": "",
-            "link_url": "",
-            "italic": true
+            "link_url": ""
           }
         }
       },
       "block_order": [
         "n1"
-      ]
+      ],
+      "settings": {
+        "image": "shopify://shop_images/5_desktop_515_x_500_2_copy.jpg",
+        "image_side": "left",
+        "anchor": "natural-origin",
+        "first": false,
+        "last": true
+      }
     },
     "shades": {
       "type": "kj-fr-shades",
@@ -210,9 +226,10 @@
           "1001420830078",
           "1001420830375"
         ],
+        "collection": "",
         "columns": 5,
         "rows": 2,
-        "strip_prefix": "Framesi - FramColor Glamour - ",
+        "strip_prefix": "Framesi - FramColor Glamour -",
         "show_add": true,
         "link_label": "See all shades",
         "link_url": "/search?q=framcolor+glamour&type=product"
