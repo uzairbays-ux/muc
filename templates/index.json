@@ -421,7 +421,7 @@
           "type": "card",
           "name": "FreshLabs",
           "settings": {
-            "image": "shopify://shop_images/Fresh-Labs.webp",
+            "image": "shopify://shop_images/FreshLabs_1.webp",
             "link": "shopify://collections/freshlabs",
             "open_new_tab": false
           }
@@ -870,7 +870,7 @@
         "card_p9kYBe": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/luscious_2f76b72e-bc5a-45f3-b0b8-cca5cfa9cb06.webp",
+            "image": "shopify://shop_images/non-sale-luscious.webp",
             "link": "shopify://collections/luscious-cosmetics",
             "open_new_tab": false
           }
@@ -998,7 +998,7 @@
         "card_J3czmk": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/lamel_0989074f-4f47-46ad-920d-7ab82bf494df.webp",
+            "image": "shopify://shop_images/non-sale-Lamel.webp",
             "link": "shopify://collections/lamel",
             "open_new_tab": false
           }
@@ -1031,7 +1031,7 @@
         "card_dnezUz": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/one-skin_9e0381af-27c9-4cbb-b7cb-cc8450cf3717.jpg",
+            "image": "shopify://shop_images/one-skin.webp",
             "link": "shopify://collections/oneskin",
             "open_new_tab": false
           }
