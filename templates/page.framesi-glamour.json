@@ -230,12 +230,13 @@
         "rows": 2,
         "strip_prefix": "Framesi - FramColor Glamour -",
         "show_add": true,
-        "link_label": "See all shades",
-        "link_url": "/search?q=framcolor+glamour&type=product"
+        "link_label": "",
+        "link_url": ""
       }
     },
     "cta": {
       "type": "kj-fr-cta",
+      "disabled": true,
       "settings": {
         "title_light": "See every shade",
         "title_bold": "available now",
