@@ -1607,7 +1607,7 @@
           "type": "card",
           "name": "Charlotte Tilbury",
           "settings": {
-            "image": "shopify://shop_images/Charlotte_17ba5144-30a9-4c3a-9f4a-d424bfc3118b.webp",
+            "image": "shopify://shop_images/charlotte_tilbury_logo_enhanced_500x500_07d77159-1154-41be-94ea-9ef5a65d3e02.webp",
             "link": "shopify://collections/charlotte-tilbury",
             "open_new_tab": false
           }
@@ -1911,8 +1911,8 @@
         "banner_nrAdDN": {
           "type": "banner",
           "settings": {
-            "desktop_image": "shopify://shop_images/Korean-Brand-Main-Banner-2746-x-572.webp",
-            "mobile_image": "shopify://shop_images/Korean-Brand-Main-Banner_1d489138-445f-4ff3-8697-c905f6b3e7c9.webp",
+            "desktop_image": "shopify://shop_images/Korean-Brand-Main-Banner_desktop.webp",
+            "mobile_image": "shopify://shop_images/Korean-Brand-Main-Banner_f965266a-4a71-4cf4-ab83-876b364efe14.jpg",
             "link": "shopify://pages/korean-brand-k-beauty",
             "open_new_tab": false
           }
@@ -2443,8 +2443,8 @@
         "banner_Kt9k6X": {
           "type": "banner",
           "settings": {
-            "desktop_image": "shopify://shop_images/Chinese-Beauty-Main-Banner-2746-x-572.webp",
-            "mobile_image": "shopify://shop_images/Chinese-Beauty-Main-Banner_c2fde4d0-7b16-4af6-a073-42280e675e05.webp",
+            "desktop_image": "shopify://shop_images/chinese-desktop.webp",
+            "mobile_image": "shopify://shop_images/Chinesse_Banner.webp",
             "link": "shopify://collections/chinese-brands",
             "open_new_tab": false
           }
