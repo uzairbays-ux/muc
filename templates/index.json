@@ -234,7 +234,7 @@
           "type": "card",
           "name": "Revolution",
           "settings": {
-            "image": "shopify://shop_images/Revolution_b5a78785-2c0b-4bb0-abe7-108c7f688074.webp",
+            "image": "shopify://shop_images/Revolution_f0755382-94da-40a5-b341-7678c94372bf.jpg",
             "link": "shopify://collections/revolution",
             "open_new_tab": false
           }
@@ -243,7 +243,7 @@
           "type": "card",
           "name": "ELF",
           "settings": {
-            "image": "shopify://shop_images/ELF_7c931243-3046-4c19-9a5e-741518d643fc.webp",
+            "image": "shopify://shop_images/ELF_1.webp",
             "link": "shopify://collections/elf",
             "open_new_tab": false
           }
@@ -252,7 +252,7 @@
           "type": "card",
           "name": "Ordinary",
           "settings": {
-            "image": "shopify://shop_images/The-Ordinary.webp",
+            "image": "shopify://shop_images/The-Ordinary_bd9c490a-4108-4f3e-b7bb-fb9848362059.jpg",
             "link": "shopify://collections/to",
             "open_new_tab": false
           }
