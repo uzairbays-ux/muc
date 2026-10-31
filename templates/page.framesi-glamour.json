@@ -55,6 +55,7 @@
       "block_order": [
         "f1"
       ],
+      "disabled": true,
       "settings": {
         "image": "shopify://shop_images/3_desktop_908_x_507_copy.jpg",
         "image_side": "right",
@@ -95,6 +96,7 @@
         "c1",
         "c2"
       ],
+      "disabled": true,
       "settings": {
         "image": "shopify://shop_images/4_mobile_515_x_500_1_copy_75.jpg",
         "image_side": "left",
@@ -174,6 +176,7 @@
         "t4",
         "t5"
       ],
+      "disabled": true,
       "settings": {
         "image": "shopify://shop_images/5_desktop_515_x_500_1_copy.jpg",
         "image_side": "right",
@@ -201,6 +204,7 @@
       "block_order": [
         "n1"
       ],
+      "disabled": true,
       "settings": {
         "image": "shopify://shop_images/5_desktop_515_x_500_2_copy_64.jpg",
         "image_side": "left",
@@ -215,16 +219,11 @@
         "title_bold": "Shade",
         "title_light": "families",
         "products": [
-          "1001420830016",
-          "1001420830023",
           "1001420830047",
-          "1001420830351",
-          "8032505878701",
-          "1001420830207",
-          "1001420830290",
-          "8059606681719",
           "1001420830078",
-          "1001420830375"
+          "1001420830085",
+          "1001420830016",
+          "1001420830023"
         ],
         "collection": "",
         "columns": 5,
