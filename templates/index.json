@@ -1686,8 +1686,17 @@
         "card_m4dJ4r": {
           "type": "card",
           "name": "Janssen",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Janssen.webp",
+            "link": "shopify://collections/janssen",
+            "open_new_tab": false
+          }
+        },
+        "card_VmDHC6": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/Janssen_61d6e9be-4942-43f9-b3f9-45eac8eedf0f.jpg",
             "link": "shopify://collections/janssen",
             "open_new_tab": false
           }
@@ -1749,6 +1758,7 @@
       },
       "block_order": [
         "card_m4dJ4r",
+        "card_VmDHC6",
         "card_q7xRrJ",
         "card_4rqnJx",
         "card_9H67GY",
@@ -1804,19 +1814,11 @@
             "open_new_tab": false
           }
         },
-        "card_7bXfx8": {
-          "type": "card",
-          "settings": {
-            "image": "shopify://shop_images/Janssen_61d6e9be-4942-43f9-b3f9-45eac8eedf0f.jpg",
-            "link": "shopify://collections/janssen",
-            "open_new_tab": false
-          }
-        },
         "card_wKbPRz": {
           "type": "card",
           "name": "Essence",
           "settings": {
-            "image": "shopify://shop_images/Essence_1.jpg",
+            "image": "shopify://shop_images/Essence_6da3862c-5d8c-42e5-baab-235ff7b144f3.jpg",
             "link": "shopify://collections/essence",
             "open_new_tab": false
           }
@@ -1825,7 +1827,7 @@
           "type": "card",
           "name": "Garnier",
           "settings": {
-            "image": "shopify://shop_images/Garnier_31851acc-f576-4f76-bfd5-02b3d7e5608a.webp",
+            "image": "shopify://shop_images/Garnier_97c38524-b146-4786-9f42-b4484aa719ac.jpg",
             "link": "shopify://collections/garnier",
             "open_new_tab": false
           }
@@ -1834,7 +1836,7 @@
           "type": "card",
           "name": "Trouble Maker",
           "settings": {
-            "image": "shopify://shop_images/trouble-maker.webp",
+            "image": "shopify://shop_images/Trouble-Maker_45e5e593-9345-4fab-8c1e-8c6999641a18.jpg",
             "link": "shopify://collections/trouble-maker",
             "open_new_tab": false
           }
@@ -1843,7 +1845,7 @@
           "type": "card",
           "name": "Rimmel London",
           "settings": {
-            "image": "shopify://shop_images/Rimmel_1_5d9e9343-6a60-4c2d-8098-c8ad5527bcff.jpg",
+            "image": "shopify://shop_images/non-sale-Rimmel.webp",
             "link": "shopify://collections/rimmel-london",
             "open_new_tab": false
           }
@@ -1870,7 +1872,6 @@
       "block_order": [
         "card_37czVX",
         "card_VN8C4L",
-        "card_7bXfx8",
         "card_wKbPRz",
         "card_Dj4Jhk",
         "card_VaLrJE",
@@ -2266,7 +2267,7 @@
         "category_Xea9DL": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/Colorwow_391dd19f-a9fb-433b-9b74-f1083ad672e3.webp",
+            "image": "shopify://shop_images/Colorwow.webp",
             "label": "",
             "link": "shopify://collections/color-wow",
             "card_background": "rgba(0,0,0,0)"
@@ -2293,7 +2294,7 @@
         "category_EAWHGr": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/Schwarzkopf_940b1057-ad07-419a-a97f-97d51b7e1b0e.webp",
+            "image": "shopify://shop_images/Schwarzkopf_dbf9216a-5f01-45d1-922a-49d5ffc3812e.jpg",
             "label": "",
             "link": "shopify://collections/schwarzkopf",
             "card_background": "rgba(0,0,0,0)"
