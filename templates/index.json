@@ -271,7 +271,7 @@
           "type": "card",
           "name": "Miss Rose",
           "settings": {
-            "image": "shopify://shop_images/Miss-Rose_jpg.webp",
+            "image": "shopify://shop_images/Miss_Rose.webp",
             "link": "shopify://collections/miss-rose",
             "open_new_tab": false
           }
@@ -376,7 +376,7 @@
           "type": "card",
           "name": "Philips",
           "settings": {
-            "image": "shopify://shop_images/Philips.jpg",
+            "image": "shopify://shop_images/philips_0cb41bf9-d396-4d8e-903e-3202053ce85d.webp",
             "link": "shopify://collections/philips",
             "open_new_tab": false
           }
@@ -878,7 +878,7 @@
         "card_pfpRwk": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/Luxe-Basics_jpg.jpg",
+            "image": "shopify://shop_images/Luxe_basics_e03829c6-2b5d-4089-997e-8acf9d03c196.webp",
             "link": "shopify://collections/luxe-basics",
             "open_new_tab": false
           }
@@ -1625,7 +1625,7 @@
           "type": "card",
           "name": "Olaplex",
           "settings": {
-            "image": "shopify://shop_images/olaplex_0fffb0e3-5596-4bc2-a3d6-c04e99af0c0b.webp",
+            "image": "shopify://shop_images/OLAPLEX_Image_Jul_7_2026_11_30_41_AM_3486de4a-fa76-4e03-98fd-70c425cef4a1.webp",
             "link": "shopify://collections/olaplex",
             "open_new_tab": false
           }
