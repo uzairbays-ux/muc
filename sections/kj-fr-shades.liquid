@@ -38,7 +38,7 @@
           <a class="kj-fr-pc__link" href="{{ p.url }}">
             <span class="kj-fr-pc__img">
               {%- if p.featured_image -%}
-                {{ p.featured_image | image_url: width: 400 | image_tag: loading: 'lazy', widths: '200, 300, 400', sizes: '(min-width: 990px) 160px, 45vw', alt: p.featured_image.alt | default: name }}
+                {{ p.featured_image | image_url: width: 1000 | image_tag: loading: 'lazy', widths: '300, 400, 600, 800, 1000', sizes: '(min-width: 990px) 20vw, (min-width: 750px) 33vw, 50vw', alt: p.featured_image.alt | default: name }}
               {%- endif -%}
               {%- if on_sale -%}<span class="kj-fr-pc__off">{{ v.compare_at_price | minus: v.price | times: 100 | divided_by: v.compare_at_price }}% off</span>{%- endif -%}
             </span>
