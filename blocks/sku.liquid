@@ -5,6 +5,15 @@
   assign product_resource = closest.product
   assign selected_variant = product_resource.selected_or_first_available_variant
   assign sku = selected_variant.sku
+
+  # Per-brand switch (block setting "Only for vendors"), e.g. BLS shows SKUs, not barcodes.
+  capture kj_vendor_hit
+    render 'kj-vendor-in-list', vendor: product_resource.vendor, list: block_settings.vendors
+  endcapture
+  assign kj_vendor_hit = kj_vendor_hit | strip
+  if block_settings.vendors != blank and kj_vendor_hit != 'true'
+    assign kj_skip = true
+  endif
 -%}
 
 {% liquid
@@ -37,6 +46,7 @@
   endcapture
 %}
 
+{%- unless kj_skip -%}
 <product-sku-component
   class="text-block {{ text_block_classes }} text-{{ block_settings.alignment }} {{ block_settings.type_preset | default: 'paragraph' }} spacing-style"
   data-product-id="{{ product_resource.id }}"
@@ -55,6 +65,7 @@
 >
   {% render 'sku', product_resource: product_resource, block_settings: block_settings %}
 </product-sku-component>
+{%- endunless -%}
 
 {% stylesheet %}
   /* When SKU and barcode sit next to each other, lay them out in a row */
@@ -89,6 +100,12 @@
     {
       "type": "paragraph",
       "content": "t:content.resource_reference_product_sku"
+    },
+    {
+      "type": "text",
+      "id": "vendors",
+      "label": "Only for vendors",
+      "info": "Comma-separated. Leave empty to show for every brand."
     },
     {
       "type": "checkbox",

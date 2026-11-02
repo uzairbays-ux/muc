@@ -5,6 +5,15 @@
   assign product_resource = closest.product
   assign selected_variant = product_resource.selected_or_first_available_variant
   assign barcode = selected_variant.barcode
+
+  # Per-brand switch (block setting "Hide for vendors"), e.g. BLS shows SKUs, not barcodes.
+  capture kj_vendor_hit
+    render 'kj-vendor-in-list', vendor: product_resource.vendor, list: block_settings.vendors
+  endcapture
+  assign kj_vendor_hit = kj_vendor_hit | strip
+  if kj_vendor_hit == 'true'
+    assign kj_skip = true
+  endif
 -%}
 
 {% liquid
@@ -37,6 +46,7 @@
   endcapture
 %}
 
+{%- unless kj_skip -%}
 <product-barcode-component
   class="text-block {{ text_block_classes }} text-{{ block_settings.alignment }} {{ block_settings.type_preset | default: 'paragraph' }} spacing-style"
   data-product-id="{{ product_resource.id }}"
@@ -55,6 +65,7 @@
 >
   {% render 'barcode', product_resource: product_resource, block_settings: block_settings %}
 </product-barcode-component>
+{%- endunless -%}
 
 {% schema %}
 {
@@ -75,6 +86,12 @@
     {
       "type": "paragraph",
       "content": "Displays the barcode of the selected variant. Updates live on variant change. Hidden automatically when the variant has no barcode."
+    },
+    {
+      "type": "text",
+      "id": "vendors",
+      "label": "Hide for vendors",
+      "info": "Comma-separated, e.g. brands that show a SKU instead."
     },
     {
       "type": "checkbox",

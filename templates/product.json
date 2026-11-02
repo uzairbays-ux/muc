@@ -627,16 +627,16 @@
                 "padding-block-start": 0,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
-                "padding-inline-end": 0
+                "padding-inline-end": 0,
+                "vendors": "British Lingerie Studio, Slips & Camis, Teens"
               },
               "blocks": {}
             },
             "sku_fiiUqj": {
               "type": "sku",
               "name": "t:names.product_sku",
-              "disabled": true,
               "settings": {
-                "mobile_order": 0,
+                "mobile_order": 5,
                 "show_label": true,
                 "label": "SKU:",
                 "type_preset": "",
@@ -651,7 +651,8 @@
                 "padding-block-start": 0,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
-                "padding-inline-end": 0
+                "padding-inline-end": 0,
+                "vendors": "British Lingerie Studio, Slips & Camis, Teens"
               },
               "blocks": {}
             },

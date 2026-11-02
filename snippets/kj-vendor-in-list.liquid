@@ -1,0 +1,19 @@
+{%- comment -%}
+  Outputs "true" when the product's vendor is in a comma-separated list
+  (case-insensitive), else nothing. Used by the SKU and barcode blocks to show
+  one or the other per brand.
+
+  Usage:
+  {%- capture hit -%}{% render 'kj-vendor-in-list', vendor: product.vendor, list: block.settings.vendors %}{%- endcapture -%}
+{%- endcomment -%}
+{%- liquid
+  assign vl_vendor = vendor | strip | downcase
+  assign vl_items = list | default: '' | downcase | split: ','
+  for vl_item in vl_items
+    assign vl_needle = vl_item | strip
+    if vl_needle != '' and vl_needle == vl_vendor
+      echo 'true'
+      break
+    endif
+  endfor
+-%}
