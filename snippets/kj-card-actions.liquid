@@ -23,8 +23,11 @@
     if on contains 'size'
       assign has_size = true
     endif
-    if on contains 'color' or on contains 'colour' or on contains 'shade'
-      assign has_shades = true
+    # A single-value colour (BLS: Size + "Color: Black") is not a choice.
+    if opt.values.size > 1
+      if on contains 'color' or on contains 'colour' or on contains 'shade'
+        assign has_shades = true
+      endif
     endif
   endfor
 

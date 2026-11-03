@@ -19,7 +19,9 @@
       assign product_has_swatches = true
     endif
     # Capture the shade/colour option so cards can show a "N Shades" count.
-    if is_color_name and shade_option == nil
+    # A single-value colour (BLS lists one product per colour, with Size +
+    # "Color: Black") is not a shade range: the sizes are what the card shows.
+    if is_color_name and shade_option == nil and product_option.values.size > 1
       assign shade_option = product_option
     endif
     if variant_option == nil and product_option.values.size > 1
