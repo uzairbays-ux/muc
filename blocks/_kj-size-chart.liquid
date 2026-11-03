@@ -50,7 +50,11 @@
 -%}
 
 {%- if sc_matches -%}
-  {%- comment -%} The Size guide block splits on this marker and keeps the first match. {%- endcomment -%}
+  {%- comment -%}
+    The Size guide block keeps what sits between these two markers, and only
+    for the first match. Shopify wraps each block in its own div, which opens
+    before the start marker and closes after the end one, so both are needed.
+  {%- endcomment -%}
   <!--kj-size-chart-->
   {%- if block.settings.show_sister_size -%}<!--kj-sister-->{%- endif -%}
   <div class="kj-sg__chart" {{ block.shopify_attributes }}>
@@ -69,6 +73,7 @@
       }}
     {%- endif -%}
   </div>
+  <!--/kj-size-chart-->
 {%- endif -%}
 
 {% schema %}

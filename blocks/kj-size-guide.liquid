@@ -30,9 +30,9 @@
 
 {%- if sg_product != blank and sg_vendor_ok -%}
   {%- liquid
-    # Each matching child renders its chart behind a marker. Cut the extra
-    # charts out first (each is closed by an end marker, so a Size chart placed
-    # after one is kept), then keep only the first Size chart.
+    # Each matching child renders its chart between a start and an end marker
+    # (Shopify's own block wrapper sits outside them). Cut the extra charts out
+    # first, then keep only the first Size chart.
     capture sg_all
       content_for 'blocks'
     endcapture
@@ -48,7 +48,7 @@
       endif
     endfor
     assign sg_mains = sg_mains_html | split: '<!--kj-size-chart-->'
-    assign sg_main = sg_mains[1]
+    assign sg_main = sg_mains[1] | split: '<!--/kj-size-chart-->' | first
 
     assign sg_label = settings.kj_size_guide_label | default: 'Size Guide'
     assign sg_sister_label = settings.kj_sister_size_label | default: 'Sister Size'
