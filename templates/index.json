@@ -265,7 +265,8 @@
             "image": "shopify://shop_images/The-Ordinary_bd9c490a-4108-4f3e-b7bb-fb9848362059.jpg",
             "link": "shopify://collections/to",
             "open_new_tab": false
-          }
+          },
+          "disabled": true
         },
         "card_b9F39r": {
           "type": "card",
