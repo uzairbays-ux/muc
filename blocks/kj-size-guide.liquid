@@ -1,13 +1,14 @@
 {%- doc -%}
   Size guide for one vendor's products (British Lingerie Studio).
 
-  Holds one "Size chart" child block per chart. The children are checked from
-  top to bottom and the first one that matches the product - by tag or by a
-  phrase in its title - renders a Size Guide link and its popup. Products of
+  Holds "Size chart" and "Extra size chart" child blocks. The Size charts are
+  checked from top to bottom and the first one that matches the product - by
+  tag or by a phrase in its title - is the chart. Every Extra size chart that
+  matches is added to the popup as its own tab (bra & panty sets). Products of
   any other vendor, and products that match no chart, render nothing.
 
   The vendors (a comma-separated list), the link labels and the Sister Size
-  image are shared by every chart, so they live in Theme settings > Size guide.
+  chart are shared by every chart, so they live in Theme settings > Size guide.
 {%- enddoc -%}
 
 {%- liquid
@@ -29,14 +30,53 @@
 
 {%- if sg_product != blank and sg_vendor_ok -%}
   {%- liquid
-    # Each chart that matches renders itself behind a marker. Keep only the
-    # first one, so a product that matches several charts outputs exactly one.
-    capture sg_charts
+    # Each matching child renders its chart behind a marker. Cut the extra
+    # charts out first (each is closed by an end marker, so a Size chart placed
+    # after one is kept), then keep only the first Size chart.
+    capture sg_all
       content_for 'blocks'
     endcapture
-    assign sg_matches = sg_charts | split: '<!--kj-size-chart-->'
+
+    assign sg_extra_parts = sg_all | split: '<!--kj-size-chart-extra-->'
+    assign sg_mains_html = sg_extra_parts[0]
+    assign sg_extras = ''
+    for sg_part in sg_extra_parts offset: 1
+      assign sg_split = sg_part | split: '<!--/kj-size-chart-extra-->'
+      assign sg_extras = sg_extras | append: '<!--kj-x-->' | append: sg_split[0]
+      if sg_split.size > 1
+        assign sg_mains_html = sg_mains_html | append: sg_split[1]
+      endif
+    endfor
+    assign sg_mains = sg_mains_html | split: '<!--kj-size-chart-->'
+    assign sg_main = sg_mains[1]
+
+    assign sg_label = settings.kj_size_guide_label | default: 'Size Guide'
+    assign sg_sister_label = settings.kj_sister_size_label | default: 'Sister Size'
+    assign sg_sister_table = settings.kj_sister_size_table
+    assign sg_sister_image = settings.kj_sister_size_image
+    assign sg_show_sister = false
+    if sg_main contains '<!--kj-sister-->'
+      if sg_sister_table != blank or sg_sister_image != blank
+        assign sg_show_sister = true
+      endif
+    endif
+
+    assign sg_tabs = sg_extras | split: '<!--kj-x-->'
+    assign sg_main_tab = 'Size chart'
+    for sg_tab in sg_tabs offset: 1
+      assign sg_rename = sg_tab | split: '<!--kj-main-tab:' | last | split: '-->' | first | strip
+      if sg_rename != ''
+        assign sg_main_tab = sg_rename
+        break
+      endif
+    endfor
+    assign sg_tab_count = sg_tabs.size | minus: 1
+    if sg_main == blank
+      assign sg_tab_count = 0
+    endif
   -%}
-  {%- if sg_matches.size > 1 -%}
+
+  {%- if sg_main != blank -%}
     <script src="{{ 'dialog.js' | asset_url }}" type="module"></script>
     {%- comment -%}
       Same mobile ordering as the theme's own blocks, so on phones the links
@@ -44,7 +84,99 @@
     {%- endcomment -%}
     <div class="block-mobile-order" style="--mobile-order: {{ block.settings.mobile_order | default: 0 }};">
       <div class="kj-size-guide" {{ block.shopify_attributes }}>
-        {{- sg_matches[1] -}}
+        <dialog-component class="kj-sg__item">
+          <button on:click="/showDialog" class="button button-unstyled kj-sg__link" type="button">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" aria-hidden="true">
+              <rect x="1.5" y="7.5" width="21" height="9" rx="1.5" stroke="currentColor" stroke-width="1.5"></rect>
+              <path d="M6 7.5v3.5M10 7.5v5M14 7.5v3.5M18 7.5v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+            </svg>
+            {{- sg_label | escape -}}
+          </button>
+
+          <dialog
+            ref="dialog"
+            class="kj-sg__dialog dialog-modal color-{{ settings.popover_color_scheme }}"
+            scroll-lock
+            aria-label="{{ sg_label | escape }}"
+          >
+            <div class="kj-sg__inner">
+              <button
+                ref="closeButton"
+                on:click="/closeDialog"
+                class="button button-unstyled close-button kj-sg__close"
+                aria-label="{{ 'accessibility.close_dialog' | t }}"
+                type="button"
+              >
+                {{- 'icon-close.svg' | inline_asset_content -}}
+              </button>
+
+              {%- if sg_tab_count > 0 -%}
+                {%- comment -%} CSS-only tabs: radios, labels, then one panel per chart. {%- endcomment -%}
+                <div class="kj-sg__tabs" role="tablist">
+                  <label class="kj-sg__tab"><input type="radio" name="kj-sg-{{ block.id }}" value="0" checked>{{ sg_main_tab | escape }}</label>
+                  {%- for sg_tab in sg_tabs offset: 1 -%}
+                    {%- assign sg_tab_label = sg_tab | split: '<!--kj-tab:' | last | split: '-->' | first | strip -%}
+                    <label class="kj-sg__tab"><input type="radio" name="kj-sg-{{ block.id }}" value="{{ forloop.index }}">{{ sg_tab_label | escape }}</label>
+                  {%- endfor -%}
+                </div>
+              {%- endif -%}
+
+              <div class="kj-sg__panels">
+                <div class="kj-sg__panel" data-i="0">{{ sg_main }}</div>
+                {%- for sg_tab in sg_tabs offset: 1 -%}
+                  <div class="kj-sg__panel" data-i="{{ forloop.index }}" hidden>{{ sg_tab }}</div>
+                {%- endfor -%}
+              </div>
+            </div>
+          </dialog>
+        </dialog-component>
+
+        {%- if sg_show_sister -%}
+          <dialog-component class="kj-sg__item kj-sg__item--sister">
+            <button on:click="/showDialog" class="button button-unstyled kj-sg__link" type="button">
+              {{- sg_sister_label | escape -}}
+            </button>
+
+            <dialog
+              ref="dialog"
+              class="kj-sg__dialog dialog-modal color-{{ settings.popover_color_scheme }}"
+              scroll-lock
+              aria-label="{{ sg_sister_label | escape }}"
+            >
+              <div class="kj-sg__inner">
+                <button
+                  ref="closeButton"
+                  on:click="/closeDialog"
+                  class="button button-unstyled close-button kj-sg__close"
+                  aria-label="{{ 'accessibility.close_dialog' | t }}"
+                  type="button"
+                >
+                  {{- 'icon-close.svg' | inline_asset_content -}}
+                </button>
+                <div class="kj-sg__panels">
+                  <div class="kj-sg__panel">
+                    <div class="kj-sg__chart">
+                      {%- if sg_sister_table != blank -%}
+                        {{ sg_sister_table }}
+                      {%- else -%}
+                        {{
+                          sg_sister_image
+                          | image_url: width: 1600
+                          | image_tag:
+                            loading: 'lazy',
+                            widths: '480, 750, 1100, 1600',
+                            sizes: '(min-width: 750px) 680px, 92vw',
+                            class: 'kj-sg__image',
+                            alt: sg_sister_image.alt | default: sg_sister_label
+                        }}
+                      {%- endif -%}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </dialog>
+          </dialog-component>
+        {%- endif -%}
       </div>
     </div>
   {%- endif -%}
@@ -58,6 +190,270 @@
     gap: 6px 18px;
   }
 
+  .kj-sg__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 0;
+    font-size: 13px;
+    font-weight: 500;
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    cursor: pointer;
+  }
+
+  .kj-sg__link svg {
+    flex: 0 0 auto;
+  }
+
+  /* The popup is a white card sized to the chart, with the close button on
+     its top-right corner. Open and close use the theme's dialog animation. */
+  .kj-sg__dialog {
+    padding: 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    width: fit-content;
+    height: fit-content;
+    max-width: none;
+    max-height: none;
+    margin: auto;
+    overflow: visible;
+  }
+
+  .kj-sg__dialog[open] {
+    animation: modalSlideInTop var(--animation-speed) var(--animation-easing) forwards;
+  }
+
+  .kj-sg__dialog.dialog-closing {
+    animation: modalSlideOutTop var(--animation-speed) var(--animation-easing) forwards;
+  }
+
+  .kj-sg__inner {
+    position: relative;
+    width: min(820px, 94vw);
+    max-height: 88dvh;
+    overflow: auto;
+    padding: 52px 20px 22px;
+    border-radius: 10px;
+    background: #fff;
+    color: #111;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
+  }
+
+  .kj-sg__close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #fff;
+    color: #111;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    z-index: 1;
+  }
+
+  .kj-sg__close svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .kj-sg__image {
+    display: block;
+    width: 100%;
+    max-width: 720px;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  /* Tabs (bra & panty sets): radios do the switching, no script. */
+  .kj-sg__tabs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin: -8px 0 18px;
+  }
+
+  .kj-sg__tab {
+    padding: 8px 18px;
+    border: 1px solid #1e1e1e;
+    background: #fff;
+    color: #1e1e1e;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+
+  .kj-sg__tab input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .kj-sg__tab:has(input:checked) {
+    background: #1e1e1e;
+    color: #fff;
+  }
+
+  .kj-sg__tab:has(input:focus-visible) {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+  }
+
+  .kj-sg__panel[hidden] {
+    display: none;
+  }
+
+  .kj-sg__inner:has(.kj-sg__tabs input[value='0']:checked) .kj-sg__panel[data-i='0'],
+  .kj-sg__inner:has(.kj-sg__tabs input[value='1']:checked) .kj-sg__panel[data-i='1'],
+  .kj-sg__inner:has(.kj-sg__tabs input[value='2']:checked) .kj-sg__panel[data-i='2'],
+  .kj-sg__inner:has(.kj-sg__tabs input[value='3']:checked) .kj-sg__panel[data-i='3'] {
+    display: block;
+  }
+
+  .kj-sg__inner:has(.kj-sg__tabs input[value='1']:checked) .kj-sg__panel[data-i='0'],
+  .kj-sg__inner:has(.kj-sg__tabs input[value='2']:checked) .kj-sg__panel[data-i='0'],
+  .kj-sg__inner:has(.kj-sg__tabs input[value='3']:checked) .kj-sg__panel[data-i='0'] {
+    display: none;
+  }
+
+  /* Chart tables (same markup as the BLS site, so charts can be shared). */
+  .bls-chart {
+    max-width: 760px;
+    margin: 0 auto;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #111;
+  }
+
+  .bls-chart__title {
+    margin: 0 0 4px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .bls-chart__unit,
+  .bls-chart__lead {
+    margin: 0 0 12px;
+    color: #555;
+    font-size: 13px;
+    text-align: center;
+  }
+
+  .bls-chart__lead {
+    max-width: 560px;
+    margin: 0 auto 18px;
+    font-size: 14px;
+  }
+
+  .bls-chart__scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border: 1px solid #e6dcd4;
+    border-radius: 4px;
+  }
+
+  .bls-chart__table {
+    width: 100%;
+    border-collapse: collapse;
+    font-variant-numeric: tabular-nums;
+    text-align: center;
+  }
+
+  .bls-chart__table th,
+  .bls-chart__table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #efe7e1;
+    white-space: nowrap;
+  }
+
+  .bls-chart__table thead th {
+    background: #ecd8c9;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  .bls-chart__table thead tr + tr th {
+    border-top: 1px solid #e0cbbb;
+    font-weight: 500;
+  }
+
+  .bls-chart__table tbody th {
+    position: sticky;
+    left: 0;
+    background: #fff;
+    font-weight: 600;
+  }
+
+  .bls-chart__table thead tr:first-child th:first-child {
+    position: sticky;
+    left: 0;
+    z-index: 1;
+  }
+
+  .bls-chart__table tbody th,
+  .bls-chart__table thead tr:first-child th:first-child {
+    box-shadow: inset -1px 0 0 #efe7e1;
+  }
+
+  .bls-chart__table tbody tr:nth-child(even) th,
+  .bls-chart__table tbody tr:nth-child(even) td {
+    background: #faf6f3;
+  }
+
+  .bls-chart__table tbody tr:last-child th,
+  .bls-chart__table tbody tr:last-child td {
+    border-bottom: 0;
+  }
+
+  .bls-chart__table--list td {
+    white-space: normal;
+    text-align: left;
+  }
+
+  .bls-chart__note {
+    margin: 12px 0 0;
+    color: #666;
+    font-size: 12px;
+    text-align: center;
+  }
+
+  .bls-chart:has(thead tr:last-child > :nth-child(2):last-child) {
+    max-width: 480px;
+  }
+
+  .bls-chart:has(thead tr:last-child > :nth-child(3):last-child) {
+    max-width: 560px;
+  }
+
+  @media screen and (max-width: 749px) {
+    .kj-sg__inner {
+      padding: 48px 12px 18px;
+    }
+
+    .bls-chart__table th,
+    .bls-chart__table td {
+      padding: 9px 10px;
+      font-size: 13px;
+    }
+  }
 {% endstylesheet %}
 
 {% schema %}
@@ -67,6 +463,9 @@
   "blocks": [
     {
       "type": "_kj-size-chart"
+    },
+    {
+      "type": "_kj-size-chart-extra"
     }
   ],
   "settings": [
@@ -74,19 +473,14 @@
       "type": "number",
       "id": "mobile_order",
       "label": "Mobile order",
-      "info": "Position on mobile. Lower = earlier. Match the size picker's Mobile order to keep the links next to it.",
+      "info": "Position on mobile. Lower = earlier. Give it the variant picker's value to sit next to the size picker.",
       "default": 0
     },
     {
       "type": "paragraph",
-      "content": "Add one Size chart block per chart. They are checked from top to bottom and the first one that matches the product is shown, so put the more specific charts first. The vendor, link labels and Sister Size image are in Theme settings > Size guide."
+      "content": "Add one Size chart per chart, specific ones first. Add an Extra size chart for a second tab (bra & panty sets). Vendors, labels and the Sister Size chart: Theme settings > Size guide."
     }
   ],
-  "presets": [
-    {
-      "name": "Size guide",
-      "category": "t:categories.product"
-    }
-  ]
+  "presets": [{ "name": "Size guide" }]
 }
 {% endschema %}

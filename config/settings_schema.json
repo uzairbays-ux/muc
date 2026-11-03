@@ -2503,6 +2503,12 @@
         "default": "Size Guide"
       },
       {
+        "type": "html",
+        "id": "kj_sister_size_table",
+        "label": "Sister Size chart as a table",
+        "info": "Shown instead of the image when filled."
+      },
+      {
         "type": "image_picker",
         "id": "kj_sister_size_image",
         "label": "Sister Size chart",

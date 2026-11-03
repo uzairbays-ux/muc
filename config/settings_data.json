@@ -113,6 +113,7 @@
     "kj_logo_badge_text": "50% OFF",
     "kj_size_guide_vendor": "British Lingerie Studio, Slips & Camis, Teens",
     "kj_size_guide_label": "Size Guide",
+    "kj_sister_size_table": "<div class=\"bls-chart\"><p class=\"bls-chart__lead\">Sister sizes are bra sizes with a similar cup volume but different band sizes. If your bra feels too tight or loose, a sister size may give you a better fit.</p><p class=\"bls-chart__title\">Most common sister sizes</p><div class=\"bls-chart__scroll\"><table class=\"bls-chart__table\"><thead><tr><th scope=\"col\">Your size</th><th scope=\"col\">Sister size</th></tr></thead><tbody><tr><th scope=\"row\">32D</th><td>34C</td></tr><tr><th scope=\"row\">34D</th><td>36C</td></tr><tr><th scope=\"row\">36B</th><td>34C</td></tr><tr><th scope=\"row\">36C</th><td>38B</td></tr><tr><th scope=\"row\">36D</th><td>34DD / 38C</td></tr><tr><th scope=\"row\">34B</th><td>32C</td></tr><tr><th scope=\"row\">32C</th><td>34B</td></tr><tr><th scope=\"row\">38C</th><td>36D</td></tr><tr><th scope=\"row\">32DD</th><td>34D</td></tr></tbody></table></div><p class=\"bls-chart__note\">Go <strong>up</strong> one band size and <strong>down</strong> one cup size, or go <strong>down</strong> one band size and <strong>up</strong> one cup size.</p></div>",
     "kj_sister_size_image": "shopify://shop_images/bls-sister-size-bra.jpg",
     "kj_sister_size_label": "Sister Size",
     "kj_pm_enabled": false,

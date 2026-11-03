@@ -1,0 +1,117 @@
+{%- doc -%}
+  Extra size chart inside the Size guide block. Every matching extra chart is
+  added to the popup as its own tab next to the main chart, e.g. bra & panty
+  sets show "Bra size | Bra & panty set | Panty size". "Rename the main
+  chart's tab" relabels the first tab (the first matching extra that sets it
+  wins). Same matching rules as a Size chart: tags or title phrases.
+{%- enddoc -%}
+
+{%- liquid
+  assign sx_product = closest.product
+  assign sx_image = block.settings.image
+  assign sx_table = block.settings.table
+  assign sx_matches = false
+  assign sx_has_chart = false
+  if sx_image != blank or sx_table != blank
+    assign sx_has_chart = true
+  endif
+
+  if sx_product != blank and sx_has_chart
+    assign sx_product_tags = sx_product.tags | join: ',' | downcase | split: ','
+    assign sx_product_title = sx_product.title | downcase
+
+    assign sx_chart_tags = block.settings.tags | downcase | split: ','
+    for sx_chart_tag in sx_chart_tags
+      assign sx_needle = sx_chart_tag | strip
+      if sx_needle != '' and sx_product_tags contains sx_needle
+        assign sx_matches = true
+        break
+      endif
+    endfor
+
+    unless sx_matches
+      assign sx_phrases = block.settings.title_contains | downcase | split: ','
+      for sx_phrase in sx_phrases
+        assign sx_needle = sx_phrase | strip
+        if sx_needle != '' and sx_product_title contains sx_needle
+          assign sx_matches = true
+          break
+        endif
+      endfor
+    endunless
+  endif
+-%}
+
+{%- if sx_matches -%}
+  {%- comment -%} The Size guide block cuts these out and turns each into a tab. {%- endcomment -%}
+  <!--kj-size-chart-extra-->
+  <!--kj-tab:{{ block.settings.tab_label | default: 'More sizes' | strip_html | replace: '-->', '' }}-->
+  <!--kj-main-tab:{{ block.settings.main_tab_label | strip_html | replace: '-->', '' }}-->
+  <div class="kj-sg__chart" {{ block.shopify_attributes }}>
+    {%- if sx_table != blank -%}
+      {{ sx_table }}
+    {%- else -%}
+      {{
+        sx_image
+        | image_url: width: 1600
+        | image_tag:
+          loading: 'lazy',
+          widths: '480, 750, 1100, 1600',
+          sizes: '(min-width: 750px) 680px, 92vw',
+          class: 'kj-sg__image',
+          alt: sx_image.alt | default: block.settings.tab_label
+      }}
+    {%- endif -%}
+  </div>
+  <!--/kj-size-chart-extra-->
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Extra size chart",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Name (only shown in the editor)"
+    },
+    {
+      "type": "html",
+      "id": "table",
+      "label": "Chart as a table",
+      "info": "Shown instead of the image when filled."
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Chart image",
+      "info": "Used when no table is filled in."
+    },
+    {
+      "type": "text",
+      "id": "tab_label",
+      "label": "Tab label",
+      "default": "More sizes"
+    },
+    {
+      "type": "text",
+      "id": "main_tab_label",
+      "label": "Rename the main chart's tab",
+      "info": "Optional, e.g. Bra size."
+    },
+    {
+      "type": "text",
+      "id": "tags",
+      "label": "Product tags",
+      "info": "Comma separated, case ignored. Any one is enough."
+    },
+    {
+      "type": "text",
+      "id": "title_contains",
+      "label": "Or title contains",
+      "info": "Comma separated phrases, case ignored."
+    }
+  ],
+  "presets": [{ "name": "Extra size chart" }]
+}
+{% endschema %}
