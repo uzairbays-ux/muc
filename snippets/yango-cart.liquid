@@ -8,8 +8,13 @@
 {% assign yango_shop_origin = 'https://shop.yango.com' %}
 {% assign extensions_origin = yango_pay_origin %}
 {% assign extensions_base_url = extensions_origin | append: '/shopify/extensions/assets/' %}
-{% assign bootstrap_script_url = extensions_base_url | append: extension_asset | append: '/js/bootstrap' %}
-{% assign styles_url = extensions_base_url | append: extension_asset | append: '/css/styles' %}
+{% comment %}
+  app_id must be on the bootstrap URL: without it Yango serves a blank merchant
+  config (no extensions), and since the Yango core is shared page-wide, that
+  blank config then breaks the product page badge too.
+{% endcomment %}
+{% assign bootstrap_script_url = extensions_base_url | append: extension_asset | append: '/js/bootstrap?app_id=' | append: yango_app_id %}
+{% assign styles_url = extensions_base_url | append: extension_asset | append: '/css/styles?app_id=' | append: yango_app_id %}
 
 {% assign extension_id = extension_type | append: '-cart' %}
 
