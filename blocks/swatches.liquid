@@ -15,7 +15,9 @@
     endif
     # Treat name-based color options as swatch options so cards use the real swatch
     # renderer (colors come from theme swatch_color_definitions), not the text-pill fallback.
-    if swatch_count > 0 or is_color_name
+    if swatch_count > 0
+      assign product_has_swatches = true
+    elsif is_color_name and product_option.values.size > 1
       assign product_has_swatches = true
     endif
     # Capture the shade/colour option so cards can show a "N Shades" count.
