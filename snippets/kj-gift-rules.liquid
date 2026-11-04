@@ -29,7 +29,7 @@
   assign first_rule = true
 -%}
 
-<script type="application/json" id="kj-gift-rules" data-slots="3" data-probe="{{ settings.kj_gwp3_enabled }}|{{ settings.kj_gwp3_gift.handle }}|{{ settings.kj_gwp3_gift.selected_or_first_available_variant.available }}|{{ settings.kj_gwp3_buy_products.size }}|{{ settings.kj_gwp3_label }}|s1:{{ settings.kj_gwp1_gift.handle }}|{{ settings.kj_gwp1_buy_products.size }}|ap:{{ all_products['maybelline-beauty-blender-foc'].title }}|raw:{{ settings.kj_gwp3_gift }}|buy:{{ settings.kj_gwp3_buy_products[0].handle }}|ap2:{{ all_products['maybelline-beauty-blender-foc'].selected_or_first_available_variant.id }}">
+<script type="application/json" id="kj-gift-rules">
 {
   "rules": [
     {%- if settings.kj_gwp_maybelline_enabled and pouch != blank and pouch_variant.available -%}
@@ -73,6 +73,11 @@
         assign k_qty = 'kj_gwp' | append: n | append: '_qty'
         assign k_pri = 'kj_gwp' | append: n | append: '_priority'
         assign slot_gift = settings[k_gift]
+        # Settings synced from GitHub hold plain handles until the theme editor
+        # saves them, so resolve a handle string into the product ourselves.
+        if slot_gift != blank and slot_gift.handle == blank
+          assign slot_gift = all_products[slot_gift]
+        endif
         assign slot_variant = slot_gift.selected_or_first_available_variant
         assign slot_prods = settings[k_prods]
         assign slot_coll = settings[k_coll]
@@ -90,8 +95,10 @@
             "triggerProductIds": [
               {%- assign t_first = true -%}
               {%- for p in slot_prods -%}
-                {%- if p.id != slot_gift.id -%}
-                  {%- unless t_first -%},{%- endunless -%}{{ p.id }}{%- assign t_first = false -%}
+                {%- assign tp = p -%}
+                {%- if tp.handle == blank -%}{%- assign tp = all_products[tp] -%}{%- endif -%}
+                {%- if tp != blank and tp.id != slot_gift.id -%}
+                  {%- unless t_first -%},{%- endunless -%}{{ tp.id }}{%- assign t_first = false -%}
                 {%- endif -%}
               {%- endfor -%}
               {%- if slot_coll != blank -%}

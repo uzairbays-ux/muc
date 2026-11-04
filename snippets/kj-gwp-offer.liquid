@@ -29,6 +29,11 @@
       assign k_coll = 'kj_gwp' | append: n | append: '_buy_collection'
       assign k_pri = 'kj_gwp' | append: n | append: '_priority'
       assign g = settings[k_gift]
+      # Settings synced from GitHub hold plain handles until the theme editor
+      # saves them, so resolve a handle string into the product ourselves.
+      if g != blank and g.handle == blank
+        assign g = all_products[g]
+      endif
       assign gv = g.selected_or_first_available_variant
       if g == blank or gv.available == false or g.id == go_p.id
         continue
@@ -36,7 +41,8 @@
 
       assign hit = false
       for bp in settings[k_prods]
-        if bp.id == go_p.id
+        assign bp_handle = bp.handle | default: bp
+        if bp_handle == go_p.handle
           assign hit = true
           break
         endif
@@ -65,6 +71,9 @@
     assign k_gift = 'kj_gwp' | append: go_best | append: '_gift'
     assign k_qty = 'kj_gwp' | append: go_best | append: '_qty'
     assign g = settings[k_gift]
+    if g != blank and g.handle == blank
+      assign g = all_products[g]
+    endif
     assign gv = g.selected_or_first_available_variant
     assign g_name = g.title | split: ' - ' | last | strip
     assign g_qty = settings[k_qty] | default: 2
