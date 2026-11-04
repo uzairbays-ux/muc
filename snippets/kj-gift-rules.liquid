@@ -10,8 +10,10 @@
   pouch rule also needs Theme settings > Gift with purchase switched on.
 
   Triggers are the exact product scope of the discount:
-  - Promotion slots 1-2: set in Theme settings > Gift with purchase
-    (2026-10-16: "Maybelline - Pink Mirror" and "L'Oreal - Pink Pouch").
+  - Promotion slots 1-3: set in Theme settings > Gift with purchase
+    (2026-10-16: "Maybelline - Pink Mirror" and "L'Oreal - Pink Pouch";
+    2026-11-04: slot 3 "Maybelline - Beauty Blender", buy 1 Fit Me Spot
+    Rescue Concealer, 1 gift per order).
   - "Maybelline Pouch": buy 2 from collection `maybelline`, get Makeup Pouch.
   - "Lifter Glaze": buy 2 Lifter Glaze Tinted Lip Oil Balm, get the Charm.
 {%- endcomment -%}
@@ -58,11 +60,11 @@
       }
     {%- endif -%}
     {%- comment -%}
-      Promotion slots 1-2, configured in Theme settings > Gift with purchase.
+      Promotion slots 1-3, configured in Theme settings > Gift with purchase.
       Triggers are the discount's "customer buys" scope: listed products, or a
       collection. The gift itself never counts toward its own trigger.
     {%- endcomment -%}
-    {%- for n in (1..2) -%}
+    {%- for n in (1..3) -%}
       {%- liquid
         assign k_on = 'kj_gwp' | append: n | append: '_enabled'
         assign k_gift = 'kj_gwp' | append: n | append: '_gift'

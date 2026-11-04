@@ -19,7 +19,7 @@
   assign go_best_pri = 0
 
   if go_p != blank
-    for n in (1..2)
+    for n in (1..3)
       assign k_on = 'kj_gwp' | append: n | append: '_enabled'
       unless settings[k_on]
         continue

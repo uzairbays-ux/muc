@@ -106,6 +106,14 @@
     ],
     "kj_gwp2_qty": 1,
     "kj_gwp2_priority": 5,
+    "kj_gwp3_enabled": true,
+    "kj_gwp3_label": "Maybelline - Beauty Blender",
+    "kj_gwp3_gift": "maybelline-beauty-blender-foc",
+    "kj_gwp3_buy_products": [
+      "maybelline-fit-me-spot-rescue-concealer-with-1-5-salicylic-acid-vitamin-c"
+    ],
+    "kj_gwp3_qty": 1,
+    "kj_gwp3_priority": 7,
     "kj_sc_collection": "st-london",
     "kj_sc_ranges": "ST London - Velvet Ultra Matt Lipstick - \nST London - Matt Moist Long-Lasting Lipstick - \nST London - Colorist Nail Paint -",
     "kj_yango_enabled": true,

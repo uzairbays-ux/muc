@@ -2414,6 +2414,59 @@
         "max": 10,
         "step": 1,
         "default": 5
+      },
+      {
+        "type": "header",
+        "content": "Promotion 3"
+      },
+      {
+        "type": "checkbox",
+        "id": "kj_gwp3_enabled",
+        "label": "Auto-add this gift",
+        "info": "Switch off the day the matching automatic discount ends, or the gift is added at full price.",
+        "default": false
+      },
+      {
+        "type": "text",
+        "id": "kj_gwp3_label",
+        "label": "Name (as in Shopify Discounts)",
+        "default": ""
+      },
+      {
+        "type": "product",
+        "id": "kj_gwp3_gift",
+        "label": "Free gift product"
+      },
+      {
+        "type": "product_list",
+        "id": "kj_gwp3_buy_products",
+        "label": "Customer buys any of these products",
+        "limit": 50
+      },
+      {
+        "type": "collection",
+        "id": "kj_gwp3_buy_collection",
+        "label": "…or any product in this collection",
+        "info": "Use either the products above or a collection, exactly as the discount is set up."
+      },
+      {
+        "type": "range",
+        "id": "kj_gwp3_qty",
+        "label": "Minimum quantity",
+        "min": 1,
+        "max": 10,
+        "step": 1,
+        "default": 2
+      },
+      {
+        "type": "range",
+        "id": "kj_gwp3_priority",
+        "label": "Priority when several promotions qualify",
+        "info": "Only one gift is added, because the discounts don't combine. Higher wins.",
+        "min": 1,
+        "max": 10,
+        "step": 1,
+        "default": 5
       }
     ]
   },
