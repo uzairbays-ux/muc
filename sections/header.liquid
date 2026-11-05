@@ -282,17 +282,57 @@
   {% endif %}
 {% endcapture %}
 
+{%- liquid
+  # muc: brand entity for search and AI engines. Social profiles and contact
+  # details come from Theme settings > SEO & organization.
+  assign kj_same_as = ''
+  for kj_link in settings.kj_org_instagram,settings.kj_org_facebook,settings.kj_org_tiktok,settings.kj_org_youtube
+    if kj_link != blank
+      assign kj_same_as = kj_same_as | append: kj_link | append: '|'
+    endif
+  endfor
+  assign kj_same_as_list = kj_same_as | split: '|'
+-%}
 <script type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": "Organization",
+    "@id": {{ request.origin | append: '/#organization' | json }},
     "name": {{ shop.name | json }},
     {% if settings.logo %}
       "logo": {{ settings.logo | image_url: width: 500 | prepend: "https:" | json }},
     {% endif %}
-    "url": {{ request.origin | append: page.url | json }}
+    {% if kj_same_as_list.size > 0 %}
+      "sameAs": {{ kj_same_as_list | json }},
+    {% endif %}
+    {% if settings.kj_org_phone != blank or settings.kj_org_email != blank %}
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        {% if settings.kj_org_phone != blank %}"telephone": {{ settings.kj_org_phone | json }},{% endif %}
+        {% if settings.kj_org_email != blank %}"email": {{ settings.kj_org_email | json }},{% endif %}
+        "areaServed": "PK"
+      },
+    {% endif %}
+    "url": {{ request.origin | json }}
   }
 </script>
+{%- if request.page_type == 'index' -%}
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "WebSite",
+      "name": {{ shop.name | json }},
+      "url": {{ request.origin | json }},
+      "publisher": { "@id": {{ request.origin | append: '/#organization' | json }} },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {{ request.origin | append: '/search?q={search_term_string}&type=product' | json }},
+        "query-input": "required name=search_term_string"
+      }
+    }
+  </script>
+{%- endif -%}
 
 <header-component
   id="header-component"

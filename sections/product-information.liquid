@@ -3,6 +3,54 @@
 <script type="application/ld+json">
   {{ closest.product | structured_data }}
 </script>
+{%- liquid
+  # muc: Judge.me keeps the rating in the reviews.* metafields but outputs no
+  # schema, so add aggregateRating to the same product node (same @id as
+  # Shopify's structured_data) when the product has reviews.
+  assign kj_rc = closest.product.metafields.reviews.rating_count | plus: 0
+  assign kj_rv = closest.product.metafields.reviews.rating.value.rating
+  if kj_rv == blank
+    assign kj_rv = closest.product.metafields.reviews.rating.value
+  endif
+  assign kj_rmax = closest.product.metafields.reviews.rating.value.scale_max | default: 5
+-%}
+{%- if kj_rc > 0 and kj_rv != blank -%}
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org/",
+      "@id": {{ closest.product.url | append: '#product' | json }},
+      "@type": "Product",
+      "name": {{ closest.product.title | json }},
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": {{ kj_rv | json }},
+        "bestRating": {{ kj_rmax | json }},
+        "reviewCount": {{ kj_rc | json }}
+      }
+    }
+  </script>
+{%- endif -%}
+{%- liquid
+  assign kj_bc_coll = closest.product.collections | where: 'handle', collection.handle | first
+  if kj_bc_coll == blank
+    assign kj_bc_coll = closest.product.collections | first
+  endif
+-%}
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": {{ request.origin | json }} }
+      {%- if kj_bc_coll != blank -%}
+        ,{ "@type": "ListItem", "position": 2, "name": {{ kj_bc_coll.title | json }}, "item": {{ request.origin | append: kj_bc_coll.url | json }} }
+        ,{ "@type": "ListItem", "position": 3, "name": {{ closest.product.title | json }}, "item": {{ request.origin | append: closest.product.url | json }} }
+      {%- else -%}
+        ,{ "@type": "ListItem", "position": 2, "name": {{ closest.product.title | json }}, "item": {{ request.origin | append: closest.product.url | json }} }
+      {%- endif -%}
+    ]
+  }
+</script>
 
 {% capture media_gallery %}
   {%- content_for 'block',

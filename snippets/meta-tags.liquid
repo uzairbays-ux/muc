@@ -28,7 +28,34 @@
   assign og_title = page_title | default: shop.name
   assign og_url = canonical_url | default: request.origin
   assign og_type = 'website'
-  assign og_description = page_description | default: shop.description | default: shop.name
+
+  # muc: a description for every page. Shopify's page_description is blank on
+  # pages without an SEO description, and on products it is the first 320
+  # characters of the description, which search engines cut off anyway.
+  assign kj_description = page_description
+  if kj_description == blank
+    case request.page_type
+      when 'collection'
+        assign kj_description = 'Shop ' | append: collection.title | append: ' online in Pakistan at Makeup City: ' | append: collection.products_count | append: ' 100% original products from 150+ brands, with free delivery on orders over PKR 5,000.'
+      when 'page'
+        assign kj_description = page.content | strip_html | strip_newlines | truncate: 155
+      when 'blog'
+        assign kj_description = blog.title | append: ': beauty tips, tutorials and product guides from Makeup City Pakistan.'
+      when 'article'
+        assign kj_description = article.excerpt_or_content | strip_html | strip_newlines | truncate: 155
+      when 'search'
+        assign kj_description = 'Search 150+ original makeup, skincare, hair care and fragrance brands at Makeup City Pakistan.'
+    endcase
+  elsif kj_description.size > 170
+    assign kj_description = kj_description | strip_newlines | truncate: 155
+  endif
+  if kj_description == blank
+    assign kj_description = shop.description | default: shop.name
+  endif
+  assign og_description = kj_description
+
+  # muc: share image fallback for pages that have none of their own.
+  assign kj_page_image = page_image | default: settings.kj_share_image | default: settings.logo
 
   if request.page_type == 'product'
     assign og_type = 'product'
@@ -60,22 +87,22 @@
   content="{{ og_description | escape }}"
 >
 
-{%- if page_image -%}
+{%- if kj_page_image -%}
   <meta
     property="og:image"
-    content="http:{{ page_image | image_url }}"
+    content="http:{{ kj_page_image | image_url: width: 1200 }}"
   >
   <meta
     property="og:image:secure_url"
-    content="https:{{ page_image | image_url }}"
+    content="https:{{ kj_page_image | image_url: width: 1200 }}"
   >
   <meta
     property="og:image:width"
-    content="{{ page_image.width }}"
+    content="{{ kj_page_image.width }}"
   >
   <meta
     property="og:image:height"
-    content="{{ page_image.height }}"
+    content="{{ kj_page_image.height }}"
   >
 {%- endif -%}
 
@@ -113,7 +140,8 @@
   {{ page_title }}
   {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
   {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%}
-  {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
+  {%- comment -%} muc: the homepage title already names the brand; no suffix there. {%- endcomment -%}
+  {%- unless page_title contains shop.name or request.page_type == 'index' %} &ndash; {{ shop.name }}{% endunless -%}
 </title>
 
 <link
@@ -121,9 +149,9 @@
   href="{{ canonical_url }}"
 >
 
-{% if page_description %}
+{% if kj_description != blank %}
   <meta
     name="description"
-    content="{{ page_description | escape }}"
+    content="{{ kj_description | escape }}"
   >
 {% endif %}

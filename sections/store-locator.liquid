@@ -25,7 +25,7 @@
     {%- comment -%} ── Header ── {%- endcomment -%}
     <div class="store-locator__header">
       {%- if s.heading != blank -%}
-        <h2 class="store-locator__heading">{{ s.heading }}</h2>
+        <h1 class="store-locator__heading">{{ s.heading }}</h1>
       {%- endif -%}
       {%- if s.subheading != blank -%}
         <p class="store-locator__subheading">{{ s.subheading }}</p>
@@ -566,6 +566,42 @@
   })();
 </script>
 
+{%- comment -%} muc: one Store entry per branch, so search and AI engines can read the locations. {%- endcomment -%}
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "ItemList",
+    "name": "Makeup City stores in Pakistan",
+    "itemListElement": [
+      {%- assign kj_pos = 0 -%}
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'store' and block.settings.name != blank -%}
+          {%- assign kj_pos = kj_pos | plus: 1 -%}
+          {%- unless kj_pos == 1 -%},{%- endunless -%}
+          {
+            "@type": "ListItem",
+            "position": {{ kj_pos }},
+            "item": {
+              "@type": "Store",
+              "name": {{ 'Makeup City - ' | append: block.settings.name | json }},
+              "parentOrganization": { "@id": {{ request.origin | append: '/#organization' | json }} },
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": {{ block.settings.address | strip_newlines | strip | json }},
+                "addressLocality": {{ block.settings.city | json }},
+                {% if block.settings.postal_code != blank %}"postalCode": {{ block.settings.postal_code | json }},{% endif %}
+                "addressCountry": "PK"
+              }
+              {%- if block.settings.phone != blank -%},"telephone": {{ block.settings.phone | json }}{%- endif -%}
+              {%- if block.settings.hours != blank -%},"openingHours": {{ block.settings.hours | strip_newlines | strip | json }}{%- endif -%}
+              {%- if block.settings.directions_url != blank -%},"hasMap": {{ block.settings.directions_url | json }}{%- endif -%}
+            }
+          }
+        {%- endif -%}
+      {%- endfor -%}
+    ]
+  }
+</script>
 {% schema %}
 {
   "name": "Store locator",
