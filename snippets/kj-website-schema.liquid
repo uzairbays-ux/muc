@@ -12,7 +12,7 @@
       "publisher": { "@id": {{ request.origin | append: '/#organization' | json }} },
       "potentialAction": {
         "@type": "SearchAction",
-        "target": {{ request.origin | append: '/search?q={search_term_string}&type=product' | json }},
+        "target": "{{ request.origin }}{{ routes.search_url }}?q={search_term_string}&type=product",
         "query-input": "required name=search_term_string"
       }
     }
