@@ -433,7 +433,7 @@
           "type": "card",
           "name": "FreshLabs",
           "settings": {
-            "image": "shopify://shop_images/FreshLabs_1.webp",
+            "image": "shopify://shop_images/FreshLab_jpg.jpg",
             "link": "shopify://collections/freshlabs",
             "open_new_tab": false
           }
@@ -875,7 +875,7 @@
           "type": "card",
           "name": "Framesi",
           "settings": {
-            "image": "shopify://shop_images/framesi_0b397ba1-effa-407a-bdf8-da064631d275.webp",
+            "image": "shopify://shop_images/Framesi_38145d08-e429-41ff-9f7a-bc9dbfea1f01.jpg",
             "link": "shopify://collections/framesi",
             "open_new_tab": false
           }
@@ -902,7 +902,7 @@
           "type": "card",
           "name": "Estelin",
           "settings": {
-            "image": "shopify://shop_images/Estelin_7e2a140a-9f71-417c-bf87-ecc392e9ab12.webp",
+            "image": "shopify://shop_images/Esteline_jpg.jpg",
             "link": "shopify://collections/estelin",
             "open_new_tab": false
           }
@@ -956,8 +956,8 @@
         "mobile_columns": "2",
         "desktop_slider_per_view": "4",
         "mobile_slider_per_view": "2",
-        "show_arrows": false,
-        "auto_rotate": false,
+        "show_arrows": true,
+        "auto_rotate": true,
         "rotate_interval": 4,
         "gap": 10,
         "desktop_side_padding": 0,
