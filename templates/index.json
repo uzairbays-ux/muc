@@ -2277,6 +2277,7 @@
         },
         "category_pjBD9X": {
           "type": "category",
+          "name": "St.Ives",
           "settings": {
             "image": "shopify://shop_images/St_Ives_0651bdd5-e690-4100-a86c-d7ad682bf8e4.jpg",
             "label": "",
@@ -2286,6 +2287,7 @@
         },
         "category_Xea9DL": {
           "type": "category",
+          "name": "Color WOW",
           "settings": {
             "image": "shopify://shop_images/Colorwow.webp",
             "label": "",
@@ -2295,6 +2297,7 @@
         },
         "category_W3MDAj": {
           "type": "category",
+          "name": "Femina",
           "settings": {
             "image": "shopify://shop_images/Femina_3f42255a-ed9a-4c70-aa6c-f9bc347723e6.webp",
             "label": "",
