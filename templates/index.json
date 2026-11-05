@@ -864,6 +864,7 @@
       "blocks": {
         "card_CaecqX": {
           "type": "card",
+          "name": "Kryolan",
           "settings": {
             "image": "shopify://shop_images/Kryolan_08212d1d-318d-483d-9394-c82aea322f03.webp",
             "link": "shopify://collections/kryolan",
@@ -872,6 +873,7 @@
         },
         "card_QQLjCx": {
           "type": "card",
+          "name": "Framesi",
           "settings": {
             "image": "shopify://shop_images/framesi_0b397ba1-effa-407a-bdf8-da064631d275.webp",
             "link": "shopify://collections/framesi",
@@ -880,6 +882,7 @@
         },
         "card_p9kYBe": {
           "type": "card",
+          "name": "Luscious Cosmetics",
           "settings": {
             "image": "shopify://shop_images/non-sale-luscious.webp",
             "link": "shopify://collections/luscious-cosmetics",
@@ -888,6 +891,7 @@
         },
         "card_pfpRwk": {
           "type": "card",
+          "name": "Luxe Basics",
           "settings": {
             "image": "shopify://shop_images/Luxe_basics_e03829c6-2b5d-4089-997e-8acf9d03c196.webp",
             "link": "shopify://collections/luxe-basics",
@@ -896,6 +900,7 @@
         },
         "card_L4QwKh": {
           "type": "card",
+          "name": "Estelin",
           "settings": {
             "image": "shopify://shop_images/Estelin_7e2a140a-9f71-417c-bf87-ecc392e9ab12.webp",
             "link": "shopify://collections/estelin",
