@@ -10,6 +10,7 @@
   assign bt_product = closest.product
 -%}
 {%- if bt_product != blank -%}
+  <span class="kj-up__sentinel" aria-hidden="true"></span>
   <kj-cart-upsell
     class="kj-up kj-up--pdp"
     data-section-id="{{ section.id }}"

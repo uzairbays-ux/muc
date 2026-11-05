@@ -20,6 +20,7 @@
   assign up_collection = collection | default: 'bestsellers'
 -%}
 {%- if up_mode == 'empty' -%}
+  <span class="kj-up__sentinel" aria-hidden="true"></span>
   <kj-cart-upsell class="kj-up kj-up--empty" data-section-id="{{ section.id }}" data-collection="{{ up_collection }}" hidden>
     <p class="kj-up__kicker">Nothing in here but good intentions.</p>
     <p class="kj-up__heading">Everyone else is adding these</p>
@@ -47,6 +48,7 @@
       assign up_source = cart.items.first.product_id | append: ','
     endif
   -%}
+  <span class="kj-up__sentinel" aria-hidden="true"></span>
   <kj-cart-upsell
     class="kj-up"
     data-section-id="{{ section.id }}"
@@ -65,6 +67,7 @@
   .kj-up--empty { margin: 6px 0 18px; }
   .kj-up__kicker { margin: 0 0 2px; font-size: 13px; opacity: 0.75; }
   .kj-up[hidden] { display: none; }
+  .kj-up__sentinel { display: block; width: 1px; height: 1px; margin: 0; }
   .kj-up__heading { margin: 0 0 10px; font-size: 13px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: var(--color-primary-button-background, #eb1d23); }
   .kj-up__heading::before { content: '\2728'; margin-right: 6px; }
   .kj-up__list { display: flex; gap: 12px; margin: 0; padding: 0 0 6px; list-style: none; overflow-x: auto; scroll-snap-type: x proximity; -webkit-overflow-scrolling: touch; scrollbar-width: thin; }

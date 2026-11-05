@@ -74,7 +74,10 @@ class KjCartUpsell extends HTMLElement {
       this.io ??= new IntersectionObserver((entries) => {
         if (entries.some((e) => e.isIntersecting)) { this.seen = true; this.io.disconnect(); this.schedule(); }
       }, { rootMargin: '200px' });
-      this.io.observe(this);
+      // The row itself is hidden until filled, and a hidden element has no box
+      // to intersect, so watch the sentinel placed right before it instead.
+      const prev = this.previousElementSibling;
+      this.io.observe(prev && prev.classList.contains('kj-up__sentinel') ? prev : this);
     } else {
       this.seen = true;
       this.schedule();
