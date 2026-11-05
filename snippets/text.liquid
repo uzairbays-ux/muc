@@ -103,6 +103,17 @@
     assign kj_from_raw = '/collections/vendors?q=' | append: kj_vendor_raw
     assign kj_to = '/search?type=product&amp;q=vendor%3A%22' | append: kj_vendor_encoded | append: '%22'
     assign kj_text = kj_text | replace: kj_from_escaped, kj_to | replace: kj_from_raw, kj_to
+
+    # muc: show the product type next to the brand ("Maybelline · Concealers"),
+    # linked to a type search. Settings can't hold {% if %} logic, so it is
+    # appended here, only when the block is the brand line and a type is set.
+    assign kj_type = closest.product.type
+    if kj_type != blank and kj_text contains '</a></p>'
+      assign kj_type_encoded = kj_type | url_encode
+      assign kj_type_escaped = kj_type | escape
+      assign kj_type_link = '</a> <span aria-hidden="true">&middot;</span> <a href="/search?type=product&amp;q=product_type%3A%22' | append: kj_type_encoded | append: '%22">' | append: kj_type_escaped | append: '</a></p>'
+      assign kj_text = kj_text | replace_first: '</a></p>', kj_type_link
+    endif
   endif
   if kj_title != blank and kj_title contains 'BLS - '
     assign kj_vendors = settings.kj_size_guide_vendor | default: 'British Lingerie Studio' | downcase | split: ','

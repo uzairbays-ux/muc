@@ -131,7 +131,7 @@
                   "name": "Product Vendor",
                   "settings": {
                     "mobile_order": 0,
-                    "text": "<p><a href=\"/collections/vendors?q={{ closest.product.vendor | url_encode }}\">{{ closest.product.vendor }}</a>{% if closest.product.type != blank %} <span aria-hidden=\"true\">·</span> <a href=\"/collections/types?q={{ closest.product.type | url_encode }}\">{{ closest.product.type }}</a>{% endif %}</p>",
+                    "text": "<p><a href=\"/collections/vendors?q={{ closest.product.vendor }}\">{{ closest.product.vendor }}</a></p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
