@@ -104,7 +104,7 @@
     assign kj_to = '/search?type=product&amp;q=vendor%3A%22' | append: kj_vendor_encoded | append: '%22'
     assign kj_text = kj_text | replace: kj_from_escaped, kj_to | replace: kj_from_raw, kj_to
 
-    # muc: show the product type next to the brand ("Maybelline · Concealers"),
+    # muc: show the product type next to the brand, e.g. "Maybelline · Concealers",
     # linked to a type search. Settings can't hold {% if %} logic, so it is
     # appended here, only when the block is the brand line and a type is set.
     assign kj_type = closest.product.type
