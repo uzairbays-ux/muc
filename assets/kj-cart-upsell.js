@@ -32,6 +32,27 @@ async function recommendationsFor(ids) {
   return cache.get(key);
 }
 
+// Empty cart: a collection (bestsellers) instead of recommendations. The
+// collection JSON has a different shape, so normalise it to the recommendations one.
+async function collectionProducts(handle) {
+  const key = 'c:' + handle;
+  if (!cache.has(key)) {
+    cache.set(key, fetch(`/collections/${handle}/products.json?limit=12`)
+      .then((r) => (r.ok ? r.json() : { products: [] }))
+      .then((d) => d.products.map((p) => {
+        const cents = (x) => (x == null ? null : Math.round(parseFloat(x) * 100));
+        const variants = p.variants.map((v) => ({ id: v.id, available: v.available, price: cents(v.price) }));
+        const first = variants.find((v) => v.available) || variants[0];
+        const cap = cents((p.variants.find((v) => v.available) || p.variants[0] || {}).compare_at_price);
+        return { id: p.id, handle: p.handle, title: p.title, type: p.product_type, url: '/products/' + p.handle,
+          available: variants.some((v) => v.available), price: first ? first.price : 0, compare_at_price: cap || 0,
+          featured_image: p.images && p.images[0] ? p.images[0].src : null, variants };
+      }))
+      .catch(() => []));
+  }
+  return cache.get(key);
+}
+
 class KjCartUpsell extends HTMLElement {
   // The drawer updates by morphing the DOM against the server's HTML, which
   // empties our list and puts `hidden` back without re-inserting the element,
@@ -65,10 +86,12 @@ class KjCartUpsell extends HTMLElement {
     if (!list || list.children.length) return; // already filled
     const ids = (this.dataset.sourceIds || '').split(',').filter(Boolean);
     const inCart = new Set((this.dataset.inCart || '').split(',').filter(Boolean).map(Number));
-    if (!ids.length) return;
-    const products = (await recommendationsFor(ids))
+    const handle = this.dataset.collection;
+    if (!ids.length && !handle) return;
+    const pool = handle ? await collectionProducts(handle) : await recommendationsFor(ids);
+    const products = pool
       .filter((p) => p.available && !inCart.has(p.id) && !isGift(p))
-      .slice(0, 6);
+      .slice(0, handle ? 8 : 6);
     const target = this.querySelector('[data-kj-up-list]');
     if (!this.isConnected || !target || target.children.length || !products.length) return;
     target.innerHTML = products.map((p) => this.card(p)).join('');
@@ -78,7 +101,7 @@ class KjCartUpsell extends HTMLElement {
   card(p) {
     const v = p.variants.find((x) => x.available) || p.variants[0];
     const url = `${p.url}${p.url.includes('?') ? '&' : '?'}${UTM}`; // recommendation urls already carry pr_* params
-    const img = p.featured_image ? `<img src="${p.featured_image}&width=300" alt="" loading="lazy" width="132" height="132">` : '';
+    const img = p.featured_image ? `<img src="${p.featured_image}${p.featured_image.includes('?') ? '&' : '?'}width=300" alt="" loading="lazy" width="132" height="132">` : '';
     const off = p.compare_at_price > p.price ? `<span class="kj-up__off">${Math.round((1 - p.price / p.compare_at_price) * 100)}% off</span>` : '';
     const price = p.compare_at_price > p.price ? `<s>${money(p.compare_at_price)}</s>${money(p.price)}` : money(p.price);
     const title = p.title.replace(/^[^-]+-\s*/, ''); // drop the "Brand - " prefix, the card is small

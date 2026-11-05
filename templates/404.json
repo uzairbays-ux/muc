@@ -15,7 +15,7 @@
           "type": "text",
           "name": "t:names.text",
           "settings": {
-            "text": "<h1>Page not found</h1>",
+            "text": "<h1>404: lipstick not found.</h1>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
@@ -41,7 +41,7 @@
           "type": "text",
           "name": "t:names.text",
           "settings": {
-            "text": "<p>The link may be incorrect, or the page has been removed. </p>",
+            "text": "<p>This page went for a touch-up and never came back. The link may be old, or the page got swatched out. Our bestsellers are right here, though.</p>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
@@ -67,7 +67,7 @@
           "type": "button",
           "name": "t:names.button",
           "settings": {
-            "label": "Continue shopping",
+            "label": "Back to shopping",
             "link": "shopify://collections/all",
             "open_in_new_tab": false,
             "style_class": "button",
@@ -136,7 +136,7 @@
               "type": "text",
               "name": "t:names.text",
               "settings": {
-                "text": "<p>Discover something new</p>",
+                "text": "<p>Flying off the shelves right now</p>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -255,7 +255,7 @@
       },
       "name": "Featured collection",
       "settings": {
-        "collection": "all",
+        "collection": "bestsellers",
         "layout_type": "grid",
         "carousel_on_mobile": false,
         "max_products": 4,

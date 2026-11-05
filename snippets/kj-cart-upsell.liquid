@@ -12,7 +12,20 @@
   Rendered by snippets/header-actions.liquid (drawer only); the cart page has
   its own "You may also like" section.
 {%- endcomment -%}
-{%- if cart.item_count > 0 -%}
+{%- liquid
+  # mode 'empty': bestsellers row for the empty cart (drawer and cart page),
+  # fed from a collection instead of recommendations. Default: recommendations
+  # for the newest real purchase in the cart.
+  assign up_mode = mode | default: 'cart'
+  assign up_collection = collection | default: 'bestsellers'
+-%}
+{%- if up_mode == 'empty' -%}
+  <kj-cart-upsell class="kj-up kj-up--empty" data-section-id="{{ section.id }}" data-collection="{{ up_collection }}" hidden>
+    <p class="kj-up__kicker">Nothing in here but good intentions.</p>
+    <p class="kj-up__heading">Everyone else is adding these</p>
+    <ul class="kj-up__list" role="list" data-kj-up-list></ul>
+  </kj-cart-upsell>
+{%- elsif cart.item_count > 0 -%}
   {%- liquid
     assign up_source = ''
     assign up_in_cart = ''
@@ -39,7 +52,6 @@
     data-section-id="{{ section.id }}"
     data-source-ids="{{ up_source }}"
     data-in-cart="{{ up_in_cart }}"
-    data-heading="{{ settings.kj_up_heading | default: 'You may also like' | escape }}"
     hidden
   >
     <p class="kj-up__heading">{{ settings.kj_up_heading | default: 'You may also like' | escape }}</p>
@@ -48,13 +60,17 @@
 {%- endif -%}
 
 {% stylesheet %}
-  .kj-up { display: block; margin: 18px 0 6px; padding-top: 16px; border-top: 1px solid rgb(var(--color-border-rgb, 0 0 0) / 0.12); }
+  /* A tinted band, so the row reads as its own thing under the cart lines. */
+  .kj-up { display: block; margin: 18px 0 6px; padding: 14px 12px 8px; border-radius: 12px; background: #fff3f4; }
+  .kj-up--empty { margin: 6px 0 18px; }
+  .kj-up__kicker { margin: 0 0 2px; font-size: 13px; opacity: 0.75; }
   .kj-up[hidden] { display: none; }
-  .kj-up__heading { margin: 0 0 10px; font-size: 13px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; }
+  .kj-up__heading { margin: 0 0 10px; font-size: 13px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: var(--color-primary-button-background, #eb1d23); }
+  .kj-up__heading::before { content: '\2728'; margin-right: 6px; }
   .kj-up__list { display: flex; gap: 12px; margin: 0; padding: 0 0 6px; list-style: none; overflow-x: auto; scroll-snap-type: x proximity; -webkit-overflow-scrolling: touch; scrollbar-width: thin; }
   .kj-up__item { flex: 0 0 132px; display: flex; flex-direction: column; gap: 6px; scroll-snap-align: start; min-width: 0; }
   .kj-up__link { display: flex; flex-direction: column; gap: 6px; color: inherit; text-decoration: none; }
-  .kj-up__img { position: relative; aspect-ratio: 1; border-radius: 8px; overflow: hidden; background: #f6f6f6; }
+  .kj-up__img { position: relative; aspect-ratio: 1; border-radius: 8px; overflow: hidden; background: #fff; }
   .kj-up__img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
   .kj-up__off { position: absolute; top: 6px; left: 6px; padding: 2px 6px; border-radius: 4px; background: var(--color-primary-button-background, #eb1d23); color: #fff; font-size: 10px; font-weight: 700; }
   .kj-up__title { font-size: 12px; line-height: 1.3; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; min-height: 2.6em; }

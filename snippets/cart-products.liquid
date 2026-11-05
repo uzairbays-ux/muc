@@ -44,6 +44,7 @@
       </p>
     {%- endif -%}
 
+    {% render 'kj-cart-upsell', mode: 'empty', collection: 'bestsellers' %}
     <a
       class="button cart-items__empty-button"
       href="{{ settings.empty_cart_button_link | default: routes.all_products_collection_url }}"
