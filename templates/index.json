@@ -369,7 +369,7 @@
           "type": "card",
           "name": "L.A. Girl",
           "settings": {
-            "image": "shopify://shop_images/lagirl.webp",
+            "image": "shopify://shop_images/La-Girl.jpg",
             "link": "shopify://collections/l-a-girl",
             "open_new_tab": false
           }
@@ -424,7 +424,7 @@
           "type": "card",
           "name": "La Roche Posay",
           "settings": {
-            "image": "shopify://shop_images/la-roche-posay.webp",
+            "image": "shopify://shop_images/la-roche-posay_3d1f5643-e913-4193-a6ab-9f3adc87ceb5.jpg",
             "link": "shopify://collections/la-roche-posay",
             "open_new_tab": false
           }
@@ -866,7 +866,7 @@
           "type": "card",
           "name": "Kryolan",
           "settings": {
-            "image": "shopify://shop_images/Kryolan_08212d1d-318d-483d-9394-c82aea322f03.webp",
+            "image": "shopify://shop_images/Kryolan_40632c7b-c736-45fd-ab26-3cd265219f67.jpg",
             "link": "shopify://collections/kryolan",
             "open_new_tab": false
           }
@@ -884,7 +884,7 @@
           "type": "card",
           "name": "Luscious Cosmetics",
           "settings": {
-            "image": "shopify://shop_images/non-sale-luscious.webp",
+            "image": "shopify://shop_images/Luscious_af9a21e3-dd1e-42f4-848d-2a9271675839.jpg",
             "link": "shopify://collections/luscious-cosmetics",
             "open_new_tab": false
           }
@@ -1015,7 +1015,7 @@
           "type": "card",
           "name": "Lamel",
           "settings": {
-            "image": "shopify://shop_images/non-sale-Lamel.webp",
+            "image": "shopify://shop_images/Lamel_63c20e38-d3f8-4728-9b59-39ac6e7de124.jpg",
             "link": "shopify://collections/lamel",
             "open_new_tab": false
           }
@@ -1024,7 +1024,7 @@
           "type": "card",
           "name": "L'Oréal Paris",
           "settings": {
-            "image": "shopify://shop_images/WhatsApp_Image_2026-10-16_at_17.27.07.jpg",
+            "image": "shopify://shop_images/loreal_8e50d171-e3c6-4f9b-8fef-749046532060.jpg",
             "link": "shopify://collections/loreal-paris",
             "open_new_tab": false
           }
@@ -1033,7 +1033,7 @@
           "type": "card",
           "name": "GOSH",
           "settings": {
-            "image": "shopify://shop_images/Gosh_e4e3f51b-31dc-490b-ac8e-6faeda398d3f.webp",
+            "image": "shopify://shop_images/Gosh_6df2a7d7-5d8d-4291-a949-de3a20fc9b28.jpg",
             "link": "shopify://collections/gosh",
             "open_new_tab": false
           }
