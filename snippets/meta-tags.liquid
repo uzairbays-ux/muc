@@ -38,7 +38,10 @@
       when 'collection'
         assign kj_description = 'Shop ' | append: collection.title | append: ' online in Pakistan at Makeup City: ' | append: collection.products_count | append: ' 100% original products from 150+ brands, with free delivery on orders over PKR 5,000.'
       when 'page'
-        assign kj_description = page.content | strip_html | strip_newlines | truncate: 155
+        assign kj_description = page.content | strip_html | strip_newlines | strip | truncate: 155
+        if kj_description == blank
+          assign kj_description = page.title | append: ' at Makeup City Pakistan: 150+ original makeup, skincare, hair care and fragrance brands, with free delivery on orders over PKR 5,000.'
+        endif
       when 'blog'
         assign kj_description = blog.title | append: ': beauty tips, tutorials and product guides from Makeup City Pakistan.'
       when 'article'
