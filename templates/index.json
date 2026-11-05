@@ -2307,6 +2307,7 @@
         },
         "category_TkjWqQ": {
           "type": "category",
+          "name": "Max Factor",
           "settings": {
             "image": "shopify://shop_images/maxfactor_4dd80f1d-dd64-4e6b-9503-44683da15b25.jpg",
             "label": "",
@@ -2316,6 +2317,7 @@
         },
         "category_EAWHGr": {
           "type": "category",
+          "name": "Schwarzkopf",
           "settings": {
             "image": "shopify://shop_images/Schwarzkopf_dbf9216a-5f01-45d1-922a-49d5ffc3812e.jpg",
             "label": "",
@@ -2325,6 +2327,7 @@
         },
         "category_DtkmJB": {
           "type": "category",
+          "name": "Bleuface",
           "settings": {
             "image": "shopify://shop_images/Bleuface_d1e51fb8-1358-40cc-b28d-f53f0746fb2d.jpg",
             "label": "",
@@ -2334,6 +2337,7 @@
         },
         "category_KWk6xF": {
           "type": "category",
+          "name": "Just For Men",
           "settings": {
             "image": "shopify://shop_images/Just-For-men_be8f6012-1775-4a61-97ed-ee8a9ebea741.webp",
             "label": "",
