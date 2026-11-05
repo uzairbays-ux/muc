@@ -440,9 +440,8 @@
         "card_6AeFyg": {
           "type": "card",
           "name": "Bioaqua",
-          "disabled": true,
           "settings": {
-            "image": "shopify://shop_images/Bioaqua_d38424d7-bf2e-4ca2-a188-c06122ce27e7.jpg",
+            "image": "shopify://shop_images/Bioaqua_f36ab598-364c-4d61-b8dd-d11f398ab627.jpg",
             "link": "shopify://collections/bioaqua",
             "open_new_tab": false
           }
@@ -1042,7 +1041,7 @@
           "type": "card",
           "name": "Bleuface",
           "settings": {
-            "image": "shopify://shop_images/Bleuface_20bfd0a7-71b2-415a-8f63-2e7b19636615.webp",
+            "image": "shopify://shop_images/Blue-Face.jpg",
             "link": "shopify://collections/bleuface",
             "open_new_tab": false
           }
