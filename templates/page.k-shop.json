@@ -64,8 +64,8 @@
         "banner_gti3hP": {
           "type": "banner",
           "settings": {
-            "desktop_image": "shopify://shop_images/Korean_Brand_Main_Banner_2746_x_572_copy_a4cbd158-7549-4e60-bba6-511c0a329805.jpg",
-            "mobile_image": "shopify://shop_images/Korean_Brand_Main_Banner_copy_955c3b82-518d-475a-9884-b3e288c32c9f.jpg",
+            "desktop_image": "shopify://shop_images/Korean-Brand-Main-Banner-2746-x-572_1b6be1f0-2604-493f-a1ac-8a78b9bae232.jpg",
+            "mobile_image": "shopify://shop_images/Korean-Brand-Main-Banner_864508b2-a423-4bc7-85da-fb74614dccbe.jpg",
             "link": "shopify://pages/korean-brand-k-beauty",
             "open_new_tab": false
           }
@@ -637,9 +637,15 @@
       "name": "t:names.products_grid",
       "settings": {
         "collection": "korean-brands",
+        "banner_link": "",
+        "gradient_color_1": "",
+        "gradient_color_2": "",
+        "gradient_direction": "to bottom",
+        "gradient_opacity": 100,
         "layout_type": "grid",
         "carousel_on_mobile": false,
         "max_products": 16,
+        "hide_sold_out": true,
         "columns": 4,
         "mobile_columns": "2",
         "mobile_card_size": "60cqw",
