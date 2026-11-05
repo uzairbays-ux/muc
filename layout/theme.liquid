@@ -185,6 +185,7 @@
     {% render 'kj-gift-rules' %}
     {% render 'kj-perfect-match-rules' %}
     <script type="module" src="{{ 'kj-gift-auto-add.js' | asset_url }}"></script>
+    <script type="module" src="{{ 'kj-cart-upsell.js' | asset_url }}"></script>
     {%- if settings.kj_pm_enabled -%}
       <script type="module" src="{{ 'kj-perfect-match.js' | asset_url }}"></script>
     {%- endif -%}
