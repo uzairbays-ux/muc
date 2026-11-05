@@ -359,6 +359,12 @@
       width: var(--sidebar-width);
       max-width: 95vw;
     }
+
+    /* muc: on phones the drawer takes 90% so the page stays visible behind it. */
+    @media screen and (max-width: 749px) {
+      width: 90vw;
+      max-width: 90vw;
+    }
   }
 
   /* Needed to ensure the drawer is full height */
