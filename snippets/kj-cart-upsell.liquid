@@ -64,7 +64,11 @@
 {% stylesheet %}
   /* A tinted band, so the row reads as its own thing under the cart lines. */
   .kj-up { display: block; margin: 18px 0 6px; padding: 14px 12px 8px; border-radius: 12px; background: #fff3f4; }
-  .kj-up--empty { margin: 6px 0 18px; }
+  /* The empty-cart row must never widen its container: the drawer centres its
+     empty state, so an over-wide child pushes everything off the left edge. */
+  .kj-up--empty { margin: 6px 0 18px; width: 100%; max-width: 100%; min-width: 0; box-sizing: border-box; align-self: stretch; }
+  .kj-up--empty .kj-up__list { width: 100%; max-width: 100%; }
+  .cart-drawer .cart-items__wrapper, .cart-drawer .cart-drawer__content { max-width: 100%; min-width: 0; overflow-x: clip; }
   .kj-up__kicker { margin: 0 0 2px; font-size: 13px; opacity: 0.75; }
   .kj-up[hidden] { display: none; }
   .kj-up__sentinel { display: block; width: 1px; height: 1px; margin: 0; }
