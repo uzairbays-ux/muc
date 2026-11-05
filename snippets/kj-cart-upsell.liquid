@@ -21,9 +21,8 @@
 -%}
 {%- if up_mode == 'empty' -%}
   <span class="kj-up__sentinel" aria-hidden="true"></span>
-  <kj-cart-upsell class="kj-up kj-up--empty" data-section-id="{{ section.id }}" data-collection="{{ up_collection }}" hidden>
-    <p class="kj-up__kicker">Nothing in here but good intentions.</p>
-    <p class="kj-up__heading">Everyone else is adding these</p>
+  <kj-cart-upsell class="kj-up kj-up--empty" data-section-id="{{ section.id }}" data-collection="{{ up_collection }}" data-limit="4" data-utm="utm_source=cart_drawer&utm_medium=upsell&utm_campaign=empty_cart" hidden>
+    <p class="kj-up__kicker">Nothing in here but good intentions. Popular right now:</p>
     <ul class="kj-up__list" role="list" data-kj-up-list></ul>
   </kj-cart-upsell>
 {%- elsif cart.item_count > 0 -%}
@@ -66,8 +65,17 @@
   .kj-up { display: block; margin: 18px 0 6px; padding: 14px 12px 8px; border-radius: 12px; background: #fff3f4; }
   /* The empty-cart row must never widen its container: the drawer centres its
      empty state, so an over-wide child pushes everything off the left edge. */
-  .kj-up--empty { margin: 6px 0 18px; width: 100%; max-width: 100%; min-width: 0; box-sizing: border-box; align-self: stretch; }
-  .kj-up--empty .kj-up__list { width: 100%; max-width: 100%; }
+  .kj-up--empty { margin: 6px 0 18px; width: 100%; max-width: 100%; min-width: 0; box-sizing: border-box; align-self: stretch; padding: 0; background: none; border-radius: 0; }
+  .kj-up--empty .kj-up__kicker { margin: 0 0 12px; text-align: center; }
+  /* Empty cart: four compact rows (thumb, name + price, Add), nothing scrolls. */
+  .kj-up--empty .kj-up__list { display: flex; flex-direction: column; gap: 10px; width: 100%; max-width: 100%; overflow: visible; padding: 0; }
+  .kj-up--empty .kj-up__item { flex: none; display: grid; grid-template-columns: 56px minmax(0, 1fr) auto; grid-template-areas: "img title btn" "img price btn"; column-gap: 12px; row-gap: 2px; align-items: center; padding: 8px 10px; border: 1px solid rgb(0 0 0 / 0.08); border-radius: 10px; background: #fff; }
+  .kj-up--empty .kj-up__link { display: contents; }
+  .kj-up--empty .kj-up__img { grid-area: img; width: 56px; aspect-ratio: 1; border-radius: 8px; }
+  .kj-up--empty .kj-up__off { top: 4px; left: 4px; padding: 1px 4px; font-size: 9px; }
+  .kj-up--empty .kj-up__title { grid-area: title; min-height: 0; -webkit-line-clamp: 1; font-size: 13px; }
+  .kj-up--empty .kj-up__price { grid-area: price; font-size: 13px; }
+  .kj-up--empty .kj-up__btn { grid-area: btn; width: auto; padding: 8px 14px; white-space: nowrap; }
   .cart-drawer .cart-items__wrapper, .cart-drawer .cart-drawer__content { max-width: 100%; min-width: 0; overflow-x: clip; }
   .kj-up__kicker { margin: 0 0 2px; font-size: 13px; opacity: 0.75; }
   .kj-up[hidden] { display: none; }
