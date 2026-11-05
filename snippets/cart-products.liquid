@@ -982,6 +982,28 @@
     overflow-wrap: break-word;
   }
 
+  /* muc: compact stepper in the drawer on phones (was 124 x 46). */
+  @media screen and (max-width: 749px) {
+    .cart-drawer .cart-items .quantity-selector {
+      --quantity-selector-width: 96px;
+      height: 36px;
+      width: var(--quantity-selector-width);
+      flex: 0 0 auto;
+      align-self: center;
+    }
+
+    .cart-drawer .cart-items .quantity-selector button {
+      width: 32px;
+      height: 34px;
+    }
+
+    .cart-drawer .cart-items .quantity-selector input {
+      max-width: calc(var(--quantity-selector-width) - 64px);
+      font-size: 13px;
+      padding: 0;
+    }
+  }
+
   @media screen and (min-width: 750px) {
     .cart-items .quantity-selector {
       --quantity-selector-width: 105px;
