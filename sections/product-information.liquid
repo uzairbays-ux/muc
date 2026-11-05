@@ -37,7 +37,19 @@
   </script>
 {%- endif -%}
 {%- liquid
+  # Breadcrumb parent: the collection the shopper came from, else the first
+  # real category collection (promo, sale and "old" collections are skipped).
   assign kj_bc_coll = closest.product.collections | where: 'handle', collection.handle | first
+  if kj_bc_coll == blank
+    for kj_c in closest.product.collections
+      assign kj_ct = kj_c.title | downcase
+      if kj_ct contains 'sale' or kj_ct contains 'old' or kj_ct contains 'promo' or kj_ct contains 'offer' or kj_ct contains 'bundle' or kj_ct contains 'new arrival' or kj_ct contains 'best' or kj_ct contains 'shop all' or kj_ct contains 'flash' or kj_ct contains 'deal'
+        continue
+      endif
+      assign kj_bc_coll = kj_c
+      break
+    endfor
+  endif
   if kj_bc_coll == blank
     assign kj_bc_coll = closest.product.collections | first
   endif
