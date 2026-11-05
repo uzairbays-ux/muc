@@ -2289,7 +2289,7 @@
           "type": "category",
           "name": "Color WOW",
           "settings": {
-            "image": "shopify://shop_images/Colorwow.webp",
+            "image": "shopify://shop_images/Colorwow_b17e3ab6-f63a-4eab-83ca-bf2ceb57b310.jpg",
             "label": "",
             "link": "shopify://collections/color-wow",
             "card_background": "rgba(0,0,0,0)"
@@ -2299,7 +2299,7 @@
           "type": "category",
           "name": "Femina",
           "settings": {
-            "image": "shopify://shop_images/Femina_3f42255a-ed9a-4c70-aa6c-f9bc347723e6.webp",
+            "image": "shopify://shop_images/Femina_4b6327bf-e945-4eb8-a6e0-66998d869fda.jpg",
             "label": "",
             "link": "shopify://collections/femina",
             "card_background": "rgba(0,0,0,0)"
@@ -2319,7 +2319,7 @@
           "type": "category",
           "name": "Schwarzkopf",
           "settings": {
-            "image": "shopify://shop_images/Schwarzkopf_dbf9216a-5f01-45d1-922a-49d5ffc3812e.jpg",
+            "image": "shopify://shop_images/Schwarzkopf_c0fcd253-724b-49a0-b012-30370c32afe1.jpg",
             "label": "",
             "link": "shopify://collections/schwarzkopf",
             "card_background": "rgba(0,0,0,0)"
@@ -2339,7 +2339,7 @@
           "type": "category",
           "name": "Just For Men",
           "settings": {
-            "image": "shopify://shop_images/Just-For-men_be8f6012-1775-4a61-97ed-ee8a9ebea741.webp",
+            "image": "shopify://shop_images/JFM_38159488-eed1-4099-a4f0-324f2c0a34e0.jpg",
             "label": "",
             "link": "shopify://collections/just-for-men",
             "card_background": "rgba(0,0,0,0)"
