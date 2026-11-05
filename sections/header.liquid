@@ -282,64 +282,7 @@
   {% endif %}
 {% endcapture %}
 
-{%- liquid
-  # muc: brand entity for search and AI engines. Social profiles and contact
-  # details come from Theme settings > SEO & organization.
-  assign kj_same_as = ''
-  if settings.kj_org_instagram != blank
-    assign kj_same_as = kj_same_as | append: settings.kj_org_instagram | append: '|'
-  endif
-  if settings.kj_org_facebook != blank
-    assign kj_same_as = kj_same_as | append: settings.kj_org_facebook | append: '|'
-  endif
-  if settings.kj_org_tiktok != blank
-    assign kj_same_as = kj_same_as | append: settings.kj_org_tiktok | append: '|'
-  endif
-  if settings.kj_org_youtube != blank
-    assign kj_same_as = kj_same_as | append: settings.kj_org_youtube | append: '|'
-  endif
-  assign kj_same_as_list = kj_same_as | split: '|'
--%}
-<script type="application/ld+json">
-  {
-    "@context": "http://schema.org",
-    "@type": "Organization",
-    "@id": {{ request.origin | append: '/#organization' | json }},
-    "name": {{ shop.name | json }},
-    {% if settings.logo %}
-      "logo": {{ settings.logo | image_url: width: 500 | prepend: "https:" | json }},
-    {% endif %}
-    {% if kj_same_as_list.size > 0 %}
-      "sameAs": {{ kj_same_as_list | json }},
-    {% endif %}
-    {% if settings.kj_org_phone != blank or settings.kj_org_email != blank %}
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "contactType": "customer service",
-        {% if settings.kj_org_phone != blank %}"telephone": {{ settings.kj_org_phone | json }},{% endif %}
-        {% if settings.kj_org_email != blank %}"email": {{ settings.kj_org_email | json }},{% endif %}
-        "areaServed": "PK"
-      },
-    {% endif %}
-    "url": {{ request.origin | json }}
-  }
-</script>
-{%- if request.page_type == 'index' -%}
-  <script type="application/ld+json">
-    {
-      "@context": "http://schema.org",
-      "@type": "WebSite",
-      "name": {{ shop.name | json }},
-      "url": {{ request.origin | json }},
-      "publisher": { "@id": {{ request.origin | append: '/#organization' | json }} },
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": {{ request.origin | append: '/search?q={search_term_string}&type=product' | json }},
-        "query-input": "required name=search_term_string"
-      }
-    }
-  </script>
-{%- endif -%}
+{% render 'kj-organization-schema' %}
 
 <header-component
   id="header-component"
