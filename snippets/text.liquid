@@ -105,7 +105,8 @@
     assign kj_text = kj_text | replace: kj_from_escaped, kj_to | replace: kj_from_raw, kj_to
 
     # muc: show the product type next to the brand, e.g. "Maybelline · Concealers",
-    # linked to a type search. Settings can't hold {% if %} logic, so it is
+    # linked to a type search. Block settings can't hold Liquid logic (and a
+    # closing tag written in this comment would end the liquid tag), so it is
     # appended here, only when the block is the brand line and a type is set.
     assign kj_type = closest.product.type
     if kj_type != blank and kj_text contains '</a></p>'
@@ -139,7 +140,6 @@
   <{{ element }} {{ attributes | strip_newlines | strip }}>
     {{ kj_text }}
   </{{ element }}>
-  {%- if kj_text contains 'vendor%3A' -%}<!--kj-type-debug:{{ kj_type }}|{{ closest.product.type }}|{{ kj_text | escape | slice: -40, 40 }}-->{%- endif -%}
 {% endif %}
 
 {% stylesheet %}
