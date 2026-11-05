@@ -1715,8 +1715,9 @@
         },
         "card_VmDHC6": {
           "type": "card",
+          "name": "Janssen",
           "settings": {
-            "image": "shopify://shop_images/Janssen_61d6e9be-4942-43f9-b3f9-45eac8eedf0f.jpg",
+            "image": "shopify://shop_images/Janssen_2dd47f07-ff19-49e8-919b-9055426b3d73.jpg",
             "link": "shopify://collections/janssen",
             "open_new_tab": false
           }
@@ -1838,7 +1839,7 @@
           "type": "card",
           "name": "Essence",
           "settings": {
-            "image": "shopify://shop_images/Essence_6da3862c-5d8c-42e5-baab-235ff7b144f3.jpg",
+            "image": "shopify://shop_images/Essence_jpg.jpg",
             "link": "shopify://collections/essence",
             "open_new_tab": false
           }
@@ -1847,7 +1848,7 @@
           "type": "card",
           "name": "Garnier",
           "settings": {
-            "image": "shopify://shop_images/Garnier_97c38524-b146-4786-9f42-b4484aa719ac.jpg",
+            "image": "shopify://shop_images/Garnier_6a54fc73-57ca-4f96-9199-e04efbd7ea6d.jpg",
             "link": "shopify://collections/garnier",
             "open_new_tab": false
           }
@@ -1856,7 +1857,7 @@
           "type": "card",
           "name": "Trouble Maker",
           "settings": {
-            "image": "shopify://shop_images/Trouble-Maker_45e5e593-9345-4fab-8c1e-8c6999641a18.jpg",
+            "image": "shopify://shop_images/trouble-maker_1cf71682-d5f6-421d-9883-50ad289c2bce.jpg",
             "link": "shopify://collections/trouble-maker",
             "open_new_tab": false
           }
@@ -2279,7 +2280,7 @@
           "type": "category",
           "name": "St.Ives",
           "settings": {
-            "image": "shopify://shop_images/St_Ives_0651bdd5-e690-4100-a86c-d7ad682bf8e4.jpg",
+            "image": "shopify://shop_images/St_Ives_9170caec-4179-4835-b13a-a8e66bfefe40.jpg",
             "label": "",
             "link": "shopify://collections/st-ives",
             "card_background": "rgba(0,0,0,0)"
