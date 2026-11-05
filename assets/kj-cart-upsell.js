@@ -67,11 +67,23 @@ class KjCartUpsell extends HTMLElement {
   connectedCallback() {
     this.observer ??= new MutationObserver(() => this.schedule());
     this.observer.observe(this, { childList: true, subtree: true });
-    this.schedule();
+    // Fetch only once the row can be seen: a closed drawer and a row below the
+    // fold cost nothing on page load. (A closed <dialog> never intersects.)
+    this.seen ??= false;
+    if (!this.seen && 'IntersectionObserver' in window) {
+      this.io ??= new IntersectionObserver((entries) => {
+        if (entries.some((e) => e.isIntersecting)) { this.seen = true; this.io.disconnect(); this.schedule(); }
+      }, { rootMargin: '200px' });
+      this.io.observe(this);
+    } else {
+      this.seen = true;
+      this.schedule();
+    }
   }
 
   disconnectedCallback() {
     this.observer?.disconnect();
+    this.io?.disconnect();
   }
 
   attributeChangedCallback() {
@@ -87,6 +99,7 @@ class KjCartUpsell extends HTMLElement {
   }
 
   async render() {
+    if (!this.seen) return;
     const list = this.querySelector('[data-kj-up-list]');
     if (!list || list.children.length) return; // already filled
     const ids = (this.dataset.sourceIds || '').split(',').filter(Boolean);
