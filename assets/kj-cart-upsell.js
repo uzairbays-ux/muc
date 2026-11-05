@@ -53,9 +53,11 @@ class KjCartUpsell extends HTMLElement {
   }
 
   schedule() {
+    // A timer, not requestAnimationFrame: frames pause in a background tab,
+    // which would leave the row empty after a cart update made there.
     if (this.queued) return;
     this.queued = true;
-    requestAnimationFrame(() => { this.queued = false; this.render(); });
+    setTimeout(() => { this.queued = false; this.render(); }, 0);
   }
 
   async render() {
