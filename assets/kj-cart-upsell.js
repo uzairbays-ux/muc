@@ -75,7 +75,7 @@ class KjCartUpsell extends HTMLElement {
 
   card(p) {
     const v = p.variants.find((x) => x.available) || p.variants[0];
-    const url = `${p.url}?${UTM}`;
+    const url = `${p.url}${p.url.includes('?') ? '&' : '?'}${UTM}`; // recommendation urls already carry pr_* params
     const img = p.featured_image ? `<img src="${p.featured_image}&width=300" alt="" loading="lazy" width="132" height="132">` : '';
     const off = p.compare_at_price > p.price ? `<span class="kj-up__off">${Math.round((1 - p.price / p.compare_at_price) * 100)}% off</span>` : '';
     const price = p.compare_at_price > p.price ? `<s>${money(p.compare_at_price)}</s>${money(p.price)}` : money(p.price);

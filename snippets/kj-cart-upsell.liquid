@@ -16,12 +16,23 @@
   {%- liquid
     assign up_source = ''
     assign up_in_cart = ''
+    # Recommendations key off the newest real purchase: free gifts (auto-added,
+    # type Gift / "foc" handles / Rs 0 lines) give poor matches, so skip them.
+    assign up_count = 0
     for item in cart.items
-      if forloop.index <= 2
-        assign up_source = up_source | append: item.product_id | append: ','
-      endif
       assign up_in_cart = up_in_cart | append: item.product_id | append: ','
+      assign up_is_gift = false
+      if item.final_line_price == 0 or item.product.type == 'Gift' or item.product.handle contains 'foc'
+        assign up_is_gift = true
+      endif
+      if up_is_gift == false and up_count < 2
+        assign up_source = up_source | append: item.product_id | append: ','
+        assign up_count = up_count | plus: 1
+      endif
     endfor
+    if up_source == ''
+      assign up_source = cart.items.first.product_id | append: ','
+    endif
   -%}
   <kj-cart-upsell
     class="kj-up"
