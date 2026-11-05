@@ -360,7 +360,7 @@
           "type": "card",
           "name": "Vaseline",
           "settings": {
-            "image": "shopify://shop_images/Vaseline.png",
+            "image": "shopify://shop_images/Vaseline-Skincare.jpg",
             "link": "shopify://collections/vaseline",
             "open_new_tab": false
           }
@@ -378,7 +378,7 @@
           "type": "card",
           "name": "PinkFlash",
           "settings": {
-            "image": "shopify://shop_images/Pink_Flash.webp",
+            "image": "shopify://shop_images/PinkFlash.jpg",
             "link": "shopify://collections/pinkflash",
             "open_new_tab": false
           }
@@ -387,7 +387,7 @@
           "type": "card",
           "name": "Philips",
           "settings": {
-            "image": "shopify://shop_images/philips_0cb41bf9-d396-4d8e-903e-3202053ce85d.webp",
+            "image": "shopify://shop_images/Philips_6fb9134d-4074-448b-8596-9eac46178da2.jpg",
             "link": "shopify://collections/philips",
             "open_new_tab": false
           }
@@ -893,7 +893,7 @@
           "type": "card",
           "name": "Luxe Basics",
           "settings": {
-            "image": "shopify://shop_images/Luxe_basics_e03829c6-2b5d-4089-997e-8acf9d03c196.webp",
+            "image": "shopify://shop_images/Luxe-Basics.jpg",
             "link": "shopify://collections/luxe-basics",
             "open_new_tab": false
           }
@@ -1051,7 +1051,7 @@
           "type": "card",
           "name": "OneSkin",
           "settings": {
-            "image": "shopify://shop_images/one-skin.webp",
+            "image": "shopify://shop_images/one-skin_jpg.jpg",
             "link": "shopify://collections/oneskin",
             "open_new_tab": false
           }
