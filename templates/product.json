@@ -1004,6 +1004,13 @@
                 "collapse_after": 20
               },
               "blocks": {}
+            },
+            "kj_buy_together": {
+              "type": "kj-buy-together",
+              "settings": {
+                "heading": "Buy together",
+                "limit": 4
+              }
             }
           },
           "block_order": [
@@ -1021,6 +1028,7 @@
             "kj_vto_lips",
             "barcode_6exrQt",
             "sku_fiiUqj",
+            "kj_buy_together",
             "group_NpaVge",
             "accordion_6PhDXA",
             "text_aEtTtq"
