@@ -130,6 +130,7 @@
         },
         "slide_rywYx9": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "desktop_image": "shopify://shop_images/framesi_banner_1920_x_750_copy.jpg",
             "link": "shopify://pages/framesi-framcolor-glamour",
