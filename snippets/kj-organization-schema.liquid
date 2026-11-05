@@ -46,19 +46,3 @@
     "url": {{ request.origin | json }}
   }
 </script>
-{%- if request.page_type == 'index' -%}
-  <script type="application/ld+json">
-    {
-      "@context": "http://schema.org",
-      "@type": "WebSite",
-      "name": {{ shop.name | json }},
-      "url": {{ request.origin | json }},
-      "publisher": { "@id": {{ request.origin | append: '/#organization' | json }} },
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": {{ request.origin | append: '/search?q={search_term_string}&type=product' | json }},
-        "query-input": "required name=search_term_string"
-      }
-    }
-  </script>
-{%- endif -%}
