@@ -1,0 +1,43 @@
+{%- doc -%}
+  "Buy together" on the product page: a short row of products to add next to
+  this one. Uses Shopify's complementary picks (Search & Discovery app) when
+  the product has some, else its related products. Drawn by
+  assets/kj-cart-upsell.js (the cart drawer's "You may also like" element).
+  Items added from here carry the hidden line property
+  _added_from: pdp-buy-together, visible on the order in admin.
+{%- enddoc -%}
+{%- liquid
+  assign bt_product = closest.product
+-%}
+{%- if bt_product != blank -%}
+  <kj-cart-upsell
+    class="kj-up kj-up--pdp"
+    data-section-id="{{ section.id }}"
+    data-source-ids="{{ bt_product.id }},"
+    data-in-cart="{{ bt_product.id }},"
+    data-intent="complementary,related"
+    data-source="pdp-buy-together"
+    data-limit="{{ block.settings.limit }}"
+    hidden
+    {{ block.shopify_attributes }}
+  >
+    <p class="kj-up__heading">{{ block.settings.heading | escape }}</p>
+    <ul class="kj-up__list" role="list" data-kj-up-list></ul>
+  </kj-cart-upsell>
+{%- endif -%}
+
+{% stylesheet %}
+  .kj-up--pdp { margin: 18px 0 10px; }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Buy together",
+  "tag": null,
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Buy together" },
+    { "type": "range", "id": "limit", "label": "Products", "min": 2, "max": 6, "step": 1, "default": 4 }
+  ],
+  "presets": [{ "name": "Buy together" }]
+}
+{% endschema %}

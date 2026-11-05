@@ -10,23 +10,28 @@ const cache = new Map();
 const money = (cents) => 'Rs.' + Math.round(cents / 100).toLocaleString('en-PK');
 const isGift = (p) => /gift/i.test(p.type || '') || /-foc$|foc-/.test(p.handle);
 
-async function recommendationsFor(ids) {
-  const key = ids.join(',');
+// intents in order: the first one that returns products wins, so a product
+// page can ask for Shopify's "complementary" picks and fall back to "related".
+async function recommendationsFor(ids, intents = ['related']) {
+  const key = intents.join('+') + ':' + ids.join(',');
   if (!cache.has(key)) {
     cache.set(key, (async () => {
-      const seen = new Set();
-      const out = [];
-      for (const id of ids) {
-        try {
-          const r = await fetch(`/recommendations/products.json?product_id=${id}&limit=10&intent=related`);
-          if (!r.ok) continue;
-          for (const p of (await r.json()).products) {
-            if (!seen.has(p.id)) { seen.add(p.id); out.push(p); }
-          }
-        } catch (e) { /* no recommendations for this id */ }
-        if (out.length >= 10) break;
+      for (const intent of intents) {
+        const seen = new Set();
+        const out = [];
+        for (const id of ids) {
+          try {
+            const r = await fetch(`/recommendations/products.json?product_id=${id}&limit=10&intent=${intent}`);
+            if (!r.ok) continue;
+            for (const p of (await r.json()).products) {
+              if (!seen.has(p.id)) { seen.add(p.id); out.push(p); }
+            }
+          } catch (e) { /* no recommendations for this id */ }
+          if (out.length >= 10) break;
+        }
+        if (out.length) return out;
       }
-      return out;
+      return [];
     })());
   }
   return cache.get(key);
@@ -88,10 +93,11 @@ class KjCartUpsell extends HTMLElement {
     const inCart = new Set((this.dataset.inCart || '').split(',').filter(Boolean).map(Number));
     const handle = this.dataset.collection;
     if (!ids.length && !handle) return;
-    const pool = handle ? await collectionProducts(handle) : await recommendationsFor(ids);
+    const intents = (this.dataset.intent || 'related').split(',').filter(Boolean);
+    const pool = handle ? await collectionProducts(handle) : await recommendationsFor(ids, intents);
     const products = pool
       .filter((p) => p.available && !inCart.has(p.id) && !isGift(p))
-      .slice(0, handle ? 8 : 6);
+      .slice(0, Number(this.dataset.limit) || (handle ? 8 : 6));
     const target = this.querySelector('[data-kj-up-list]');
     if (!this.isConnected || !target || target.children.length || !products.length) return;
     target.innerHTML = products.map((p) => this.card(p)).join('');
@@ -134,7 +140,7 @@ if (!window.__kjCartUpsell) {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({
-          items: [{ id: Number(btn.dataset.kjUpAdd), quantity: 1, properties: { _added_from: SOURCE } }],
+          items: [{ id: Number(btn.dataset.kjUpAdd), quantity: 1, properties: { _added_from: btn.closest('kj-cart-upsell')?.dataset.source || SOURCE } }],
           sections: sections.join(','),
         }),
       });
