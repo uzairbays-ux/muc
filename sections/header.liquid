@@ -286,11 +286,18 @@
   # muc: brand entity for search and AI engines. Social profiles and contact
   # details come from Theme settings > SEO & organization.
   assign kj_same_as = ''
-  for kj_link in settings.kj_org_instagram,settings.kj_org_facebook,settings.kj_org_tiktok,settings.kj_org_youtube
-    if kj_link != blank
-      assign kj_same_as = kj_same_as | append: kj_link | append: '|'
-    endif
-  endfor
+  if settings.kj_org_instagram != blank
+    assign kj_same_as = kj_same_as | append: settings.kj_org_instagram | append: '|'
+  endif
+  if settings.kj_org_facebook != blank
+    assign kj_same_as = kj_same_as | append: settings.kj_org_facebook | append: '|'
+  endif
+  if settings.kj_org_tiktok != blank
+    assign kj_same_as = kj_same_as | append: settings.kj_org_tiktok | append: '|'
+  endif
+  if settings.kj_org_youtube != blank
+    assign kj_same_as = kj_same_as | append: settings.kj_org_youtube | append: '|'
+  endif
   assign kj_same_as_list = kj_same_as | split: '|'
 -%}
 <script type="application/ld+json">

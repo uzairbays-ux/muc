@@ -7,14 +7,20 @@
   # muc: Judge.me keeps the rating in the reviews.* metafields but outputs no
   # schema, so add aggregateRating to the same product node (same @id as
   # Shopify's structured_data) when the product has reviews.
-  assign kj_rc = closest.product.metafields.reviews.rating_count | plus: 0
-  assign kj_rv = closest.product.metafields.reviews.rating.value.rating
-  if kj_rv == blank
-    assign kj_rv = closest.product.metafields.reviews.rating.value
+  # Same sources as sections/kj-reviews.liquid: the reviews.* metafields, with
+  # the judgeme.widget HTML as fallback for stores where only that is synced.
+  assign kj_jm = closest.product.metafields.judgeme.widget.value | default: ''
+  assign kj_rv = closest.product.metafields.reviews.rating.value.rating | default: 0 | plus: 0
+  assign kj_rc = closest.product.metafields.reviews.rating_count.value | default: 0 | plus: 0
+  if kj_rv == 0 and kj_jm contains "data-average-rating='"
+    assign kj_rv = kj_jm | split: "data-average-rating='" | last | split: "'" | first | plus: 0
+  endif
+  if kj_rc == 0 and kj_jm contains "data-number-of-reviews='"
+    assign kj_rc = kj_jm | split: "data-number-of-reviews='" | last | split: "'" | first | plus: 0
   endif
   assign kj_rmax = closest.product.metafields.reviews.rating.value.scale_max | default: 5
 -%}
-{%- if kj_rc > 0 and kj_rv != blank -%}
+{%- if kj_rc > 0 and kj_rv > 0 -%}
   <script type="application/ld+json">
     {
       "@context": "http://schema.org/",
