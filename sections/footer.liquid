@@ -47,6 +47,16 @@
 </div>
 
 {% stylesheet %}
+  /* muc: a row group inside the footer keeps its columns on phones. Horizon
+     sizes custom-width children of a row with the desktop width variable, so
+     two 50% menu columns each became 100% and stacked. */
+  @media screen and (max-width: 749px) {
+    .shopify-section-group-footer-group .layout-panel-flex--row:not(.mobile-column) > .group-block--width-custom {
+      flex: 0 0 var(--size-style-width-mobile, var(--size-style-width));
+      max-width: var(--size-style-width-mobile, var(--size-style-width));
+      min-width: 0;
+    }
+  }
   .footer-content {
     contain: content;
     content-visibility: auto;
