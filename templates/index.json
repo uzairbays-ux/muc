@@ -216,8 +216,8 @@
           "type": "card",
           "name": "Maybelline",
           "settings": {
-            "image": "shopify://shop_images/WhatsApp_Image_2026-10-16_at_17.19.22.jpg",
-            "link": "shopify://collections/maybelline",
+            "image": "shopify://shop_images/MNY_Spot_Rescue_Banner.jpg",
+            "link": "shopify://products/maybelline-fit-me-spot-rescue-concealer-with-1-5-salicylic-acid-vitamin-c",
             "open_new_tab": false
           }
         },
@@ -261,12 +261,12 @@
         "card_nbr3cj": {
           "type": "card",
           "name": "Ordinary",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/The-Ordinary_bd9c490a-4108-4f3e-b7bb-fb9848362059.jpg",
             "link": "shopify://collections/to",
             "open_new_tab": false
-          },
-          "disabled": true
+          }
         },
         "card_b9F39r": {
           "type": "card",
