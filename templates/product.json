@@ -1009,7 +1009,8 @@
               "type": "kj-buy-together",
               "settings": {
                 "heading": "Buy together",
-                "limit": 4
+                "limit": 4,
+                "mobile_order": 5
               }
             }
           },
