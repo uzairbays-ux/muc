@@ -415,13 +415,14 @@
           "type": "card",
           "name": "CeraVe",
           "settings": {
-            "image": "shopify://shop_images/Cerave_00b74cf9-a8cc-47ec-87a6-6340a13b80db.webp",
+            "image": "shopify://shop_images/Cerave_cbacfd63-fb5b-4c73-a12a-dbe47cfda3b0.jpg",
             "link": "shopify://collections/cerave-official",
             "open_new_tab": false
           }
         },
         "card_LWJXKE": {
           "type": "card",
+          "name": "La Roche Posay",
           "settings": {
             "image": "shopify://shop_images/la-roche-posay.webp",
             "link": "shopify://collections/la-roche-posay",
