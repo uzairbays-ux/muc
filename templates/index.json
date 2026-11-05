@@ -1008,6 +1008,7 @@
         },
         "card_J3czmk": {
           "type": "card",
+          "name": "Lamel",
           "settings": {
             "image": "shopify://shop_images/non-sale-Lamel.webp",
             "link": "shopify://collections/lamel",
@@ -1016,6 +1017,7 @@
         },
         "card_gBiw68": {
           "type": "card",
+          "name": "L'Oréal Paris",
           "settings": {
             "image": "shopify://shop_images/WhatsApp_Image_2026-10-16_at_17.27.07.jpg",
             "link": "shopify://collections/loreal-paris",
@@ -1024,6 +1026,7 @@
         },
         "card_ceiizR": {
           "type": "card",
+          "name": "GOSH",
           "settings": {
             "image": "shopify://shop_images/Gosh_e4e3f51b-31dc-490b-ac8e-6faeda398d3f.webp",
             "link": "shopify://collections/gosh",
@@ -1041,6 +1044,7 @@
         },
         "card_dnezUz": {
           "type": "card",
+          "name": "OneSkin",
           "settings": {
             "image": "shopify://shop_images/one-skin.webp",
             "link": "shopify://collections/oneskin",
@@ -1060,7 +1064,7 @@
           "type": "card",
           "name": "Bath & Body",
           "settings": {
-            "image": "shopify://shop_images/B_BW_9b7f67f6-baa0-4b24-b9e9-9c9f7aa297af.webp",
+            "image": "shopify://shop_images/Bath-_-body_cf5f5431-acec-4da3-a842-c1b65e40c468.jpg",
             "link": "shopify://collections/bath-body-works",
             "open_new_tab": false
           }
