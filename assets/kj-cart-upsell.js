@@ -33,15 +33,43 @@ async function recommendationsFor(ids) {
 }
 
 class KjCartUpsell extends HTMLElement {
-  async connectedCallback() {
-    const ids = this.dataset.sourceIds.split(',').filter(Boolean);
-    const inCart = new Set(this.dataset.inCart.split(',').filter(Boolean).map(Number));
+  // The drawer updates by morphing the DOM against the server's HTML, which
+  // empties our list and puts `hidden` back without re-inserting the element,
+  // so re-render on attribute and child changes, not only on connect.
+  static observedAttributes = ['data-source-ids', 'data-in-cart', 'hidden'];
+
+  connectedCallback() {
+    this.observer ??= new MutationObserver(() => this.schedule());
+    this.observer.observe(this, { childList: true, subtree: true });
+    this.schedule();
+  }
+
+  disconnectedCallback() {
+    this.observer?.disconnect();
+  }
+
+  attributeChangedCallback() {
+    if (this.isConnected) this.schedule();
+  }
+
+  schedule() {
+    if (this.queued) return;
+    this.queued = true;
+    requestAnimationFrame(() => { this.queued = false; this.render(); });
+  }
+
+  async render() {
+    const list = this.querySelector('[data-kj-up-list]');
+    if (!list || list.children.length) return; // already filled
+    const ids = (this.dataset.sourceIds || '').split(',').filter(Boolean);
+    const inCart = new Set((this.dataset.inCart || '').split(',').filter(Boolean).map(Number));
     if (!ids.length) return;
     const products = (await recommendationsFor(ids))
       .filter((p) => p.available && !inCart.has(p.id) && !isGift(p))
       .slice(0, 6);
-    if (!this.isConnected || !products.length) return;
-    this.querySelector('[data-kj-up-list]').innerHTML = products.map((p) => this.card(p)).join('');
+    const target = this.querySelector('[data-kj-up-list]');
+    if (!this.isConnected || !target || target.children.length || !products.length) return;
+    target.innerHTML = products.map((p) => this.card(p)).join('');
     this.hidden = false;
   }
 
