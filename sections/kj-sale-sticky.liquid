@@ -1,5 +1,11 @@
 {%- render 'kj-sale-styles' -%}
-{%- if section.settings.timer_end != blank -%}
+{%- liquid
+  assign kjs_sticky_show = true
+  if section.settings.pages == 'index' and request.page_type != 'index'
+    assign kjs_sticky_show = false
+  endif
+-%}
+{%- if section.settings.timer_end != blank and kjs_sticky_show -%}
 <div class="kjs-sticky" id="kjs-sticky" style="--kjs-purple: {{ section.settings.purple }}; --kjs-lime: {{ section.settings.lime }}; --kjs-dark: {{ section.settings.dark }}; --kjs-red: {{ section.settings.red }}; --kjs-sticky-bg: {{ section.settings.bg }}; --kjs-sticky-fg: {{ section.settings.fg }};" data-kjs-sticky>
   <a class="kjs-sticky__inner" href="{{ section.settings.link | default: '/pages/sale' }}">
     <span class="kjs-sticky__title">{{ section.settings.title | escape }}</span>
@@ -30,6 +36,7 @@
     { "type": "text", "id": "subtitle", "label": "Sub line", "default": "FLAT 40% OFF" },
     { "type": "text", "id": "button", "label": "Button text", "default": "Shop the sale" },
     { "type": "url", "id": "link", "label": "Link" },
+    { "type": "select", "id": "pages", "label": "Show on", "default": "index", "options": [ { "value": "index", "label": "Home page only" }, { "value": "all", "label": "Every page" } ] },
     { "type": "header", "content": "Countdown" },
     { "type": "text", "id": "timer_start", "label": "Starts at (ISO date, Pakistan time)", "default": "2026-11-11T00:00:00+05:00" },
     { "type": "text", "id": "timer_end", "label": "Ends at (ISO date, Pakistan time)", "default": "2026-11-11T23:59:59+05:00", "info": "The bar hides itself once the end time has passed." },
