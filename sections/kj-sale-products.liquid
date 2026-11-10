@@ -5,46 +5,41 @@
             <h3 class="kjs-bar__title">{{ section.settings.heading | escape }}{%- if section.settings.sub != blank -%} <span>· {{ section.settings.sub | escape }}</span>{%- endif -%}</h3>
             {%- if section.settings.link_label != blank -%}<a class="kjs-bar__link" href="{{ section.settings.link | default: '#' }}">{{ section.settings.link_label | escape }}</a>{%- endif -%}
           </div>
-          <div class="kjs-grid">
-            {%- assign plist = section.settings.products -%}
-            {%- if plist == blank and section.settings.collection != blank -%}{%- assign plist = section.settings.collection.products -%}{%- endif -%}
-            {%- for product in plist limit: section.settings.limit -%}
-              {%- liquid
-                assign v = product.selected_or_first_available_variant
-                assign off = 0
-                if product.compare_at_price > product.price
-                  assign diff = product.compare_at_price | minus: product.price
-                  assign off = diff | times: 100 | divided_by: product.compare_at_price
-                endif
-              -%}
-              <div class="kjs-card">
-                <a class="kjs-card__media" href="{{ product.url }}" aria-label="{{ product.title | escape }}">
-                  {%- if product.featured_image -%}
-                    {{ product.featured_image | image_url: width: 480 | image_tag: loading: 'lazy', widths: '240, 480', sizes: '(min-width: 990px) 220px, 44vw', alt: product.title }}
-                  {%- endif -%}
-                  {%- if section.settings.badge != blank -%}<span class="kjs-card__flag">{{ section.settings.badge | escape }}</span>{%- endif -%}
-                  {%- if off > 0 -%}<span class="kjs-card__off">{{ off }}% OFF</span>{%- endif -%}
-                </a>
-                <span class="kjs-card__brand">{{ product.vendor | escape }}</span>
-                <a class="kjs-card__name" href="{{ product.url }}">{{ product.title | remove_first: product.vendor | remove_first: ' - ' | escape }}</a>
-                <p class="kjs-card__price">
-                  {%- if off > 0 -%}<s>{{ product.compare_at_price | money }}</s>{%- endif -%}
-                  <strong>{{ product.price | money }}</strong>
-                  {%- if off > 0 -%}<span class="kjs-card__pct">{{ off }}% OFF</span>{%- endif -%}
-                </p>
-                {%- if off > 0 -%}<span class="kjs-card__save">You save {{ diff | money }}</span>{%- endif -%}
-                <div class="kjs-card__actions">
-                  <a class="kjs-card__wish" href="{{ product.url }}" aria-label="View {{ product.title | escape }}"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"></path></svg></a>
-                  {%- if product.available == false -%}
-                    <span class="kjs-card__btn is-disabled">Sold out</span>
-                  {%- elsif product.variants.size == 1 -%}
-                    <button type="button" class="kjs-card__btn" data-kjs-add="{{ v.id }}" data-product-id="{{ product.id }}">Add to Bag</button>
-                  {%- else -%}
-                    <a class="kjs-card__btn" href="{{ product.url }}">Choose</a>
-                  {%- endif -%}
-                </div>
-              </div>
+          <div class="kjs-carousel">
+            <button type="button" class="kjs-carousel__btn kjs-carousel__btn--prev" data-kjs-prev aria-label="Previous products"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 6-6 6 6 6"></path></svg></button>
+            <div class="kjs-grid" data-kjs-track>
+            {%- liquid
+              assign picked = section.settings.products
+              assign shown = 0
+              assign seen = ''
+              assign lim = section.settings.limit
+            -%}
+            {%- for product in picked limit: lim -%}
+              {%- assign seen = seen | append: '|' | append: product.handle -%}
+              {%- assign shown = shown | plus: 1 -%}
+              {%- render 'kj-sale-card', product: product, badge: section.settings.badge -%}
             {%- endfor -%}
+            {%- if shown < lim and section.settings.collection != blank -%}
+              {%- for product in section.settings.collection.products limit: 48 -%}
+                {%- if shown >= lim -%}{%- break -%}{%- endif -%}
+                {%- assign key = '|' | append: product.handle -%}
+                {%- if seen contains key or product.available == false -%}{%- continue -%}{%- endif -%}
+                {%- assign seen = seen | append: key -%}
+                {%- assign shown = shown | plus: 1 -%}
+                {%- render 'kj-sale-card', product: product, badge: section.settings.badge -%}
+              {%- endfor -%}
+            {%- endif -%}
+            {%- if section.settings.link != blank -%}
+              <a class="kjs-card kjs-card--more" href="{{ section.settings.link }}">
+                <span class="kjs-card--more__inner">
+                  <span class="kjs-card--more__title">{{ section.settings.more_label | default: 'Shop all' | escape }}</span>
+                  <span class="kjs-card--more__sub">{{ section.settings.heading | escape }}</span>
+                  <span class="kjs-card--more__arrow">→</span>
+                </span>
+              </a>
+            {%- endif -%}
+            </div>
+            <button type="button" class="kjs-carousel__btn kjs-carousel__btn--next" data-kjs-next aria-label="Next products"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"></path></svg></button>
           </div>
         </section>
 
@@ -62,8 +57,9 @@
     { "type": "text", "id": "link_label", "label": "Link label", "default": "Shop all →" },
     { "type": "url", "id": "link", "label": "Link" },
     { "type": "product_list", "id": "products", "label": "Products", "limit": 12 },
-    { "type": "collection", "id": "collection", "label": "Or collection (used when no products picked)" },
-    { "type": "range", "id": "limit", "label": "Max products", "min": 1, "max": 12, "default": 6 },
+    { "type": "collection", "id": "collection", "label": "Collection to fill the rest of the row" },
+    { "type": "range", "id": "limit", "label": "Max products", "min": 1, "max": 24, "default": 12 },
+    { "type": "text", "id": "more_label", "label": "Last card label", "default": "Shop all" },
     { "type": "text", "id": "badge", "label": "Corner flag (e.g. BESTSELLER)" },
     { "type": "select", "id": "section_width", "label": "Width", "default": "full-width", "options": [ { "value": "full-width", "label": "Full width" }, { "value": "page-width", "label": "Page width" } ] },
     { "type": "range", "id": "padding_top", "label": "Top spacing", "min": 0, "max": 80, "step": 4, "unit": "px", "default": 16 },

@@ -1,0 +1,36 @@
+{%- comment -%} One product card for the kj-sale-products row. Params: product, badge. {%- endcomment -%}
+{%- liquid
+  assign v = product.selected_or_first_available_variant
+  assign off = 0
+  if product.compare_at_price > product.price
+    assign diff = product.compare_at_price | minus: product.price
+    assign off = diff | times: 100 | divided_by: product.compare_at_price
+  endif
+-%}
+<div class="kjs-card">
+  <a class="kjs-card__media" href="{{ product.url }}" aria-label="{{ product.title | escape }}">
+    {%- if product.featured_image -%}
+      {{ product.featured_image | image_url: width: 480 | image_tag: loading: 'lazy', widths: '240, 480', sizes: '(min-width: 990px) 220px, 44vw', alt: product.title }}
+    {%- endif -%}
+    {%- if badge != blank -%}<span class="kjs-card__flag">{{ badge | escape }}</span>{%- endif -%}
+    {%- if off > 0 -%}<span class="kjs-card__off">{{ off }}% OFF</span>{%- endif -%}
+  </a>
+  <span class="kjs-card__brand">{{ product.vendor | escape }}</span>
+  <a class="kjs-card__name" href="{{ product.url }}">{{ product.title | remove_first: product.vendor | remove_first: ' - ' | escape }}</a>
+  <p class="kjs-card__price">
+    {%- if off > 0 -%}<s>{{ product.compare_at_price | money }}</s>{%- endif -%}
+    <strong>{{ product.price | money }}</strong>
+    {%- if off > 0 -%}<span class="kjs-card__pct">{{ off }}% OFF</span>{%- endif -%}
+  </p>
+  {%- if off > 0 -%}<span class="kjs-card__save">You save {{ diff | money }}</span>{%- endif -%}
+  <div class="kjs-card__actions">
+    <a class="kjs-card__wish" href="{{ product.url }}" aria-label="View {{ product.title | escape }}"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"></path></svg></a>
+    {%- if product.available == false -%}
+      <span class="kjs-card__btn is-disabled">Sold out</span>
+    {%- elsif product.variants.size == 1 -%}
+      <button type="button" class="kjs-card__btn" data-kjs-add="{{ v.id }}" data-product-id="{{ product.id }}">Add to Bag</button>
+    {%- else -%}
+      <a class="kjs-card__btn" href="{{ product.url }}">Choose</a>
+    {%- endif -%}
+  </div>
+</div>

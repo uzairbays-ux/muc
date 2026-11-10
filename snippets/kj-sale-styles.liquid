@@ -81,8 +81,20 @@
   .kjs-bar__title span { font-weight: 400; color: #ccc; font-size: 14px; }
   .kjs .kjs-bar__link { color: var(--kjs-lime); font-size: 14px; font-weight: 600; text-decoration: none; }
   .kjs .kjs-bar__link:hover { text-decoration: underline; }
-  .kjs-grid { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 16px; }
-  @media screen and (min-width: 750px) and (max-width: 1199px) { .kjs-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+  .kjs-carousel { position: relative; }
+  .kjs-grid { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; scrollbar-width: none; padding-bottom: 4px; }
+  .kjs-grid::-webkit-scrollbar { display: none; }
+  .kjs-grid > .kjs-card { flex: 0 0 calc((100% - 5 * 16px) / 6); scroll-snap-align: start; }
+  @media screen and (min-width: 750px) and (max-width: 1199px) { .kjs-grid > .kjs-card { flex-basis: calc((100% - 3 * 16px) / 4); } }
+  .kjs-carousel__btn { position: absolute; top: 38%; z-index: 2; width: 40px; height: 40px; border-radius: 50%; border: 1px solid #ddd; background: #fff; color: #1e1e1e; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,.12); transform: translateY(-50%); }
+  .kjs-carousel__btn--prev { left: -12px; }
+  .kjs-carousel__btn--next { right: -12px; }
+  .kjs-carousel__btn[disabled] { opacity: 0; pointer-events: none; }
+  .kjs-card--more { display: flex; align-items: center; justify-content: center; text-align: center; border-radius: 8px; background: var(--kjs-purple); color: var(--kjs-dark); min-height: 100%; }
+  .kjs-card--more__inner { display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 16px; }
+  .kjs-card--more__title { font-size: 22px; font-weight: 900; }
+  .kjs-card--more__sub { font-size: 13px; font-weight: 600; opacity: .85; }
+  .kjs-card--more__arrow { margin-top: 8px; width: 44px; height: 44px; border-radius: 50%; background: var(--kjs-lime); display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 900; }
   .kjs-card { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
   .kjs-card__media { position: relative; display: flex; align-items: center; justify-content: center; aspect-ratio: 1 / 1; border: 1px solid #ececec; border-radius: 8px; overflow: hidden; background: #f6f3f9; }
   .kjs-card__media img { width: 100%; height: 100%; object-fit: contain; }
@@ -135,9 +147,9 @@
     .kjs-brand__name { font-size: 15px; }
     .kjs-steal { aspect-ratio: auto; min-height: 150px; }
     .kjs-badge__p, .kjs-badge--lime .kjs-badge__p { font-size: 32px; }
-    .kjs-grid { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 12px; padding-bottom: 6px; scrollbar-width: none; margin-left: -16px; margin-right: -16px; padding-left: 16px; padding-right: 16px; }
-    .kjs-grid::-webkit-scrollbar { display: none; }
-    .kjs-grid > .kjs-card { flex: 0 0 44vw; scroll-snap-align: start; }
+    .kjs-grid { gap: 12px; margin-left: -16px; margin-right: -16px; padding-left: 16px; padding-right: 16px; }
+    .kjs-grid > .kjs-card { flex: 0 0 44vw; }
+    .kjs-carousel__btn { display: none; }
     .kjs-card__brand { font-size: 13px; }
     .kjs-card__name { font-size: 12px; }
     .kjs-bar { padding: 14px 16px; }
@@ -158,6 +170,24 @@
 {% endstylesheet %}
 
 {% javascript %}
+  document.addEventListener('click', (e) => {
+    const b = e.target.closest('[data-kjs-prev],[data-kjs-next]');
+    if (!b) return;
+    const track = b.closest('.kjs-carousel').querySelector('[data-kjs-track]');
+    track.scrollBy({ left: (b.hasAttribute('data-kjs-next') ? 1 : -1) * track.clientWidth, behavior: 'smooth' });
+  });
+  const kjsSyncArrows = () => {
+    document.querySelectorAll('.kjs-carousel').forEach((c) => {
+      const t = c.querySelector('[data-kjs-track]'); if (!t) return;
+      const prev = c.querySelector('[data-kjs-prev]'), next = c.querySelector('[data-kjs-next]');
+      const max = t.scrollWidth - t.clientWidth - 2;
+      if (prev) prev.disabled = t.scrollLeft <= 2;
+      if (next) next.disabled = t.scrollLeft >= max;
+    });
+  };
+  document.addEventListener('scroll', (e) => { if (e.target && e.target.matches && e.target.matches('[data-kjs-track]')) kjsSyncArrows(); }, true);
+  window.addEventListener('load', kjsSyncArrows); window.addEventListener('resize', kjsSyncArrows); document.addEventListener('DOMContentLoaded', kjsSyncArrows);
+
   (() => {
     const hero = document.querySelector('.kjs-hero--confetti');
     if (!hero || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;

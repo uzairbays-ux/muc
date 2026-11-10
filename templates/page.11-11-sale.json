@@ -169,7 +169,7 @@
           "miss-rose-new-nude-eyeshadow-palette-19-7g",
           "6903071034681"
         ],
-        "limit": 6,
+        "limit": 12,
         "badge": "",
         "section_width": "full-width",
         "padding_top": 8,
@@ -177,7 +177,9 @@
         "purple": "#A98BCB",
         "lime": "#D9F25B",
         "dark": "#1E1E1E",
-        "red": "#D32F2F"
+        "red": "#D32F2F",
+        "collection": "sale",
+        "more_label": "Shop the sale"
       }
     },
     "steals": {
@@ -210,7 +212,7 @@
           "8809634610034",
           "6902395774211"
         ],
-        "limit": 6,
+        "limit": 12,
         "badge": "BESTSELLER",
         "section_width": "full-width",
         "padding_top": 8,
@@ -218,7 +220,9 @@
         "purple": "#A98BCB",
         "lime": "#D9F25B",
         "dark": "#1E1E1E",
-        "red": "#D32F2F"
+        "red": "#D32F2F",
+        "collection": "bestsellers",
+        "more_label": "Shop all"
       }
     },
     "ticker": {
@@ -252,7 +256,7 @@
           "8809562193319",
           "luxe-basics-5-in-1-blackhead-remover-machine"
         ],
-        "limit": 6,
+        "limit": 12,
         "badge": "",
         "section_width": "full-width",
         "padding_top": 8,
@@ -260,7 +264,9 @@
         "purple": "#A98BCB",
         "lime": "#D9F25B",
         "dark": "#1E1E1E",
-        "red": "#D32F2F"
+        "red": "#D32F2F",
+        "collection": "skin-care",
+        "more_label": "Shop skin care"
       }
     },
     "perfumes": {
@@ -278,7 +284,7 @@
           "6974772945224",
           "6291003658570"
         ],
-        "limit": 6,
+        "limit": 12,
         "badge": "",
         "section_width": "full-width",
         "padding_top": 8,
@@ -286,7 +292,9 @@
         "purple": "#A98BCB",
         "lime": "#D9F25B",
         "dark": "#1E1E1E",
-        "red": "#D32F2F"
+        "red": "#D32F2F",
+        "collection": "perfumes",
+        "more_label": "Shop perfumes"
       }
     },
     "brands_a": {
@@ -319,7 +327,7 @@
           "vaseline-balm-stick-4-8g",
           "13190"
         ],
-        "limit": 6,
+        "limit": 12,
         "badge": "",
         "section_width": "full-width",
         "padding_top": 8,
@@ -327,7 +335,9 @@
         "purple": "#A98BCB",
         "lime": "#D9F25B",
         "dark": "#1E1E1E",
-        "red": "#D32F2F"
+        "red": "#D32F2F",
+        "collection": "makeup",
+        "more_label": "Shop makeup"
       }
     },
     "haircare": {
@@ -343,7 +353,7 @@
           "6972288685542",
           "8032505876387"
         ],
-        "limit": 6,
+        "limit": 12,
         "badge": "",
         "section_width": "full-width",
         "padding_top": 8,
@@ -351,7 +361,9 @@
         "purple": "#A98BCB",
         "lime": "#D9F25B",
         "dark": "#1E1E1E",
-        "red": "#D32F2F"
+        "red": "#D32F2F",
+        "collection": "hair-care",
+        "more_label": "Shop hair care"
       }
     },
     "brands_b": {
