@@ -1,10 +1,12 @@
 {%- render 'kj-sale-styles' -%}
 {%- if section.settings.page_bg != blank and section.settings.page_bg != 'rgba(0,0,0,0)' -%}<style>body { background: {{ section.settings.page_bg }}; }</style>{%- endif -%}
 <div class="kjs kjs--{{ section.settings.section_width }}" style="--kjs-purple: {{ section.settings.purple }}; --kjs-lime: {{ section.settings.lime }}; --kjs-dark: {{ section.settings.dark }}; --kjs-red: {{ section.settings.red }}; padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px;">
-        <a class="kjs-hero{% if section.settings.pattern %} kjs-hero--pattern{% endif %}{% if section.settings.animate %} kjs-hero--anim{% endif %}{% if section.settings.confetti %} kjs-hero--confetti{% endif %}" href="{{ section.settings.link | default: '#' }}">
+        {%- if section.settings.bg_image != blank -%}{%- assign kjs_pat = section.settings.bg_image | image_url: width: 2400 -%}{%- endif -%}
+<a class="kjs-hero{% if section.settings.pattern %} kjs-hero--pattern{% endif %}{% if kjs_pat %} kjs-hero--image{% endif %}{% if section.settings.animate %} kjs-hero--anim{% endif %}{% if section.settings.confetti %} kjs-hero--confetti{% endif %}" href="{{ section.settings.link | default: '#' }}"{% if kjs_pat %} style="--kjs-hero-pattern: url('{{ kjs_pat }}');"{% endif %}>
           <div class="kjs-hero__left">
             <span class="kjs-hero__title">{{ section.settings.title | escape }} <span>{{ section.settings.title2 | escape }}</span></span>
             <span class="kjs-hero__tag">{{ section.settings.tag | escape }}</span>
+            {%- if section.settings.note != blank -%}<span class="kjs-hero__note">{{ section.settings.note | escape }}</span>{%- endif -%}
           </div>
           <div class="kjs-hero__right">
             <span class="kjs-hero__upto">{{ section.settings.upto | escape }}</span>
@@ -32,6 +34,8 @@
     { "type": "checkbox", "id": "pattern", "label": "Drifting 11:11 pattern behind", "default": true },
     { "type": "checkbox", "id": "animate", "label": "Animate the text in", "default": true },
     { "type": "checkbox", "id": "confetti", "label": "Confetti on page load (once per visit)", "default": true },
+    { "type": "image_picker", "id": "bg_image", "label": "Pattern image (optional, replaces the built-in 11:11 pattern)" },
+    { "type": "text", "id": "note", "label": "Small note under the tag line", "default": "FREE SHIPPING ON ORDERS OVER RS. 2,999" },
     { "type": "color", "id": "page_bg", "label": "Page background (whole page)", "default": "#F6F2FB" },
     { "type": "select", "id": "section_width", "label": "Width", "default": "full-width", "options": [ { "value": "full-width", "label": "Full width" }, { "value": "page-width", "label": "Page width" } ] },
     { "type": "range", "id": "padding_top", "label": "Top spacing", "min": 0, "max": 80, "step": 4, "unit": "px", "default": 16 },
