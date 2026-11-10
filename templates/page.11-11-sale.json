@@ -573,9 +573,10 @@
           "settings": {
             "text": "View All Products",
             "link": "/collections/all",
-            "bg": "#A98BCB",
-            "fg": "#FFFFFF",
-            "pattern": true
+            "bg": "#1E1E1E",
+            "fg": "#D9F25B",
+            "pattern": true,
+            "pattern_style": "black"
           }
         }
       },

@@ -62,7 +62,7 @@
         {%- assign b = block.settings -%}
         {%- if block.type == 'text_card' -%}
           <div class="card-grid__item card-grid__item--text" {{ block.shopify_attributes }}>
-            <a href="{{ b.link | default: '/collections/all' }}" class="card-grid__textcard" style="--cg-tc-bg: {{ b.bg }}; --cg-tc-fg: {{ b.fg }};{% if b.pattern %} background-image: url('{{ 'kj-1111-circle.webp' | asset_url }}');{% endif %}">
+            <a href="{{ b.link | default: '/collections/all' }}" class="card-grid__textcard" style="--cg-tc-bg: {{ b.bg }}; --cg-tc-fg: {{ b.fg }};{% if b.pattern %} background-image: url('{% if b.pattern_style == 'purple' %}{{ 'kj-1111-circle.webp' | asset_url }}{% else %}{{ 'kj-1111-dark.webp' | asset_url }}{% endif %}');{% endif %}">
               <span class="card-grid__textcard-label">{{ b.text | escape }}</span>
               <span class="card-grid__textcard-arrow" aria-hidden="true">&rarr;</span>
             </a>
@@ -736,7 +736,8 @@
         { "type": "url", "id": "link", "label": "Link" },
         { "type": "color", "id": "bg", "label": "Background", "default": "#1E1E1E" },
         { "type": "color", "id": "fg", "label": "Text colour", "default": "#FFFFFF" },
-        { "type": "checkbox", "id": "pattern", "label": "Use the 11:11 pattern background", "default": true }
+        { "type": "checkbox", "id": "pattern", "label": "Use the 11:11 pattern background", "default": true },
+        { "type": "select", "id": "pattern_style", "label": "Pattern style", "default": "black", "options": [ { "value": "black", "label": "Black" }, { "value": "purple", "label": "Purple circle" } ] }
       ]
     }
   ],
