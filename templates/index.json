@@ -2987,6 +2987,25 @@
         "padding-block-start": 0,
         "padding-block-end": 0
       }
+    },
+    "kj_sale_sticky": {
+      "type": "kj-sale-sticky",
+      "settings": {
+        "title": "11:11 FLASH SALE",
+        "subtitle": "FLAT 40% OFF",
+        "button": "Shop the sale",
+        "link": "shopify://pages/sale",
+        "timer_start": "2026-11-11T00:00:00+05:00",
+        "timer_end": "2026-11-11T23:59:59+05:00",
+        "label_start": "STARTS IN",
+        "label_end": "ENDS IN",
+        "bg": "#1E1E1E",
+        "fg": "#FFFFFF",
+        "purple": "#A98BCB",
+        "lime": "#D9F25B",
+        "dark": "#1E1E1E",
+        "red": "#D32F2F"
+      }
     }
   },
   "order": [
@@ -3013,6 +3032,7 @@
     "category_grid_Nr4rxN",
     "video_reels_xGEykY",
     "ad_banner_pjN7dA",
-    "cta_banner_eHhwWU"
+    "cta_banner_eHhwWU",
+    "kj_sale_sticky"
   ]
 }

@@ -215,6 +215,30 @@
   .kjs--full-width { max-width: none; padding-left: 0; padding-right: 0; }
   .kjs--full-width > .kjs-alert, .kjs--full-width > .kjs-hero, .kjs--full-width > .kjs-rewards, .kjs--full-width > .kjs-ticker, .kjs--full-width > .kjs-cta { border-radius: 0; margin-top: 0; }
   .kjs--full-width > .kjs-sec, .kjs--full-width > .kjs-cats { padding-left: 16px; padding-right: 16px; }
+  .kj-sale-section--sticky { position: fixed; left: 0; right: 0; bottom: 0; z-index: 90; }
+  .kjs-sticky { position: relative; background: var(--kjs-sticky-bg, #1E1E1E); color: var(--kjs-sticky-fg, #fff); box-shadow: 0 -4px 18px rgba(0,0,0,.18); }
+  .kjs-sticky[hidden] { display: none; }
+  .kjs-sticky__inner, .kjs-sticky__inner:hover { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 8px 22px; padding: 10px 48px 10px 16px; color: var(--kjs-sticky-fg, #fff); text-decoration: none; }
+  .kjs-sticky__title { font-weight: 900; font-size: 18px; letter-spacing: -0.01em; background: var(--kjs-lime); color: var(--kjs-dark); padding: 4px 10px; border-radius: 6px; transform: rotate(-2deg); }
+  .kjs-sticky__sub { font-weight: 900; font-size: 18px; }
+  .kjs-sticky__timer.kjs-hero__timer { margin-top: 0; gap: 8px 10px; }
+  .kjs-sticky .kjs-hero__timer-label { color: var(--kjs-sticky-fg, #fff); font-size: 11px; }
+  .kjs-sticky .kjs-hero__timer-unit { min-width: 44px; padding: 4px 6px 4px; background: var(--kjs-lime); color: var(--kjs-dark); }
+  .kjs-sticky .kjs-hero__timer-unit b { font-size: 18px; }
+  .kjs-sticky .kjs-hero__timer-unit small { color: var(--kjs-dark); font-size: 8px; }
+  .kjs-sticky .kjs-hero__timer-sep { color: var(--kjs-lime); font-size: 16px; }
+  .kjs-sticky__btn { background: var(--kjs-red); color: #fff; font-weight: 800; font-size: 13px; padding: 9px 16px; border-radius: 999px; white-space: nowrap; animation: kjs-pulse 1.8s ease-in-out infinite; }
+  .kjs-sticky__close { position: absolute; right: 8px; top: 50%; transform: translateY(-50%); width: 32px; height: 32px; border: 0; border-radius: 50%; background: rgba(255,255,255,.14); color: #fff; font-size: 20px; line-height: 1; cursor: pointer; }
+  body.kjs-has-sticky { padding-bottom: 64px; }
+  @media screen and (max-width: 749px) {
+    .kjs-sticky__inner { gap: 6px 12px; padding: 8px 40px 8px 12px; }
+    .kjs-sticky__title, .kjs-sticky__sub { font-size: 14px; }
+    .kjs-sticky__sub { display: none; }
+    .kjs-sticky .kjs-hero__timer-unit { min-width: 38px; }
+    .kjs-sticky .kjs-hero__timer-unit b { font-size: 15px; }
+    .kjs-sticky__btn { font-size: 12px; padding: 8px 12px; }
+    body.kjs-has-sticky { padding-bottom: 96px; }
+  }
 {% endstylesheet %}
 
 {% javascript %}
@@ -233,6 +257,17 @@
       i = (i + 1) % slides.length;
       slides[i].classList.add('is-active');
     }, (parseInt(el.getAttribute('data-interval'), 10) || 4) * 1000);
+  });
+  document.querySelectorAll('[data-kjs-sticky]').forEach((el) => {
+    let dismissed = false;
+    try { dismissed = sessionStorage.getItem('kjsStickyClosed') === '1'; } catch (e) {}
+    if (dismissed) { el.hidden = true; return; }
+    document.body.classList.add('kjs-has-sticky');
+    const close = el.querySelector('[data-kjs-sticky-close]');
+    if (close) close.addEventListener('click', () => {
+      el.hidden = true; document.body.classList.remove('kjs-has-sticky');
+      try { sessionStorage.setItem('kjsStickyClosed', '1'); } catch (e) {}
+    });
   });
   document.querySelectorAll('[data-kjs-timer]').forEach((el) => {
     const end = Date.parse(el.getAttribute('data-kjs-timer'));

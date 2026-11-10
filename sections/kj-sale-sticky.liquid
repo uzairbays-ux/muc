@@ -1,0 +1,48 @@
+{%- render 'kj-sale-styles' -%}
+{%- if section.settings.timer_end != blank -%}
+<div class="kjs-sticky" id="kjs-sticky" style="--kjs-purple: {{ section.settings.purple }}; --kjs-lime: {{ section.settings.lime }}; --kjs-dark: {{ section.settings.dark }}; --kjs-red: {{ section.settings.red }}; --kjs-sticky-bg: {{ section.settings.bg }}; --kjs-sticky-fg: {{ section.settings.fg }};" data-kjs-sticky>
+  <a class="kjs-sticky__inner" href="{{ section.settings.link | default: '/pages/sale' }}">
+    <span class="kjs-sticky__title">{{ section.settings.title | escape }}</span>
+    <span class="kjs-sticky__sub">{{ section.settings.subtitle | escape }}</span>
+    <span class="kjs-hero__timer kjs-sticky__timer" data-kjs-timer="{{ section.settings.timer_end | escape }}" data-kjs-timer-start="{{ section.settings.timer_start | escape }}" data-label-start="{{ section.settings.label_start | escape }}" data-label-end="{{ section.settings.label_end | escape }}" hidden>
+      <span class="kjs-hero__timer-label" data-kjs-t="label">{{ section.settings.label_end | escape }}</span>
+      <span class="kjs-hero__timer-units">
+        <span class="kjs-hero__timer-unit"><b data-kjs-t="h">00</b><small>HRS</small></span>
+        <span class="kjs-hero__timer-sep">:</span>
+        <span class="kjs-hero__timer-unit"><b data-kjs-t="m">00</b><small>MIN</small></span>
+        <span class="kjs-hero__timer-sep">:</span>
+        <span class="kjs-hero__timer-unit"><b data-kjs-t="s">00</b><small>SEC</small></span>
+      </span>
+    </span>
+    <span class="kjs-sticky__btn">{{ section.settings.button | escape }}</span>
+  </a>
+  <button class="kjs-sticky__close" type="button" aria-label="Close" data-kjs-sticky-close>&times;</button>
+</div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "11.11 sticky timer bar",
+  "tag": "section",
+  "class": "kj-sale-section kj-sale-section--sticky",
+  "settings": [
+    { "type": "text", "id": "title", "label": "Title", "default": "11:11 FLASH SALE" },
+    { "type": "text", "id": "subtitle", "label": "Sub line", "default": "FLAT 40% OFF" },
+    { "type": "text", "id": "button", "label": "Button text", "default": "Shop the sale" },
+    { "type": "url", "id": "link", "label": "Link" },
+    { "type": "header", "content": "Countdown" },
+    { "type": "text", "id": "timer_start", "label": "Starts at (ISO date, Pakistan time)", "default": "2026-11-11T00:00:00+05:00" },
+    { "type": "text", "id": "timer_end", "label": "Ends at (ISO date, Pakistan time)", "default": "2026-11-11T23:59:59+05:00", "info": "The bar hides itself once the end time has passed." },
+    { "type": "text", "id": "label_start", "label": "Label before the sale starts", "default": "STARTS IN" },
+    { "type": "text", "id": "label_end", "label": "Label while the sale is on", "default": "ENDS IN" },
+    { "type": "header", "content": "Colours" },
+    { "type": "color", "id": "bg", "label": "Bar background", "default": "#1E1E1E" },
+    { "type": "color", "id": "fg", "label": "Bar text", "default": "#FFFFFF" },
+    { "type": "color", "id": "purple", "label": "Purple", "default": "#A98BCB" },
+    { "type": "color", "id": "lime", "label": "Lime", "default": "#D9F25B" },
+    { "type": "color", "id": "dark", "label": "Dark", "default": "#1E1E1E" },
+    { "type": "color", "id": "red", "label": "Button red", "default": "#D32F2F" }
+  ],
+  "presets": [{ "name": "11.11 sticky timer bar" }]
+}
+{% endschema %}

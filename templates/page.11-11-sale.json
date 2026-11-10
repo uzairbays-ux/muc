@@ -25,10 +25,10 @@
         "lime": "#d9f25b",
         "dark": "#1e1e1e",
         "red": "#d32f2f",
-        "collection": "big-save",
         "limit": 5,
         "interval": 4,
-        "joiner": "at"
+        "joiner": "at",
+        "slider_collection": "big-save"
       }
     },
     "hero": {
