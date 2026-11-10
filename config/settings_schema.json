@@ -2584,6 +2584,12 @@
         "id": "kj_logo_badge_on_pdp",
         "label": "Also show the tag on product pages (discounted products only)",
         "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "kj_logo_badge_on_cards",
+        "label": "Also show the tag on product cards (discounted products only)",
+        "default": false
       }
     ]
   },

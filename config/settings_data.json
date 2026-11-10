@@ -484,7 +484,8 @@
     "kj_logo_badge_fg": "#1E1E1E",
     "kj_logo_badge_on_pdp": true,
     "kj_fs_enabled": true,
-    "kj_fs_threshold": 2999
+    "kj_fs_threshold": 2999,
+    "kj_logo_badge_on_cards": true
   },
   "presets": {
     "Horizon": {
