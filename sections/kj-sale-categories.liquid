@@ -1,0 +1,49 @@
+{%- render 'kj-sale-styles' -%}
+<div class="kjs kjs--{{ section.settings.section_width }}" style="--kjs-purple: {{ section.settings.purple }}; --kjs-lime: {{ section.settings.lime }}; --kjs-dark: {{ section.settings.dark }}; --kjs-red: {{ section.settings.red }}; padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px;">
+<div class="kjs-cats">
+{%- for block in section.blocks -%}
+                <a class="kjs-cat" href="{{ block.settings.link | default: '#' }}" >
+          <span class="kjs-cat__img">
+            {%- liquid
+              assign cat_img = block.settings.image
+              if cat_img == blank
+                assign cat_handle = block.settings.link | split: '/collections/' | last | split: '?' | first
+                assign cat_img = collections[cat_handle].image
+              endif
+            -%}
+            {%- if cat_img != blank -%}
+              {{ cat_img | image_url: width: 240 | image_tag: loading: 'lazy', widths: '120, 240', sizes: '120px', alt: block.settings.label }}
+            {%- endif -%}
+          </span>
+          <span class="kjs-cat__name">{{ block.settings.label | escape }}</span>
+          <span class="kjs-cat__pct">{{ block.settings.pct | escape }}</span>
+        </a>
+
+      
+{%- endfor -%}
+</div>
+</div>
+
+{% schema %}
+{
+  "name": "11.11 category circles",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    { "type": "select", "id": "section_width", "label": "Width", "default": "full-width", "options": [ { "value": "full-width", "label": "Full width" }, { "value": "page-width", "label": "Page width" } ] },
+    { "type": "range", "id": "padding_top", "label": "Top spacing", "min": 0, "max": 80, "step": 4, "unit": "px", "default": 16 },
+    { "type": "range", "id": "padding_bottom", "label": "Bottom spacing", "min": 0, "max": 80, "step": 4, "unit": "px", "default": 16 },
+    { "type": "color", "id": "purple", "label": "Purple", "default": "#A98BCB" },
+    { "type": "color", "id": "lime", "label": "Lime", "default": "#D9F25B" },
+    { "type": "color", "id": "dark", "label": "Dark", "default": "#1E1E1E" },
+    { "type": "color", "id": "red", "label": "Button red", "default": "#D32F2F" }
+  ],
+  "blocks": [ { "type": "category", "name": "Category", "settings": [
+      { "type": "image_picker", "id": "image", "label": "Image (falls back to the linked collection image)" },
+      { "type": "text", "id": "label", "label": "Name" },
+      { "type": "text", "id": "pct", "label": "Offer line", "default": "UPTO 40% OFF" },
+      { "type": "url", "id": "link", "label": "Link" } ] } ],
+  "max_blocks": 12,
+  "presets": [{ "name": "11.11 category circles" }]
+}
+{% endschema %}

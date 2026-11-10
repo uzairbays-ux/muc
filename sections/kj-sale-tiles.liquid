@@ -1,0 +1,67 @@
+{%- render 'kj-sale-styles' -%}
+<div class="kjs kjs--{{ section.settings.section_width }}" style="--kjs-purple: {{ section.settings.purple }}; --kjs-lime: {{ section.settings.lime }}; --kjs-dark: {{ section.settings.dark }}; --kjs-red: {{ section.settings.red }}; padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px;">
+        <section class="kjs-sec" >
+          {%- if section.settings.heading != blank -%}<h2 class="kjs-h2">{{ section.settings.heading | escape }}</h2>{%- endif -%}
+          <div class="kjs-tiles kjs-tiles--{{ section.settings.style }}">
+            {%- assign lines = section.settings.lines | newline_to_br | split: '<br />' -%}
+            {%- for l in lines -%}
+              {%- assign p = l | strip | split: '|' -%}
+              {%- if p.size < 2 -%}{%- continue -%}{%- endif -%}
+              {%- assign tile_link = p[3] | strip -%}
+              {%- if section.settings.style == 'fave' -%}
+                <a class="kjs-fave" href="{{ tile_link | default: '#' }}">
+                  <span class="kjs-fave__top"><span class="kjs-fave__brand">{{ p[0] | strip | escape }}</span><span class="kjs-fave__desc">{{ p[1] | strip | escape }}</span></span>
+                  <span class="kjs-fave__price"><span>RS.</span><span class="kjs-fave__num">{{ p[2] | strip | escape }}</span></span>
+                </a>
+              {%- elsif section.settings.style == 'steal' -%}
+                {%- assign coll_handle = tile_link | split: '/collections/' | last | split: '?' | first -%}
+                {%- assign coll = collections[coll_handle] -%}
+                {%- if coll.image == blank -%}
+                  {%- assign base_handle = coll_handle | remove_first: 'sale-' -%}
+                  {%- assign coll = collections[base_handle] -%}
+                {%- endif -%}
+                <a class="kjs-steal" href="{{ tile_link | default: '#' }}">
+                  <span class="kjs-steal__text">
+                    <span class="kjs-steal__name">{{ p[0] | strip | escape }}</span>
+                    <span class="kjs-badge kjs-badge--purple"><span class="kjs-badge__k">{{ p[1] | strip | escape }}</span><span class="kjs-badge__p">{{ p[2] | strip | escape }}%</span><span class="kjs-badge__o">OFF</span></span>
+                  </span>
+                  <span class="kjs-steal__img">
+                    {%- if coll.image -%}{{ coll.image | image_url: width: 400 | image_tag: loading: 'lazy', widths: '200, 400', sizes: '200px', alt: coll.title }}{%- endif -%}
+                  </span>
+                </a>
+              {%- else -%}
+                <a class="kjs-brand" href="{{ tile_link | default: '#' }}">
+                  <span class="kjs-brand__name">{{ p[0] | strip | escape }}</span>
+                  <span class="kjs-badge kjs-badge--lime"><span class="kjs-badge__k">{{ p[1] | strip | escape }}</span><span class="kjs-badge__p">{{ p[2] | strip | escape }}%</span><span class="kjs-badge__o">OFF</span></span>
+                </a>
+              {%- endif -%}
+            {%- endfor -%}
+          </div>
+        </section>
+
+      
+</div>
+
+{% schema %}
+{
+  "name": "11.11 tiles",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading" },
+    { "type": "select", "id": "style", "label": "Style", "default": "brand", "options": [
+        { "value": "fave", "label": "Daily faves (brand | desc | price | link)" },
+        { "value": "steal", "label": "Big steals (brand | FLAT | 30 | link)" },
+        { "value": "brand", "label": "Brand deals (brand | FLAT | 30 | link)" } ] },
+    { "type": "textarea", "id": "lines", "label": "Tiles, one per line" },
+    { "type": "select", "id": "section_width", "label": "Width", "default": "full-width", "options": [ { "value": "full-width", "label": "Full width" }, { "value": "page-width", "label": "Page width" } ] },
+    { "type": "range", "id": "padding_top", "label": "Top spacing", "min": 0, "max": 80, "step": 4, "unit": "px", "default": 16 },
+    { "type": "range", "id": "padding_bottom", "label": "Bottom spacing", "min": 0, "max": 80, "step": 4, "unit": "px", "default": 16 },
+    { "type": "color", "id": "purple", "label": "Purple", "default": "#A98BCB" },
+    { "type": "color", "id": "lime", "label": "Lime", "default": "#D9F25B" },
+    { "type": "color", "id": "dark", "label": "Dark", "default": "#1E1E1E" },
+    { "type": "color", "id": "red", "label": "Button red", "default": "#D32F2F" }
+  ],
+  "presets": [{ "name": "11.11 tiles" }]
+}
+{% endschema %}
