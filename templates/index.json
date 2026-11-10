@@ -129,7 +129,7 @@
         "link": "shopify://pages/sale",
         "pattern": true,
         "animate": true,
-        "confetti": true,
+        "confetti": false,
         "note": "FREE SHIPPING ON ORDERS OVER RS. 2,999",
         "timer_end": "2026-11-11T23:59:59+05:00",
         "timer_label": "SALE ENDS IN",

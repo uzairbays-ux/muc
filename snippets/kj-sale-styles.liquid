@@ -336,6 +336,7 @@
     const hero = document.querySelector('.kjs-hero--confetti');
     if (!hero || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     if (window.__kjsConfettiDone) return; window.__kjsConfettiDone = true;
+    try { if (localStorage.getItem('kjsConfettiSeen') === '1') return; localStorage.setItem('kjsConfettiSeen', '1'); } catch (e) {}
     const canvas = document.createElement('canvas'); canvas.className = 'kjs-confetti'; document.body.appendChild(canvas);
     const ctx = canvas.getContext('2d'); const dpr = Math.min(window.devicePixelRatio || 1, 2);
     const size = () => { canvas.width = innerWidth * dpr; canvas.height = innerHeight * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0); }; size();
