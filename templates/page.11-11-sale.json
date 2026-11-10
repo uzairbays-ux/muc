@@ -143,51 +143,6 @@
         "red": "#d32f2f"
       }
     },
-    "partners": {
-      "type": "kj-sale-partners",
-      "blocks": {
-        "yango": {
-          "type": "partner",
-          "settings": {
-            "title": "Pay in 4 with Yango",
-            "text": "Split your order into 4 easy payments at checkout. 10% off your first Yango order, no extra fees.",
-            "badge": "-10% first order",
-            "logo_asset": "yango-icon.webp",
-            "logo_text": "yango",
-            "logo_bg": "#ffffff",
-            "logo_fg": "#ffffff",
-            "link": ""
-          }
-        },
-        "baadmay": {
-          "type": "partner",
-          "settings": {
-            "title": "Pay in 3 with BaadMay",
-            "text": "Buy now and pay in 3 instalments. Available at checkout on orders up to Rs. 20,000.",
-            "badge": "0% mark-up",
-            "logo_asset": "baadmay-logo-icon.svg",
-            "logo_text": "BaadMay",
-            "logo_bg": "#ffffff",
-            "logo_fg": "#6016eb",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "yango",
-        "baadmay"
-      ],
-      "settings": {
-        "heading": "Pay your way",
-        "section_width": "full-width",
-        "padding_top": 8,
-        "padding_bottom": 8,
-        "purple": "#a98bcb",
-        "lime": "#d9f25b",
-        "dark": "#1e1e1e",
-        "red": "#d32f2f"
-      }
-    },
     "brand_offers": {
       "type": "card-grid",
       "blocks": {
@@ -647,6 +602,51 @@
         "red": "#d32f2f"
       }
     },
+    "partners": {
+      "type": "kj-sale-partners",
+      "blocks": {
+        "yango": {
+          "type": "partner",
+          "settings": {
+            "title": "Pay in 4 with Yango",
+            "text": "Split your order into 4 easy payments at checkout. 10% off your first Yango order, no extra fees.",
+            "badge": "-10% first order",
+            "logo_asset": "yango-icon.webp",
+            "logo_text": "yango",
+            "logo_bg": "#ffffff",
+            "logo_fg": "#ffffff",
+            "link": ""
+          }
+        },
+        "baadmay": {
+          "type": "partner",
+          "settings": {
+            "title": "Pay in 3 with BaadMay",
+            "text": "Buy now and pay in 3 instalments. Available at checkout on orders up to Rs. 20,000.",
+            "badge": "0% mark-up",
+            "logo_asset": "baadmay-logo-icon.svg",
+            "logo_text": "BaadMay",
+            "logo_bg": "#ffffff",
+            "logo_fg": "#6016eb",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "yango",
+        "baadmay"
+      ],
+      "settings": {
+        "heading": "Pay your way",
+        "section_width": "full-width",
+        "padding_top": 8,
+        "padding_bottom": 8,
+        "purple": "#a98bcb",
+        "lime": "#d9f25b",
+        "dark": "#1e1e1e",
+        "red": "#d32f2f"
+      }
+    },
     "skincare": {
       "type": "kj-sale-products",
       "settings": {
@@ -793,12 +793,12 @@
     "hero",
     "categories",
     "rewards",
-    "partners",
     "brand_offers",
     "top_picks",
     "bestsellers",
     "deal_cards",
     "ticker",
+    "partners",
     "skincare",
     "perfumes",
     "makeup",
