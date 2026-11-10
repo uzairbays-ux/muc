@@ -42,8 +42,15 @@
         {%- endunless -%}
         <a class="kjs-cat" href="{{ block.settings.link | default: '#' }}" {{ block.shopify_attributes }}>
           <span class="kjs-cat__img">
-            {%- if block.settings.image != blank -%}
-              {{ block.settings.image | image_url: width: 240 | image_tag: loading: 'lazy', widths: '120, 240', sizes: '120px', alt: block.settings.label }}
+            {%- liquid
+              assign cat_img = block.settings.image
+              if cat_img == blank
+                assign cat_handle = block.settings.link | split: '/collections/' | last | split: '?' | first
+                assign cat_img = collections[cat_handle].image
+              endif
+            -%}
+            {%- if cat_img != blank -%}
+              {{ cat_img | image_url: width: 240 | image_tag: loading: 'lazy', widths: '120, 240', sizes: '120px', alt: block.settings.label }}
             {%- endif -%}
           </span>
           <span class="kjs-cat__name">{{ block.settings.label | escape }}</span>
@@ -88,6 +95,10 @@
               {%- elsif block.settings.style == 'steal' -%}
                 {%- assign coll_handle = tile_link | split: '/collections/' | last | split: '?' | first -%}
                 {%- assign coll = collections[coll_handle] -%}
+                {%- if coll.image == blank -%}
+                  {%- assign base_handle = coll_handle | remove_first: 'sale-' -%}
+                  {%- assign coll = collections[base_handle] -%}
+                {%- endif -%}
                 <a class="kjs-steal" href="{{ tile_link | default: '#' }}">
                   <span class="kjs-steal__text">
                     <span class="kjs-steal__name">{{ p[0] | strip | escape }}</span>
@@ -181,6 +192,7 @@
   .kjs-alert { display: flex; align-items: center; justify-content: center; gap: 12px 32px; flex-wrap: wrap; padding: 20px 24px; border-radius: 12px; background: var(--kjs-dark); color: #fff; margin-top: -8px; }
   .kjs-alert__tag { font-size: 24px; font-weight: 900; line-height: 1; color: var(--kjs-dark); background: var(--kjs-lime); padding: 8px 14px; border-radius: 8px; transform: rotate(-3deg); }
   .kjs-alert__text { font-size: 22px; font-weight: 700; text-transform: uppercase; }
+  .kjs-alert__text p { margin: 0; display: inline; color: inherit; font: inherit; }
   .kjs-alert__text strong, .kjs-alert__text em { color: var(--kjs-lime); font-style: normal; }
   .kjs-hero { position: relative; display: flex; flex-wrap: wrap; align-items: center; gap: 32px; padding: clamp(28px, 5vw, 64px); border-radius: 16px; background: var(--kjs-purple); color: var(--kjs-dark); min-height: 440px; box-sizing: border-box; overflow: hidden; }
   .kjs-hero__left { flex: 1 1 380px; display: flex; flex-direction: column; align-items: flex-start; gap: 16px; }
@@ -207,9 +219,10 @@
   .kjs-tier__plus { font-size: 18px; font-weight: 700; }
   .kjs-tier__bonus { font-size: 18px; font-weight: 800; line-height: 1.2; color: var(--kjs-lime); }
   .kjs-tiles { display: grid; gap: 16px; }
-  .kjs-tiles--fave { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
-  .kjs-tiles--steal { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
-  .kjs-tiles--brand { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 14px; }
+  .kjs-tiles--fave { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+  .kjs-tiles--steal { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .kjs-tiles--brand { grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 14px; }
+  @media screen and (min-width: 750px) and (max-width: 1199px) { .kjs-tiles--fave, .kjs-tiles--brand { grid-template-columns: repeat(3, minmax(0, 1fr)); } .kjs-tiles--steal { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
   .kjs-fave { display: flex; flex-direction: column; justify-content: space-between; aspect-ratio: 4 / 3; padding: 16px; box-sizing: border-box; border-radius: 14px; background: var(--kjs-purple); }
   .kjs-fave__top { display: flex; flex-direction: column; gap: 2px; }
   .kjs-fave__brand { font-size: 18px; font-weight: 800; }
@@ -235,7 +248,8 @@
   .kjs-bar__title { margin: 0; font-size: 20px; font-weight: 700; color: #fff; }
   .kjs-bar__title span { font-weight: 400; color: #ccc; font-size: 14px; }
   .kjs-bar__link { color: var(--kjs-lime); font-size: 14px; font-weight: 600; }
-  .kjs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 20px; }
+  .kjs-grid { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 16px; }
+  @media screen and (min-width: 750px) and (max-width: 1199px) { .kjs-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
   .kjs-card { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
   .kjs-card__media { position: relative; display: flex; align-items: center; justify-content: center; aspect-ratio: 1 / 1; border: 1px solid #ececec; border-radius: 8px; overflow: hidden; background: #f6f3f9; }
   .kjs-card__media img { width: 100%; height: 100%; object-fit: contain; }
