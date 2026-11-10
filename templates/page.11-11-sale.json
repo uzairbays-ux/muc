@@ -328,6 +328,17 @@
             "link": "shopify://collections/vt",
             "open_new_tab": false
           }
+        },
+        "tile_all": {
+          "type": "text_card",
+          "settings": {
+            "text": "View All Products",
+            "link": "/collections/all",
+            "bg": "#1E1E1E",
+            "fg": "#D9F25B",
+            "pattern": true,
+            "pattern_style": "black"
+          }
         }
       },
       "block_order": [
@@ -350,7 +361,8 @@
         "tile_7",
         "tile_9",
         "tile_10",
-        "tile_19"
+        "tile_19",
+        "tile_all"
       ],
       "settings": {
         "heading": "Big Brands. Bigger Steals",

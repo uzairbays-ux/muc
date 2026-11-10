@@ -232,7 +232,8 @@
     box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
   }
 
-  .card-grid__textcard { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; aspect-ratio: 1 / 1; width: 100%; border-radius: 12px; background-color: var(--cg-tc-bg, #1E1E1E); background-size: cover; background-position: center; color: var(--cg-tc-fg, #fff); text-decoration: none; text-align: center; padding: 16px; box-sizing: border-box; transition: transform .2s ease; }
+  .card-grid__item--text { display: flex; }
+  .card-grid__textcard { display: flex; flex: 1 1 auto; flex-direction: column; align-items: center; justify-content: center; gap: 6px; min-height: 180px; width: 100%; border-radius: 12px; background-color: var(--cg-tc-bg, #1E1E1E); background-size: cover; background-position: center; color: var(--cg-tc-fg, #fff); text-decoration: none; text-align: center; padding: 16px; box-sizing: border-box; transition: transform .2s ease; }
   .card-grid__textcard:hover { transform: translateY(-3px); color: var(--cg-tc-fg, #fff); }
   .card-grid__textcard-label { font-weight: 900; font-size: clamp(18px, 1.6vw, 26px); line-height: 1.05; letter-spacing: -0.01em; text-shadow: 0 1px 2px rgba(0,0,0,.25); }
   .card-grid__textcard-arrow { font-size: 28px; font-weight: 900; line-height: 1; }
