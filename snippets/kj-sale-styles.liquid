@@ -161,6 +161,7 @@
     .kjs-alert__tag { font-size: 16px; padding: 6px 10px; }
     .kjs-hero__title { font-size: clamp(28px, 8.5vw, 44px); padding: 6px 14px; gap: 6px 12px; }
     .kjs-hero__tag { font-size: 13px; padding: 6px 12px; }
+    .kjs-hero__fine { font-size: 10px; }
     .kjs-hero__note { font-size: 10px; padding: 5px 10px; letter-spacing: 0.04em; white-space: nowrap; }
     .kjs-hero__timer { margin-top: 10px; gap: 6px 10px; }
     .kjs-hero__timer-label { font-size: 11px; }
@@ -250,6 +251,16 @@
     .kjs-sticky__close { right: 6px; width: 28px; height: 28px; font-size: 18px; }
     body.kjs-has-sticky { padding-bottom: 60px; }
   }
+  .kjs-hero__fine { display: block; font-size: 12px; font-weight: 600; letter-spacing: 0.04em; opacity: .8; margin-top: 2px; }
+  .kjs-pdp-timer, .kjs-pdp-timer:hover { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 14px; margin: 10px 0 14px; padding: 10px 14px; border-radius: 12px; background: var(--kjs-purple); color: var(--kjs-dark); text-decoration: none; }
+  .kjs-pdp-timer__title { font-weight: 900; font-size: 14px; background: var(--kjs-lime); border: 2px solid var(--kjs-dark); border-radius: 8px; padding: 3px 8px; white-space: nowrap; }
+  .kjs-pdp-timer__timer.kjs-hero__timer { margin-top: 0; gap: 6px 10px; }
+  .kjs-pdp-timer .kjs-hero__timer-label { font-size: 11px; }
+  .kjs-pdp-timer .kjs-hero__timer-unit { min-width: 40px; padding: 4px 5px 3px; }
+  .kjs-pdp-timer .kjs-hero__timer-unit b { font-size: 16px; }
+  .kjs-pdp-timer .kjs-hero__timer-unit small { font-size: 7px; margin-top: 2px; }
+  .kjs-pdp-timer .kjs-hero__timer-sep { font-size: 14px; }
+  .kjs-pdp-timer .kjs-hero__timer[hidden] { display: none; }
 {% endstylesheet %}
 
 {% javascript %}

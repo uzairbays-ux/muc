@@ -1012,6 +1012,21 @@
                 "limit": 4,
                 "mobile_order": 5
               }
+            },
+            "kj_sale_timer": {
+              "type": "kj-sale-timer",
+              "settings": {
+                "title": "11:11 FLASH SALE",
+                "link": "shopify://pages/sale",
+                "timer_start": "2026-11-11T00:00:00+05:00",
+                "timer_end": "2026-11-11T23:59:59+05:00",
+                "label_start": "STARTS IN",
+                "label_end": "ENDS IN",
+                "purple": "#A98BCB",
+                "lime": "#D9F25B",
+                "dark": "#1E1E1E",
+                "red": "#D32F2F"
+              }
             }
           },
           "block_order": [
@@ -1025,6 +1040,7 @@
             "kj_size_guide",
             "kj_shade_club",
             "variant_picker_R3rGDr",
+            "kj_sale_timer",
             "buy_buttons_eYQEYi",
             "kj_vto_lips",
             "barcode_6exrQt",

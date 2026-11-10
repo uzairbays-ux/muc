@@ -56,7 +56,8 @@
         "purple": "#a98bcb",
         "lime": "#d9f25b",
         "dark": "#1e1e1e",
-        "red": "#d32f2f"
+        "red": "#d32f2f",
+        "fine_print": "*On selected brands"
       }
     },
     "categories": {
