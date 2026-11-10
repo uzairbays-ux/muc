@@ -9,34 +9,6 @@
  */
 {
   "sections": {
-    "kj_sale_hero": {
-      "type": "kj-sale-hero",
-      "settings": {
-        "title": "11:11 FLASH",
-        "title2": "SALE",
-        "tag": "BIGGEST SALE OF THE YEAR",
-        "upto": "FLAT",
-        "pct": "40%",
-        "off": "OFF",
-        "link": "shopify://collections/sale",
-        "pattern": true,
-        "animate": true,
-        "confetti": true,
-        "note": "FREE SHIPPING ON ORDERS OVER RS. 2,999",
-        "timer_end": "2026-11-11T23:59:59+05:00",
-        "timer_label": "SALE ENDS IN",
-        "timer_start": "2026-11-11T00:00:00+05:00",
-        "timer_start_label": "SALE STARTS IN",
-        "page_bg": "",
-        "section_width": "full-width",
-        "padding_top": 8,
-        "padding_bottom": 8,
-        "purple": "#a98bcb",
-        "lime": "#d9f25b",
-        "dark": "#1e1e1e",
-        "red": "#d32f2f"
-      }
-    },
     "thumbnail_scroll_PbDt4b": {
       "type": "thumbnail-scroll",
       "blocks": {
@@ -141,6 +113,34 @@
         "color_scheme": "",
         "padding-block-start": 10,
         "padding-block-end": 20
+      }
+    },
+    "kj_sale_hero": {
+      "type": "kj-sale-hero",
+      "settings": {
+        "title": "11:11 FLASH",
+        "title2": "SALE",
+        "tag": "BIGGEST SALE OF THE YEAR",
+        "upto": "FLAT",
+        "pct": "40%",
+        "off": "OFF",
+        "link": "shopify://collections/sale",
+        "pattern": true,
+        "animate": true,
+        "confetti": true,
+        "note": "FREE SHIPPING ON ORDERS OVER RS. 2,999",
+        "timer_end": "2026-11-11T23:59:59+05:00",
+        "timer_label": "SALE ENDS IN",
+        "timer_start": "2026-11-11T00:00:00+05:00",
+        "timer_start_label": "SALE STARTS IN",
+        "page_bg": "",
+        "section_width": "full-width",
+        "padding_top": 8,
+        "padding_bottom": 8,
+        "purple": "#a98bcb",
+        "lime": "#d9f25b",
+        "dark": "#1e1e1e",
+        "red": "#d32f2f"
       }
     },
     "featured_banner_yeQJGh": {
@@ -3009,8 +3009,8 @@
     }
   },
   "order": [
-    "kj_sale_hero",
     "thumbnail_scroll_PbDt4b",
+    "kj_sale_hero",
     "featured_banner_yeQJGh",
     "card_banner_8zTGy8",
     "stacked_banners_NcczDp",
