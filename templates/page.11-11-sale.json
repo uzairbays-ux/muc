@@ -48,7 +48,9 @@
         "purple": "#a98bcb",
         "lime": "#d9f25b",
         "dark": "#1e1e1e",
-        "red": "#d32f2f"
+        "red": "#d32f2f",
+        "timer_end": "2026-11-11T23:59:59+05:00",
+        "timer_label": "SALE ENDS IN"
       }
     },
     "categories": {

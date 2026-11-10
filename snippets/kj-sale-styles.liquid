@@ -31,6 +31,15 @@
   .kjs-hero__left { flex: 1 1 380px; display: flex; flex-direction: column; align-items: flex-start; gap: 16px; }
   .kjs-hero__title { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 18px; max-width: 100%; box-sizing: border-box; border: 4px solid var(--kjs-dark); background: var(--kjs-lime); padding: 8px 22px; font-size: clamp(40px, 4.6vw, 68px); font-weight: 900; line-height: 1; letter-spacing: -0.02em; }
   .kjs-hero__tag { background: var(--kjs-lime); border: 2px solid var(--kjs-dark); border-radius: 10px; padding: 8px 18px; font-size: clamp(16px, 1.8vw, 24px); font-weight: 800; letter-spacing: 0.02em; }
+  .kjs-hero__timer { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 14px; margin-top: 14px; }
+  .kjs-hero__timer[hidden] { display: none; }
+  .kjs-hero__timer-label { font-size: 13px; font-weight: 900; letter-spacing: 0.08em; color: var(--kjs-dark); }
+  .kjs-hero__timer-units { display: inline-flex; align-items: center; gap: 6px; }
+  .kjs-hero__timer-unit { display: inline-flex; flex-direction: column; align-items: center; min-width: 58px; background: var(--kjs-dark); color: var(--kjs-lime); border-radius: 10px; padding: 6px 8px 5px; line-height: 1; }
+  .kjs-hero__timer-unit b { font-size: 26px; font-weight: 900; font-variant-numeric: tabular-nums; }
+  .kjs-hero__timer-unit small { font-size: 9px; font-weight: 800; letter-spacing: 0.1em; color: #fff; margin-top: 3px; }
+  .kjs-hero__timer-sep { font-size: 22px; font-weight: 900; color: var(--kjs-dark); }
+  .kjs-hero--anim .kjs-hero__timer { animation: kjs-rise .7s cubic-bezier(.2,.8,.2,1) both; animation-delay: .35s; }
   .kjs-hero__note { display: inline-block; margin-top: 4px; background: var(--kjs-dark); color: var(--kjs-lime); border-radius: 999px; padding: 8px 16px; font-size: 13px; font-weight: 800; letter-spacing: 0.06em; }
   .kjs-hero__right { flex: 1 1 320px; display: flex; flex-direction: column; align-items: flex-start; line-height: 0.9; }
   .kjs-hero__upto, .kjs-hero__off { font-size: clamp(24px, 2.6vw, 36px); font-weight: 700; }
@@ -210,6 +219,20 @@
     if (!b) return;
     const track = b.closest('.kjs-carousel').querySelector('[data-kjs-track]');
     track.scrollBy({ left: (b.hasAttribute('data-kjs-next') ? 1 : -1) * track.clientWidth, behavior: 'smooth' });
+  });
+  document.querySelectorAll('[data-kjs-timer]').forEach((el) => {
+    const end = Date.parse(el.getAttribute('data-kjs-timer'));
+    if (isNaN(end)) return;
+    const h = el.querySelector('[data-kjs-t="h"]'), m = el.querySelector('[data-kjs-t="m"]'), s = el.querySelector('[data-kjs-t="s"]');
+    const pad = (n) => String(n).padStart(2, '0');
+    const tick = () => {
+      const left = end - Date.now();
+      if (left <= 0) { el.hidden = true; clearInterval(iv); return; }
+      el.hidden = false;
+      const secs = Math.floor(left / 1000);
+      h.textContent = pad(Math.floor(secs / 3600)); m.textContent = pad(Math.floor(secs % 3600 / 60)); s.textContent = pad(secs % 60);
+    };
+    const iv = setInterval(tick, 1000); tick();
   });
   const kjsSyncArrows = () => {
     document.querySelectorAll('.kjs-carousel').forEach((c) => {
