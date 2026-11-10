@@ -155,6 +155,33 @@
             "open_new_tab": false
           }
         },
+        "tile_4": {
+          "type": "card",
+          "name": "elf",
+          "settings": {
+            "image": "shopify://shop_images/1111-elf.webp",
+            "link": "shopify://collections/elf",
+            "open_new_tab": false
+          }
+        },
+        "tile_6": {
+          "type": "card",
+          "name": "Medicube",
+          "settings": {
+            "image": "shopify://shop_images/1111-medicube.webp",
+            "link": "shopify://collections/medicube",
+            "open_new_tab": false
+          }
+        },
+        "tile_12": {
+          "type": "card",
+          "name": "MAC",
+          "settings": {
+            "image": "shopify://shop_images/1111-mac.webp",
+            "link": "shopify://collections/mac",
+            "open_new_tab": false
+          }
+        },
         "tile_2": {
           "type": "card",
           "name": "ST London",
@@ -173,30 +200,12 @@
             "open_new_tab": false
           }
         },
-        "tile_4": {
-          "type": "card",
-          "name": "elf",
-          "settings": {
-            "image": "shopify://shop_images/1111-elf.webp",
-            "link": "shopify://collections/elf",
-            "open_new_tab": false
-          }
-        },
         "tile_5": {
           "type": "card",
           "name": "The Ordinary",
           "settings": {
             "image": "shopify://shop_images/1111-the-ordinary.webp",
             "link": "shopify://collections/to",
-            "open_new_tab": false
-          }
-        },
-        "tile_6": {
-          "type": "card",
-          "name": "Medicube",
-          "settings": {
-            "image": "shopify://shop_images/1111-medicube.webp",
-            "link": "shopify://collections/medicube",
             "open_new_tab": false
           }
         },
@@ -242,15 +251,6 @@
           "settings": {
             "image": "shopify://shop_images/1111-nars.webp",
             "link": "shopify://collections/nars",
-            "open_new_tab": false
-          }
-        },
-        "tile_12": {
-          "type": "card",
-          "name": "MAC",
-          "settings": {
-            "image": "shopify://shop_images/1111-mac.webp",
-            "link": "shopify://collections/mac",
             "open_new_tab": false
           }
         },
@@ -330,17 +330,17 @@
       },
       "block_order": [
         "tile_1",
+        "tile_4",
+        "tile_6",
+        "tile_12",
         "tile_2",
         "tile_3",
-        "tile_4",
         "tile_5",
-        "tile_6",
         "tile_7",
         "tile_8",
         "tile_9",
         "tile_10",
         "tile_11",
-        "tile_12",
         "tile_13",
         "tile_14",
         "tile_15",
