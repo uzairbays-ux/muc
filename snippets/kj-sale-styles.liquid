@@ -4,7 +4,9 @@
   .kjs a { text-decoration: none; color: inherit; }
   .kjs-h2 { margin: 0 0 20px; text-align: center; font-size: clamp(28px, 3.4vw, 44px); font-weight: 900; letter-spacing: -0.02em; color: #1e1e1e; }
   .kjs-alert { display: flex; align-items: center; justify-content: center; gap: 12px 32px; flex-wrap: wrap; padding: 20px 24px; border-radius: 12px; background: var(--kjs-dark); color: #fff; margin-top: -8px; }
-  .kjs-alert__tag { font-size: 24px; font-weight: 900; line-height: 1; color: var(--kjs-dark); background: var(--kjs-lime); padding: 8px 14px; border-radius: 8px; transform: rotate(-3deg); }
+  .kjs-alert__tag { font-size: 24px; font-weight: 900; line-height: 1; color: var(--kjs-dark); background: var(--kjs-lime); padding: 8px 14px; border-radius: 8px; transform: rotate(-3deg); animation: kjs-wiggle 2.4s ease-in-out infinite; transform-origin: 50% 60%; }
+  @keyframes kjs-wiggle { 0%, 100% { transform: rotate(-3deg) scale(1); } 20% { transform: rotate(-5deg) scale(1.04); } 40% { transform: rotate(-1deg) scale(1); } 60% { transform: rotate(-4deg) scale(1.03); } 80% { transform: rotate(-2deg) scale(1); } }
+  @media (prefers-reduced-motion: reduce) { .kjs-alert__tag { animation: none; } }
   .kjs-alert__text { font-size: 22px; font-weight: 700; text-transform: uppercase; text-align: center; }
   .kjs-alert__text p { margin: 0; display: inline; color: #fff; font: inherit; }
   .kjs-alert__text p strong, .kjs-alert__text p em, .kjs-alert__now { color: var(--kjs-lime); font-style: normal; }
@@ -125,10 +127,17 @@
     .kjs-hero__title { font-size: clamp(34px, 11vw, 56px); padding: 6px 14px; gap: 6px 12px; }
     .kjs-hero__tag { font-size: 13px; padding: 6px 12px; }
     .kjs-hero__left, .kjs-hero__right { flex: 1 1 100%; min-width: 0; }
-    .kjs-rewards { padding: 20px 16px; gap: 16px; }
-    .kjs-rewards__head { flex: 1 1 100%; font-size: 30px; }
-    .kjs-rewards__tiers { flex: 1 1 100%; grid-template-columns: 1fr; gap: 10px; }
-    .kjs-tier { padding: 14px 12px; }
+    .kjs-rewards { padding: 16px 12px; gap: 12px; }
+    .kjs-rewards__head { flex: 1 1 100%; flex-direction: row; flex-wrap: wrap; gap: 0 8px; font-size: 22px; justify-content: center; text-align: center; }
+    .kjs-rewards__tiers { flex: 1 1 100%; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+    .kjs-tier { padding: 10px 6px; gap: 5px; border-radius: 10px; }
+    .kjs-tier__name { font-size: 14px; }
+    .kjs-tier__shop { font-size: 9px; padding: 3px 7px; white-space: nowrap; }
+    .kjs-tier__reward { font-size: 11px; }
+    .kjs-tier__plus { font-size: 13px; }
+    .kjs-tier__bonus { font-size: 11px; word-break: break-all; }
+    .kjs-tier__hint { display: none; }
+    .kjs-copy__done-t { font-size: 13px; } .kjs-copy__done-c { font-size: 10px; }
     .kjs-tiles, .kjs-grid, .kjs-cats, .kjs-rewards__tiers { min-width: 0; }
     .kjs-ticker__text { font-size: 16px; text-align: center; }
     .kjs-cta__text { font-size: 22px; }
