@@ -247,7 +247,7 @@
           "type": "card",
           "name": "Maybelline",
           "settings": {
-            "image": "shopify://shop_images/Maybelline_18e04404-f9ab-4e64-acdf-84bdc2cc9dda.jpg",
+            "image": "shopify://shop_images/maybelline_4551426a-4720-43a8-9063-19e013780945.jpg",
             "link": "shopify://collections/maybelline",
             "open_new_tab": false
           }
@@ -275,7 +275,7 @@
           "type": "card",
           "name": "Revolution",
           "settings": {
-            "image": "shopify://shop_images/Revolution_a1bb64b4-6dcb-451e-a244-0ae00c0f485c.jpg",
+            "image": "shopify://shop_images/revolution_a4592fb2-25be-4693-9562-da7bb42164dc.jpg",
             "link": "shopify://collections/revolution",
             "open_new_tab": false
           }
@@ -292,9 +292,8 @@
         "card_nbr3cj": {
           "type": "card",
           "name": "Ordinary",
-          "disabled": true,
           "settings": {
-            "image": "shopify://shop_images/The-Ordinary_2b695025-e8fc-41df-8cb1-3aa71bc09177.jpg",
+            "image": "shopify://shop_images/ordinary_199b9de8-204d-417c-8e26-89134cabafd0.jpg",
             "link": "shopify://collections/to",
             "open_new_tab": false
           }
