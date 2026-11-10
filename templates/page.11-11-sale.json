@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "alert": {
@@ -5,17 +14,17 @@
       "settings": {
         "label": "Lowest Rate Alert",
         "text": "<p>NARS Natural Radiant Longwear Foundation at</p>",
+        "product": "nars-natural-radiant-longwear-foundation",
         "link": "shopify://products/nars-natural-radiant-longwear-foundation",
+        "bg": "#1e1e1e",
+        "fg": "#ffffff",
         "section_width": "full-width",
         "padding_top": 16,
         "padding_bottom": 8,
-        "purple": "#A98BCB",
-        "lime": "#D9F25B",
-        "dark": "#1E1E1E",
-        "red": "#D32F2F",
-        "product": "nars-natural-radiant-longwear-foundation",
-        "bg": "#1E1E1E",
-        "fg": "#FFFFFF"
+        "purple": "#a98bcb",
+        "lime": "#d9f25b",
+        "dark": "#1e1e1e",
+        "red": "#d32f2f"
       }
     },
     "hero": {
@@ -27,18 +36,19 @@
         "upto": "UP TO",
         "pct": "50%",
         "off": "OFF",
+        "link": "",
+        "pattern": true,
+        "animate": true,
+        "confetti": true,
+        "note": "FREE SHIPPING ON ORDERS OVER RS. 2,999",
+        "page_bg": "#f6f2fb",
         "section_width": "full-width",
         "padding_top": 8,
         "padding_bottom": 8,
-        "purple": "#A98BCB",
-        "lime": "#D9F25B",
-        "dark": "#1E1E1E",
-        "red": "#D32F2F",
-        "pattern": true,
-        "animate": true,
-        "page_bg": "#F6F2FB",
-        "confetti": true,
-        "note": "FREE SHIPPING ON ORDERS OVER RS. 2,999"
+        "purple": "#a98bcb",
+        "lime": "#d9f25b",
+        "dark": "#1e1e1e",
+        "red": "#d32f2f"
       }
     },
     "categories": {
@@ -47,37 +57,37 @@
         "cat_1": {
           "type": "category",
           "settings": {
+            "image": "shopify://shop_images/makeup.webp",
             "label": "Makeup",
             "pct": "UPTO 40% OFF",
-            "link": "shopify://collections/makeup",
-            "image": "shopify://shop_images/makeup.webp"
+            "link": "shopify://collections/makeup"
           }
         },
         "cat_2": {
           "type": "category",
           "settings": {
+            "image": "shopify://shop_images/Skin-Care.webp",
             "label": "Skin Care",
             "pct": "UPTO 42% OFF",
-            "link": "shopify://collections/skin-care",
-            "image": "shopify://shop_images/Skin-Care.webp"
+            "link": "shopify://collections/skin-care"
           }
         },
         "cat_3": {
           "type": "category",
           "settings": {
+            "image": "shopify://shop_images/Hair-care.webp",
             "label": "Hair Care",
             "pct": "UPTO 40% OFF",
-            "link": "shopify://collections/hair-care",
-            "image": "shopify://shop_images/Hair-care.webp"
+            "link": "shopify://collections/hair-care"
           }
         },
         "cat_4": {
           "type": "category",
           "settings": {
+            "image": "shopify://shop_images/Perfumes.webp",
             "label": "Perfumes",
             "pct": "UPTO 70% OFF",
-            "link": "shopify://collections/perfumes",
-            "image": "shopify://shop_images/Perfumes.webp"
+            "link": "shopify://collections/perfumes"
           }
         },
         "cat_5": {
@@ -91,10 +101,10 @@
         "cat_6": {
           "type": "category",
           "settings": {
+            "image": "shopify://shop_images/Beauty-Products_jpg.jpg",
             "label": "Beauty Tools",
             "pct": "UPTO 42% OFF",
-            "link": "shopify://collections/beauty-tools",
-            "image": "shopify://shop_images/Beauty-Products_jpg.jpg"
+            "link": "shopify://collections/beauty-tools"
           }
         }
       },
@@ -110,10 +120,10 @@
         "section_width": "full-width",
         "padding_top": 8,
         "padding_bottom": 8,
-        "purple": "#A98BCB",
-        "lime": "#D9F25B",
-        "dark": "#1E1E1E",
-        "red": "#D32F2F"
+        "purple": "#a98bcb",
+        "lime": "#d9f25b",
+        "dark": "#1e1e1e",
+        "red": "#d32f2f"
       }
     },
     "rewards": {
@@ -125,222 +135,10 @@
         "section_width": "full-width",
         "padding_top": 8,
         "padding_bottom": 8,
-        "purple": "#A98BCB",
-        "lime": "#D9F25B",
-        "dark": "#1E1E1E",
-        "red": "#D32F2F"
-      }
-    },
-    "top_picks": {
-      "type": "kj-sale-products",
-      "settings": {
-        "heading": "11.11 Top Picks",
-        "sub": "",
-        "link_label": "Shop the sale →",
-        "link": "shopify://collections/sale",
-        "products": [
-          "vaseline-jelly-7g",
-          "769915191004",
-          "8809835060003",
-          "onestep-hot-air-brush",
-          "miss-rose-new-nude-eyeshadow-palette-19-7g",
-          "6903071034681"
-        ],
-        "limit": 12,
-        "badge": "",
-        "section_width": "full-width",
-        "padding_top": 8,
-        "padding_bottom": 8,
-        "purple": "#A98BCB",
-        "lime": "#D9F25B",
-        "dark": "#1E1E1E",
-        "red": "#D32F2F",
-        "collection": "sale",
-        "more_label": "Shop the sale"
-      }
-    },
-    "bestsellers": {
-      "type": "kj-sale-products",
-      "settings": {
-        "heading": "Best Sellers",
-        "sub": "Beauty favorites everyone loves",
-        "link_label": "View all →",
-        "link": "shopify://collections/bestsellers",
-        "products": [
-          "6148268752355",
-          "8809447256221",
-          "8800256112227",
-          "8809782555508",
-          "8809634610034",
-          "6902395774211"
-        ],
-        "limit": 12,
-        "badge": "BESTSELLER",
-        "section_width": "full-width",
-        "padding_top": 8,
-        "padding_bottom": 8,
-        "purple": "#A98BCB",
-        "lime": "#D9F25B",
-        "dark": "#1E1E1E",
-        "red": "#D32F2F",
-        "collection": "bestsellers",
-        "more_label": "Shop all"
-      }
-    },
-    "ticker": {
-      "type": "kj-sale-banner",
-      "settings": {
-        "label": "11.11",
-        "text": "HOME TO 150+ AUTHENTIC BRANDS",
-        "button": "Shop All Brands →",
-        "link": "shopify://pages/brands",
-        "section_width": "full-width",
-        "padding_top": 8,
-        "padding_bottom": 8,
-        "purple": "#A98BCB",
-        "lime": "#D9F25B",
-        "dark": "#1E1E1E",
-        "red": "#D32F2F"
-      }
-    },
-    "skincare": {
-      "type": "kj-sale-products",
-      "settings": {
-        "heading": "Skin Care, your fit",
-        "sub": "",
-        "link_label": "Shop skin care →",
-        "link": "shopify://collections/skin-care",
-        "products": [
-          "8809596939624",
-          "5060390411799",
-          "8809652587639",
-          "8809700321703",
-          "8809562193319",
-          "luxe-basics-5-in-1-blackhead-remover-machine"
-        ],
-        "limit": 12,
-        "badge": "",
-        "section_width": "full-width",
-        "padding_top": 8,
-        "padding_bottom": 8,
-        "purple": "#A98BCB",
-        "lime": "#D9F25B",
-        "dark": "#1E1E1E",
-        "red": "#D32F2F",
-        "collection": "skin-care",
-        "more_label": "Shop skin care"
-      }
-    },
-    "perfumes": {
-      "type": "kj-sale-products",
-      "settings": {
-        "heading": "Perfumes & Body, sorted",
-        "sub": "",
-        "link_label": "Shop perfumes →",
-        "link": "shopify://collections/perfumes",
-        "products": [
-          "3760294020470",
-          "667659325054",
-          "3760294021316",
-          "vaseline-gluta-glow-deodorant-roll-on",
-          "6974772945224",
-          "6291003658570"
-        ],
-        "limit": 12,
-        "badge": "",
-        "section_width": "full-width",
-        "padding_top": 8,
-        "padding_bottom": 8,
-        "purple": "#A98BCB",
-        "lime": "#D9F25B",
-        "dark": "#1E1E1E",
-        "red": "#D32F2F",
-        "collection": "perfumes",
-        "more_label": "Shop perfumes"
-      }
-    },
-    "makeup": {
-      "type": "kj-sale-products",
-      "settings": {
-        "heading": "Makeup, your way",
-        "sub": "",
-        "link_label": "Shop makeup →",
-        "link": "shopify://collections/makeup",
-        "products": [
-          "5060390419900",
-          "nars-natural-radiant-longwear-foundation",
-          "5057566145831",
-          "13162",
-          "vaseline-balm-stick-4-8g",
-          "13190"
-        ],
-        "limit": 12,
-        "badge": "",
-        "section_width": "full-width",
-        "padding_top": 8,
-        "padding_bottom": 8,
-        "purple": "#A98BCB",
-        "lime": "#D9F25B",
-        "dark": "#1E1E1E",
-        "red": "#D32F2F",
-        "collection": "makeup",
-        "more_label": "Shop makeup"
-      }
-    },
-    "haircare": {
-      "type": "kj-sale-products",
-      "settings": {
-        "heading": "Hair Care, sorted.",
-        "sub": "",
-        "link_label": "Shop hair care →",
-        "link": "shopify://collections/hair-care",
-        "products": [
-          "fino-premium-touch-conditioner-550ml",
-          "6976504680649",
-          "6972288685542",
-          "8032505876387"
-        ],
-        "limit": 12,
-        "badge": "",
-        "section_width": "full-width",
-        "padding_top": 8,
-        "padding_bottom": 8,
-        "purple": "#A98BCB",
-        "lime": "#D9F25B",
-        "dark": "#1E1E1E",
-        "red": "#D32F2F",
-        "collection": "hair-care",
-        "more_label": "Shop hair care"
-      }
-    },
-    "brands_b": {
-      "type": "kj-sale-tiles",
-      "settings": {
-        "heading": "",
-        "style": "brand",
-        "lines": "The Ordinary | FLAT | 40 | /collections/to\nTocobo | FLAT | 40 | /collections/tocobo\nMedicube | FLAT | 25 | /collections/medicube\nAnua | FLAT | 25 | /collections/anua\nCosrx | FLAT | 25 | /collections/cosrx\nDr Althea | FLAT | 25 | /collections/dr-althea\nBeauty Of Joseon | FLAT | 25 | /collections/beauty-of-joseon\nSkin1004 | FLAT | 25 | /collections/skin1004\nLaneige | FLAT | 25 | /collections/laneige\nIsntree | FLAT | 30 | /collections/isntree\nPurito | FLAT | 30 | /collections/purito\nNumbuzin | FLAT | 30 | /collections/numbuzin\nLa Roche-Posay | FLAT | 15 | /collections/la-roche-posay\nCeraVe | FLAT | 15 | /collections/cerave-official\nVaseline | UPTO | 42 | /collections/vaseline\nFramesi | FLAT | 25 | /collections/framesi\nFino | FLAT | 30 | /collections/fino\nOneStep | FLAT | 40 | /collections/onestep\nIKT | FLAT | 40 | /collections/ikt\nGarnier | FLAT | 20 | /collections/garnier\nKryolan | FLAT | 20 | /collections/kryolan\nLamel | FLAT | 25 | /collections/lamel\nBOB | FLAT | 40 | /collections/bob",
-        "section_width": "full-width",
-        "padding_top": 8,
-        "padding_bottom": 8,
-        "purple": "#A98BCB",
-        "lime": "#D9F25B",
-        "dark": "#1E1E1E",
-        "red": "#D32F2F"
-      }
-    },
-    "cta": {
-      "type": "kj-sale-cta",
-      "settings": {
-        "heading": "CERTIFIED BY 150+ BRANDS",
-        "button": "View More",
-        "link": "shopify://pages/brands",
-        "section_width": "full-width",
-        "padding_top": 8,
-        "padding_bottom": 48,
-        "purple": "#A98BCB",
-        "lime": "#D9F25B",
-        "dark": "#1E1E1E",
-        "red": "#D32F2F"
+        "purple": "#a98bcb",
+        "lime": "#d9f25b",
+        "dark": "#1e1e1e",
+        "red": "#d32f2f"
       }
     },
     "partners": {
@@ -352,10 +150,11 @@
             "title": "Pay in 4 with Yango",
             "text": "Split your order into 4 easy payments at checkout. 10% off your first Yango order, no extra fees.",
             "badge": "-10% first order",
+            "logo_asset": "yango-icon.webp",
             "logo_text": "yango",
             "logo_bg": "#ffffff",
             "logo_fg": "#ffffff",
-            "logo_asset": "yango-icon.webp"
+            "link": ""
           }
         },
         "baadmay": {
@@ -364,10 +163,11 @@
             "title": "Pay in 3 with BaadMay",
             "text": "Buy now and pay in 3 instalments. Available at checkout on orders up to Rs. 20,000.",
             "badge": "0% mark-up",
-            "logo_text": "BaadMay",
             "logo_asset": "baadmay-logo-icon.svg",
+            "logo_text": "BaadMay",
             "logo_bg": "#ffffff",
-            "logo_fg": "#6016eb"
+            "logo_fg": "#6016eb",
+            "link": ""
           }
         }
       },
@@ -380,10 +180,10 @@
         "section_width": "full-width",
         "padding_top": 8,
         "padding_bottom": 8,
-        "purple": "#A98BCB",
-        "lime": "#D9F25B",
-        "dark": "#1E1E1E",
-        "red": "#D32F2F"
+        "purple": "#a98bcb",
+        "lime": "#d9f25b",
+        "dark": "#1e1e1e",
+        "red": "#d32f2f"
       }
     },
     "brand_offers": {
@@ -618,6 +418,62 @@
         "padding-block-end": 8
       }
     },
+    "top_picks": {
+      "type": "kj-sale-products",
+      "settings": {
+        "heading": "11.11 Top Picks",
+        "sub": "",
+        "link_label": "Shop the sale →",
+        "link": "shopify://collections/sale",
+        "products": [
+          "vaseline-jelly-7g",
+          "769915191004",
+          "8809835060003",
+          "onestep-hot-air-brush",
+          "miss-rose-new-nude-eyeshadow-palette-19-7g",
+          "6903071034681"
+        ],
+        "collection": "sale",
+        "limit": 12,
+        "more_label": "Shop the sale",
+        "badge": "",
+        "section_width": "full-width",
+        "padding_top": 8,
+        "padding_bottom": 8,
+        "purple": "#a98bcb",
+        "lime": "#d9f25b",
+        "dark": "#1e1e1e",
+        "red": "#d32f2f"
+      }
+    },
+    "bestsellers": {
+      "type": "kj-sale-products",
+      "settings": {
+        "heading": "Best Sellers",
+        "sub": "Beauty favorites everyone loves",
+        "link_label": "View all →",
+        "link": "shopify://collections/bestsellers",
+        "products": [
+          "6148268752355",
+          "8809447256221",
+          "8800256112227",
+          "8809782555508",
+          "8809634610034",
+          "6902395774211"
+        ],
+        "collection": "bestsellers",
+        "limit": 12,
+        "more_label": "Shop all",
+        "badge": "BESTSELLER",
+        "section_width": "full-width",
+        "padding_top": 8,
+        "padding_bottom": 8,
+        "purple": "#a98bcb",
+        "lime": "#d9f25b",
+        "dark": "#1e1e1e",
+        "red": "#d32f2f"
+      }
+    },
     "deal_cards": {
       "type": "card-grid",
       "blocks": {
@@ -759,6 +615,162 @@
         "padding-block-start": 8,
         "padding-block-end": 8
       }
+    },
+    "ticker": {
+      "type": "kj-sale-banner",
+      "settings": {
+        "label": "11.11",
+        "text": "HOME TO 150+ AUTHENTIC BRANDS",
+        "button": "Shop All Brands →",
+        "link": "shopify://pages/brands",
+        "section_width": "full-width",
+        "padding_top": 8,
+        "padding_bottom": 8,
+        "purple": "#a98bcb",
+        "lime": "#d9f25b",
+        "dark": "#1e1e1e",
+        "red": "#d32f2f"
+      }
+    },
+    "skincare": {
+      "type": "kj-sale-products",
+      "settings": {
+        "heading": "Skin Care, your fit",
+        "sub": "",
+        "link_label": "Shop skin care →",
+        "link": "shopify://collections/skin-care",
+        "products": [
+          "8809596939624",
+          "5060390411799",
+          "8809652587639",
+          "8809700321703",
+          "8809562193319",
+          "luxe-basics-5-in-1-blackhead-remover-machine"
+        ],
+        "collection": "skin-care",
+        "limit": 12,
+        "more_label": "Shop skin care",
+        "badge": "",
+        "section_width": "full-width",
+        "padding_top": 8,
+        "padding_bottom": 8,
+        "purple": "#a98bcb",
+        "lime": "#d9f25b",
+        "dark": "#1e1e1e",
+        "red": "#d32f2f"
+      }
+    },
+    "perfumes": {
+      "type": "kj-sale-products",
+      "settings": {
+        "heading": "Perfumes & Body, sorted",
+        "sub": "",
+        "link_label": "Shop perfumes →",
+        "link": "shopify://collections/perfumes",
+        "products": [
+          "3760294020470",
+          "667659325054",
+          "3760294021316",
+          "vaseline-gluta-glow-deodorant-roll-on",
+          "6974772945224",
+          "6291003658570"
+        ],
+        "collection": "perfumes",
+        "limit": 12,
+        "more_label": "Shop perfumes",
+        "badge": "",
+        "section_width": "full-width",
+        "padding_top": 8,
+        "padding_bottom": 8,
+        "purple": "#a98bcb",
+        "lime": "#d9f25b",
+        "dark": "#1e1e1e",
+        "red": "#d32f2f"
+      }
+    },
+    "makeup": {
+      "type": "kj-sale-products",
+      "settings": {
+        "heading": "Makeup, your way",
+        "sub": "",
+        "link_label": "Shop makeup →",
+        "link": "shopify://collections/makeup",
+        "products": [
+          "5060390419900",
+          "nars-natural-radiant-longwear-foundation",
+          "5057566145831",
+          "13162",
+          "vaseline-balm-stick-4-8g",
+          "13190"
+        ],
+        "collection": "makeup",
+        "limit": 12,
+        "more_label": "Shop makeup",
+        "badge": "",
+        "section_width": "full-width",
+        "padding_top": 8,
+        "padding_bottom": 8,
+        "purple": "#a98bcb",
+        "lime": "#d9f25b",
+        "dark": "#1e1e1e",
+        "red": "#d32f2f"
+      }
+    },
+    "haircare": {
+      "type": "kj-sale-products",
+      "settings": {
+        "heading": "Hair Care, sorted.",
+        "sub": "",
+        "link_label": "Shop hair care →",
+        "link": "shopify://collections/hair-care",
+        "products": [
+          "fino-premium-touch-conditioner-550ml",
+          "6976504680649",
+          "6972288685542",
+          "8032505876387"
+        ],
+        "collection": "hair-care",
+        "limit": 12,
+        "more_label": "Shop hair care",
+        "badge": "",
+        "section_width": "full-width",
+        "padding_top": 8,
+        "padding_bottom": 8,
+        "purple": "#a98bcb",
+        "lime": "#d9f25b",
+        "dark": "#1e1e1e",
+        "red": "#d32f2f"
+      }
+    },
+    "brands_b": {
+      "type": "kj-sale-tiles",
+      "settings": {
+        "heading": "",
+        "style": "brand",
+        "lines": "The Ordinary | FLAT | 40 | /collections/to\nTocobo | FLAT | 40 | /collections/tocobo\nMedicube | FLAT | 25 | /collections/medicube\nAnua | FLAT | 25 | /collections/anua\nCosrx | FLAT | 25 | /collections/cosrx\nDr Althea | FLAT | 25 | /collections/dr-althea\nBeauty Of Joseon | FLAT | 25 | /collections/beauty-of-joseon\nSkin1004 | FLAT | 25 | /collections/skin1004\nLaneige | FLAT | 25 | /collections/laneige\nIsntree | FLAT | 30 | /collections/isntree\nPurito | FLAT | 30 | /collections/purito\nNumbuzin | FLAT | 30 | /collections/numbuzin\nLa Roche-Posay | FLAT | 15 | /collections/la-roche-posay\nCeraVe | FLAT | 15 | /collections/cerave-official\nVaseline | UPTO | 42 | /collections/vaseline\nFramesi | FLAT | 25 | /collections/framesi\nFino | FLAT | 30 | /collections/fino\nOneStep | FLAT | 40 | /collections/onestep\nIKT | FLAT | 40 | /collections/ikt\nGarnier | FLAT | 20 | /collections/garnier\nKryolan | FLAT | 20 | /collections/kryolan\nLamel | FLAT | 25 | /collections/lamel\nBOB | FLAT | 40 | /collections/bob",
+        "section_width": "full-width",
+        "padding_top": 8,
+        "padding_bottom": 8,
+        "purple": "#a98bcb",
+        "lime": "#d9f25b",
+        "dark": "#1e1e1e",
+        "red": "#d32f2f"
+      }
+    },
+    "cta": {
+      "type": "kj-sale-cta",
+      "settings": {
+        "heading": "CERTIFIED BY 150+ BRANDS",
+        "button": "View More",
+        "link": "shopify://pages/brands",
+        "section_width": "full-width",
+        "padding_top": 8,
+        "padding_bottom": 48,
+        "purple": "#a98bcb",
+        "lime": "#d9f25b",
+        "dark": "#1e1e1e",
+        "red": "#d32f2f"
+      }
     }
   },
   "order": [
@@ -770,10 +782,10 @@
     "brand_offers",
     "top_picks",
     "bestsellers",
+    "deal_cards",
     "ticker",
     "skincare",
     "perfumes",
-    "deal_cards",
     "makeup",
     "haircare",
     "brands_b",
