@@ -20,6 +20,7 @@
         "limit": 5,
         "interval": 4,
         "joiner": "at",
+        "cta": "Shop now",
         "bg": "#1e1e1e",
         "fg": "#ffffff",
         "section_width": "full-width",
@@ -28,8 +29,7 @@
         "purple": "#a98bcb",
         "lime": "#d9f25b",
         "dark": "#1e1e1e",
-        "red": "#d32f2f",
-        "cta": "Shop now"
+        "red": "#d32f2f"
       }
     },
     "hero": {
@@ -791,7 +791,7 @@
       "settings": {
         "heading": "",
         "style": "brand",
-        "lines": "Kryolan | FLAT | 20 | /collections/kryolan\nHuda Beauty | FLAT | 30 | /collections/huda-beauty\nBeauty Of Joseon | FLAT | 25 | /collections/beauty-of-joseon\nJanssen | FLAT | 10 | /collections/janssen\nMedicube | FLAT | 25 | /collections/medicube\nAnua | FLAT | 25 | /collections/anua\nCosrx | FLAT | 25 | /collections/cosrx\nDr Althea | FLAT | 25 | /collections/dr-althea\nSkin1004 | FLAT | 25 | /collections/skin1004\nIsntree | FLAT | 30 | /collections/isntree\nPurito | FLAT | 30 | /collections/purito\nNumbuzin | FLAT | 30 | /collections/numbuzin\nLa Roche-Posay | FLAT | 15 | /collections/la-roche-posay\nCeraVe | FLAT | 15 | /collections/cerave-official\nVaseline | UPTO | 42 | /collections/vaseline\nFramesi | FLAT | 25 | /collections/framesi\nFino | FLAT | 30 | /collections/fino\nGarnier | FLAT | 20 | /collections/garnier\nLamel | FLAT | 25 | /collections/lamel\nBOB | FLAT | 40 | /collections/bob",
+        "lines": "Kryolan | FLAT | 20 | /collections/kryolan\nHuda Beauty | FLAT | 30 | /collections/huda-beauty\nBeauty Of Joseon | FLAT | 25 | /collections/beauty-of-joseon\nJanssen | FLAT | 10 | /collections/janssen\nMedicube | FLAT | 25 | /collections/medicube\nAnua | FLAT | 25 | /collections/anua\nCosrx | FLAT | 25 | /collections/cosrx\nDr Althea | FLAT | 25 | /collections/dr-althea\nSkin1004 | FLAT | 25 | /collections/skin1004\nIsntree | FLAT | 30 | /collections/isntree\nPurito | FLAT | 30 | /collections/purito\nNumbuzin | FLAT | 30 | /collections/numbuzin\nLa Roche-Posay | FLAT | 15 | /collections/la-roche-posay\nCeraVe | FLAT | 15 | /collections/cerave-official\nVaseline | UPTO | 35 | /collections/vaseline\nFramesi | FLAT | 25 | /collections/framesi\nFino | FLAT | 30 | /collections/fino\nGarnier | FLAT | 20 | /collections/garnier\nLamel | FLAT | 25 | /collections/lamel\nBOB | FLAT | 40 | /collections/bob",
         "section_width": "full-width",
         "padding_top": 8,
         "padding_bottom": 8,
