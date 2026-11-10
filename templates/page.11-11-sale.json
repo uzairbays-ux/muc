@@ -40,6 +40,8 @@
         "upto": "FLAT",
         "pct": "40%",
         "off": "OFF",
+        "fine_print": "*On selected brands",
+        "only_collections": "",
         "link": "",
         "pattern": true,
         "animate": true,
@@ -56,8 +58,7 @@
         "purple": "#a98bcb",
         "lime": "#d9f25b",
         "dark": "#1e1e1e",
-        "red": "#d32f2f",
-        "fine_print": "*On selected brands"
+        "red": "#d32f2f"
       }
     },
     "categories": {
@@ -399,6 +400,7 @@
     },
     "top_picks": {
       "type": "kj-sale-products",
+      "disabled": true,
       "settings": {
         "heading": "11.11 Top Picks",
         "sub": "",
