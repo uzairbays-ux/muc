@@ -673,6 +673,7 @@
     },
     "skincare": {
       "type": "kj-sale-products",
+      "disabled": true,
       "settings": {
         "heading": "Skin Care, your fit",
         "sub": "",
@@ -701,6 +702,7 @@
     },
     "perfumes": {
       "type": "kj-sale-products",
+      "disabled": true,
       "settings": {
         "heading": "Perfumes & Body, sorted",
         "sub": "",
@@ -729,6 +731,7 @@
     },
     "makeup": {
       "type": "kj-sale-products",
+      "disabled": true,
       "settings": {
         "heading": "Makeup, your way",
         "sub": "",
@@ -757,6 +760,7 @@
     },
     "haircare": {
       "type": "kj-sale-products",
+      "disabled": true,
       "settings": {
         "heading": "Hair Care, sorted.",
         "sub": "",
