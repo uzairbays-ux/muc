@@ -3,6 +3,7 @@
   .kjs { width: 100%; box-sizing: border-box; margin: 0 auto; padding: 0 var(--page-margin); min-width: 0; overflow-x: clip; display: flex; flex-direction: column; gap: 40px; font-family: var(--font-body--family); color: #1e1e1e; }
   .kjs a { text-decoration: none; color: inherit; }
   .kjs-h2 { margin: 0 0 20px; text-align: center; font-size: clamp(28px, 3.4vw, 44px); font-weight: 900; letter-spacing: -0.02em; color: #1e1e1e; }
+  .kjs .kjs-alert, .kjs .kjs-alert:hover { color: var(--kjs-alert-fg, var(--kjs-dark)); text-decoration: none; }
   .kjs-alert { display: flex; align-items: center; justify-content: center; gap: 12px 32px; flex-wrap: wrap; padding: 20px 24px; border-radius: 12px; background: var(--kjs-alert-bg, var(--kjs-purple)); color: var(--kjs-alert-fg, var(--kjs-dark)); margin-top: -8px; }
   .kjs-alert__tag { font-size: 24px; font-weight: 900; line-height: 1; color: var(--kjs-dark); background: var(--kjs-lime); padding: 8px 14px; border-radius: 8px; transform: rotate(-3deg); animation: kjs-wiggle 2.4s ease-in-out infinite; transform-origin: 50% 60%; }
   @keyframes kjs-wiggle { 0%, 100% { transform: rotate(-3deg) scale(1); } 20% { transform: rotate(-5deg) scale(1.04); } 40% { transform: rotate(-1deg) scale(1); } 60% { transform: rotate(-4deg) scale(1.03); } 80% { transform: rotate(-2deg) scale(1); } }
