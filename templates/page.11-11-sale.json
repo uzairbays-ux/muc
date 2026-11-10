@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "alert": {
@@ -24,8 +33,8 @@
         "title": "11:11",
         "title2": "SALE",
         "tag": "BIGGEST SALE OF THE YEAR",
-        "upto": "FLAT",
-        "pct": "40%",
+        "upto": "UP TO",
+        "pct": "50%",
         "off": "OFF",
         "link": "",
         "pattern": true,
@@ -114,8 +123,7 @@
         "purple": "#a98bcb",
         "lime": "#d9f25b",
         "dark": "#1e1e1e",
-        "red": "#d32f2f",
-        "text_mode": true
+        "red": "#d32f2f"
       }
     },
     "rewards": {
@@ -346,6 +354,7 @@
         "tile_19": {
           "type": "card",
           "name": "VT",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/1111-vt.webp",
             "link": "shopify://collections/vt",
@@ -567,17 +576,6 @@
             "link": "/products/8809700320812",
             "open_new_tab": false
           }
-        },
-        "deal_12": {
-          "type": "text_card",
-          "settings": {
-            "text": "View All Products",
-            "link": "/collections/all",
-            "bg": "#1E1E1E",
-            "fg": "#D9F25B",
-            "pattern": true,
-            "pattern_style": "black"
-          }
         }
       },
       "block_order": [
@@ -591,8 +589,7 @@
         "deal_8",
         "deal_9",
         "deal_10",
-        "deal_11",
-        "deal_12"
+        "deal_11"
       ],
       "settings": {
         "heading": "The Deals Just Keep Getting Better",
