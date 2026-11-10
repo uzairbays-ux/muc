@@ -186,6 +186,10 @@
   .kjs-copy__done-t { font-size: 20px; font-weight: 900; }
   .kjs-copy__done-c { font-size: 14px; font-weight: 700; letter-spacing: 0.04em; }
   .kjs-copy.is-copied .kjs-copy__done { opacity: 1; }
+  /* theme card-grid used on the sale page: match the sale headings, no section background */
+  body:has(.kjs) .card-grid__heading { font-weight: 900; font-size: clamp(28px, 3.4vw, 44px); letter-spacing: -0.02em; color: #1e1e1e; font-family: var(--font-body--family); }
+  body:has(.kjs) [data-testid^="card-grid-"] { background: transparent; }
+  body:has(.kjs) [data-testid^="card-grid-"] ~ .section-background, body:has(.kjs) .shopify-section:has([data-testid^="card-grid-"]) > .section-background { background: transparent; }
   .kjs--page-width { max-width: var(--page-width); }
   .kjs--full-width { max-width: none; padding-left: 0; padding-right: 0; }
   .kjs--full-width > .kjs-alert, .kjs--full-width > .kjs-hero, .kjs--full-width > .kjs-rewards, .kjs--full-width > .kjs-ticker, .kjs--full-width > .kjs-cta { border-radius: 0; margin-top: 0; }

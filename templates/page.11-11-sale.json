@@ -611,13 +611,13 @@
         "heading": "Big Brands. Bigger Steals",
         "subheading": "",
         "heading_alignment": "center",
-        "desktop_layout": "slider",
-        "mobile_layout": "slider",
+        "desktop_layout": "grid",
+        "mobile_layout": "grid",
         "desktop_columns": "5",
         "mobile_columns": "2",
         "desktop_slider_per_view": "5",
         "mobile_slider_per_view": "2.2",
-        "show_arrows": true,
+        "show_arrows": false,
         "auto_rotate": false,
         "rotate_interval": 5,
         "gap": 12,
@@ -629,8 +629,8 @@
         "gradient_direction": "to bottom",
         "section_width": "full-width",
         "color_scheme": "",
-        "padding-block-start": 16,
-        "padding-block-end": 12
+        "padding-block-start": 8,
+        "padding-block-end": 8
       }
     }
   },
