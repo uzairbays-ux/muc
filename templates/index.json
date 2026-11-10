@@ -9,6 +9,31 @@
  */
 {
   "sections": {
+    "kj_sale_hero": {
+      "type": "kj-sale-hero",
+      "disabled": true,
+      "settings": {
+        "title": "11:11",
+        "title2": "SALE",
+        "tag": "BIGGEST SALE OF THE YEAR",
+        "upto": "FLAT",
+        "pct": "40%",
+        "off": "OFF",
+        "link": "shopify://pages/sale",
+        "pattern": true,
+        "animate": true,
+        "confetti": true,
+        "note": "FREE SHIPPING ON ORDERS OVER RS. 2,999",
+        "page_bg": "",
+        "section_width": "full-width",
+        "padding_top": 8,
+        "padding_bottom": 8,
+        "purple": "#a98bcb",
+        "lime": "#d9f25b",
+        "dark": "#1e1e1e",
+        "red": "#d32f2f"
+      }
+    },
     "thumbnail_scroll_PbDt4b": {
       "type": "thumbnail-scroll",
       "blocks": {
@@ -123,7 +148,7 @@
           "settings": {
             "desktop_image": "shopify://shop_images/Main-Banner-1920-x-750_22b0896a-0ce6-4b54-81e7-ff0165154ed4.jpg",
             "mobile_image": "shopify://shop_images/Main-Banner-1920-x-750_090b9b90-5837-4d6b-9017-30bef84d201e.jpg",
-            "link": "shopify://pages/sale",
+            "link": "shopify://collections/sale",
             "open_new_tab": false,
             "alt": ""
           }
@@ -2958,31 +2983,6 @@
         "padding-block-start": 0,
         "padding-block-end": 0
       }
-    },
-    "kj_sale_hero": {
-      "type": "kj-sale-hero",
-      "settings": {
-        "title": "11:11",
-        "title2": "SALE",
-        "tag": "BIGGEST SALE OF THE YEAR",
-        "upto": "FLAT",
-        "pct": "40%",
-        "off": "OFF",
-        "link": "shopify://pages/sale",
-        "pattern": true,
-        "animate": true,
-        "confetti": true,
-        "note": "FREE SHIPPING ON ORDERS OVER RS. 2,999",
-        "page_bg": "",
-        "section_width": "full-width",
-        "padding_top": 8,
-        "padding_bottom": 8,
-        "purple": "#a98bcb",
-        "lime": "#d9f25b",
-        "dark": "#1e1e1e",
-        "red": "#d32f2f"
-      },
-      "disabled": true
     }
   },
   "order": [
