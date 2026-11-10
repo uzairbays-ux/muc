@@ -118,7 +118,9 @@
     .kjs-brand__name { font-size: 15px; }
     .kjs-steal { aspect-ratio: auto; min-height: 150px; }
     .kjs-badge__p, .kjs-badge--lime .kjs-badge__p { font-size: 32px; }
-    .kjs-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .kjs-grid { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 12px; padding-bottom: 6px; scrollbar-width: none; margin-left: -16px; margin-right: -16px; padding-left: 16px; padding-right: 16px; }
+    .kjs-grid::-webkit-scrollbar { display: none; }
+    .kjs-grid > .kjs-card { flex: 0 0 44vw; scroll-snap-align: start; }
     .kjs-card__brand { font-size: 13px; }
     .kjs-card__name { font-size: 12px; }
     .kjs-bar { padding: 14px 16px; }
@@ -126,7 +128,8 @@
   }
 
   .kjs-copy { position: relative; overflow: hidden; cursor: pointer; font-family: inherit; color: inherit; width: 100%; }
-  .kjs-tier__hint { font-size: 11px; color: #aaa; letter-spacing: 0.04em; text-transform: uppercase; }
+  .kjs-tier__hint { font-size: 11px; color: #aaa; letter-spacing: 0.04em; text-transform: uppercase; transition: opacity .15s; }
+  @media (hover: hover) { .kjs-tier__hint { opacity: 0; } .kjs-tier:hover .kjs-tier__hint, .kjs-tier:focus-visible .kjs-tier__hint { opacity: 1; } }
   .kjs-copy__done { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; background: var(--kjs-lime); color: var(--kjs-dark); opacity: 0; pointer-events: none; transition: opacity .15s; border-radius: inherit; }
   .kjs-copy__done-t { font-size: 20px; font-weight: 900; }
   .kjs-copy__done-c { font-size: 14px; font-weight: 700; letter-spacing: 0.04em; }
