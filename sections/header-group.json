@@ -19,7 +19,7 @@
           "settings": {
             "desktop_image": "shopify://shop_images/Header_dc90c1a0-c10d-44ec-9178-4c0d635e1f64.gif",
             "mobile_image": "shopify://shop_images/Header_dc90c1a0-c10d-44ec-9178-4c0d635e1f64.gif",
-            "link_url": "shopify://collections/all",
+            "link_url": "shopify://pages/sale",
             "open_in_new_tab": false,
             "hover_opacity": 85
           },
