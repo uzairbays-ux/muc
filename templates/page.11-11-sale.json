@@ -16,8 +16,10 @@
         "text": "<p>NARS Natural Radiant Longwear Foundation at</p>",
         "product": "nars-natural-radiant-longwear-foundation",
         "link": "shopify://products/nars-natural-radiant-longwear-foundation",
-        "joiner": "at",
         "slider_collection": "big-save",
+        "limit": 5,
+        "interval": 4,
+        "joiner": "at",
         "bg": "#1e1e1e",
         "fg": "#ffffff",
         "section_width": "full-width",
@@ -338,8 +340,8 @@
           "settings": {
             "text": "View All Products",
             "link": "/collections/sale",
-            "bg": "#1E1E1E",
-            "fg": "#D9F25B",
+            "bg": "#1e1e1e",
+            "fg": "#d9f25b",
             "pattern": true,
             "pattern_style": "black"
           }
@@ -453,42 +455,6 @@
     "deal_cards": {
       "type": "card-grid",
       "blocks": {
-        "deal_6": {
-          "type": "card",
-          "name": "ST London - Dual Wet & Dry Compact Powder",
-          "settings": {
-            "image": "shopify://shop_images/ST_london_f2e88820-f064-4feb-b51b-d23ea4be2be3.webp",
-            "link": "/products/st-london-dual-wet-dry-compact-powder",
-            "open_new_tab": false
-          }
-        },
-        "deal_1": {
-          "type": "card",
-          "name": "IKT - Hair Wax Stick 75gm",
-          "settings": {
-            "image": "shopify://shop_images/1111-card-ikt.webp",
-            "link": "/products/6148268752355",
-            "open_new_tab": false
-          }
-        },
-        "deal_2": {
-          "type": "card",
-          "name": "Fino - Hair Mask 230g",
-          "settings": {
-            "image": "shopify://shop_images/1111-card-fino.webp",
-            "link": "/products/4550516493583",
-            "open_new_tab": false
-          }
-        },
-        "deal_3": {
-          "type": "card",
-          "name": "d'Alba - White Truffle First Spray Serum",
-          "settings": {
-            "image": "shopify://shop_images/1111-card-d-alba.webp",
-            "link": "/products/dalba-white-truffle-first-spray-serum",
-            "open_new_tab": false
-          }
-        },
         "deal_4": {
           "type": "card",
           "name": "Dr Althea - 345 Relief Cream",
@@ -498,21 +464,12 @@
             "open_new_tab": false
           }
         },
-        "deal_5": {
+        "deal_2": {
           "type": "card",
-          "name": "OneStep - Hot Air Brush",
+          "name": "Fino - Hair Mask 230g",
           "settings": {
-            "image": "shopify://shop_images/1111-card-one-step.webp",
-            "link": "/products/onestep-hot-air-brush",
-            "open_new_tab": false
-          }
-        },
-        "deal_7": {
-          "type": "card",
-          "name": "BOB - Super Curl Mascara",
-          "settings": {
-            "image": "shopify://shop_images/1111-card-bob.webp",
-            "link": "/products/bob-super-curl-mascara",
+            "image": "shopify://shop_images/1111-card-fino.webp",
+            "link": "/products/4550516493583",
             "open_new_tab": false
           }
         },
@@ -543,12 +500,57 @@
             "open_new_tab": false
           }
         },
+        "deal_7": {
+          "type": "card",
+          "name": "BOB - Super Curl Mascara",
+          "settings": {
+            "image": "shopify://shop_images/1111-card-bob.webp",
+            "link": "/products/bob-super-curl-mascara",
+            "open_new_tab": false
+          }
+        },
         "deal_11": {
           "type": "card",
           "name": "Celimax - Retinal Shot Tightening Booster - 15ml",
           "settings": {
             "image": "shopify://shop_images/Celimax_ed8023a9-2a79-41d7-a6c0-9e65e213ed76.webp",
             "link": "/products/8809700320812",
+            "open_new_tab": false
+          }
+        },
+        "deal_1": {
+          "type": "card",
+          "name": "IKT - Hair Wax Stick 75gm",
+          "settings": {
+            "image": "shopify://shop_images/1111-card-ikt.webp",
+            "link": "/products/6148268752355",
+            "open_new_tab": false
+          }
+        },
+        "deal_3": {
+          "type": "card",
+          "name": "d'Alba - White Truffle First Spray Serum",
+          "settings": {
+            "image": "shopify://shop_images/1111-card-d-alba.webp",
+            "link": "/products/dalba-white-truffle-first-spray-serum",
+            "open_new_tab": false
+          }
+        },
+        "deal_5": {
+          "type": "card",
+          "name": "OneStep - Hot Air Brush",
+          "settings": {
+            "image": "shopify://shop_images/1111-card-one-step.webp",
+            "link": "/products/onestep-hot-air-brush",
+            "open_new_tab": false
+          }
+        },
+        "deal_6": {
+          "type": "card",
+          "name": "ST London - Dual Wet & Dry Compact Powder",
+          "settings": {
+            "image": "shopify://shop_images/ST_london_f2e88820-f064-4feb-b51b-d23ea4be2be3.webp",
+            "link": "/products/st-london-dual-wet-dry-compact-powder",
             "open_new_tab": false
           }
         },
@@ -565,17 +567,17 @@
         }
       },
       "block_order": [
-        "deal_6",
-        "deal_1",
-        "deal_2",
-        "deal_3",
         "deal_4",
-        "deal_5",
-        "deal_7",
+        "deal_2",
         "deal_8",
         "deal_9",
         "deal_10",
+        "deal_7",
         "deal_11",
+        "deal_1",
+        "deal_3",
+        "deal_5",
+        "deal_6",
         "deal_12"
       ],
       "settings": {
@@ -606,6 +608,7 @@
     },
     "ticker": {
       "type": "kj-sale-banner",
+      "disabled": true,
       "settings": {
         "label": "11.11",
         "text": "HOME TO 150+ AUTHENTIC BRANDS",
@@ -792,6 +795,7 @@
     },
     "cta": {
       "type": "kj-sale-cta",
+      "disabled": true,
       "settings": {
         "heading": "CERTIFIED BY 150+ BRANDS",
         "button": "View More",
