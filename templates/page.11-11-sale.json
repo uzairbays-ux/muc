@@ -16,6 +16,8 @@
         "text": "<p>NARS Natural Radiant Longwear Foundation at</p>",
         "product": "nars-natural-radiant-longwear-foundation",
         "link": "shopify://products/nars-natural-radiant-longwear-foundation",
+        "joiner": "at",
+        "slider_collection": "big-save",
         "bg": "#1e1e1e",
         "fg": "#ffffff",
         "section_width": "full-width",
@@ -24,11 +26,7 @@
         "purple": "#a98bcb",
         "lime": "#d9f25b",
         "dark": "#1e1e1e",
-        "red": "#d32f2f",
-        "limit": 5,
-        "interval": 4,
-        "joiner": "at",
-        "slider_collection": "big-save"
+        "red": "#d32f2f"
       }
     },
     "hero": {
@@ -45,6 +43,10 @@
         "animate": true,
         "confetti": true,
         "note": "FREE SHIPPING ON ORDERS OVER RS. 2,999",
+        "timer_end": "2026-11-11T23:59:59+05:00",
+        "timer_label": "SALE ENDS IN",
+        "timer_start": "2026-11-11T00:00:00+05:00",
+        "timer_start_label": "SALE STARTS IN",
         "page_bg": "#f6f2fb",
         "section_width": "full-width",
         "padding_top": 8,
@@ -52,11 +54,7 @@
         "purple": "#a98bcb",
         "lime": "#d9f25b",
         "dark": "#1e1e1e",
-        "red": "#d32f2f",
-        "timer_end": "2026-11-11T23:59:59+05:00",
-        "timer_label": "SALE ENDS IN",
-        "timer_start": "2026-11-11T00:00:00+05:00",
-        "timer_start_label": "SALE STARTS IN"
+        "red": "#d32f2f"
       }
     },
     "categories": {
