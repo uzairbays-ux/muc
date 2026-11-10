@@ -2473,14 +2473,47 @@
   {
     "name": "SEO & organization",
     "settings": [
-      { "type": "paragraph", "content": "Feeds the Organization schema on every page (brand entity for Google and AI engines) and the share image used when a page has no image of its own." },
-      { "type": "url", "id": "kj_org_instagram", "label": "Instagram URL" },
-      { "type": "url", "id": "kj_org_facebook", "label": "Facebook URL" },
-      { "type": "url", "id": "kj_org_tiktok", "label": "TikTok URL" },
-      { "type": "url", "id": "kj_org_youtube", "label": "YouTube URL" },
-      { "type": "text", "id": "kj_org_phone", "label": "Customer service phone", "info": "International format, e.g. +92 21 1234567" },
-      { "type": "text", "id": "kj_org_email", "label": "Customer service email" },
-      { "type": "image_picker", "id": "kj_share_image", "label": "Default share image", "info": "1200 x 630 px. Shown when a page is shared and has no image of its own." }
+      {
+        "type": "paragraph",
+        "content": "Feeds the Organization schema on every page (brand entity for Google and AI engines) and the share image used when a page has no image of its own."
+      },
+      {
+        "type": "url",
+        "id": "kj_org_instagram",
+        "label": "Instagram URL"
+      },
+      {
+        "type": "url",
+        "id": "kj_org_facebook",
+        "label": "Facebook URL"
+      },
+      {
+        "type": "url",
+        "id": "kj_org_tiktok",
+        "label": "TikTok URL"
+      },
+      {
+        "type": "url",
+        "id": "kj_org_youtube",
+        "label": "YouTube URL"
+      },
+      {
+        "type": "text",
+        "id": "kj_org_phone",
+        "label": "Customer service phone",
+        "info": "International format, e.g. +92 21 1234567"
+      },
+      {
+        "type": "text",
+        "id": "kj_org_email",
+        "label": "Customer service email"
+      },
+      {
+        "type": "image_picker",
+        "id": "kj_share_image",
+        "label": "Default share image",
+        "info": "1200 x 630 px. Shown when a page is shared and has no image of its own."
+      }
     ]
   },
   {
@@ -2545,6 +2578,12 @@
         "id": "kj_logo_badge_fg",
         "label": "Tag text colour",
         "default": "#111111"
+      },
+      {
+        "type": "checkbox",
+        "id": "kj_logo_badge_on_pdp",
+        "label": "Also show the tag on product pages (discounted products only)",
+        "default": false
       }
     ]
   },
@@ -2604,12 +2643,12 @@
       {
         "type": "collection",
         "id": "kj_pm_collection_1",
-        "label": "Collection 1 (Mega Deal SKUs \u2014 the discounted product)"
+        "label": "Collection 1 (Mega Deal SKUs — the discounted product)"
       },
       {
         "type": "collection",
         "id": "kj_pm_collection_2",
-        "label": "Collection 2 (Perfect Match SKUs \u2014 the unlocking product)"
+        "label": "Collection 2 (Perfect Match SKUs — the unlocking product)"
       },
       {
         "type": "checkbox",

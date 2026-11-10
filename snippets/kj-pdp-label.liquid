@@ -6,11 +6,15 @@
   assign p = product | default: closest.product
   assign tl = p.tags | join: '|' | downcase | prepend: '|' | append: '|'
 -%}
+{%- if settings.kj_logo_badge_enabled and settings.kj_logo_badge_on_pdp and settings.kj_logo_badge_text != blank and p.compare_at_price > p.price -%}
+  <p class="kj-pdp-label kj-pdp-label--sale" style="--kj-sale-bg: {{ settings.kj_logo_badge_bg | default: '#D9F25B' }}; --kj-sale-fg: {{ settings.kj_logo_badge_fg | default: '#1E1E1E' }};">{{ settings.kj_logo_badge_text | escape }}</p>
+{%- endif -%}
 {%- if tl contains '|mostly|' -%}
   <p class="kj-pdp-label">Most Reordered</p>
 {%- endif -%}
 
 {% stylesheet %}
+  .kj-pdp-label--sale { display: inline-block; background: var(--kj-sale-bg); color: var(--kj-sale-fg); padding: 3px 8px; border-radius: 6px; letter-spacing: 0.4px; margin-right: 8px; }
   .kj-pdp-label {
     margin: 0 0 2px;
     font-size: 12px;
