@@ -214,7 +214,7 @@
   (() => {
     const hero = document.querySelector('.kjs-hero--confetti');
     if (!hero || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    try { if (sessionStorage.getItem('kjs-confetti')) return; sessionStorage.setItem('kjs-confetti', '1'); } catch (e) {}
+    if (window.__kjsConfettiDone) return; window.__kjsConfettiDone = true;
     const canvas = document.createElement('canvas'); canvas.className = 'kjs-confetti'; document.body.appendChild(canvas);
     const ctx = canvas.getContext('2d'); const dpr = Math.min(window.devicePixelRatio || 1, 2);
     const size = () => { canvas.width = innerWidth * dpr; canvas.height = innerHeight * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0); }; size();
