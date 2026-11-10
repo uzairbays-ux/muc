@@ -3,15 +3,16 @@
   .kjs { width: 100%; box-sizing: border-box; margin: 0 auto; padding: 0 var(--page-margin); min-width: 0; overflow-x: clip; display: flex; flex-direction: column; gap: 40px; font-family: var(--font-body--family); color: #1e1e1e; }
   .kjs a { text-decoration: none; color: inherit; }
   .kjs-h2 { margin: 0 0 20px; text-align: center; font-size: clamp(28px, 3.4vw, 44px); font-weight: 900; letter-spacing: -0.02em; color: #1e1e1e; }
-  .kjs-alert { display: flex; align-items: center; justify-content: center; gap: 12px 32px; flex-wrap: wrap; padding: 20px 24px; border-radius: 12px; background: var(--kjs-dark); color: #fff; margin-top: -8px; }
+  .kjs-alert { display: flex; align-items: center; justify-content: center; gap: 12px 32px; flex-wrap: wrap; padding: 20px 24px; border-radius: 12px; background: var(--kjs-alert-bg, var(--kjs-purple)); color: var(--kjs-alert-fg, var(--kjs-dark)); margin-top: -8px; }
   .kjs-alert__tag { font-size: 24px; font-weight: 900; line-height: 1; color: var(--kjs-dark); background: var(--kjs-lime); padding: 8px 14px; border-radius: 8px; transform: rotate(-3deg); animation: kjs-wiggle 2.4s ease-in-out infinite; transform-origin: 50% 60%; }
   @keyframes kjs-wiggle { 0%, 100% { transform: rotate(-3deg) scale(1); } 20% { transform: rotate(-5deg) scale(1.04); } 40% { transform: rotate(-1deg) scale(1); } 60% { transform: rotate(-4deg) scale(1.03); } 80% { transform: rotate(-2deg) scale(1); } }
   @media (prefers-reduced-motion: reduce) { .kjs-alert__tag { animation: none; } }
   .kjs-alert__text { font-size: 22px; font-weight: 700; text-transform: uppercase; text-align: center; }
-  .kjs-alert__text p { margin: 0; display: inline; color: #fff; font: inherit; }
-  .kjs-alert__text p strong, .kjs-alert__text p em, .kjs-alert__now { color: var(--kjs-lime); font-style: normal; }
-  .kjs-alert__was { color: #bbb; font-weight: 500; margin: 0 8px 0 10px; }
-  .kjs-alert__now { margin-left: 2px; }
+  .kjs-alert__text p { margin: 0; display: inline; color: inherit; font: inherit; }
+  .kjs-alert__text p strong, .kjs-alert__text p em { color: inherit; font-style: normal; }
+  .kjs-alert__was { opacity: .6; font-weight: 500; margin: 0 8px 0 10px; }
+  .kjs-alert__now { margin-left: 2px; background: var(--kjs-lime); color: var(--kjs-dark); padding: 2px 10px; border-radius: 6px; }
+  .kjs-alert__tag { box-shadow: 0 2px 0 var(--kjs-dark); }
   .kjs-hero { position: relative; display: flex; flex-wrap: wrap; align-items: center; gap: 32px; padding: clamp(28px, 5vw, 64px); border-radius: 16px; background: var(--kjs-purple); color: var(--kjs-dark); min-height: 440px; box-sizing: border-box; overflow: hidden; }
   .kjs-hero--pattern::before { content: ''; position: absolute; inset: 0; background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='230' height='130'><text x='4' y='104' font-family='Arial Narrow,Arial,sans-serif' font-weight='900' font-size='118' letter-spacing='-6' fill='white' fill-opacity='0.16'>11:11</text></svg>"); background-size: 230px 130px; background-position: -20px -14px; pointer-events: none; -webkit-mask-image: linear-gradient(to bottom, #000 0, #000 24%, transparent 34%, transparent 66%, #000 76%, #000 100%); mask-image: linear-gradient(to bottom, #000 0, #000 24%, transparent 34%, transparent 66%, #000 76%, #000 100%); }
   .kjs-hero--image::before { background-image: var(--kjs-hero-pattern); background-size: cover; background-position: center; -webkit-mask-image: none; mask-image: none; }
