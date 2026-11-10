@@ -6,18 +6,7 @@
           <span class="kjs-alert__tag">{{ section.settings.label | escape }}</span>
           <span class="kjs-alert__slides">
             {%- assign shown = 0 -%}
-            {%- for sp in acol.products limit: 24 -%}
-              {%- if sp.available and shown < section.settings.limit -%}
-                {%- assign shown = shown | plus: 1 -%}
-                {%- assign slide_class = 'kjs-alert__slide kjs-alert__text' -%}
-                {%- if shown == 1 -%}{%- assign slide_class = slide_class | append: ' is-active' -%}{%- endif -%}
-                <a class="{{ slide_class }}" href="{{ sp.url }}">
-                  {{ sp.title | escape }} {{ section.settings.joiner | escape }}
-                  {%- if sp.compare_at_price > sp.price -%}<s class="kjs-alert__was">{{ sp.compare_at_price | money }}</s>{%- endif -%}
-                  <strong class="kjs-alert__now">{{ sp.price | money }}</strong>
-                </a>
-              {%- endif -%}
-            {%- endfor -%}
+            <a class="kjs-alert__slide kjs-alert__text is-active" href="/collections/sale">Probe</a>
           </span>
         </div>
         {%- else -%}
