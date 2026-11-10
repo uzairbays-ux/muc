@@ -1,2260 +1,283 @@
 {
   "sections": {
-    "hero": {
-      "type": "featured-banner",
+    "sale": {
+      "type": "kj-sale",
       "blocks": {
-        "slide_1111": {
-          "type": "slide",
+        "alert": {
+          "type": "alert",
           "settings": {
-            "desktop_image": "shopify://shop_images/Main-Banner-1920-x-750_22b0896a-0ce6-4b54-81e7-ff0165154ed4.jpg",
-            "mobile_image": "shopify://shop_images/Main-Banner-1920-x-750_090b9b90-5837-4d6b-9017-30bef84d201e.jpg",
+            "label": "Lowest Rate Alert",
+            "text": "<p>NARS Natural Radiant Longwear Foundation at <strong>Rs. 16,800</strong></p>",
+            "link": "shopify://products/nars-natural-radiant-longwear-foundation"
+          }
+        },
+        "hero": {
+          "type": "hero",
+          "settings": {
+            "title": "11:11",
+            "title2": "SALE",
+            "tag": "BIGGEST SALE OF THE YEAR",
+            "upto": "UP TO",
+            "pct": "50%",
+            "off": "OFF",
+            "link": "shopify://collections/sale"
+          }
+        },
+        "cat_1": {
+          "type": "category",
+          "settings": {
+            "label": "Makeup",
+            "pct": "UPTO 40% OFF",
+            "link": "shopify://collections/makeup",
+            "image": "shopify://shop_images/makeup.webp"
+          }
+        },
+        "cat_2": {
+          "type": "category",
+          "settings": {
+            "label": "Skin Care",
+            "pct": "UPTO 42% OFF",
+            "link": "shopify://collections/skin-care",
+            "image": "shopify://shop_images/Skin-Care.webp"
+          }
+        },
+        "cat_3": {
+          "type": "category",
+          "settings": {
+            "label": "Hair Care",
+            "pct": "UPTO 40% OFF",
+            "link": "shopify://collections/hair-care",
+            "image": "shopify://shop_images/Hair-care.webp"
+          }
+        },
+        "cat_4": {
+          "type": "category",
+          "settings": {
+            "label": "Perfumes",
+            "pct": "UPTO 70% OFF",
+            "link": "shopify://collections/perfumes",
+            "image": "shopify://shop_images/Perfumes.webp"
+          }
+        },
+        "cat_5": {
+          "type": "category",
+          "settings": {
+            "label": "Nails",
+            "pct": "UPTO 35% OFF",
+            "link": "shopify://collections/nails"
+          }
+        },
+        "cat_6": {
+          "type": "category",
+          "settings": {
+            "label": "Beauty Tools",
+            "pct": "UPTO 42% OFF",
+            "link": "shopify://collections/beauty-tools",
+            "image": "shopify://shop_images/Beauty-Products_jpg.jpg"
+          }
+        },
+        "rewards": {
+          "type": "rewards",
+          "settings": {
+            "line1": "BIGGER BAG",
+            "line2": "BIGGER REWARDS",
+            "tiers": "Tier 1 | SHOP RS. 7,999+ | Rs. 500 off | Code 11.11SALE500\nTier 2 | SHOP RS. 9,999+ | Rs. 1,000 off | Code 11.11SALE1000\nTier 3 | SHOP RS. 14,999+ | Rs. 2,000 off | Code 11.11SALE2000"
+          }
+        },
+        "faves": {
+          "type": "tiles",
+          "settings": {
+            "heading": "Your Daily Faves, Now for Less",
+            "style": "fave",
+            "lines": "OneStep | Hot Air Brush | 3,300 | /products/onestep-hot-air-brush\nIKT | Hair Wax Stick 75gm | 621 | /products/6148268752355\nDr Althea | 345 Relief Cream | 3,000 | /products/8809447256221\nMedicube | Jelly Cream - 50ml | 4,013 | /products/8800256112227\nBeauty Of Joseon | Relief Sun Rice + Probiotics | 3,900 | /products/8809782555508"
+          }
+        },
+        "top_picks": {
+          "type": "products",
+          "settings": {
+            "heading": "11.11 Top Picks",
+            "sub": "",
+            "link_label": "Shop the sale →",
             "link": "shopify://collections/sale",
-            "open_new_tab": false,
-            "alt": "11.11 Sale at Makeup City"
+            "products": [
+              "vaseline-jelly-7g",
+              "769915191004",
+              "8809835060003",
+              "onestep-hot-air-brush",
+              "miss-rose-new-nude-eyeshadow-palette-19-7g",
+              "6903071034681"
+            ],
+            "limit": 6,
+            "badge": ""
+          }
+        },
+        "steals": {
+          "type": "tiles",
+          "settings": {
+            "heading": "Big Brands. Bigger Steals",
+            "style": "steal",
+            "lines": "ST LONDON | FLAT | 35 | /collections/sale-st-london\nMAYBELLINE | FLAT | 30 | /collections/sale-maybelline\nREVOLUTION | FLAT | 25 | /collections/revolution\nelf | FLAT | 25 | /collections/elf"
+          }
+        },
+        "bestsellers": {
+          "type": "products",
+          "settings": {
+            "heading": "Best Sellers",
+            "sub": "Beauty favorites everyone loves",
+            "link_label": "View all →",
+            "link": "shopify://collections/bestsellers",
+            "products": [
+              "6148268752355",
+              "8809447256221",
+              "8800256112227",
+              "8809782555508",
+              "8809634610034",
+              "6902395774211"
+            ],
+            "limit": 6,
+            "badge": "BESTSELLER"
+          }
+        },
+        "ticker": {
+          "type": "ticker",
+          "settings": {
+            "label": "11.11",
+            "text": "HOME TO 150+ AUTHENTIC BRANDS",
+            "button": "Shop All Brands →",
+            "link": "shopify://pages/brands"
+          }
+        },
+        "skincare": {
+          "type": "products",
+          "settings": {
+            "heading": "Skin Care, your fit",
+            "sub": "",
+            "link_label": "Shop skin care →",
+            "link": "shopify://collections/skin-care",
+            "products": [
+              "8809596939624",
+              "5060390411799",
+              "8809652587639",
+              "8809700321703",
+              "8809562193319",
+              "luxe-basics-5-in-1-blackhead-remover-machine"
+            ],
+            "limit": 6,
+            "badge": ""
+          }
+        },
+        "perfumes": {
+          "type": "products",
+          "settings": {
+            "heading": "Perfumes & Body, sorted",
+            "sub": "",
+            "link_label": "Shop perfumes →",
+            "link": "shopify://collections/perfumes",
+            "products": [
+              "3760294020470",
+              "667659325054",
+              "3760294021316",
+              "vaseline-gluta-glow-deodorant-roll-on",
+              "6974772945224",
+              "6291003658570"
+            ],
+            "limit": 6,
+            "badge": ""
+          }
+        },
+        "brands_a": {
+          "type": "tiles",
+          "settings": {
+            "heading": "The Deals Just Keep Getting Better",
+            "style": "brand",
+            "lines": "ST London | UPTO | 35 | /collections/sale-st-london\nMaybelline | FLAT | 30 | /collections/sale-maybelline\nRevolution | FLAT | 25 | /collections/revolution\nelf | FLAT | 25 | /collections/elf\nMiss Rose | FLAT | 40 | /collections/miss-rose\nHuda Beauty | FLAT | 30 | /collections/huda-beauty\nNars | FLAT | 30 | /collections/nars\nMAC | FLAT | 30 | /collections/mac\nLaura Mercier | FLAT | 30 | /collections/laura-mercier\nGosh | FLAT | 30 | /collections/sale-gosh\nL’Oréal Paris | FLAT | 25 | /collections/loreal-paris-1\nSheglam | FLAT | 25 | /collections/sheglam"
+          }
+        },
+        "makeup": {
+          "type": "products",
+          "settings": {
+            "heading": "Makeup, your way",
+            "sub": "",
+            "link_label": "Shop makeup →",
+            "link": "shopify://collections/makeup",
+            "products": [
+              "5060390419900",
+              "nars-natural-radiant-longwear-foundation",
+              "5057566145831",
+              "13162",
+              "vaseline-balm-stick-4-8g",
+              "13190"
+            ],
+            "limit": 6,
+            "badge": ""
+          }
+        },
+        "haircare": {
+          "type": "products",
+          "settings": {
+            "heading": "Hair Care, sorted.",
+            "sub": "",
+            "link_label": "Shop hair care →",
+            "link": "shopify://collections/hair-care",
+            "products": [
+              "fino-premium-touch-conditioner-550ml",
+              "6976504680649",
+              "6972288685542",
+              "8032505876387"
+            ],
+            "limit": 6,
+            "badge": ""
+          }
+        },
+        "brands_b": {
+          "type": "tiles",
+          "settings": {
+            "heading": "",
+            "style": "brand",
+            "lines": "The Ordinary | FLAT | 40 | /collections/to\nTocobo | FLAT | 40 | /collections/tocobo\nMedicube | FLAT | 25 | /collections/medicube\nAnua | FLAT | 25 | /collections/anua\nCosrx | FLAT | 25 | /collections/cosrx\nDr Althea | FLAT | 25 | /collections/dr-althea\nBeauty Of Joseon | FLAT | 25 | /collections/beauty-of-joseon\nSkin1004 | FLAT | 25 | /collections/skin1004\nLaneige | FLAT | 25 | /collections/laneige\nIsntree | FLAT | 30 | /collections/isntree\nPurito | FLAT | 30 | /collections/purito\nNumbuzin | FLAT | 30 | /collections/numbuzin\nLa Roche-Posay | FLAT | 15 | /collections/la-roche-posay\nCeraVe | FLAT | 15 | /collections/cerave-official\nVaseline | UPTO | 42 | /collections/vaseline\nFramesi | FLAT | 25 | /collections/framesi\nFino | FLAT | 30 | /collections/fino\nOneStep | FLAT | 40 | /collections/onestep\nIKT | FLAT | 40 | /collections/ikt\nGarnier | FLAT | 20 | /collections/garnier\nKryolan | FLAT | 20 | /collections/kryolan\nLamel | FLAT | 25 | /collections/lamel\nBOB | FLAT | 40 | /collections/bob"
+          }
+        },
+        "cta": {
+          "type": "cta",
+          "settings": {
+            "heading": "CERTIFIED BY 150+ BRANDS",
+            "button": "View More",
+            "link": "shopify://pages/brands"
           }
         }
       },
       "block_order": [
-        "slide_1111"
+        "alert",
+        "hero",
+        "cat_1",
+        "cat_2",
+        "cat_3",
+        "cat_4",
+        "cat_5",
+        "cat_6",
+        "rewards",
+        "faves",
+        "top_picks",
+        "steals",
+        "bestsellers",
+        "ticker",
+        "skincare",
+        "perfumes",
+        "brands_a",
+        "makeup",
+        "haircare",
+        "brands_b",
+        "cta"
       ],
       "settings": {
-        "autoplay": false,
-        "autoplay_interval": 5,
-        "show_arrows": false,
-        "show_dots": false,
-        "section_width": "full-width",
-        "border_radius": 0,
-        "color_scheme": "",
-        "padding-block-start": 0,
-        "padding-block-end": 0
-      }
-    },
-    "offer_codes": {
-      "type": "marquee",
-      "settings": {
-        "movement_direction": "normal",
-        "color_scheme": "scheme-1",
-        "padding-block-start": 10,
-        "padding-block-end": 10,
-        "gap_between_elements": 48
-      },
-      "blocks": {
-        "text_1": {
-          "type": "text",
-          "settings": {
-            "text": "<p><strong>BIGGER BAG, BIGGER REWARDS</strong> &nbsp;·&nbsp; from 11 Nov, 12 AM</p>",
-            "type_preset": "custom",
-            "font": "var(--font-body--family)",
-            "font_size": "1rem",
-            "line_height": "tight",
-            "letter_spacing": "normal",
-            "case": "none",
-            "wrap": "nowrap",
-            "width": "fit-content",
-            "alignment": "left",
-            "max_width": "normal",
-            "color": "var(--color-foreground)",
-            "background": false,
-            "background_color": "#00000026",
-            "corner_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          }
-        },
-        "text_2": {
-          "type": "text",
-          "settings": {
-            "text": "<p><strong>Rs. 500 off</strong> on Rs. 7,999+ &nbsp;·&nbsp; code <strong>11.11SALE500</strong></p>",
-            "type_preset": "custom",
-            "font": "var(--font-body--family)",
-            "font_size": "1rem",
-            "line_height": "tight",
-            "letter_spacing": "normal",
-            "case": "none",
-            "wrap": "nowrap",
-            "width": "fit-content",
-            "alignment": "left",
-            "max_width": "normal",
-            "color": "var(--color-foreground)",
-            "background": false,
-            "background_color": "#00000026",
-            "corner_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          }
-        },
-        "text_3": {
-          "type": "text",
-          "settings": {
-            "text": "<p><strong>Rs. 1,000 off</strong> on Rs. 9,999+ &nbsp;·&nbsp; code <strong>11.11SALE1000</strong></p>",
-            "type_preset": "custom",
-            "font": "var(--font-body--family)",
-            "font_size": "1rem",
-            "line_height": "tight",
-            "letter_spacing": "normal",
-            "case": "none",
-            "wrap": "nowrap",
-            "width": "fit-content",
-            "alignment": "left",
-            "max_width": "normal",
-            "color": "var(--color-foreground)",
-            "background": false,
-            "background_color": "#00000026",
-            "corner_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          }
-        },
-        "text_4": {
-          "type": "text",
-          "settings": {
-            "text": "<p><strong>Rs. 2,000 off</strong> on Rs. 14,999+ &nbsp;·&nbsp; code <strong>11.11SALE2000</strong></p>",
-            "type_preset": "custom",
-            "font": "var(--font-body--family)",
-            "font_size": "1rem",
-            "line_height": "tight",
-            "letter_spacing": "normal",
-            "case": "none",
-            "wrap": "nowrap",
-            "width": "fit-content",
-            "alignment": "left",
-            "max_width": "normal",
-            "color": "var(--color-foreground)",
-            "background": false,
-            "background_color": "#00000026",
-            "corner_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          }
-        }
-      },
-      "block_order": [
-        "text_1",
-        "text_2",
-        "text_3",
-        "text_4"
-      ]
-    },
-    "categories": {
-      "type": "thumbnail-scroll",
-      "blocks": {
-        "thumbnail_Qbx4az": {
-          "type": "thumbnail",
-          "settings": {
-            "image": "shopify://shop_images/Skin-Care.webp",
-            "background_color": "#f1ecfb",
-            "label": "Skin Care · Upto 42% off",
-            "link": "shopify://collections/skin-care"
-          }
-        },
-        "thumbnail_9mj9UL": {
-          "type": "thumbnail",
-          "settings": {
-            "image": "shopify://shop_images/makeup.webp",
-            "background_color": "#f1ecfb",
-            "label": "Makeup · Upto 40% off",
-            "link": "shopify://collections/makeup"
-          }
-        },
-        "thumbnail_Jq84qh": {
-          "type": "thumbnail",
-          "settings": {
-            "image": "shopify://shop_images/Hair-care.webp",
-            "background_color": "#f1ecfb",
-            "label": "Hair Care · Upto 40% off",
-            "link": "shopify://collections/hair-care"
-          }
-        },
-        "thumbnail_TA8KHE": {
-          "type": "thumbnail",
-          "settings": {
-            "image": "shopify://shop_images/Lingerie_jpg.webp",
-            "background_color": "#f1ecfb",
-            "label": "Lingerie",
-            "link": "shopify://collections/lingerie"
-          }
-        },
-        "thumbnail_h7Dj6p": {
-          "type": "thumbnail",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/Baby-Care_jpg.webp",
-            "background_color": "#f1ecfb",
-            "label": "Baby Care",
-            "link": "shopify://collections/mother-baby-essential"
-          }
-        },
-        "thumbnail_gBqUph": {
-          "type": "thumbnail",
-          "settings": {
-            "image": "shopify://shop_images/Perfumes.webp",
-            "background_color": "#f1ecfb",
-            "label": "Perfumes · Upto 70% off",
-            "link": "shopify://collections/perfumes"
-          }
-        },
-        "thumbnail_CtggmW": {
-          "type": "thumbnail",
-          "settings": {
-            "image": "shopify://shop_images/Beauty-Products_jpg.jpg",
-            "background_color": "#f1ecfb",
-            "label": "Beauty Tools",
-            "link": "shopify://collections/beauty-tools"
-          }
-        },
-        "thumbnail_qkgXkh": {
-          "type": "thumbnail",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/thumb.png",
-            "background_color": "#f1ecfb",
-            "label": "Beauty Tools",
-            "link": "shopify://collections/beauty-tools"
-          }
-        }
-      },
-      "block_order": [
-        "thumbnail_Qbx4az",
-        "thumbnail_9mj9UL",
-        "thumbnail_Jq84qh",
-        "thumbnail_TA8KHE",
-        "thumbnail_h7Dj6p",
-        "thumbnail_gBqUph",
-        "thumbnail_CtggmW",
-        "thumbnail_qkgXkh"
-      ],
-      "settings": {
-        "heading": "",
-        "subheading": "",
-        "heading_alignment": "left",
-        "desktop_per_view": "7",
-        "mobile_per_view": "4",
-        "item_gap": 10,
-        "mobile_edge_inset": 12,
-        "image_shape": "circle",
-        "label_font_size": 11,
-        "show_on_desktop": true,
-        "section_width": "page-width",
-        "color_scheme": "",
-        "padding-block-start": 8,
-        "padding-block-end": 8
-      }
-    },
-    "daily_faves": {
-      "type": "mega-deals",
-      "settings": {
-        "heading": "Your Daily Faves, Now for Less",
-        "view_all_label": "Shop the sale →",
-        "view_all_link": "shopify://collections/sale",
-        "show_timer": false,
-        "end_date": "",
-        "end_time": "",
-        "section_width": "page-width",
-        "desktop_per_view": "6",
-        "mobile_per_view": "2.2",
-        "gap": 12,
-        "show_arrows": true,
-        "background_color": "#ffffff",
-        "badge_color": "#d32f2f",
-        "badge_text_color": "#ffffff",
-        "padding-block-start": 12,
-        "padding-block-end": 12
-      },
-      "blocks": {
-        "deal_1": {
-          "type": "deal_product",
-          "settings": {
-            "product": "onestep-hot-air-brush",
-            "badge_text": "40% OFF"
-          }
-        },
-        "deal_2": {
-          "type": "deal_product",
-          "settings": {
-            "product": "6148268752355",
-            "badge_text": "40% OFF"
-          }
-        },
-        "deal_3": {
-          "type": "deal_product",
-          "settings": {
-            "product": "8809447256221",
-            "badge_text": "25% OFF"
-          }
-        },
-        "deal_4": {
-          "type": "deal_product",
-          "settings": {
-            "product": "8800256112227",
-            "badge_text": "25% OFF"
-          }
-        },
-        "deal_5": {
-          "type": "deal_product",
-          "settings": {
-            "product": "8809782555508",
-            "badge_text": "25% OFF"
-          }
-        },
-        "deal_6": {
-          "type": "deal_product",
-          "settings": {
-            "product": "nars-natural-radiant-longwear-foundation",
-            "badge_text": "30% OFF"
-          }
-        }
-      },
-      "block_order": [
-        "deal_1",
-        "deal_2",
-        "deal_3",
-        "deal_4",
-        "deal_5",
-        "deal_6"
-      ]
-    },
-    "top_picks": {
-      "type": "mega-deals",
-      "settings": {
-        "heading": "11.11 Top Picks",
-        "view_all_label": "Shop the sale →",
-        "view_all_link": "shopify://collections/sale",
-        "show_timer": false,
-        "end_date": "",
-        "end_time": "",
-        "section_width": "page-width",
-        "desktop_per_view": "6",
-        "mobile_per_view": "2.2",
-        "gap": 12,
-        "show_arrows": true,
-        "background_color": "#ffffff",
-        "badge_color": "#d32f2f",
-        "badge_text_color": "#ffffff",
-        "padding-block-start": 12,
-        "padding-block-end": 12
-      },
-      "blocks": {
-        "deal_1": {
-          "type": "deal_product",
-          "settings": {
-            "product": "vaseline-jelly-7g",
-            "badge_text": "42% OFF"
-          }
-        },
-        "deal_2": {
-          "type": "deal_product",
-          "settings": {
-            "product": "769915191004",
-            "badge_text": "40% OFF"
-          }
-        },
-        "deal_3": {
-          "type": "deal_product",
-          "settings": {
-            "product": "8809835060003",
-            "badge_text": "40% OFF"
-          }
-        },
-        "deal_4": {
-          "type": "deal_product",
-          "settings": {
-            "product": "onestep-hot-air-brush",
-            "badge_text": "40% OFF"
-          }
-        },
-        "deal_5": {
-          "type": "deal_product",
-          "settings": {
-            "product": "miss-rose-new-nude-eyeshadow-palette-19-7g",
-            "badge_text": "40% OFF"
-          }
-        },
-        "deal_6": {
-          "type": "deal_product",
-          "settings": {
-            "product": "6903071034681",
-            "badge_text": "40% OFF"
-          }
-        }
-      },
-      "block_order": [
-        "deal_1",
-        "deal_2",
-        "deal_3",
-        "deal_4",
-        "deal_5",
-        "deal_6"
-      ]
-    },
-    "steals": {
-      "type": "card-grid",
-      "blocks": {
-        "card_1": {
-          "type": "card",
-          "name": "ST London",
-          "settings": {
-            "image": "shopify://shop_images/ST-London_f9685cd0-ea3e-4518-96ce-2c63b17d547d.jpg",
-            "link": "shopify://collections/sale-st-london",
-            "open_new_tab": false
-          }
-        },
-        "card_2": {
-          "type": "card",
-          "name": "Maybelline",
-          "settings": {
-            "image": "shopify://shop_images/Maybelline_18e04404-f9ab-4e64-acdf-84bdc2cc9dda.jpg",
-            "link": "shopify://collections/sale-maybelline",
-            "open_new_tab": false
-          }
-        },
-        "card_3": {
-          "type": "card",
-          "name": "Revolution",
-          "settings": {
-            "image": "shopify://shop_images/Revolution_a1bb64b4-6dcb-451e-a244-0ae00c0f485c.jpg",
-            "link": "shopify://collections/revolution",
-            "open_new_tab": false
-          }
-        },
-        "card_4": {
-          "type": "card",
-          "name": "ELF",
-          "settings": {
-            "image": "shopify://shop_images/ELF_3f51fe3d-f563-49e8-9d6b-5f6077d719f5.jpg",
-            "link": "shopify://collections/elf",
-            "open_new_tab": false
-          }
-        }
-      },
-      "block_order": [
-        "card_1",
-        "card_2",
-        "card_3",
-        "card_4"
-      ],
-      "settings": {
-        "heading": "Big Brands. Bigger Steals",
-        "subheading": "ST London flat 35% · Maybelline flat 30% · Revolution flat 25% · elf flat 25%",
-        "heading_alignment": "center",
-        "desktop_layout": "grid",
-        "mobile_layout": "grid",
-        "desktop_columns": "4",
-        "mobile_columns": "2",
-        "desktop_slider_per_view": "4",
-        "mobile_slider_per_view": "2.2",
-        "show_arrows": false,
-        "auto_rotate": false,
-        "rotate_interval": 4,
-        "gap": 10,
-        "desktop_side_padding": 0,
-        "mobile_side_padding": 0,
-        "gradient_color_1": "",
-        "gradient_color_2": "",
-        "gradient_opacity": 50,
-        "gradient_direction": "to bottom",
-        "section_width": "page-width",
-        "color_scheme": "",
-        "padding-block-start": 16,
-        "padding-block-end": 8
-      }
-    },
-    "bestsellers": {
-      "type": "product-list",
-      "blocks": {
-        "static-header": {
-          "type": "_product-list-content",
-          "name": "t:names.header",
-          "static": true,
-          "settings": {
-            "content_direction": "row",
-            "vertical_on_mobile": false,
-            "horizontal_alignment": "space-between",
-            "vertical_alignment": "center",
-            "align_baseline": true,
-            "horizontal_alignment_flex_direction_column": "flex-start",
-            "vertical_alignment_flex_direction_column": "center",
-            "gap": 12,
-            "width": "100%",
-            "custom_width": 100,
-            "width_mobile": "100%",
-            "custom_width_mobile": 100,
-            "height": "fit",
-            "custom_height": 100,
-            "inherit_color_scheme": true,
-            "color_scheme": "",
-            "background_media": "none",
-            "video_position": "cover",
-            "background_image_position": "cover",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-            "ai_gen_block_4420fcf_xdn7CQ": {
-              "type": "ai_gen_block_4420fcf",
-              "name": "Banner announcement",
-              "settings": {
-                "desktop_image": "shopify://shop_images/best-seller-desktop_6c1bf320-9ce3-4cb9-a1d0-8ecba17b768b.webp",
-                "mobile_image": "shopify://shop_images/best-seller-mobile.webp",
-                "link_url": "",
-                "open_in_new_tab": false,
-                "hover_opacity": 85
-              },
-              "blocks": {},
-              "disabled": true
-            },
-            "product_list_text_YFtzcL": {
-              "type": "_product-list-text",
-              "name": "t:names.collection_title",
-              "settings": {
-                "text": "<h5>Best Sellers</h5>",
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "custom",
-                "font": "var(--font-heading--family)",
-                "font_size": "1.25rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground-heading)",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "product_list_button_MWeP9V": {
-              "type": "_product-list-button",
-              "name": "t:names.product_list_button",
-              "settings": {
-                "label": "View all →",
-                "open_in_new_tab": false,
-                "style_class": "link",
-                "width": "fit-content",
-                "custom_width": 100,
-                "width_mobile": "fit-content",
-                "custom_width_mobile": 100
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "ai_gen_block_4420fcf_xdn7CQ",
-            "product_list_text_YFtzcL",
-            "product_list_button_MWeP9V"
-          ]
-        },
-        "static-product-card": {
-          "type": "_product-card",
-          "name": "t:names.product_card",
-          "static": true,
-          "settings": {
-            "product_card_gap": 0,
-            "inherit_color_scheme": true,
-            "color_scheme": "",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-            "product_card_gallery_677WP3": {
-              "type": "_product-card-gallery",
-              "name": "t:names.product_card_media",
-              "settings": {
-                "image_ratio": "adapt",
-                "border": "solid",
-                "border_width": 1,
-                "border_opacity": 100,
-                "border_radius": 10,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "text_xpq4pB": {
-              "type": "text",
-              "name": "t:names.text",
-              "settings": {
-                "mobile_order": 0,
-                "text": "<p>{{ closest.product.vendor }}</p>",
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "custom",
-                "font": "var(--font-body--family)",
-                "font_size": "0.625rem",
-                "line_height": "normal",
-                "letter_spacing": "tight",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground)",
-                "background": true,
-                "background_color": "#00000026",
-                "corner_radius": 5,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "product_title_YXxMTj": {
-              "type": "product-title",
-              "name": "t:names.product_title",
-              "settings": {
-                "width": "100%",
-                "max_width": "none",
-                "alignment": "left",
-                "type_preset": "custom",
-                "font": "var(--font-accent--family)",
-                "weight": "",
-                "font_size": "0.75rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "balance",
-                "color": "var(--color-foreground-heading)",
-                "mobile_font": "",
-                "mobile_font_size": "",
-                "mobile_line_height": "",
-                "mobile_letter_spacing": "",
-                "mobile_case": "",
-                "mobile_weight": "",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "custom_class_desktop": "",
-                "custom_class_mobile": "",
-                "padding-block-start": 4,
-                "padding-block-end": 4,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "swatches_bpac49": {
-              "type": "swatches",
-              "name": "t:names.swatches",
-              "settings": {
-                "product_swatches_alignment": "flex-start",
-                "product_swatches_alignment_mobile": "flex-start",
-                "hide_padding": false,
-                "product_swatches_padding_top": 4,
-                "product_swatches_padding_bottom": 0,
-                "product_swatches_padding_left": 0,
-                "product_swatches_padding_right": 0
-              },
-              "blocks": {}
-            },
-            "price_JQzVV4": {
-              "type": "price",
-              "name": "t:names.product_price",
-              "settings": {
-                "show_sale_price_first": true,
-                "show_sale_badge": true,
-                "show_installments": false,
-                "show_tax_info": false,
-                "type_preset": "h6",
-                "width": "100%",
-                "alignment": "left",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "color": "var(--color-foreground)",
-                "padding-block-start": 0,
-                "padding-block-end": 5,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "custom_liquid_Ct6iwn": {
-              "type": "custom-liquid",
-              "name": "t:names.custom_liquid",
-              "settings": {
-                "custom_liquid": "{% render 'baadmay-product-grid-item',product:  %}"
-              },
-              "blocks": {}
-            },
-            "review_LCLnXa": {
-              "type": "review",
-              "name": "t:names.product_review_stars",
-              "settings": {
-                "stars_style": "shaded",
-                "show_number": true,
-                "rating_color": "primary",
-                "type_preset": "paragraph",
-                "width": "100%",
-                "alignment": "left"
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "product_card_gallery_677WP3",
-            "text_xpq4pB",
-            "product_title_YXxMTj",
-            "swatches_bpac49",
-            "price_JQzVV4",
-            "custom_liquid_Ct6iwn",
-            "review_LCLnXa"
-          ]
-        }
-      },
-      "settings": {
-        "collection": "bestsellers",
-        "banner_link": "",
-        "gradient_color_1": "",
-        "gradient_color_2": "",
-        "gradient_direction": "to bottom",
-        "gradient_opacity": 100,
-        "layout_type": "grid",
-        "carousel_on_mobile": false,
-        "max_products": 6,
-        "hide_sold_out": true,
-        "columns": 6,
-        "mobile_columns": "2",
-        "mobile_card_size": "44cqw",
-        "columns_gap": 12,
-        "rows_gap": 16,
-        "icons_style": "arrow",
-        "icons_shape": "none",
-        "section_width": "page-width",
-        "horizontal_alignment": "flex-start",
-        "gap": 28,
-        "color_scheme": "scheme-1",
-        "padding-block-start": 12,
-        "padding-block-end": 12
-      }
-    },
-    "brands_ticker": {
-      "type": "marquee",
-      "settings": {
-        "movement_direction": "normal",
-        "color_scheme": "scheme-1",
-        "padding-block-start": 10,
-        "padding-block-end": 10,
-        "gap_between_elements": 48
-      },
-      "blocks": {
-        "text_1": {
-          "type": "text",
-          "settings": {
-            "text": "<p><strong>11.11</strong></p>",
-            "type_preset": "custom",
-            "font": "var(--font-body--family)",
-            "font_size": "1.25rem",
-            "line_height": "tight",
-            "letter_spacing": "normal",
-            "case": "none",
-            "wrap": "nowrap",
-            "width": "fit-content",
-            "alignment": "left",
-            "max_width": "normal",
-            "color": "var(--color-foreground)",
-            "background": false,
-            "background_color": "#00000026",
-            "corner_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          }
-        },
-        "text_2": {
-          "type": "text",
-          "settings": {
-            "text": "<p><strong>HOME TO 150+ AUTHENTIC BRANDS</strong></p>",
-            "type_preset": "custom",
-            "font": "var(--font-body--family)",
-            "font_size": "1.25rem",
-            "line_height": "tight",
-            "letter_spacing": "normal",
-            "case": "none",
-            "wrap": "nowrap",
-            "width": "fit-content",
-            "alignment": "left",
-            "max_width": "normal",
-            "color": "var(--color-foreground)",
-            "background": false,
-            "background_color": "#00000026",
-            "corner_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          }
-        },
-        "text_3": {
-          "type": "text",
-          "settings": {
-            "text": "<p><a href=\"/pages/brands\">Shop all brands →</a></p>",
-            "type_preset": "custom",
-            "font": "var(--font-body--family)",
-            "font_size": "1.25rem",
-            "line_height": "tight",
-            "letter_spacing": "normal",
-            "case": "none",
-            "wrap": "nowrap",
-            "width": "fit-content",
-            "alignment": "left",
-            "max_width": "normal",
-            "color": "var(--color-foreground)",
-            "background": false,
-            "background_color": "#00000026",
-            "corner_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          }
-        }
-      },
-      "block_order": [
-        "text_1",
-        "text_2",
-        "text_3"
-      ]
-    },
-    "skincare": {
-      "type": "product-list",
-      "blocks": {
-        "static-header": {
-          "type": "_product-list-content",
-          "name": "t:names.header",
-          "static": true,
-          "settings": {
-            "content_direction": "row",
-            "vertical_on_mobile": false,
-            "horizontal_alignment": "space-between",
-            "vertical_alignment": "center",
-            "align_baseline": true,
-            "horizontal_alignment_flex_direction_column": "flex-start",
-            "vertical_alignment_flex_direction_column": "center",
-            "gap": 12,
-            "width": "100%",
-            "custom_width": 100,
-            "width_mobile": "100%",
-            "custom_width_mobile": 100,
-            "height": "fit",
-            "custom_height": 100,
-            "inherit_color_scheme": true,
-            "color_scheme": "",
-            "background_media": "none",
-            "video_position": "cover",
-            "background_image_position": "cover",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-            "ai_gen_block_4420fcf_xdn7CQ": {
-              "type": "ai_gen_block_4420fcf",
-              "name": "Banner announcement",
-              "settings": {
-                "desktop_image": "shopify://shop_images/best-seller-desktop_6c1bf320-9ce3-4cb9-a1d0-8ecba17b768b.webp",
-                "mobile_image": "shopify://shop_images/best-seller-mobile.webp",
-                "link_url": "",
-                "open_in_new_tab": false,
-                "hover_opacity": 85
-              },
-              "blocks": {},
-              "disabled": true
-            },
-            "product_list_text_YFtzcL": {
-              "type": "_product-list-text",
-              "name": "t:names.collection_title",
-              "settings": {
-                "text": "<h5>Skin Care, your fit</h5>",
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "custom",
-                "font": "var(--font-heading--family)",
-                "font_size": "1.25rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground-heading)",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "product_list_button_MWeP9V": {
-              "type": "_product-list-button",
-              "name": "t:names.product_list_button",
-              "settings": {
-                "label": "Shop skin care →",
-                "open_in_new_tab": false,
-                "style_class": "link",
-                "width": "fit-content",
-                "custom_width": 100,
-                "width_mobile": "fit-content",
-                "custom_width_mobile": 100
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "ai_gen_block_4420fcf_xdn7CQ",
-            "product_list_text_YFtzcL",
-            "product_list_button_MWeP9V"
-          ]
-        },
-        "static-product-card": {
-          "type": "_product-card",
-          "name": "t:names.product_card",
-          "static": true,
-          "settings": {
-            "product_card_gap": 0,
-            "inherit_color_scheme": true,
-            "color_scheme": "",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-            "product_card_gallery_677WP3": {
-              "type": "_product-card-gallery",
-              "name": "t:names.product_card_media",
-              "settings": {
-                "image_ratio": "adapt",
-                "border": "solid",
-                "border_width": 1,
-                "border_opacity": 100,
-                "border_radius": 10,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "text_xpq4pB": {
-              "type": "text",
-              "name": "t:names.text",
-              "settings": {
-                "mobile_order": 0,
-                "text": "<p>{{ closest.product.vendor }}</p>",
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "custom",
-                "font": "var(--font-body--family)",
-                "font_size": "0.625rem",
-                "line_height": "normal",
-                "letter_spacing": "tight",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground)",
-                "background": true,
-                "background_color": "#00000026",
-                "corner_radius": 5,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "product_title_YXxMTj": {
-              "type": "product-title",
-              "name": "t:names.product_title",
-              "settings": {
-                "width": "100%",
-                "max_width": "none",
-                "alignment": "left",
-                "type_preset": "custom",
-                "font": "var(--font-accent--family)",
-                "weight": "",
-                "font_size": "0.75rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "balance",
-                "color": "var(--color-foreground-heading)",
-                "mobile_font": "",
-                "mobile_font_size": "",
-                "mobile_line_height": "",
-                "mobile_letter_spacing": "",
-                "mobile_case": "",
-                "mobile_weight": "",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "custom_class_desktop": "",
-                "custom_class_mobile": "",
-                "padding-block-start": 4,
-                "padding-block-end": 4,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "swatches_bpac49": {
-              "type": "swatches",
-              "name": "t:names.swatches",
-              "settings": {
-                "product_swatches_alignment": "flex-start",
-                "product_swatches_alignment_mobile": "flex-start",
-                "hide_padding": false,
-                "product_swatches_padding_top": 4,
-                "product_swatches_padding_bottom": 0,
-                "product_swatches_padding_left": 0,
-                "product_swatches_padding_right": 0
-              },
-              "blocks": {}
-            },
-            "price_JQzVV4": {
-              "type": "price",
-              "name": "t:names.product_price",
-              "settings": {
-                "show_sale_price_first": true,
-                "show_sale_badge": true,
-                "show_installments": false,
-                "show_tax_info": false,
-                "type_preset": "h6",
-                "width": "100%",
-                "alignment": "left",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "color": "var(--color-foreground)",
-                "padding-block-start": 0,
-                "padding-block-end": 5,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "custom_liquid_Ct6iwn": {
-              "type": "custom-liquid",
-              "name": "t:names.custom_liquid",
-              "settings": {
-                "custom_liquid": "{% render 'baadmay-product-grid-item',product:  %}"
-              },
-              "blocks": {}
-            },
-            "review_LCLnXa": {
-              "type": "review",
-              "name": "t:names.product_review_stars",
-              "settings": {
-                "stars_style": "shaded",
-                "show_number": true,
-                "rating_color": "primary",
-                "type_preset": "paragraph",
-                "width": "100%",
-                "alignment": "left"
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "product_card_gallery_677WP3",
-            "text_xpq4pB",
-            "product_title_YXxMTj",
-            "swatches_bpac49",
-            "price_JQzVV4",
-            "custom_liquid_Ct6iwn",
-            "review_LCLnXa"
-          ]
-        }
-      },
-      "settings": {
-        "collection": "skin-care",
-        "banner_link": "",
-        "gradient_color_1": "",
-        "gradient_color_2": "",
-        "gradient_direction": "to bottom",
-        "gradient_opacity": 100,
-        "layout_type": "grid",
-        "carousel_on_mobile": false,
-        "max_products": 6,
-        "hide_sold_out": true,
-        "columns": 6,
-        "mobile_columns": "2",
-        "mobile_card_size": "44cqw",
-        "columns_gap": 12,
-        "rows_gap": 16,
-        "icons_style": "arrow",
-        "icons_shape": "none",
-        "section_width": "page-width",
-        "horizontal_alignment": "flex-start",
-        "gap": 28,
-        "color_scheme": "scheme-1",
-        "padding-block-start": 12,
-        "padding-block-end": 12
-      }
-    },
-    "perfumes": {
-      "type": "product-list",
-      "blocks": {
-        "static-header": {
-          "type": "_product-list-content",
-          "name": "t:names.header",
-          "static": true,
-          "settings": {
-            "content_direction": "row",
-            "vertical_on_mobile": false,
-            "horizontal_alignment": "space-between",
-            "vertical_alignment": "center",
-            "align_baseline": true,
-            "horizontal_alignment_flex_direction_column": "flex-start",
-            "vertical_alignment_flex_direction_column": "center",
-            "gap": 12,
-            "width": "100%",
-            "custom_width": 100,
-            "width_mobile": "100%",
-            "custom_width_mobile": 100,
-            "height": "fit",
-            "custom_height": 100,
-            "inherit_color_scheme": true,
-            "color_scheme": "",
-            "background_media": "none",
-            "video_position": "cover",
-            "background_image_position": "cover",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-            "ai_gen_block_4420fcf_xdn7CQ": {
-              "type": "ai_gen_block_4420fcf",
-              "name": "Banner announcement",
-              "settings": {
-                "desktop_image": "shopify://shop_images/best-seller-desktop_6c1bf320-9ce3-4cb9-a1d0-8ecba17b768b.webp",
-                "mobile_image": "shopify://shop_images/best-seller-mobile.webp",
-                "link_url": "",
-                "open_in_new_tab": false,
-                "hover_opacity": 85
-              },
-              "blocks": {},
-              "disabled": true
-            },
-            "product_list_text_YFtzcL": {
-              "type": "_product-list-text",
-              "name": "t:names.collection_title",
-              "settings": {
-                "text": "<h5>Perfumes &amp; Body, sorted</h5>",
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "custom",
-                "font": "var(--font-heading--family)",
-                "font_size": "1.25rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground-heading)",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "product_list_button_MWeP9V": {
-              "type": "_product-list-button",
-              "name": "t:names.product_list_button",
-              "settings": {
-                "label": "Shop perfumes →",
-                "open_in_new_tab": false,
-                "style_class": "link",
-                "width": "fit-content",
-                "custom_width": 100,
-                "width_mobile": "fit-content",
-                "custom_width_mobile": 100
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "ai_gen_block_4420fcf_xdn7CQ",
-            "product_list_text_YFtzcL",
-            "product_list_button_MWeP9V"
-          ]
-        },
-        "static-product-card": {
-          "type": "_product-card",
-          "name": "t:names.product_card",
-          "static": true,
-          "settings": {
-            "product_card_gap": 0,
-            "inherit_color_scheme": true,
-            "color_scheme": "",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-            "product_card_gallery_677WP3": {
-              "type": "_product-card-gallery",
-              "name": "t:names.product_card_media",
-              "settings": {
-                "image_ratio": "adapt",
-                "border": "solid",
-                "border_width": 1,
-                "border_opacity": 100,
-                "border_radius": 10,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "text_xpq4pB": {
-              "type": "text",
-              "name": "t:names.text",
-              "settings": {
-                "mobile_order": 0,
-                "text": "<p>{{ closest.product.vendor }}</p>",
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "custom",
-                "font": "var(--font-body--family)",
-                "font_size": "0.625rem",
-                "line_height": "normal",
-                "letter_spacing": "tight",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground)",
-                "background": true,
-                "background_color": "#00000026",
-                "corner_radius": 5,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "product_title_YXxMTj": {
-              "type": "product-title",
-              "name": "t:names.product_title",
-              "settings": {
-                "width": "100%",
-                "max_width": "none",
-                "alignment": "left",
-                "type_preset": "custom",
-                "font": "var(--font-accent--family)",
-                "weight": "",
-                "font_size": "0.75rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "balance",
-                "color": "var(--color-foreground-heading)",
-                "mobile_font": "",
-                "mobile_font_size": "",
-                "mobile_line_height": "",
-                "mobile_letter_spacing": "",
-                "mobile_case": "",
-                "mobile_weight": "",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "custom_class_desktop": "",
-                "custom_class_mobile": "",
-                "padding-block-start": 4,
-                "padding-block-end": 4,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "swatches_bpac49": {
-              "type": "swatches",
-              "name": "t:names.swatches",
-              "settings": {
-                "product_swatches_alignment": "flex-start",
-                "product_swatches_alignment_mobile": "flex-start",
-                "hide_padding": false,
-                "product_swatches_padding_top": 4,
-                "product_swatches_padding_bottom": 0,
-                "product_swatches_padding_left": 0,
-                "product_swatches_padding_right": 0
-              },
-              "blocks": {}
-            },
-            "price_JQzVV4": {
-              "type": "price",
-              "name": "t:names.product_price",
-              "settings": {
-                "show_sale_price_first": true,
-                "show_sale_badge": true,
-                "show_installments": false,
-                "show_tax_info": false,
-                "type_preset": "h6",
-                "width": "100%",
-                "alignment": "left",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "color": "var(--color-foreground)",
-                "padding-block-start": 0,
-                "padding-block-end": 5,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "custom_liquid_Ct6iwn": {
-              "type": "custom-liquid",
-              "name": "t:names.custom_liquid",
-              "settings": {
-                "custom_liquid": "{% render 'baadmay-product-grid-item',product:  %}"
-              },
-              "blocks": {}
-            },
-            "review_LCLnXa": {
-              "type": "review",
-              "name": "t:names.product_review_stars",
-              "settings": {
-                "stars_style": "shaded",
-                "show_number": true,
-                "rating_color": "primary",
-                "type_preset": "paragraph",
-                "width": "100%",
-                "alignment": "left"
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "product_card_gallery_677WP3",
-            "text_xpq4pB",
-            "product_title_YXxMTj",
-            "swatches_bpac49",
-            "price_JQzVV4",
-            "custom_liquid_Ct6iwn",
-            "review_LCLnXa"
-          ]
-        }
-      },
-      "settings": {
-        "collection": "perfumes",
-        "banner_link": "",
-        "gradient_color_1": "",
-        "gradient_color_2": "",
-        "gradient_direction": "to bottom",
-        "gradient_opacity": 100,
-        "layout_type": "grid",
-        "carousel_on_mobile": false,
-        "max_products": 6,
-        "hide_sold_out": true,
-        "columns": 6,
-        "mobile_columns": "2",
-        "mobile_card_size": "44cqw",
-        "columns_gap": 12,
-        "rows_gap": 16,
-        "icons_style": "arrow",
-        "icons_shape": "none",
-        "section_width": "page-width",
-        "horizontal_alignment": "flex-start",
-        "gap": 28,
-        "color_scheme": "scheme-1",
-        "padding-block-start": 12,
-        "padding-block-end": 12
-      }
-    },
-    "brand_deals": {
-      "type": "card-grid",
-      "blocks": {
-        "card_1": {
-          "type": "card",
-          "name": "ST London",
-          "settings": {
-            "image": "shopify://shop_images/ST-London_f9685cd0-ea3e-4518-96ce-2c63b17d547d.jpg",
-            "link": "shopify://collections/sale-st-london",
-            "open_new_tab": false
-          }
-        },
-        "card_2": {
-          "type": "card",
-          "name": "Maybelline",
-          "settings": {
-            "image": "shopify://shop_images/Maybelline_18e04404-f9ab-4e64-acdf-84bdc2cc9dda.jpg",
-            "link": "shopify://collections/sale-maybelline",
-            "open_new_tab": false
-          }
-        },
-        "card_3": {
-          "type": "card",
-          "name": "Revolution",
-          "settings": {
-            "image": "shopify://shop_images/Revolution_a1bb64b4-6dcb-451e-a244-0ae00c0f485c.jpg",
-            "link": "shopify://collections/revolution",
-            "open_new_tab": false
-          }
-        },
-        "card_4": {
-          "type": "card",
-          "name": "ELF",
-          "settings": {
-            "image": "shopify://shop_images/ELF_3f51fe3d-f563-49e8-9d6b-5f6077d719f5.jpg",
-            "link": "shopify://collections/elf",
-            "open_new_tab": false
-          }
-        },
-        "card_5": {
-          "type": "card",
-          "name": "Miss Rose",
-          "settings": {
-            "image": "shopify://shop_images/Miss-Rose.jpg",
-            "link": "shopify://collections/miss-rose",
-            "open_new_tab": false
-          }
-        },
-        "card_6": {
-          "type": "card",
-          "name": "Huda Beauty",
-          "settings": {
-            "image": "shopify://shop_images/huda-beauty_17a17d8c-43c0-43b8-ae04-c943750b5b83.jpg",
-            "link": "shopify://collections/huda-beauty",
-            "open_new_tab": false
-          }
-        },
-        "card_7": {
-          "type": "card",
-          "name": "GOSH",
-          "settings": {
-            "image": "shopify://shop_images/Gosh_jpg_45a2b0ac-d82a-45cb-b0dc-8662b126000b.jpg",
-            "link": "shopify://collections/sale-gosh",
-            "open_new_tab": false
-          }
-        },
-        "card_8": {
-          "type": "card",
-          "name": "L'Oréal Paris",
-          "settings": {
-            "image": "shopify://shop_images/loreal_8e50d171-e3c6-4f9b-8fef-749046532060.jpg",
-            "link": "shopify://collections/loreal-paris-1",
-            "open_new_tab": false
-          }
-        },
-        "card_9": {
-          "type": "card",
-          "name": "Sheglam",
-          "settings": {
-            "image": "shopify://shop_images/sheglam_8037f6fe-113b-493d-8e33-5aa32490085b.jpg",
-            "link": "shopify://collections/sheglam",
-            "open_new_tab": false
-          }
-        }
-      },
-      "block_order": [
-        "card_1",
-        "card_2",
-        "card_3",
-        "card_4",
-        "card_5",
-        "card_6",
-        "card_7",
-        "card_8",
-        "card_9"
-      ],
-      "settings": {
-        "heading": "The Deals Just Keep Getting Better",
-        "subheading": "ST London upto 35% · Maybelline flat 30% · Revolution 25% · elf 25% · Miss Rose 40% · Huda Beauty 30% · GOSH 30% · L'Oréal Paris 25% · Sheglam 25%",
-        "heading_alignment": "center",
-        "desktop_layout": "slider",
-        "mobile_layout": "slider",
-        "desktop_columns": "3",
-        "mobile_columns": "2",
-        "desktop_slider_per_view": "4",
-        "mobile_slider_per_view": "2",
-        "show_arrows": true,
-        "auto_rotate": false,
-        "rotate_interval": 4,
-        "gap": 10,
-        "desktop_side_padding": 0,
-        "mobile_side_padding": 0,
-        "gradient_color_1": "",
-        "gradient_color_2": "",
-        "gradient_opacity": 50,
-        "gradient_direction": "to bottom",
-        "section_width": "page-width",
-        "color_scheme": "",
-        "padding-block-start": 16,
-        "padding-block-end": 8
-      }
-    },
-    "makeup": {
-      "type": "product-list",
-      "blocks": {
-        "static-header": {
-          "type": "_product-list-content",
-          "name": "t:names.header",
-          "static": true,
-          "settings": {
-            "content_direction": "row",
-            "vertical_on_mobile": false,
-            "horizontal_alignment": "space-between",
-            "vertical_alignment": "center",
-            "align_baseline": true,
-            "horizontal_alignment_flex_direction_column": "flex-start",
-            "vertical_alignment_flex_direction_column": "center",
-            "gap": 12,
-            "width": "100%",
-            "custom_width": 100,
-            "width_mobile": "100%",
-            "custom_width_mobile": 100,
-            "height": "fit",
-            "custom_height": 100,
-            "inherit_color_scheme": true,
-            "color_scheme": "",
-            "background_media": "none",
-            "video_position": "cover",
-            "background_image_position": "cover",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-            "ai_gen_block_4420fcf_xdn7CQ": {
-              "type": "ai_gen_block_4420fcf",
-              "name": "Banner announcement",
-              "settings": {
-                "desktop_image": "shopify://shop_images/best-seller-desktop_6c1bf320-9ce3-4cb9-a1d0-8ecba17b768b.webp",
-                "mobile_image": "shopify://shop_images/best-seller-mobile.webp",
-                "link_url": "",
-                "open_in_new_tab": false,
-                "hover_opacity": 85
-              },
-              "blocks": {},
-              "disabled": true
-            },
-            "product_list_text_YFtzcL": {
-              "type": "_product-list-text",
-              "name": "t:names.collection_title",
-              "settings": {
-                "text": "<h5>Makeup, your way</h5>",
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "custom",
-                "font": "var(--font-heading--family)",
-                "font_size": "1.25rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground-heading)",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "product_list_button_MWeP9V": {
-              "type": "_product-list-button",
-              "name": "t:names.product_list_button",
-              "settings": {
-                "label": "Shop makeup →",
-                "open_in_new_tab": false,
-                "style_class": "link",
-                "width": "fit-content",
-                "custom_width": 100,
-                "width_mobile": "fit-content",
-                "custom_width_mobile": 100
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "ai_gen_block_4420fcf_xdn7CQ",
-            "product_list_text_YFtzcL",
-            "product_list_button_MWeP9V"
-          ]
-        },
-        "static-product-card": {
-          "type": "_product-card",
-          "name": "t:names.product_card",
-          "static": true,
-          "settings": {
-            "product_card_gap": 0,
-            "inherit_color_scheme": true,
-            "color_scheme": "",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-            "product_card_gallery_677WP3": {
-              "type": "_product-card-gallery",
-              "name": "t:names.product_card_media",
-              "settings": {
-                "image_ratio": "adapt",
-                "border": "solid",
-                "border_width": 1,
-                "border_opacity": 100,
-                "border_radius": 10,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "text_xpq4pB": {
-              "type": "text",
-              "name": "t:names.text",
-              "settings": {
-                "mobile_order": 0,
-                "text": "<p>{{ closest.product.vendor }}</p>",
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "custom",
-                "font": "var(--font-body--family)",
-                "font_size": "0.625rem",
-                "line_height": "normal",
-                "letter_spacing": "tight",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground)",
-                "background": true,
-                "background_color": "#00000026",
-                "corner_radius": 5,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "product_title_YXxMTj": {
-              "type": "product-title",
-              "name": "t:names.product_title",
-              "settings": {
-                "width": "100%",
-                "max_width": "none",
-                "alignment": "left",
-                "type_preset": "custom",
-                "font": "var(--font-accent--family)",
-                "weight": "",
-                "font_size": "0.75rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "balance",
-                "color": "var(--color-foreground-heading)",
-                "mobile_font": "",
-                "mobile_font_size": "",
-                "mobile_line_height": "",
-                "mobile_letter_spacing": "",
-                "mobile_case": "",
-                "mobile_weight": "",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "custom_class_desktop": "",
-                "custom_class_mobile": "",
-                "padding-block-start": 4,
-                "padding-block-end": 4,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "swatches_bpac49": {
-              "type": "swatches",
-              "name": "t:names.swatches",
-              "settings": {
-                "product_swatches_alignment": "flex-start",
-                "product_swatches_alignment_mobile": "flex-start",
-                "hide_padding": false,
-                "product_swatches_padding_top": 4,
-                "product_swatches_padding_bottom": 0,
-                "product_swatches_padding_left": 0,
-                "product_swatches_padding_right": 0
-              },
-              "blocks": {}
-            },
-            "price_JQzVV4": {
-              "type": "price",
-              "name": "t:names.product_price",
-              "settings": {
-                "show_sale_price_first": true,
-                "show_sale_badge": true,
-                "show_installments": false,
-                "show_tax_info": false,
-                "type_preset": "h6",
-                "width": "100%",
-                "alignment": "left",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "color": "var(--color-foreground)",
-                "padding-block-start": 0,
-                "padding-block-end": 5,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "custom_liquid_Ct6iwn": {
-              "type": "custom-liquid",
-              "name": "t:names.custom_liquid",
-              "settings": {
-                "custom_liquid": "{% render 'baadmay-product-grid-item',product:  %}"
-              },
-              "blocks": {}
-            },
-            "review_LCLnXa": {
-              "type": "review",
-              "name": "t:names.product_review_stars",
-              "settings": {
-                "stars_style": "shaded",
-                "show_number": true,
-                "rating_color": "primary",
-                "type_preset": "paragraph",
-                "width": "100%",
-                "alignment": "left"
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "product_card_gallery_677WP3",
-            "text_xpq4pB",
-            "product_title_YXxMTj",
-            "swatches_bpac49",
-            "price_JQzVV4",
-            "custom_liquid_Ct6iwn",
-            "review_LCLnXa"
-          ]
-        }
-      },
-      "settings": {
-        "collection": "makeup",
-        "banner_link": "",
-        "gradient_color_1": "",
-        "gradient_color_2": "",
-        "gradient_direction": "to bottom",
-        "gradient_opacity": 100,
-        "layout_type": "grid",
-        "carousel_on_mobile": false,
-        "max_products": 6,
-        "hide_sold_out": true,
-        "columns": 6,
-        "mobile_columns": "2",
-        "mobile_card_size": "44cqw",
-        "columns_gap": 12,
-        "rows_gap": 16,
-        "icons_style": "arrow",
-        "icons_shape": "none",
-        "section_width": "page-width",
-        "horizontal_alignment": "flex-start",
-        "gap": 28,
-        "color_scheme": "scheme-1",
-        "padding-block-start": 12,
-        "padding-block-end": 12
-      }
-    },
-    "haircare": {
-      "type": "product-list",
-      "blocks": {
-        "static-header": {
-          "type": "_product-list-content",
-          "name": "t:names.header",
-          "static": true,
-          "settings": {
-            "content_direction": "row",
-            "vertical_on_mobile": false,
-            "horizontal_alignment": "space-between",
-            "vertical_alignment": "center",
-            "align_baseline": true,
-            "horizontal_alignment_flex_direction_column": "flex-start",
-            "vertical_alignment_flex_direction_column": "center",
-            "gap": 12,
-            "width": "100%",
-            "custom_width": 100,
-            "width_mobile": "100%",
-            "custom_width_mobile": 100,
-            "height": "fit",
-            "custom_height": 100,
-            "inherit_color_scheme": true,
-            "color_scheme": "",
-            "background_media": "none",
-            "video_position": "cover",
-            "background_image_position": "cover",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-            "ai_gen_block_4420fcf_xdn7CQ": {
-              "type": "ai_gen_block_4420fcf",
-              "name": "Banner announcement",
-              "settings": {
-                "desktop_image": "shopify://shop_images/best-seller-desktop_6c1bf320-9ce3-4cb9-a1d0-8ecba17b768b.webp",
-                "mobile_image": "shopify://shop_images/best-seller-mobile.webp",
-                "link_url": "",
-                "open_in_new_tab": false,
-                "hover_opacity": 85
-              },
-              "blocks": {},
-              "disabled": true
-            },
-            "product_list_text_YFtzcL": {
-              "type": "_product-list-text",
-              "name": "t:names.collection_title",
-              "settings": {
-                "text": "<h5>Hair Care, sorted</h5>",
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "custom",
-                "font": "var(--font-heading--family)",
-                "font_size": "1.25rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground-heading)",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "product_list_button_MWeP9V": {
-              "type": "_product-list-button",
-              "name": "t:names.product_list_button",
-              "settings": {
-                "label": "Shop hair care →",
-                "open_in_new_tab": false,
-                "style_class": "link",
-                "width": "fit-content",
-                "custom_width": 100,
-                "width_mobile": "fit-content",
-                "custom_width_mobile": 100
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "ai_gen_block_4420fcf_xdn7CQ",
-            "product_list_text_YFtzcL",
-            "product_list_button_MWeP9V"
-          ]
-        },
-        "static-product-card": {
-          "type": "_product-card",
-          "name": "t:names.product_card",
-          "static": true,
-          "settings": {
-            "product_card_gap": 0,
-            "inherit_color_scheme": true,
-            "color_scheme": "",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-            "product_card_gallery_677WP3": {
-              "type": "_product-card-gallery",
-              "name": "t:names.product_card_media",
-              "settings": {
-                "image_ratio": "adapt",
-                "border": "solid",
-                "border_width": 1,
-                "border_opacity": 100,
-                "border_radius": 10,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "text_xpq4pB": {
-              "type": "text",
-              "name": "t:names.text",
-              "settings": {
-                "mobile_order": 0,
-                "text": "<p>{{ closest.product.vendor }}</p>",
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "custom",
-                "font": "var(--font-body--family)",
-                "font_size": "0.625rem",
-                "line_height": "normal",
-                "letter_spacing": "tight",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground)",
-                "background": true,
-                "background_color": "#00000026",
-                "corner_radius": 5,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "product_title_YXxMTj": {
-              "type": "product-title",
-              "name": "t:names.product_title",
-              "settings": {
-                "width": "100%",
-                "max_width": "none",
-                "alignment": "left",
-                "type_preset": "custom",
-                "font": "var(--font-accent--family)",
-                "weight": "",
-                "font_size": "0.75rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "balance",
-                "color": "var(--color-foreground-heading)",
-                "mobile_font": "",
-                "mobile_font_size": "",
-                "mobile_line_height": "",
-                "mobile_letter_spacing": "",
-                "mobile_case": "",
-                "mobile_weight": "",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "custom_class_desktop": "",
-                "custom_class_mobile": "",
-                "padding-block-start": 4,
-                "padding-block-end": 4,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "swatches_bpac49": {
-              "type": "swatches",
-              "name": "t:names.swatches",
-              "settings": {
-                "product_swatches_alignment": "flex-start",
-                "product_swatches_alignment_mobile": "flex-start",
-                "hide_padding": false,
-                "product_swatches_padding_top": 4,
-                "product_swatches_padding_bottom": 0,
-                "product_swatches_padding_left": 0,
-                "product_swatches_padding_right": 0
-              },
-              "blocks": {}
-            },
-            "price_JQzVV4": {
-              "type": "price",
-              "name": "t:names.product_price",
-              "settings": {
-                "show_sale_price_first": true,
-                "show_sale_badge": true,
-                "show_installments": false,
-                "show_tax_info": false,
-                "type_preset": "h6",
-                "width": "100%",
-                "alignment": "left",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "color": "var(--color-foreground)",
-                "padding-block-start": 0,
-                "padding-block-end": 5,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "custom_liquid_Ct6iwn": {
-              "type": "custom-liquid",
-              "name": "t:names.custom_liquid",
-              "settings": {
-                "custom_liquid": "{% render 'baadmay-product-grid-item',product:  %}"
-              },
-              "blocks": {}
-            },
-            "review_LCLnXa": {
-              "type": "review",
-              "name": "t:names.product_review_stars",
-              "settings": {
-                "stars_style": "shaded",
-                "show_number": true,
-                "rating_color": "primary",
-                "type_preset": "paragraph",
-                "width": "100%",
-                "alignment": "left"
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "product_card_gallery_677WP3",
-            "text_xpq4pB",
-            "product_title_YXxMTj",
-            "swatches_bpac49",
-            "price_JQzVV4",
-            "custom_liquid_Ct6iwn",
-            "review_LCLnXa"
-          ]
-        }
-      },
-      "settings": {
-        "collection": "hair-care",
-        "banner_link": "",
-        "gradient_color_1": "",
-        "gradient_color_2": "",
-        "gradient_direction": "to bottom",
-        "gradient_opacity": 100,
-        "layout_type": "grid",
-        "carousel_on_mobile": false,
-        "max_products": 6,
-        "hide_sold_out": true,
-        "columns": 6,
-        "mobile_columns": "2",
-        "mobile_card_size": "44cqw",
-        "columns_gap": 12,
-        "rows_gap": 16,
-        "icons_style": "arrow",
-        "icons_shape": "none",
-        "section_width": "page-width",
-        "horizontal_alignment": "flex-start",
-        "gap": 28,
-        "color_scheme": "scheme-1",
-        "padding-block-start": 12,
-        "padding-block-end": 12
-      }
-    },
-    "more_brands_heading": {
-      "type": "section",
-      "settings": {
-        "section_height": "",
-        "section_width": "page-width",
-        "padding-block-start": 8,
-        "padding-block-end": 0,
-        "content_direction": "column",
-        "vertical_on_mobile": true,
-        "horizontal_alignment": "flex-start",
-        "vertical_alignment": "center",
-        "horizontal_alignment_flex_direction_column": "center",
-        "vertical_alignment_flex_direction_column": "center",
-        "gap": 12,
-        "color_scheme": "scheme-1"
-      },
-      "blocks": {
-        "heading": {
-          "type": "text",
-          "settings": {
-            "text": "<h3>More Brand Deals</h3>",
-            "width": "fit-content",
-            "max_width": "normal",
-            "alignment": "center",
-            "type_preset": "rte",
-            "font": "var(--font-body--family)",
-            "font_size": "",
-            "line_height": "normal",
-            "letter_spacing": "normal",
-            "case": "none",
-            "wrap": "pretty",
-            "background": false,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          }
-        }
-      },
-      "block_order": [
-        "heading"
-      ]
-    },
-    "more_brands": {
-      "type": "collection-links",
-      "settings": {
-        "collection_list": [
-          "to",
-          "tocobo",
-          "medicube",
-          "anua",
-          "cosrx",
-          "dr-althea",
-          "beauty-of-joseon",
-          "skin1004",
-          "laneige",
-          "isntree",
-          "purito",
-          "numbuzin",
-          "la-roche-posay",
-          "cerave-official",
-          "vaseline",
-          "framesi",
-          "fino",
-          "onestep",
-          "ikt",
-          "garnier",
-          "kryolan",
-          "lamel",
-          "bob"
-        ],
-        "layout": "text",
-        "section_width": "page-width",
-        "alignment": "center",
-        "image_position": "right",
-        "color_scheme": "scheme-1",
-        "padding-block-start": 8,
-        "padding-block-end": 16
-      },
-      "blocks": {
-        "link": {
-          "type": "_collection-link",
-          "static": true,
-          "blocks": {
-            "title": {
-              "type": "_inline-collection-title",
-              "static": true,
-              "settings": {
-                "font": "var(--font-subheading--family)"
-              }
-            },
-            "image": {
-              "type": "_image",
-              "static": true,
-              "settings": {
-                "height": "medium"
-              }
-            }
-          }
-        }
-      }
-    },
-    "cta": {
-      "type": "cta-banner",
-      "settings": {
-        "heading": "11.11 SALE ON 150+ BRANDS",
-        "heading_size_desktop": 48,
-        "heading_size_mobile": 24,
-        "button_label": "Shop the full sale",
-        "button_link": "shopify://collections/sale",
-        "open_new_tab": false,
-        "background_image": "shopify://shop_images/shop-all.webp",
-        "padding-block-start": 0,
-        "padding-block-end": 0
+        "purple": "#A98BCB",
+        "lime": "#D9F25B",
+        "dark": "#1E1E1E",
+        "red": "#D32F2F"
       }
     }
   },
   "order": [
-    "hero",
-    "offer_codes",
-    "categories",
-    "daily_faves",
-    "top_picks",
-    "steals",
-    "bestsellers",
-    "brands_ticker",
-    "skincare",
-    "perfumes",
-    "brand_deals",
-    "makeup",
-    "haircare",
-    "more_brands_heading",
-    "more_brands",
-    "cta"
+    "sale"
   ]
 }
