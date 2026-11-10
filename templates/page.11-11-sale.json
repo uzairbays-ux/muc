@@ -182,87 +182,6 @@
             "open_new_tab": false
           }
         },
-        "tile_2": {
-          "type": "card",
-          "name": "ST London",
-          "settings": {
-            "image": "shopify://shop_images/1111-st-london.webp",
-            "link": "shopify://collections/st-london",
-            "open_new_tab": false
-          }
-        },
-        "tile_3": {
-          "type": "card",
-          "name": "Revolution",
-          "settings": {
-            "image": "shopify://shop_images/1111-revolution.webp",
-            "link": "shopify://collections/revolution",
-            "open_new_tab": false
-          }
-        },
-        "tile_5": {
-          "type": "card",
-          "name": "The Ordinary",
-          "settings": {
-            "image": "shopify://shop_images/1111-the-ordinary.webp",
-            "link": "shopify://collections/to",
-            "open_new_tab": false
-          }
-        },
-        "tile_7": {
-          "type": "card",
-          "name": "AXIS-Y",
-          "settings": {
-            "image": "shopify://shop_images/1111-axis-y.webp",
-            "link": "shopify://collections/axis-y",
-            "open_new_tab": false
-          }
-        },
-        "tile_8": {
-          "type": "card",
-          "name": "Tocobo",
-          "settings": {
-            "image": "shopify://shop_images/1111-tocobo.webp",
-            "link": "shopify://collections/tocobo",
-            "open_new_tab": false
-          }
-        },
-        "tile_9": {
-          "type": "card",
-          "name": "Celimax",
-          "settings": {
-            "image": "shopify://shop_images/1111-celimax.webp",
-            "link": "shopify://collections/celimax",
-            "open_new_tab": false
-          }
-        },
-        "tile_10": {
-          "type": "card",
-          "name": "Vaseline",
-          "settings": {
-            "image": "shopify://shop_images/1111-vaseline.webp",
-            "link": "shopify://collections/vaseline",
-            "open_new_tab": false
-          }
-        },
-        "tile_11": {
-          "type": "card",
-          "name": "Nars",
-          "settings": {
-            "image": "shopify://shop_images/1111-nars.webp",
-            "link": "shopify://collections/nars",
-            "open_new_tab": false
-          }
-        },
-        "tile_13": {
-          "type": "card",
-          "name": "Dior",
-          "settings": {
-            "image": "shopify://shop_images/1111-dior.webp",
-            "link": "shopify://collections/dior",
-            "open_new_tab": false
-          }
-        },
         "tile_14": {
           "type": "card",
           "name": "Miss Rose",
@@ -308,13 +227,21 @@
             "open_new_tab": false
           }
         },
-        "tile_19": {
+        "tile_8": {
           "type": "card",
-          "name": "VT",
-          "disabled": true,
+          "name": "Tocobo",
           "settings": {
-            "image": "shopify://shop_images/1111-vt.webp",
-            "link": "shopify://collections/vt",
+            "image": "shopify://shop_images/1111-tocobo.webp",
+            "link": "shopify://collections/tocobo",
+            "open_new_tab": false
+          }
+        },
+        "tile_11": {
+          "type": "card",
+          "name": "Nars",
+          "settings": {
+            "image": "shopify://shop_images/1111-nars.webp",
+            "link": "shopify://collections/nars",
             "open_new_tab": false
           }
         },
@@ -326,6 +253,79 @@
             "link": "shopify://collections/eqqualberry",
             "open_new_tab": false
           }
+        },
+        "tile_13": {
+          "type": "card",
+          "name": "Dior",
+          "settings": {
+            "image": "shopify://shop_images/1111-dior.webp",
+            "link": "shopify://collections/dior",
+            "open_new_tab": false
+          }
+        },
+        "tile_2": {
+          "type": "card",
+          "name": "ST London",
+          "settings": {
+            "image": "shopify://shop_images/1111-st-london.webp",
+            "link": "shopify://collections/st-london",
+            "open_new_tab": false
+          }
+        },
+        "tile_3": {
+          "type": "card",
+          "name": "Revolution",
+          "settings": {
+            "image": "shopify://shop_images/1111-revolution.webp",
+            "link": "shopify://collections/revolution",
+            "open_new_tab": false
+          }
+        },
+        "tile_5": {
+          "type": "card",
+          "name": "The Ordinary",
+          "settings": {
+            "image": "shopify://shop_images/1111-the-ordinary.webp",
+            "link": "shopify://collections/to",
+            "open_new_tab": false
+          }
+        },
+        "tile_7": {
+          "type": "card",
+          "name": "AXIS-Y",
+          "settings": {
+            "image": "shopify://shop_images/1111-axis-y.webp",
+            "link": "shopify://collections/axis-y",
+            "open_new_tab": false
+          }
+        },
+        "tile_9": {
+          "type": "card",
+          "name": "Celimax",
+          "settings": {
+            "image": "shopify://shop_images/1111-celimax.webp",
+            "link": "shopify://collections/celimax",
+            "open_new_tab": false
+          }
+        },
+        "tile_10": {
+          "type": "card",
+          "name": "Vaseline",
+          "settings": {
+            "image": "shopify://shop_images/1111-vaseline.webp",
+            "link": "shopify://collections/vaseline",
+            "open_new_tab": false
+          }
+        },
+        "tile_19": {
+          "type": "card",
+          "name": "VT",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/1111-vt.webp",
+            "link": "shopify://collections/vt",
+            "open_new_tab": false
+          }
         }
       },
       "block_order": [
@@ -333,22 +333,22 @@
         "tile_4",
         "tile_6",
         "tile_12",
-        "tile_2",
-        "tile_3",
-        "tile_5",
-        "tile_7",
-        "tile_8",
-        "tile_9",
-        "tile_10",
-        "tile_11",
-        "tile_13",
         "tile_14",
         "tile_15",
         "tile_16",
         "tile_17",
         "tile_18",
-        "tile_19",
-        "tile_20"
+        "tile_8",
+        "tile_11",
+        "tile_20",
+        "tile_13",
+        "tile_2",
+        "tile_3",
+        "tile_5",
+        "tile_7",
+        "tile_9",
+        "tile_10",
+        "tile_19"
       ],
       "settings": {
         "heading": "Big Brands. Bigger Steals",
