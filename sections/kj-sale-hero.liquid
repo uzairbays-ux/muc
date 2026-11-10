@@ -1,13 +1,7 @@
 {%- render 'kj-sale-styles' -%}
 {%- if section.settings.page_bg != blank and section.settings.page_bg != 'rgba(0,0,0,0)' -%}<style>body { background: {{ section.settings.page_bg }}; }</style>{%- endif -%}
 <div class="kjs kjs--{{ section.settings.section_width }}" style="--kjs-purple: {{ section.settings.purple }}; --kjs-lime: {{ section.settings.lime }}; --kjs-dark: {{ section.settings.dark }}; --kjs-red: {{ section.settings.red }}; padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px;">
-        {%- liquid
-  assign hero_style = ''
-  if section.settings.bg_image != blank
-    assign hero_style = '--kjs-hero-pattern: url(' | append: section.settings.bg_image | image_url: width: 2400 | append: ');'
-  endif
--%}
-<a class="kjs-hero{% if section.settings.pattern %} kjs-hero--pattern{% endif %}{% if section.settings.bg_image != blank %} kjs-hero--image{% endif %}{% if section.settings.animate %} kjs-hero--anim{% endif %}{% if section.settings.confetti %} kjs-hero--confetti{% endif %}" href="{{ section.settings.link | default: '#' }}" style="{{ hero_style }}">
+        <a class="kjs-hero{% if section.settings.pattern %} kjs-hero--pattern{% endif %}{% if section.settings.animate %} kjs-hero--anim{% endif %}" href="{{ section.settings.link | default: '#' }}">
           <div class="kjs-hero__left">
             <span class="kjs-hero__title">{{ section.settings.title | escape }} <span>{{ section.settings.title2 | escape }}</span></span>
             <span class="kjs-hero__tag">{{ section.settings.tag | escape }}</span>
@@ -35,9 +29,7 @@
     { "type": "text", "id": "pct", "label": "Percent", "default": "50%" },
     { "type": "text", "id": "off", "label": "Off", "default": "OFF" },
     { "type": "url", "id": "link", "label": "Link" },
-    { "type": "checkbox", "id": "pattern", "label": "11:11 pattern behind (fixed, clear in the middle)", "default": true },
-    { "type": "image_picker", "id": "bg_image", "label": "Or upload the pattern image (replaces the built-in one)" },
-    { "type": "checkbox", "id": "confetti", "label": "Confetti on page load (once per visit)", "default": true },
+    { "type": "checkbox", "id": "pattern", "label": "Drifting 11:11 pattern behind", "default": true },
     { "type": "checkbox", "id": "animate", "label": "Animate the text in", "default": true },
     { "type": "color", "id": "page_bg", "label": "Page background (whole page)", "default": "#F6F2FB" },
     { "type": "select", "id": "section_width", "label": "Width", "default": "full-width", "options": [ { "value": "full-width", "label": "Full width" }, { "value": "page-width", "label": "Page width" } ] },

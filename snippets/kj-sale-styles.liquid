@@ -11,10 +11,9 @@
   .kjs-alert__was { color: #bbb; font-weight: 500; margin: 0 8px 0 10px; }
   .kjs-alert__now { margin-left: 2px; }
   .kjs-hero { position: relative; display: flex; flex-wrap: wrap; align-items: center; gap: 32px; padding: clamp(28px, 5vw, 64px); border-radius: 16px; background: var(--kjs-purple); color: var(--kjs-dark); min-height: 440px; box-sizing: border-box; overflow: hidden; }
-  .kjs-hero--pattern::before { content: ''; position: absolute; inset: 0; background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='230' height='130'><text x='4' y='104' font-family='Arial Narrow,Arial,sans-serif' font-weight='900' font-size='118' letter-spacing='-6' fill='white' fill-opacity='0.16'>11:11</text></svg>"); background-size: 230px 130px; background-position: -20px -14px; pointer-events: none; -webkit-mask-image: linear-gradient(to bottom, #000 0, #000 24%, transparent 34%, transparent 66%, #000 76%, #000 100%); mask-image: linear-gradient(to bottom, #000 0, #000 24%, transparent 34%, transparent 66%, #000 76%, #000 100%); }
-  .kjs-hero--image::before { background-image: var(--kjs-hero-pattern); background-size: cover; background-position: center; -webkit-mask-image: none; mask-image: none; }
-  .kjs-confetti { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 60; }
+  .kjs-hero--pattern::before { content: ''; position: absolute; inset: -40px; background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='320' height='160'><text x='0' y='120' font-family='Arial Black,Arial,sans-serif' font-weight='900' font-size='120' fill='white' fill-opacity='0.10'>11:11</text></svg>"); background-size: 320px 160px; opacity: 1; animation: kjs-drift 40s linear infinite; pointer-events: none; }
   .kjs-hero > * { position: relative; }
+  @keyframes kjs-drift { from { background-position: 0 0; } to { background-position: 640px 320px; } }
   .kjs-hero--anim .kjs-hero__title, .kjs-hero--anim .kjs-hero__tag, .kjs-hero--anim .kjs-hero__upto, .kjs-hero--anim .kjs-hero__pct, .kjs-hero--anim .kjs-hero__off { animation: kjs-rise .7s cubic-bezier(.2,.8,.2,1) both; }
   .kjs-hero--anim .kjs-hero__tag { animation-delay: .15s; }
   .kjs-hero--anim .kjs-hero__upto { animation-delay: .25s; }
@@ -156,25 +155,6 @@
 {% endstylesheet %}
 
 {% javascript %}
-  (() => {
-    const hero = document.querySelector('.kjs-hero--confetti');
-    if (!hero || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    try { if (sessionStorage.getItem('kjs-confetti')) return; sessionStorage.setItem('kjs-confetti', '1'); } catch (e) {}
-    const canvas = document.createElement('canvas'); canvas.className = 'kjs-confetti'; document.body.appendChild(canvas);
-    const ctx = canvas.getContext('2d'); const dpr = Math.min(window.devicePixelRatio || 1, 2);
-    const size = () => { canvas.width = innerWidth * dpr; canvas.height = innerHeight * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0); }; size();
-    const colors = ['#D9F25B', '#A98BCB', '#FFFFFF', '#1E1E1E', '#D32F2F'];
-    const parts = [];
-    const spawn = (n, x, y, angle, spread, speed) => { for (let i = 0; i < n; i++) { const a = (angle + (Math.random() - 0.5) * spread) * Math.PI / 180; const v = speed * (0.6 + Math.random() * 0.8); parts.push({ x, y, vx: Math.cos(a) * v, vy: -Math.sin(a) * v, w: 6 + Math.random() * 6, h: 8 + Math.random() * 8, r: Math.random() * Math.PI, vr: (Math.random() - 0.5) * 0.3, c: colors[(Math.random() * colors.length) | 0], life: 1, decay: 0.006 + Math.random() * 0.006 }); } };
-    const r = hero.getBoundingClientRect(); const cx = r.left + r.width / 2, cy = Math.max(80, r.top + r.height * 0.6);
-    spawn(140, cx, cy, 90, 70, 16);
-    const end = Date.now() + 1800;
-    const sides = () => { spawn(3, 0, innerHeight * 0.65, 60, 55, 14); spawn(3, innerWidth, innerHeight * 0.65, 120, 55, 14); if (Date.now() < end) requestAnimationFrame(sides); };
-    setTimeout(sides, 300);
-    const tick = () => { ctx.clearRect(0, 0, innerWidth, innerHeight); for (const p of parts) { p.vy += 0.35; p.vx *= 0.99; p.vy *= 0.99; p.x += p.vx; p.y += p.vy; p.r += p.vr; p.life -= p.decay; ctx.save(); ctx.globalAlpha = Math.max(p.life, 0); ctx.translate(p.x, p.y); ctx.rotate(p.r); ctx.fillStyle = p.c; ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h); ctx.restore(); } for (let i = parts.length - 1; i >= 0; i--) if (parts[i].life <= 0 || parts[i].y > innerHeight + 40) parts.splice(i, 1); if (parts.length || Date.now() < end) requestAnimationFrame(tick); else canvas.remove(); };
-    requestAnimationFrame(tick);
-  })();
-
   document.addEventListener('click', async (e) => {
     const btn = e.target.closest('[data-kjs-copy]');
     if (!btn) return;
