@@ -124,6 +124,8 @@
         "upto": "FLAT",
         "pct": "40%",
         "off": "OFF",
+        "fine_print": "*On selected brands",
+        "only_collections": "",
         "link": "shopify://collections/sale",
         "pattern": true,
         "animate": true,
@@ -140,8 +142,7 @@
         "purple": "#a98bcb",
         "lime": "#d9f25b",
         "dark": "#1e1e1e",
-        "red": "#d32f2f",
-        "fine_print": "*On selected brands"
+        "red": "#d32f2f"
       }
     },
     "featured_banner_yeQJGh": {
@@ -283,7 +284,7 @@
           "type": "card",
           "name": "ELF",
           "settings": {
-            "image": "shopify://shop_images/ELF_3f51fe3d-f563-49e8-9d6b-5f6077d719f5.jpg",
+            "image": "shopify://shop_images/elf_fd79bf98-7e10-402e-abbe-f4e0d5254a7b.jpg",
             "link": "shopify://collections/elf",
             "open_new_tab": false
           }
@@ -472,7 +473,7 @@
           "type": "card",
           "name": "Bioaqua",
           "settings": {
-            "image": "shopify://shop_images/Bioaqua_f36ab598-364c-4d61-b8dd-d11f398ab627.jpg",
+            "image": "shopify://shop_images/Bioaqua_c6817819-bbfe-4dd9-a37b-e8608c741c40.jpg",
             "link": "shopify://collections/bioaqua",
             "open_new_tab": false
           }
