@@ -1,5 +1,24 @@
 {%- render 'kj-sale-styles' -%}
 <div class="kjs kjs--{{ section.settings.section_width }}" style="--kjs-purple: {{ section.settings.purple }}; --kjs-lime: {{ section.settings.lime }}; --kjs-dark: {{ section.settings.dark }}; --kjs-red: {{ section.settings.red }}; padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px;">
+        {%- assign acol = section.settings.collection -%}
+        {%- if acol != blank and acol.products.size > 0 -%}
+        <div class="kjs-alert kjs-alert--slider" style="--kjs-alert-bg: {{ section.settings.bg | default: '#A98BCB' }}; --kjs-alert-fg: {{ section.settings.fg | default: '#1E1E1E' }};" data-kjs-alert-slider data-interval="{{ section.settings.interval | default: 4 }}">
+          <span class="kjs-alert__tag">{{ section.settings.label | escape }}</span>
+          <span class="kjs-alert__slides">
+            {%- assign shown = 0 -%}
+            {%- for sp in acol.products limit: 24 -%}
+              {%- if sp.available == false -%}{%- continue -%}{%- endif -%}
+              {%- if shown >= section.settings.limit -%}{%- break -%}{%- endif -%}
+              {%- assign shown = shown | plus: 1 -%}
+              <a class="kjs-alert__slide kjs-alert__text{% if shown == 1 %} is-active{% endif %}" href="{{ sp.url }}">
+                {{ sp.title | escape }} {{ section.settings.joiner | escape }}
+                {%- if sp.compare_at_price > sp.price -%}<s class="kjs-alert__was">{{ sp.compare_at_price | money }}</s>{%- endif -%}
+                <strong class="kjs-alert__now">{{ sp.price | money }}</strong>
+              </a>
+            {%- endfor -%}
+          </span>
+        </div>
+        {%- else -%}
         <a class="kjs-alert" href="{{ section.settings.link | default: '#' }}" style="--kjs-alert-bg: {{ section.settings.bg | default: '#A98BCB' }}; --kjs-alert-fg: {{ section.settings.fg | default: '#1E1E1E' }};">
           <span class="kjs-alert__tag">{{ section.settings.label | escape }}</span>
           <span class="kjs-alert__text">{{ section.settings.text }}
@@ -10,6 +29,7 @@
             {%- endif -%}
           </span>
         </a>
+        {%- endif -%}
 
       
 </div>
@@ -24,6 +44,11 @@
     { "type": "richtext", "id": "text", "label": "Text (bold = lime)" },
     { "type": "product", "id": "product", "label": "Product (adds was / now price automatically)" },
     { "type": "url", "id": "link", "label": "Link" },
+    { "type": "header", "content": "Product slider" },
+    { "type": "collection", "id": "collection", "label": "Collection (rotates its products; overrides the text and product above)" },
+    { "type": "range", "id": "limit", "label": "Products to show", "min": 1, "max": 12, "step": 1, "default": 8 },
+    { "type": "range", "id": "interval", "label": "Seconds per product", "min": 2, "max": 10, "step": 1, "unit": "s", "default": 4 },
+    { "type": "text", "id": "joiner", "label": "Word before the price", "default": "at" },
     { "type": "color", "id": "bg", "label": "Strip background", "default": "#A98BCB" },
     { "type": "color", "id": "fg", "label": "Strip text", "default": "#1E1E1E" },
     { "type": "select", "id": "section_width", "label": "Width", "default": "full-width", "options": [ { "value": "full-width", "label": "Full width" }, { "value": "page-width", "label": "Page width" } ] },

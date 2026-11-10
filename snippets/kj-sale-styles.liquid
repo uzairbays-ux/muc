@@ -14,6 +14,10 @@
   .kjs-alert__was { opacity: .6; font-weight: 500; margin: 0 8px 0 10px; }
   .kjs-alert__now { margin-left: 2px; background: var(--kjs-lime); color: var(--kjs-dark); padding: 2px 10px; border-radius: 6px; }
   .kjs-alert__tag { box-shadow: 0 2px 0 var(--kjs-dark); }
+  .kjs-alert__slides { display: grid; min-width: 0; }
+  .kjs .kjs-alert__slide { grid-area: 1 / 1; opacity: 0; transform: translateY(8px); transition: opacity .45s ease, transform .45s ease; pointer-events: none; color: var(--kjs-alert-fg, var(--kjs-dark)); text-decoration: none; }
+  .kjs .kjs-alert__slide.is-active { opacity: 1; transform: none; pointer-events: auto; }
+  .kjs .kjs-alert__slide:hover { color: var(--kjs-alert-fg, var(--kjs-dark)); }
   .kjs-hero { position: relative; display: flex; flex-wrap: wrap; align-items: center; gap: 32px; padding: clamp(28px, 5vw, 64px); border-radius: 16px; background: var(--kjs-purple); color: var(--kjs-dark); min-height: 440px; box-sizing: border-box; overflow: hidden; }
   .kjs-hero--pattern::before { content: ''; position: absolute; inset: 0; background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='230' height='130'><text x='4' y='104' font-family='Arial Narrow,Arial,sans-serif' font-weight='900' font-size='118' letter-spacing='-6' fill='white' fill-opacity='0.16'>11:11</text></svg>"); background-size: 230px 130px; background-position: -20px -14px; pointer-events: none; -webkit-mask-image: linear-gradient(to bottom, #000 0, #000 24%, transparent 34%, transparent 66%, #000 76%, #000 100%); mask-image: linear-gradient(to bottom, #000 0, #000 24%, transparent 34%, transparent 66%, #000 76%, #000 100%); }
   .kjs-hero--image::before { background-image: var(--kjs-hero-pattern); background-size: cover; background-position: center; -webkit-mask-image: none; mask-image: none; }
@@ -219,6 +223,16 @@
     if (!b) return;
     const track = b.closest('.kjs-carousel').querySelector('[data-kjs-track]');
     track.scrollBy({ left: (b.hasAttribute('data-kjs-next') ? 1 : -1) * track.clientWidth, behavior: 'smooth' });
+  });
+  document.querySelectorAll('[data-kjs-alert-slider]').forEach((el) => {
+    const slides = el.querySelectorAll('.kjs-alert__slide');
+    if (slides.length < 2) return;
+    let i = 0;
+    setInterval(() => {
+      slides[i].classList.remove('is-active');
+      i = (i + 1) % slides.length;
+      slides[i].classList.add('is-active');
+    }, (parseInt(el.getAttribute('data-interval'), 10) || 4) * 1000);
   });
   document.querySelectorAll('[data-kjs-timer]').forEach((el) => {
     const end = Date.parse(el.getAttribute('data-kjs-timer'));

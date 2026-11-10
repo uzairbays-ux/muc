@@ -24,7 +24,11 @@
         "purple": "#a98bcb",
         "lime": "#d9f25b",
         "dark": "#1e1e1e",
-        "red": "#d32f2f"
+        "red": "#d32f2f",
+        "collection": "big-save",
+        "limit": 8,
+        "interval": 4,
+        "joiner": "at"
       }
     },
     "hero": {
