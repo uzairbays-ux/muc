@@ -125,11 +125,12 @@
     .kjs-bar__title { font-size: 16px; }
   }
 
-  .kjs-copy { position: relative; border: 0; background: transparent; font: inherit; cursor: pointer; padding: 4px 8px; border-radius: 8px; }
-  .kjs-copy:hover { background: rgba(255,255,255,0.06); }
-  .kjs-copy__tip { position: absolute; left: 50%; bottom: calc(100% + 6px); transform: translateX(-50%); background: var(--kjs-lime); color: var(--kjs-dark); font-size: 11px; font-weight: 700; padding: 4px 8px; border-radius: 6px; white-space: nowrap; opacity: 0; pointer-events: none; transition: opacity .15s; }
-  .kjs-copy__tip::after { content: ''; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); border: 5px solid transparent; border-top-color: var(--kjs-lime); }
-  .kjs-copy:hover .kjs-copy__tip, .kjs-copy:focus-visible .kjs-copy__tip, .kjs-copy.is-copied .kjs-copy__tip { opacity: 1; }
+  .kjs-copy { position: relative; overflow: hidden; cursor: pointer; font-family: inherit; color: inherit; width: 100%; }
+  .kjs-tier__hint { font-size: 11px; color: #aaa; letter-spacing: 0.04em; text-transform: uppercase; }
+  .kjs-copy__done { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; background: var(--kjs-lime); color: var(--kjs-dark); opacity: 0; pointer-events: none; transition: opacity .15s; border-radius: inherit; }
+  .kjs-copy__done-t { font-size: 20px; font-weight: 900; }
+  .kjs-copy__done-c { font-size: 14px; font-weight: 700; letter-spacing: 0.04em; }
+  .kjs-copy.is-copied .kjs-copy__done { opacity: 1; }
   .kjs--page-width { max-width: var(--page-width); }
   .kjs--full-width { max-width: none; padding-left: 0; padding-right: 0; }
   .kjs--full-width > .kjs-alert, .kjs--full-width > .kjs-hero, .kjs--full-width > .kjs-rewards, .kjs--full-width > .kjs-ticker, .kjs--full-width > .kjs-cta { border-radius: 0; margin-top: 0; }
@@ -140,15 +141,11 @@
   document.addEventListener('click', async (e) => {
     const btn = e.target.closest('[data-kjs-copy]');
     if (!btn) return;
-    const tip = btn.querySelector('.kjs-copy__tip');
-    try {
-      await navigator.clipboard.writeText(btn.dataset.kjsCopy);
-      if (tip) tip.textContent = 'Copied!';
-    } catch (err) {
-      if (tip) tip.textContent = btn.dataset.kjsCopy;
+    try { await navigator.clipboard.writeText(btn.dataset.kjsCopy); } catch (err) {
+      const ta = document.createElement('textarea'); ta.value = btn.dataset.kjsCopy; document.body.appendChild(ta); ta.select(); try { document.execCommand('copy'); } catch (e2) {} ta.remove();
     }
     btn.classList.add('is-copied');
-    setTimeout(() => { btn.classList.remove('is-copied'); if (tip) tip.textContent = 'Tap to copy'; }, 1800);
+    setTimeout(() => btn.classList.remove('is-copied'), 1800);
   });
 
   document.addEventListener('click', async (e) => {

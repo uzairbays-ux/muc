@@ -10,17 +10,21 @@
             {%- for t in tiers -%}
               {%- assign parts = t | strip | split: '|' -%}
               {%- if parts.size < 2 -%}{%- continue -%}{%- endif -%}
-              <div class="kjs-tier">
+              {%- assign bonus = parts[3] | strip -%}
+              {%- assign code = bonus | split: ' ' | last -%}
+              {%- if bonus != blank -%}<button type="button" class="kjs-tier kjs-copy" data-kjs-copy="{{ code | escape }}" aria-label="Copy code {{ code | escape }}">{%- else -%}<div class="kjs-tier">{%- endif -%}
                 <span class="kjs-tier__name">{{ parts[0] | strip | escape }}</span>
                 <span class="kjs-tier__shop">{{ parts[1] | strip | escape }}</span>
                 <span class="kjs-tier__reward">{{ parts[2] | strip | escape }}</span>
-                {%- if parts[3] != blank -%}
-                  {%- assign bonus = parts[3] | strip -%}
-                  {%- assign code = bonus | split: ' ' | last -%}
+                {%- if bonus != blank -%}
                   <span class="kjs-tier__plus">+</span>
-                  <button type="button" class="kjs-tier__bonus kjs-copy" data-kjs-copy="{{ code | escape }}" aria-label="Copy code {{ code | escape }}">{{ bonus | escape }}<span class="kjs-copy__tip" aria-hidden="true">Tap to copy</span></button>
+                  <span class="kjs-tier__bonus">{{ bonus | escape }}</span>
+                  <span class="kjs-tier__hint">Tap to copy</span>
+                  <span class="kjs-copy__done" aria-hidden="true"><span class="kjs-copy__done-t">Code copied!</span><span class="kjs-copy__done-c">{{ code | escape }}</span></span>
+                </button>
+                {%- else -%}
+                </div>
                 {%- endif -%}
-              </div>
             {%- endfor -%}
           </div>
         </div>
@@ -32,7 +36,7 @@
 {
   "name": "11.11 reward tiers",
   "tag": "section",
-  "class": "section",
+  "class": "kj-sale-section",
   "settings": [
     { "type": "text", "id": "line1", "label": "Line 1", "default": "BIGGER BAG" },
     { "type": "text", "id": "line2", "label": "Line 2 (lime)", "default": "BIGGER REWARDS" },
