@@ -2,7 +2,13 @@
 <div class="kjs kjs--{{ section.settings.section_width }}" style="--kjs-purple: {{ section.settings.purple }}; --kjs-lime: {{ section.settings.lime }}; --kjs-dark: {{ section.settings.dark }}; --kjs-red: {{ section.settings.red }}; padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px;">
         <a class="kjs-alert" href="{{ section.settings.link | default: '#' }}" >
           <span class="kjs-alert__tag">{{ section.settings.label | escape }}</span>
-          <span class="kjs-alert__text">{{ section.settings.text }}</span>
+          <span class="kjs-alert__text">{{ section.settings.text }}
+            {%- assign ap = section.settings.product -%}
+            {%- if ap != blank -%}
+              {%- if ap.compare_at_price > ap.price -%}<s class="kjs-alert__was">{{ ap.compare_at_price | money }}</s>{%- endif -%}
+              <strong class="kjs-alert__now">{{ ap.price | money }}</strong>
+            {%- endif -%}
+          </span>
         </a>
 
       
@@ -16,6 +22,7 @@
   "settings": [
     { "type": "text", "id": "label", "label": "Tag", "default": "Lowest Rate Alert" },
     { "type": "richtext", "id": "text", "label": "Text (bold = lime)" },
+    { "type": "product", "id": "product", "label": "Product (adds was / now price automatically)" },
     { "type": "url", "id": "link", "label": "Link" },
     { "type": "select", "id": "section_width", "label": "Width", "default": "full-width", "options": [ { "value": "full-width", "label": "Full width" }, { "value": "page-width", "label": "Page width" } ] },
     { "type": "range", "id": "padding_top", "label": "Top spacing", "min": 0, "max": 80, "step": 4, "unit": "px", "default": 16 },
