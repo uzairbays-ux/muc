@@ -236,12 +236,16 @@
   });
   document.querySelectorAll('[data-kjs-timer]').forEach((el) => {
     const end = Date.parse(el.getAttribute('data-kjs-timer'));
+    const start = Date.parse(el.getAttribute('data-kjs-timer-start') || '');
     if (isNaN(end)) return;
-    const h = el.querySelector('[data-kjs-t="h"]'), m = el.querySelector('[data-kjs-t="m"]'), s = el.querySelector('[data-kjs-t="s"]');
+    const h = el.querySelector('[data-kjs-t="h"]'), m = el.querySelector('[data-kjs-t="m"]'), s = el.querySelector('[data-kjs-t="s"]'), label = el.querySelector('[data-kjs-t="label"]');
     const pad = (n) => String(n).padStart(2, '0');
     const tick = () => {
-      const left = end - Date.now();
+      const now = Date.now();
+      const preStart = !isNaN(start) && now < start;
+      const left = (preStart ? start : end) - now;
       if (left <= 0) { el.hidden = true; clearInterval(iv); return; }
+      if (label) label.textContent = el.getAttribute(preStart ? 'data-label-start' : 'data-label-end') || '';
       el.hidden = false;
       const secs = Math.floor(left / 1000);
       h.textContent = pad(Math.floor(secs / 3600)); m.textContent = pad(Math.floor(secs % 3600 / 60)); s.textContent = pad(secs % 60);

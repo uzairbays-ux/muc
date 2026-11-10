@@ -33,7 +33,9 @@
         "dark": "#1e1e1e",
         "red": "#d32f2f",
         "timer_end": "2026-11-11T23:59:59+05:00",
-        "timer_label": "SALE ENDS IN"
+        "timer_label": "SALE ENDS IN",
+        "timer_start": "2026-11-11T00:00:00+05:00",
+        "timer_start_label": "SALE STARTS IN"
       }
     },
     "thumbnail_scroll_PbDt4b": {

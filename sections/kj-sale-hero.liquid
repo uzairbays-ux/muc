@@ -15,8 +15,8 @@
             <span class="kjs-hero__tag">{{ section.settings.tag | escape }}</span>
             {%- if section.settings.note != blank -%}<span class="kjs-hero__note">{{ section.settings.note | escape }}</span>{%- endif -%}
             {%- if section.settings.timer_end != blank -%}
-              <div class="kjs-hero__timer" data-kjs-timer="{{ section.settings.timer_end | escape }}" hidden>
-                <span class="kjs-hero__timer-label">{{ section.settings.timer_label | escape }}</span>
+              <div class="kjs-hero__timer" data-kjs-timer="{{ section.settings.timer_end | escape }}" data-kjs-timer-start="{{ section.settings.timer_start | escape }}" data-label-start="{{ section.settings.timer_start_label | escape }}" data-label-end="{{ section.settings.timer_label | escape }}" hidden>
+                <span class="kjs-hero__timer-label" data-kjs-t="label">{{ section.settings.timer_label | escape }}</span>
                 <span class="kjs-hero__timer-units">
                   <span class="kjs-hero__timer-unit"><b data-kjs-t="h">00</b><small>HRS</small></span>
                   <span class="kjs-hero__timer-sep">:</span>
@@ -57,7 +57,9 @@
     { "type": "text", "id": "note", "label": "Small note under the tag line", "default": "FREE SHIPPING ON ORDERS OVER RS. 2,999" },
     { "type": "header", "content": "Countdown" },
     { "type": "text", "id": "timer_end", "label": "Ends at (ISO date, Pakistan time)", "default": "2026-11-11T23:59:59+05:00", "info": "Example: 2026-11-11T23:59:59+05:00 ends at midnight at the end of 11 Nov. Clear to remove the timer. It hides itself once the time has passed." },
-    { "type": "text", "id": "timer_label", "label": "Timer label", "default": "SALE ENDS IN" },
+    { "type": "text", "id": "timer_label", "label": "Label while the sale is on", "default": "SALE ENDS IN" },
+    { "type": "text", "id": "timer_start", "label": "Starts at (ISO date, Pakistan time)", "default": "2026-11-11T00:00:00+05:00", "info": "Before this time the timer counts down to the start instead. Clear to skip the starts-in phase." },
+    { "type": "text", "id": "timer_start_label", "label": "Label before the sale starts", "default": "SALE STARTS IN" },
     { "type": "color", "id": "page_bg", "label": "Page background (whole page)", "default": "#F6F2FB" },
     { "type": "select", "id": "section_width", "label": "Width", "default": "full-width", "options": [ { "value": "full-width", "label": "Full width" }, { "value": "page-width", "label": "Page width" } ] },
     { "type": "range", "id": "padding_top", "label": "Top spacing", "min": 0, "max": 80, "step": 4, "unit": "px", "default": 16 },
