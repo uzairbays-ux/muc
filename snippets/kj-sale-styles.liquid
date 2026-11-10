@@ -131,7 +131,9 @@
   .kjs-copy__tip::after { content: ''; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); border: 5px solid transparent; border-top-color: var(--kjs-lime); }
   .kjs-copy:hover .kjs-copy__tip, .kjs-copy:focus-visible .kjs-copy__tip, .kjs-copy.is-copied .kjs-copy__tip { opacity: 1; }
   .kjs--page-width { max-width: var(--page-width); }
-  .kjs--full-width { max-width: none; }
+  .kjs--full-width { max-width: none; padding-left: 0; padding-right: 0; }
+  .kjs--full-width > .kjs-alert, .kjs--full-width > .kjs-hero, .kjs--full-width > .kjs-rewards, .kjs--full-width > .kjs-ticker, .kjs--full-width > .kjs-cta { border-radius: 0; margin-top: 0; }
+  .kjs--full-width > .kjs-sec, .kjs--full-width > .kjs-cats { padding-left: 16px; padding-right: 16px; }
 {% endstylesheet %}
 
 {% javascript %}
