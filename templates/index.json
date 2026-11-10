@@ -2958,9 +2958,35 @@
         "padding-block-start": 0,
         "padding-block-end": 0
       }
+    },
+    "kj_sale_hero": {
+      "type": "kj-sale-hero",
+      "settings": {
+        "title": "11:11",
+        "title2": "SALE",
+        "tag": "BIGGEST SALE OF THE YEAR",
+        "upto": "FLAT",
+        "pct": "40%",
+        "off": "OFF",
+        "link": "shopify://pages/sale",
+        "pattern": true,
+        "animate": true,
+        "confetti": true,
+        "note": "FREE SHIPPING ON ORDERS OVER RS. 2,999",
+        "page_bg": "",
+        "section_width": "full-width",
+        "padding_top": 8,
+        "padding_bottom": 8,
+        "purple": "#a98bcb",
+        "lime": "#d9f25b",
+        "dark": "#1e1e1e",
+        "red": "#d32f2f"
+      },
+      "disabled": true
     }
   },
   "order": [
+    "kj_sale_hero",
     "thumbnail_scroll_PbDt4b",
     "featured_banner_yeQJGh",
     "card_banner_8zTGy8",
