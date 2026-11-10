@@ -15,6 +15,7 @@
                   {{ sp.title | escape }} {{ section.settings.joiner | escape }}
                   {%- if sp.compare_at_price > sp.price -%}<s class="kjs-alert__was">{{ sp.compare_at_price | money }}</s>{%- endif -%}
                   <strong class="kjs-alert__now">{{ sp.price | money }}</strong>
+                  {%- if section.settings.cta != blank -%}<span class="kjs-alert__cta">{{ section.settings.cta | escape }} &rarr;</span>{%- endif -%}
                 </a>
               {%- endif -%}
             {%- endfor -%}
@@ -51,6 +52,7 @@
     { "type": "range", "id": "limit", "label": "Products to show", "min": 1, "max": 12, "step": 1, "default": 5 },
     { "type": "range", "id": "interval", "label": "Seconds per product", "min": 2, "max": 10, "step": 1, "unit": "sec", "default": 4 },
     { "type": "text", "id": "joiner", "label": "Word before the price", "default": "at" },
+    { "type": "text", "id": "cta", "label": "Button text", "default": "Shop now" },
     { "type": "color", "id": "bg", "label": "Strip background", "default": "#A98BCB" },
     { "type": "color", "id": "fg", "label": "Strip text", "default": "#1E1E1E" },
     { "type": "select", "id": "section_width", "label": "Width", "default": "full-width", "options": [ { "value": "full-width", "label": "Full width" }, { "value": "page-width", "label": "Page width" } ] },

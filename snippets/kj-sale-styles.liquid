@@ -15,6 +15,8 @@
   .kjs-alert__now { margin-left: 2px; background: var(--kjs-lime); color: var(--kjs-dark); padding: 2px 10px; border-radius: 6px; }
   .kjs-alert__tag { box-shadow: 0 2px 0 var(--kjs-dark); }
   .kjs-alert__slides { display: grid; min-width: 0; }
+  .kjs-alert__cta { display: inline-block; margin-left: 14px; border: 2px solid var(--kjs-lime); color: var(--kjs-lime); border-radius: 999px; padding: 4px 14px; font-size: 14px; font-weight: 800; letter-spacing: 0.04em; vertical-align: middle; white-space: nowrap; transition: background .2s, color .2s; }
+  .kjs .kjs-alert__slide:hover .kjs-alert__cta { background: var(--kjs-lime); color: var(--kjs-dark); }
   .kjs .kjs-alert__slide { grid-area: 1 / 1; opacity: 0; transform: translateY(8px); transition: opacity .45s ease, transform .45s ease; pointer-events: none; color: var(--kjs-alert-fg, var(--kjs-dark)); text-decoration: none; }
   .kjs .kjs-alert__slide.is-active { opacity: 1; transform: none; pointer-events: auto; }
   .kjs .kjs-alert__slide:hover { color: var(--kjs-alert-fg, var(--kjs-dark)); }
@@ -183,6 +185,7 @@
     .kjs-ticker__text { font-size: 16px; text-align: center; }
     .kjs-cta__text { font-size: 22px; }
     .kjs-alert__text { font-size: 16px; }
+    .kjs-alert__cta { display: block; width: max-content; margin: 8px auto 0; font-size: 12px; padding: 4px 12px; }
     .kjs-hero { min-height: 0; gap: 16px; }
     .kjs-hero__pct { font-size: clamp(96px, 30vw, 140px); }
     .kjs-cats { grid-template-columns: repeat(3, 1fr); gap: 14px; }
