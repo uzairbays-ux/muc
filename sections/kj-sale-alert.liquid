@@ -1,15 +1,5 @@
 {%- render 'kj-sale-styles' -%}
 <div class="kjs kjs--{{ section.settings.section_width }}" style="--kjs-purple: {{ section.settings.purple }}; --kjs-lime: {{ section.settings.lime }}; --kjs-dark: {{ section.settings.dark }}; --kjs-red: {{ section.settings.red }}; padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px;">
-        {%- assign acol = section.settings.slider_collection -%}
-        {%- if acol != blank and acol.products.size > 0 -%}
-        <div class="kjs-alert kjs-alert--slider" style="--kjs-alert-bg: {{ section.settings.bg | default: '#A98BCB' }}; --kjs-alert-fg: {{ section.settings.fg | default: '#1E1E1E' }};" data-kjs-alert-slider data-interval="{{ section.settings.interval | default: 4 }}">
-          <span class="kjs-alert__tag">{{ section.settings.label | escape }}</span>
-          <span class="kjs-alert__slides">
-            {%- assign shown = 0 -%}
-            <a class="kjs-alert__slide kjs-alert__text is-active" href="/collections/sale">Probe</a>
-          </span>
-        </div>
-        {%- else -%}
         <a class="kjs-alert" href="{{ section.settings.link | default: '#' }}" style="--kjs-alert-bg: {{ section.settings.bg | default: '#A98BCB' }}; --kjs-alert-fg: {{ section.settings.fg | default: '#1E1E1E' }};">
           <span class="kjs-alert__tag">{{ section.settings.label | escape }}</span>
           <span class="kjs-alert__text">{{ section.settings.text }}
@@ -20,7 +10,6 @@
             {%- endif -%}
           </span>
         </a>
-        {%- endif -%}
 
       
 </div>
@@ -37,8 +26,6 @@
     { "type": "url", "id": "link", "label": "Link" },
     { "type": "header", "content": "Product slider" },
     { "type": "collection", "id": "slider_collection", "label": "Collection (rotates its products; overrides the text and product above)" },
-    { "type": "range", "id": "limit", "label": "Products to show", "min": 1, "max": 12, "step": 1, "default": 5 },
-    { "type": "range", "id": "interval", "label": "Seconds per product", "min": 2, "max": 10, "step": 1, "unit": "sec", "default": 4 },
     { "type": "text", "id": "joiner", "label": "Word before the price", "default": "at" },
     { "type": "color", "id": "bg", "label": "Strip background", "default": "#A98BCB" },
     { "type": "color", "id": "fg", "label": "Strip text", "default": "#1E1E1E" },
