@@ -117,14 +117,14 @@
         "cat_6"
       ],
       "settings": {
+        "text_mode": true,
         "section_width": "full-width",
         "padding_top": 8,
         "padding_bottom": 8,
         "purple": "#a98bcb",
         "lime": "#d9f25b",
         "dark": "#1e1e1e",
-        "red": "#d32f2f",
-        "text_mode": true
+        "red": "#d32f2f"
       }
     },
     "rewards": {
@@ -479,6 +479,15 @@
     "deal_cards": {
       "type": "card-grid",
       "blocks": {
+        "deal_6": {
+          "type": "card",
+          "name": "ST London - Dual Wet & Dry Compact Powder",
+          "settings": {
+            "image": "shopify://shop_images/ST_london_f2e88820-f064-4feb-b51b-d23ea4be2be3.webp",
+            "link": "/products/st-london-dual-wet-dry-compact-powder",
+            "open_new_tab": false
+          }
+        },
         "deal_1": {
           "type": "card",
           "name": "IKT - Hair Wax Stick 75gm",
@@ -524,15 +533,6 @@
             "open_new_tab": false
           }
         },
-        "deal_6": {
-          "type": "card",
-          "name": "ST London - Dual Wet & Dry Compact Powder",
-          "settings": {
-            "image": "shopify://shop_images/1111-card-st-london.webp",
-            "link": "/products/st-london-dual-wet-dry-compact-powder",
-            "open_new_tab": false
-          }
-        },
         "deal_7": {
           "type": "card",
           "name": "BOB - Super Curl Mascara",
@@ -573,7 +573,7 @@
           "type": "card",
           "name": "Celimax - Retinal Shot Tightening Booster - 15ml",
           "settings": {
-            "image": "shopify://shop_images/1111-card-celimax.webp",
+            "image": "shopify://shop_images/Celimax_ed8023a9-2a79-41d7-a6c0-9e65e213ed76.webp",
             "link": "/products/8809700320812",
             "open_new_tab": false
           }
@@ -583,20 +583,20 @@
           "settings": {
             "text": "View All Products",
             "link": "/collections/all",
-            "bg": "#1E1E1E",
-            "fg": "#D9F25B",
+            "bg": "#1e1e1e",
+            "fg": "#d9f25b",
             "pattern": true,
             "pattern_style": "black"
           }
         }
       },
       "block_order": [
+        "deal_6",
         "deal_1",
         "deal_2",
         "deal_3",
         "deal_4",
         "deal_5",
-        "deal_6",
         "deal_7",
         "deal_8",
         "deal_9",
