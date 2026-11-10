@@ -126,7 +126,7 @@
         "off": "OFF",
         "fine_print": "*On selected brands",
         "only_collections": "",
-        "link": "shopify://collections/sale",
+        "link": "shopify://pages/sale",
         "pattern": true,
         "animate": true,
         "confetti": true,
