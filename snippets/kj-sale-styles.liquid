@@ -231,13 +231,19 @@
   .kjs-sticky__close { position: absolute; right: 8px; top: 50%; transform: translateY(-50%); width: 32px; height: 32px; border: 0; border-radius: 50%; background: rgba(255,255,255,.14); color: #fff; font-size: 20px; line-height: 1; cursor: pointer; }
   body.kjs-has-sticky { padding-bottom: 64px; }
   @media screen and (max-width: 749px) {
-    .kjs-sticky__inner { gap: 6px 12px; padding: 8px 40px 8px 12px; }
-    .kjs-sticky__title, .kjs-sticky__sub { font-size: 14px; }
+    .kjs-sticky__inner { flex-wrap: nowrap; gap: 8px; padding: 8px 40px 8px 10px; }
+    .kjs-sticky__title { font-size: 11px; padding: 3px 6px; white-space: nowrap; transform: none; }
     .kjs-sticky__sub { display: none; }
-    .kjs-sticky .kjs-hero__timer-unit { min-width: 38px; }
-    .kjs-sticky .kjs-hero__timer-unit b { font-size: 15px; }
-    .kjs-sticky__btn { font-size: 12px; padding: 8px 12px; }
-    body.kjs-has-sticky { padding-bottom: 96px; }
+    .kjs-sticky .kjs-hero__timer-label { display: none; }
+    .kjs-sticky__timer.kjs-hero__timer { flex-wrap: nowrap; gap: 4px; }
+    .kjs-sticky .kjs-hero__timer-units { gap: 3px; }
+    .kjs-sticky .kjs-hero__timer-unit { min-width: 32px; padding: 3px 4px; border-radius: 6px; }
+    .kjs-sticky .kjs-hero__timer-unit b { font-size: 14px; }
+    .kjs-sticky .kjs-hero__timer-unit small { font-size: 7px; margin-top: 2px; }
+    .kjs-sticky .kjs-hero__timer-sep { font-size: 13px; }
+    .kjs-sticky__btn { font-size: 11px; padding: 7px 10px; }
+    .kjs-sticky__close { right: 6px; width: 28px; height: 28px; font-size: 18px; }
+    body.kjs-has-sticky { padding-bottom: 60px; }
   }
 {% endstylesheet %}
 
