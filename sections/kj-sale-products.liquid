@@ -14,7 +14,9 @@
               assign seen = ''
               assign lim = section.settings.limit
             -%}
-            {%- for product in picked limit: lim -%}
+            {%- for product in picked -%}
+              {%- if shown >= lim -%}{%- break -%}{%- endif -%}
+              {%- if product.available == false -%}{%- continue -%}{%- endif -%}
               {%- assign seen = seen | append: '|' | append: product.handle -%}
               {%- assign shown = shown | plus: 1 -%}
               {%- render 'kj-sale-card', product: product, badge: section.settings.badge -%}

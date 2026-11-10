@@ -101,7 +101,7 @@
           "settings": {
             "icon": "none",
             "text": "11.11 Sale - <strong>upto 50% off</strong>",
-            "link": "shopify://pages/11-11-sale",
+            "link": "shopify://pages/sale",
             "font": "var(--font-subheading--family)",
             "font_size": "0.75rem",
             "weight": "",
