@@ -26,7 +26,7 @@
         "dark": "#1e1e1e",
         "red": "#d32f2f",
         "collection": "big-save",
-        "limit": 8,
+        "limit": 5,
         "interval": 4,
         "joiner": "at"
       }
