@@ -259,21 +259,6 @@
         "more_label": "Shop perfumes"
       }
     },
-    "brands_a": {
-      "type": "kj-sale-tiles",
-      "settings": {
-        "heading": "The Deals Just Keep Getting Better",
-        "style": "brand",
-        "lines": "ST London | UPTO | 35 | /collections/sale-st-london\nMaybelline | FLAT | 30 | /collections/sale-maybelline\nRevolution | FLAT | 25 | /collections/revolution\nelf | FLAT | 25 | /collections/elf\nMiss Rose | FLAT | 40 | /collections/miss-rose\nHuda Beauty | FLAT | 30 | /collections/huda-beauty\nNars | FLAT | 30 | /collections/nars\nMAC | FLAT | 30 | /collections/mac\nLaura Mercier | FLAT | 30 | /collections/laura-mercier\nGosh | FLAT | 30 | /collections/sale-gosh\nL’Oréal Paris | FLAT | 25 | /collections/loreal-paris-1\nSheglam | FLAT | 25 | /collections/sheglam",
-        "section_width": "full-width",
-        "padding_top": 8,
-        "padding_bottom": 8,
-        "purple": "#A98BCB",
-        "lime": "#D9F25B",
-        "dark": "#1E1E1E",
-        "red": "#D32F2F"
-      }
-    },
     "makeup": {
       "type": "kj-sale-products",
       "settings": {
@@ -409,7 +394,7 @@
           "name": "Maybelline",
           "settings": {
             "image": "shopify://shop_images/1111-maybelline.webp",
-            "link": "shopify://collections/sale-maybelline",
+            "link": "shopify://collections/maybelline",
             "open_new_tab": false
           }
         },
@@ -418,7 +403,7 @@
           "name": "ST London",
           "settings": {
             "image": "shopify://shop_images/1111-st-london.webp",
-            "link": "shopify://collections/sale-st-london",
+            "link": "shopify://collections/st-london",
             "open_new_tab": false
           }
         },
@@ -580,7 +565,7 @@
           "name": "Equalberry",
           "settings": {
             "image": "shopify://shop_images/1111-equalberry.webp",
-            "link": "/search?q=equalberry&type=product",
+            "link": "shopify://collections/eqqualberry",
             "open_new_tab": false
           }
         }
@@ -632,6 +617,148 @@
         "padding-block-start": 8,
         "padding-block-end": 8
       }
+    },
+    "deal_cards": {
+      "type": "card-grid",
+      "blocks": {
+        "deal_1": {
+          "type": "card",
+          "name": "IKT - Hair Wax Stick 75gm",
+          "settings": {
+            "image": "shopify://shop_images/1111-card-ikt.webp",
+            "link": "/products/6148268752355",
+            "open_new_tab": false
+          }
+        },
+        "deal_2": {
+          "type": "card",
+          "name": "Fino - Hair Mask 230g",
+          "settings": {
+            "image": "shopify://shop_images/1111-card-fino.webp",
+            "link": "/products/4550516493583",
+            "open_new_tab": false
+          }
+        },
+        "deal_3": {
+          "type": "card",
+          "name": "d'Alba - White Truffle First Spray Serum",
+          "settings": {
+            "image": "shopify://shop_images/1111-card-d-alba.webp",
+            "link": "/products/dalba-white-truffle-first-spray-serum",
+            "open_new_tab": false
+          }
+        },
+        "deal_4": {
+          "type": "card",
+          "name": "Dr Althea - 345 Relief Cream",
+          "settings": {
+            "image": "shopify://shop_images/1111-card-dr-althea.webp",
+            "link": "/products/8809447256221",
+            "open_new_tab": false
+          }
+        },
+        "deal_5": {
+          "type": "card",
+          "name": "OneStep - Hot Air Brush",
+          "settings": {
+            "image": "shopify://shop_images/1111-card-one-step.webp",
+            "link": "/products/onestep-hot-air-brush",
+            "open_new_tab": false
+          }
+        },
+        "deal_6": {
+          "type": "card",
+          "name": "ST London - Dual Wet & Dry Compact Powder",
+          "settings": {
+            "image": "shopify://shop_images/1111-card-st-london.webp",
+            "link": "/products/st-london-dual-wet-dry-compact-powder",
+            "open_new_tab": false
+          }
+        },
+        "deal_7": {
+          "type": "card",
+          "name": "BOB - Super Curl Mascara",
+          "settings": {
+            "image": "shopify://shop_images/1111-card-bob.webp",
+            "link": "/products/bob-super-curl-mascara",
+            "open_new_tab": false
+          }
+        },
+        "deal_8": {
+          "type": "card",
+          "name": "Arencia - Vitamin C Booster Shot - 30ml",
+          "settings": {
+            "image": "shopify://shop_images/1111-card-arencia.webp",
+            "link": "/products/8809562192770",
+            "open_new_tab": false
+          }
+        },
+        "deal_9": {
+          "type": "card",
+          "name": "Beauty Of Joseon - Relief Sun Rice + Probiotics SPF50 - 50ml",
+          "settings": {
+            "image": "shopify://shop_images/1111-card-boj-relief-sun.webp",
+            "link": "/products/8809782555508",
+            "open_new_tab": false
+          }
+        },
+        "deal_10": {
+          "type": "card",
+          "name": "Beauty Of Joseon - Aqua Relief Sunscreen - 50ml",
+          "settings": {
+            "image": "shopify://shop_images/1111-card-boj-aqua.webp",
+            "link": "/products/8809968130277",
+            "open_new_tab": false
+          }
+        },
+        "deal_11": {
+          "type": "card",
+          "name": "Celimax - Retinal Shot Tightening Booster - 15ml",
+          "settings": {
+            "image": "shopify://shop_images/1111-card-celimax.webp",
+            "link": "/products/8809700320812",
+            "open_new_tab": false
+          }
+        }
+      },
+      "block_order": [
+        "deal_1",
+        "deal_2",
+        "deal_3",
+        "deal_4",
+        "deal_5",
+        "deal_6",
+        "deal_7",
+        "deal_8",
+        "deal_9",
+        "deal_10",
+        "deal_11"
+      ],
+      "settings": {
+        "heading": "The Deals Just Keep Getting Better",
+        "subheading": "",
+        "heading_alignment": "center",
+        "desktop_layout": "grid",
+        "mobile_layout": "grid",
+        "desktop_columns": "6",
+        "mobile_columns": "2",
+        "desktop_slider_per_view": "5",
+        "mobile_slider_per_view": "2.2",
+        "show_arrows": false,
+        "auto_rotate": false,
+        "rotate_interval": 5,
+        "gap": 12,
+        "desktop_side_padding": 16,
+        "mobile_side_padding": 16,
+        "gradient_color_1": "",
+        "gradient_color_2": "",
+        "gradient_opacity": 50,
+        "gradient_direction": "to bottom",
+        "section_width": "full-width",
+        "color_scheme": "",
+        "padding-block-start": 8,
+        "padding-block-end": 8
+      }
     }
   },
   "order": [
@@ -646,7 +773,7 @@
     "ticker",
     "skincare",
     "perfumes",
-    "brands_a",
+    "deal_cards",
     "makeup",
     "haircare",
     "brands_b",
