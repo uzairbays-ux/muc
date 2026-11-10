@@ -32,7 +32,10 @@
         "purple": "#A98BCB",
         "lime": "#D9F25B",
         "dark": "#1E1E1E",
-        "red": "#D32F2F"
+        "red": "#D32F2F",
+        "pattern": true,
+        "animate": true,
+        "page_bg": "#F6F2FB"
       }
     },
     "categories": {
