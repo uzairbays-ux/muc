@@ -2665,5 +2665,22 @@
         "default": true
       }
     ]
+  },
+  {
+    "name": "Free shipping bar",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "kj_fs_enabled",
+        "label": "Show free-shipping progress in the cart drawer",
+        "default": true
+      },
+      {
+        "type": "number",
+        "id": "kj_fs_threshold",
+        "label": "Free shipping from (Rs.)",
+        "default": 2999
+      }
+    ]
   }
 ]

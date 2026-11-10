@@ -1,0 +1,33 @@
+{%- comment -%}
+  muc: free-shipping progress in the cart drawer. Threshold from Theme settings >
+  Free shipping bar. Re-rendered with the drawer on every cart update.
+{%- endcomment -%}
+{%- liquid
+  assign fs_threshold = settings.kj_fs_threshold | default: 2999 | times: 100
+  assign fs_left = fs_threshold | minus: cart.total_price
+  assign fs_pct = cart.total_price | times: 100 | divided_by: fs_threshold
+  if fs_pct > 100
+    assign fs_pct = 100
+  endif
+-%}
+{%- if settings.kj_fs_enabled and cart.item_count > 0 -%}
+  <div class="kj-fs{% if fs_left <= 0 %} kj-fs--done{% endif %}" aria-live="polite">
+    <p class="kj-fs__text">
+      {%- if fs_left <= 0 -%}
+        <strong>You've unlocked free shipping.</strong>
+      {%- else -%}
+        Add <strong>{{ fs_left | money }}</strong> more for <strong>free shipping</strong>
+      {%- endif -%}
+    </p>
+    <div class="kj-fs__bar"><span class="kj-fs__fill" style="width: {{ fs_pct }}%"></span></div>
+  </div>
+{%- endif -%}
+
+{% stylesheet %}
+  .kj-fs { margin: 0 0 10px; padding: 8px 11px; border-radius: 8px; background: rgba(0, 19, 37, 0.043); }
+  .kj-fs__text { margin: 0 0 6px; font-size: 11.5px; line-height: 1.3; color: rgba(0, 19, 37, 0.78); }
+  .kj-fs__bar { height: 6px; border-radius: 999px; background: rgba(0, 19, 37, 0.1); overflow: hidden; }
+  .kj-fs__fill { display: block; height: 100%; border-radius: 999px; background: #D32F2F; transition: width .4s ease; }
+  .kj-fs--done .kj-fs__fill { background: #1e7d45; }
+  .kj-fs--done .kj-fs__text { color: #1e7d45; }
+{% endstylesheet %}

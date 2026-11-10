@@ -482,7 +482,9 @@
     },
     "kj_logo_badge_bg": "#D9F25B",
     "kj_logo_badge_fg": "#1E1E1E",
-    "kj_logo_badge_on_pdp": true
+    "kj_logo_badge_on_pdp": true,
+    "kj_fs_enabled": true,
+    "kj_fs_threshold": 2999
   },
   "presets": {
     "Horizon": {

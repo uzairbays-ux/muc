@@ -23,6 +23,12 @@
     {%- if off > 0 -%}<span class="kjs-card__pct">{{ off }}% OFF</span>{%- endif -%}
   </p>
   {%- if off > 0 -%}<span class="kjs-card__save">You save {{ diff | money }}</span>{%- endif -%}
+  {%- assign q4 = product.price | divided_by: 4 -%}
+  {%- assign q3 = product.price | divided_by: 3 -%}
+  <span class="kjs-card__bnpl">
+    <span class="kjs-card__yango"><span class="kjs-card__yango-logo">Yango</span>{{ q4 | money }} × 4</span>
+    <span class="kjs-card__baadmay"><img src="{{ 'baadmay-short-logo.webp' | asset_url }}" alt="BaadMay" width="14" height="14" loading="lazy">Pay only {{ q3 | money }} now</span>
+  </span>
   <div class="kjs-card__actions">
     <a class="kjs-card__wish" href="{{ product.url }}" aria-label="View {{ product.title | escape }}"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"></path></svg></a>
     {%- if product.available == false -%}
