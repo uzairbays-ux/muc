@@ -3,7 +3,19 @@
         <div class="kjs-rewards" >
           <div class="kjs-rewards__head">
             <span>{{ section.settings.line1 | escape }}</span>
-            <span class="kjs-rewards__lime">{{ section.settings.line2 | escape }}</span>
+            <span class="kjs-rewards__lime kjs-letters" aria-label="{{ section.settings.line2 | escape }}">
+              {%- assign kjs_words = section.settings.line2 | split: ' ' -%}
+              {%- assign kjs_i = 0 -%}
+              {%- for w in kjs_words -%}
+                <span class="kjs-letters__word">
+                  {%- assign chars = w | split: '' -%}
+                  {%- for c in chars -%}
+                    <span class="kjs-letters__ch" style="--i: {{ kjs_i }}" aria-hidden="true">{{ c | escape }}</span>
+                    {%- assign kjs_i = kjs_i | plus: 1 -%}
+                  {%- endfor -%}
+                </span>{% unless forloop.last %} {% endunless %}
+              {%- endfor -%}
+            </span>
           </div>
           <div class="kjs-rewards__tiers">
             {%- assign tiers = section.settings.tiers | newline_to_br | split: '<br />' -%}

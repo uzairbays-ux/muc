@@ -60,6 +60,15 @@
     >
       {%- for block in section.blocks -%}
         {%- assign b = block.settings -%}
+        {%- if block.type == 'text_card' -%}
+          <div class="card-grid__item card-grid__item--text" {{ block.shopify_attributes }}>
+            <a href="{{ b.link | default: '/collections/all' }}" class="card-grid__textcard" style="--cg-tc-bg: {{ b.bg }}; --cg-tc-fg: {{ b.fg }};{% if b.pattern %} background-image: url('{{ 'kj-1111-circle.webp' | asset_url }}');{% endif %}">
+              <span class="card-grid__textcard-label">{{ b.text | escape }}</span>
+              <span class="card-grid__textcard-arrow" aria-hidden="true">&rarr;</span>
+            </a>
+          </div>
+          {%- continue -%}
+        {%- endif -%}
         <div class="card-grid__item" {{ block.shopify_attributes }}>
           {%- if b.link != blank -%}
             {%- capture cgr_name -%}{% render 'kj-link-name', image: b.image, link: b.link, fallback: 'Shop now' %}{%- endcapture -%}
@@ -223,6 +232,10 @@
     box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
   }
 
+  .card-grid__textcard { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; aspect-ratio: 1 / 1; width: 100%; border-radius: 12px; background-color: var(--cg-tc-bg, #1E1E1E); background-size: cover; background-position: center; color: var(--cg-tc-fg, #fff); text-decoration: none; text-align: center; padding: 16px; box-sizing: border-box; transition: transform .2s ease; }
+  .card-grid__textcard:hover { transform: translateY(-3px); color: var(--cg-tc-fg, #fff); }
+  .card-grid__textcard-label { font-weight: 900; font-size: clamp(18px, 1.6vw, 26px); line-height: 1.05; letter-spacing: -0.01em; text-shadow: 0 1px 2px rgba(0,0,0,.25); }
+  .card-grid__textcard-arrow { font-size: 28px; font-weight: 900; line-height: 1; }
   .card-grid__image-wrapper {
     position: relative;
     width: 100%;
@@ -713,6 +726,17 @@
           "label": "Open link in new tab",
           "default": false
         }
+      ]
+    },
+    {
+      "type": "text_card",
+      "name": "Text card",
+      "settings": [
+        { "type": "text", "id": "text", "label": "Text", "default": "View All Products" },
+        { "type": "url", "id": "link", "label": "Link" },
+        { "type": "color", "id": "bg", "label": "Background", "default": "#1E1E1E" },
+        { "type": "color", "id": "fg", "label": "Text colour", "default": "#FFFFFF" },
+        { "type": "checkbox", "id": "pattern", "label": "Use the 11:11 pattern background", "default": true }
       ]
     }
   ],

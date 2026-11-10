@@ -24,8 +24,8 @@
         "title": "11:11",
         "title2": "SALE",
         "tag": "BIGGEST SALE OF THE YEAR",
-        "upto": "UP TO",
-        "pct": "50%",
+        "upto": "FLAT",
+        "pct": "40%",
         "off": "OFF",
         "link": "",
         "pattern": true,
@@ -567,6 +567,16 @@
             "link": "/products/8809700320812",
             "open_new_tab": false
           }
+        },
+        "deal_12": {
+          "type": "text_card",
+          "settings": {
+            "text": "View All Products",
+            "link": "/collections/all",
+            "bg": "#A98BCB",
+            "fg": "#FFFFFF",
+            "pattern": true
+          }
         }
       },
       "block_order": [
@@ -580,7 +590,8 @@
         "deal_8",
         "deal_9",
         "deal_10",
-        "deal_11"
+        "deal_11",
+        "deal_12"
       ],
       "settings": {
         "heading": "The Deals Just Keep Getting Better",
