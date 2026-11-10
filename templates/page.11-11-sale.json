@@ -35,7 +35,8 @@
         "red": "#D32F2F",
         "pattern": true,
         "animate": true,
-        "page_bg": "#F6F2FB"
+        "page_bg": "#F6F2FB",
+        "confetti": true
       }
     },
     "categories": {
