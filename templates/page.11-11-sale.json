@@ -407,9 +407,9 @@
             "text": "Split your order into 4 easy payments at checkout. 10% off your first Yango order, no extra fees.",
             "badge": "-10% first order",
             "logo_text": "yango",
-            "logo_bg": "#ff3c2e",
+            "logo_bg": "#ffffff",
             "logo_fg": "#ffffff",
-            "logo_asset": ""
+            "logo_asset": "yango-icon.webp"
           }
         },
         "baadmay": {
