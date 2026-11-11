@@ -27,7 +27,7 @@
         "padding_top": 16,
         "padding_bottom": 8,
         "purple": "#a98bcb",
-        "lime": "#d9f25b",
+        "lime": "#FF2222",
         "dark": "#1e1e1e",
         "red": "#d32f2f"
       }
@@ -35,19 +35,19 @@
     "hero": {
       "type": "kj-sale-hero",
       "settings": {
-        "title": "11:11 FLASH",
+        "title": "FLASH",
         "title2": "SALE",
-        "tag": "BIGGEST SALE OF THE YEAR",
-        "upto": "FLAT",
+        "tag": "",
+        "upto": "Upto",
         "pct": "40%",
         "off": "OFF",
         "fine_print": "*On selected brands",
         "only_collections": "",
         "link": "",
-        "pattern": true,
+        "pattern": false,
         "animate": true,
-        "confetti": true,
-        "note": "FREE SHIPPING ON ORDERS OVER RS. 2,999",
+        "confetti": false,
+        "note": "",
         "timer_end": "2026-11-11T23:59:59+05:00",
         "timer_label": "SALE ENDS IN",
         "timer_start": "2026-11-11T00:00:00+05:00",
@@ -56,8 +56,8 @@
         "section_width": "full-width",
         "padding_top": 8,
         "padding_bottom": 8,
-        "purple": "#a98bcb",
-        "lime": "#d9f25b",
+        "purple": "#FF1F32",
+        "lime": "#FFFFFF",
         "dark": "#1e1e1e",
         "red": "#d32f2f"
       }
@@ -141,6 +141,7 @@
     },
     "rewards": {
       "type": "kj-sale-rewards",
+      "disabled": true,
       "settings": {
         "line1": "BIGGER BAG",
         "line2": "BIGGER REWARDS",
@@ -373,6 +374,7 @@
         "tile_19",
         "tile_all"
       ],
+      "disabled": true,
       "settings": {
         "heading": "Big Brands. Bigger Steals",
         "subheading": "",
@@ -584,6 +586,7 @@
         "deal_6",
         "deal_12"
       ],
+      "disabled": true,
       "settings": {
         "heading": "The Deals Just Keep Getting Better",
         "subheading": "",
@@ -674,7 +677,6 @@
     },
     "skincare": {
       "type": "kj-sale-products",
-      "disabled": true,
       "settings": {
         "heading": "Skin Care, your fit",
         "sub": "",
@@ -703,7 +705,6 @@
     },
     "perfumes": {
       "type": "kj-sale-products",
-      "disabled": true,
       "settings": {
         "heading": "Perfumes & Body, sorted",
         "sub": "",
@@ -732,7 +733,6 @@
     },
     "makeup": {
       "type": "kj-sale-products",
-      "disabled": true,
       "settings": {
         "heading": "Makeup, your way",
         "sub": "",
@@ -761,7 +761,6 @@
     },
     "haircare": {
       "type": "kj-sale-products",
-      "disabled": true,
       "settings": {
         "heading": "Hair Care, sorted.",
         "sub": "",
@@ -788,6 +787,7 @@
     },
     "brands_b": {
       "type": "kj-sale-tiles",
+      "disabled": true,
       "settings": {
         "heading": "",
         "style": "brand",

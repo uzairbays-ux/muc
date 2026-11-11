@@ -290,8 +290,11 @@
                     "margin_top": 0,
                     "margin_bottom": 0,
                     "width": "100%",
+                    "shop_disabled": false,
                     "extension_origin": "",
-                    "adapter_slug": "merchant_makeupcity"
+                    "adapter_slug": "merchant_makeupcity",
+                    "additional_params": "",
+                    "first_order_discount": ""
                   }
                 },
                 "custom_liquid_7MEE6g": {
@@ -338,6 +341,7 @@
               "disabled": true,
               "settings": {
                 "mobile_order": 0,
+                "vendors": "",
                 "show_label": true,
                 "label": "SKU:",
                 "type_preset": "",
@@ -364,7 +368,7 @@
                 "popup_title": "Size chart",
                 "image_alt": "",
                 "desktop_width_percent": 100,
-                "popup_background": "#FFFFFF",
+                "popup_background": "#ffffff",
                 "text_color": "#000000",
                 "corner_radius": 8
               },
@@ -381,12 +385,12 @@
                   "type": "_kj-size-chart",
                   "name": "S/M/L bras (SizeChart-1)",
                   "settings": {
+                    "title": "S/M/L bras (SizeChart-1)",
+                    "table": "<div class=\"bls-chart\">\n<p class=\"bls-chart__title\">Bra size chart</p>\n<div class=\"bls-chart__scroll\"><table class=\"bls-chart__table bls-chart__table--list\">\n<thead><tr>\n<th scope=\"col\">Size</th>\n<th scope=\"col\">Fits bra sizes</th>\n</tr></thead>\n<tbody>\n<tr>\n<th scope=\"row\">S</th>\n<td>30B · 30C · 30D · 32B</td>\n</tr>\n<tr>\n<th scope=\"row\">M</th>\n<td>32C · 32D · 32DD · 34B · 34C · 36B</td>\n</tr>\n<tr>\n<th scope=\"row\">L</th>\n<td>34D · 34DD · 36C · 36D · 38B · 38C</td>\n</tr>\n<tr>\n<th scope=\"row\">XL</th>\n<td>34E · 36DD · 36E · 38D · 38DD</td>\n</tr>\n<tr>\n<th scope=\"row\">2X</th>\n<td>38E · 40C · 40D · 42C</td>\n</tr>\n<tr>\n<th scope=\"row\">3X</th>\n<td>40DD · 42D</td>\n</tr>\n</tbody>\n</table></div>\n<p class=\"bls-chart__note\">This size chart is based on general merchandise. Actual product measurements may differ from the chart.</p>\n</div>",
                     "image": "shopify://shop_images/hix.ai-download-1790917858783.webp",
                     "tags": "SizeChart-1, Seamless crop top",
                     "title_contains": "Nursing Comfort Bra, Seamless Bonded, Seamless Bra -, Seamless Boned Bra, Belle Non Padded Lace Bralette, Eula Non Padded Lace Bralette, Dahlia Non Padded Bralette, Non Wired And Non Padded Cotton Crop Top, Big Girl Non Wired And Padded",
-                    "show_sister_size": false,
-                    "table": "<div class=\"bls-chart\"><p class=\"bls-chart__title\">Bra size chart</p><div class=\"bls-chart__scroll\"><table class=\"bls-chart__table bls-chart__table--list\"><thead><tr><th scope=\"col\">Size</th><th scope=\"col\">Fits bra sizes</th></tr></thead><tbody><tr><th scope=\"row\">S</th><td>30B · 30C · 30D · 32B</td></tr><tr><th scope=\"row\">M</th><td>32C · 32D · 32DD · 34B · 34C · 36B</td></tr><tr><th scope=\"row\">L</th><td>34D · 34DD · 36C · 36D · 38B · 38C</td></tr><tr><th scope=\"row\">XL</th><td>34E · 36DD · 36E · 38D · 38DD</td></tr><tr><th scope=\"row\">2X</th><td>38E · 40C · 40D · 42C</td></tr><tr><th scope=\"row\">3X</th><td>40DD · 42D</td></tr></tbody></table></div><p class=\"bls-chart__note\">This size chart is based on general merchandise. Actual product measurements may differ from the chart.</p></div>",
-                    "title": "S/M/L bras (SizeChart-1)"
+                    "show_sister_size": false
                   },
                   "blocks": {}
                 },
@@ -394,12 +398,12 @@
                   "type": "_kj-size-chart",
                   "name": "Teens panties",
                   "settings": {
+                    "title": "Teens panties",
+                    "table": "<div class=\"bls-chart\">\n<p class=\"bls-chart__title\">Teens panty size chart</p>\n<div class=\"bls-chart__scroll\"><table class=\"bls-chart__table\">\n<thead><tr>\n<th scope=\"col\">Size</th>\n<th scope=\"col\">Waist (inches)</th>\n<th scope=\"col\">Hips (inches)</th>\n</tr></thead>\n<tbody>\n<tr>\n<th scope=\"row\">12/13</th>\n<td>23-24</td>\n<td>33-34</td>\n</tr>\n<tr>\n<th scope=\"row\">14/15</th>\n<td>25-26</td>\n<td>35-36</td>\n</tr>\n<tr>\n<th scope=\"row\">16/17</th>\n<td>27-28</td>\n<td>37-38</td>\n</tr>\n<tr>\n<th scope=\"row\">18/19</th>\n<td>29-30</td>\n<td>39-40</td>\n</tr>\n</tbody>\n</table></div>\n<p class=\"bls-chart__note\">This size chart is based on general merchandise. Actual product measurements may differ from the chart.</p>\n</div>",
                     "image": "shopify://shop_images/Teen_Panty_chart_size_-new.webp",
                     "tags": "",
                     "title_contains": "Teen Panty",
-                    "show_sister_size": false,
-                    "table": "<div class=\"bls-chart\"><p class=\"bls-chart__title\">Teens panty size chart</p><div class=\"bls-chart__scroll\"><table class=\"bls-chart__table\"><thead><tr><th scope=\"col\">Size</th><th scope=\"col\">Waist (inches)</th><th scope=\"col\">Hips (inches)</th></tr></thead><tbody><tr><th scope=\"row\">12/13</th><td>23-24</td><td>33-34</td></tr><tr><th scope=\"row\">14/15</th><td>25-26</td><td>35-36</td></tr><tr><th scope=\"row\">16/17</th><td>27-28</td><td>37-38</td></tr><tr><th scope=\"row\">18/19</th><td>29-30</td><td>39-40</td></tr></tbody></table></div><p class=\"bls-chart__note\">This size chart is based on general merchandise. Actual product measurements may differ from the chart.</p></div>",
-                    "title": "Teens panties"
+                    "show_sister_size": false
                   },
                   "blocks": {}
                 },
@@ -407,12 +411,12 @@
                   "type": "_kj-size-chart",
                   "name": "Teens bras",
                   "settings": {
+                    "title": "Teens bras",
+                    "table": "<div class=\"bls-chart\">\n<p class=\"bls-chart__title\">Teens bra size chart</p>\n<div class=\"bls-chart__scroll\"><table class=\"bls-chart__table bls-chart__table--list\">\n<thead><tr>\n<th scope=\"col\">Size</th>\n<th scope=\"col\">Fits bra sizes</th>\n</tr></thead>\n<tbody>\n<tr>\n<th scope=\"row\">12/13</th>\n<td>30B · 30C · 30D · 32B</td>\n</tr>\n<tr>\n<th scope=\"row\">14/15</th>\n<td>32C · 32D · 32DD · 34B · 34C · 36B</td>\n</tr>\n<tr>\n<th scope=\"row\">16/17</th>\n<td>34D · 34DD · 36C · 36D · 38B · 38C</td>\n</tr>\n<tr>\n<th scope=\"row\">18/19</th>\n<td>34E · 36DD · 36E · 38D · 38DD</td>\n</tr>\n</tbody>\n</table></div>\n<p class=\"bls-chart__note\">This size chart is based on general merchandise. Actual product measurements may differ from the chart.</p>\n</div>",
                     "image": "shopify://shop_images/Teen_Bra_size_chart-new.webp",
                     "tags": "Teens",
                     "title_contains": "",
-                    "show_sister_size": false,
-                    "table": "<div class=\"bls-chart\"><p class=\"bls-chart__title\">Teens bra size chart</p><div class=\"bls-chart__scroll\"><table class=\"bls-chart__table bls-chart__table--list\"><thead><tr><th scope=\"col\">Size</th><th scope=\"col\">Fits bra sizes</th></tr></thead><tbody><tr><th scope=\"row\">12/13</th><td>30B · 30C · 30D · 32B</td></tr><tr><th scope=\"row\">14/15</th><td>32C · 32D · 32DD · 34B · 34C · 36B</td></tr><tr><th scope=\"row\">16/17</th><td>34D · 34DD · 36C · 36D · 38B · 38C</td></tr><tr><th scope=\"row\">18/19</th><td>34E · 36DD · 36E · 38D · 38DD</td></tr></tbody></table></div><p class=\"bls-chart__note\">This size chart is based on general merchandise. Actual product measurements may differ from the chart.</p></div>",
-                    "title": "Teens bras"
+                    "show_sister_size": false
                   },
                   "blocks": {}
                 },
@@ -420,12 +424,12 @@
                   "type": "_kj-size-chart",
                   "name": "Sleepwear",
                   "settings": {
+                    "title": "Sleepwear",
+                    "table": "<div class=\"bls-chart\">\n<p class=\"bls-chart__title\">Sleepwear size chart</p>\n<p class=\"bls-chart__unit\">All sizes in cm</p>\n<div class=\"bls-chart__scroll\"><table class=\"bls-chart__table\">\n<thead><tr>\n<th scope=\"col\">Size</th>\n<th scope=\"col\">Bust</th>\n<th scope=\"col\">Waist</th>\n</tr></thead>\n<tbody>\n<tr>\n<th scope=\"row\">S</th>\n<td>85</td>\n<td>65</td>\n</tr>\n<tr>\n<th scope=\"row\">M</th>\n<td>90</td>\n<td>71</td>\n</tr>\n<tr>\n<th scope=\"row\">L</th>\n<td>95</td>\n<td>76</td>\n</tr>\n<tr>\n<th scope=\"row\">XL</th>\n<td>100</td>\n<td>81</td>\n</tr>\n<tr>\n<th scope=\"row\">XXL</th>\n<td>105</td>\n<td>86</td>\n</tr>\n</tbody>\n</table></div>\n<p class=\"bls-chart__note\">This size chart is based on general merchandise. Actual product measurements may differ from the chart.</p>\n</div>",
                     "image": "shopify://shop_images/Sleep_Wear.webp",
                     "tags": "Sleep Wear, Pajama Sets, Pajama Set, Short Sets, Short Set, Nightgown, PJS, Lounge Wear",
                     "title_contains": "",
-                    "show_sister_size": false,
-                    "table": "<div class=\"bls-chart\"><p class=\"bls-chart__title\">Sleepwear size chart</p><p class=\"bls-chart__unit\">All sizes in cm</p><div class=\"bls-chart__scroll\"><table class=\"bls-chart__table\"><thead><tr><th scope=\"col\">Size</th><th scope=\"col\">Bust</th><th scope=\"col\">Waist</th></tr></thead><tbody><tr><th scope=\"row\">S</th><td>85</td><td>65</td></tr><tr><th scope=\"row\">M</th><td>90</td><td>71</td></tr><tr><th scope=\"row\">L</th><td>95</td><td>76</td></tr><tr><th scope=\"row\">XL</th><td>100</td><td>81</td></tr><tr><th scope=\"row\">XXL</th><td>105</td><td>86</td></tr></tbody></table></div><p class=\"bls-chart__note\">This size chart is based on general merchandise. Actual product measurements may differ from the chart.</p></div>",
-                    "title": "Sleepwear"
+                    "show_sister_size": false
                   },
                   "blocks": {}
                 },
@@ -433,12 +437,12 @@
                   "type": "_kj-size-chart",
                   "name": "Hena thong",
                   "settings": {
+                    "title": "Hena thong",
+                    "table": "<div class=\"bls-chart\">\n<p class=\"bls-chart__title\">Hena thong (BLSDK1447)</p>\n<div class=\"bls-chart__scroll\"><table class=\"bls-chart__table\">\n<thead><tr>\n<th scope=\"col\">Size</th>\n<th scope=\"col\">Waist</th>\n</tr></thead>\n<tbody>\n<tr>\n<th scope=\"row\">S / M</th>\n<td>23-24</td>\n</tr>\n<tr>\n<th scope=\"row\">L / XL</th>\n<td>25-26</td>\n</tr>\n</tbody>\n</table></div>\n<p class=\"bls-chart__note\">This size chart is based on general merchandise. Actual product measurements may differ from the chart.</p>\n</div>",
                     "image": "shopify://shop_images/BLS1447_Hena.webp",
                     "tags": "",
                     "title_contains": "Hena Thong, Hena Lace Thong",
-                    "show_sister_size": false,
-                    "table": "<div class=\"bls-chart\"><p class=\"bls-chart__title\">Hena thong (BLSDK1447)</p><div class=\"bls-chart__scroll\"><table class=\"bls-chart__table\"><thead><tr><th scope=\"col\">Size</th><th scope=\"col\">Waist</th></tr></thead><tbody><tr><th scope=\"row\">S / M</th><td>23-24</td></tr><tr><th scope=\"row\">L / XL</th><td>25-26</td></tr></tbody></table></div><p class=\"bls-chart__note\">This size chart is based on general merchandise. Actual product measurements may differ from the chart.</p></div>",
-                    "title": "Hena thong"
+                    "show_sister_size": false
                   },
                   "blocks": {}
                 },
@@ -446,12 +450,12 @@
                   "type": "_kj-size-chart",
                   "name": "Soraya boyshort",
                   "settings": {
+                    "title": "Soraya boyshort",
+                    "table": "<div class=\"bls-chart\">\n<p class=\"bls-chart__title\">Soraya boyshort (BLS1455)</p>\n<div class=\"bls-chart__scroll\"><table class=\"bls-chart__table\">\n<thead><tr>\n<th scope=\"col\">Size</th>\n<th scope=\"col\">Waist</th>\n<th scope=\"col\">Hips</th>\n</tr></thead>\n<tbody>\n<tr>\n<th scope=\"row\">S / M</th>\n<td>13</td>\n<td>17</td>\n</tr>\n<tr>\n<th scope=\"row\">L / XL</th>\n<td>15</td>\n<td>19</td>\n</tr>\n</tbody>\n</table></div>\n<p class=\"bls-chart__note\">This size chart is based on general merchandise. Actual product measurements may differ from the chart.</p>\n</div>",
                     "image": "shopify://shop_images/BLS1455_Soraya.webp",
                     "tags": "",
                     "title_contains": "Soraya Lace Boyshort",
-                    "show_sister_size": false,
-                    "table": "<div class=\"bls-chart\"><p class=\"bls-chart__title\">Soraya boyshort (BLS1455)</p><div class=\"bls-chart__scroll\"><table class=\"bls-chart__table\"><thead><tr><th scope=\"col\">Size</th><th scope=\"col\">Waist</th><th scope=\"col\">Hips</th></tr></thead><tbody><tr><th scope=\"row\">S / M</th><td>13</td><td>17</td></tr><tr><th scope=\"row\">L / XL</th><td>15</td><td>19</td></tr></tbody></table></div><p class=\"bls-chart__note\">This size chart is based on general merchandise. Actual product measurements may differ from the chart.</p></div>",
-                    "title": "Soraya boyshort"
+                    "show_sister_size": false
                   },
                   "blocks": {}
                 },
@@ -459,12 +463,12 @@
                   "type": "_kj-size-chart",
                   "name": "Lenore thong",
                   "settings": {
+                    "title": "Lenore thong",
+                    "table": "<div class=\"bls-chart\">\n<p class=\"bls-chart__title\">Lenore thong (BLS10361)</p>\n<div class=\"bls-chart__scroll\"><table class=\"bls-chart__table\">\n<thead><tr>\n<th scope=\"col\">Size</th>\n<th scope=\"col\">Waist</th>\n</tr></thead>\n<tbody>\n<tr>\n<th scope=\"row\">S</th>\n<td>–</td>\n</tr>\n<tr>\n<th scope=\"row\">M</th>\n<td>23</td>\n</tr>\n<tr>\n<th scope=\"row\">L</th>\n<td>25</td>\n</tr>\n<tr>\n<th scope=\"row\">XL</th>\n<td>27</td>\n</tr>\n</tbody>\n</table></div>\n<p class=\"bls-chart__note\">This size chart is based on general merchandise. Actual product measurements may differ from the chart.</p>\n</div>",
                     "image": "shopify://shop_images/BLS10361_Lenore.webp",
                     "tags": "",
                     "title_contains": "Lenore Lace Thong",
-                    "show_sister_size": false,
-                    "table": "<div class=\"bls-chart\"><p class=\"bls-chart__title\">Lenore thong (BLS10361)</p><div class=\"bls-chart__scroll\"><table class=\"bls-chart__table\"><thead><tr><th scope=\"col\">Size</th><th scope=\"col\">Waist</th></tr></thead><tbody><tr><th scope=\"row\">S</th><td>–</td></tr><tr><th scope=\"row\">M</th><td>23</td></tr><tr><th scope=\"row\">L</th><td>25</td></tr><tr><th scope=\"row\">XL</th><td>27</td></tr></tbody></table></div><p class=\"bls-chart__note\">This size chart is based on general merchandise. Actual product measurements may differ from the chart.</p></div>",
-                    "title": "Lenore thong"
+                    "show_sister_size": false
                   },
                   "blocks": {}
                 },
@@ -472,12 +476,12 @@
                   "type": "_kj-size-chart",
                   "name": "Liza boyshort",
                   "settings": {
+                    "title": "Liza boyshort",
+                    "table": "<div class=\"bls-chart\">\n<p class=\"bls-chart__title\">Liza boyshort (BLS20101)</p>\n<div class=\"bls-chart__scroll\"><table class=\"bls-chart__table\">\n<thead><tr>\n<th scope=\"col\">Size</th>\n<th scope=\"col\">Waist</th>\n<th scope=\"col\">Hips</th>\n</tr></thead>\n<tbody>\n<tr>\n<th scope=\"row\">S</th>\n<td>–</td>\n<td>–</td>\n</tr>\n<tr>\n<th scope=\"row\">M</th>\n<td>24</td>\n<td>34</td>\n</tr>\n<tr>\n<th scope=\"row\">L</th>\n<td>26</td>\n<td>37</td>\n</tr>\n<tr>\n<th scope=\"row\">XL</th>\n<td>28</td>\n<td>40</td>\n</tr>\n</tbody>\n</table></div>\n<p class=\"bls-chart__note\">This size chart is based on general merchandise. Actual product measurements may differ from the chart.</p>\n</div>",
                     "image": "shopify://shop_images/BLS20101_Liza.webp",
                     "tags": "",
                     "title_contains": "Liza Lace Boyshort",
-                    "show_sister_size": false,
-                    "table": "<div class=\"bls-chart\"><p class=\"bls-chart__title\">Liza boyshort (BLS20101)</p><div class=\"bls-chart__scroll\"><table class=\"bls-chart__table\"><thead><tr><th scope=\"col\">Size</th><th scope=\"col\">Waist</th><th scope=\"col\">Hips</th></tr></thead><tbody><tr><th scope=\"row\">S</th><td>–</td><td>–</td></tr><tr><th scope=\"row\">M</th><td>24</td><td>34</td></tr><tr><th scope=\"row\">L</th><td>26</td><td>37</td></tr><tr><th scope=\"row\">XL</th><td>28</td><td>40</td></tr></tbody></table></div><p class=\"bls-chart__note\">This size chart is based on general merchandise. Actual product measurements may differ from the chart.</p></div>",
-                    "title": "Liza boyshort"
+                    "show_sister_size": false
                   },
                   "blocks": {}
                 },
@@ -485,12 +489,12 @@
                   "type": "_kj-size-chart",
                   "name": "Haut thong",
                   "settings": {
+                    "title": "Haut thong",
+                    "table": "<div class=\"bls-chart\">\n<p class=\"bls-chart__title\">Haut thong (BLSDK1439)</p>\n<div class=\"bls-chart__scroll\"><table class=\"bls-chart__table\">\n<thead><tr>\n<th scope=\"col\">Size</th>\n<th scope=\"col\">Waist</th>\n</tr></thead>\n<tbody>\n<tr>\n<th scope=\"row\">S / M</th>\n<td>24-25</td>\n</tr>\n<tr>\n<th scope=\"row\">L / XL</th>\n<td>26-28</td>\n</tr>\n</tbody>\n</table></div>\n<p class=\"bls-chart__note\">This size chart is based on general merchandise. Actual product measurements may differ from the chart.</p>\n</div>",
                     "image": "shopify://shop_images/BLSDK1439_Haut.webp",
                     "tags": "",
                     "title_contains": "Haut Lace Thong",
-                    "show_sister_size": false,
-                    "table": "<div class=\"bls-chart\"><p class=\"bls-chart__title\">Haut thong (BLSDK1439)</p><div class=\"bls-chart__scroll\"><table class=\"bls-chart__table\"><thead><tr><th scope=\"col\">Size</th><th scope=\"col\">Waist</th></tr></thead><tbody><tr><th scope=\"row\">S / M</th><td>24-25</td></tr><tr><th scope=\"row\">L / XL</th><td>26-28</td></tr></tbody></table></div><p class=\"bls-chart__note\">This size chart is based on general merchandise. Actual product measurements may differ from the chart.</p></div>",
-                    "title": "Haut thong"
+                    "show_sister_size": false
                   },
                   "blocks": {}
                 },
@@ -498,12 +502,12 @@
                   "type": "_kj-size-chart",
                   "name": "Slips & Camis",
                   "settings": {
+                    "title": "Slips & Camis",
+                    "table": "<div class=\"bls-chart\">\n<p class=\"bls-chart__title\">Camisole size chart</p>\n<p class=\"bls-chart__unit\">Bust, waist and hips in inches</p>\n<div class=\"bls-chart__scroll\"><table class=\"bls-chart__table\">\n<thead><tr>\n<th scope=\"col\">Size</th>\n<th scope=\"col\">Dress</th>\n<th scope=\"col\">Bust</th>\n<th scope=\"col\">Waist</th>\n<th scope=\"col\">Hips</th>\n</tr></thead>\n<tbody>\n<tr>\n<th scope=\"row\">XS</th>\n<td>0-2</td>\n<td>33</td>\n<td>23-24</td>\n<td>35</td>\n</tr>\n<tr>\n<th scope=\"row\">S</th>\n<td>4-6</td>\n<td>35</td>\n<td>25-26</td>\n<td>37</td>\n</tr>\n<tr>\n<th scope=\"row\">M</th>\n<td>8-10</td>\n<td>37</td>\n<td>28-29</td>\n<td>39</td>\n</tr>\n<tr>\n<th scope=\"row\">L</th>\n<td>12-14</td>\n<td>39</td>\n<td>30-32</td>\n<td>41</td>\n</tr>\n<tr>\n<th scope=\"row\">XL</th>\n<td>16-18</td>\n<td>42</td>\n<td>34</td>\n<td>44</td>\n</tr>\n<tr>\n<th scope=\"row\">2X</th>\n<td>20-22</td>\n<td>45</td>\n<td>37</td>\n<td>48</td>\n</tr>\n<tr>\n<th scope=\"row\">3X</th>\n<td>22-24</td>\n<td>48</td>\n<td>44</td>\n<td>52</td>\n</tr>\n</tbody>\n</table></div>\n<p class=\"bls-chart__note\">This size chart is based on general merchandise. Actual product measurements may differ from the chart.</p>\n</div>",
                     "image": "shopify://shop_images/camisole_size.webp",
                     "tags": "Slips & Camis, Camisole",
                     "title_contains": "",
-                    "show_sister_size": false,
-                    "table": "<div class=\"bls-chart\"><p class=\"bls-chart__title\">Camisole size chart</p><p class=\"bls-chart__unit\">Bust, waist and hips in inches</p><div class=\"bls-chart__scroll\"><table class=\"bls-chart__table\"><thead><tr><th scope=\"col\">Size</th><th scope=\"col\">Dress</th><th scope=\"col\">Bust</th><th scope=\"col\">Waist</th><th scope=\"col\">Hips</th></tr></thead><tbody><tr><th scope=\"row\">XS</th><td>0-2</td><td>33</td><td>23-24</td><td>35</td></tr><tr><th scope=\"row\">S</th><td>4-6</td><td>35</td><td>25-26</td><td>37</td></tr><tr><th scope=\"row\">M</th><td>8-10</td><td>37</td><td>28-29</td><td>39</td></tr><tr><th scope=\"row\">L</th><td>12-14</td><td>39</td><td>30-32</td><td>41</td></tr><tr><th scope=\"row\">XL</th><td>16-18</td><td>42</td><td>34</td><td>44</td></tr><tr><th scope=\"row\">2X</th><td>20-22</td><td>45</td><td>37</td><td>48</td></tr><tr><th scope=\"row\">3X</th><td>22-24</td><td>48</td><td>44</td><td>52</td></tr></tbody></table></div><p class=\"bls-chart__note\">This size chart is based on general merchandise. Actual product measurements may differ from the chart.</p></div>",
-                    "title": "Slips & Camis"
+                    "show_sister_size": false
                   },
                   "blocks": {}
                 },
@@ -511,12 +515,12 @@
                   "type": "_kj-size-chart",
                   "name": "Sports bras",
                   "settings": {
+                    "title": "Sports bras",
+                    "table": "<div class=\"bls-chart\">\n<p class=\"bls-chart__title\">Sports bra size chart</p>\n<div class=\"bls-chart__scroll\"><table class=\"bls-chart__table bls-chart__table--list\">\n<thead><tr>\n<th scope=\"col\">Size</th>\n<th scope=\"col\">Fits bra sizes</th>\n</tr></thead>\n<tbody>\n<tr>\n<th scope=\"row\">S</th>\n<td>30B · 30C · 30D · 32B</td>\n</tr>\n<tr>\n<th scope=\"row\">M</th>\n<td>32C · 32D · 32DD · 34B · 34C · 36B</td>\n</tr>\n<tr>\n<th scope=\"row\">L</th>\n<td>34D · 34DD · 36C · 36D · 38B · 38C</td>\n</tr>\n<tr>\n<th scope=\"row\">XL</th>\n<td>34E · 36DD · 36E · 38D · 38DD</td>\n</tr>\n<tr>\n<th scope=\"row\">2X</th>\n<td>38E · 40C · 40D · 42C</td>\n</tr>\n<tr>\n<th scope=\"row\">3X</th>\n<td>40DD · 42D</td>\n</tr>\n</tbody>\n</table></div>\n<p class=\"bls-chart__note\">This size chart is based on general merchandise. Actual product measurements may differ from the chart.</p>\n</div>",
                     "image": "shopify://shop_images/sports_bra_size-new.jpg",
                     "tags": "Sports Bra",
                     "title_contains": "",
-                    "show_sister_size": false,
-                    "table": "<div class=\"bls-chart\"><p class=\"bls-chart__title\">Sports bra size chart</p><div class=\"bls-chart__scroll\"><table class=\"bls-chart__table bls-chart__table--list\"><thead><tr><th scope=\"col\">Size</th><th scope=\"col\">Fits bra sizes</th></tr></thead><tbody><tr><th scope=\"row\">S</th><td>30B · 30C · 30D · 32B</td></tr><tr><th scope=\"row\">M</th><td>32C · 32D · 32DD · 34B · 34C · 36B</td></tr><tr><th scope=\"row\">L</th><td>34D · 34DD · 36C · 36D · 38B · 38C</td></tr><tr><th scope=\"row\">XL</th><td>34E · 36DD · 36E · 38D · 38DD</td></tr><tr><th scope=\"row\">2X</th><td>38E · 40C · 40D · 42C</td></tr><tr><th scope=\"row\">3X</th><td>40DD · 42D</td></tr></tbody></table></div><p class=\"bls-chart__note\">This size chart is based on general merchandise. Actual product measurements may differ from the chart.</p></div>",
-                    "title": "Sports bras"
+                    "show_sister_size": false
                   },
                   "blocks": {}
                 },
@@ -524,12 +528,12 @@
                   "type": "_kj-size-chart",
                   "name": "Shapewear",
                   "settings": {
+                    "title": "Shapewear",
+                    "table": "<div class=\"bls-chart\">\n<p class=\"bls-chart__title\">Shapewear size chart</p>\n<div class=\"bls-chart__scroll\"><table class=\"bls-chart__table\">\n<thead><tr>\n<th scope=\"col\">Size</th>\n<th scope=\"col\">Bust</th>\n<th scope=\"col\">Waist</th>\n<th scope=\"col\">Hips</th>\n</tr></thead>\n<tbody>\n<tr>\n<th scope=\"row\">S</th>\n<td>33-36</td>\n<td>28-31</td>\n<td>34-38</td>\n</tr>\n<tr>\n<th scope=\"row\">M</th>\n<td>36-38</td>\n<td>31-33</td>\n<td>38-41</td>\n</tr>\n<tr>\n<th scope=\"row\">L</th>\n<td>38-41</td>\n<td>33-36</td>\n<td>41-44</td>\n</tr>\n<tr>\n<th scope=\"row\">XL</th>\n<td>41-44</td>\n<td>36-39</td>\n<td>44-47</td>\n</tr>\n<tr>\n<th scope=\"row\">2X</th>\n<td>44-48</td>\n<td>39-42</td>\n<td>47-50</td>\n</tr>\n<tr>\n<th scope=\"row\">3X</th>\n<td>48-52</td>\n<td>42-45</td>\n<td>50-53</td>\n</tr>\n<tr>\n<th scope=\"row\">4X</th>\n<td>52-54</td>\n<td>45-48</td>\n<td>53-56</td>\n</tr>\n</tbody>\n</table></div>\n<p class=\"bls-chart__note\">This size chart is based on general merchandise. Actual product measurements may differ from the chart.</p>\n</div>",
                     "image": "shopify://shop_images/shapewear_size.webp",
                     "tags": "Shaper, Active & Shape Wear, Sports & Shape Wear",
                     "title_contains": "",
-                    "show_sister_size": false,
-                    "table": "<div class=\"bls-chart\"><p class=\"bls-chart__title\">Shapewear size chart</p><div class=\"bls-chart__scroll\"><table class=\"bls-chart__table\"><thead><tr><th scope=\"col\">Size</th><th scope=\"col\">Bust</th><th scope=\"col\">Waist</th><th scope=\"col\">Hips</th></tr></thead><tbody><tr><th scope=\"row\">S</th><td>33-36</td><td>28-31</td><td>34-38</td></tr><tr><th scope=\"row\">M</th><td>36-38</td><td>31-33</td><td>38-41</td></tr><tr><th scope=\"row\">L</th><td>38-41</td><td>33-36</td><td>41-44</td></tr><tr><th scope=\"row\">XL</th><td>41-44</td><td>36-39</td><td>44-47</td></tr><tr><th scope=\"row\">2X</th><td>44-48</td><td>39-42</td><td>47-50</td></tr><tr><th scope=\"row\">3X</th><td>48-52</td><td>42-45</td><td>50-53</td></tr><tr><th scope=\"row\">4X</th><td>52-54</td><td>45-48</td><td>53-56</td></tr></tbody></table></div><p class=\"bls-chart__note\">This size chart is based on general merchandise. Actual product measurements may differ from the chart.</p></div>",
-                    "title": "Shapewear"
+                    "show_sister_size": false
                   },
                   "blocks": {}
                 },
@@ -537,12 +541,12 @@
                   "type": "_kj-size-chart",
                   "name": "Bras (band/cup)",
                   "settings": {
+                    "title": "Bras (band/cup)",
+                    "table": "<div class=\"bls-chart\">\n<p class=\"bls-chart__title\">Bra size chart</p>\n<p class=\"bls-chart__unit\">All sizes in cm</p>\n<div class=\"bls-chart__scroll\"><table class=\"bls-chart__table\">\n<thead>\n<tr>\n<th scope=\"col\" rowspan=\"2\">Bra size</th>\n<th scope=\"col\" rowspan=\"2\">Underbust</th>\n<th scope=\"colgroup\" colspan=\"6\">Overbust</th>\n</tr>\n<tr>\n<th scope=\"col\">Cup B</th>\n<th scope=\"col\">Cup C</th>\n<th scope=\"col\">Cup D</th>\n<th scope=\"col\">Cup DD</th>\n<th scope=\"col\">Cup E</th>\n<th scope=\"col\">Cup F</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<th scope=\"row\">32</th>\n<td>68-72</td>\n<td>84-86</td>\n<td>86-88</td>\n<td>88-90</td>\n<td>90-92</td>\n<td>92-94</td>\n<td>94-96</td>\n</tr>\n<tr>\n<th scope=\"row\">34</th>\n<td>73-77</td>\n<td>89-91</td>\n<td>91-93</td>\n<td>93-95</td>\n<td>95-97</td>\n<td>97-99</td>\n<td>99-101</td>\n</tr>\n<tr>\n<th scope=\"row\">36</th>\n<td>78-82</td>\n<td>94-96</td>\n<td>96-98</td>\n<td>98-100</td>\n<td>100-102</td>\n<td>102-104</td>\n<td>104-106</td>\n</tr>\n<tr>\n<th scope=\"row\">38</th>\n<td>83-87</td>\n<td>99-101</td>\n<td>101-103</td>\n<td>103-105</td>\n<td>105-107</td>\n<td>107-109</td>\n<td>109-111</td>\n</tr>\n<tr>\n<th scope=\"row\">40</th>\n<td>88-92</td>\n<td>104-106</td>\n<td>106-108</td>\n<td>108-110</td>\n<td>110-112</td>\n<td>112-114</td>\n<td>114-116</td>\n</tr>\n<tr>\n<th scope=\"row\">42</th>\n<td>93-97</td>\n<td>109-111</td>\n<td>111-113</td>\n<td>113-115</td>\n<td>115-117</td>\n<td>117-119</td>\n<td>119-121</td>\n</tr>\n</tbody>\n</table></div>\n<p class=\"bls-chart__note\">This size chart is based on general merchandise. Actual product measurements may differ from the chart.</p>\n</div>",
                     "image": "shopify://shop_images/bra_size.webp",
                     "tags": "Bras, Bra",
                     "title_contains": "Front Open Bra",
-                    "show_sister_size": true,
-                    "table": "<div class=\"bls-chart\"><p class=\"bls-chart__title\">Bra size chart</p><p class=\"bls-chart__unit\">All sizes in cm</p><div class=\"bls-chart__scroll\"><table class=\"bls-chart__table\"><thead><tr><th scope=\"col\" rowspan=\"2\">Bra size</th><th scope=\"col\" rowspan=\"2\">Underbust</th><th scope=\"colgroup\" colspan=\"6\">Overbust</th></tr><tr><th scope=\"col\">Cup B</th><th scope=\"col\">Cup C</th><th scope=\"col\">Cup D</th><th scope=\"col\">Cup DD</th><th scope=\"col\">Cup E</th><th scope=\"col\">Cup F</th></tr></thead><tbody><tr><th scope=\"row\">32</th><td>68-72</td><td>84-86</td><td>86-88</td><td>88-90</td><td>90-92</td><td>92-94</td><td>94-96</td></tr><tr><th scope=\"row\">34</th><td>73-77</td><td>89-91</td><td>91-93</td><td>93-95</td><td>95-97</td><td>97-99</td><td>99-101</td></tr><tr><th scope=\"row\">36</th><td>78-82</td><td>94-96</td><td>96-98</td><td>98-100</td><td>100-102</td><td>102-104</td><td>104-106</td></tr><tr><th scope=\"row\">38</th><td>83-87</td><td>99-101</td><td>101-103</td><td>103-105</td><td>105-107</td><td>107-109</td><td>109-111</td></tr><tr><th scope=\"row\">40</th><td>88-92</td><td>104-106</td><td>106-108</td><td>108-110</td><td>110-112</td><td>112-114</td><td>114-116</td></tr><tr><th scope=\"row\">42</th><td>93-97</td><td>109-111</td><td>111-113</td><td>113-115</td><td>115-117</td><td>117-119</td><td>119-121</td></tr></tbody></table></div><p class=\"bls-chart__note\">This size chart is based on general merchandise. Actual product measurements may differ from the chart.</p></div>",
-                    "title": "Bras (band/cup)"
+                    "show_sister_size": true
                   },
                   "blocks": {}
                 },
@@ -550,12 +554,12 @@
                   "type": "_kj-size-chart",
                   "name": "Panties",
                   "settings": {
+                    "title": "Panties",
+                    "table": "<div class=\"bls-chart\">\n<p class=\"bls-chart__title\">Panty size chart</p>\n<div class=\"bls-chart__scroll\"><table class=\"bls-chart__table\">\n<thead><tr>\n<th scope=\"col\">Hip (cm)</th>\n<th scope=\"col\">Hip (inches)</th>\n<th scope=\"col\">UK</th>\n<th scope=\"col\">US</th>\n<th scope=\"col\">EU</th>\n</tr></thead>\n<tbody>\n<tr>\n<th scope=\"row\">86-89</th>\n<td>34-35</td>\n<td>6</td>\n<td>XS (2)</td>\n<td>34</td>\n</tr>\n<tr>\n<th scope=\"row\">90-94</th>\n<td>36-37</td>\n<td>8</td>\n<td>S (4)</td>\n<td>36</td>\n</tr>\n<tr>\n<th scope=\"row\">95-99</th>\n<td>38-39</td>\n<td>10</td>\n<td>M (6)</td>\n<td>38</td>\n</tr>\n<tr>\n<th scope=\"row\">100-104</th>\n<td>40-41</td>\n<td>12</td>\n<td>L (8)</td>\n<td>40</td>\n</tr>\n<tr>\n<th scope=\"row\">105-109</th>\n<td>42-43</td>\n<td>14</td>\n<td>XL (10)</td>\n<td>42</td>\n</tr>\n<tr>\n<th scope=\"row\">110-114</th>\n<td>44-45</td>\n<td>16</td>\n<td>XXL (12)</td>\n<td>44</td>\n</tr>\n<tr>\n<th scope=\"row\">115-119</th>\n<td>46-47</td>\n<td>18</td>\n<td>3XL (14)</td>\n<td>46</td>\n</tr>\n</tbody>\n</table></div>\n<p class=\"bls-chart__note\">This size chart is based on general merchandise. Actual product measurements may differ from the chart.</p>\n</div>",
                     "image": "shopify://shop_images/panties-size-chart.webp",
                     "tags": "Panties",
                     "title_contains": "",
-                    "show_sister_size": false,
-                    "table": "<div class=\"bls-chart\"><p class=\"bls-chart__title\">Panty size chart</p><div class=\"bls-chart__scroll\"><table class=\"bls-chart__table\"><thead><tr><th scope=\"col\">Hip (cm)</th><th scope=\"col\">Hip (inches)</th><th scope=\"col\">UK</th><th scope=\"col\">US</th><th scope=\"col\">EU</th></tr></thead><tbody><tr><th scope=\"row\">86-89</th><td>34-35</td><td>6</td><td>XS (2)</td><td>34</td></tr><tr><th scope=\"row\">90-94</th><td>36-37</td><td>8</td><td>S (4)</td><td>36</td></tr><tr><th scope=\"row\">95-99</th><td>38-39</td><td>10</td><td>M (6)</td><td>38</td></tr><tr><th scope=\"row\">100-104</th><td>40-41</td><td>12</td><td>L (8)</td><td>40</td></tr><tr><th scope=\"row\">105-109</th><td>42-43</td><td>14</td><td>XL (10)</td><td>42</td></tr><tr><th scope=\"row\">110-114</th><td>44-45</td><td>16</td><td>XXL (12)</td><td>44</td></tr><tr><th scope=\"row\">115-119</th><td>46-47</td><td>18</td><td>3XL (14)</td><td>46</td></tr></tbody></table></div><p class=\"bls-chart__note\">This size chart is based on general merchandise. Actual product measurements may differ from the chart.</p></div>",
-                    "title": "Panties"
+                    "show_sister_size": false
                   },
                   "blocks": {}
                 },
@@ -563,23 +567,25 @@
                   "type": "_kj-size-chart-extra",
                   "settings": {
                     "title": "Bra & panty sets",
-                    "table": "<div class=\"bls-chart\"><p class=\"bls-chart__title\">Bra &amp; panty set sizes</p><div class=\"bls-chart__scroll\"><table class=\"bls-chart__table bls-chart__table--list\"><thead><tr><th scope=\"col\">Panty size</th><th scope=\"col\">Bra sizes</th></tr></thead><tbody><tr><th scope=\"row\">S</th><td>32A · 32B · 32C · S</td></tr><tr><th scope=\"row\">M</th><td>34A · 34B · 34C · 34D · 34DD · 34E · M</td></tr><tr><th scope=\"row\">L</th><td>36A · 36B · 36C · 36D · 36DD · 36E · L</td></tr><tr><th scope=\"row\">XL</th><td>38B · 38C · 38D · 38DD · XL</td></tr></tbody></table></div><p class=\"bls-chart__note\">This size chart is based on general merchandise. Actual product measurements may differ from the chart.</p></div>",
-                    "tags": "Bra & Panty Sets",
-                    "title_contains": "Bra & Panty Set",
+                    "table": "<div class=\"bls-chart\">\n<p class=\"bls-chart__title\">Bra &amp; panty set sizes</p>\n<div class=\"bls-chart__scroll\"><table class=\"bls-chart__table bls-chart__table--list\">\n<thead><tr>\n<th scope=\"col\">Panty size</th>\n<th scope=\"col\">Bra sizes</th>\n</tr></thead>\n<tbody>\n<tr>\n<th scope=\"row\">S</th>\n<td>32A · 32B · 32C · S</td>\n</tr>\n<tr>\n<th scope=\"row\">M</th>\n<td>34A · 34B · 34C · 34D · 34DD · 34E · M</td>\n</tr>\n<tr>\n<th scope=\"row\">L</th>\n<td>36A · 36B · 36C · 36D · 36DD · 36E · L</td>\n</tr>\n<tr>\n<th scope=\"row\">XL</th>\n<td>38B · 38C · 38D · 38DD · XL</td>\n</tr>\n</tbody>\n</table></div>\n<p class=\"bls-chart__note\">This size chart is based on general merchandise. Actual product measurements may differ from the chart.</p>\n</div>",
                     "tab_label": "Bra & panty set",
-                    "main_tab_label": "Bra size"
-                  }
+                    "main_tab_label": "Bra size",
+                    "tags": "Bra & Panty Sets",
+                    "title_contains": "Bra & Panty Set"
+                  },
+                  "blocks": {}
                 },
                 "extra_chart_panty_sets": {
                   "type": "_kj-size-chart-extra",
                   "settings": {
                     "title": "Panty size (bra & panty sets)",
-                    "table": "<div class=\"bls-chart\"><p class=\"bls-chart__title\">Panty size chart</p><div class=\"bls-chart__scroll\"><table class=\"bls-chart__table\"><thead><tr><th scope=\"col\">Hip (cm)</th><th scope=\"col\">Hip (inches)</th><th scope=\"col\">UK</th><th scope=\"col\">US</th><th scope=\"col\">EU</th></tr></thead><tbody><tr><th scope=\"row\">86-89</th><td>34-35</td><td>6</td><td>XS (2)</td><td>34</td></tr><tr><th scope=\"row\">90-94</th><td>36-37</td><td>8</td><td>S (4)</td><td>36</td></tr><tr><th scope=\"row\">95-99</th><td>38-39</td><td>10</td><td>M (6)</td><td>38</td></tr><tr><th scope=\"row\">100-104</th><td>40-41</td><td>12</td><td>L (8)</td><td>40</td></tr><tr><th scope=\"row\">105-109</th><td>42-43</td><td>14</td><td>XL (10)</td><td>42</td></tr><tr><th scope=\"row\">110-114</th><td>44-45</td><td>16</td><td>XXL (12)</td><td>44</td></tr><tr><th scope=\"row\">115-119</th><td>46-47</td><td>18</td><td>3XL (14)</td><td>46</td></tr></tbody></table></div><p class=\"bls-chart__note\">This size chart is based on general merchandise. Actual product measurements may differ from the chart.</p></div>",
-                    "tags": "Bra & Panty Sets",
-                    "title_contains": "Bra & Panty Set",
+                    "table": "<div class=\"bls-chart\">\n<p class=\"bls-chart__title\">Panty size chart</p>\n<div class=\"bls-chart__scroll\"><table class=\"bls-chart__table\">\n<thead><tr>\n<th scope=\"col\">Hip (cm)</th>\n<th scope=\"col\">Hip (inches)</th>\n<th scope=\"col\">UK</th>\n<th scope=\"col\">US</th>\n<th scope=\"col\">EU</th>\n</tr></thead>\n<tbody>\n<tr>\n<th scope=\"row\">86-89</th>\n<td>34-35</td>\n<td>6</td>\n<td>XS (2)</td>\n<td>34</td>\n</tr>\n<tr>\n<th scope=\"row\">90-94</th>\n<td>36-37</td>\n<td>8</td>\n<td>S (4)</td>\n<td>36</td>\n</tr>\n<tr>\n<th scope=\"row\">95-99</th>\n<td>38-39</td>\n<td>10</td>\n<td>M (6)</td>\n<td>38</td>\n</tr>\n<tr>\n<th scope=\"row\">100-104</th>\n<td>40-41</td>\n<td>12</td>\n<td>L (8)</td>\n<td>40</td>\n</tr>\n<tr>\n<th scope=\"row\">105-109</th>\n<td>42-43</td>\n<td>14</td>\n<td>XL (10)</td>\n<td>42</td>\n</tr>\n<tr>\n<th scope=\"row\">110-114</th>\n<td>44-45</td>\n<td>16</td>\n<td>XXL (12)</td>\n<td>44</td>\n</tr>\n<tr>\n<th scope=\"row\">115-119</th>\n<td>46-47</td>\n<td>18</td>\n<td>3XL (14)</td>\n<td>46</td>\n</tr>\n</tbody>\n</table></div>\n<p class=\"bls-chart__note\">This size chart is based on general merchandise. Actual product measurements may differ from the chart.</p>\n</div>",
                     "tab_label": "Panty size",
-                    "main_tab_label": ""
-                  }
+                    "main_tab_label": "",
+                    "tags": "Bra & Panty Sets",
+                    "title_contains": "Bra & Panty Set"
+                  },
+                  "blocks": {}
                 }
               },
               "block_order": [
@@ -601,6 +607,15 @@
                 "extra_chart_panty_sets"
               ]
             },
+            "kj_shade_club": {
+              "type": "kj-shade-club",
+              "settings": {
+                "label": "Shade",
+                "size": 36,
+                "collapse_after": 20
+              },
+              "blocks": {}
+            },
             "variant_picker_R3rGDr": {
               "type": "variant-picker",
               "settings": {
@@ -612,6 +627,23 @@
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "kj_sale_timer": {
+              "type": "kj-sale-timer",
+              "disabled": true,
+              "settings": {
+                "title": "11:11 FLASH SALE",
+                "link": "shopify://pages/sale",
+                "timer_start": "2026-11-11T00:00:00+05:00",
+                "timer_end": "2026-11-11T23:59:59+05:00",
+                "label_start": "STARTS IN",
+                "label_end": "ENDS IN",
+                "purple": "#a98bcb",
+                "lime": "#d9f25b",
+                "dark": "#1e1e1e",
+                "red": "#d32f2f"
               },
               "blocks": {}
             },
@@ -664,6 +696,7 @@
               "name": "Product barcode",
               "settings": {
                 "mobile_order": 5,
+                "vendors": "British Lingerie Studio, Slips & Camis, Teens",
                 "show_label": true,
                 "label": "Barcode:",
                 "type_preset": "",
@@ -678,8 +711,7 @@
                 "padding-block-start": 0,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
-                "padding-inline-end": 0,
-                "vendors": "British Lingerie Studio, Slips & Camis, Teens"
+                "padding-inline-end": 0
               },
               "blocks": {}
             },
@@ -688,6 +720,7 @@
               "name": "t:names.product_sku",
               "settings": {
                 "mobile_order": 5,
+                "vendors": "British Lingerie Studio, Slips & Camis, Teens",
                 "show_label": true,
                 "label": "SKU:",
                 "type_preset": "",
@@ -702,8 +735,16 @@
                 "padding-block-start": 0,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
-                "padding-inline-end": 0,
-                "vendors": "British Lingerie Studio, Slips & Camis, Teens"
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "kj_buy_together": {
+              "type": "kj-buy-together",
+              "settings": {
+                "mobile_order": 5,
+                "heading": "Buy together",
+                "limit": 4
               },
               "blocks": {}
             },
@@ -995,38 +1036,6 @@
                 "padding-inline-end": 0
               },
               "blocks": {}
-            },
-            "kj_shade_club": {
-              "type": "kj-shade-club",
-              "settings": {
-                "label": "Shade",
-                "size": 36,
-                "collapse_after": 20
-              },
-              "blocks": {}
-            },
-            "kj_buy_together": {
-              "type": "kj-buy-together",
-              "settings": {
-                "heading": "Buy together",
-                "limit": 4,
-                "mobile_order": 5
-              }
-            },
-            "kj_sale_timer": {
-              "type": "kj-sale-timer",
-              "settings": {
-                "title": "11:11 FLASH SALE",
-                "link": "shopify://pages/sale",
-                "timer_start": "2026-11-11T00:00:00+05:00",
-                "timer_end": "2026-11-11T23:59:59+05:00",
-                "label_start": "STARTS IN",
-                "label_end": "ENDS IN",
-                "purple": "#A98BCB",
-                "lime": "#D9F25B",
-                "dark": "#1E1E1E",
-                "red": "#D32F2F"
-              }
             }
           },
           "block_order": [
@@ -1132,6 +1141,12 @@
         "gradient_direction": "to top",
         "padding-block-start": 30,
         "padding-block-end": 30
+      }
+    },
+    "kj_reviews": {
+      "type": "kj-reviews",
+      "settings": {
+        "heading": "Reviews"
       }
     },
     "177847968827a634d1": {
@@ -1393,12 +1408,6 @@
         "color_scheme": "scheme-1",
         "padding-block-start": 48,
         "padding-block-end": 48
-      }
-    },
-    "kj_reviews": {
-      "type": "kj-reviews",
-      "settings": {
-        "heading": "Reviews"
       }
     }
   },

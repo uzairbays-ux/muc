@@ -117,6 +117,7 @@
     },
     "kj_sale_hero": {
       "type": "kj-sale-hero",
+      "disabled": true,
       "settings": {
         "title": "11:11 FLASH",
         "title2": "SALE",
@@ -136,6 +137,22 @@
         "timer_start": "2026-11-11T00:00:00+05:00",
         "timer_start_label": "SALE STARTS IN",
         "page_bg": "",
+        "section_width": "full-width",
+        "padding_top": 8,
+        "padding_bottom": 8,
+        "purple": "#a98bcb",
+        "lime": "#d9f25b",
+        "dark": "#1e1e1e",
+        "red": "#d32f2f"
+      }
+    },
+    "kj_sale_rewards": {
+      "type": "kj-sale-rewards",
+      "disabled": true,
+      "settings": {
+        "line1": "BIGGER BAG",
+        "line2": "BIGGER REWARDS",
+        "tiers": "Tier 1 | SHOP RS. 7,999+ | Rs. 500 off | Code 11.11SALE500\nTier 2 | SHOP RS. 9,999+ | Rs. 1,000 off | Code 11.11SALE1000\nTier 3 | SHOP RS. 14,999+ | Rs. 2,000 off | Code 11.11SALE2000",
         "section_width": "full-width",
         "padding_top": 8,
         "padding_bottom": 8,
@@ -2987,21 +3004,6 @@
         "background_image": "shopify://shop_images/shop-all.webp",
         "padding-block-start": 0,
         "padding-block-end": 0
-      }
-    },
-    "kj_sale_rewards": {
-      "type": "kj-sale-rewards",
-      "settings": {
-        "line1": "BIGGER BAG",
-        "line2": "BIGGER REWARDS",
-        "tiers": "Tier 1 | SHOP RS. 7,999+ | Rs. 500 off | Code 11.11SALE500\nTier 2 | SHOP RS. 9,999+ | Rs. 1,000 off | Code 11.11SALE1000\nTier 3 | SHOP RS. 14,999+ | Rs. 2,000 off | Code 11.11SALE2000",
-        "section_width": "full-width",
-        "padding_top": 8,
-        "padding_bottom": 8,
-        "purple": "#a98bcb",
-        "lime": "#d9f25b",
-        "dark": "#1e1e1e",
-        "red": "#d32f2f"
       }
     }
   },
