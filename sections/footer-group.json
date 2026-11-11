@@ -465,11 +465,13 @@
     },
     "kj_sale_sticky": {
       "type": "kj-sale-sticky",
+      "disabled": true,
       "settings": {
         "title": "11:11 FLASH SALE",
         "subtitle": "FLAT 40% OFF",
         "button": "Shop the sale",
         "link": "shopify://pages/sale",
+        "pages": "index",
         "timer_start": "2026-11-11T00:00:00+05:00",
         "timer_end": "2026-11-11T23:59:59+05:00",
         "label_start": "STARTS IN",
@@ -479,8 +481,7 @@
         "purple": "#a98bcb",
         "lime": "#d9f25b",
         "dark": "#1e1e1e",
-        "red": "#d32f2f",
-        "pages": "index"
+        "red": "#d32f2f"
       }
     }
   },
