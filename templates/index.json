@@ -264,7 +264,7 @@
           "type": "card",
           "name": "Maybelline",
           "settings": {
-            "image": "shopify://shop_images/maybelline_4551426a-4720-43a8-9063-19e013780945.jpg",
+            "image": "shopify://shop_images/Maybelline_18e04404-f9ab-4e64-acdf-84bdc2cc9dda.jpg",
             "link": "shopify://collections/maybelline",
             "open_new_tab": false
           }
@@ -301,7 +301,7 @@
           "type": "card",
           "name": "ELF",
           "settings": {
-            "image": "shopify://shop_images/elf_fd79bf98-7e10-402e-abbe-f4e0d5254a7b.jpg",
+            "image": "shopify://shop_images/ELF_3f51fe3d-f563-49e8-9d6b-5f6077d719f5.jpg",
             "link": "shopify://collections/elf",
             "open_new_tab": false
           }
@@ -309,6 +309,7 @@
         "card_nbr3cj": {
           "type": "card",
           "name": "Ordinary",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/ordinary_199b9de8-204d-417c-8e26-89134cabafd0.jpg",
             "link": "shopify://collections/to",
@@ -489,7 +490,7 @@
           "type": "card",
           "name": "Bioaqua",
           "settings": {
-            "image": "shopify://shop_images/Bioaqua_c6817819-bbfe-4dd9-a37b-e8608c741c40.jpg",
+            "image": "shopify://shop_images/Bioaqua_f36ab598-364c-4d61-b8dd-d11f398ab627.jpg",
             "link": "shopify://collections/bioaqua",
             "open_new_tab": false
           }
