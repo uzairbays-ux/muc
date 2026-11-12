@@ -230,6 +230,14 @@
     "card_banner_8zTGy8": {
       "type": "card-banner",
       "blocks": {
+        "card_8Q3Kyk": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/Fara-Banner.jpg",
+            "link": "shopify://collections/fara",
+            "open_new_tab": false
+          }
+        },
         "card_x4i8pi": {
           "type": "card",
           "name": "ST London",
@@ -336,6 +344,7 @@
         }
       },
       "block_order": [
+        "card_8Q3Kyk",
         "card_x4i8pi",
         "card_ftKGeC",
         "card_LJWfzX",
