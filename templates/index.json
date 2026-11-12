@@ -396,10 +396,9 @@
         "card_Rqd7UJ": {
           "type": "card",
           "name": "ST London",
-          "disabled": true,
           "settings": {
-            "image": "shopify://shop_images/500-x-500_6_99f042fc-9677-4e7d-911b-89a3399aa28b.png",
-            "link": "shopify://collections/st-london",
+            "image": "shopify://shop_images/SM_500x500_f1842576-15ad-4f77-9ce6-0b3139fb4f70.jpg",
+            "link": "shopify://collections/swiss-miss",
             "open_new_tab": false
           }
         },
