@@ -168,8 +168,8 @@
         "slide_4mM8cj": {
           "type": "slide",
           "settings": {
-            "desktop_image": "shopify://shop_images/Main-Banner-1920-x-750_22b0896a-0ce6-4b54-81e7-ff0165154ed4.jpg",
-            "mobile_image": "shopify://shop_images/Main-Banner-1920-x-750_090b9b90-5837-4d6b-9017-30bef84d201e.jpg",
+            "desktop_image": "shopify://shop_images/Main-Banner-1920-x-750_496d5d5c-5d01-4402-99c3-2bdf35761593.jpg",
+            "mobile_image": "shopify://shop_images/Main-Banner-1920-x-750_82468f80-2642-450e-99b2-da0f56e6a2fd.jpg",
             "link": "shopify://collections/sale",
             "open_new_tab": false,
             "alt": ""
@@ -496,7 +496,7 @@
           "type": "card",
           "name": "Bioaqua",
           "settings": {
-            "image": "shopify://shop_images/Bioaqua_f36ab598-364c-4d61-b8dd-d11f398ab627.jpg",
+            "image": "shopify://shop_images/Bioaqua_cbb1d128-834e-424c-9593-73f1e06b866c.jpg",
             "link": "shopify://collections/bioaqua",
             "open_new_tab": false
           }
@@ -1124,7 +1124,7 @@
           "type": "card",
           "name": "Bath & Body",
           "settings": {
-            "image": "shopify://shop_images/Bath-_-body_cf5f5431-acec-4da3-a842-c1b65e40c468.jpg",
+            "image": "shopify://shop_images/Bath-_-Body_d2f072fb-2d29-445e-8a00-ff230e96cbd9.jpg",
             "link": "shopify://collections/bath-body-works",
             "open_new_tab": false
           }
@@ -1154,7 +1154,7 @@
         "mobile_columns": "2",
         "desktop_slider_per_view": "4",
         "mobile_slider_per_view": "2",
-        "show_arrows": false,
+        "show_arrows": true,
         "auto_rotate": true,
         "rotate_interval": 4,
         "gap": 10,
