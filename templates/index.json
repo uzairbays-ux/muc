@@ -422,7 +422,7 @@
           "type": "card",
           "name": "L.A. Girl",
           "settings": {
-            "image": "shopify://shop_images/La-Girl.jpg",
+            "image": "shopify://shop_images/La-Girl_abc9e8c2-0af1-49b8-bad2-7ad21d0ee431.jpg",
             "link": "shopify://collections/l-a-girl",
             "open_new_tab": false
           }
@@ -477,7 +477,7 @@
           "type": "card",
           "name": "La Roche Posay",
           "settings": {
-            "image": "shopify://shop_images/la-roche-posay_3d1f5643-e913-4193-a6ab-9f3adc87ceb5.jpg",
+            "image": "shopify://shop_images/la-roche-posay_9c924105-ba5f-4b90-abf4-49727d134f71.jpg",
             "link": "shopify://collections/la-roche-posay",
             "open_new_tab": false
           }
@@ -486,7 +486,7 @@
           "type": "card",
           "name": "FreshLabs",
           "settings": {
-            "image": "shopify://shop_images/FreshLab_jpg.jpg",
+            "image": "shopify://shop_images/Fresh-Labs.jpg",
             "link": "shopify://collections/freshlabs",
             "open_new_tab": false
           }
@@ -920,7 +920,7 @@
           "type": "card",
           "name": "Kryolan",
           "settings": {
-            "image": "shopify://shop_images/Kryolan_40632c7b-c736-45fd-ab26-3cd265219f67.jpg",
+            "image": "shopify://shop_images/Kryolan_26e81994-0e00-4661-8ed5-154b22008e11.jpg",
             "link": "shopify://collections/kryolan",
             "open_new_tab": false
           }
@@ -929,7 +929,7 @@
           "type": "card",
           "name": "Framesi",
           "settings": {
-            "image": "shopify://shop_images/Framesi_38145d08-e429-41ff-9f7a-bc9dbfea1f01.jpg",
+            "image": "shopify://shop_images/Framesi_aa27ea95-0f5b-4231-a551-16a87eb5a1e8.jpg",
             "link": "shopify://collections/framesi",
             "open_new_tab": false
           }
@@ -1087,7 +1087,7 @@
           "type": "card",
           "name": "GOSH",
           "settings": {
-            "image": "shopify://shop_images/Gosh_jpg_45a2b0ac-d82a-45cb-b0dc-8662b126000b.jpg",
+            "image": "shopify://shop_images/Gosh_7cdabb2b-1939-4c63-b08b-82e3a279b3b6.jpg",
             "link": "shopify://collections/gosh",
             "open_new_tab": false
           }
