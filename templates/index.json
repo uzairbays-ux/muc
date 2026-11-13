@@ -234,7 +234,7 @@
           "type": "card",
           "name": "ST London",
           "settings": {
-            "image": "shopify://shop_images/ST-London_f9685cd0-ea3e-4518-96ce-2c63b17d547d.jpg",
+            "image": "shopify://shop_images/ST-London_a5ef47cb-f2e2-4057-b495-4c0cae5ca37f.jpg",
             "link": "shopify://collections/st-london",
             "open_new_tab": false
           }
@@ -263,7 +263,7 @@
           "type": "card",
           "name": "Maybelline",
           "settings": {
-            "image": "shopify://shop_images/Maybelline_18e04404-f9ab-4e64-acdf-84bdc2cc9dda.jpg",
+            "image": "shopify://shop_images/maybelline.jpg_3.jpg",
             "link": "shopify://collections/maybelline",
             "open_new_tab": false
           }
@@ -290,7 +290,7 @@
           "type": "card",
           "name": "Revolution",
           "settings": {
-            "image": "shopify://shop_images/Revolution_a1bb64b4-6dcb-451e-a244-0ae00c0f485c.jpg",
+            "image": "shopify://shop_images/Revolution_f2e08636-7dd2-489a-8e34-519477afd56d.jpg",
             "link": "shopify://collections/revolution",
             "open_new_tab": false
           }
@@ -299,7 +299,7 @@
           "type": "card",
           "name": "ELF",
           "settings": {
-            "image": "shopify://shop_images/ELF_3f51fe3d-f563-49e8-9d6b-5f6077d719f5.jpg",
+            "image": "shopify://shop_images/elf_ab135e49-c2ae-437e-8a60-93f8bb9b12be.jpg",
             "link": "shopify://collections/elf",
             "open_new_tab": false
           }
@@ -327,7 +327,7 @@
           "type": "card",
           "name": "Miss Rose",
           "settings": {
-            "image": "shopify://shop_images/SwisMiss_jpg.jpg",
+            "image": "shopify://shop_images/Miss-Rose_8736acef-9f38-4543-81a0-82e3176b498d.jpg",
             "link": "shopify://collections/miss-rose",
             "open_new_tab": false
           }
