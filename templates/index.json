@@ -938,7 +938,7 @@
           "type": "card",
           "name": "Luscious Cosmetics",
           "settings": {
-            "image": "shopify://shop_images/Luscious_af9a21e3-dd1e-42f4-848d-2a9271675839.jpg",
+            "image": "shopify://shop_images/luscious_163392e8-6093-45ed-baa7-d8197e5a6c1e.jpg",
             "link": "shopify://collections/luscious-cosmetics",
             "open_new_tab": false
           }
@@ -947,7 +947,7 @@
           "type": "card",
           "name": "Luxe Basics",
           "settings": {
-            "image": "shopify://shop_images/Luxe-Basics.jpg",
+            "image": "shopify://shop_images/Luxe-Basics_7c4ff2ea-56f7-4b3d-8f7f-cc5688a4811f.jpg",
             "link": "shopify://collections/luxe-basics",
             "open_new_tab": false
           }
@@ -1069,7 +1069,7 @@
           "type": "card",
           "name": "Lamel",
           "settings": {
-            "image": "shopify://shop_images/Lamel_63c20e38-d3f8-4728-9b59-39ac6e7de124.jpg",
+            "image": "shopify://shop_images/Lamel_58015aac-5a66-4545-930f-b6a2d8c48526.jpg",
             "link": "shopify://collections/lamel",
             "open_new_tab": false
           }
@@ -1078,7 +1078,7 @@
           "type": "card",
           "name": "L'Oréal Paris",
           "settings": {
-            "image": "shopify://shop_images/loreal_8e50d171-e3c6-4f9b-8fef-749046532060.jpg",
+            "image": "shopify://shop_images/Loreal_9d748180-6a66-4ac7-ae11-1559028790c5.jpg",
             "link": "shopify://collections/loreal-paris",
             "open_new_tab": false
           }
@@ -1105,7 +1105,7 @@
           "type": "card",
           "name": "OneSkin",
           "settings": {
-            "image": "shopify://shop_images/one-skin_jpg.jpg",
+            "image": "shopify://shop_images/One-Skin_jpg_f2762f8a-694e-45bc-8a6d-af87b4254662.jpg",
             "link": "shopify://collections/oneskin",
             "open_new_tab": false
           }
