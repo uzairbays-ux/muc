@@ -307,9 +307,8 @@
         "card_nbr3cj": {
           "type": "card",
           "name": "Ordinary",
-          "disabled": true,
           "settings": {
-            "image": "shopify://shop_images/ordinary_199b9de8-204d-417c-8e26-89134cabafd0.jpg",
+            "image": "shopify://shop_images/The-Ordinary_f0a22bf3-8aaf-4077-a8f3-bfad685fc1df.jpg",
             "link": "shopify://collections/to",
             "open_new_tab": false
           }
@@ -328,7 +327,7 @@
           "type": "card",
           "name": "Miss Rose",
           "settings": {
-            "image": "shopify://shop_images/Miss-Rose.jpg",
+            "image": "shopify://shop_images/SwisMiss_jpg.jpg",
             "link": "shopify://collections/miss-rose",
             "open_new_tab": false
           }
@@ -413,7 +412,7 @@
           "type": "card",
           "name": "Vaseline",
           "settings": {
-            "image": "shopify://shop_images/Vaseline-Skincare.jpg",
+            "image": "shopify://shop_images/Vaseline_4e9ffdb3-de5f-4e33-a47b-0d46ee6b4bc6.jpg",
             "link": "shopify://collections/vaseline",
             "open_new_tab": false
           }
@@ -431,7 +430,7 @@
           "type": "card",
           "name": "PinkFlash",
           "settings": {
-            "image": "shopify://shop_images/PinkFlash.jpg",
+            "image": "shopify://shop_images/Pink-Flash.jpg",
             "link": "shopify://collections/pinkflash",
             "open_new_tab": false
           }
@@ -440,7 +439,7 @@
           "type": "card",
           "name": "Philips",
           "settings": {
-            "image": "shopify://shop_images/Philips_6fb9134d-4074-448b-8596-9eac46178da2.jpg",
+            "image": "shopify://shop_images/Philips_8a2da5ad-f6ad-4472-b41e-7f9cbdcf84d3.jpg",
             "link": "shopify://collections/philips",
             "open_new_tab": false
           }
