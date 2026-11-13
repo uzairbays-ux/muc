@@ -271,9 +271,8 @@
         "card_hxUFFx": {
           "type": "card",
           "name": "CeraVe",
-          "disabled": true,
           "settings": {
-            "image": "shopify://shop_images/Cerave_00b74cf9-a8cc-47ec-87a6-6340a13b80db.webp",
+            "image": "shopify://shop_images/Cerave_4894374e-2909-48ef-bd08-b9422f25f658.jpg",
             "link": "shopify://collections/cerave-official",
             "open_new_tab": false
           }
@@ -396,7 +395,7 @@
         "card_nwaVMj": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/Fara-Banner.jpg",
+            "image": "shopify://shop_images/Fara-london_jpg.jpg",
             "link": "shopify://collections/fara",
             "open_new_tab": false
           }
@@ -957,7 +956,7 @@
           "type": "card",
           "name": "Estelin",
           "settings": {
-            "image": "shopify://shop_images/Esteline_jpg.jpg",
+            "image": "shopify://shop_images/Estelin_47fcb455-e5af-440a-a4a5-74667ee41d77.jpg",
             "link": "shopify://collections/estelin",
             "open_new_tab": false
           }
@@ -1097,7 +1096,7 @@
           "type": "card",
           "name": "Bleuface",
           "settings": {
-            "image": "shopify://shop_images/Blue-Face.jpg",
+            "image": "shopify://shop_images/Blueface.jpg",
             "link": "shopify://collections/bleuface",
             "open_new_tab": false
           }
