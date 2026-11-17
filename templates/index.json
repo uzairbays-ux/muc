@@ -933,6 +933,14 @@
             "open_new_tab": false
           }
         },
+        "card_6JeAei": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/rimmel_copy.jpg",
+            "link": "shopify://collections/rimmel-london",
+            "open_new_tab": false
+          }
+        },
         "card_p9kYBe": {
           "type": "card",
           "name": "Luscious Cosmetics",
@@ -991,6 +999,7 @@
       "block_order": [
         "card_CaecqX",
         "card_QQLjCx",
+        "card_6JeAei",
         "card_p9kYBe",
         "card_pfpRwk",
         "card_L4QwKh",
