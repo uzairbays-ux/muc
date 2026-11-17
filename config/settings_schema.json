@@ -2429,8 +2429,7 @@
       {
         "type": "text",
         "id": "kj_gwp3_label",
-        "label": "Name (as in Shopify Discounts)",
-        "default": ""
+        "label": "Name (as in Shopify Discounts)"
       },
       {
         "type": "product",
@@ -2482,8 +2481,7 @@
       {
         "type": "text",
         "id": "kj_gwp4_label",
-        "label": "Name (as in Shopify Discounts)",
-        "default": ""
+        "label": "Name (as in Shopify Discounts)"
       },
       {
         "type": "product",
@@ -2535,8 +2533,7 @@
       {
         "type": "text",
         "id": "kj_gwp5_label",
-        "label": "Name (as in Shopify Discounts)",
-        "default": ""
+        "label": "Name (as in Shopify Discounts)"
       },
       {
         "type": "product",
