@@ -1100,6 +1100,14 @@
             "open_new_tab": false
           }
         },
+        "card_f69XGn": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/Bourjois_1000_x_1000_copy.jpg",
+            "link": "shopify://collections/bourjois",
+            "open_new_tab": false
+          }
+        },
         "card_AHQBXy": {
           "type": "card",
           "name": "Bleuface",
@@ -1145,6 +1153,7 @@
         "card_J3czmk",
         "card_gBiw68",
         "card_ceiizR",
+        "card_f69XGn",
         "card_AHQBXy",
         "card_dnezUz",
         "card_XXe7yi",
