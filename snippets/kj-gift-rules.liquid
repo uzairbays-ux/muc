@@ -81,6 +81,9 @@
         assign slot_variant = slot_gift.selected_or_first_available_variant
         assign slot_prods = settings[k_prods]
         assign slot_coll = settings[k_coll]
+        if slot_coll != blank and slot_coll.handle == blank
+          assign slot_coll = collections[slot_coll]
+        endif
       -%}
       {%- if settings[k_on] and slot_gift != blank and slot_variant.available -%}
         {%- if slot_prods.size > 0 or slot_coll != blank -%}
