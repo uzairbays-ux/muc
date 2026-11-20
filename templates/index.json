@@ -268,6 +268,14 @@
             "open_new_tab": false
           }
         },
+        "card_PkwqQh": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/Framesi_7d151446-b7ba-4a8c-9468-fbc568722e7f.jpg",
+            "link": "shopify://collections/framesi",
+            "open_new_tab": false
+          }
+        },
         "card_hxUFFx": {
           "type": "card",
           "name": "CeraVe",
@@ -338,6 +346,7 @@
         "card_ftKGeC",
         "card_LJWfzX",
         "card_G4PiLa",
+        "card_PkwqQh",
         "card_hxUFFx",
         "card_7AwV3r",
         "card_YUtaR6",
